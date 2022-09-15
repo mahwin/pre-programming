@@ -1,2 +1,2 @@
 # pre-programming
-포트폴리오
+pre-programming web 
