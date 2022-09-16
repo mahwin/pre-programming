@@ -1,18 +1,23 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthDto } from './dto/auth.dto';
+import { LoginDto, TokenDto } from './dto/auth.dto';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
-  @Post('confirm')
-  signIn(@Body() phone: AuthDto) {
-    return this.authService.confirm(phone);
+  @Post()
+  signIn(@Body() phone: LoginDto) {
+    return this.authService.signIn(phone);
   }
 
-  @Post('signout')
-  signOut() {
-    return this.authService.signOut();
+  @Post('confirm')
+  confirm(@Body() token: TokenDto) {
+    return this.authService.confirm(token);
   }
+
+  // @Post('signout')
+  // signOut() {
+  //   return this.authService.signOut();
+  // }
 }
