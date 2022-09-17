@@ -1,4 +1,11 @@
-import { Body, Controller, Post, Get, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Post,
+  Get,
+  UseGuards,
+  Headers,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
 import { JwtAuthGuard } from './jwt/jwt.guard';
@@ -17,14 +24,15 @@ export class AuthController {
     return this.authService.confirm(token);
   }
 
+  //테스트 코드
   @Get('user')
   @UseGuards(JwtAuthGuard)
   check() {
     return { ok: true };
   }
 
-  // @Post('signout')
-  // signOut() {
-  //   return this.authService.signOut();
-  // }
+  @Get('signout')
+  signOut() {
+    return this.authService.signOut();
+  }
 }

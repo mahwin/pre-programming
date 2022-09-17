@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException, Header } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { LoginDto } from './dto/auth.dto';
 import * as twilio from 'twilio';
@@ -56,5 +56,8 @@ export class AuthService {
       throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
     }
   }
-  async signOut() {}
+  @Header('authorization', '')
+  async signOut() {
+    return { ok: true, message: '로그아웃 성공' };
+  }
 }
