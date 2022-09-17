@@ -43,10 +43,18 @@ export class AuthService {
         payload: token,
       },
     });
+
+    await this.prisma.token.deleteMany({
+      where: {
+        userId: foundToken.userId,
+      },
+    });
+
     if (foundToken) {
-      return this.jwtService.sign({ token, sub: '0' });
+      return this.jwtService.sign({ token, sub: '0', data: 'user' });
     } else {
       throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
     }
   }
+  async signOut() {}
 }
