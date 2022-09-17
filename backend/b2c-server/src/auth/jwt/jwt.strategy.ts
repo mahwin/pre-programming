@@ -17,7 +17,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   async validate(payload: Payload) {
     const user = payload.sub === '0';
     if (user) {
-      return user; // request.user에 해당 내용을 넣어준다 (Passport 라이브러리가 해줌)
+      return user;
     } else {
       throw new UnauthorizedException('토큰이 일치하지 않습니다.');
     }

@@ -44,18 +44,21 @@ export class AuthService {
       },
     });
 
-    await this.prisma.token.deleteMany({
-      where: {
-        userId: foundToken.userId,
-      },
-    });
-
+    // await this.prisma.token.deleteMany({
+    //   where: {
+    //     userId: foundToken.userId,
+    //   },
+    // });
     if (foundToken) {
-      return this.jwtService.sign({ token, sub: '0', data: 'user' });
+      const a = this.jwtService.sign({
+        token,
+        sub: '0',
+      });
     } else {
       throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
     }
   }
+
   @Header('authorization', '')
   async signOut() {
     return { ok: true, message: '로그아웃 성공' };
