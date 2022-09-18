@@ -1,17 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
-import { JwtStrategy } from 'src/jwt/jwt.strategy';
-import { UserDto } from './dto/user.dto';
 
-const jwtStrategy = new JwtStrategy();
+import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
+
   async getUser(req) {
     return this.parsePayload(req);
   }
+
   async update(req, updateUser) {
     const userData = this.parsePayload(req);
     const newData = await this.prisma.user.update({
