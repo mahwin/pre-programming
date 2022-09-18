@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
 import { JwtStrategy } from 'src/jwt/jwt.strategy';
-import { Payload } from '../jwt/jwt.payload';
 import { UserDto } from './dto/user.dto';
 
 const jwtStrategy = new JwtStrategy();
