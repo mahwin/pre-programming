@@ -2,9 +2,14 @@ import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from '../jwt/jwt.guard';
 import { Request } from 'express';
-import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiOperation,
+  ApiCreatedResponse,
+  ApiProperty,
+} from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
-import { UpdateMovieDto } from './dto/update-user.dto';
+import { UpdateUSerDto } from './dto/update-user.dto';
 
 @Controller('user')
 @ApiTags('user API')
@@ -25,9 +30,18 @@ export class UserController {
     return this.userService.getUser(req);
   }
 
+  @ApiOperation({
+    summary: '유저 정보 업데이트',
+    description: '유저가 개인 정보를 수정',
+  })
+  @ApiCreatedResponse({
+    description:
+      'JWT 토큰 유효성 검사 후 유저가 보낸 정보를 토대로 user db 업데이트',
+    type: UserDto,
+  })
   @Post('update')
   @UseGuards(JwtAuthGuard)
-  updateUser(@Req() req: Request, @Body() updateUser: UpdateMovieDto) {
+  updateUser(@Req() req: Request, @Body() updateUser: UpdateUSerDto) {
     return this.userService.update(req, updateUser);
   }
 }

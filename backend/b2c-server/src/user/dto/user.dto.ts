@@ -1,10 +1,4 @@
-import {
-  IsDate,
-  IsNotEmpty,
-  IsNumber,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { IsDate, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class UserDto {
@@ -30,7 +24,6 @@ export class UserDto {
     description: 'user nickname',
     required: false,
   })
-  @IsOptional()
   public name: string;
 
   @ApiProperty({
@@ -38,7 +31,6 @@ export class UserDto {
     description: 'avatar URL',
     required: false,
   })
-  @IsOptional()
   @IsString()
   public avatar: string;
 
@@ -55,7 +47,6 @@ export class UserDto {
     description: '수정 일',
     required: true,
   })
-  @IsOptional()
   @IsDate()
   public updatedAt: Date;
 }

@@ -14,7 +14,6 @@ export class UserService {
     return this.parsePayload(req);
   }
   async update(req, updateUser) {
-    console.log('!!!!');
     const userData = this.parsePayload(req);
     const newData = await this.prisma.user.update({
       where: {
