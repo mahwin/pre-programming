@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from '../jwt/jwt.guard';
 import { Request } from 'express';
 import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
+import { UpdateMovieDto } from './dto/update-user.dto';
 
 @Controller('user')
 @ApiTags('user API')
@@ -22,5 +23,11 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   getUser(@Req() req: Request) {
     return this.userService.getUser(req);
+  }
+
+  @Post('update')
+  @UseGuards(JwtAuthGuard)
+  updateUser(@Req() req: Request, @Body() updateUser: UpdateMovieDto) {
+    return this.userService.update(req, updateUser);
   }
 }

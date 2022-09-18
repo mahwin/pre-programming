@@ -10,10 +10,25 @@ const jwtStrategy = new JwtStrategy();
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
-  async getUser(req): Promise<UserDto> {
+  async getUser(req) {
+    return this.parsePayload(req);
+  }
+  async update(req, updateUser) {
+    console.log('!!!!');
+    const userData = this.parsePayload(req);
+    const newData = await this.prisma.user.update({
+      where: {
+        id: (await userData).id,
+      },
+      data: { ...updateUser },
+    });
+    return newData;
+  }
+
+  async parsePayload(req): Promise<UserDto> {
     const signedJwtAccessToken = req.headers.authorization.split(' ')[1];
     const { userId }: any = this.jwtService.decode(signedJwtAccessToken);
-    const user = this.prisma.user.findUnique({
+    const user = await this.prisma.user.findUnique({
       where: { id: userId },
     });
     return user;

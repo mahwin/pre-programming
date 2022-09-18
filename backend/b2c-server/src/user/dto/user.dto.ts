@@ -19,7 +19,7 @@ export class UserDto {
 
   @ApiProperty({
     example: '1231',
-    description: 'user Id',
+    description: 'user id',
     required: true,
   })
   @IsNumber()
