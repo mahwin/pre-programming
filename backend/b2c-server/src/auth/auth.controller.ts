@@ -1,11 +1,4 @@
-import {
-  Body,
-  Controller,
-  Post,
-  Get,
-  UseGuards,
-  Request,
-} from '@nestjs/common';
+import { Body, Controller, Post, Get, Request } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
 
@@ -48,6 +41,7 @@ export class AuthController {
   })
   @ApiCreatedResponse({
     description: 'headers에서 JWT를 삭제함',
+    type: null,
   })
   signOut() {
     return this.authService.signOut();
