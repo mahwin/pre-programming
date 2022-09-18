@@ -10,14 +10,13 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       // 헤더 Authentication 에서 Bearer 토큰으로부터 jwt를 추출하겠다는 의미
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: process.env.JWT_KEY,
-      ignoreExpiration: false, // jwt 만료를 무시할 것인지 (기본값: false)
+      ignoreExpiration: false, // jwt 만료를 무시할 것인지
     });
   }
 
   async validate(payload: Payload) {
-    const user = payload.sub === '0';
-    if (user) {
-      return user;
+    if (payload.userId) {
+      return payload.userId;
     } else {
       throw new UnauthorizedException('토큰이 일치하지 않습니다.');
     }

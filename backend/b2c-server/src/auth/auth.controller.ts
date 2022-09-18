@@ -8,14 +8,8 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
-import { JwtAuthGuard } from './jwt/jwt.guard';
-import {
-  ApiTags,
-  ApiOperation,
-  ApiResponse,
-  ApiCreatedResponse,
-  ApiBody,
-} from '@nestjs/swagger';
+
+import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 
 @Controller('auth')
 @ApiTags('auth API')
@@ -45,13 +39,6 @@ export class AuthController {
   })
   confirm(@Body() token: TokenDto, @Request() req) {
     return this.authService.confirm(token);
-  }
-
-  //테스트 코드
-  @Get('user')
-  @UseGuards(JwtAuthGuard)
-  check() {
-    return { ok: true };
   }
 
   @Get('signout')

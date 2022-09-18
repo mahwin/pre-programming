@@ -50,10 +50,10 @@ export class AuthService {
     //   },
     // });
     if (foundToken) {
-      const a = this.jwtService.sign({
-        token,
-        sub: '0',
-      });
+      const payload = {
+        userId: foundToken.userId,
+      };
+      return { accessToken: this.jwtService.sign(payload) };
     } else {
       throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
     }
