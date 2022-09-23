@@ -37,6 +37,6 @@ model Vocabulary {
   id        Int      @id @default(autoincrement())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  category  String
+  level     String
 }
