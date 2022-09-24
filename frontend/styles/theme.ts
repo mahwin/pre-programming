@@ -1,9 +1,9 @@
 import { DefaultTheme } from "styled-components";
 
 const windowSize = {
-  mobile: 'screen and (max-width: "600px")',
-  tablet: 'screen and (max-width: "768px")',
-  pc: 'screen and (max-width: "024px")',
+  mobile: "600px",
+  tablet: "768px",
+  pc: "1024px",
 };
 
 const fontSize = {
@@ -12,6 +12,16 @@ const fontSize = {
   base: "1rem",
   md: "1.25rem",
   lg: "1.5rem",
+  xlg: "3rem",
+  xxlg: "5rem",
+};
+
+const fontWeight = {
+  xs: "200",
+  base: "400",
+  bold: "500",
+  xbold: "700",
+  xxbold: "900",
 };
 
 export const lightTheme = {
@@ -35,6 +45,7 @@ export const darkTheme = {
 const theme: DefaultTheme = {
   windowSize,
   fontSize,
+  fontWeight,
   colorTheme: { ...lightTheme },
 };
 

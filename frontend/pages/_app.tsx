@@ -6,7 +6,6 @@ import { Provider } from "react-redux";
 import store from "../redux/store";
 
 function App({ Component, pageProps }: AppProps) {
-  console.log(`${store.getState().isDark}`);
   return (
     <Provider store={store}>
       <ThemeProvider

@@ -13,6 +13,15 @@ declare module "styled-components" {
       base: string;
       md: string;
       lg: string;
+      xlg: string;
+      xxlg: string;
+    };
+    fontWeight: {
+      xs: string;
+      base: string;
+      bold: string;
+      xbold: string;
+      xxbold: string;
     };
     colorTheme: {
       background: string;
