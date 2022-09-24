@@ -14,7 +14,8 @@ const Container = styled.div`
 
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSize.lg};
-  font-weight: ${(props) => props.theme.fontWeight.bold};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
+  color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 
 export default function Voca() {

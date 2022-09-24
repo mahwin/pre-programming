@@ -1,10 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
+import { themeToggle } from "../actions/index";
 
-export const ThemeReducer = createReducer(
+export const themeReducer = createReducer(
   { isDark: false },
   {
     themeToggle: (state, action) => {
-      !state;
+      state.isDark = action.payload;
     },
   }
 );

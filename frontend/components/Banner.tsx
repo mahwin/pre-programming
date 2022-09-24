@@ -15,7 +15,7 @@ const BannerWapper = styled.div`
   width: 100%;
   display: flex;
   max-width: ${(props) => props.theme.windowSize.tablet};
-  color: ${(props) => props.theme.colorTheme.fontPrimary};
+  color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 const ContentWrapper = styled.div`
   z-index: 1;
@@ -45,7 +45,7 @@ const Title = styled.h2`
 const SubTitle = styled.h4`
   font-weight: ${(props) => props.theme.fontWeight.base};
   font-size: ${(props) => props.theme.fontSize.lg};
-  color: ${(props) => props.theme.colorTheme.secondary};
+  color: ${(props) => props.theme.colorTheme.textPrimary};
   letter-spacing: 0.1rem;
 `;
 
@@ -73,7 +73,7 @@ const SvgBox = styled.div`
   height: 36px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.secondary};
+  background-color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
 const Search = styled.input.attrs({
@@ -87,12 +87,12 @@ const Search = styled.input.attrs({
   height: 36px;
   width: 100%;
   border: none;
-  color: ${(props) => props.theme.colorTheme.fontSecondary};
+  color: ${(props) => props.theme.colorTheme.textSecondary};
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.secondary};
+  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   &:focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.primary};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.textSecondary};
   }
 `;
 

@@ -24,12 +24,12 @@ declare module "styled-components" {
       xxbold: string;
     };
     colorTheme: {
-      background: string;
-      fontPrimary: string;
-      fontSecondary: string;
-      primary: string;
-      secondary: string;
-      hover: string;
+      backgroundColor: string;
+      textPrimary: string;
+      textSecondary: string;
+      inputPrimary: string;
+      buttonPrimary: string;
+      buttonSecondary: string;
     };
   }
 }

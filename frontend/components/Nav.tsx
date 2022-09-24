@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { useDispatch, connect } from "react-redux";
 
 const Wapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: ${(props) => props.theme.colorTheme.secondary}; ;
+  background-color: ${(props) => props.theme.colorTheme.backgroundColor}; ;
 `;
 
 const NavWapper = styled.div`
@@ -14,8 +14,7 @@ const NavWapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  color: ${(props) => props.theme.colorTheme.fontPrimary};
+  color: ${(props) => props.theme.colorTheme.textPrimary};
   max-width: ${(props) => props.theme.windowSize.pc};
 `;
 
@@ -31,47 +30,11 @@ const Item = styled.li`
   font-weight: ${(props) => props.theme.fontWeight.base};
   &:hover {
     border-radius: 3px;
-    background-color: ${(props) => props.theme.colorTheme.hover};
+    background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
   }
 `;
-const ToggleBox = styled.div<{ isDark: boolean }>`
-  position: relative;
-  width: 150px;
-  height: 100%;
-  margin-right: 20px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: black;
-  overflow: hidden;
-  cursor: pointer;
-  justify-content: ${(props) => (props.isDark ? "end" : "start")};
-`;
 
-const Toggle = styled(motion.div)`
-  z-index: 1;
-  height: 100%;
-  width: 80px;
-  border-radius: 20px;
-  background-color: white;
-
-  opacity: 0.3;
-`;
-
-const ToggleItem = styled.p<{ isRight: boolean }>`
-  position: absolute;
-  ${(props) => (props.isRight ? "right: 20px;" : "left: 20px;")};
-  font-size: ${(props) => props.theme.fontSize.base};
-  font-weight: ${(props) => props.theme.fontWeight.bold};
-  color: white;
-`;
-
-export default function Nav() {
-  const [isDark, setIsDark] = useState<boolean>(false);
-  const onToggleClick = () => {
-    setIsDark((prev) => !prev);
-  };
+function Nav() {
   return (
     <Wapper>
       <NavWapper>
@@ -82,11 +45,6 @@ export default function Nav() {
         </Items>
 
         <Items>
-          <ToggleBox onClick={onToggleClick} isDark={isDark}>
-            <Toggle layout />
-            <ToggleItem isRight={false}>Light</ToggleItem>
-            <ToggleItem isRight={true}>Dark</ToggleItem>
-          </ToggleBox>
           <Item>로그인</Item>
           <Item>회원가입</Item>
         </Items>
@@ -94,3 +52,11 @@ export default function Nav() {
     </Wapper>
   );
 }
+
+// function mapStateToProps(state: { isDrak: string }) {
+//   return state;
+// }
+
+// export default connect(mapStateToProps)(Nav);
+
+export default Nav;
