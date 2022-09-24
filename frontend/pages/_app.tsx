@@ -2,22 +2,24 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global-styles";
 import theme, { lightTheme, darkTheme } from "../styles/theme";
-import { useEffect, useState } from "react";
+import { Provider } from "react-redux";
+import store from "../redux/store";
 
-export default function App({ Component, pageProps }: AppProps) {
-  const [isDark, setIsDrak] = useState(false);
-  useEffect(() => {
-    setIsDrak(window.matchMedia("(prefers-color-scheme: dark)").matches);
-  }, []);
+function App({ Component, pageProps }: AppProps) {
+  console.log(`${store.getState().isDark}`);
   return (
-    <ThemeProvider
-      theme={{
-        ...theme,
-        colorTheme: isDark ? darkTheme : lightTheme,
-      }}
-    >
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider
+        theme={{
+          ...theme,
+          colorTheme: store.getState().isDark ? darkTheme : lightTheme,
+        }}
+      >
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   );
 }
+
+export default App;
