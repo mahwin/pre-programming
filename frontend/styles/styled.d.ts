@@ -27,9 +27,12 @@ declare module "styled-components" {
       backgroundColor: string;
       textPrimary: string;
       textSecondary: string;
+      textThrid: string;
       inputPrimary: string;
       buttonPrimary: string;
       buttonSecondary: string;
+      hoverPrimary: string;
+      activePrimarh: string;
     };
   }
 }

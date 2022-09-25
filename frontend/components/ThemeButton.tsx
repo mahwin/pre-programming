@@ -2,17 +2,18 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const ToggleBox = styled.div<{ isDark: boolean }>`
-  position: absolute;
+  position: fixed;
   width: 150px;
-  top: 4px;
+  top: 5px;
   height: 40px;
-  right: 400px;
+  right: 30%;
   margin-right: 20px;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: black;
+  z-index: 100;
   overflow: hidden;
   cursor: pointer;
   justify-content: ${(props) => (props.isDark ? "end" : "start")};

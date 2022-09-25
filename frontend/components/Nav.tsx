@@ -6,7 +6,10 @@ const Wapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: ${(props) => props.theme.colorTheme.backgroundColor}; ;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 `;
 
 const NavWapper = styled.div`

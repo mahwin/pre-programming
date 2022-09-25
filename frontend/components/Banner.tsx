@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { MagnifyingGlass } from "../assets/svg/MagnifyingGlass";
+import { MagnifyingGlassSvg } from "../assets/svg/RootSvg";
 
 const Wapper = styled.div`
   position: relative;
@@ -73,7 +73,7 @@ const SvgBox = styled.div`
   height: 36px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.textPrimary};
+  background-color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 
 const Search = styled.input.attrs({
@@ -87,12 +87,12 @@ const Search = styled.input.attrs({
   height: 36px;
   width: 100%;
   border: none;
-  color: ${(props) => props.theme.colorTheme.textSecondary};
+  color: ${(props) => props.theme.colorTheme.textPrimary};
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   &:focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.textSecondary};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimarh};
   }
 `;
 
@@ -108,7 +108,7 @@ export default function Banner() {
           </TitleBox>
           <SearchBox>
             <SvgBox>
-              <MagnifyingGlass width="24" height="24" color="green" />
+              <MagnifyingGlassSvg width="24" height="24" color="green" />
             </SvgBox>
             <Search />
           </SearchBox>

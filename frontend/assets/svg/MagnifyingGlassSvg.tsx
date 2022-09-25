@@ -11,20 +11,14 @@ const Svg = styled(Icon)`
 `;
 
 interface Iprops {
-  width: string;
-  height: string;
-  color: string;
+  width?: string;
+  height?: string;
+  color?: string;
 }
 
-export const MagnifyingGlass = ({ width, height, color }: Iprops) => {
+export const MagnifyingGlassSvg = ({ width, height, color }: Iprops) => {
   return (
-    <Svg
-      viewBox={`0 0 ${width} ${height}`}
-      fill="none"
-      width={width}
-      height={height}
-      color={color}
-    >
+    <Svg fill="none" width={width} height={height} color={color}>
       <path
         strokeWidth="3px"
         strokeLinecap="round"

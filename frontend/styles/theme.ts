@@ -27,21 +27,25 @@ const fontWeight = {
 export const lightTheme = {
   backgroundColor: "#dfe6e9",
   textPrimary: "#2d3436",
-  textSecondary: "#636e72",
+  textSecondary: "#b2bec3",
+  textThird: "#2d3436",
   inputPrimary: "#E0ECE4",
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
   hoverPrimary: "#00b894",
+  activePrimarh: "#00b894",
 };
 // 1.색상은 나중에 선택
 export const darkTheme = {
   backgroundColor: "#2d3436",
   textPrimary: "#dfe6e9",
-  textSecondary: "#b2bec3",
+  textSecondary: "#636e72",
+  textThird: "#2d3436",
   inputPrimary: "#E0ECE4",
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
   hoverPrimary: "#00b894",
+  activePrimarh: "#55efc4",
 };
 
 const theme: DefaultTheme = {
