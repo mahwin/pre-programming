@@ -26,7 +26,7 @@ function LogoSvg({ width, height }: ILogo) {
       viewBox="0 0 78 110"
       fill="none"
     >
-      <g clip-path="url(#clip0_102_178)">
+      <g clipPath="url(#clip0_102_178)">
         <path
           d="M1.1704 29.7875C1.14442 25.8786 5.38163 23.4323 8.71847 25.4296L72.3486 63.5176C75.6214 65.4766 75.5731 70.2598 72.2614 72.1718L40.6941 90.3972L9.12678 108.623C5.81498 110.535 1.69143 108.16 1.66594 104.326L1.1704 29.7875Z"
           fill="#004445"
@@ -55,39 +55,39 @@ function LogoSvg({ width, height }: ILogo) {
           <path
             d="M52.8786 73.3566C53.0109 77.0569 51.0084 80.4336 51.141 84.1397C51.2591 87.4424 52.5441 89.6823 54.616 92.254"
             stroke="#004445"
-            stroke-width="2"
-            stroke-linecap="round"
+            strokeWidth="2"
+            strokeLinecap="round"
           />
         </g>
         <path
           d="M54.1779 91.2664C54.9916 92.105 55.6889 93.0874 56.4344 93.9691C56.9585 94.589 57.5165 95.1702 58.0871 95.7583"
           stroke="#004445"
-          stroke-width="0.7"
-          stroke-linecap="round"
+          strokeWidth="0.7"
+          strokeLinecap="round"
         />
         <path
           d="M54.9706 91.838C55.7842 92.6767 56.899 93.1582 57.8239 93.8245C58.4742 94.293 59.0417 94.8628 59.6123 95.451"
           stroke="#004445"
-          stroke-width="0.7"
-          stroke-linecap="round"
+          strokeWidth="0.7"
+          strokeLinecap="round"
         />
         <path
           d="M54.4041 92.4328C54.4258 92.7586 54.5053 93.2357 54.5456 93.5266C54.5756 93.7427 54.6047 93.9685 54.6336 94.1826C54.6527 94.3245 54.6638 94.5794 54.6859 94.6981C54.7134 94.8449 54.7264 95.2003 54.7535 95.3884C54.7887 95.6328 54.8186 95.9028 54.8533 96.154C54.8931 96.4409 54.9408 96.6883 54.9777 96.9545"
           stroke="#004445"
-          stroke-width="0.7"
-          stroke-linecap="round"
+          strokeWidth="0.7"
+          strokeLinecap="round"
         />
         <path
           d="M53.9611 93.3249C53.991 94.1613 53.8371 95.0247 53.7873 95.854C53.7523 96.4371 53.7688 97.0141 53.7897 97.6006"
           stroke="#004445"
-          stroke-width="0.7"
-          stroke-linecap="round"
+          strokeWidth="0.7"
+          strokeLinecap="round"
         />
         <path
           d="M54.9483 93.4649C55.5506 94.0857 55.8174 95.1119 56.262 95.8932C56.5746 96.4424 56.982 96.8794 57.4043 97.3147"
           stroke="#004445"
-          stroke-width="0.7"
-          stroke-linecap="round"
+          strokeWidth="0.7"
+          strokeLinecap="round"
         />
       </g>
       <defs>
@@ -98,9 +98,9 @@ function LogoSvg({ width, height }: ILogo) {
           width="13.4642"
           height="28.9145"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"

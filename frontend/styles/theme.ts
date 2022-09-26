@@ -33,7 +33,7 @@ export const lightTheme = {
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
   hoverPrimary: "#00b894",
-  activePrimarh: "#00b894",
+  activePrimary: "#00b894",
 };
 // 1.색상은 나중에 선택
 export const darkTheme = {
@@ -45,7 +45,7 @@ export const darkTheme = {
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
   hoverPrimary: "#00b894",
-  activePrimarh: "#55efc4",
+  activePrimary: "#55efc4",
 };
 
 const theme: DefaultTheme = {

@@ -92,7 +92,7 @@ const Search = styled.input.attrs({
   border-bottom-right-radius: 5px;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   &:focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimarh};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
 `;
 

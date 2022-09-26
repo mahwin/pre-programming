@@ -74,9 +74,7 @@ const TitleLine = styled.hr`
   border-radius: 2px;
   height: 3px;
   border: none;
-  color: ${(props) => props.theme.colorTheme.hoverPrimary};
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
-  border-color: ${(props) => props.theme.colorTheme.hoverPrimary};
 `;
 
 const LogoBox = styled.div`

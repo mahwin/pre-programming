@@ -61,6 +61,12 @@ body {
   line-height: 1.2;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 a {
   text-decoration:none;
   color:inherit;
