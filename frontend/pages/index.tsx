@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <FloatingButton text="+" />
       <Banner />
       <Voca />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
