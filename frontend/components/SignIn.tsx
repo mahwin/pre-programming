@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import { TwitterSvg, FacebookSvg } from "../assets/svg/RootSvg";
-import useMutation from "../libs/useMutation";
-import { useForm } from "react-hook-form";
 
 const Wapper = styled.div`
   height: 100vh;
@@ -53,12 +51,9 @@ const Text = styled.p`
 const PhoneBox = styled.div`
   width: 100%;
 `;
-
-const Form = styled.form`
-  position: relative;
+const InputBox = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
   margin-top: 10px;
 `;
 
@@ -75,11 +70,6 @@ const PostInput = styled.span`
     font-size: 18px;
   }
 `;
-
-const InputBox = styled.div`
-  display: flex;
-`;
-
 const Input = styled.input.attrs({
   type: "number",
 })`
@@ -90,25 +80,16 @@ const Input = styled.input.attrs({
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: ${(props) => props.theme.fontSize.lg};
-  margin-bottom: 5px;
   &:focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
-`;
-
-const Error = styled.span`
-  color: #ff7675;
-  font-weight: ${(props) => props.theme.fontWeight.base};
-
-  position: absolute;
-  top: 50px;
 `;
 
 const Button = styled.button`
   width: 100%;
   border-radius: 5px;
   border: none;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
   height: 40px;
   color: ${(props) => props.theme.colorTheme.textPrimary};
@@ -158,34 +139,7 @@ const SnsButton = styled.button`
   justify-content: center;
   align-items: center;
 `;
-
-interface EnterForm {
-  phone: string;
-}
-interface IForm {
-  phone: string;
-  serverError?: string;
-}
-
-interface MutationResult {
-  ok: boolean;
-}
-
 export default function SignIn() {
-  const [enter, { loading, data, error }] = useMutation<MutationResult>(
-    `http://127.0.0.1:3000/auth`
-  );
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-  } = useForm<EnterForm>();
-
-  const onValid = (validForm: IForm) => {
-    enter(validForm);
-  };
-  console.log(loading, data, error);
   return (
     <Wapper>
       <LoginContainer>
@@ -197,35 +151,14 @@ export default function SignIn() {
         <Line />
         <PhoneBox>
           <Text>Phone number</Text>
-          <Form onSubmit={handleSubmit(onValid)}>
-            <InputBox>
-              <PostInput>
-                <Text>+82</Text>
-              </PostInput>
-              <Input
-                placeholder="01012345678"
-                {...register("phone", {
-                  required: "phone number는 필수입력 항목입니다.",
-                  pattern: {
-                    value: /^[0-9]*$/,
-                    message: "숫자만 입력 가능합니다.",
-                  },
-                  minLength: {
-                    value: 11,
-                    message: "phone number의 형식은 01012345678입니다.",
-                  },
-                  maxLength: {
-                    value: 11,
-                    message: "phone number의 형식은 01012345678입니다.",
-                  },
-                })}
-                required
-              />
-            </InputBox>
-            <Error>{errors?.phone?.message}</Error>
-            <Button>Login</Button>
-          </Form>
+          <InputBox>
+            <PostInput>
+              <Text>+82</Text>
+            </PostInput>
+            <Input placeholder="01012345678" />
+          </InputBox>
         </PhoneBox>
+        <Button>Login</Button>
         <TextLineBox>
           <TextInLine>or enter with</TextInLine>
         </TextLineBox>

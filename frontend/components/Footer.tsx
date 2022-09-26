@@ -131,7 +131,7 @@ const InputWrapper = styled.div`
 
 const Input = styled.input.attrs({
   type: "email",
-  require: true,
+  require,
 })`
   width: 80%;
   border: none;

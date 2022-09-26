@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import { useDispatch, connect } from "react-redux";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -31,7 +31,6 @@ const Items = styled.ul`
 
 const Item = styled.li`
   padding: 8px 12px;
-  cursor: pointer;
   font-weight: ${(props) => props.theme.fontWeight.base};
   &:hover {
     border-radius: 3px;
@@ -44,26 +43,14 @@ function Nav() {
     <Wapper>
       <NavWapper>
         <Items>
-          <Item>
-            <Link href="/">
-              <a>로고</a>
-            </Link>
-          </Item>
+          <Item>로고</Item>
           <Item>학습하기</Item>
           <Item>내 단어장</Item>
         </Items>
 
         <Items>
-          <Item>
-            <Link href="/enter">
-              <a>로그인</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href="/enter">
-              <a>회원가입</a>
-            </Link>
-          </Item>
+          <Item>로그인</Item>
+          <Item>회원가입</Item>
         </Items>
       </NavWapper>
     </Wapper>
