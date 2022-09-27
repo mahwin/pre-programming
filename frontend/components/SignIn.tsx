@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { TwitterSvg, FacebookSvg } from "../assets/svg/RootSvg";
 import useMutation from "../libs/useMutation";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const Wapper = styled.div`
   height: 100vh;
@@ -82,11 +84,8 @@ const Input = styled.input.attrs({
   type: "number",
 })`
   padding: 5px;
-  width: 90%;
   height: 40px;
   border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   font-size: ${(props) => props.theme.fontSize.lg};
   margin-bottom: 5px;
   &:focus {
@@ -164,23 +163,42 @@ interface IForm {
   serverError?: string;
 }
 
+interface TokenForm {
+  token: string;
+}
+
 interface MutationResult {
   ok: boolean;
 }
 
 export default function SignIn() {
-  const [enter, { loading, data, error }] = useMutation<MutationResult>(
-    `http://127.0.0.1:3000/auth`
-  );
+  //phone 입력과 서버 연결
+  const [enter, { loading, data, error }] =
+    useMutation<MutationResult>("/auth");
   const {
     register,
     handleSubmit,
     formState: { errors },
     setError,
   } = useForm<EnterForm>();
-
   const onValid = (validForm: IForm) => {
     enter(validForm);
+  };
+
+  //인증 번호 입력과 서버 연결
+  const [confirmToken, { loading: tokenLoading, data: tokenData }] =
+    useMutation<MutationResult>("/confirm");
+  const { register: tokenRegister, handleSubmit: tokenHandleSubmit } =
+    useForm<TokenForm>();
+  const onTokenValid = (validForm: TokenForm) => {
+    confirmToken(validForm);
+
+    const router = useRouter();
+    useEffect(() => {
+      if (tokenData?.ok) {
+        router.push("/");
+      }
+    }, [tokenData, router]);
   };
 
   return (
@@ -194,34 +212,45 @@ export default function SignIn() {
         <Line />
         <PhoneBox>
           <Text>Phone number</Text>
-          <Form onSubmit={handleSubmit(onValid)}>
-            <InputBox>
-              <PostInput>
-                <Text>+82</Text>
-              </PostInput>
+          {data?.ok ? (
+            <Form onSubmit={tokenHandleSubmit(onTokenValid)}>
               <Input
-                placeholder="01012345678"
-                {...register("phone", {
-                  required: "phone number는 필수입력 항목입니다.",
-                  pattern: {
-                    value: /^[0-9]*$/,
-                    message: "숫자만 입력 가능합니다.",
-                  },
-                  minLength: {
-                    value: 11,
-                    message: "phone number의 형식은 01012345678입니다.",
-                  },
-                  maxLength: {
-                    value: 11,
-                    message: "phone number의 형식은 01012345678입니다.",
-                  },
+                placeholder="인증 번호를 입력하세요."
+                {...tokenRegister("token", {
+                  required: "인증 번호는 필수입력 항목입니다.",
                 })}
-                required
               />
-            </InputBox>
-            <Error>{errors?.phone?.message}</Error>
-            <Button>Login</Button>
-          </Form>
+            </Form>
+          ) : (
+            <Form onSubmit={handleSubmit(onValid)}>
+              <InputBox>
+                <PostInput>
+                  <Text>+82</Text>
+                </PostInput>
+                <Input
+                  placeholder="01012345678"
+                  {...register("phone", {
+                    required: "phone number는 필수입력 항목입니다.",
+                    pattern: {
+                      value: /^[0-9]*$/,
+                      message: "숫자만 입력 가능합니다.",
+                    },
+                    minLength: {
+                      value: 11,
+                      message: "phone number의 형식은 01012345678입니다.",
+                    },
+                    maxLength: {
+                      value: 11,
+                      message: "phone number의 형식은 01012345678입니다.",
+                    },
+                  })}
+                  required
+                />
+              </InputBox>
+              <Error>{errors?.phone?.message}</Error>
+              <Button>{loading ? "Loading..." : "Login"}</Button>
+            </Form>
+          )}
         </PhoneBox>
         <TextLineBox>
           <TextInLine>or enter with</TextInLine>

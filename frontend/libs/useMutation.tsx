@@ -16,8 +16,7 @@ export default function useMutation<T = any>(
     error: undefined,
   });
   function mutation(data: any) {
-    setSate((prev) => ({ ...prev, loading: true }));
-    fetch(url, {
+    fetch(`${process.env.API_HOST}${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

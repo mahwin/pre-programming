@@ -34,6 +34,7 @@ export class AuthService {
     //   body: `Your login token is ${payload}.`,
     // });
     return {
+      ok: true,
       payload,
     };
   }
