@@ -7,7 +7,7 @@ function Enter() {
     <>
       <Nav />
       <SignIn />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

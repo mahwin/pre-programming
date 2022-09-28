@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
+import { LogoSvg } from "../assets/svg/LogoSvg";
+import useUser from "../libs/useUser";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -22,6 +24,10 @@ const NavWapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.pc};
 `;
 
+const FontItemsWapper = styled.div`
+  display: flex;
+`;
+
 const Items = styled.ul`
   display: flex;
   align-items: center;
@@ -39,31 +45,67 @@ const Item = styled.li`
   }
 `;
 
+const LogoBox = styled.div`
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-weight: ${(props) => props.theme.fontWeight.base};
+  p {
+    margin-left: 5px;
+  }
+  &:hover {
+    color: ${(props) => props.theme.colorTheme.hoverPrimary};
+  }
+`;
+
 function Nav() {
+  const userInfo = useUser();
+
+  const logoutClick = () => {
+    console.log("");
+    localStorage.removeItem("accessToken");
+  };
   return (
     <Wapper>
       <NavWapper>
+        <FontItemsWapper>
+          <Link href="/">
+            <LogoBox>
+              <a>
+                <LogoSvg width="30" height="30" />
+              </a>
+              <p>Pre-programming</p>
+            </LogoBox>
+          </Link>
+          {userInfo && (
+            <Items>
+              <Item>학습하기</Item>
+              <Item>내 단어장</Item>
+            </Items>
+          )}
+        </FontItemsWapper>
         <Items>
-          <Item>
-            <Link href="/">
-              <a>로고</a>
-            </Link>
-          </Item>
-          <Item>학습하기</Item>
-          <Item>내 단어장</Item>
-        </Items>
-
-        <Items>
-          <Item>
-            <Link href="/enter">
-              <a>로그인</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href="/enter">
-              <a>회원가입</a>
-            </Link>
-          </Item>
+          {userInfo ? (
+            <>
+              <Item>내정보</Item>
+              <Item onClick={logoutClick}>로그아웃</Item>
+            </>
+          ) : (
+            <>
+              <Item>
+                <Link href="/enter">
+                  <a>로그인</a>
+                </Link>
+              </Item>
+              <Item>
+                <Link href="/enter">
+                  <a>회원가입</a>
+                </Link>
+              </Item>
+            </>
+          )}
         </Items>
       </NavWapper>
     </Wapper>
