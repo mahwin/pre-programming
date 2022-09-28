@@ -54,7 +54,7 @@ export class AuthService {
       const payload = {
         userId: foundToken.userId,
       };
-      return { accessToken: this.jwtService.sign(payload) };
+      return { ok: true, accessToken: this.jwtService.sign(payload) };
     } else {
       throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
     }

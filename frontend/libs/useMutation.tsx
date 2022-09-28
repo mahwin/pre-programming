@@ -16,10 +16,13 @@ export default function useMutation<T = any>(
     error: undefined,
   });
   function mutation(data: any) {
+    const accessToken = localStorage.getItem("accessToken") || null;
+
     fetch(`${process.env.API_HOST}${url}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        // Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify(data),
     })

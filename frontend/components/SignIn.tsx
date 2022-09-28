@@ -41,9 +41,7 @@ const Line = styled.hr`
   text-align: center;
   width: 100%;
   border-radius: 2px;
-  height: 3px;
-  border: none;
-  background-color: ${(props) => props.theme.colorTheme.textPrimary};
+  border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
 const Text = styled.p`
@@ -83,6 +81,9 @@ const InputBox = styled.div`
 const Input = styled.input.attrs({
   type: "number",
 })`
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 90%;
   padding: 5px;
   height: 40px;
   border: none;
@@ -92,6 +93,12 @@ const Input = styled.input.attrs({
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
 `;
+const TokenInput = styled(Input)`
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+`;
+
 const Error = styled.span`
   color: #ff7675;
   font-weight: ${(props) => props.theme.fontWeight.base};
@@ -103,9 +110,8 @@ const Button = styled.button`
   width: 100%;
   border-radius: 5px;
   border: none;
-  margin-top: 20px;
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   height: 40px;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.textSecondary};
@@ -119,12 +125,10 @@ const Button = styled.button`
 const TextLineBox = styled.div`
   position: relative;
   text-align: center;
-  margin-top: 3px;
+  margin-top: 20px;
   margin-bottom: 25px;
-  height: 3px;
   width: 100%;
-
-  background-color: ${(props) => props.theme.colorTheme.textPrimary};
+  border: 1px solid ${(props) => props.theme.colorTheme.textPrimary}; ;
 `;
 
 const TextInLine = styled(Text)`
@@ -133,7 +137,7 @@ const TextInLine = styled(Text)`
   left: 0;
   top: -12px;
   margin: 0 auto;
-  width: 30%;
+  width: 25%;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 `;
 
@@ -169,6 +173,8 @@ interface TokenForm {
 
 interface MutationResult {
   ok: boolean;
+  message?: string;
+  accessToken?: string;
 }
 
 export default function SignIn() {
@@ -187,19 +193,20 @@ export default function SignIn() {
 
   //인증 번호 입력과 서버 연결
   const [confirmToken, { loading: tokenLoading, data: tokenData }] =
-    useMutation<MutationResult>("/confirm");
+    useMutation<MutationResult>("/auth/confirm");
   const { register: tokenRegister, handleSubmit: tokenHandleSubmit } =
     useForm<TokenForm>();
   const onTokenValid = (validForm: TokenForm) => {
     confirmToken(validForm);
-
-    const router = useRouter();
-    useEffect(() => {
-      if (tokenData?.ok) {
-        router.push("/");
-      }
-    }, [tokenData, router]);
   };
+
+  const router = useRouter();
+  useEffect(() => {
+    if (tokenData?.ok) {
+      localStorage.setItem("accessToken", tokenData.accessToken!);
+      router.push("/");
+    }
+  }, [tokenData, router]);
 
   return (
     <Wapper>
@@ -211,45 +218,54 @@ export default function SignIn() {
         <Text>Phone</Text>
         <Line />
         <PhoneBox>
-          <Text>Phone number</Text>
           {data?.ok ? (
-            <Form onSubmit={tokenHandleSubmit(onTokenValid)}>
-              <Input
-                placeholder="인증 번호를 입력하세요."
-                {...tokenRegister("token", {
-                  required: "인증 번호는 필수입력 항목입니다.",
-                })}
-              />
-            </Form>
-          ) : (
-            <Form onSubmit={handleSubmit(onValid)}>
-              <InputBox>
-                <PostInput>
-                  <Text>+82</Text>
-                </PostInput>
-                <Input
-                  placeholder="01012345678"
-                  {...register("phone", {
-                    required: "phone number는 필수입력 항목입니다.",
-                    pattern: {
-                      value: /^[0-9]*$/,
-                      message: "숫자만 입력 가능합니다.",
-                    },
-                    minLength: {
-                      value: 11,
-                      message: "phone number의 형식은 01012345678입니다.",
-                    },
-                    maxLength: {
-                      value: 11,
-                      message: "phone number의 형식은 01012345678입니다.",
-                    },
+            <>
+              <Text>Cerification Number</Text>
+              <Form onSubmit={tokenHandleSubmit(onTokenValid)}>
+                <TokenInput
+                  placeholder="인증 번호를 입력하세요."
+                  {...tokenRegister("token", {
+                    required: "인증 번호는 필수입력 항목입니다.",
                   })}
-                  required
                 />
-              </InputBox>
-              <Error>{errors?.phone?.message}</Error>
-              <Button>{loading ? "Loading..." : "Login"}</Button>
-            </Form>
+
+                <Error>{tokenData?.message}</Error>
+                <Button>인증번호 입력</Button>
+              </Form>
+            </>
+          ) : (
+            <>
+              <Text>Phone number</Text>
+              <Form onSubmit={handleSubmit(onValid)}>
+                <InputBox>
+                  <PostInput>
+                    <Text>+82</Text>
+                  </PostInput>
+                  <Input
+                    placeholder="01012345678형식의 번호를 입력하세요."
+                    {...register("phone", {
+                      required: "phone number는 필수입력 항목입니다.",
+                      pattern: {
+                        value: /^[0-9]*$/,
+                        message: "숫자만 입력 가능합니다.",
+                      },
+                      minLength: {
+                        value: 11,
+                        message: "phone number의 형식은 01012345678입니다.",
+                      },
+                      maxLength: {
+                        value: 11,
+                        message: "phone number의 형식은 01012345678입니다.",
+                      },
+                    })}
+                    required
+                  />
+                </InputBox>
+
+                <Error>{errors?.phone?.message}</Error>
+                <Button>{loading ? "Loading..." : "Login"}</Button>
+              </Form>
+            </>
           )}
         </PhoneBox>
         <TextLineBox>
