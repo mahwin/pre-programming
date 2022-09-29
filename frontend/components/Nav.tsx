@@ -61,7 +61,7 @@ const LogoBox = styled.div`
 `;
 
 function Nav() {
-  const userInfo = useUser();
+  const userInfo = useUser() || null;
 
   const logoutClick = () => {
     console.log("");

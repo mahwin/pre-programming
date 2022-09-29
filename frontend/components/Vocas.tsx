@@ -50,7 +50,7 @@ const Item = styled.div`
   font-weight: ${(props) => props.theme.fontWeight.bold};
 `;
 
-export default function Voca() {
+export default function Vocas() {
   return (
     <Wrapper>
       <Container>
