@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 const Wrapper = styled.div`
   padding: 10px;
@@ -18,7 +19,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.xbold};
-  color: #34495e;
+  color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
 const Items = styled.div`
@@ -50,48 +51,21 @@ const Item = styled.div`
   font-weight: ${(props) => props.theme.fontWeight.bold};
 `;
 
-export default function Vocas() {
+export default function Vocas({ data }: any) {
   return (
     <Wrapper>
-      <Container>
-        <Title>Web Front-end</Title>
-        <Items>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-        </Items>
-      </Container>
-      <Container>
-        <Title>Web Back-end</Title>
-        <Items>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-        </Items>
-      </Container>
-      <Container>
-        <Title>Web Front-end</Title>
-        <Items>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-          <Item>HTML</Item>
-        </Items>
-      </Container>
+      {Object.keys(data).map((key) => (
+        <Container>
+          <Title>{key}</Title>
+          <Items>
+            {data[key].map((item: string) => (
+              <Link href={`/${item}`}>
+                <Item>{item}</Item>
+              </Link>
+            ))}
+          </Items>
+        </Container>
+      ))}
     </Wrapper>
   );
 }

@@ -7,6 +7,7 @@ import { FacebookSvg } from "./FacebookSvg";
 import { TwitterSvg } from "./TwitterSvg";
 import { GithubSvg } from "./GitihubSvg";
 import { SendSvg } from "./Send";
+import { OpenSvg } from "./OpenSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -17,4 +18,5 @@ export {
   TwitterSvg,
   GithubSvg,
   SendSvg,
+  OpenSvg,
 };

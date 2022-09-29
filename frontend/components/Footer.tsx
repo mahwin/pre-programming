@@ -46,7 +46,7 @@ const TitleBox = styled.div``;
 const Title = styled.h3`
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSize.lg};
-  color: ${(props) => props.theme.colorTheme.textPrimary};
+  color: #dfe6e9;
 `;
 
 const SubTitle = styled.h4`
@@ -131,12 +131,21 @@ const InputWrapper = styled.div`
 
 const Input = styled.input.attrs({
   type: "email",
+  placeholder: "your@email.com",
   require: true,
 })`
+  ::placeholder {
+    color: white;
+    opacity: 0.3;
+  }
+  padding: 10px;
   width: 80%;
   border: none;
   height: 40px;
-  background-color: ${(props) => props.theme.colorTheme.textSecondary};
+  color: #2d3436;
+  font-size: ${(props) => props.theme.fontSize.lg};
+  font-weight: ${(props) => props.theme.fontWeight.bold};
+  background-color: #2d3436;
 `;
 
 const Button = styled.button`

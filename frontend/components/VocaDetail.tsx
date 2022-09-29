@@ -1,13 +1,14 @@
 import styled from "styled-components";
-import { useRouter } from "next/router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Table from "../components/Table";
+import { OpenSvg } from "../assets/svg/RootSvg";
 
 const Wrapper = styled.div`
   width: 100vw;
   height: 100%;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
   justify-content: center;
 `;
 
@@ -28,41 +29,140 @@ const DetailWrapper = styled.div`
 const VocaCardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
 `;
 
 const VocaCard = styled(motion.div)`
-  height: 30vh;
+  position: relative;
+  height: 100%;
   width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
   border-radius: 5px;
-  background-color: blue;
+  /* background-color: ${(props) => props.theme.colorTheme.buttonPrimary}; */
+  background-color: #485460;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const VocaContentBox = styled.div`
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #dfe6e9;
+`;
+
+const ContentTitle = styled.h3`
+  color: #dfe6e9;
+  font-size: ${(props) => props.theme.fontSize.base};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
+`;
+
+const LevelBox = styled.div`
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+`;
+
+const SvgBox = styled.div`
   cursor: pointer;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+`;
+
+const CheckBox = styled.div`
+  position: relative;
+  margin: 10px auto;
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #dfe6e9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
+      0px 1px 0px rgba(255, 255, 255, 0.4);
+    &:after {
+      content: "";
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #485460;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type="checkbox"] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+`;
+
+const Level = styled.h4`
+  color: #dfe6e9;
+  font-size: ${(props) => props.theme.fontSize.base};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
 `;
 
 const Overlay = styled(motion.div)`
   width: 100vw;
-  height: 300vh;
-  position: absolute;
+  height: 100%;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 `;
 
-export default function VocaDetail() {
+interface IVocaDetail {
+  data: number[];
+  voca: string;
+}
+export default function VocaDetail({ data, voca }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);
-  const router = useRouter();
-  console.log(router.query);
+
   return (
     <Wrapper>
       <DetailWrapper>
-        <Title>{router.query.voca}</Title>
+        <Title>{voca}</Title>
         <VocaCardWrapper>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-            <VocaCard
-              key={n + ""}
-              layoutId={n + ""}
-              onClick={() => setId(n + "")}
-            />
+          {data.map((n, idx) => (
+            <VocaCard key={n + ""} layoutId={n + ""}>
+              <CheckBox>
+                <input type="checkbox" value="None" id={n + ""} name="check" />
+                <label htmlFor={n + ""}></label>
+              </CheckBox>
+              <LevelBox>
+                <ContentTitle>{voca}</ContentTitle>
+                <Level>Level : {idx + 1}</Level>
+              </LevelBox>
+              <VocaContentBox>
+                <Table />
+              </VocaContentBox>
+              <SvgBox onClick={() => setId(n + "")}>
+                <OpenSvg width="20" height="20" />
+              </SvgBox>
+            </VocaCard>
           ))}
         </VocaCardWrapper>
       </DetailWrapper>
@@ -79,7 +179,7 @@ export default function VocaDetail() {
               style={{
                 position: "fixed",
                 width: 400,
-                height: 300,
+                height: 400,
                 top: "100px",
               }}
             />

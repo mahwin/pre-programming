@@ -38,14 +38,14 @@ const TitleBox = styled.div`
 const Title = styled.h2`
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   font-size: ${(props) => props.theme.fontSize.xxlg};
-  color: white;
+  color: #dfe6e9;
   letter-spacing: 0.2rem;
 `;
 
 const SubTitle = styled.h4`
   font-weight: ${(props) => props.theme.fontWeight.base};
   font-size: ${(props) => props.theme.fontSize.lg};
-  color: ${(props) => props.theme.colorTheme.textPrimary};
+  color: #dfe6e9;
   letter-spacing: 0.1rem;
 `;
 
@@ -82,7 +82,7 @@ const Search = styled.input.attrs({
 })`
   font-size: ${(props) => props.theme.fontSize.base};
 
-  padding: 5px;
+  padding: 10px;
   display: flex;
   height: 36px;
   width: 100%;
