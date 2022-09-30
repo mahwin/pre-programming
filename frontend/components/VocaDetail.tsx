@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Table from "../components/Table";
 import { OpenSvg } from "../assets/svg/RootSvg";
+import VocaTable from "../components/VocaTable";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -182,7 +183,10 @@ export default function VocaDetail({ data, voca }: IVocaDetail) {
                 height: 400,
                 top: "100px",
               }}
-            />
+            >
+              <Title>Level : 3</Title>
+              <VocaTable />
+            </VocaCard>
           </Overlay>
         ) : null}
       </AnimatePresence>

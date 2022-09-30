@@ -1,5 +1,5 @@
-import Table from "../components/Table";
+import VocaTable from "../components/VocaTable";
 
 export default function Page() {
-  return <Table></Table>;
+  return <VocaTable></VocaTable>;
 }
