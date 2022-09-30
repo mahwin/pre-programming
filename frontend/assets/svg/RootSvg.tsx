@@ -8,6 +8,8 @@ import { TwitterSvg } from "./TwitterSvg";
 import { GithubSvg } from "./GitihubSvg";
 import { SendSvg } from "./Send";
 import { OpenSvg } from "./OpenSvg";
+import { TestSvg } from "./TestSvg";
+import { DownArrowSvg } from "./DownArrowSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -19,4 +21,6 @@ export {
   GithubSvg,
   SendSvg,
   OpenSvg,
+  TestSvg,
+  DownArrowSvg,
 };

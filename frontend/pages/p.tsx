@@ -1,5 +1,11 @@
 import VocaTable from "../components/VocaTable";
+import TestButton from "../components/TestButton";
 
 export default function Page() {
-  return <VocaTable></VocaTable>;
+  return (
+    <>
+      <TestButton />
+      <VocaTable></VocaTable>
+    </>
+  );
 }
