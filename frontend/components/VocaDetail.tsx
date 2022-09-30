@@ -40,7 +40,6 @@ const VocaCard = styled(motion.div)`
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  /* background-color: ${(props) => props.theme.colorTheme.buttonPrimary}; */
   background-color: #485460;
   display: flex;
   justify-content: center;
@@ -124,6 +123,31 @@ const Level = styled.h4`
   font-weight: ${(props) => props.theme.fontWeight.xbold};
 `;
 
+const ModalTitleBox = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 300px;
+  padding: 10px 8px 24px 8px;
+  justify-content: space-around;
+`;
+
+const ModalLevel = styled(Level)`
+  text-align: center;
+  margin-top: 5px;
+`;
+
+const Button = styled.button`
+  width: 100%;
+  height: 30px;
+  color: whitesmoke;
+  border: none;
+  background-color: #00b894;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
+  }
+`;
+
 const Overlay = styled(motion.div)`
   width: 100vw;
   height: 100%;
@@ -141,6 +165,15 @@ interface IVocaDetail {
 }
 export default function VocaDetail({ data, voca }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);
+  const [vocas, setVocas] = useState<boolean[]>(
+    Array.from({ length: 7 }, () => false)
+  );
+  const onClickCheck = (e: any) => {
+    const voca = e.target.id || e.target.name;
+    const copyVocas = [...vocas];
+    copyVocas[voca] = !copyVocas[voca];
+    setVocas(copyVocas);
+  };
 
   return (
     <Wrapper>
@@ -149,13 +182,19 @@ export default function VocaDetail({ data, voca }: IVocaDetail) {
         <VocaCardWrapper>
           {data.map((n, idx) => (
             <VocaCard key={n + ""} layoutId={n + ""}>
-              <CheckBox>
-                <input type="checkbox" value="None" id={n + ""} name="check" />
+              <CheckBox onClick={onClickCheck}>
+                <input
+                  type="checkbox"
+                  value="None"
+                  id={n + ""}
+                  name="check"
+                  checked={vocas[n]}
+                />
                 <label htmlFor={n + ""}></label>
               </CheckBox>
               <LevelBox>
                 <ContentTitle>{voca}</ContentTitle>
-                <Level>Level : {idx + 1}</Level>
+                <Level> Level : {idx + 1}</Level>
               </LevelBox>
               <VocaContentBox>
                 <Table />
@@ -184,7 +223,12 @@ export default function VocaDetail({ data, voca }: IVocaDetail) {
                 top: "100px",
               }}
             >
-              <Title>Level : 3</Title>
+              <ModalTitleBox>
+                <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
+                <Button name={id + ""} onClick={onClickCheck}>
+                  {vocas[+id] ? "해제" : "추가"}
+                </Button>
+              </ModalTitleBox>
               <VocaTable />
             </VocaCard>
           </Overlay>

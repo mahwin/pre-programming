@@ -10,14 +10,15 @@ const TableWrapper = styled.div`
 const Table = styled.table`
   width: 300px;
   table-layout: fixed;
+
   th {
     position: sticky;
     top: 0px;
     color: #d5dde5;
     background: #1b1e24;
-    font-size: 23px;
-    font-weight: 100;
-    padding: 8px 12px;
+    font-size: 20px;
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+    padding: 12px 20px;
     text-align: left;
     vertical-align: middle;
   }
@@ -26,7 +27,7 @@ const Table = styled.table`
     padding: 10px 12px;
     text-align: left;
     vertical-align: middle;
-    font-weight: 300;
+    font-weight: ${(props) => props.theme.fontWeight.base};
     font-size: 18px;
   }
   tr td:first-child {
