@@ -77,31 +77,27 @@ const TestInputBox = styled(motion.div)`
   position: fixed;
   bottom: 100px;
   right: 50px;
-  width: 300px;
-  height: 200px;
-  background-color: white;
-  border-radius: 5px;
+  width: 250px;
+  height: 400px;
+  padding: 24px;
+  background-color: #f9f9f9;
+  border-radius: 1px;
 `;
 
 const BtnBox = styled.div`
-  position: relative;
-  border-bottom: 1px solid #4e5066;
   display: flex;
-  flex-direction: row-reverse;
-  padding: 10px;
-  height: 40px;
-  width: 100%;
-  overflow: hidden;
 `;
-
-const ContentBox = styled.div`
-  display: flex;
-  padding: 20px;
-  flex-direction: column;
+const Title = styled.h2`
+  color: #f96;
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 10px;
 `;
 
 const Btn = styled.div`
   position: absolute;
+
+  right: 0;
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colorTheme.hoverPrimary};
@@ -109,46 +105,135 @@ const Btn = styled.div`
   }
 `;
 
-const StartBtn = styled.div`
-  border-top: 1px solid #4e5066;
-  height: 40px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+const Label = styled.label`
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 20px;
+  color: #636e72;
+  cursor: pointer;
 `;
 
-const InputBox = styled.div`
-  display: flex;
-  flex-direction: column;
+const RadioInput = styled.input.attrs({
+  type: "radio",
+})`
+  cursor: pointer;
+  width: 8%;
+  height: 34px;
+  margin-bottom: 5px;
+  &:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: 8px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+  &:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: 8px;
+    left: -1px;
+    position: relative;
+    background-color: #f96;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+`;
+
+const ContentBox = styled.div`
+  margin-bottom: 10px;
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  background-color: #f96;
+  height: 30px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  :hover {
+    background: #f97f51;
+    transition: background-color 0.3s ease-in-out;
+  }
+`;
+
+const Ul = styled.ul`
+  cursor: pointer;
+  li {
+    display: flex;
+    align-items: center;
+    :hover {
+      border-radius: 2px;
+      background-color: lightgray;
+    }
+  }
+`;
+
+const SubTitle = styled.h3`
+  font-size: 20px;
+  font-weight: 500;
+  color: #2d3436;
 `;
 
 function FloatingButton() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const onClick = () => {
     setIsOpen((prev) => !prev);
   };
+  const onSubmit = () => {};
+
   return (
     <>
       {isOpen ? (
         <AnimatePresence>
           <TestInputBox layoutId="test">
             <BtnBox>
+              <Title> Test your level ! </Title>
               <Btn onClick={onClick}>
                 <DownArrowSvg />
               </Btn>
             </BtnBox>
+
             <ContentBox>
-              <InputBox>
-                <label>단어 수</label>
-                <input />
-              </InputBox>
-              <InputBox>
-                <label>시간</label>
-                <input />
-              </InputBox>
+              <SubTitle>how many :</SubTitle>
+              <Ul>
+                <li>
+                  <RadioInput name="many" />
+                  <Label>10 words</Label>
+                </li>
+                <li>
+                  <RadioInput name="many" />
+                  <Label>20 words</Label>
+                </li>
+                <li>
+                  <RadioInput name="many" />
+                  <Label>30 words</Label>
+                </li>
+              </Ul>
             </ContentBox>
-            <StartBtn />
+            <ContentBox>
+              <Ul>
+                <SubTitle>how long : </SubTitle>
+                <li>
+                  <RadioInput name="long" />
+                  <Label>5 min</Label>
+                </li>
+                <li>
+                  <RadioInput name="long" />
+                  <Label>10 min</Label>
+                </li>
+              </Ul>
+            </ContentBox>
+            <SubmitButton onClick={onSubmit}>start test</SubmitButton>
           </TestInputBox>
         </AnimatePresence>
       ) : (
