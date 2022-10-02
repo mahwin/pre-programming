@@ -270,7 +270,7 @@ function FloatingButton({ testData }: any) {
                       <RadioInput
                         name="many"
                         value="10_words"
-                        onClick={checkHandler}
+                        onChange={checkHandler}
                       />
                       10 words
                     </Label>
@@ -280,7 +280,7 @@ function FloatingButton({ testData }: any) {
                       <RadioInput
                         name="many"
                         value="20_words"
-                        onClick={checkHandler}
+                        onChange={checkHandler}
                       />
                       20 words
                     </Label>
@@ -290,7 +290,7 @@ function FloatingButton({ testData }: any) {
                       <RadioInput
                         name="many"
                         value="30_words"
-                        onClick={checkHandler}
+                        onChange={checkHandler}
                       />
                       30 words
                     </Label>
@@ -305,7 +305,7 @@ function FloatingButton({ testData }: any) {
                     <Label>
                       <RadioInput
                         name="long"
-                        onClick={checkHandler}
+                        onChange={checkHandler}
                         value="5_mins"
                       />
                       5 min
@@ -315,7 +315,7 @@ function FloatingButton({ testData }: any) {
                     <Label>
                       <RadioInput
                         name="long"
-                        onClick={checkHandler}
+                        onChange={checkHandler}
                         value="10_mins"
                       />
                       10 min

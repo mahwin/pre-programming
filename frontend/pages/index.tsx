@@ -27,30 +27,11 @@ const Home = ({ data }: IHome) => {
 export default Home;
 
 export async function getServerSideProps() {
+  const res = await fetch("http:localhost:3001/api/vocas");
+  const jsonData = await res.json();
   return {
     props: {
-      data: {
-        "front-End": [
-          "HTML",
-          "CSS",
-          "Java script",
-          "React",
-          "Vue.js",
-          "Angular",
-          "Svelte",
-          "Preact",
-        ],
-        "back-End": [
-          "Java script",
-          "Express",
-          "Gatsby",
-          "Nuxt",
-          "Nest",
-          "Strapi",
-          "Fastify",
-          "SvelteKit",
-        ],
-      },
+      data: jsonData.data,
     },
   };
 }
