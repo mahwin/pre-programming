@@ -162,8 +162,9 @@ const Overlay = styled(motion.div)`
 interface IVocaDetail {
   data: number[];
   voca: string;
+  tableData: { word: string; correct: string }[];
 }
-export default function VocaDetail({ data, voca }: IVocaDetail) {
+export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);
   const [vocas, setVocas] = useState<boolean[]>(
     Array.from({ length: 7 }, () => false)
@@ -229,7 +230,7 @@ export default function VocaDetail({ data, voca }: IVocaDetail) {
                   {vocas[+id] ? "해제" : "추가"}
                 </Button>
               </ModalTitleBox>
-              <VocaTable />
+              <VocaTable tableData={tableData} />
             </VocaCard>
           </Overlay>
         ) : null}

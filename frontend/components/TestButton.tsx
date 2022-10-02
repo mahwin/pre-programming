@@ -1,21 +1,10 @@
 import styled from "styled-components";
 import { TestSvg, DownArrowSvg } from "../assets/svg/RootSvg";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-
-const Overlay = styled(motion.div)`
-  width: 100vw;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
-`;
+import React, { useState } from "react";
+import Quiz from "./Quiz";
 
 const Cicle = styled(motion.div)`
-  border: 1px solid black;
   z-index: 99;
   height: 50px;
   width: 50px;
@@ -74,6 +63,7 @@ const Shape = styled.span`
 `;
 
 const TestInputBox = styled(motion.div)`
+  z-index: 1;
   position: fixed;
   bottom: 100px;
   right: 50px;
@@ -96,7 +86,6 @@ const Title = styled.h2`
 
 const Btn = styled.div`
   position: absolute;
-
   right: 0;
   &:hover {
     cursor: pointer;
@@ -106,47 +95,53 @@ const Btn = styled.div`
 `;
 
 const Label = styled.label`
-  display: block;
+  display: flex;
+
+  align-items: center;
   font-size: 20px;
   font-weight: 500;
-  margin-left: 20px;
   color: #636e72;
+  vertical-align: middle;
   cursor: pointer;
+  width: 300px;
+  &:before {
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 0;
+    border-radius: 15px;
+    position: relative;
+    background-color: #e8e8e8;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+  }
+  input:checked::after {
+    width: 10px;
+    height: 10px;
+    right: 22px;
+    top: 10px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #e8e8e8;
+
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 3px solid #f96;
+  }
 `;
 
 const RadioInput = styled.input.attrs({
   type: "radio",
+  require: true,
 })`
   cursor: pointer;
   width: 8%;
   height: 34px;
   margin-bottom: 5px;
-  &:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: 8px;
-    left: -1px;
-    position: relative;
-    background-color: #d1d3d1;
-    content: "";
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-  }
-  &:checked:after {
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: 8px;
-    left: -1px;
-    position: relative;
-    background-color: #f96;
-    content: "";
-    display: inline-block;
-    visibility: visible;
-    border: 2px solid white;
-  }
+  appearance: none;
 `;
 
 const ContentBox = styled.div`
@@ -184,12 +179,76 @@ const SubTitle = styled.h3`
   color: #2d3436;
 `;
 
-function FloatingButton() {
+const Overlay = styled(motion.div)`
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+`;
+
+const TestCloseBtn = styled.button`
+  position: absolute;
+  top: 15vh;
+  right: 15vw;
+  z-index: 99;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  :hover {
+    color: orangered;
+    transform: scale(1.2);
+  }
+`;
+
+interface ITestCondition {
+  many: string | null;
+  long: string | null;
+}
+
+type KeyType = "many" | "long";
+
+interface ITestData {
+  word: string;
+  correct: string;
+  example: string;
+  exampl1: string;
+  exampl2: string;
+}
+
+function FloatingButton({ testData }: any) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const onClick = () => {
+  const [isTestOpen, setIsTestOpen] = useState<boolean>(false);
+  const [testCondition, setTestCondition] = useState<ITestCondition>({
+    many: null,
+    long: null,
+  });
+  const onToggleBtn = () => {
     setIsOpen((prev) => !prev);
   };
-  const onSubmit = () => {};
+
+  const checkHandler = ({ target }: any) => {
+    const copy = { ...testCondition };
+    copy[target.name as KeyType] = target.value;
+    setTestCondition({ ...copy });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const keys = Object.keys(testCondition);
+    const blank = keys.map((key) => {
+      if (testCondition[key as KeyType] === null) {
+        alert(`${key === "long" ? "시간을" : "단어수를"} 선택해주세요!`);
+        return key;
+      }
+    });
+    if (!blank) return;
+    setIsTestOpen(true);
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -198,52 +257,102 @@ function FloatingButton() {
           <TestInputBox layoutId="test">
             <BtnBox>
               <Title> Test your level ! </Title>
-              <Btn onClick={onClick}>
+              <Btn onClick={onToggleBtn}>
                 <DownArrowSvg />
               </Btn>
             </BtnBox>
+            <form onSubmit={handleSubmit}>
+              <ContentBox>
+                <SubTitle>how many :</SubTitle>
+                <Ul>
+                  <li>
+                    <Label>
+                      <RadioInput
+                        name="many"
+                        value="10_words"
+                        onClick={checkHandler}
+                      />
+                      10 words
+                    </Label>
+                  </li>
+                  <li>
+                    <Label>
+                      <RadioInput
+                        name="many"
+                        value="20_words"
+                        onClick={checkHandler}
+                      />
+                      20 words
+                    </Label>
+                  </li>
+                  <li>
+                    <Label>
+                      <RadioInput
+                        name="many"
+                        value="30_words"
+                        onClick={checkHandler}
+                      />
+                      30 words
+                    </Label>
+                  </li>
+                </Ul>
+              </ContentBox>
+              <ContentBox>
+                <Ul>
+                  <SubTitle>how long : </SubTitle>
 
-            <ContentBox>
-              <SubTitle>how many :</SubTitle>
-              <Ul>
-                <li>
-                  <RadioInput name="many" />
-                  <Label>10 words</Label>
-                </li>
-                <li>
-                  <RadioInput name="many" />
-                  <Label>20 words</Label>
-                </li>
-                <li>
-                  <RadioInput name="many" />
-                  <Label>30 words</Label>
-                </li>
-              </Ul>
-            </ContentBox>
-            <ContentBox>
-              <Ul>
-                <SubTitle>how long : </SubTitle>
-                <li>
-                  <RadioInput name="long" />
-                  <Label>5 min</Label>
-                </li>
-                <li>
-                  <RadioInput name="long" />
-                  <Label>10 min</Label>
-                </li>
-              </Ul>
-            </ContentBox>
-            <SubmitButton onClick={onSubmit}>start test</SubmitButton>
+                  <li>
+                    <Label>
+                      <RadioInput
+                        name="long"
+                        onClick={checkHandler}
+                        value="5_mins"
+                      />
+                      5 min
+                    </Label>
+                  </li>
+                  <li>
+                    <Label>
+                      <RadioInput
+                        name="long"
+                        onClick={checkHandler}
+                        value="10_mins"
+                      />
+                      10 min
+                    </Label>
+                  </li>
+                </Ul>
+              </ContentBox>
+              <SubmitButton type="submit">start test</SubmitButton>
+            </form>
           </TestInputBox>
         </AnimatePresence>
       ) : (
-        <Cicle onClick={onClick} layoutId="test">
+        <Cicle onClick={onToggleBtn} layoutId="test">
           <Description>실력을 테스트 해보세요!</Description>
           <Shape>
             <TestSvg />
           </Shape>
         </Cicle>
       )}
+      {isTestOpen ? (
+        <>
+          <Overlay
+            initial={{ backgroundColor: "rgba(0,0,0,0)" }}
+            animate={{ backgroundColor: "rgba(0,0,0,0.7)" }}
+            exit={{ backgroundColor: "rgba(0,0,0,0)" }}
+          >
+            <TestCloseBtn
+              onClick={() => {
+                setIsTestOpen(false);
+              }}
+            >
+              Stop
+            </TestCloseBtn>
+            <Quiz testData={testData} testCondition={testCondition} />
+          </Overlay>
+        </>
+      ) : null}
     </>
   );
 }

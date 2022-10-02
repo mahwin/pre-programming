@@ -28,7 +28,7 @@ const Table = styled.table`
     text-align: left;
     vertical-align: middle;
     font-weight: ${(props) => props.theme.fontWeight.base};
-    font-size: 18px;
+    font-size: 14px;
   }
   tr td:first-child {
     border-right: 1px solid #c1c3d1;
@@ -49,7 +49,13 @@ const Table = styled.table`
   }
 `;
 
-export default function VocaTable() {
+interface ITableData {
+  word: string;
+  correct: string;
+}
+
+export default function VocaTable({ tableData }: { tableData: ITableData[] }) {
+  console.log(tableData);
   return (
     <TableWrapper>
       <Table>
@@ -61,66 +67,14 @@ export default function VocaTable() {
         </thead>
 
         <tbody>
-          <tr>
-            <td>January</td>
-            <td>$ 50,000.00</td>
-          </tr>
-          <tr>
-            <td>February</td>
-            <td>$ 10,000.00</td>
-          </tr>
-          <tr>
-            <td>March</td>
-            <td>$ 85,000.00</td>
-          </tr>
-          <tr>
-            <td>April</td>
-            <td>$ 56,000.00</td>
-          </tr>
-          <tr>
-            <td>May</td>
-            <td>$ 98,000.00</td>
-          </tr>
-          <tr>
-            <td>January</td>
-            <td>$ 50,000.00</td>
-          </tr>
-          <tr>
-            <td>February</td>
-            <td>$ 10,000.00</td>
-          </tr>
-          <tr>
-            <td>March</td>
-            <td>$ 85,000.00</td>
-          </tr>
-          <tr>
-            <td>April</td>
-            <td>$ 56,000.00</td>
-          </tr>
-          <tr>
-            <td>May</td>
-            <td>$ 98,000.00</td>
-          </tr>
-          <tr>
-            <td>January</td>
-            <td>$ 50,000.00</td>
-          </tr>
-          <tr>
-            <td>February</td>
-            <td>$ 10,000.00</td>
-          </tr>
-          <tr>
-            <td>March</td>
-            <td>$ 85,000.00</td>
-          </tr>
-          <tr>
-            <td>April</td>
-            <td>$ 56,000.00</td>
-          </tr>
-          <tr>
-            <td>May</td>
-            <td>$ 98,000.00</td>
-          </tr>
+          {tableData?.map((item, idx) => {
+            return (
+              <tr key={idx}>
+                <td>{item.word}</td>
+                <td>{item.correct}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
     </TableWrapper>

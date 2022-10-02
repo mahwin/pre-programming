@@ -36,7 +36,7 @@ const Items = styled.div`
   }
   div:nth-child(2n) {
     background-color: ${(props) => props.theme.colorTheme.buttonPrimary};
-    color: ${(props) => props.theme.colorTheme.textSecondary};
+    color: #b2bec3;
   }
 `;
 

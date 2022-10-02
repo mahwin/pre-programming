@@ -15,9 +15,11 @@ const Cicle = styled.div`
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
 `;
 
-const Shape = styled.span`
-  font-size: 36px;
-  font-weight: 500;
+const Shape = styled.div`
+  position: absolute;
+  top: -1px;
+  font-size: 50px;
+  font-weight: 600;
   color: white;
 `;
 

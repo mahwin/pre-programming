@@ -30,7 +30,7 @@ export async function getServerSideProps() {
   return {
     props: {
       data: {
-        frontEnd: [
+        "front-End": [
           "HTML",
           "CSS",
           "Java script",
@@ -40,7 +40,7 @@ export async function getServerSideProps() {
           "Svelte",
           "Preact",
         ],
-        backEnd: [
+        "back-End": [
           "Java script",
           "Express",
           "Gatsby",
