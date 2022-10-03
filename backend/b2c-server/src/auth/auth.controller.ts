@@ -15,7 +15,7 @@ export class AuthController {
     description: '유저가 로그인을 위해 폰번호 입력',
   })
   @ApiCreatedResponse({
-    description: '넘어온 번호로 6자리 랜덤 수 제공',
+    description: '넘어온 번호로 6자리 랜덤 수 입력 휴대폰 번호로 제공',
   })
   signIn(@Body() phone: LoginDto) {
     return this.authService.signIn(phone);

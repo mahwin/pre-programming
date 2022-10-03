@@ -12,7 +12,8 @@ interface IHome {
 }
 
 const Home = ({ data }: IHome) => {
-  console.log(data, "data");
+  //api 호출 =>
+
   return (
     <>
       <Nav />
@@ -27,7 +28,9 @@ const Home = ({ data }: IHome) => {
 export default Home;
 
 export async function getServerSideProps() {
-  const res = await fetch("http:localhost:3001/api/vocas");
+  // next api
+  // =>next
+  const res = await fetch("http://localhost:3001/api/vocas");
   const jsonData = await res.json();
   return {
     props: {

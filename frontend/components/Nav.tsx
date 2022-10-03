@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "../assets/svg/LogoSvg";
 import useUser from "../libs/useUser";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -10,6 +12,7 @@ const Wapper = styled.nav`
   justify-content: center;
   position: sticky;
   top: 0;
+  height: 60px;
   z-index: 99;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -36,6 +39,7 @@ const Items = styled.ul`
 `;
 
 const Item = styled.li`
+  position: relative;
   padding: 8px 12px;
   font-weight: ${(props) => props.theme.fontWeight.base};
   cursor: pointer;
@@ -60,36 +64,69 @@ const LogoBox = styled.div`
   }
 `;
 
+const CurrentPosition = styled(motion.div).attrs({
+  layoutId: "position",
+})`
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 3px;
+  margin: 0 auto;
+  left: 0;
+  bottom: -3px;
+  right: 0;
+  background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
+`;
+
 function Nav() {
   const userInfo = useUser() || null;
+  const router = useRouter();
 
   const logoutClick = () => {
-    console.log("");
     localStorage.removeItem("accessToken");
   };
+
   return (
     <Wapper>
       <NavWapper>
         <FontItemsWapper>
-          <Link href="/">
-            <LogoBox>
-              <a>
-                <LogoSvg width="30" height="30" />
-              </a>
-              <p>Pre-programming</p>
-            </LogoBox>
-          </Link>
+          <>
+            <Link href="/">
+              <LogoBox>
+                <a>
+                  <LogoSvg width="30" height="30" />
+                </a>
+                <p>Pre-programming</p>
+              </LogoBox>
+            </Link>
+          </>
+
           {userInfo && (
             <Items>
-              <Item>학습하기</Item>
-              <Item>내 단어장</Item>
+              <Item>
+                <Link href="/">
+                  <a>홈</a>
+                </Link>
+                {router.route === "/" ? <CurrentPosition /> : null}
+              </Item>
+              <Item>
+                <Link href="/me/voca">
+                  <a>내 단어장</a>
+                </Link>
+                {router.route === "/me/voca" ? <CurrentPosition /> : null}
+              </Item>
             </Items>
           )}
         </FontItemsWapper>
         <Items>
           {userInfo ? (
             <>
-              <Item>내정보</Item>
+              <Item>
+                <Link href="/me">
+                  <a>내 정보</a>
+                </Link>
+                {router.route === "/me" ? <CurrentPosition /> : null}
+              </Item>
               <Item onClick={logoutClick}>로그아웃</Item>
             </>
           ) : (
@@ -98,6 +135,7 @@ function Nav() {
                 <Link href="/enter">
                   <a>로그인</a>
                 </Link>
+                {router.route === "/enter" ? <CurrentPosition /> : null}
               </Item>
               <Item>
                 <Link href="/enter">

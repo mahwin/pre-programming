@@ -55,7 +55,7 @@ export default function Vocas({ data }: any) {
   return (
     <Wrapper>
       {Object.keys(data).map((key) => (
-        <Container>
+        <Container key={key}>
           <Title>{key}</Title>
           <Items>
             {data[key].map((item: string) => (
