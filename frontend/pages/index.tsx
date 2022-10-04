@@ -12,8 +12,6 @@ interface IHome {
 }
 
 const Home = ({ data }: IHome) => {
-  //api 호출 =>
-
   return (
     <>
       <Nav />
@@ -28,8 +26,6 @@ const Home = ({ data }: IHome) => {
 export default Home;
 
 export async function getServerSideProps() {
-  // next api
-  // =>next
   const res = await fetch("http://localhost:3001/api/vocas");
   const jsonData = await res.json();
   return {

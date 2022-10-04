@@ -4,6 +4,7 @@ import { useState } from "react";
 import Table from "../components/Table";
 import { OpenSvg } from "../assets/svg/RootSvg";
 import VocaTable from "../components/VocaTable";
+import AddVoca from "./AddVoca";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -206,6 +207,7 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
             </VocaCard>
           ))}
         </VocaCardWrapper>
+        <AddVoca vocas={vocas} />
       </DetailWrapper>
       <AnimatePresence>
         {id ? (

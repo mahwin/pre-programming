@@ -11,6 +11,7 @@ import { OpenSvg } from "./OpenSvg";
 import { TestSvg } from "./TestSvg";
 import { DownArrowSvg } from "./DownArrowSvg";
 import { ResultCircleSvg } from "./ResultCircleSvg";
+import { FolderOpenSvg } from "./FolderOpenSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -25,4 +26,5 @@ export {
   TestSvg,
   DownArrowSvg,
   ResultCircleSvg,
+  FolderOpenSvg,
 };

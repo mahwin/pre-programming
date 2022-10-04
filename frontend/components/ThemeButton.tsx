@@ -4,7 +4,7 @@ import styled from "styled-components";
 const ToggleBox = styled.div<{ isDark: boolean }>`
   position: fixed;
   width: 150px;
-  top: 5px;
+  top: 10px;
   height: 40px;
   right: 30%;
   margin-right: 20px;
