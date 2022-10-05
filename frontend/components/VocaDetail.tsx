@@ -28,7 +28,7 @@ const DetailWrapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.tablet};
 `;
 
-const VocaCardWrapper = styled.div`
+const VocaCardWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -165,6 +165,7 @@ interface IVocaDetail {
   voca: string;
   tableData: { word: string; correct: string }[];
 }
+
 export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);
   const [vocas, setVocas] = useState<boolean[]>(
@@ -181,9 +182,9 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
     <Wrapper>
       <DetailWrapper>
         <Title>{voca}</Title>
-        <VocaCardWrapper>
+        <VocaCardWrapper initial={false}>
           {data.map((n, idx) => (
-            <VocaCard key={n + ""} layoutId={n + ""}>
+            <VocaCard key={n + ""} initial={false} layoutId={n + ""}>
               <CheckBox onClick={onClickCheck}>
                 <input
                   type="checkbox"
