@@ -10,7 +10,6 @@ import { SWRConfig } from "swr";
 
 function App({ Component, pageProps }: AppProps) {
   const [isDark, setTheme] = useState(true);
-
   const toggleTheme = () => {
     setTheme((prev) => !prev);
   };
