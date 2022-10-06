@@ -28,7 +28,7 @@ const DetailWrapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.tablet};
 `;
 
-const VocaCardWrapper = styled(motion.div)`
+const VocaCardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -172,7 +172,7 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
     Array.from({ length: 7 }, () => false)
   );
   const onClickCheck = (e: any) => {
-    const voca = e.target.id || e.target.name;
+    const voca = Number(e.currentTarget.id || e.currentTarget.name);
     const copyVocas = [...vocas];
     copyVocas[voca] = !copyVocas[voca];
     setVocas(copyVocas);
@@ -182,11 +182,12 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
     <Wrapper>
       <DetailWrapper>
         <Title>{voca}</Title>
-        <VocaCardWrapper initial={false}>
+        <VocaCardWrapper>
           {data.map((n, idx) => (
-            <VocaCard key={n + ""} initial={false} layoutId={n + ""}>
-              <CheckBox onClick={onClickCheck}>
+            <VocaCard key={n + ""} layoutId={n + ""}>
+              <CheckBox>
                 <input
+                  onClick={onClickCheck}
                   type="checkbox"
                   value="None"
                   id={n + ""}
@@ -208,7 +209,7 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
             </VocaCard>
           ))}
         </VocaCardWrapper>
-        <AddVoca vocas={vocas} />
+        <AddVoca vocas={vocas} onClickCheck={onClickCheck} />
       </DetailWrapper>
       <AnimatePresence>
         {id ? (

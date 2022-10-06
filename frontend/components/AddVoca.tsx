@@ -16,6 +16,7 @@ const ButtonBox = styled.div`
   justify-content: end;
   gap: 20px;
 `;
+
 const Button = styled(motion.button)`
   height: 50px;
   width: 150px;
@@ -50,16 +51,15 @@ const Cards = styled(motion.ul)`
 const Card = styled(motion.li)`
   position: relative;
   margin: 0 auto;
-  background-color: teal;
+  background-color: #fff;
   height: 120px;
   width: 200px;
+  border-radius: 3px;
 `;
 
 const Board = styled(motion.div)`
   position: relative;
 `;
-
-const VocaWrapper = styled(motion.div)``;
 
 const Arrow = styled(motion.div)`
   position: absolute;
@@ -82,25 +82,64 @@ const CancleBtnBox = styled.button`
   justify-content: center;
   cursor: pointer;
   align-items: center;
-  background-color: transparent;
   border: none;
+  background-color: transparent;
   :hover {
     transform: scale(1.2);
+    div {
+      background-color: darkgray;
+    }
   }
 `;
 
 const Bar = styled.div`
   position: absolute;
   border: none;
-  background-color: white;
   width: 15px;
   height: 3px;
   transform: rotate(45deg);
+  background-color: black;
   &:nth-child(2) {
     transform: rotate(135deg);
   }
 `;
 
+const CardContents = styled.div`
+  h3 {
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 8px;
+    text-align: center;
+    color: black;
+  }
+  p {
+    text-align: center;
+    color: #8a81bd;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 36px;
+    p {
+      display: block;
+      height: 100%;
+      margin-top: 24px;
+      color: black;
+      font-size: 14px;
+    }
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+const CardContentBox = styled.div``;
 interface IAddVoca {
   vocas: boolean[];
 }
@@ -142,17 +181,21 @@ const cardVariants: Variants = {
   closed: { opacity: 0, y: 20, transition: { duration: 0.1 } },
 };
 
-export default function AddVaca({ vocas }: IAddVoca) {
-  const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
+interface IAddVoca {
+  vocas: boolean[];
+  onClickCheck: (e: any) => void;
+}
 
-  const onCancleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.currentTarget.id);
-  };
+export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
+  const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
 
   const onClickCard = () => {
     setIsCardOpen((prev) => !prev);
   };
-  const onClickSaved = () => {};
+  const onClickSaved = () => {
+    // console.log(vocas);
+  };
+
   return (
     <Wrapper>
       <ButtonBox>
@@ -169,7 +212,7 @@ export default function AddVaca({ vocas }: IAddVoca) {
         </Button>
       </ButtonBox>
       <Board initial={false} animate={isCardOpen ? "open" : "closed"}>
-        <VocaWrapper>
+        <div>
           <Arrow
             variants={ArrowVariants}
             animate={isCardOpen ? "open" : "closed"}
@@ -184,15 +227,41 @@ export default function AddVaca({ vocas }: IAddVoca) {
               (voca, idx) =>
                 voca && (
                   <Card variants={cardVariants} key={idx + ""}>
-                    <CancleBtnBox onClick={onCancleClick} id={idx + ""}>
+                    <CancleBtnBox onClick={onClickCheck} id={idx + ""}>
                       <Bar />
                       <Bar />
                     </CancleBtnBox>
+                    <CardContents>
+                      <h3>Level {idx}</h3>
+                      <Grid>
+                        <CardContentBox>
+                          <p>
+                            <small>
+                              <b>words</b>
+                            </small>
+                          </p>
+
+                          <h2>
+                            <b>52</b>
+                          </h2>
+                        </CardContentBox>
+                        <CardContentBox>
+                          <p>
+                            <small>
+                              <b>frequency</b>
+                            </small>
+                          </p>
+                          <h2>
+                            <p>8 이상</p>
+                          </h2>
+                        </CardContentBox>
+                      </Grid>
+                    </CardContents>
                   </Card>
                 )
             )}
           </Cards>
-        </VocaWrapper>
+        </div>
       </Board>
     </Wrapper>
   );
