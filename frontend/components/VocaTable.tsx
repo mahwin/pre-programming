@@ -10,7 +10,6 @@ const TableWrapper = styled.div`
 const Table = styled.table`
   width: 300px;
   table-layout: fixed;
-
   th {
     position: sticky;
     top: 0px;
@@ -55,7 +54,6 @@ interface ITableData {
 }
 
 export default function VocaTable({ tableData }: { tableData: ITableData[] }) {
-  console.log(tableData);
   return (
     <TableWrapper>
       <Table>

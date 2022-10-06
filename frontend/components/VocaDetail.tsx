@@ -171,6 +171,7 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
   const [vocas, setVocas] = useState<boolean[]>(
     Array.from({ length: 7 }, () => false)
   );
+
   const onClickCheck = (e: any) => {
     const voca = Number(e.currentTarget.id || e.currentTarget.name);
     const copyVocas = [...vocas];
@@ -187,7 +188,7 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
             <VocaCard key={n + ""} layoutId={n + ""}>
               <CheckBox>
                 <input
-                  onClick={onClickCheck}
+                  onChange={onClickCheck}
                   type="checkbox"
                   value="None"
                   id={n + ""}

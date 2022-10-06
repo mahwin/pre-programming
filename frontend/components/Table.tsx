@@ -46,16 +46,18 @@ const TableWapper = styled.table`
 export default function Table() {
   return (
     <TableWapper>
-      <tr>
-        <th>빈도수</th>
-        <th>단어 수</th>
-        <th>총 단어수</th>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>580</td>
-        <td>1230</td>
-      </tr>
+      <tbody>
+        <tr>
+          <th>빈도수</th>
+          <th>단어 수</th>
+          <th>총 단어수</th>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>580</td>
+          <td>1230</td>
+        </tr>
+      </tbody>
     </TableWapper>
   );
 }

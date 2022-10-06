@@ -12,6 +12,7 @@ const Wapper = styled.div`
 `;
 
 const BannerWapper = styled.div`
+  position: relative;
   width: 100%;
   display: flex;
   max-width: ${(props) => props.theme.windowSize.tablet};
@@ -99,8 +100,8 @@ const Search = styled.input.attrs({
 export default function Banner() {
   return (
     <Wapper>
+      <Image src="/banner.png" layout="fill" priority />
       <BannerWapper>
-        <Image src="/banner.png" layout="fill" />
         <ContentWrapper>
           <TitleBox>
             <Title>Pre-Programming</Title>
