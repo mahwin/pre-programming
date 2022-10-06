@@ -17,12 +17,10 @@ export default function useMutation<T = any>(
     error: undefined,
   });
   function mutation(data: any) {
-    const accessToken = localStorage.getItem("accessToken") || null;
     axios
       .post(`${process.env.API_HOST}/${url}`, data, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
         },
       })
       .then((response) => response.data.catch(() => {}))

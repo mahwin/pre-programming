@@ -6,13 +6,17 @@ import { Provider } from "react-redux";
 import { useState } from "react";
 import store from "../redux/store";
 import ThemeButton from "../components/ThemeButton";
-import { SWRConfig } from "swr";
+import axios from "axios";
 
 function App({ Component, pageProps }: AppProps) {
   const [isDark, setTheme] = useState(true);
   const toggleTheme = () => {
     setTheme((prev) => !prev);
   };
+  const token = localStorage.getItem("accessToken");
+  if (token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  }
   return (
     <Provider store={store}>
       <ThemeButton onClick={toggleTheme} isDark={isDark} />
@@ -23,14 +27,7 @@ function App({ Component, pageProps }: AppProps) {
         }}
       >
         <GlobalStyle />
-        <SWRConfig
-          value={{
-            fetcher: (url: string) =>
-              fetch(url).then((response) => response.json()),
-          }}
-        >
-          <Component {...pageProps} />
-        </SWRConfig>
+        <Component {...pageProps} />
       </ThemeProvider>
     </Provider>
   );
