@@ -4,6 +4,7 @@ import useMutation from "../libs/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import LocalStorage from "../libs/localStorage";
 
 const Wapper = styled.div`
   height: 100vh;
@@ -203,7 +204,7 @@ export default function SignIn() {
   const router = useRouter();
   useEffect(() => {
     if (tokenData?.ok) {
-      localStorage.setItem("accessToken", tokenData.accessToken!);
+      LocalStorage.setItem("accessToken", tokenData.accessToken!);
       router.push("/");
     }
   }, [tokenData, router]);

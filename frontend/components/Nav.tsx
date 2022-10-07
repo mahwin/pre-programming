@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "../assets/svg/LogoSvg";
-import useMutation from "../libs/useMutation";
-import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import axios from "axios";
 import LocalStorage from "../libs/localStorage";
+import { useSelector, useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+import { userActions } from "../redux/user/userSlice";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -85,23 +85,21 @@ interface MutationResult {
 }
 
 function Nav() {
-  const [userInfo, { loading, data, error }] =
-    useMutation<MutationResult>("/user");
+  const { loading, data, error } = useSelector(
+    (state: any) => state.userReducer
+  );
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    axios
-      .get(`${process.env.API_HOST}/user`)
-      .then((response) => console.log(response.data))
-      .catch((error) => {
-        console.warn(error);
-      });
+    dispatch(userActions.getUser());
   }, []);
+
   const router = useRouter();
-  console.log(userInfo);
   const logoutClick = () => {
     LocalStorage.removeItem("accessToken");
     router.reload();
   };
-  console.log(data);
+
   return (
     <Wapper>
       <NavWapper>

@@ -1,5 +1,5 @@
 import { vocasActions } from "./vocasSlice";
-import * as vocasAPI from "../api/vocasAPI";
+import * as vocasAPI from "./vocasAPI";
 import { call, put, takeLatest, all, fork } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
@@ -15,7 +15,6 @@ function* getVocas() {
 function* watchGetVocas() {
   yield takeLatest(vocasActions.getVocas, getVocas);
 }
-
 export default function* getVocasSaga() {
   yield all([fork(watchGetVocas)]);
 }

@@ -1,4 +1,4 @@
-import IVocas from "../dto/vocas";
+import IVocas from "./vocas.dto";
 import { createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 

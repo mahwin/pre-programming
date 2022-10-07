@@ -1,7 +1,7 @@
 interface IVocas {
   HTML: string[];
   CSS: string[];
-  Javascript: string[];
+  "Javas cript": string[];
   React: string[];
   "Vue.js": string[];
   Angular: string[];
