@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "../assets/svg/LogoSvg";
-import useUser from "../libs/useUser";
+import useMutation from "../libs/useMutation";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import axios from "axios";
+import LocalStorage from "../libs/localStorage";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -78,14 +80,28 @@ const CurrentPosition = styled(motion.div).attrs({
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
 `;
 
+interface MutationResult {
+  ok: boolean;
+}
+
 function Nav() {
-  const userInfo = useUser() || null;
+  const [userInfo, { loading, data, error }] =
+    useMutation<MutationResult>("/user");
+  useEffect(() => {
+    axios
+      .get(`${process.env.API_HOST}/user`)
+      .then((response) => console.log(response.data))
+      .catch((error) => {
+        console.warn(error);
+      });
+  }, []);
   const router = useRouter();
-
+  console.log(userInfo);
   const logoutClick = () => {
-    localStorage.removeItem("accessToken");
+    LocalStorage.removeItem("accessToken");
+    router.reload();
   };
-
+  console.log(data);
   return (
     <Wapper>
       <NavWapper>
@@ -101,7 +117,7 @@ function Nav() {
             </Link>
           </>
 
-          {userInfo && (
+          {data && (
             <Items>
               <Item>
                 <Link href="/">
@@ -119,7 +135,7 @@ function Nav() {
           )}
         </FontItemsWapper>
         <Items>
-          {userInfo ? (
+          {data ? (
             <>
               <Item>
                 <Link href="/me">

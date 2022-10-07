@@ -7,13 +7,14 @@ import { useState } from "react";
 import store from "../redux/store";
 import ThemeButton from "../components/ThemeButton";
 import axios from "axios";
+import LocalStorage from "../libs/localStorage";
 
 function App({ Component, pageProps }: AppProps) {
   const [isDark, setTheme] = useState(true);
   const toggleTheme = () => {
     setTheme((prev) => !prev);
   };
-  const token = localStorage.getItem("accessToken");
+  const token = LocalStorage.getItem("accessToken");
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
