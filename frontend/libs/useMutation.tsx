@@ -18,12 +18,12 @@ export default function useMutation<T = any>(
   });
   function mutation(data: any) {
     axios
-      .post(`${process.env.API_HOST}/${url}`, data, {
+      .post(`${process.env.API_HOST}${url}`, data, {
         headers: {
           "Content-Type": "application/json",
         },
       })
-      .then((response) => response.data.catch(() => {}))
+      .then((response) => response.data)
       .then((data) => setState((prev) => ({ ...prev, data, loading: false })))
       .catch((error) =>
         setState((prev) => ({ ...prev, error, loading: false }))
