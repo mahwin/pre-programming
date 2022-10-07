@@ -229,7 +229,6 @@ export default function SignIn() {
                     required: "인증 번호는 필수입력 항목입니다.",
                   })}
                 />
-
                 <Error>{tokenData?.message}</Error>
                 <Button>인증번호 입력</Button>
               </Form>
@@ -262,7 +261,6 @@ export default function SignIn() {
                     required
                   />
                 </InputBox>
-
                 <Error>{errors?.phone?.message}</Error>
                 <Button>{loading ? "Loading..." : "Login"}</Button>
               </Form>

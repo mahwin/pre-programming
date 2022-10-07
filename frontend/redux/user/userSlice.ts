@@ -15,7 +15,6 @@ const userSlice = createSlice({
       state.loading = true;
     },
     getUserSuccess: (state, { payload }) => {
-      console.log("성공");
       state.data = payload;
       state.loading = false;
     },

@@ -92,6 +92,7 @@ function Nav() {
 
   useEffect(() => {
     dispatch(userActions.getUser());
+    console.log(loading, data, error);
   }, []);
 
   const router = useRouter();

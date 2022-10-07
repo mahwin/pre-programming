@@ -1,7 +1,8 @@
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
+// import { get } from "react-redux";
 
-export default function Me() {
+function Me() {
   return (
     <>
       <Nav />
@@ -10,3 +11,5 @@ export default function Me() {
     </>
   );
 }
+
+export default Me;

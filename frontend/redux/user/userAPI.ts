@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 async function getUser() {
   try {
     const response = await axios.get(`${process.env.API_HOST}/user`);
     return response;
-  } catch (error) {
-    console.warn(new Error("user 데이터 받아오기 실패"));
+  } catch (error: any) {
+    new Error(error.message);
   }
 }
 
