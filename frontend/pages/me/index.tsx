@@ -1,5 +1,6 @@
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import UserInfo from "../../components/UserInfo";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -15,7 +16,7 @@ export default function Me() {
   return (
     <>
       <Nav />
-      <h1>유저 정보</h1>
+      <UserInfo data={data} />
       <Footer />
     </>
   );

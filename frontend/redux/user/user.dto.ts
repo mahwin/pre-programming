@@ -15,4 +15,5 @@ interface UserState {
   error: AxiosError | null;
 }
 
+export type { IUser };
 export default UserState;
