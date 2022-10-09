@@ -13,6 +13,8 @@ import { DownArrowSvg } from "./DownArrowSvg";
 import { ResultCircleSvg } from "./ResultCircleSvg";
 import { FolderOpenSvg } from "./FolderOpenSvg";
 import { ChangeSvg } from "./ChangeSvg";
+import { CheckSvg } from "./CheckSvg";
+import { XMarkSvg } from "./XMarkSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -29,4 +31,6 @@ export {
   ResultCircleSvg,
   FolderOpenSvg,
   ChangeSvg,
+  CheckSvg,
+  XMarkSvg,
 };

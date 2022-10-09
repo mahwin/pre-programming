@@ -1,5 +1,5 @@
-import styled, { StyledComponent } from "styled-components";
-import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import React, { useState } from "react";
 import {
   explode,
   dropOne,
@@ -12,6 +12,7 @@ import {
   dropZero,
 } from "../assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg } from "../assets/svg/RootSvg";
+import Answers from "./Answers";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -30,6 +31,7 @@ const Container = styled.div`
   height: 85vh;
   width: 80vw;
   padding: 20px 24px;
+  overflow: scroll;
   background-color: #7aa4a9;
 `;
 
@@ -343,7 +345,6 @@ interface ITestData {
 }
 
 export default function Quiz({ testData, testCondition }: any) {
-  console.log(testCondition);
   const [answerList, setAnswerList] = useState<number[]>([]);
   const [answer, setAnswer] = useState<boolean[]>(
     Array.from({ length: 5 }, () => false)
@@ -353,6 +354,7 @@ export default function Quiz({ testData, testCondition }: any) {
   const [maxNum, _] = useState(+testCondition.many.split("_")[0]);
   const [pregressStep, __] = useState((1 / maxNum) * 100);
   const [correctNum, setCorrectNum] = useState(0);
+  const [answerOpen, setAnswerOpen] = useState(false);
 
   const onNextStep = () => {
     setSteps((prev) => prev + 1);
@@ -379,30 +381,46 @@ export default function Quiz({ testData, testCondition }: any) {
     setIsSubmit(true);
   };
 
+  const onAnswerClick = () => setAnswerOpen(!answerOpen);
+  const onResetTest = () => {
+    setSteps(0);
+  };
   return (
     <Wrapper>
       <Container>
         {isSubmit ? (
           <>
-            <Title>Result Summary</Title>
-            <div style={{ border: "1px solid #325b79" }} />
-            <Row>
-              <ColorBox>
-                <Color style={{ backgroundColor: "#ac4e6b" }}></Color>
-                <p>Correct : {`${correctNum}`}</p>
-              </ColorBox>
-              <ColorBox>
-                <Color style={{ backgroundColor: "#977f89" }}></Color>
-                <p>InCorrect : {`${maxNum - correctNum}`}</p>
-              </ColorBox>
-            </Row>
-            <SvgBox>
-              <ResultCircleSvg percent={(correctNum * 100) / maxNum + ""} />
-            </SvgBox>
-            <ButtonBox>
-              <ResultBtn>View answer</ResultBtn>
-              <ResultBtn>Retry</ResultBtn>
-            </ButtonBox>
+            {answerOpen ? (
+              <>
+                <Answers
+                  answerList={answerList}
+                  testData={testData}
+                  correctAnswer={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+                />
+              </>
+            ) : (
+              <>
+                <Title>Result Summary</Title>
+                <div style={{ border: "1px solid #325b79" }} />
+                <Row>
+                  <ColorBox>
+                    <Color style={{ backgroundColor: "#ac4e6b" }}></Color>
+                    <p>Correct : {`${correctNum}`}</p>
+                  </ColorBox>
+                  <ColorBox>
+                    <Color style={{ backgroundColor: "#977f89" }}></Color>
+                    <p>InCorrect : {`${maxNum - correctNum}`}</p>
+                  </ColorBox>
+                </Row>
+                <SvgBox>
+                  <ResultCircleSvg percent={(correctNum * 100) / maxNum + ""} />
+                </SvgBox>
+                <ButtonBox>
+                  <ResultBtn onClick={onAnswerClick}>View answer</ResultBtn>
+                  <ResultBtn onClick={onResetTest}>Retry</ResultBtn>
+                </ButtonBox>
+              </>
+            )}
           </>
         ) : (
           <>
