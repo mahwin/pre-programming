@@ -31,10 +31,10 @@ const Card = styled.li`
   display: inline-block;
   padding: 2%;
   width: 100%;
-  height: 190px;
+  height: 170px;
   text-align: left;
-
   margin-bottom: 4px;
+
   border-bottom: 0.6px solid rgba(255, 255, 255, 0.2);
   :nth-child(even) {
     margin-left: 5px;
@@ -55,26 +55,47 @@ const Word = styled.div`
 
 const ResultWrapper = styled.div`
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  div {
+    margin-top: 10px;
+    padding: 0px 10px;
+    height: 7vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 const CorrectBox = styled.div`
-  height: 5vh;
-  border: 1px solid red;
   background: #968089;
 `;
 const WrongBox = styled.div`
-  height: 5vh;
-  border: 1px solid blue;
   background: #ab4e6b;
-  color: white;
+`;
+
+const BackBtn = styled.button`
+  width: 100px;
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  letter-spacing: 0.4em;
+  color: #7aa4a9;
+  margin-left: 40%;
+  cursor: pointer;
+  :hover {
+    letter-spacing: 0.8em;
+  }
 `;
 
 interface IAnswers {
   answerList: number[];
   correctAnswer: number[];
   testData: ITestData[];
+  onBack: () => void;
 }
 
 interface ITestData {
@@ -91,6 +112,7 @@ export default function Answers({
   answerList,
   testData,
   correctAnswer,
+  onBack,
 }: IAnswers) {
   const [result, setResult] = useState<Result[] | null>(null);
 
@@ -103,7 +125,6 @@ export default function Answers({
 
     setResult(copy);
   }, []);
-  console.log(result);
   return (
     <Wrapper>
       <h1>Your Answers</h1>
@@ -115,12 +136,14 @@ export default function Answers({
                 <p> {testData[idx].word}</p>
               </Word>
               <ResultWrapper>
-                <WrongBox>
-                  {result?.[idx][0]}
-                  <XMarkSvg width="30" height="30" color="#ff383e" />
-                </WrongBox>
+                {result?.[idx][0] && (
+                  <WrongBox>
+                    {testData[idx]["example1"]}
+                    <XMarkSvg width="30" height="30" color="#ff383e" />
+                  </WrongBox>
+                )}
                 <CorrectBox>
-                  {result?.[idx][1]}
+                  {testData[idx].correct}
                   <CheckSvg width="30" height="30" color="#2dceb1" />
                 </CorrectBox>
               </ResultWrapper>
@@ -128,6 +151,7 @@ export default function Answers({
           </Card>
         ))}
       </CardsWrapper>
+      <BackBtn onClick={onBack}>BACK</BackBtn>
     </Wrapper>
   );
 }

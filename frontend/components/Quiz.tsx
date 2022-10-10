@@ -115,11 +115,12 @@ const Ul = styled.ul`
   flex-direction: column;
   cursor: pointer;
   li {
-    text-align: center;
     width: 350px;
     position: relative;
     padding: 10px;
-    padding-left: 40px;
+    padding-left: 60px;
+    display: flex;
+    align-items: center;
     input:checked ~ div {
       opacity: 1;
       animation-name: ${explode};
@@ -181,6 +182,9 @@ const Ul = styled.ul`
     font-weight: 700;
     margin-left: 20px;
     font-size: 24px;
+    :hover {
+      border: 1px solid red;
+    }
   }
   label:before {
     content: "";
@@ -260,18 +264,16 @@ const BulletLineSeven = styled(Line)`
 `;
 const Input = styled.input.attrs({ type: "radio", name: "answer" })`
   opacity: 0;
-  display: inline-block;
   vertical-align: middle;
-  z-index: 100;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   position: absolute;
   left: 0;
-  top: 15px;
+
   cursor: pointer;
-  :checked {
-    transform: scale(3);
-  }
 `;
 
 const Button = styled.button`
@@ -384,7 +386,11 @@ export default function Quiz({ testData, testCondition }: any) {
   const onAnswerClick = () => setAnswerOpen(!answerOpen);
   const onResetTest = () => {
     setSteps(0);
+    setIsSubmit(false);
+    setAnswer(Array.from({ length: 5 }, () => false));
+    setAnswerList([]);
   };
+
   return (
     <Wrapper>
       <Container>
@@ -396,6 +402,7 @@ export default function Quiz({ testData, testCondition }: any) {
                   answerList={answerList}
                   testData={testData}
                   correctAnswer={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+                  onBack={onAnswerClick}
                 />
               </>
             ) : (
@@ -445,11 +452,7 @@ export default function Quiz({ testData, testCondition }: any) {
                 </h1>
                 <Ul>
                   <li>
-                    <Input
-                      onChange={onChangeInput}
-                      id="1"
-                      checked={answer[1] || false}
-                    />
+                    <Input onChange={onChangeInput} id="1" />
                     <label>{testData?.[currentStep].correct}</label>
                     <Bullet>
                       <BulletLineZero />
@@ -463,12 +466,8 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <Input
-                      onChange={onChangeInput}
-                      id="2"
-                      checked={answer[2] || false}
-                    />
-                    <label>{testData?.[currentStep].example}</label>
+                    <label htmlFor="2">{testData?.[currentStep].example}</label>
+                    <Input onChange={onChangeInput} id="2" />
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -481,11 +480,7 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <Input
-                      onChange={onChangeInput}
-                      id="3"
-                      checked={answer[3] || false}
-                    />
+                    <Input onChange={onChangeInput} id="3" />
                     <label>{testData?.[currentStep].example1}</label>
                     <Bullet>
                       <BulletLineZero />
@@ -499,12 +494,10 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <Input
-                      onChange={onChangeInput}
-                      id="4"
-                      checked={answer[4] || false}
-                    />
-                    <label>{testData?.[currentStep].example2}</label>
+                    <Input onChange={onChangeInput} id="4" />
+                    <label htmlFor="4">
+                      {testData?.[currentStep].example2}
+                    </label>
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
