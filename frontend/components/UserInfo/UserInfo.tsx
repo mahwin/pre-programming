@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { IUser } from "../redux/user/user.dto";
+import { motion } from "framer-motion";
+import React, { MouseEvent, useMemo, useState } from "react";
+import { IUser } from "../../redux/user/user.dto";
 import Image from "next/image";
-import { ChangeSvg } from "../assets/svg/RootSvg";
-import Avatars from "../components/Avatars";
+import { ChangeSvg } from "../../assets/svg/RootSvg";
+import Avatars from "./Avatars";
+import { useForm } from "react-hook-form";
+import Form from "./Form";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +22,7 @@ const Row = styled.div`
   width: 400px;
   height: 500px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+  box-shadow: rgba(249, 207, 207, 0.15) 0px 8px 16px 0px;
   overflow: hidden;
 `;
 
@@ -38,14 +40,6 @@ const Header = styled.div`
   }
 `;
 
-const FormContainer = styled.div`
-  padding: 40px 14px 24px 14px;
-  height: 100%;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background-color: white;
-`;
-
 const Cicle = styled.div`
   z-index: 1;
   position: absolute;
@@ -57,20 +51,6 @@ const Cicle = styled.div`
   width: 100px;
   border-radius: 50px;
   background-color: transparent;
-`;
-
-const InputBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  input {
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-    margin: 10px 0 10px 0;
-    height: 40px;
-    padding: 8px 12px;
-    color: #212529;
-    font-size: 24px;
-  }
 `;
 
 const ToggleBox = styled.div`
@@ -92,7 +72,7 @@ const Button = styled.button`
   border: none;
   color: white;
   width: 80px;
-  height: 30px;
+  height: 50px;
   font-size: 20px;
   border-radius: 5px;
   background-color: #3b82f6;
@@ -169,20 +149,29 @@ const AvatarsWrapper = styled(motion.div)`
 const bounceY = [-100, 20, -10, 5, -3, 0];
 
 export default function UserInfo({ data }: { data: IUser }) {
-  const [isOn, setIsOn] = useState(false);
-  const [isAvatarOpen, setIsAvatarOpen] = useState(false);
-  const toggleSwitch = () => setIsOn(!isOn);
-  const avatarSwitch = () => setIsAvatarOpen(!isAvatarOpen);
+  const [isCan, setIsCan] = useState(false);
+  const [avatar, setAvatar] = useState<string>(data.avatar);
+  const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
+
+  const canChangeSwitch = () => {
+    setIsCan(!isCan);
+    setIsAvatarsOpen(false);
+  };
+
+  const onClickAvatars = () => setIsAvatarsOpen(!isAvatarsOpen);
+  const onSelectedAvatar = (e: MouseEvent) => {
+    setAvatar(e.currentTarget.id);
+  };
   return (
     <>
       <Wrapper>
         <Row>
           <Header>
             <h1>Profile</h1>
-            <ToggleBox onChange={toggleSwitch}>
+            <ToggleBox onChange={canChangeSwitch}>
               <div style={{ position: "relative" }}>
                 <NormalSpan>CAN</NormalSpan>
-                {isOn ? (
+                {!isCan ? (
                   <>
                     <NormalSpan
                       style={{ color: "#a29bfe", position: "absolute" }}
@@ -201,22 +190,22 @@ export default function UserInfo({ data }: { data: IUser }) {
               </div>
               <Toggle
                 variants={toggleBarVariants}
-                onClick={toggleSwitch}
-                animate={isOn ? "right" : "left"}
+                onClick={canChangeSwitch}
+                animate={isCan ? "left" : "right"}
               >
                 <ToggleCircle
                   variants={toggleCircleVariants}
-                  animate={isOn ? "right" : "left"}
+                  animate={isCan ? "left" : "right"}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
               </Toggle>
             </ToggleBox>
           </Header>
           <Cicle>
-            <Image src={`/avatar/${data.avatar}.png`} layout="fill" />
-            {!isOn && (
+            <Image src={`/avatar/${avatar}.png`} layout="fill" />
+            {isCan && (
               <SvgBox
-                onClick={avatarSwitch}
+                onClick={onClickAvatars}
                 variants={changeVariants}
                 initial="hidden"
                 animate="visible"
@@ -225,26 +214,15 @@ export default function UserInfo({ data }: { data: IUser }) {
               </SvgBox>
             )}
           </Cicle>
-
-          <FormContainer>
-            <form>
-              <InputBox>
-                <label>닉네임</label>
-                <input type="text" value={data.name} />
-              </InputBox>
-              <InputBox>
-                <label>폰 번호</label>
-                <input type="number" value={data.phone} />
-              </InputBox>
-            </form>
-          </FormContainer>
+          <Form data={{ name: data.name, phone: data.phone }} isCan={isCan} />
         </Row>
       </Wrapper>
-      {!isOn && (
+      {!isCan && (
         <Avatars
-          isOpen={isAvatarOpen}
-          avatarSwitch={avatarSwitch}
-          currentAvartar={data.avatar}
+          avatar={avatar}
+          isOpen={isAvatarsOpen}
+          onClick={onClickAvatars}
+          onSelect={onSelectedAvatar}
         />
       )}
     </>

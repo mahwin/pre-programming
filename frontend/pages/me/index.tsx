@@ -1,6 +1,6 @@
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import UserInfo from "../../components/UserInfo";
+import UserInfo from "../../components/UserInfo/UserInfo";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";

@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { DownArrowSvg } from "../assets/svg/DownArrowSvg";
+import { DownArrowSvg } from "../../assets/svg/DownArrowSvg";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, MouseEvent } from "react";
 
 const BtnWapper = styled(motion.div)`
   position: absolute;
   height: 60%;
-  width: 25%;
+  width: 280px;
   border-radius: 18px;
   bottom: 30px;
-  right: 30px;
+  right: 150px;
   background-color: transparent;
   overflow: hidden;
   cursor: pointer;
+  z-index: 99;
 `;
 
 const AvatarsWrapper = styled(motion.div)`
@@ -22,7 +23,7 @@ const AvatarsWrapper = styled(motion.div)`
   left: 0;
   bottom: 0;
   width: 100%;
-  background: transparent;
+  background-color: transparent;
 `;
 
 const BtnBox = styled.div`
@@ -58,7 +59,7 @@ const Items = styled(motion.ul)`
   padding: 24px;
   display: grid;
   gap: 24px;
-  row-gap: 40px;
+  row-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
 `;
 
@@ -66,8 +67,7 @@ const Item = styled(motion.li)`
   position: relative;
   width: 60px;
   height: 60px;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
   :hover {
     transform: scale(1.2);
     border-radius: 30px;
@@ -78,37 +78,46 @@ const Item = styled(motion.li)`
 const avatarVariants = {
   open: {
     clipPath: "circle(500px at 40px 40px)",
+    backgroundColor: "#06acf9",
+    opacity: 1,
     transition: {
+      opacity: { duration: 0 },
       type: "spring",
       stiffness: 20,
       restDelta: 2,
     },
-    background: "skyblue",
   },
   closed: {
     clipPath: "circle(30px at 40px 40px)",
-    display: "none",
+    backgroundColor: "#06acf9",
+    opacity: 0,
+    transition: {
+      clipPath: { duration: 1 },
+      opacity: { delay: 2 },
+    },
   },
 };
 
 interface IAvatars {
   isOpen: boolean;
-  currentAvartar: string;
-  avatarSwitch: () => void;
+  avatar: string;
+  onClick: () => void;
+  onSelect: (e: MouseEvent) => void;
 }
 
 export default function Avatars({
   isOpen,
-  avatarSwitch,
-  currentAvartar,
+  avatar,
+  onClick,
+  onSelect,
 }: IAvatars) {
   const [avatarList, setAvatarList] = useState<number[]>([]);
 
   useEffect(() => {
     const allList = Array.from({ length: 10 }, (v, i) => i + 1);
-    console.log(allList);
-    setAvatarList(allList.filter((num) => num + "" !== currentAvartar));
-  }, []);
+    setAvatarList(allList.filter((num) => num + "" !== avatar));
+  }, [avatar]);
+
   return (
     <BtnWapper>
       <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
@@ -116,23 +125,21 @@ export default function Avatars({
           variants={avatarVariants}
           transition={{
             default: {
-              delay: 0.5,
               type: "spring",
               stiffness: 400,
               damping: 40,
             },
-            display: { duration: 2, delay: 1.5 },
           }}
         >
           <BtnBox>
-            <Button onClick={avatarSwitch}>
+            <Button onClick={onClick}>
               <DownArrowSvg />
             </Button>
           </BtnBox>
           <Title>Choose your avatar!</Title>
           <Items>
-            {avatarList.map((avatar) => (
-              <Item>
+            {avatarList.map((avatar, idx) => (
+              <Item key={idx + ""} onClick={onSelect} id={avatar + ""}>
                 <Image src={`/avatar/${avatar}.png`} layout="fill" />
               </Item>
             ))}

@@ -15,6 +15,8 @@ import { FolderOpenSvg } from "./FolderOpenSvg";
 import { ChangeSvg } from "./ChangeSvg";
 import { CheckSvg } from "./CheckSvg";
 import { XMarkSvg } from "./XMarkSvg";
+import { SmileSvg } from "./SmileSvg";
+import { FrownSvg } from "./FrownSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -33,4 +35,6 @@ export {
   ChangeSvg,
   CheckSvg,
   XMarkSvg,
+  SmileSvg,
+  FrownSvg,
 };
