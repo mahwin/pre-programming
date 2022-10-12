@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { LogoSvg } from "../assets/svg/LogoSvg";
+import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
-import LocalStorage from "../libs/localStorage";
+import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { userActions } from "../redux/user/userSlice";
@@ -45,9 +45,17 @@ const Item = styled.li`
   padding: 8px 12px;
   font-weight: ${(props) => props.theme.fontWeight.base};
   cursor: pointer;
-  &:hover {
-    border-radius: 3px;
-    background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
+  a {
+    display: block;
+    padding: 10px;
+    :hover {
+      color: white;
+      border-radius: 3px;
+      background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
+    }
+  }
+  :last-child:hover {
+    color: darkorange;
   }
 `;
 
@@ -119,11 +127,12 @@ function Nav() {
           {data && (
             <Items>
               <Item>
-                <Link href="/">
+                <Link href="/" id="home">
                   <a>홈</a>
                 </Link>
                 {router.route === "/" ? <CurrentPosition /> : null}
               </Item>
+
               <Item>
                 <Link href="/me/voca">
                   <a>내 단어장</a>
