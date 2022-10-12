@@ -3,9 +3,14 @@ import { motion } from "framer-motion";
 import React, { MouseEvent, useState } from "react";
 import { IUser } from "../../redux/user/user.dto";
 import Image from "next/image";
-import { ChangeSvg } from "@svg";
-import Avatars from "./Avatars";
+import { ChangeSvg, LoadingSvg } from "@svg";
+import dynamic from "next/dynamic";
 import Form from "./Form";
+
+const Avatars = dynamic(() => import("./Avatars"), {
+  ssr: false,
+  loading: () => <LoadingSvg />,
+});
 
 const Wrapper = styled.div`
   display: flex;
@@ -149,7 +154,7 @@ const bounceY = [-100, 20, -10, 5, -3, 0];
 
 export default function UserInfo({ data }: { data: IUser }) {
   const [Mutatable, setMutatable] = useState(false);
-  const [avatar, setAvatar] = useState<string>(data.avatar);
+  const [avatar, setAvatar] = useState<string>(data?.avatar);
   const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
 
   const canChangeSwitch = () => {
@@ -161,6 +166,7 @@ export default function UserInfo({ data }: { data: IUser }) {
   const onSelectedAvatar = (e: MouseEvent) => {
     setAvatar(e.currentTarget.id);
   };
+
   return (
     <>
       <Wrapper>
