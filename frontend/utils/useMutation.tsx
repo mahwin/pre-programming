@@ -17,6 +17,7 @@ export default function useMutation<T = any>(
     error: undefined,
   });
   function mutation(data: any) {
+    setState((prev) => ({ ...prev, loading: true }));
     axios
       .post(`${process.env.API_HOST}${url}`, data, {
         headers: {

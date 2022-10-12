@@ -16,6 +16,8 @@ export class UpdateUSerDto {
     description: 'change name',
     required: false,
   })
+  @IsOptional()
+  @IsString()
   public name: string;
 
   @ApiProperty({

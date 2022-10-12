@@ -223,7 +223,7 @@ export default function UserInfo({ data }: { data: IUser }) {
             )}
           </Cicle>
           <Form
-            data={{ name: data.name, phone: data.phone }}
+            data={{ name: data.name, phone: data.phone, currentAvatar: avatar }}
             isAvatarChange={avatar !== data.avatar ? true : false}
             isCan={Mutatable}
           />

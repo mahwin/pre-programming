@@ -2,14 +2,10 @@ import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from '../jwt/jwt.guard';
 import { Request } from 'express';
-import {
-  ApiTags,
-  ApiOperation,
-  ApiCreatedResponse,
-  ApiProperty,
-} from '@nestjs/swagger';
+import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UpdateUSerDto } from './dto/update-user.dto';
+import { ConfirmUserDto } from './dto/confirm-user.dto';
 
 @Controller('user')
 @ApiTags('user API')
@@ -28,6 +24,19 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   getUser(@Req() req: Request) {
     return this.userService.getUser(req);
+  }
+
+  @ApiOperation({
+    summary: '유저 정보 변경을 위해 중복 확인',
+    description: '변경 하려는 name이나 phone의 중복된 값이 db에 있는지 확인',
+  })
+  @ApiCreatedResponse({
+    description: '중복 확인 후 사용 여부 발송',
+    type: UserDto,
+  })
+  @Post('confirm')
+  confirmData(@Body() confirmData: ConfirmUserDto) {
+    return this.userService.confirm(confirmData);
   }
 
   @ApiOperation({
