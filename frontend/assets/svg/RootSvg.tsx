@@ -17,6 +17,7 @@ import { CheckSvg } from "./CheckSvg";
 import { XMarkSvg } from "./XMarkSvg";
 import { SmileSvg } from "./SmileSvg";
 import { FrownSvg } from "./FrownSvg";
+import { LoadingSvg } from "./LoadingSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -37,4 +38,5 @@ export {
   XMarkSvg,
   SmileSvg,
   FrownSvg,
+  LoadingSvg,
 };

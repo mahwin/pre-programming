@@ -1,8 +1,8 @@
-import Nav from "../components/Nav";
-import Banner from "../components/Banner";
-import Vocas from "../components/Vocas";
-import Footer from "../components/Footer";
-import FloatingButton from "../components/FloatingButton";
+import Nav from "@components/Nav";
+import Banner from "@components/Banner";
+import Vocas from "@components/Vocas";
+import Footer from "@components/Footer";
+import FloatingButton from "@components/FloatingButton";
 
 interface IHome {
   data: {

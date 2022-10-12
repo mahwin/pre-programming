@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { MagnifyingGlassSvg } from "../assets/svg/RootSvg";
+import { MagnifyingGlassSvg } from "@svg";
 
 const Wapper = styled.div`
   position: relative;

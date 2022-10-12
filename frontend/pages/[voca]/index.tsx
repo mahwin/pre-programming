@@ -2,7 +2,6 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import VocaDetail from "../../components/VocaDetail";
 import Banner from "../../components/Banner";
-
 import TestButton from "../..//components/TestButton";
 
 interface IVocaDetail {

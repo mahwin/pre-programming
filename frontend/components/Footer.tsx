@@ -8,7 +8,7 @@ import {
   TwitterSvg,
   GithubSvg,
   SendSvg,
-} from "../assets/svg/RootSvg";
+} from "@svg";
 
 const Wrapper = styled.footer`
   background-color: #141414;

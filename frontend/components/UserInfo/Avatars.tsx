@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { DownArrowSvg } from "../../assets/svg/DownArrowSvg";
+import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState, MouseEvent } from "react";
 

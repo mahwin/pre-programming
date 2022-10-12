@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TestSvg, DownArrowSvg } from "../assets/svg/RootSvg";
+import { TestSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "./Quiz";

@@ -147,13 +147,13 @@ function Nav() {
           ) : (
             <>
               <Item>
-                <Link href="/enter">
+                <Link href="/signIn">
                   <a>로그인</a>
                 </Link>
-                {router.route === "/enter" ? <CurrentPosition /> : null}
+                {router.route === "/signIn" ? <CurrentPosition /> : null}
               </Item>
               <Item>
-                <Link href="/enter">
+                <Link href="/signIn">
                   <a>회원가입</a>
                 </Link>
               </Item>

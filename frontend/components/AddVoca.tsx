@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FolderOpenSvg } from "../assets/svg/RootSvg";
+import { FolderOpenSvg } from "@svg";
 import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
@@ -188,13 +188,12 @@ interface IAddVoca {
 
 export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
   const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
+  // const [saveVocas,{loading,data,error}] = useMutation('/')
 
   const onClickCard = () => {
     setIsCardOpen((prev) => !prev);
   };
-  const onClickSaved = () => {
-    // console.log(vocas);
-  };
+  const onClickSaved = () => {};
 
   return (
     <Wrapper>

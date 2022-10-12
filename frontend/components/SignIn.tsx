@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { TwitterSvg, FacebookSvg } from "../assets/svg/RootSvg";
-import useMutation from "../libs/useMutation";
+import { TwitterSvg, FacebookSvg } from "@svg";
+import useMutation from "@utils/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import LocalStorage from "../libs/localStorage";
+import LocalStorage from "@utils/localStorage";
 
 const Wapper = styled.div`
   height: 100vh;

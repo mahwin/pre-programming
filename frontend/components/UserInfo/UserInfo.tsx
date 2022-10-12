@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import React, { MouseEvent, useMemo, useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import { IUser } from "../../redux/user/user.dto";
 import Image from "next/image";
-import { ChangeSvg } from "../../assets/svg/RootSvg";
+import { ChangeSvg } from "@svg";
 import Avatars from "./Avatars";
-import { useForm } from "react-hook-form";
 import Form from "./Form";
 
 const Wrapper = styled.div`
@@ -149,12 +148,12 @@ const AvatarsWrapper = styled(motion.div)`
 const bounceY = [-100, 20, -10, 5, -3, 0];
 
 export default function UserInfo({ data }: { data: IUser }) {
-  const [isCan, setIsCan] = useState(false);
+  const [Mutatable, setMutatable] = useState(false);
   const [avatar, setAvatar] = useState<string>(data.avatar);
   const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
 
   const canChangeSwitch = () => {
-    setIsCan(!isCan);
+    setMutatable(!Mutatable);
     setIsAvatarsOpen(false);
   };
 
@@ -171,7 +170,7 @@ export default function UserInfo({ data }: { data: IUser }) {
             <ToggleBox onChange={canChangeSwitch}>
               <div style={{ position: "relative" }}>
                 <NormalSpan>CAN</NormalSpan>
-                {!isCan ? (
+                {!Mutatable ? (
                   <>
                     <NormalSpan
                       style={{ color: "#a29bfe", position: "absolute" }}
@@ -179,6 +178,7 @@ export default function UserInfo({ data }: { data: IUser }) {
                       '
                     </NormalSpan>
                     <Label
+                      initial={false}
                       animate={{ y: bounceY }}
                       transition={{ duration: 2.5 }}
                     >
@@ -189,13 +189,15 @@ export default function UserInfo({ data }: { data: IUser }) {
                 <NormalSpan style={{ marginLeft: "24px" }}>CHANGE</NormalSpan>
               </div>
               <Toggle
+                initial={false}
                 variants={toggleBarVariants}
                 onClick={canChangeSwitch}
-                animate={isCan ? "left" : "right"}
+                animate={Mutatable ? "left" : "right"}
               >
                 <ToggleCircle
+                  initial={false}
                   variants={toggleCircleVariants}
-                  animate={isCan ? "left" : "right"}
+                  animate={Mutatable ? "left" : "right"}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
               </Toggle>
@@ -203,7 +205,7 @@ export default function UserInfo({ data }: { data: IUser }) {
           </Header>
           <Cicle>
             <Image src={`/avatar/${avatar}.png`} layout="fill" />
-            {isCan && (
+            {Mutatable && (
               <SvgBox
                 onClick={onClickAvatars}
                 variants={changeVariants}
@@ -214,10 +216,14 @@ export default function UserInfo({ data }: { data: IUser }) {
               </SvgBox>
             )}
           </Cicle>
-          <Form data={{ name: data.name, phone: data.phone }} isCan={isCan} />
+          <Form
+            data={{ name: data.name, phone: data.phone }}
+            isAvatarChange={avatar !== data.avatar ? true : false}
+            isCan={Mutatable}
+          />
         </Row>
       </Wrapper>
-      {!isCan && (
+      {Mutatable && (
         <Avatars
           avatar={avatar}
           isOpen={isAvatarsOpen}

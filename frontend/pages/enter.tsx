@@ -1,6 +1,6 @@
-import Nav from "../components/Nav";
-import SignIn from "../components/SignIn";
-import Footer from "../components/Footer";
+import Nav from "@components/Nav";
+import SignIn from "@components/SignIn";
+import Footer from "@components/Footer";
 
 function Enter() {
   return (

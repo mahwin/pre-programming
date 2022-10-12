@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { CheckSvg, XMarkSvg } from "../assets/svg/RootSvg";
+import { CheckSvg, XMarkSvg } from "@svg";
 
 const Wrapper = styled.div`
   display: flex;
