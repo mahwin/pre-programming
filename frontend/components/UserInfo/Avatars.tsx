@@ -11,9 +11,9 @@ const BtnWapper = styled(motion.div)`
   right: 10%;
   background-color: transparent;
   overflow: hidden;
-  cursor: pointer;
   height: 60%;
   width: 280px;
+  z-index: 3;
 `;
 
 const AvatarsWrapper = styled(motion.div)`
@@ -74,14 +74,28 @@ const Item = styled(motion.li)`
   }
 `;
 
+const wrapperVariants = {
+  open: {
+    display: "block",
+    transition: {
+      display: { delay: 0 },
+    },
+  },
+  closed: {
+    display: "none",
+    transition: {
+      display: { delay: 2 },
+    },
+  },
+};
+
 const avatarVariants = {
   open: {
     clipPath: "circle(500px at 40px 40px)",
     backgroundColor: "#06acf9",
     opacity: 1,
-    zIndex: 1,
     transition: {
-      opacity: { duration: 0 },
+      clipPath: { duration: 1.5 },
       type: "spring",
       stiffness: 20,
       restDelta: 2,
@@ -90,10 +104,9 @@ const avatarVariants = {
   closed: {
     clipPath: "circle(30px at 40px 40px)",
     backgroundColor: "#06acf9",
-    zIndex: -99,
     opacity: 0,
     transition: {
-      clipPath: { duration: 1 },
+      clipPath: { duration: 1.5 },
       opacity: { delay: 2 },
     },
   },
@@ -118,9 +131,8 @@ export default function Avatars({
     const allList = Array.from({ length: 10 }, (v, i) => i + 1);
     setAvatarList(allList.filter((num) => num + "" !== avatar));
   }, [avatar]);
-
   return (
-    <BtnWapper>
+    <BtnWapper variants={wrapperVariants} animate={isOpen ? "open" : "closed"}>
       <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
         <AvatarsWrapper
           variants={avatarVariants}
@@ -140,7 +152,7 @@ export default function Avatars({
           <Title>Choose your avatar!</Title>
           <Items>
             {avatarList.map((avatar, idx) => (
-              <Item key={idx + ""} onClick={onSelect} id={avatar + ""}>
+              <Item key={idx + ""} onClick={onSelect} id={avatar + ""} layout>
                 <Image src={`/avatar/${avatar}.png`} layout="fill" />
               </Item>
             ))}

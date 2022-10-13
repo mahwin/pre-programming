@@ -211,11 +211,7 @@ export default function UserInfo({ data }: { data: IUser }) {
           </Header>
           <Cicle>
             {data && (
-              <Image
-                src={`/avatars/${data?.avatar}.png`}
-                layout="fill"
-                priority
-              />
+              <Image src={`/avatars/${avatar}.png`} layout="fill" priority />
             )}
             {Mutatable && (
               <SvgBox
