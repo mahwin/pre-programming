@@ -5,14 +5,14 @@ import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
 import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
-import { motion, AnimateSharedLayout, LayoutGroup } from "framer-motion";
+import { motion } from "framer-motion";
 import { userActions } from "../../redux/user/userSlice";
 
 const Wapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 60px;
   z-index: 99;
@@ -41,20 +41,33 @@ const Items = styled.ul`
 `;
 
 const Item = styled.li`
-  display: relative;
-  padding: 8px 12px;
+  position: relative;
   font-weight: ${(props) => props.theme.fontWeight.base};
+  padding: 8px 12px;
+  color: ${(props) => props.theme.colorTheme.textPrimary};
   cursor: pointer;
   a {
+    display: block;
     padding: 10px;
-    :hover {
-      color: white;
+    &:hover {
       border-radius: 3px;
       background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
+      transition: background-color 0.3s ease-in-out;
     }
   }
-  :last-child:hover {
-    color: darkorange;
+  button {
+    padding: 8px 12px;
+    border: none;
+    background-color: transparent;
+    color: ${(props) => props.theme.colorTheme.textPrimary};
+    font-weight: ${(props) => props.theme.fontWeight.base};
+    font-size: ${(props) => props.theme.fontSize.base};
+    cursor: pointer;
+    &:hover {
+      border-radius: 3px;
+      color: darkorange;
+      transition: color 0.3s ease-in-out;
+    }
   }
 `;
 
@@ -73,11 +86,15 @@ const LogoBox = styled.div`
   }
 `;
 
-const CurrentPosition = styled(motion.div)`
+const CurrentPosition = styled(motion.span).attrs({
+  layoutId: "position",
+  initial: false,
+})`
   position: absolute;
   left: 0;
   right: 0;
   margin: 0 auto;
+  bottom: 10px;
   width: 5px;
   height: 5px;
   border-radius: 3px;
@@ -127,22 +144,20 @@ function Nav() {
             </Link>
           </>
           {data && (
-            <LayoutGroup>
-              <Items>
-                <Item>
-                  <Link href="/" id="home">
-                    <a>홈</a>
-                  </Link>
-                  {currentNav === "/" && <CurrentPosition layout />}
-                </Item>
-                <Item>
-                  <Link href="/me/voca">
-                    <a>내 단어장</a>
-                  </Link>
-                  {currentNav === "/me/voca" && <CurrentPosition layout />}
-                </Item>
-              </Items>
-            </LayoutGroup>
+            <Items>
+              <Item>
+                <Link href="/" id="home">
+                  <a>홈</a>
+                </Link>
+                {currentNav === "/" && <CurrentPosition />}
+              </Item>
+              <Item>
+                <Link href="/me/voca">
+                  <a>내 단어장</a>
+                </Link>
+                {currentNav === "/me/voca" && <CurrentPosition />}
+              </Item>
+            </Items>
           )}
         </Row>
         <Items>
@@ -152,9 +167,11 @@ function Nav() {
                 <Link href="/me">
                   <a>내 정보</a>
                 </Link>
-                <div>{currentNav === "/me" && <CurrentPosition layout />}</div>
+                {currentNav === "/me" && <CurrentPosition />}
               </Item>
-              <Item onClick={logoutClick}>로그아웃</Item>
+              <Item>
+                <button onClick={logoutClick}>로그아웃</button>
+              </Item>
             </>
           ) : (
             <>
@@ -162,7 +179,7 @@ function Nav() {
                 <Link href="/signIn">
                   <a>로그인</a>
                 </Link>
-                {currentNav === "/signIn" && <CurrentPosition layout />}
+                {currentNav === "/signIn" && <CurrentPosition />}
               </Item>
               <Item>
                 <Link href="/signIn">
