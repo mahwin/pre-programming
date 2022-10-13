@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
 import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
-import { motion } from "framer-motion";
-import { userActions } from "../redux/user/userSlice";
+import { motion, AnimateSharedLayout, LayoutGroup } from "framer-motion";
+import { userActions } from "../../redux/user/userSlice";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -29,7 +29,7 @@ const NavWapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.pc};
 `;
 
-const FontItemsWapper = styled.div`
+const Row = styled.div`
   display: flex;
 `;
 
@@ -41,12 +41,11 @@ const Items = styled.ul`
 `;
 
 const Item = styled.li`
-  position: relative;
+  display: relative;
   padding: 8px 12px;
   font-weight: ${(props) => props.theme.fontWeight.base};
   cursor: pointer;
   a {
-    display: block;
     padding: 10px;
     :hover {
       color: white;
@@ -74,17 +73,14 @@ const LogoBox = styled.div`
   }
 `;
 
-const CurrentPosition = styled(motion.div).attrs({
-  layoutId: "position",
-})`
+const CurrentPosition = styled(motion.div)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   width: 5px;
   height: 5px;
-  position: absolute;
   border-radius: 3px;
-  margin: 0 auto;
-  left: 0;
-  bottom: -3px;
-  right: 0;
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
 `;
 
@@ -92,18 +88,25 @@ interface MutationResult {
   ok: boolean;
 }
 
+type currentNavType = "/" | "/me/voca" | "/me" | "/signIn";
+
 function Nav() {
   const { loading, data, error } = useSelector(
     (state: any) => state.userReducer
   );
+  const [currentNav, setCurrentNav] = useState<currentNavType>("/");
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(userActions.getUser());
-    console.log(loading, data, error);
   }, []);
 
   const router = useRouter();
+  useEffect(() => {
+    setCurrentNav(router.asPath as currentNavType);
+  }, [router]);
+
   const logoutClick = () => {
     LocalStorage.removeItem("accessToken");
     router.reload();
@@ -112,7 +115,7 @@ function Nav() {
   return (
     <Wapper>
       <NavWapper>
-        <FontItemsWapper>
+        <Row>
           <>
             <Link href="/">
               <LogoBox>
@@ -123,25 +126,25 @@ function Nav() {
               </LogoBox>
             </Link>
           </>
-
           {data && (
-            <Items>
-              <Item>
-                <Link href="/" id="home">
-                  <a>홈</a>
-                </Link>
-                {router.route === "/" ? <CurrentPosition /> : null}
-              </Item>
-
-              <Item>
-                <Link href="/me/voca">
-                  <a>내 단어장</a>
-                </Link>
-                {router.route === "/me/voca" ? <CurrentPosition /> : null}
-              </Item>
-            </Items>
+            <LayoutGroup>
+              <Items>
+                <Item>
+                  <Link href="/" id="home">
+                    <a>홈</a>
+                  </Link>
+                  {currentNav === "/" && <CurrentPosition layout />}
+                </Item>
+                <Item>
+                  <Link href="/me/voca">
+                    <a>내 단어장</a>
+                  </Link>
+                  {currentNav === "/me/voca" && <CurrentPosition layout />}
+                </Item>
+              </Items>
+            </LayoutGroup>
           )}
-        </FontItemsWapper>
+        </Row>
         <Items>
           {data ? (
             <>
@@ -149,7 +152,7 @@ function Nav() {
                 <Link href="/me">
                   <a>내 정보</a>
                 </Link>
-                {router.route === "/me" ? <CurrentPosition /> : null}
+                <div>{currentNav === "/me" && <CurrentPosition layout />}</div>
               </Item>
               <Item onClick={logoutClick}>로그아웃</Item>
             </>
@@ -159,7 +162,7 @@ function Nav() {
                 <Link href="/signIn">
                   <a>로그인</a>
                 </Link>
-                {router.route === "/signIn" ? <CurrentPosition /> : null}
+                {currentNav === "/signIn" && <CurrentPosition layout />}
               </Item>
               <Item>
                 <Link href="/signIn">
