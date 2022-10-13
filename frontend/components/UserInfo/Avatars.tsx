@@ -6,15 +6,14 @@ import React, { useEffect, useState, MouseEvent } from "react";
 
 const BtnWapper = styled(motion.div)`
   position: absolute;
-  height: 60%;
-  width: 280px;
   border-radius: 18px;
   bottom: 30px;
-  right: 150px;
+  right: 10%;
   background-color: transparent;
   overflow: hidden;
   cursor: pointer;
-  z-index: 99;
+  height: 60%;
+  width: 280px;
 `;
 
 const AvatarsWrapper = styled(motion.div)`
@@ -80,6 +79,7 @@ const avatarVariants = {
     clipPath: "circle(500px at 40px 40px)",
     backgroundColor: "#06acf9",
     opacity: 1,
+    zIndex: 1,
     transition: {
       opacity: { duration: 0 },
       type: "spring",
@@ -90,6 +90,7 @@ const avatarVariants = {
   closed: {
     clipPath: "circle(30px at 40px 40px)",
     backgroundColor: "#06acf9",
+    zIndex: -99,
     opacity: 0,
     transition: {
       clipPath: { duration: 1 },

@@ -76,6 +76,9 @@ const SvgBox = styled.div`
 const SubmitBtn = styled(Btn)`
   border-radius: 5px;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Error = styled.span`
@@ -197,7 +200,6 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
     if (isAvatarChange)
       setUpdateData((prev) => ({ ...prev, avatar: data.currentAvatar }));
   }, [isAvatarChange, confirmName, confirmPhone]);
-  console.log(updateData);
 
   //유효한 데이터 서버로 전송 후 정상적으로 바꼈으면 화면 reload
   const [update, { loading: updateLoading, data: updateResponse }] =
@@ -210,7 +212,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
   };
   const router = useRouter();
   useEffect(() => {
-    if (updateResponse?.ok) router.push("/");
+    if (updateResponse?.ok) router.reload();
   }, [updateResponse]);
   return (
     <Container
@@ -340,13 +342,22 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
             </Changable>
           </Changables>
         </form>
-
-        {Object.keys(updateData).length !== 0 ? (
-          <SubmitBtn onClick={handleUpdate} disabled={!isCan}>
-            Update profile
-          </SubmitBtn>
+        {updateLoading ? (
+          <>
+            <SubmitBtn disabled>
+              <LoadingSvg color="#006266" />
+            </SubmitBtn>
+          </>
         ) : (
-          <SubmitBtn disabled>Nothing has changed</SubmitBtn>
+          <>
+            {Object.keys(updateData).length !== 0 ? (
+              <SubmitBtn onClick={handleUpdate} disabled={!isCan}>
+                Update profile
+              </SubmitBtn>
+            ) : (
+              <SubmitBtn disabled>Nothing has changed</SubmitBtn>
+            )}
+          </>
         )}
       </FormContainer>
     </Container>
