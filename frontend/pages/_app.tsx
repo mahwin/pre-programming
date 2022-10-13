@@ -5,7 +5,7 @@ import theme, { lightTheme, darkTheme } from "../styles/theme";
 import { Provider } from "react-redux";
 import { useState } from "react";
 import store from "../redux/store";
-import ThemeButton from "@components/ThemeButton";
+import ThemeButton from "@components/Commons/ThemeButton";
 import axios from "axios";
 import LocalStorage from "@utils/localStorage";
 

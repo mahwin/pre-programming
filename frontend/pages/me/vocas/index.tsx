@@ -1,5 +1,5 @@
-import Nav from "@components/Nav";
-import Footer from "@components/Footer";
+import Nav from "@components/Commons/Nav";
+import Footer from "@components/Commons/Footer";
 // import { get } from "react-redux";
 
 function Me() {

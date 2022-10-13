@@ -1,5 +1,5 @@
-import Nav from "@components/Nav";
-import Footer from "@components/Footer";
+import Nav from "@components/Commons/Nav";
+import Footer from "@components/Commons/Footer";
 import UserInfo from "@components/UserInfo/UserInfo";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -11,7 +11,7 @@ export default function Me() {
   );
   const router = useRouter();
   useEffect(() => {
-    if (error) router.push("enter");
+    if (error) router.push("singIn");
   }, [loading, error]);
   return (
     <>

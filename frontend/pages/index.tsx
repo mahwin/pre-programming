@@ -1,8 +1,8 @@
-import Nav from "@components/Nav";
-import Banner from "@components/Banner";
-import Vocas from "@components/Vocas";
-import Footer from "@components/Footer";
-import FloatingButton from "@components/FloatingButton";
+import Nav from "@components/Commons/Nav";
+import Banner from "@components/Commons/Banner";
+import Vocas from "@components/Vocas/Vocas";
+import Footer from "@components/Commons/Footer";
+import FloatingButton from "@components/Commons/FloatingButton";
 
 interface IHome {
   data: {
@@ -10,7 +10,6 @@ interface IHome {
     backEnd: string[];
   };
 }
-
 const Home = ({ data }: IHome) => {
   return (
     <>

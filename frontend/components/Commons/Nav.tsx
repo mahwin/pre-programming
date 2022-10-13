@@ -105,7 +105,7 @@ interface MutationResult {
   ok: boolean;
 }
 
-type currentNavType = "/" | "/me/voca" | "/me" | "/signIn";
+type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
 function Nav() {
   const { loading, data, error } = useSelector(
@@ -152,10 +152,10 @@ function Nav() {
                 {currentNav === "/" && <CurrentPosition />}
               </Item>
               <Item>
-                <Link href="/me/voca">
+                <Link href="/me/vocas">
                   <a>내 단어장</a>
                 </Link>
-                {currentNav === "/me/voca" && <CurrentPosition />}
+                {currentNav === "/me/vocas" && <CurrentPosition />}
               </Item>
             </Items>
           )}

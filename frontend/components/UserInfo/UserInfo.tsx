@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { IUser } from "../../redux/user/user.dto";
 import Image from "next/image";
 import { ChangeSvg, LoadingSvg } from "@svg";
@@ -210,7 +210,13 @@ export default function UserInfo({ data }: { data: IUser }) {
             </ToggleBox>
           </Header>
           <Cicle>
-            <Image src={`/avatar/${avatar}.png`} layout="fill" />
+            {data && (
+              <Image
+                src={`/avatars/${data?.avatar}.png`}
+                layout="fill"
+                priority
+              />
+            )}
             {Mutatable && (
               <SvgBox
                 onClick={onClickAvatars}
@@ -222,11 +228,17 @@ export default function UserInfo({ data }: { data: IUser }) {
               </SvgBox>
             )}
           </Cicle>
-          <Form
-            data={{ name: data.name, phone: data.phone, currentAvatar: avatar }}
-            isAvatarChange={avatar !== data.avatar ? true : false}
-            isCan={Mutatable}
-          />
+          {data && (
+            <Form
+              data={{
+                name: data.name,
+                phone: data.phone,
+                currentAvatar: avatar,
+              }}
+              isAvatarChange={avatar !== data.avatar ? true : false}
+              isCan={Mutatable}
+            />
+          )}
         </Row>
       </Wrapper>
       {Mutatable && (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TwitterSvg, FacebookSvg } from "@svg";
+import { TwitterSvg, FacebookSvg, LoadingSvg } from "@svg";
 import useMutation from "@utils/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
@@ -262,7 +262,7 @@ export default function SignIn() {
                   />
                 </InputBox>
                 <Error>{errors?.phone?.message}</Error>
-                <Button>{loading ? "Loading..." : "Login"}</Button>
+                <Button>{loading ? <LoadingSvg /> : "Login"}</Button>
               </Form>
             </>
           )}

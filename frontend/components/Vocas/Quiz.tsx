@@ -11,7 +11,7 @@ import {
   dropSix,
   dropZero,
 } from "../assets/keyframes/RootKeyFrame";
-import { ResultCircleSvg } from "../assets/svg/RootSvg";
+import { ResultCircleSvg } from "@svg";
 import Answers from "./Answers";
 
 const Wrapper = styled.div`

@@ -1,8 +1,8 @@
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import VocaDetail from "../../components/VocaDetail";
-import Banner from "../../components/Banner";
-import TestButton from "../..//components/TestButton";
+import Nav from "@components/Commons/Nav";
+import Footer from "@components/Commons/Footer";
+import VocaDetail from "@components/Vocas/VocaDetail";
+import Banner from "@components/Commons/Banner";
+import TestButton from "@components/Vocas/TestButton";
 
 interface IVocaDetail {
   data: number[];
