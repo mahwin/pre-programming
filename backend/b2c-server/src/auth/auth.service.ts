@@ -3,6 +3,7 @@ import { PrismaService } from 'prisma/prisma.service';
 import { LoginDto } from './dto/auth.dto';
 import * as twilio from 'twilio';
 import { JwtService } from '@nestjs/jwt';
+import generateName from '../utils/generateName';
 
 const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 
@@ -20,7 +21,8 @@ export class AuthService {
               ...phone,
             },
             create: {
-              name: 'Anonymous',
+              name: generateName(),
+              avatar: '1',
               ...phone,
             },
           },
