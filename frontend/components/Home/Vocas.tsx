@@ -59,7 +59,7 @@ export default function Vocas({ data }: any) {
           <Title>{key}</Title>
           <Items>
             {data[key].map((item: string) => (
-              <Link href={`/${item}`} key={item}>
+              <Link href={`/vocas/${item}`} key={item}>
                 <Item>{item}</Item>
               </Link>
             ))}

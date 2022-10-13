@@ -10,7 +10,7 @@ import {
   dropSeven,
   dropSix,
   dropZero,
-} from "../assets/keyframes/RootKeyFrame";
+} from "../../assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg } from "@svg";
 import Answers from "./Answers";
 

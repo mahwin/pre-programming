@@ -1,6 +1,6 @@
 import Nav from "@components/Commons/Nav";
 import Banner from "@components/Commons/Banner";
-import Vocas from "@components/Vocas/Vocas";
+import Vocas from "@components/Home/Vocas";
 import Footer from "@components/Commons/Footer";
 import FloatingButton from "@components/Commons/FloatingButton";
 

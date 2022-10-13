@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Table from "@components/Vocas/Table";
+import Table from "@components/voca/Table";
 import { OpenSvg } from "@svg";
-import VocaTable from "@components/Vocas/VocaTable";
+import VocaTable from "@components/voca/VocaTable";
 import AddVoca from "./AddVoca";
 
 const Wrapper = styled.div`
