@@ -145,6 +145,15 @@ const clockAnimation = keyframes`
 	}
 `;
 
+const CursorAnimate = keyframes`
+	0%{
+		box-shadow: inset -3px 0px 0px #888;
+	}
+	100%{
+		box-shadow: inset -3px 0px 0px transparent;
+	}
+`;
+
 export {
   explode,
   dropZero,
@@ -156,4 +165,5 @@ export {
   dropSix,
   dropSeven,
   clockAnimation,
+  CursorAnimate,
 };
