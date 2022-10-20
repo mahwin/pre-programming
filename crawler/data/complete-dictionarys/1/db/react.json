@@ -1389,14 +1389,14 @@
         "word": "argument",
         "mean": "['논쟁; 언쟁', '논거', '논의']",
         "frequency": "79",
-        "level": 2,
+        "level": 1,
         "category": "react"
     },
     {
         "word": "small",
         "mean": "['작은', '잘게', '허리의 잘록한 부분']",
         "frequency": "78",
-        "level": 2,
+        "level": 1,
         "category": "react"
     },
     {
@@ -2789,14 +2789,14 @@
         "word": "experimental",
         "mean": "['실험적인', '실험의']",
         "frequency": "32",
-        "level": 3,
+        "level": 2,
         "category": "react"
     },
     {
         "word": "client",
         "mean": "['의뢰인', '클라이언트']",
         "frequency": "32",
-        "level": 3,
+        "level": 2,
         "category": "react"
     },
     {
@@ -4189,14 +4189,14 @@
         "word": "structure",
         "mean": "['구조', '조직하다', '구조물']",
         "frequency": "14",
-        "level": 4,
+        "level": 3,
         "category": "react"
     },
     {
         "word": "minor",
         "mean": "['작은', '미성년자', '부전공']",
         "frequency": "14",
-        "level": 4,
+        "level": 3,
         "category": "react"
     },
     {
@@ -5589,14 +5589,14 @@
         "word": "identify",
         "mean": "['확인하다', '찾다', '알아보게 하다']",
         "frequency": "7",
-        "level": 5,
+        "level": 4,
         "category": "react"
     },
     {
         "word": "action",
         "mean": "['행동', '확인 조치하다', '동작']",
         "frequency": "7",
-        "level": 5,
+        "level": 4,
         "category": "react"
     },
     {
@@ -6989,14 +6989,14 @@
         "word": "lower",
         "mean": "['더 낮은 쪽의', '…을 내리다', '낮추다']",
         "frequency": "4",
-        "level": 6,
+        "level": 5,
         "category": "react"
     },
     {
         "word": "loop",
         "mean": "['고리', '고리 모양을 만들다', '고리 모양으로 이동하다']",
         "frequency": "4",
-        "level": 6,
+        "level": 5,
         "category": "react"
     },
     {
@@ -8389,14 +8389,14 @@
         "word": "pain",
         "mean": "['아픔', '고통스럽게 하다', '아주 귀찮은 사람']",
         "frequency": "3",
-        "level": 7,
+        "level": 6,
         "category": "react"
     },
     {
         "word": "happy",
         "mean": "['행복한', 'Happy Birthday나 Happy New Year 같은 축하 인사에서 쓰임', '마음에 드는']",
         "frequency": "3",
-        "level": 7,
+        "level": 6,
         "category": "react"
     },
     {
@@ -9789,14 +9789,14 @@
         "word": "stopped",
         "mean": "['멈춘, 정지된; 저지된.', '마개를 한; 막힌, 메워져 있는.']",
         "frequency": "2",
-        "level": 8,
+        "level": 7,
         "category": "react"
     },
     {
         "word": "incompatible",
         "mean": "['양립할 수 없는', '공존할 수 없는', '함께 쓸 수 없는']",
         "frequency": "2",
-        "level": 8,
+        "level": 7,
         "category": "react"
     },
     {
@@ -11189,14 +11189,14 @@
         "word": "tired",
         "mean": "['피로한', '싫증난', '지겨운']",
         "frequency": "1",
-        "level": 9,
+        "level": 8,
         "category": "react"
     },
     {
         "word": "duke",
         "mean": "['공작', '통치자']",
         "frequency": "1",
-        "level": 9,
+        "level": 8,
         "category": "react"
     },
     {
@@ -11822,7 +11822,6 @@
         "level": 9,
         "category": "react"
     },
-
     {
         "word": "eyed",
         "mean": "['(…의) 눈을 한', '눈이 있는, 눈구멍이 달린; 눈 모양의 얼룩이 있는']",
@@ -12576,28 +12575,28 @@
         "word": "finite",
         "mean": "['한정된, 유한한', '정형의(동사가 시제, 인칭, 수를 나타내는)']",
         "frequency": "1",
-        "level": 10,
+        "level": 9,
         "category": "react"
     },
     {
         "word": "procedure",
         "mean": "['절차', '수술']",
         "frequency": "1",
-        "level": 10,
+        "level": 9,
         "category": "react"
     },
     {
         "word": "central",
         "mean": "['중심되는', '중앙의', '중심인']",
         "frequency": "1",
-        "level": 10,
+        "level": 9,
         "category": "react"
     },
     {
         "word": "secondary",
         "mean": "['이차적인', '적인', '중등 교육의']",
         "frequency": "1",
-        "level": 10,
+        "level": 9,
         "category": "react"
     },
     {
