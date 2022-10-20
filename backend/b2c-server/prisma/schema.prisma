@@ -21,7 +21,6 @@ model User {
   createdAt       DateTime    @default(now())
   updatedAt       DateTime    @updatedAt
   tokens          Token[]
-  vocabularys     Vocabulary[]
 }
 
 model Token {
@@ -36,8 +35,11 @@ model Token {
 
 model Vocabulary {
   id        Int      @id @default(autoincrement())
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    Int
   category  String
-  level     String
+  level     Int
+  word      String
+  mean      String
+  frequency String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
