@@ -1,0 +1,1468 @@
+[
+    {
+        "word": "other",
+        "mean": [
+            "(그 밖의) 다른; 다른 사람",
+            "(두 사람·사물 중에서 두 번째 사람·사물을 가리켜) (나머지) 다른 한, 나의, 너의 (나머지) 다른 한 ~ 등",
+            "(어떤 집단에서 나머지 다른 사람·사물을 다 가리켜) (나머지) 다른, 나의, 너의 (나머지) 다른 ~ 등"
+        ],
+        "frequency": "14"
+    },
+    {
+        "word": "request",
+        "mean": [
+            "요청",
+            "요청하다",
+            "요구"
+        ],
+        "frequency": "10"
+    },
+    {
+        "word": "instance",
+        "mean": [
+            "사례",
+            "…을 예로 들다"
+        ],
+        "frequency": "9"
+    },
+    {
+        "word": "use",
+        "mean": [
+            "쓰다",
+            "사용",
+            "용도"
+        ],
+        "frequency": "8"
+    },
+    {
+        "word": "language",
+        "mean": [
+            "(특정 국가·지역의) 언어",
+            "(인간 의사소통 도구로서의) 말",
+            "(말이나 글로 된 특정한 방식의) 표현, 말씨"
+        ],
+        "frequency": "8"
+    },
+    {
+        "word": "node",
+        "mean": [
+            "(나무줄기의) 마디",
+            "(뿌리·가지의) 옹이",
+            "(연결망의) 교점"
+        ],
+        "frequency": "7"
+    },
+    {
+        "word": "example",
+        "mean": [
+            "(설명·증명을 위한) 예",
+            "(대표적인) 본보기, 전형",
+            "(따라 배울 만한) 본보기"
+        ],
+        "frequency": "7"
+    },
+    {
+        "word": "browser",
+        "mean": [
+            "브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)",
+            "(물건을 살 생각은 별로 없이 가게를) 둘러보는 사람"
+        ],
+        "frequency": "6"
+    },
+    {
+        "word": "cancel",
+        "mean": [
+            "취소하다",
+            "무효화하다",
+            "펀치를 찍다"
+        ],
+        "frequency": "6"
+    },
+    {
+        "word": "following",
+        "mean": [
+            "(시간상으로) 그 다음의",
+            "다음에 나오는",
+            "추종자들"
+        ],
+        "frequency": "5"
+    },
+    {
+        "word": "library",
+        "mean": [
+            "도서관",
+            "서재",
+            "장서들"
+        ],
+        "frequency": "5"
+    },
+    {
+        "word": "same",
+        "mean": [
+            "(똑)같은, 동일한(동일한 하나를 가리킴)",
+            "꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)",
+            "(…와) 똑같은 것"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "order",
+        "mean": [
+            "순서",
+            "명령하다",
+            "주문하다; 부탁하다"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "note",
+        "mean": [
+            "메모",
+            "…에 주목하다",
+            "언급하다"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "method",
+        "mean": [
+            "방법",
+            "체계성"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "create",
+        "mean": [
+            "창조하다",
+            "자아내다",
+            "수여하다"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "new",
+        "mean": [
+            "새",
+            "새 것",
+            "새로 산"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "available",
+        "mean": [
+            "구할 수 있는",
+            "시간이 있는"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "response",
+        "mean": [
+            "대답",
+            "반응",
+            "응창"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "token",
+        "mean": [
+            "토큰",
+            "형식적인",
+            "징표로 하는"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "documentation",
+        "mean": [
+            "(무엇에 요구되는, 또는 무엇을 입증할) 서류",
+            "(문서로 하는) 기록, 문서화; 기록문서"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "configuration",
+        "mean": [
+            "배열",
+            "환경 설정"
+        ],
+        "frequency": "4"
+    },
+    {
+        "word": "promise",
+        "mean": [
+            "약속하다",
+            "약속",
+            "가능성"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "based",
+        "mean": [
+            "(~에) 기반을 둔",
+            "(…에) 근거지를 둔",
+            "(…을) 기본으로 한"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "client",
+        "mean": [
+            "의뢰인",
+            "클라이언트"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "module",
+        "mean": [
+            "모듈, 교과목 단위(특히 영국 대학에서 한 교육 과정의 일부가 되는 단위)",
+            "모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)",
+            "모듈, 조립 부품(기계·가구·건물 등을 구성하는 규격화된 부품)"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "require",
+        "mean": [
+            "필요하다",
+            "요구하다"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "post",
+        "mean": [
+            "우편",
+            "발송하다",
+            "우체통에 넣다"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "custom",
+        "mean": [
+            "관습",
+            "습관",
+            "구입"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "error",
+        "mean": [
+            "실수[오류](특히 문제를 일으키거나 결과에 영향을 미치는 것)"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "object",
+        "mean": [
+            "물건",
+            "반대하다",
+            "반대 이유를 대다"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "precedence",
+        "mean": [
+            "우선(함)"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "code",
+        "mean": [
+            "암호",
+            "부호로 처리하다",
+            "암호로 쓰다"
+        ],
+        "frequency": "3"
+    },
+    {
+        "word": "native",
+        "mean": [
+            "태어난 곳의",
+            "… 태생인 사람",
+            "토착민"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "get",
+        "mean": [
+            "받다",
+            "얻다",
+            "가져 오다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "provided",
+        "mean": [
+            "(만약) …라면"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "need",
+        "mean": [
+            "필요로 하다; …해야 하다",
+            "…할 필요가 있다; …할 필요가 없다; …할 필요가 있는가",
+            "필요"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "default",
+        "mean": [
+            "채무 불이행",
+            "이행하지 않다",
+            "디폴트로 되다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "information",
+        "mean": [
+            "정보"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "catch",
+        "mean": [
+            "잡다",
+            "잡기",
+            "잡은 양"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "interceptor",
+        "mean": [
+            "차단자"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "add",
+        "mean": [
+            "첨가하다",
+            "합하다",
+            "보태다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "way",
+        "mean": [
+            "방법, 방식, 식, 투",
+            "(특정한 행동) 방식, 태도",
+            "아주 멀리; 큰 차이로, 훨씬"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "cancellation",
+        "mean": [
+            "취소",
+            "취소(된 것)",
+            "무효화, 취소"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "form",
+        "mean": [
+            "종류",
+            "형성되다; 형성시키다",
+            "구성되다; 구성하다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "make",
+        "mean": [
+            "만들다",
+            "제품",
+            "정리하다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "global",
+        "mean": [
+            "세계적인; 지구의",
+            "전반적인"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "environment",
+        "mean": [
+            "(주변의) 환경",
+            "(자연) 환경",
+            "[컴퓨터] 환경(컴퓨터, 사용자, 프로그램을 포함한 모든 것)"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "breaking",
+        "mean": [
+            "파괴",
+            "단선"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "have",
+        "mean": [
+            "가지다",
+            "…으로 되어 있다",
+            "잡고 있다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "service",
+        "mean": [
+            "서비스",
+            "점검하다",
+            "제공하다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "angular",
+        "mean": [
+            "뼈가 앙상한",
+            "각이 진"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "translate",
+        "mean": [
+            "번역하다",
+            "번역되다",
+            "바꾸다; 바뀌다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "translation",
+        "mean": [
+            "번역",
+            "번역문",
+            "옮김"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "file",
+        "mean": [
+            "파일",
+            "보관하다",
+            "제기하다"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "iso",
+        "mean": [
+            "국제 표준화 기구"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "course",
+        "mean": [
+            "강의",
+            "빠르게 흐르다",
+            "과정"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "statement",
+        "mean": [
+            "성명",
+            "특수 교육 필요 결정을 내리다",
+            "성명서"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "folder",
+        "mean": [
+            "서류철, 폴더",
+            "(일부 컴퓨터 시스템에서 파일 보관용) 폴더"
+        ],
+        "frequency": "2"
+    },
+    {
+        "word": "isomorphic",
+        "mean": [
+            "같은 모양의, 동일 구조의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "run",
+        "mean": [
+            "달리다",
+            "달리기",
+            "배달; 운행; 운항"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "server",
+        "mean": [
+            "(컴퓨터의) 서버",
+            "(테니스 등에서) 서브하는 사람",
+            "<음식을 덜 때 쓰는 기구>"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "side",
+        "mean": [
+            "쪽",
+            "옆",
+            "옆면"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "bower",
+        "mean": [
+            "나무 그늘"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "yarn",
+        "mean": [
+            "(직물·편물용) 실, 방적사",
+            "(특히 과장되거나 지어낸) 긴 이야기"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "little",
+        "mean": [
+            "작은",
+            "거의 없는",
+            "그다지"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "gain",
+        "mean": [
+            "하게 되다",
+            "증가",
+            "이득"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "approach",
+        "mean": [
+            "다가가다",
+            "접근법",
+            "다가감"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "await",
+        "mean": [
+            "(~을) 기다리다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "part",
+        "mean": [
+            "일부",
+            "헤어지다",
+            "반쯤; 어느 정도"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "explorer",
+        "mean": [
+            "답사[탐사]자, 탐험가"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "older",
+        "mean": [
+            "연상의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "caution",
+        "mean": [
+            "조심",
+            "~하지 말라고 주의를 주다",
+            "진술에 대한 주의를 주다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "perform",
+        "mean": [
+            "행하다",
+            "해 보이다",
+            "돌아가다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "multiple",
+        "mean": [
+            "많은",
+            "배수"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "concurrent",
+        "mean": [
+            "공존하는, 동시에 발생하는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "reference",
+        "mean": [
+            "말하기",
+            "참고 표시를 하다; 참조 문헌을 달다",
+            "찾아봄"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "made",
+        "mean": [
+            "make의 과거, 과거분사",
+            "…하게 만든"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "relevant",
+        "mean": [
+            "관련 있는",
+            "의의가 있는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "convenience",
+        "mean": [
+            "편의",
+            "편리한 것"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "alias",
+        "mean": [
+            "…라는 가명으로 알려진",
+            "가명",
+            "에일리어스"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "data",
+        "mean": [
+            "(증명·판단·결정 등을 위한) 자료",
+            "(컴퓨터에 저장된) 자료"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "listed",
+        "mean": [
+            "표[명단]에 실린, 전화 번호부에 실려 있는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "receive",
+        "mean": [
+            "받다",
+            "받다; 입다",
+            "환영하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "rejection",
+        "mean": [
+            "거절,거부"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "second",
+        "mean": [
+            "두 번째의",
+            "둘째로",
+            "초"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "parameter",
+        "mean": [
+            "매개 변수"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "handling",
+        "mean": [
+            "(상황·사람·동물 등에 대한) 처리",
+            "(기계·장치 등의) 조작",
+            "(손으로) 다루기"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "section",
+        "mean": [
+            "부분",
+            "절개하다",
+            "박편을 만들다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "specify",
+        "mean": [
+            "(구체적으로) 명시하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "applied",
+        "mean": [
+            "응용의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "found",
+        "mean": [
+            "설립하다",
+            "세우다",
+            "~의 기반을 두다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "property",
+        "mean": [
+            "재산",
+            "부동산",
+            "건물"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "argument",
+        "mean": [
+            "논쟁; 언쟁",
+            "논거",
+            "논의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "latter",
+        "mean": [
+            "후자의; 마지막의",
+            "후자; 마지막",
+            "후반의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "take",
+        "mean": [
+            "가지고 가다",
+            "테이크",
+            "수익"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "former",
+        "mean": [
+            "예전의",
+            "과거의",
+            "전자의 …"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "intercept",
+        "mean": [
+            "(중간에) 가로막다[가로채다]"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "handled",
+        "mean": [
+            "핸들이 있는, 자루가 달린"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "remove",
+        "mean": [
+            "치우다",
+            "동떨어져 있는 정도",
+            "벗다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "option",
+        "mean": [
+            "선택",
+            "선택 과목",
+            "선택권"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "define",
+        "mean": [
+            "정의하다",
+            "규정하다",
+            "윤곽을 분명히 나타내다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "throw",
+        "mean": [
+            "던지다",
+            "던지기",
+            "던진 거리"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "more",
+        "mean": [
+            "더 많은 수(의)",
+            "더(절 이상으로 된 형용사부사의 비교급을 형성함)",
+            "더 (많이)"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "fetch",
+        "mean": [
+            "가지고 오다",
+            "팔리다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "withdrawn",
+        "mean": [
+            "내성적인",
+            "내향적인"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "cancelable",
+        "mean": [
+            "취소[말소]할 수 있는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "proposal",
+        "mean": [
+            "제안",
+            "청혼"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "used",
+        "mean": [
+            "중고의",
+            "익숙한"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "source",
+        "mean": [
+            "원천",
+            "얻다",
+            "자료; 정보원"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "factory",
+        "mean": [
+            "공장"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "shown",
+        "mean": [
+            "보여진"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "executor",
+        "mean": [
+            "집행자"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "function",
+        "mean": [
+            "기능",
+            "기능하다",
+            "행사"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "constructor",
+        "mean": [
+            "제작자"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "several",
+        "mean": [
+            "몇의",
+            "각각의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "signal",
+        "mean": [
+            "신호",
+            "신호를 보내다",
+            "귀중한"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "transition",
+        "mean": [
+            "이행"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "period",
+        "mean": [
+            "기간",
+            "시대의",
+            "시대; 시기"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "send",
+        "mean": [
+            "보내다",
+            "전하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "application",
+        "mean": [
+            "지원",
+            "적용",
+            "바르기"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "format",
+        "mean": [
+            "구성 방식",
+            "포맷을 만들다",
+            "체재를 갖추다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "sure",
+        "mean": [
+            "확신하는",
+            "그럼",
+            "정말"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "encode",
+        "mean": [
+            "암호로 바꾸다",
+            "부호화하다",
+            "표현하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "preferable",
+        "mean": [
+            "더 좋은",
+            "나은; 선호되는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "known",
+        "mean": [
+            "(특히 많은 사람들에게) 알려진"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "case",
+        "mean": [
+            "경우",
+            "실정",
+            "사례"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "archive",
+        "mean": [
+            "기록 보관소",
+            "기록 보관소에 보관하다",
+            "파일을 보관하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "couple",
+        "mean": [
+            "두 사람",
+            "연결하다",
+            "성교하다; 교미하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "round",
+        "mean": [
+            "둥근",
+            "둥글게",
+            "…을 돌아"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "release",
+        "mean": [
+            "풀어 주다",
+            "석방",
+            "발표; 개봉; 발간; 출시"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "minor",
+        "mean": [
+            "작은",
+            "미성년자",
+            "부전공"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "version",
+        "mean": [
+            "-판",
+            "설명"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "implementation",
+        "mean": [
+            "시행"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "support",
+        "mean": [
+            "지지하다",
+            "지지",
+            "도움"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "inspired",
+        "mean": [
+            "(자질·능력이) 탁월한; 영감을 받아 한, 직관에 따른",
+            "…의 영향을 (받았음을) 드러내는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "ultimately",
+        "mean": [
+            "궁극적으로, 결국",
+            "근본적으로"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "effort",
+        "mean": [
+            "수고",
+            "노력",
+            "활동"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "provide",
+        "mean": [
+            "제공하다",
+            "규정하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "accessible",
+        "mean": [
+            "접근 가능한",
+            "이해하기 쉬운",
+            "다가가기 쉬운"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "many",
+        "mean": [
+            "(특히 부정문이나 격식을 차리는 영어 문장에서 복수 명사, 동사와 함께 쓰여) 많은; (의문문에서) 몇; (as·so·too와 함께 쓰여) 많은",
+            "(복수 동사와 함께 쓰여) 대부분의 사람들",
+            "(단수 명사, 동사와 함께 쓰여) 많은"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "possible",
+        "mean": [
+            "가능한",
+            "가능성 있는 사람",
+            "있을 수 있는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "important",
+        "mean": [
+            "중요한",
+            "영향력이 큰"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "read",
+        "mean": [
+            "읽다",
+            "읽기",
+            "아는 것이 많은"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "anyone",
+        "mean": [
+            "누구, 아무(부정문과 의문문에서 if/whether 뒤에서 또는 prevent, forbid, avoid와 같은 동사 뒤에서 someone 대신 쓰임)",
+            "누구나",
+            "중요한 인물"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "help",
+        "mean": [
+            "돕다",
+            "도움",
+            "지원"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "guide",
+        "mean": [
+            "안내",
+            "안내하여 데려가다",
+            "인도하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "composed",
+        "mean": [
+            "~으로 구성되다",
+            "침착한"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "letter",
+        "mean": [
+            "편지",
+            "글자가 들어 있다",
+            "마크를 찍다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "finished",
+        "mean": [
+            "(~와의 관계·일 등이) 끝난",
+            "(권력·효력 등이) 끝난",
+            "완성된, 마무리된"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "register",
+        "mean": [
+            "등록하다",
+            "기록부",
+            "음역"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "root",
+        "mean": [
+            "뿌리",
+            "뿌리를 내리다; 뿌리 내리게 하다",
+            "파헤치다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "open",
+        "mean": [
+            "열려 있는",
+            "열다",
+            "옥외"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "inert",
+        "mean": [
+            "기력이 없는",
+            "비활성의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "line",
+        "mean": [
+            "선",
+            "안을 대다",
+            "막을 형성하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "top",
+        "mean": [
+            "맨 위",
+            "맨 위의",
+            "더 높다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "remember",
+        "mean": [
+            "기억하다",
+            "기억나다",
+            "명심하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "replace",
+        "mean": [
+            "대신하다",
+            "바꾸다",
+            "다시 놓다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "correct",
+        "mean": [
+            "맞는",
+            "바로잡다",
+            "검사하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "variable",
+        "mean": [
+            "변동이 심한; 가변적인",
+            "변수",
+            "변화를 줄 수 있는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "name",
+        "mean": [
+            "이름",
+            "이름을 지어주다",
+            "이름을 대다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "look",
+        "mean": [
+            "보다",
+            "보기",
+            "이봐"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "constant",
+        "mean": [
+            "끊임없는; 거듭되는",
+            "정수",
+            "변함없는"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "move",
+        "mean": [
+            "움직이다; 움직이게 하다",
+            "조치",
+            "이동"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "list",
+        "mean": [
+            "리스트",
+            "리스트을 작성하다",
+            "리스트에 언급하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "begin",
+        "mean": [
+            "시작하다",
+            "시작되다",
+            "…로 시작하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "free",
+        "mean": [
+            "자유로운",
+            "석방하다",
+            "요금을 안 내고"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "issue",
+        "mean": [
+            "주제",
+            "발표하다",
+            "발부하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "minimal",
+        "mean": [
+            "아주 적은",
+            "최소의"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "schema",
+        "mean": [
+            "개요",
+            "윤곽"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "usage",
+        "mean": [
+            "용법",
+            "사용; 사용량"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "license",
+        "mean": [
+            "허가하다"
+        ],
+        "frequency": "1"
+    },
+    {
+        "word": "structure",
+        "mean": [
+            "구조",
+            "조직하다",
+            "구조물"
+        ],
+        "frequency": "1"
+    }
+]
