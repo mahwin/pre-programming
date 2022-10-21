@@ -1,19 +1,25 @@
 import { AxiosError } from "axios";
 
 interface IUser {
+  id: number;
   avatar: string;
   createdAt: string;
-  id: string;
   name: string;
   phone: string;
   updatedAt: string;
 }
 
-interface UserState {
+interface IUserState {
   loading: boolean;
   data: IUser | null;
   error: AxiosError | null;
 }
 
-export type { IUser };
-export default UserState;
+const initialUserState: IUserState = {
+  loading: false,
+  data: null,
+  error: null,
+};
+
+export { initialUserState };
+export type { IUser, IUserState };

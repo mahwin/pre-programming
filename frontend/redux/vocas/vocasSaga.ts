@@ -3,18 +3,19 @@ import * as vocasAPI from "./vocasAPI";
 import { call, put, takeLatest, all, fork } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
-function* getVocas() {
+function* getVoca() {
   try {
-    const response: AxiosResponse = yield call(vocasAPI.getVocas);
-    yield put(vocasActions.getVocasSuccess(response.data));
+    const response: AxiosResponse = yield call(vocasAPI.getVoca);
+
+    yield put(vocasActions.getVocaSuccess(response.data));
   } catch (error) {
-    yield put(vocasActions.getVocasError(error));
+    yield put(vocasActions.getVocaError(error));
   }
 }
 
-function* watchGetVocas() {
-  yield takeLatest(vocasActions.getVocas, getVocas);
+function* watchGetVoca() {
+  yield takeLatest(vocasActions.getVoca, getVoca);
 }
 export default function* getVocasSaga() {
-  yield all([fork(watchGetVocas)]);
+  yield all([fork(watchGetVoca)]);
 }

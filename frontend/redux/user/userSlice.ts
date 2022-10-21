@@ -1,28 +1,21 @@
-import UserState from "./user.dto";
-import { createSlice } from "@reduxjs/toolkit";
-
-const initialState: UserState = {
-  loading: false,
-  data: null,
-  error: null,
-};
+import initialState from "../initialState";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: initialState.user,
   reducers: {
     getUser: (state) => {
       state.loading = true;
     },
     getUserSuccess: (state, { payload }) => {
-      state.data = payload;
       state.loading = false;
+      state.data = payload;
     },
     getUserError: (state, { payload }) => {
       state.error = payload;
       state.loading = false;
     },
-
     updateUser: (state) => {
       state.loading = true;
     },
@@ -37,6 +30,6 @@ const userSlice = createSlice({
   },
 });
 
-// 정의한 액션과 리듀서를 export한다.
+// 정의한 액션과 리듀서를 export.
 export const userActions = userSlice.actions;
 export default userSlice.reducer;

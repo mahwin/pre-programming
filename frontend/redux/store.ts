@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
-import getVocasSaga from "./vocas/vocasSaga";
 import { call, all } from "redux-saga/effects";
 import rootReducer from "./rootReducer";
 import getUserSaga from "./user/userSaga";
+import getVocasSaga from "./vocas/vocasSaga";
+import { createWrapper } from "next-redux-wrapper";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,6 +21,7 @@ const createStore = () => {
   return store;
 };
 
-const store = createStore();
+export type AppStore = ReturnType<typeof createStore>;
 
-export default store;
+const wrapper = createWrapper<AppStore>(createStore);
+export default wrapper;
