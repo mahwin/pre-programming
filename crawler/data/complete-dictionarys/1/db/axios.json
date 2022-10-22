@@ -1,1213 +1,1213 @@
 [
-    {
-        "word": "other",
-        "mean": "['(그 밖의) 다른; 다른 사람'],",
-        "frequency": "14",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "request",
-        "mean": "['요청', '요청하다', '요구']",
-        "frequency": "10",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "instance",
-        "mean": "['사례', '…을 예로 들다']",
-        "frequency": "9",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "use",
-        "mean": "['쓰다', '사용', '용도']",
-        "frequency": "8",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "language",
-        "mean": "['(특정 국가·지역의) 언어', '(인간 의사소통 도구로서의) 말', '표현, 말씨']",
-        "frequency": "8",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "node",
-        "mean": "['(나무줄기의) 마디', '(뿌리·가지의) 옹이', '(연결망의) 교점']",
-        "frequency": "7",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "example",
-        "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
-        "frequency": "7",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "browser",
-        "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', (가게를) 둘러보는 사람']",
-        "frequency": "6",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "cancel",
-        "mean": "['취소하다', '무효화하다', '펀치를 찍다']",
-        "frequency": "6",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "following",
-        "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
-        "frequency": "5",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "library",
-        "mean": "['도서관', '서재', '장서들']",
-        "frequency": "5",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "same",
-        "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "order",
-        "mean": "['순서', '명령하다', '주문하다']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "note",
-        "mean": "['메모', '…에 주목하다', '언급하다']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "method",
-        "mean": "['방법', '체계성']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "create",
-        "mean": "['창조하다', '자아내다', '수여하다']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "new",
-        "mean": "['새', '새 것', '새로 산']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "available",
-        "mean": "['구할 수 있는', '시간이 있는']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "response",
-        "mean": "['대답', '반응', '응창']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "token",
-        "mean": "['토큰', '형식적인', '징표로 하는']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "documentation",
-        "mean": "['(무엇에 요구되는, 또는 무엇을 입증할) 서류']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "configuration",
-        "mean": "['배열', '환경 설정']",
-        "frequency": "4",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "promise",
-        "mean": "['약속하다', '약속', '가능성']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "based",
-        "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "client",
-        "mean": "['의뢰인', '클라이언트']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "module",
-        "mean": "['모듈, 교과목 단위', '모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)','부품']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "require",
-        "mean": "['필요하다', '요구하다']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "post",
-        "mean": "['우편', '발송하다', '우체통에 넣다']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "custom",
-        "mean": "['관습', '습관', '구입']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "error",
-        "mean": "['실수']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "object",
-        "mean": "['물건', '반대하다', '반대 이유를 대다']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "precedence",
-        "mean": "['우선(함)']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "code",
-        "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
-        "frequency": "3",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "native",
-        "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "get",
-        "mean": "['받다', '얻다', '가져 오다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "provided",
-        "mean": "['(만약) ~라면']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "need",
-        "mean": "['필요로 하다', '…할 필요가 있다','필요']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "default",
-        "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "information",
-        "mean": "['정보']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "catch",
-        "mean": "['잡다', '잡기', '잡은 양']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "interceptor",
-        "mean": "['차단자']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "add",
-        "mean": "['첨가하다', '합하다', '보태다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "way",
-        "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "cancellation",
-        "mean": "['취소', '취소(된 것)', '무효화, 취소']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "form",
-        "mean": "['종류', '형성되다; 형성시키다', '구성되다; 구성하다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "make",
-        "mean": "['만들다', '제품', '정리하다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "global",
-        "mean": "['세계적인; 지구의', '전반적인']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "environment",
-        "mean": "['(주변의)환경']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "breaking",
-        "mean": "['파괴', '단선']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "have",
-        "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "service",
-        "mean": "['서비스', '점검하다', '제공하다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "angular",
-        "mean": "['뼈가 앙상한', '각이 진']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "translate",
-        "mean": "['번역하다', '번역되다', '바꾸다; 바뀌다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "translation",
-        "mean": "['번역', '번역문', '옮김']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "file",
-        "mean": "['파일', '보관하다', '제기하다']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "iso",
-        "mean": "['국제 표준화 기구']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "course",
-        "mean": "['강의', '빠르게 흐르다', '과정']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "statement",
-        "mean": "['성명', '특수 교육 필요 결정을 내리다', '성명서']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "folder",
-        "mean": "['서류철, 폴더', '(일부 컴퓨터 시스템에서 파일 보관용) 폴더']",
-        "frequency": "2",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "isomorphic",
-        "mean": "['같은 모양의, 동일 구조의']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "run",
-        "mean": "['달리다', '달리기', '배달; 운행; 운항']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "server",
-        "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "side",
-        "mean": "['쪽', '옆', '옆면']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "bower",
-        "mean": "['나무 그늘']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "yarn",
-        "mean": "['(직물·편물용) 실, 방적사', '(특히 과장되거나 지어낸) 긴 이야기']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "little",
-        "mean": "['작은', '거의 없는', '그다지']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "gain",
-        "mean": "['하게 되다', '증가', '이득']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "approach",
-        "mean": "['다가가다', '접근법', '다가감']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "await",
-        "mean": "['(~을) 기다리다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "part",
-        "mean": "['일부', '헤어지다', '반쯤; 어느 정도']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "explorer",
-        "mean": "['답사자', '탐험가']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "older",
-        "mean": "['연상의']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "caution",
-        "mean": "['조심', '~하지 말라고 주의를 주다', '진술에 대한 주의를 주다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "perform",
-        "mean": "['행하다', '해 보이다', '돌아가다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "multiple",
-        "mean": "['많은', '배수']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "concurrent",
-        "mean": "['공존하는, 동시에 발생하는']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "reference",
-        "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "made",
-        "mean": "['make의 과거, 과거분사', '…하게 만든']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "relevant",
-        "mean": "['관련 있는', '의의가 있는']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "convenience",
-        "mean": "['편의', '편리한 것']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "alias",
-        "mean": "['…라는 가명으로 알려진', '가명', '에일리어스']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "data",
-        "mean": "['(증명·판단·결정 등을 위한) 자료', '(컴퓨터에 저장된) 자료']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "listed",
-        "mean": "['표에 실린', '전화 번호부에 실려 있는']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "receive",
-        "mean": "['받다', '받다; 입다', '환영하다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "rejection",
-        "mean": "['거절,거부']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "second",
-        "mean": "['두 번째의', '둘째로', '초']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "parameter",
-        "mean": "['매개 변수']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "handling",
-        "mean": "['(상황·사람·동물 등에 대한) 처리', '(기계·장치 등의) 조작', '(손으로) 다루기']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "section",
-        "mean": "['부분', '절개하다', '박편을 만들다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "specify",
-        "mean": "['(구체적으로) 명시하다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "applied",
-        "mean": "['응용의']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "found",
-        "mean": "['설립하다', '세우다', '~의 기반을 두다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "property",
-        "mean": "['재산', '부동산', '건물']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "argument",
-        "mean": "['논쟁; 언쟁', '논거', '논의']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "latter",
-        "mean": "['후자의; 마지막의', '후자; 마지막', '후반의']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "take",
-        "mean": "['가지고 가다', '테이크', '수익']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "former",
-        "mean": "['예전의', '과거의', '전자의 …']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "intercept",
-        "mean": "['(중간에) 가로막다[가로채다]']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "handled",
-        "mean": "['핸들이 있는, 자루가 달린']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "remove",
-        "mean": "['치우다', '동떨어져 있는 정도', '벗다']",
-        "frequency": "1",
-        "level": 1,
-        "category": "axios"
-    },
-    {
-        "word": "option",
-        "mean": "['선택', '선택 과목', '선택권']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "define",
-        "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "throw",
-        "mean": "['던지다', '던지기', '던진 거리']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "more",
-        "mean": "['더 많은 수(의)', '더 (많이)']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "fetch",
-        "mean": "['가지고 오다', '팔리다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "withdrawn",
-        "mean": "['내성적인', '내향적인']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "cancelable",
-        "mean": "['취소[말소]할 수 있는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "proposal",
-        "mean": "['제안', '청혼']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "used",
-        "mean": "['중고의']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "source",
-        "mean": "['원천', '얻다', '자료; 정보원']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "factory",
-        "mean": "['공장']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "shown",
-        "mean": "['보여진']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "executor",
-        "mean": "['집행자']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "function",
-        "mean": "['기능', '기능하다', '행사']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "constructor",
-        "mean": "['제작자']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "several",
-        "mean": "['몇의', '각각의']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "signal",
-        "mean": "['신호', '신호를 보내다', '귀중한']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "transition",
-        "mean": "['이행', '과도']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "period",
-        "mean": "['기간', '시대의', '시대; 시기']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "send",
-        "mean": "['보내다', '전하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "application",
-        "mean": "['지원', '적용', '바르기']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "format",
-        "mean": "['구성 방식', '포맷을 만들다', '체재를 갖추다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "sure",
-        "mean": "['확신하는', '그럼', '정말']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "encode",
-        "mean": "['암호로 바꾸다', '부호화하다', '표현하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "preferable",
-        "mean": "['더 좋은', '나은; 선호되는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "known",
-        "mean": "['(특히 많은 사람들에게) 알려진']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "case",
-        "mean": "['경우', '실정', '사례']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "archive",
-        "mean": "['기록 보관소', '기록 보관소에 보관하다', '파일을 보관하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "couple",
-        "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "round",
-        "mean": "['둥근', '둥글게', '…을 돌아']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "release",
-        "mean": "['풀어 주다', '석방', '발표; 개봉; 발간; 출시']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "minor",
-        "mean": "['작은', '미성년자', '부전공']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "version",
-        "mean": "['-판', '설명']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "implementation",
-        "mean": "['시행', '이행']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "support",
-        "mean": "['지지하다', '지지', '도움']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "inspired",
-        "mean": "['(자질·능력이) 탁월한; 영감을 받아 한, 직관에 따른', '…의 영향을 (받았음을) 드러내는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "ultimately",
-        "mean": "['궁극적으로, 결국', '근본적으로']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "effort",
-        "mean": "['수고', '노력', '활동']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "provide",
-        "mean": "['제공하다', '규정하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "accessible",
-        "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "many",
-        "mean": "['많은']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "possible",
-        "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "important",
-        "mean": "['중요한', '영향력이 큰']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "read",
-        "mean": "['읽다', '읽기', '아는 것이 많은']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "anyone",
-        "mean": "['누구, 아무', '누구나', '중요한 인물']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "help",
-        "mean": "['돕다', '도움', '지원']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "guide",
-        "mean": "['안내', '안내하여 데려가다', '인도하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "composed",
-        "mean": "['~으로 구성되다', '침착한']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "letter",
-        "mean": "['편지', '글자가 들어 있다', '마크를 찍다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "finished",
-        "mean": "['(~와의 관계·일 등이) 끝난', '(권력·효력 등이) 끝난', '완성된, 마무리된']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "register",
-        "mean": "['등록하다', '기록부', '음역']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "root",
-        "mean": "['뿌리', '뿌리를 내리다; 뿌리 내리게 하다', '파헤치다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "open",
-        "mean": "['열려 있는', '열다', '옥외']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "inert",
-        "mean": "['기력이 없는', '비활성의']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "line",
-        "mean": "['선', '안을 대다', '막을 형성하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "top",
-        "mean": "['맨 위', '맨 위의', '더 높다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "remember",
-        "mean": "['기억하다', '기억나다', '명심하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "replace",
-        "mean": "['대신하다', '바꾸다', '다시 놓다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "correct",
-        "mean": "['맞는', '바로잡다', '검사하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "variable",
-        "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "name",
-        "mean": "['이름', '이름을 지어주다', '이름을 대다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "look",
-        "mean": "['보다', '보기', '이봐']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "constant",
-        "mean": "['끊임없는; 거듭되는', '정수', '변함없는']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "move",
-        "mean": "['움직이다; 움직이게 하다', '조치', '이동']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "list",
-        "mean": "['리스트', '리스트을 작성하다', '리스트에 언급하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "begin",
-        "mean": "['시작하다', '시작되다', '…로 시작하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "free",
-        "mean": "['자유로운', '석방하다', '요금을 안 내고']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "issue",
-        "mean": "['주제', '발표하다', '발부하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "minimal",
-        "mean": "['아주 적은', '최소의']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "schema",
-        "mean": "['개요', '윤곽']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "usage",
-        "mean": "['용법', '사용; 사용량']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "license",
-        "mean": "['허가하다']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    },
-    {
-        "word": "structure",
-        "mean": "['구조', '조직하다', '구조물']",
-        "frequency": "1",
-        "level": 2,
-        "category": "axios"
-    }
+  {
+    "word": "other",
+    "mean": "['(그 밖의) 다른; 다른 사람']",
+    "frequency": "14",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "request",
+    "mean": "['요청', '요청하다', '요구']",
+    "frequency": "10",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "instance",
+    "mean": "['사례', '…을 예로 들다']",
+    "frequency": "9",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "use",
+    "mean": "['쓰다', '사용', '용도']",
+    "frequency": "8",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "language",
+    "mean": "['(특정 국가·지역의) 언어', '(인간 의사소통 도구로서의) 말', '표현, 말씨']",
+    "frequency": "8",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "node",
+    "mean": "['(나무줄기의) 마디', '(뿌리·가지의) 옹이', '(연결망의) 교점']",
+    "frequency": "7",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "example",
+    "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
+    "frequency": "7",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "browser",
+    "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', '(가게를) 둘러보는 사람']",
+    "frequency": "6",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "cancel",
+    "mean": "['취소하다', '무효화하다', '펀치를 찍다']",
+    "frequency": "6",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "following",
+    "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
+    "frequency": "5",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "library",
+    "mean": "['도서관', '서재', '장서들']",
+    "frequency": "5",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "same",
+    "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "order",
+    "mean": "['순서', '명령하다', '주문하다']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "note",
+    "mean": "['메모', '…에 주목하다', '언급하다']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "method",
+    "mean": "['방법', '체계성']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "create",
+    "mean": "['창조하다', '자아내다', '수여하다']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "new",
+    "mean": "['새', '새 것', '새로 산']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "available",
+    "mean": "['구할 수 있는', '시간이 있는']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "response",
+    "mean": "['대답', '반응', '응창']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "token",
+    "mean": "['토큰', '형식적인', '징표로 하는']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "documentation",
+    "mean": "['(무엇에 요구되는, 또는 무엇을 입증할) 서류']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "configuration",
+    "mean": "['배열', '환경 설정']",
+    "frequency": "4",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "promise",
+    "mean": "['약속하다', '약속', '가능성']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "based",
+    "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "client",
+    "mean": "['의뢰인', '클라이언트']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "module",
+    "mean": "['모듈, 교과목 단위', '모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)','부품']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "require",
+    "mean": "['필요하다', '요구하다']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "post",
+    "mean": "['우편', '발송하다', '우체통에 넣다']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "custom",
+    "mean": "['관습', '습관', '구입']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "error",
+    "mean": "['실수']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "object",
+    "mean": "['물건', '반대하다', '반대 이유를 대다']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "precedence",
+    "mean": "['우선(함)']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "code",
+    "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
+    "frequency": "3",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "native",
+    "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "get",
+    "mean": "['받다', '얻다', '가져 오다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "provided",
+    "mean": "['(만약) ~라면']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "need",
+    "mean": "['필요로 하다', '…할 필요가 있다','필요']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "default",
+    "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "information",
+    "mean": "['정보']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "catch",
+    "mean": "['잡다', '잡기', '잡은 양']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "interceptor",
+    "mean": "['차단자']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "add",
+    "mean": "['첨가하다', '합하다', '보태다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "way",
+    "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "cancellation",
+    "mean": "['취소', '취소(된 것)', '무효화, 취소']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "form",
+    "mean": "['종류', '형성되다; 형성시키다', '구성되다; 구성하다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "make",
+    "mean": "['만들다', '제품', '정리하다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "global",
+    "mean": "['세계적인; 지구의', '전반적인']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "environment",
+    "mean": "['(주변의)환경']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "breaking",
+    "mean": "['파괴', '단선']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "have",
+    "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "service",
+    "mean": "['서비스', '점검하다', '제공하다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "angular",
+    "mean": "['뼈가 앙상한', '각이 진']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "translate",
+    "mean": "['번역하다', '번역되다', '바꾸다; 바뀌다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "translation",
+    "mean": "['번역', '번역문', '옮김']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "file",
+    "mean": "['파일', '보관하다', '제기하다']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "iso",
+    "mean": "['국제 표준화 기구']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "course",
+    "mean": "['강의', '빠르게 흐르다', '과정']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "statement",
+    "mean": "['성명', '특수 교육 필요 결정을 내리다', '성명서']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "folder",
+    "mean": "['서류철, 폴더', '(일부 컴퓨터 시스템에서 파일 보관용) 폴더']",
+    "frequency": "2",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "isomorphic",
+    "mean": "['같은 모양의, 동일 구조의']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "run",
+    "mean": "['달리다', '달리기', '배달; 운행; 운항']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "server",
+    "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "side",
+    "mean": "['쪽', '옆', '옆면']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "bower",
+    "mean": "['나무 그늘']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "yarn",
+    "mean": "['(직물·편물용) 실, 방적사', '(특히 과장되거나 지어낸) 긴 이야기']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "little",
+    "mean": "['작은', '거의 없는', '그다지']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "gain",
+    "mean": "['하게 되다', '증가', '이득']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "approach",
+    "mean": "['다가가다', '접근법', '다가감']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "await",
+    "mean": "['(~을) 기다리다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "part",
+    "mean": "['일부', '헤어지다', '반쯤; 어느 정도']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "explorer",
+    "mean": "['답사자', '탐험가']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "older",
+    "mean": "['연상의']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "caution",
+    "mean": "['조심', '~하지 말라고 주의를 주다', '진술에 대한 주의를 주다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "perform",
+    "mean": "['행하다', '해 보이다', '돌아가다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "multiple",
+    "mean": "['많은', '배수']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "concurrent",
+    "mean": "['공존하는, 동시에 발생하는']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "reference",
+    "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "made",
+    "mean": "['make의 과거, 과거분사', '…하게 만든']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "relevant",
+    "mean": "['관련 있는', '의의가 있는']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "convenience",
+    "mean": "['편의', '편리한 것']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "alias",
+    "mean": "['…라는 가명으로 알려진', '가명', '에일리어스']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "data",
+    "mean": "['(증명·판단·결정 등을 위한) 자료', '(컴퓨터에 저장된) 자료']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "listed",
+    "mean": "['표에 실린', '전화 번호부에 실려 있는']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "receive",
+    "mean": "['받다', '받다; 입다', '환영하다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "rejection",
+    "mean": "['거절,거부']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "second",
+    "mean": "['두 번째의', '둘째로', '초']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "parameter",
+    "mean": "['매개 변수']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "handling",
+    "mean": "['(상황·사람·동물 등에 대한) 처리', '(기계·장치 등의) 조작', '(손으로) 다루기']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "section",
+    "mean": "['부분', '절개하다', '박편을 만들다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "specify",
+    "mean": "['(구체적으로) 명시하다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "applied",
+    "mean": "['응용의']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "found",
+    "mean": "['설립하다', '세우다', '~의 기반을 두다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "property",
+    "mean": "['재산', '부동산', '건물']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "argument",
+    "mean": "['논쟁; 언쟁', '논거', '논의']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "latter",
+    "mean": "['후자의; 마지막의', '후자; 마지막', '후반의']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "take",
+    "mean": "['가지고 가다', '테이크', '수익']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "former",
+    "mean": "['예전의', '과거의', '전자의 …']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "intercept",
+    "mean": "['(중간에) 가로막다[가로채다]']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "handled",
+    "mean": "['핸들이 있는, 자루가 달린']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "remove",
+    "mean": "['치우다', '동떨어져 있는 정도', '벗다']",
+    "frequency": "1",
+    "level": "1",
+    "category": "axios"
+  },
+  {
+    "word": "option",
+    "mean": "['선택', '선택 과목', '선택권']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "define",
+    "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "throw",
+    "mean": "['던지다', '던지기', '던진 거리']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "more",
+    "mean": "['더 많은 수(의)', '더 (많이)']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "fetch",
+    "mean": "['가지고 오다', '팔리다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "withdrawn",
+    "mean": "['내성적인', '내향적인']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "cancelable",
+    "mean": "['취소[말소]할 수 있는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "proposal",
+    "mean": "['제안', '청혼']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "used",
+    "mean": "['중고의']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "source",
+    "mean": "['원천', '얻다', '자료; 정보원']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "factory",
+    "mean": "['공장']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "shown",
+    "mean": "['보여진']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "executor",
+    "mean": "['집행자']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "function",
+    "mean": "['기능', '기능하다', '행사']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "constructor",
+    "mean": "['제작자']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "several",
+    "mean": "['몇의', '각각의']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "signal",
+    "mean": "['신호', '신호를 보내다', '귀중한']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "transition",
+    "mean": "['이행', '과도']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "period",
+    "mean": "['기간', '시대의', '시대; 시기']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "send",
+    "mean": "['보내다', '전하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "application",
+    "mean": "['지원', '적용', '바르기']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "format",
+    "mean": "['구성 방식', '포맷을 만들다', '체재를 갖추다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "sure",
+    "mean": "['확신하는', '그럼', '정말']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "encode",
+    "mean": "['암호로 바꾸다', '부호화하다', '표현하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "preferable",
+    "mean": "['더 좋은', '나은; 선호되는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "known",
+    "mean": "['(특히 많은 사람들에게) 알려진']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "case",
+    "mean": "['경우', '실정', '사례']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "archive",
+    "mean": "['기록 보관소', '기록 보관소에 보관하다', '파일을 보관하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "couple",
+    "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "round",
+    "mean": "['둥근', '둥글게', '…을 돌아']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "release",
+    "mean": "['풀어 주다', '석방', '발표; 개봉; 발간; 출시']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "minor",
+    "mean": "['작은', '미성년자', '부전공']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "version",
+    "mean": "['-판', '설명']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "implementation",
+    "mean": "['시행', '이행']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "support",
+    "mean": "['지지하다', '지지', '도움']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "inspired",
+    "mean": "['(자질·능력이) 탁월한; 영감을 받아 한, 직관에 따른', '…의 영향을 (받았음을) 드러내는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "ultimately",
+    "mean": "['궁극적으로, 결국', '근본적으로']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "effort",
+    "mean": "['수고', '노력', '활동']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "provide",
+    "mean": "['제공하다', '규정하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "accessible",
+    "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "many",
+    "mean": "['많은']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "possible",
+    "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "important",
+    "mean": "['중요한', '영향력이 큰']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "read",
+    "mean": "['읽다', '읽기', '아는 것이 많은']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "anyone",
+    "mean": "['누구, 아무', '누구나', '중요한 인물']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "help",
+    "mean": "['돕다', '도움', '지원']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "guide",
+    "mean": "['안내', '안내하여 데려가다', '인도하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "composed",
+    "mean": "['~으로 구성되다', '침착한']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "letter",
+    "mean": "['편지', '글자가 들어 있다', '마크를 찍다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "finished",
+    "mean": "['(~와의 관계·일 등이) 끝난', '(권력·효력 등이) 끝난', '완성된, 마무리된']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "register",
+    "mean": "['등록하다', '기록부', '음역']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "root",
+    "mean": "['뿌리', '뿌리를 내리다; 뿌리 내리게 하다', '파헤치다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "open",
+    "mean": "['열려 있는', '열다', '옥외']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "inert",
+    "mean": "['기력이 없는', '비활성의']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "line",
+    "mean": "['선', '안을 대다', '막을 형성하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "top",
+    "mean": "['맨 위', '맨 위의', '더 높다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "remember",
+    "mean": "['기억하다', '기억나다', '명심하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "replace",
+    "mean": "['대신하다', '바꾸다', '다시 놓다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "correct",
+    "mean": "['맞는', '바로잡다', '검사하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "variable",
+    "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "name",
+    "mean": "['이름', '이름을 지어주다', '이름을 대다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "look",
+    "mean": "['보다', '보기', '이봐']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "constant",
+    "mean": "['끊임없는; 거듭되는', '정수', '변함없는']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "move",
+    "mean": "['움직이다; 움직이게 하다', '조치', '이동']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "list",
+    "mean": "['리스트', '리스트을 작성하다', '리스트에 언급하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "begin",
+    "mean": "['시작하다', '시작되다', '…로 시작하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "free",
+    "mean": "['자유로운', '석방하다', '요금을 안 내고']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "issue",
+    "mean": "['주제', '발표하다', '발부하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "minimal",
+    "mean": "['아주 적은', '최소의']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "schema",
+    "mean": "['개요', '윤곽']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "usage",
+    "mean": "['용법', '사용; 사용량']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "license",
+    "mean": "['허가하다']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  },
+  {
+    "word": "structure",
+    "mean": "['구조', '조직하다', '구조물']",
+    "frequency": "1",
+    "level": "2",
+    "category": "axios"
+  }
 ]

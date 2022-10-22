@@ -3,3101 +3,3101 @@
     "word": "state",
     "mean": "['상태', '국가의', '말하다']",
     "frequency": "104",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "selector",
     "mean": "['(스포츠 팀의) 선발 위원', '(엔진·기계 등에서 기능) 선택 장치']",
     "frequency": "63",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "value",
     "mean": "['가치', '소중하게 생각하다', '평가하다']",
     "frequency": "55",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "recoil",
     "mean": "['움찔하다', '반동', '움츠러들다']",
     "frequency": "51",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "react",
     "mean": "['반응하다', '화학 반응을 일으키다']",
     "frequency": "47",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "use",
     "mean": "['쓰다', '사용', '용도']",
     "frequency": "42",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "component",
     "mean": "['요소', '부품']",
     "frequency": "28",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "example",
     "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
     "frequency": "27",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "function",
     "mean": "['기능', '기능하다', '행사']",
     "frequency": "24",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "used",
     "mean": "['중고의']",
     "frequency": "23",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "set",
     "mean": "['놓다', '세트', '위치한']",
     "frequency": "23",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "query",
     "mean": "['문의', '문의하다', '묻다']",
     "frequency": "21",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "promise",
     "mean": "['약속하다', '약속', '가능성']",
     "frequency": "18",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "new",
     "mean": "['새', '새 것', '새로 산']",
     "frequency": "17",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "default",
     "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
     "frequency": "15",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "snapshot",
     "mean": "['= snap', '짤막한 묘사']",
     "frequency": "15",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "read",
     "mean": "['읽다', '읽기', '아는 것이 많은']",
     "frequency": "14",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "based",
     "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
     "frequency": "14",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "get",
     "mean": "['받다', '얻다', '가져 오다']",
     "frequency": "14",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "list",
     "mean": "['리스트', '리스트을 작성하다', '리스트에 언급하다']",
     "frequency": "14",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "same",
     "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
     "frequency": "13",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "current",
     "mean": "['현재의', '흐름', '전류']",
     "frequency": "13",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "following",
     "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
     "frequency": "13",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "render",
     "mean": "['만들다', '주다', '제시하다']",
     "frequency": "13",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "other",
-    "mean": "['(그 밖의) 다른; 다른 사람'],",
+    "mean": "['(그 밖의) 다른; 다른 사람']",
     "frequency": "12",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "such",
     "mean": "['앞에 이미 언급한, 그런', '(곧 언급하려는) 그런', '(정도를 강조하여) 그 정도의']",
     "frequency": "12",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "change",
     "mean": "['변하다', '변화', '색다른 것; 기분 전환']",
     "frequency": "12",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "note",
     "mean": "['메모', '…에 주목하다', '언급하다']",
     "frequency": "12",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "unstable",
     "mean": "['금방이라도 급변할 듯한', '흔들릴 듯한']",
     "frequency": "11",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "effect",
     "mean": "['영향; 결과', '가져오다', '느낌']",
     "frequency": "11",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "hook",
     "mean": "['고리', '갈고리로 잠그다', '…에 걸다']",
     "frequency": "10",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "object",
     "mean": "['물건', '반대하다', '반대 이유를 대다']",
     "frequency": "10",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "update",
     "mean": "['갱신하다', '가장 최근의 정보를 알려주다']",
     "frequency": "10",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "error",
     "mean": "['실수']",
     "frequency": "9",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "way",
     "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
     "frequency": "9",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "user",
     "mean": "['이용자, 사용자', '마약쟁이']",
     "frequency": "9",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "pure",
     "mean": "['순수한', '깨끗한', '완전한']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "support",
     "mean": "['지지하다', '지지', '도움']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "create",
     "mean": "['창조하다', '자아내다', '수여하다']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "see",
     "mean": "['보다', '주교의 관구', '앞을 보다']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "show",
     "mean": "['보여 주다', '쇼', '프로']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "cache",
     "mean": "['은닉처', '은닉하다', '캐시에 저장하다']",
     "frequency": "8",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "data",
     "mean": "['(증명·판단·결정 등을 위한) 자료', '(컴퓨터에 저장된) 자료']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "flow",
     "mean": "['흐름', '흐르다', '계속 흘러가다']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "local",
     "mean": "['지역의', '주민', '집에서 가까운 술집']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "dependency",
     "mean": "['의존', '속국']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "build",
     "mean": "['짓다', '체구', '만들어 내다']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "given",
     "mean": "['(이미) 정해진', '특정한', '…을 고려해 볼 때']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "suspense",
     "mean": "['서스펜스', '긴장감']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "store",
     "mean": "['백화점', '저장하다', '가게']",
     "frequency": "7",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "approach",
     "mean": "['다가가다', '접근법', '다가감']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "multiple",
     "mean": "['많은', '배수']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "have",
     "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "font",
     "mean": "['세례반', '서체']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "size",
     "mean": "['크기', '크기를 표시하다', '크기를 바꾸다']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "avoid",
     "mean": "['방지하다', '피하다']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "property",
     "mean": "['재산', '부동산', '건물']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "information",
     "mean": "['정보']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "simple",
     "mean": "['간단한', '단순한', '순전한']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "provided",
     "mean": "['(만약) ~라면']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "call",
     "mean": "['이름을 지어주다', '전화', '울음소리; 외침']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "side",
     "mean": "['쪽', '옆', '옆면']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "initialize",
     "mean": "['초기 내용을 설정하다']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "useful",
     "mean": "['유용한', '유능한']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "history",
     "mean": "['역사', '역사서', '이력']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "time",
     "mean": "['시간', '시간을 맞추다', '시간을 측정하다']",
     "frequency": "6",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "key",
     "mean": "['열쇠', '입력하다', '가장 중요한']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "button",
     "mean": "['단추', '단추를 잠그다', '단추로 잠그게 되어 있다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "input",
     "mean": "['조언; 투입', '입력하다', '입력']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "more",
     "mean": "['더 많은 수(의)', '더 (많이)']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "package",
     "mean": "['상자; 포장물', '포장하다', '제시하다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "version",
     "mean": "['-판', '설명']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "run",
     "mean": "['달리다', '달리기', '배달; 운행; 운항']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "add",
     "mean": "['첨가하다', '합하다', '보태다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "application",
     "mean": "['지원', '적용', '바르기']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "implement",
     "mean": "['시행하다', '도구']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "context",
     "mean": "['맥락', '문맥']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "return",
     "mean": "['돌아오다', '돌아옴', '돌려줌']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "please",
     "mean": "['부디', '기쁘게 하다', '…하고 싶다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "fallback",
     "mean": "['대비책']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "pattern",
     "mean": "['양식', '무늬를 만들다', '양식을 형성시키다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "evaluation",
     "mean": "['인사 고과', '평가', '감정']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "reset",
     "mean": "['다시 맞추다', '다시 제자리에 넣다']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "help",
     "mean": "['돕다', '도움', '지원']",
     "frequency": "5",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "behavior",
     "mean": "['행동, 거동, 행실, 품행, 태도', '행동; 습성']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "subscribe",
     "mean": "['구독하다; 가입하다', '가입하다; 기부하다', '청약하다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "unique",
     "mean": "['유일무이한', '특별한', '고유의']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "write",
     "mean": "['쓰다', '집필하다', '편지를 쓰다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "access",
     "mean": "['입장', '접속하다', '접근하다; 들어가다; 이용하다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "cause",
     "mean": "['원인', '…을 야기하다', '이유']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "output",
     "mean": "['생산량', '출력해 내다', '출력']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "install",
     "mean": "['설치하다', '취임시키다', '자리를 잡게 하다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "yarn",
     "mean": "['(직물·편물용) 실, 방적사', '(특히 과장되거나 지어낸) 긴 이야기']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "provide",
     "mean": "['제공하다', '규정하다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "format",
     "mean": "['구성 방식', '포맷을 만들다', '체재를 갖추다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "library",
     "mean": "['도서관', '서재', '장서들']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "need",
     "mean": "['필요로 하다', '…할 필요가 있다','필요']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "root",
     "mean": "['뿌리', '뿌리를 내리다; 뿌리 내리게 하다', '파헤치다']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "tutorial",
     "mean": "['(대학의) 개별 지도 시간', '사용 지침서, (컴퓨터의) 사용 지침 프로그램', '개인 지도의']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "item",
     "mean": "['항목', '물품', '한 가지']",
     "frequency": "4",
-    "level": 1,
+    "level": "1",
     "category": "recoil"
   },
   {
     "word": "setter",
     "mean": "['세터(사냥개로 쓰이기도 하는, 털이 길고 몸집이 큰 개)', 'set하는 사람']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "dynamic",
     "mean": "['역학', '정력적인', '역동적인']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "order",
     "mean": "['순서', '명령하다', '주문하다']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "idempotent",
     "mean": "['멱등(冪等)의', '멱등원(元)']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "refresh",
     "mean": "['생기를 되찾게 하다', '다시 채우다', '~의 기억을 새롭게 하다']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "name",
     "mean": "['이름', '이름을 지어주다', '이름을 대다']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "handle",
     "mean": "['다루다', '손잡이', '손잡이가 …한']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "helper",
     "mean": "['도와주는 사람']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "policy",
     "mean": "['정책', '방책', '보험 증권']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "storage",
     "mean": "['저장', '창고 보관']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "type",
     "mean": "['형', '타자 치다', '유형을 알아내다']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "development",
     "mean": "['발달', '개발; 신개발품', '새로이 전개된 사건']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "internal",
     "mean": "['내부의', '체내의', '국내의']",
     "frequency": "4",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "global",
     "mean": "['세계적인; 지구의', '전반적인']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "certain",
     "mean": "['확실한', '…중 어떤 사람들', '확신하는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "tree",
     "mean": "['나무']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "persistence",
     "mean": "['고집', '(없어지지 않고 오래 동안) 지속됨']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "map",
     "mean": "['지도; 약도', '지도를 만들다', '발견하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "functional",
     "mean": "['기능 위주의', '기능상의', '가동되는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "view",
     "mean": "['견해', '여기다', '보다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "interface",
     "mean": "['인터페이스', '접속하다', '접속기']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "defined",
     "mean": "['정의된']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "code",
     "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "result",
     "mean": "['결과', '발생하다', '승리']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "number",
     "mean": "['수', '번호를 매기다', '모두 …이 되다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "branch",
     "mean": "['나뭇가지', '갈라지다', '지사']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "section",
     "mean": "['부분', '절개하다', '박편을 만들다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "piece",
     "mean": "['한 부분; 한 개', '조각', '부분']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "think",
     "mean": "['생각하다', '사고하다', '생각을 하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "page",
     "mean": "['페이지', '안내 방송을 하다', '연락하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "able",
     "mean": "['…할 수 있는', '재능 있는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "array",
     "mean": "['집합체', '배열하다', '배치하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "form",
     "mean": "['종류', '형성되다; 형성시키다', '구성되다; 구성하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "next",
     "mean": "['(시간순서공간상으로 바로 무엇) 다음의', '그 다음에','그리고는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "considered",
     "mean": "['깊이 생각한 (후의)', '존경받는, 중히 여겨지는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "filter",
     "mean": "['필터', '여과하다', '필터를 쓰다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "all",
     "mean": "['모든', '모든', '다, 모두']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "important",
     "mean": "['중요한', '영향력이 큰']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "depend",
     "mean": "['의존하다, 의지하다', '믿다, 신뢰하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "model",
     "mean": "['모형', '모델로 일하다', '입어 보이다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "persist",
     "mean": "['집요하게 계속하다', '계속되다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "sync",
     "mean": "['동기(비격식)']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "execute",
     "mean": "['처형하다', '실행하다', '해내다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "request",
     "mean": "['요청', '요청하다', '요구']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "thrown",
     "mean": "['THROW의 과거분사', '꼰']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "necessary",
     "mean": "['필요한', '필연적인']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "consistent",
     "mean": "['한결같은', '거듭되는', '~와 일치하는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "obtain",
     "mean": "['얻다', '존재하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "helpful",
     "mean": "['도움이 되는', '기꺼이 돕는']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "option",
     "mean": "['선택', '선택 과목', '선택권']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "synchronization",
     "mean": "['동시에 하기; 시계를 맞추기.', '(영화의) 화면과 음향의 일치; 동시 녹음; 동기화(同期化).']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "part",
     "mean": "['일부', '헤어지다', '반쯤; 어느 정도']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "definition",
     "mean": "['정의', '의미', '선명도']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "handler",
-    "mean": "['(동물, 특히 개) 조련사', 취급하는 사람', '조직자; 조언자, 참모']",
+    "mean": "['(동물, 특히 개) 조련사', '취급하는 사람', '조직자; 조언자, 참모']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "manage",
     "mean": "['간신히 해내다', '살아 나가다', '살아 내다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "returned",
     "mean": "['돌려 보내진, 반송되어진', '돌아온, 귀환한']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "initial",
     "mean": "['처음의', '이름의 첫 글자', '성명의 첫 글자들을 표시하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "server",
     "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "handled",
     "mean": "['핸들이 있는, 자루가 달린']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "test",
     "mean": "['시험', '시험하다', '검사를 하다']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "previous",
     "mean": "['이전의', '바로 앞의']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "additional",
     "mean": "['추가의']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "memory",
     "mean": "['기억', '기억 장치']",
     "frequency": "3",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "management",
     "mean": "['경영', '경영진', '관리']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "external",
     "mean": "['외부의', '대외의']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "attached",
     "mean": "['애착을 가진', '~ 소속의', '부착된, 첨부된']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "transform",
     "mean": "['변형시키다', '완전히 바꿔 놓다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "place",
     "mean": "['장소', '놓다', '두다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "advanced",
     "mean": "['선진의', '고급의', '(발달 단계상) 후기의']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "let",
     "mean": "['놓아두다', '레트', '임대']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "like",
     "mean": "['…와 비슷한', '좋아하다', '…대로']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "upstream",
     "mean": "['상류로']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "redundant",
     "mean": "['정리 해고당한', '불필요한']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "minimal",
     "mean": "['아주 적은', '최소의']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "track",
     "mean": "['길', '추적하다', '이동하다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "point",
     "mean": "['의견', '가리키다', '겨누다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "argument",
     "mean": "['논쟁; 언쟁', '논거', '논의']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "label",
     "mean": "['표', '라벨을 붙이다', '딱지를 붙이다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "reference",
     "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "latest",
     "mean": "['(가장) 최근의', '(가장) 최근의 것']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "stable",
     "mean": "['안정된', '마구간', '넣다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "command",
     "mean": "['명령', '명령하다', '지휘하다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "bower",
     "mean": "['나무 그늘']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "preset",
     "mean": "['미리 조정하다', '미리 결정하다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "particular",
     "mean": "['특정한', '자세한 사실', '서면 정보']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "performance",
     "mean": "['공연; 연주회', '(개인의) 연기', '실적, 성과']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "specific",
     "mean": "['구체적인', '특정한', '특유의']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "documentation",
     "mean": "['(무엇에 요구되는, 또는 무엇을 입증할) 서류']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "parent",
     "mean": "['부모', '모체']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "good",
     "mean": "['좋은', '선', '잘']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "put",
     "mean": "['놓다', '밀어 넣다', '들어가게 하다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "written",
     "mean": "['(말이 아닌) 글로 표현된, 서면으로 된', '필기로 된, 문자로 하는']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "below",
     "mean": "['(위치가 …보다) 아래에', '(양수준이 …) 아래에', '아래에']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "live",
     "mean": "['살다', '하다', '남아 있다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "source",
     "mean": "['원천', '얻다', '자료; 정보원']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "truth",
     "mean": "['사실', '사실성', '진리']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "old",
     "mean": "['나이가 …인', '늙은', '노인들']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "display",
     "mean": "['전시하다; 내보이다', '전시', '표현']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "text",
     "mean": "['본문', '문자를 보내다', '글']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "delete",
     "mean": "['삭제하다']",
     "frequency": "2",
-    "level": 2,
+    "level": "2",
     "category": "recoil"
   },
   {
     "word": "powerful",
     "mean": "['영향력 있는', '강력한', '강한']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "core",
     "mean": "['속', '핵심적인', '심을 파내다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "few",
     "mean": "['많지 않은', '소수', '약간의 수']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "keep",
     "mean": "['유지하다', '먹고 사는 데 필요한 것들; 생활비', '아성']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "executed",
     "mean": "['처형하다', '실행하다', '해내다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "throw",
     "mean": "['던지다', '던지기', '던진 거리']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "friend",
     "mean": "['친구', '후원자; 지지자', '우리 편']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "above",
     "mean": "['(위치나 지위 면에서) …보다 위에', '(수나이 등이) …보다 많은, …을 넘는', '(위치가) 위에']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "initiate",
     "mean": "['개시되게 하다', '가입자', '접하게 하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "common",
     "mean": "['흔한', '공유지', '식당']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "represent",
     "mean": "['대표하다', '대변하다', '해당하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "directional",
     "mean": "['지향성의', '방향의']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "consider",
     "mean": "['사려하다', '여기다', '고려하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "determine",
     "mean": "['알아내다', '결정하다', '확정하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "status",
     "mean": "['신분', '지위', '높은 지위']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "clear",
     "mean": "['알아듣기 쉬운', '치우다', '떨어져']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "family",
     "mean": "['가족', '가족의', '가족 소유의']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "parameter",
     "mean": "['매개 변수']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "actual",
     "mean": "['실제의', '사실상의']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "retry",
     "mean": "['재심하다', '재시도하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "similar",
     "mean": "['비슷한', '유사한', '닮은']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "cleanup",
     "mean": "['대청소', '재고 정리']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "monitor",
     "mean": "['화면', '추적 관찰하다', '모니터하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "complex",
     "mean": "['복잡한', '복합 건물', '덩어리']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "remote",
     "mean": "['외진', '먼', '가깝지 않은']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "revert",
     "mean": "['되돌아가다', '뒤로 돌리다; 돌리다', '되돌아가는 사람']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "await",
     "mean": "['(~을) 기다리다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "problem",
     "mean": "['문제', '문제를 일으키는']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "safe",
     "mean": "['안전한', '금고', '위험하지 않은']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "observe",
     "mean": "['…을 보다', '관찰하다', '말하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "action",
     "mean": "['행동', '확인 조치하다', '동작']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "suspended",
     "mean": "['집행 유예의']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "custom",
     "mean": "['관습', '습관', '구입']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "wrapped",
     "mean": "['싸여진', '포장된']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "testing",
     "mean": "['테스트', '아주 힘든']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "retain",
     "mean": "['유지하다', '함유하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "concurrent",
     "mean": "['공존하는, 동시에 발생하는']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "experimental",
     "mean": "['실험적인', '실험의']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "known",
     "mean": "['(특히 많은 사람들에게) 알려진']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "method",
     "mean": "['방법', '체계성']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "most",
     "mean": "['최대', '가장', '가장']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "know",
     "mean": "['알다', '깨닫다', '확신하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "bypass",
     "mean": "['우회 도로', '우회하다', '건너뛰다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "detect",
     "mean": "['발견하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "freeze",
     "mean": "['얼다; 얼리다', '(수도관기계 등이) 얼다', '(임금가격 등의) 동결']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "mode",
     "mean": "['방식', '기분', '유행']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "static",
     "mean": "['고정된', '잡음', '정전기']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "guide",
     "mean": "['안내', '안내하여 데려가다', '인도하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "click",
     "mean": "['찰칵하는 소리를 내다', '찰칵', '클릭함']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "large",
     "mean": "['큰; 많은', '대형의', '큰']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "future",
     "mean": "['미래', '미래의', '장래']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "issue",
     "mean": "['주제', '발표하다', '발부하다']",
     "frequency": "2",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "compatibility",
     "mean": "['양립 가능성', '(컴퓨터의) 호환성']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "simplicity",
     "mean": "['간단함', '소박함', '소박한 측면']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "built",
     "mean": "['~하게 지어진']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "improve",
     "mean": "['개선되다', '나아지다; 개선하다', '향상시키다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "while",
     "mean": "['…하는 동안', '잠깐', '…하는 동안에']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "possible",
     "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "intrinsic",
     "mean": "['고유한', '본질적인']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "share",
     "mean": "['함께 쓰다', '몫', '주']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "make",
     "mean": "['만들다', '제품', '정리하다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "sure",
     "mean": "['확신하는', '그럼', '정말']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "increase",
     "mean": "['증가하다', '증가']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "calculate",
     "mean": "['계산하다', '추정하다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "everything",
     "mean": "['모든 것, 모두', '(현재의 일반적인 상황·생활을 나타내는) 모든 것', '전부, 가장 중요한 것']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "efficient",
     "mean": "['능률적인', '유능한; 효율적인']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "substituted",
     "mean": "['대신하는 사람', '대신하다', '교체 선수']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "relationship",
     "mean": "['두 사람·집단·국가 사이의) 관계', '(연인) 관계', '(두 가지 이상 사물 사이의) 관계[관련(성)]']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "corresponding",
     "mean": "['(~에) 해당[상응]하는']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "reflect",
     "mean": "['비추다', '반사하다', '나타내다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "module",
     "mean": "['모듈, 교과목 단위', '모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)','부품']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "emulation",
     "mean": "['경쟁, 겨룸, 대항', '에뮬레이션']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "poor",
     "mean": "['가난한', '가난한 사람들', '불쌍한']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "script",
     "mean": "['대본', '대본을 쓰다', '글씨']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "tag",
     "mean": "['꼬리표', '꼬리표를 붙이다', '태그를 붙이다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "symbol",
     "mean": "['상징', '부호']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "unexpected",
     "mean": "['예기치 않은', '예상 밖의', '뜻밖의']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "breakage",
     "mean": "['파손된 물건', '파손']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "browse",
     "mean": "['둘러보다', '대강 읽다', '인터넷을 돌아다니다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "project",
     "mean": "['계획', '계획하다', '예상하다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "warn",
     "mean": "['경고하다', '강력히 충고하다', '경고를 주다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "fix",
     "mean": "['고정시키다', '해결책', '한 번 필요한 양']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "string",
     "mean": "['끈', '묶다', '현악기의']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "day",
     "mean": "['하루', '낮', '시기']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "main",
     "mean": "['가장 큰', '본관; 간선', '본관']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "publish",
     "mean": "['출판하다', '게재하다', '발표하다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "runner",
     "mean": "['(특히 경주·경마에 참석한) 주자, 경주마', '밀수업자, 밀반입자', '(썰매의) 활주부']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "tool",
     "mean": "['연장', '몰다', '꼭두각시']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "older",
     "mean": "['연상의']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "official",
     "mean": "['공무상의', '공무원', '공인된']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "appear",
     "mean": "['…인 것 같다', '나타나다', '생기다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "shown",
     "mean": "['보여진']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "transformation",
     "mean": "['변화', '민주화']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "finished",
     "mean": "['(~와의 관계·일 등이) 끝난', '(권력·효력 등이) 끝난', '완성된, 마무리된']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "product",
     "mean": "['생산물', '산물', '결과물']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "getting",
     "mean": "['받다', '얻다', '가져 오다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "scratch",
     "mean": "['긁다', '긁힌 자국', '있는 대로 그러모아 만든']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "exposed",
     "mean": "['노출된']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "interactive",
     "mean": "['상호적인', '대화형의']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "empty",
     "mean": "['비어 있는', '비우다', '비게 되다']",
     "frequency": "1",
-    "level": 3,
+    "level": "3",
     "category": "recoil"
   },
   {
     "word": "notice",
     "mean": "['신경씀', '…을 의식하다', '주목하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "mark",
     "mean": "['표시하다', '자국', '점']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "take",
     "mean": "['가지고 가다', '테이크', '수익']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "level",
     "mean": "['정도', '평평한', '평평하게 하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "said",
     "mean": "['say의 과거, 과거분사', '= aforementioned']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "concept",
     "mean": "['개념']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "choose",
     "mean": "['택하다', '…하기를 원하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "topic",
     "mean": "['화제', '주제']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "line",
     "mean": "['선', '안을 대다', '막을 형성하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "easy",
     "mean": "['쉬운', '조심해서', '편안한']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "simply",
     "mean": "['그냥 (간단히), 그저 (단순히) (어떤 것이 얼마나 쉽거나 간단한지를 강조함)', '(진술 내용을 강조하여) 그야말로', '간단히, 평이하게']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "incorporate",
     "mean": "['포함하다', '설립하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "mind",
     "mean": "['마음', '언짢아하다', '상관하지 않다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "produce",
     "mean": "['생산하다', '생산물', '생산하다; 낳다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "least",
     "mean": "['(크기양정도 등이) 가장 적은; 최소(의)', '가장 덜, 최소로']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "care",
     "mean": "['돌봄', '상관하다', '배려하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "backed",
     "mean": "['등이 있는, …의 등을 한', '후원받는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "designed",
     "mean": "['계획적인', '고의의']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "work",
     "mean": "['일하다', '일', '업무']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "boundary",
     "mean": "['경계', '바운더리']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "catch",
     "mean": "['잡다', '잡기', '잡은 양']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "want",
     "mean": "['원하다', '원하는 것', '부족']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "remember",
     "mean": "['기억하다', '기억나다', '명심하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "become",
     "mean": "['…지다', '알맞다', '어울리다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "loop",
     "mean": "['고리', '고리 모양을 만들다', '고리 모양으로 이동하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "fast",
     "mean": "['빠른', '빨리', '단식하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "expensive",
     "mean": "['비싼', '돈이 많이 드는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "parallel",
     "mean": "['평행한', '…와 아주 유사한 사람', '…와 유사하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "incremental",
     "mean": "['증대하는', '증가의']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "partial",
     "mean": "['부분적인', '~을 매우 좋아하는', '편애하는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "wish",
     "mean": "['원하다', '바람', '바라는 것']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "kick",
     "mean": "['차다', '차기', '쾌감']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "give",
     "mean": "['주다', '탄력성', '제공하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "fetch",
     "mean": "['가지고 오다', '팔리다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "populate",
     "mean": "['살다', '이주시키다', '덧붙이다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "host",
     "mean": "['주인', '주최하다', '진행하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "defer",
     "mean": "['미루다', '연기하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "remain",
     "mean": "['계속 …이다', '남다', '남아 있다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "thus",
     "mean": "['이렇게 하여; 이와 같이', '따라서, 그러므로']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "try",
     "mean": "['노력하다', '시도', '트라이']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "failure",
     "mean": "['실패', '실패자; 실패작', '~하지 않음']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "achieve",
     "mean": "['달성하다', '해내다', '잘 해내다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "force",
     "mean": "['물리력', '~를 강요하다', '억지로 …하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "dependent",
     "mean": "['의존하는', '의존적인', '~에 좌우되는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "desired",
     "mean": "['바랐던', '희망했던', '훌륭한']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "loading",
     "mean": "['추가 사례비', '(보통 가격에 덧붙여 내야 하는) 추가 부담금']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "fun",
     "mean": "['재미', '재미있는', '장난']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "little",
     "mean": "['작은', '거의 없는', '그다지']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "find",
     "mean": "['찾다', '발견물', '찾아내다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "variety",
     "mean": "['여러 가지', '다양성', '품종']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "specify",
     "mean": "['(구체적으로) 명시하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "compose",
     "mean": "['구성하다', '작곡하다', '편지/연설문/시를 쓰다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "own",
     "mean": "['… 자신의', '소유하다', '인정하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "priority",
     "mean": "['우선 사항', '우선', '우선 주행권']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "first",
     "mean": "['첫, 첫 (번)째의; 첫째', '첫째의', '우선, 맨 먼저']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "unused",
     "mean": "['사용되지 않는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "optional",
     "mean": "['선택적인']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "difficult",
     "mean": "['어려운, 힘든', '힘겨운, 곤란한', '까다로운; 비협조적인']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "prop",
     "mean": "['지주', '받치다', '소품']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "composed",
     "mean": "['~으로 구성되다', '침착한']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "maintain",
     "mean": "['유지하다', '주장하다', '부양하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "queue",
     "mean": "['줄', '줄을 서서 기다리다', '대기 행렬을 만들다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "feedback",
     "mean": "['피드백', '(앰프 등과 같은 전기 기구에서 나는) 되먹임 소리']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "browser",
-    "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', (가게를) 둘러보는 사람']",
+    "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', '(가게를) 둘러보는 사람']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "retrieve",
     "mean": "['되찾아오다', '검색하다', '수습하다; 되찾다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "illustrative",
     "mean": "['실례가 되는', '분명히 보여주는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "cover",
     "mean": "['씌우다', '덮개', '몸을 숨길 곳']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "either",
     "mean": "['(둘 중) 어느 하나(의)', '(두 개) 각각(의)', '(부정문에서) …도 (그렇다)']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "wrap",
     "mean": "['싸다', '랩', '포장지']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "load",
     "mean": "['짐', '싣다', '실리다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "available",
     "mean": "['구할 수 있는', '시간이 있는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "limited",
     "mean": "['제한된', '한정된']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "usage",
     "mean": "['용법', '사용; 사용량']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "several",
     "mean": "['몇의', '각각의']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "vice",
     "mean": "['범죄', '악; 악덕 행위', '바이스']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "execution",
     "mean": "['처형', '실행', '솜씨']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "standard",
     "mean": "['수준', '일반적인', '표준 규격에 맞춘']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "mechanism",
     "mean": "['기계 장치', '(목적을 달성하기 위한) 방법, 메커니즘', '(생물체 내에서 특정한 기능을 수행하는) 구조']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "compare",
     "mean": "['비교하다', '필적하다', '비유하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "dom",
     "mean": "['<‘...의 상태’를 뜻함>', '<‘...의 지위’, ‘...의 영지’를 뜻함>', '<‘... 집단’을 뜻함>']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "scenario",
     "mean": "['시나리오', '각본']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "convenient",
     "mean": "['편리한', '가까운']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "manipulate",
     "mean": "['조종하다', '다루다', '뼈를 제자리에 넣다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "done",
     "mean": "['다 끝난, 다 된, 완료된', '완전히 요리된, 푹 삶은, 바싹 구운']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "fresh",
     "mean": "['신선한', '새로 생긴; 생생한', '새로운']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "early",
     "mean": "['초기의', '초기에', '빨리']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "cancelation",
     "mean": "['취소', '취소(된 것)', '무효화, 취소']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "control",
     "mean": "['지배(권)', '통제(력)', '지배하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "ready",
     "mean": "['준비가 된', '준비시키다', '이미 …되어 있는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "compatible",
     "mean": "['호환이 되는', '양립될 수 있는', '화합할 수 있는']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "something",
     "mean": "['어떤 것, 무엇', '중요한 것', '정말(진술 내용을 강조하기 위해 씀)']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "team",
     "mean": "['팀', '팀을 짜다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "added",
     "mean": "['추가된', '부가된']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "found",
     "mean": "['설립하다', '세우다', '~의 기반을 두다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "functionality",
     "mean": "['기능성', '목적', '기능']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "allow",
     "mean": "['허락하다; 용납하다', '허락하다', '들어오게 하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "stay",
     "mean": "['계속 있다', '머무름', '스테이']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "inspect",
     "mean": "['점검하다', '사찰하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "demand",
     "mean": "['요구', '요구하다; 강력히 묻다', '필요로 하다']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "entire",
     "mean": "['전체의', '온']",
     "frequency": "1",
-    "level": 4,
+    "level": "4",
     "category": "recoil"
   },
   {
     "word": "match",
     "mean": "['성냥', '어울리다', '일치하다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "ability",
     "mean": "['할 수 있음', '재능']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "peek",
     "mean": "['훔쳐보다', '살짝 보이다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "equivalent",
     "mean": "['동등한', '상당하는 것']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "associated",
     "mean": "['관련된', '(어떤 단체를) 지지하는', '(사업체 이름에 쓰여) 연합의']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "must",
     "mean": "['(필요성중요성을 나타내어) …해야 하다','(틀림없이) …일 것이다', '꼭 해야 하는 것, 필수품']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "ancestor",
     "mean": "['조상', '원형']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "exist",
     "mean": "['존재하다', '살아가다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "independent",
     "mean": "['독립된', '무소속 의원', '독립적인']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "distinct",
     "mean": "['뚜렷한', '뚜렷이 다른', '확실한']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "inner",
     "mean": "['내부의', '내밀한; 내면의']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "mask",
     "mean": "['마스크', '가리다', '가면']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "outer",
     "mean": "['바깥 표면의, 외부의', '(안·중심에서 가장) 바깥쪽의, 외곽의']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "override",
     "mean": "['기각하다', '…보다 더 중요하다', '중단시키다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "false",
     "mean": "['틀린', '인조의', '위조된']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "listed",
     "mean": "['표에 실린', '전화 번호부에 실려 있는']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "interact",
     "mean": "['소통하다', '상호 작용을 하다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "rare",
     "mean": "['드문', '진귀한', '살짝 익힌']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "assign",
     "mean": "['맡기다', '선임하다', '배치하다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "collection",
     "mean": "['수집품', '무리', '수집']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "related",
     "mean": "['관련된', '친척의', '동족의']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "determined",
     "mean": "['단단히 결심한', '단호한']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "different",
     "mean": "['다른', '각각 다른', '색다른']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "propagate",
     "mean": "['전파하다', '번식시키다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "field",
     "mean": "['들판', '내보내다', '수비를 보다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "check",
     "mean": "['살피다', '확인', '좋아']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "generate",
     "mean": "['발생시키다', '만들어 내다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "menu",
     "mean": "['(식당·식사의) 메뉴', '(화면의) 메뉴']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "logic",
     "mean": "['논리', '타당성', '논리학']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "symmetry",
     "mean": "['대칭', '균형']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "later",
     "mean": "['나중에; (지금 이야기 중인 시간보다) 후에', '잘 가!(젊은 사람들끼리 헤어질 때 하는 인사)', '(…보다) 뒤의']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "mutate",
     "mean": "['돌연변이가 되다; 돌연변이를 만들다', '변형되다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "configure",
     "mean": "['환경을 설정하다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "second",
     "mean": "['두 번째의', '둘째로', '초']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "lead",
     "mean": "['안내하다', '선두', '앞섬']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "installation",
     "mean": "['설치', '장치', '시설']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "without",
     "mean": "['…없이(…을 가지지경험하지보이지 않고)', '(어떤 사람이) 없이', '…없이, …없는']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "through",
-    "mean": "['…을 통해', '… 사이로', '~을 사이에 두고 보다]",
+    "mean": "['…을 통해', '… 사이로', '~을 사이에 두고 보다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "backward",
     "mean": "['뒤의', '뒷걸음질하는', '발전이 더딘']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "inside",
     "mean": "['…의 안에', '(언급된 시간) 이내에', '안에']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "title",
     "mean": "['제목', '제목을 붙이다', '서적']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "jest",
     "mean": "['농담', '농담하다']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   },
   {
     "word": "unit",
     "mean": "['구성 단위', '한 개', '부대']",
     "frequency": "1",
-    "level": 5,
+    "level": "5",
     "category": "recoil"
   }
 ]

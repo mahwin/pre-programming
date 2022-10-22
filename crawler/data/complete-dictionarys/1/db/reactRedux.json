@@ -1,4083 +1,4083 @@
 [
-    {
-        "word": "react",
-        "mean": "['반응하다', '화학 반응을 일으키다']",
-        "frequency": "166",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "store",
-        "mean": "['백화점', '저장하다', '가게']",
-        "frequency": "147",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "component",
-        "mean": "['요소', '부품']",
-        "frequency": "140",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "function",
-        "mean": "['기능', '기능하다', '행사']",
-        "frequency": "98",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "state",
-        "mean": "['상태', '국가의', '말하다']",
-        "frequency": "75",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "dispatch",
-        "mean": "['보내다', '파견; 발송', '긴급 공문']",
-        "frequency": "73",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "connect",
-        "mean": "['잇다', '연결하다', '접속하다']",
-        "frequency": "72",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "use",
-        "mean": "['쓰다', '사용', '용도']",
-        "frequency": "68",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "object",
-        "mean": "['물건', '반대하다', '반대 이유를 대다']",
-        "frequency": "41",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "context",
-        "mean": "['맥락', '문맥']",
-        "frequency": "40",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "action",
-        "mean": "['행동', '확인 조치하다', '동작']",
-        "frequency": "39",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "selector",
-        "mean": "['(스포츠 팀의) 선발 위원', '(엔진·기계 등에서 기능) 선택 장치']",
-        "frequency": "39",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "connected",
-        "mean": "['관련이 있는']",
-        "frequency": "36",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "type",
-        "mean": "['형', '타자 치다', '유형을 알아내다']",
-        "frequency": "29",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "return",
-        "mean": "['돌아오다', '돌아옴', '돌려줌']",
-        "frequency": "29",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "new",
-        "mean": "['새', '새 것', '새로 산']",
-        "frequency": "28",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "provider",
-        "mean": "['제공자', '제공 기관']",
-        "frequency": "27",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "argument",
-        "mean": "['논쟁; 언쟁', '논거', '논의']",
-        "frequency": "26",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "default",
-        "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
-        "frequency": "25",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "instance",
-        "mean": "['사례', '…을 예로 들다']",
-        "frequency": "25",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "used",
-        "mean": "['중고의']",
-        "frequency": "24",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "parameter",
-        "mean": "['매개 변수']",
-        "frequency": "23",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "render",
-        "mean": "['만들다', '주다', '제시하다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "see",
-        "mean": "['보다', '주교의 관구', '앞을 보다']",
-        "frequency": "21",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "example",
-        "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
-        "frequency": "20",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "value",
-        "mean": "['가치', '소중하게 생각하다', '평가하다']",
-        "frequency": "19",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "more",
-        "mean": "['더 많은 수(의)', '더 (많이)']",
-        "frequency": "19",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "usage",
-        "mean": "['용법', '사용; 사용량']",
-        "frequency": "19",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "performance",
-        "mean": "['공연; 연주회', '(개인의) 연기', '실적, 성과']",
-        "frequency": "18",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "import",
-        "mean": "['수입품', '수입하다', '불러오다']",
-        "frequency": "18",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "data",
-        "mean": "['(증명·판단·결정 등을 위한) 자료', '(컴퓨터에 저장된) 자료']",
-        "frequency": "17",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "same",
-        "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
-        "frequency": "17",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "own",
-        "mean": "['… 자신의', '소유하다', '인정하다']",
-        "frequency": "17",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "second",
-        "mean": "['두 번째의', '둘째로', '초']",
-        "frequency": "17",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "custom",
-        "mean": "['관습', '습관', '구입']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "file",
-        "mean": "['파일', '보관하다', '제기하다']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "call",
-        "mean": "['이름을 지어주다', '전화', '울음소리; 외침']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "first",
-        "mean": "['첫, 첫 (번)째의; 첫째', '첫째의', '우선, 맨 먼저']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "wrapper",
-        "mean": "['(특히 식품) 포장지', '래퍼(몸에 휘감아서 입는 가운·치마 등)']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "result",
-        "mean": "['결과', '발생하다', '승리']",
-        "frequency": "16",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "time",
-        "mean": "['시간', '시간을 맞추다', '시간을 측정하다']",
-        "frequency": "15",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "prop",
-        "mean": "['지주', '받치다', '소품']",
-        "frequency": "15",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "define",
-        "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
-        "frequency": "15",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "pass",
-        "mean": "['지나가다; 통과하다', '합격', '출입증']",
-        "frequency": "15",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "create",
-        "mean": "['창조하다', '자아내다', '수여하다']",
-        "frequency": "14",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "need",
-        "mean": "['필요로 하다', '…할 필요가 있다','필요']",
-        "frequency": "14",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "slice",
-        "mean": "['조각', '썰다', '베다']",
-        "frequency": "14",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "receive",
-        "mean": "['받다', '받다; 입다', '환영하다']",
-        "frequency": "14",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "hook",
-        "mean": "['고리', '갈고리로 잠그다', '…에 걸다']",
-        "frequency": "14",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "version",
-        "mean": "['-판', '설명']",
-        "frequency": "13",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reference",
-        "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
-        "frequency": "13",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "multiple",
-        "mean": "['많은', '배수']",
-        "frequency": "12",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "application",
-        "mean": "['지원', '적용', '바르기']",
-        "frequency": "12",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "single",
-        "mean": "['단 하나의', '편도 차표', '싱글']",
-        "frequency": "12",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "wrapped",
-        "mean": "['싸여진', '포장된']",
-        "frequency": "12",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "returned",
-        "mean": "['돌려 보내진, 반송되어진', '돌아온, 귀환한']",
-        "frequency": "12",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "way",
-        "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
-        "frequency": "11",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "let",
-        "mean": "['놓아두다', '레트', '임대']",
-        "frequency": "11",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "different",
-        "mean": "['다른', '각각 다른', '색다른']",
-        "frequency": "11",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tutorial",
-        "mean": "['(대학의) 개별 지도 시간', '사용 지침서, (컴퓨터의) 사용 지침 프로그램', '개인 지도의']",
-        "frequency": "11",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "access",
-        "mean": "['입장', '접속하다', '접근하다; 들어가다; 이용하다']",
-        "frequency": "11",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "make",
-        "mean": "['만들다', '제품', '정리하다']",
-        "frequency": "10",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "write",
-        "mean": "['쓰다', '집필하다', '편지를 쓰다']",
-        "frequency": "10",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "setup",
-        "mean": "['(조직 등의) 기구, 구조']",
-        "frequency": "10",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "provide",
-        "mean": "['제공하다', '규정하다']",
-        "frequency": "10",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "behavior",
-        "mean": "['행동, 거동, 행실, 품행, 태도', '행동; 습성']",
-        "frequency": "10",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "set",
-        "mean": "['놓다', '세트', '위치한']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "page",
-        "mean": "['페이지', '안내 방송을 하다', '연락하다']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "possible",
-        "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "part",
-        "mean": "['일부', '헤어지다', '반쯤; 어느 정도']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "additional",
-        "mean": "['추가의']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "case",
-        "mean": "['경우', '실정', '사례']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "defined",
-        "mean": "['정의된']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "run",
-        "mean": "['달리다', '달리기', '배달; 운행; 운항']",
-        "frequency": "9",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "official",
-        "mean": "['공무상의', '공무원', '공인된']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "order",
-        "mean": "['순서', '명령하다', '주문하다']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "start",
-        "mean": "['시작하다', '시작', '시작하기']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "library",
-        "mean": "['도서관', '서재', '장서들']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "other",
-        "mean": "['(그 밖의) 다른; 다른 사람'],",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ensure",
-        "mean": "['반드시 …하게 하다', '보장하다']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "full",
-        "mean": "['가득한', '똑바로', '~이 그득한']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "project",
-        "mean": "['계획', '계획하다', '예상하다']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "read",
-        "mean": "['읽다', '읽기', '아는 것이 많은']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "extract",
-        "mean": "['발췌', '뽑다', '얻어내다']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "such",
-        "mean": "['앞에 이미 언급한, 그런', '(곧 언급하려는) 그런', '(정도를 강조하여) 그 정도의']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "list",
-        "mean": "['리스트', '리스트을 작성하다', '리스트에 언급하다']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "creator",
-        "mean": "['창조자', '창조주']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "common",
-        "mean": "['흔한', '공유지', '식당']",
-        "frequency": "8",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "update",
-        "mean": "['갱신하다', '가장 최근의 정보를 알려주다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "learn",
-        "mean": "['배우다', '~을 알게 되다', '외우다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "help",
-        "mean": "['돕다', '도움', '지원']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "logic",
-        "mean": "['논리', '타당성', '논리학']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tree",
-        "mean": "['나무']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "specific",
-        "mean": "['구체적인', '특정한', '특유의']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "based",
-        "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "add",
-        "mean": "['첨가하다', '합하다', '보태다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "counter",
-        "mean": "['계산대; 판매대', '반박하다', '~의 반대 방향에서; ~과 반대로']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "field",
-        "mean": "['들판', '내보내다', '수비를 보다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "implement",
-        "mean": "['시행하다', '도구']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "approach",
-        "mean": "['다가가다', '접근법', '다가감']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "plain",
-        "mean": "['분명한', '평원', '분명히']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "subscribe",
-        "mean": "['구독하다; 가입하다', '가입하다; 기부하다', '청약하다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "note",
-        "mean": "['메모', '…에 주목하다', '언급하다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "factory",
-        "mean": "['공장']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "equality",
-        "mean": "['평등', '균등']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "root",
-        "mean": "['뿌리', '뿌리를 내리다; 뿌리 내리게 하다', '파헤치다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "form",
-        "mean": "['종류', '형성되다; 형성시키다', '구성되다; 구성하다']",
-        "frequency": "7",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "written",
-        "mean": "['(말이 아닌) 글로 표현된, 서면으로 된', '필기로 된, 문자로 하는']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "community",
-        "mean": "['주민', '공동체', '공동체 의식']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "code",
-        "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "want",
-        "mean": "['원하다', '원하는 것', '부족']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "implementation",
-        "mean": "['시행', '이행']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "name",
-        "mean": "['이름', '이름을 지어주다', '이름을 대다']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "actual",
-        "mean": "['실제의', '사실상의']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "number",
-        "mean": "['수', '번호를 매기다', '모두 …이 되다']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "variable",
-        "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "current",
-        "mean": "['현재의', '흐름', '전류']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "entire",
-        "mean": "['전체의', '온']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "wish",
-        "mean": "['원하다', '바람', '바라는 것']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "comparison",
-        "mean": "['비교함', '비교']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "child",
-        "mean": "['아이', '자식', '사람']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "error",
-        "mean": "['실수']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "previous",
-        "mean": "['이전의', '바로 앞의']",
-        "frequency": "6",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "template",
-        "mean": "['형판(形板)', '견본, 본보기']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "available",
-        "mean": "['구할 수 있는', '시간이 있는']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "show",
-        "mean": "['보여 주다', '쇼', '프로']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ask",
-        "mean": "['묻다', '부탁하다', '구하다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "addition",
-        "mean": "['덧셈', '추가된 것', '추가']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "cause",
-        "mean": "['원인', '…을 야기하다', '이유']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "work",
-        "mean": "['일하다', '일', '업무']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "given",
-        "mean": "['(이미) 정해진', '특정한', '…을 고려해 볼 때']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "most",
-        "mean": "['최대', '가장', '가장']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "top",
-        "mean": "['맨 위', '맨 위의', '더 높다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "core",
-        "mean": "['속', '핵심적인', '심을 파내다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "standard",
-        "mean": "['수준', '일반적인', '표준 규격에 맞춘']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "initial",
-        "mean": "['처음의', '이름의 첫 글자', '성명의 첫 글자들을 표시하다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "immutable",
-        "mean": "['변경할 수 없는', '불변의']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "handle",
-        "mean": "['다루다', '손잡이', '손잡이가 …한']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "package",
-        "mean": "['상자; 포장물', '포장하다', '제시하다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "provided",
-        "mean": "['(만약) ~라면']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "guide",
-        "mean": "['안내', '안내하여 데려가다', '인도하다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "change",
-        "mean": "['변하다', '변화', '색다른 것; 기분 전환']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "information",
-        "mean": "['정보']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "complex",
-        "mean": "['복잡한', '복합 건물', '덩어리']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "only",
-        "mean": "['유일한, 오직 …만의', '(가장 좋은) 단 하나의']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "array",
-        "mean": "['집합체', '배열하다', '배치하다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mandatory",
-        "mean": "['법에 정해진', '의무적인']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "find",
-        "mean": "['찾다', '발견물', '찾아내다']",
-        "frequency": "5",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "layer",
-        "mean": "['막', '켜켜로 놓다', '층']",
-        "frequency": "4",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "dependency",
-        "mean": "['의존', '속국']",
-        "frequency": "4",
-        "level": 1,
-        "category": "reactRedux"
-    },
-    {
-        "word": "allow",
-        "mean": "['허락하다; 용납하다', '허락하다', '들어오게 하다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "place",
-        "mean": "['장소', '놓다', '두다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "binding",
-        "mean": "['법적 구속력이 있는', '표지', '가장자리 장식']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "bind",
-        "mean": "['묶다', '곤경', '감다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "hand",
-        "mean": "['손', '건네주다', '… 손을 사용하는']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "process",
-        "mean": "['과정', '가공하다', '처리하다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "interaction",
-        "mean": "['상호작용']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "concern",
-        "mean": "['영향을 미치다', '우려', '배려']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "skip",
-        "mean": "['깡충깡충 뛰다', '깡충깡충 뛰기', '쓰레기 수거통']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unnecessary",
-        "mean": "['불필요한', '쓸데없는']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "quick",
-        "mean": "['빠른', '빨리', '속살']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "typical",
-        "mean": "['전형적인', '보통의', '늘 하는 식의']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "export",
-        "mean": "['수출하다', '수출', '수출품']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "separate",
-        "mean": "['분리된', '분리되다', '갈라지다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "important",
-        "mean": "['중요한', '영향력이 큰']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "potential",
-        "mean": "['가능성이 있는', '가능성', '잠재력']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "optional",
-        "mean": "['선택적인']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "input",
-        "mean": "['조언; 투입', '입력하다', '입력']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "section",
-        "mean": "['부분', '절개하다', '박편을 만들다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "have",
-        "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "take",
-        "mean": "['가지고 가다', '테이크', '수익']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "undefined",
-        "mean": "['한정되지 않은', '확실하지 않은']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "expensive",
-        "mean": "['비싼', '돈이 많이 드는']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "pure",
-        "mean": "['순수한', '깨끗한', '완전한']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "shallow",
-        "mean": "['얕은', '얄팍한']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "avoid",
-        "mean": "['방지하다', '피하다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "edge",
-        "mean": "['끝', '조금씩 움직이다', '테두리를 두르다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "issue",
-        "mean": "['주제', '발표하다', '발부하다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "supply",
-        "mean": "['공급', '공급하다', '보급품']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "necessary",
-        "mean": "['필요한', '필연적인']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "hierarchy",
-        "mean": "['계급', '지배층', '체계']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "executed",
-        "mean": "['처형하다', '실행하다', '해내다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "individual",
-        "mean": "['각각의', '개인', '개성 있는 사람']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "override",
-        "mean": "['기각하다', '…보다 더 중요하다', '중단시키다']",
-        "frequency": "4",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "native",
-        "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "install",
-        "mean": "['설치하다', '취임시키다', '자리를 잡게 하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "rest",
-        "mean": "['나머지', '쉬다', '받치다; 받쳐지다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "interact",
-        "mean": "['소통하다', '상호 작용을 하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "modern",
-        "mean": "['현대의', '현대적인', '최신의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "related",
-        "mean": "['관련된', '친척의', '동족의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "come",
-        "mean": "['오다', '자', '정액']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "framework",
-        "mean": "['(건물 등의) 뼈대', '(판단·결정 등을 위한) 틀', '체제, 체계']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "please",
-        "mean": "['부디', '기쁘게 하다', '…하고 싶다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "intended",
-        "mean": "['대상으로 삼은', '만들어진']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "require",
-        "mean": "['필요하다', '요구하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "designed",
-        "mean": "['계획적인', '고의의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "many",
-        "mean": "['많은']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "rendering",
-        "mean": "['(특정한 해석을 가미한) 연주', '번역', '(벽돌벽·석벽 등에 하는) 회반죽 칠']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "best",
-        "mean": "['최상의', '가장', '최고']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "put",
-        "mean": "['놓다', '밀어 넣다', '들어가게 하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "correct",
-        "mean": "['맞는', '바로잡다', '검사하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "increment",
-        "mean": "['임금 인상', '증가']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "shown",
-        "mean": "['보여진']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "complete",
-        "mean": "['가능한 최대의', '완료하다', '기입하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "give",
-        "mean": "['주다', '탄력성', '제공하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "major",
-        "mean": "['주요한', '소령', '전공']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "fix",
-        "mean": "['고정시키다', '해결책', '한 번 필요한 양']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "modify",
-        "mean": "['수정하다', '수식하다; 한정하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "couple",
-        "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "circular",
-        "mean": "['원형의', '회람용 편지; 광고 전단', '순회하는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "check",
-        "mean": "['살피다', '확인', '좋아']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "notice",
-        "mean": "['신경씀', '…을 의식하다', '주목하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "trigger",
-        "mean": "['방아쇠', '촉발시키다', '작동시키다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "able",
-        "mean": "['…할 수 있는', '재능 있는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "parent",
-        "mean": "['부모', '모체']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "optimize",
-        "mean": "['~을 최대한 좋게[적합하게] 만들다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "basic",
-        "mean": "['기본적인', '기초적인']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "environment",
-        "mean": "['(주변의)환경']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "good",
-        "mean": "['좋은', '선', '잘']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "similar",
-        "mean": "['비슷한', '유사한', '닮은']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "filter",
-        "mean": "['필터', '여과하다', '필터를 쓰다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "simpler",
-        "mean": "['간단한', '단순한', '순전한']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "short",
-        "mean": "['짧은', '…이 부족하다', '한 잔']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "matter",
-        "mean": "['문제', '중요하다; 문제되다', '상황']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "retrieve",
-        "mean": "['되찾아오다', '검색하다', '수습하다; 되찾다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "final",
-        "mean": "['마지막의', '결승전', '졸업 시험']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "advanced",
-        "mean": "['선진의', '고급의', '(발달 단계상) 후기의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "corresponding",
-        "mean": "['(~에) 해당[상응]하는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "relevant",
-        "mean": "['관련 있는', '의의가 있는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "copy",
-        "mean": "['복사', '복사하다', '옮겨 적다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "several",
-        "mean": "['몇의', '각각의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "won",
-        "mean": "['win의 과거', '과거분사']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "formal",
-        "mean": "['격식을 차린', '공식적인', '정규적인']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "definition",
-        "mean": "['정의', '의미', '선명도']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "specify",
-        "mean": "['(구체적으로) 명시하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "button",
-        "mean": "['단추', '단추를 잠그다', '단추로 잠그게 되어 있다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ability",
-        "mean": "['할 수 있음', '재능']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "wrap",
-        "mean": "['싸다', '랩', '포장지']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "shorthand",
-        "mean": "['속기', '약칭']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "further",
-        "mean": "['더 멀리에', '더 이상의', '발전시키다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "care",
-        "mean": "['돌봄', '상관하다', '배려하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "invariant",
-        "mean": "['변함없는', '변치 않는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "hydration",
-        "mean": "['수화(작용)']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "server",
-        "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "added",
-        "mean": "['추가된', '부가된']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "subscription",
-        "mean": "['구독료; 구독', '기부금; 기부; 가입; 사용', '모금']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "determine",
-        "mean": "['알아내다', '결정하다', '확정하다']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "due",
-        "mean": "['~로 인한; ~ 때문에', '~하기로 되어 있는', '~에게 마땅히 주어져야 하는 것']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "useful",
-        "mean": "['유용한', '유능한']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "real",
-        "mean": "['진짜의', '아주', '진정한']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "class",
-        "mean": "['학급', '수업', '동기생']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "stale",
-        "mean": "['신선하지 않은', '퀴퀴한', '신선미가 없는']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "zombie",
-        "mean": "['무기력한 사람', '좀비']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "convention",
-        "mean": "['관습', '대회', '조약']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "maximum",
-        "mean": "['최고의', '최고']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "subsequent",
-        "mean": "['그 다음의', '차후의']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "batch",
-        "mean": "['집단', '함께 묶다', '한 회분']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "warning",
-        "mean": "['경고', '계고']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "browser",
-        "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', (가게를) 둘러보는 사람']",
-        "frequency": "3",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "included",
-        "mean": "['함유된, 포함된', '<수술·암술이> 꽃부리 밖으로 튀어나오지 않은']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "method",
-        "mean": "['방법', '체계성']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mark",
-        "mean": "['표시하다', '자국', '점']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "fetching",
-        "mean": "['멋진', '매력적인']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "source",
-        "mean": "['원천', '얻다', '자료; 정보원']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "channel",
-        "mean": "['채널', '쏟다', '보내다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "discord",
-        "mean": "['불화', '불협화음']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "resource",
-        "mean": "['자원', '자원을 제공하다', '재료']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "great",
-        "mean": "['큰', '위대한 인물', '아주 잘']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "join",
-        "mean": "['연결하다', '합쳐지다', '가입하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "stack",
-        "mean": "['무더기', '쌓다; 쌓이다', '채우다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "overflow",
-        "mean": "['넘치다', '넘침', '넘쳐흐름']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tag",
-        "mean": "['꼬리표', '꼬리표를 붙이다', '태그를 붙이다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "kind",
-        "mean": "['종류', '친절한']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "understand",
-        "mean": "['이해하다', '합의되다', '감안하여 이해하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "generic",
-        "mean": "['포괄적인', '회사 이름이 붙지 않은']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "look",
-        "mean": "['보다', '보기', '이봐']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "idiomatic",
-        "mean": "['자연스러운', '관용구가 든']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "likely",
-        "mean": "['…할 공산이 있는', '그럴듯한']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "welcome",
-        "mean": "['맞이하다', '반가운', '환영']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "briefly",
-        "mean": "['잠시', '간단히']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "introduce",
-        "mean": "['소개하다', '진행하다; 소개하다', '내놓다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "pattern",
-        "mean": "['양식', '무늬를 만들다', '양식을 형성시키다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "folder",
-        "mean": "['서류철, 폴더', '(일부 컴퓨터 시스템에서 파일 보관용) 폴더']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "extension",
-        "mean": "['확대', '증축한 방', '증축 건물']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "whole",
-        "mean": "['전체의', '완전체', '~의 전체']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "understanding",
-        "mean": "['이해', '이해심 있는', '합의']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "built",
-        "mean": "['~하게 지어진']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "remove",
-        "mean": "['치우다', '동떨어져 있는 정도', '벗다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tell",
-        "mean": "['알리다', '알려 주다', '하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "manager",
-        "mean": "['경영자', '매니저', '감독']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "resolve",
-        "mean": "['해결하다', '결심', '다짐하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "safe",
-        "mean": "['안전한', '금고', '위험하지 않은']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "infer",
-        "mean": "['추론하다', '뜻하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "practice",
-        "mean": "['실행', '관행', '다반사']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "step",
-        "mean": "['걸음', '움직이다', '걸음걸이']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "item",
-        "mean": "['항목', '물품', '한 가지']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "continue",
-        "mean": "['계속되다', '계속하다', '계속 가다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "detail",
-        "mean": "['세부 사항', '상세히 알리다', '특별 임무를 부여하다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "feature",
-        "mean": "['특색', '특별히 포함하다', '특징을 이루다']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "active",
-        "mean": "['활동적인', '능동태', '적극적인']",
-        "frequency": "2",
-        "level": 2,
-        "category": "reactRedux"
-    },
-    {
-        "word": "simple",
-        "mean": "['간단한', '단순한', '순전한']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "contain",
-        "mean": "['…이 들어 있다', '억누르다', '방지하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "done",
-        "mean": "['다 끝난, 다 된, 완료된', '완전히 요리된, 푹 삶은, 바싹 구운']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "normally",
-        "mean": "['보통(은), 보통 때는', '정상적으로']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "simplify",
-        "mean": "['간소화하다', '간단하게 하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "break",
-        "mean": "['깨어지다', '휴식', '쉬는 시간']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "static",
-        "mean": "['고정된', '잡음', '정전기']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "solution",
-        "mean": "['해법', '해답', '용액']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "explicit",
-        "mean": "['분명한', '솔직한', '명백한; 노골적인']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "incorrect",
-        "mean": "['부정확한', '맞지 않는', '사실이 아닌']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "include",
-        "mean": "['포함하다', '~을 포함시키다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "particular",
-        "mean": "['특정한', '자세한 사실', '서면 정보']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "following",
-        "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "slow",
-        "mean": "['느린', '느리게', '천천히 가다; 속도를 줄이다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "transform",
-        "mean": "['변형시키다', '완전히 바꿔 놓다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "execute",
-        "mean": "['처형하다', '실행하다', '해내다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "much",
-        "mean": "['많은; 많음', '매우']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "easy",
-        "mean": "['쉬운', '조심해서', '편안한']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "few",
-        "mean": "['많지 않은', '소수', '약간의 수']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "consideration",
-        "mean": "['사려', '고려 사항', '배려']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "therefore",
-        "mean": "['그러므로', '그러니']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "forward",
-        "mean": "['앞으로', '앞으로 가는', '보내다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "bring",
-        "mean": "['가져오다', '가져다 주다', '야기하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "dan",
-        "mean": "['(태권도·유도 등의) 단', '유단자']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "handled",
-        "mean": "['핸들이 있는, 자루가 달린']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "either",
-        "mean": "['(둘 중) 어느 하나(의)', '(두 개) 각각(의)', '(부정문에서) …도 (그렇다)']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "rare",
-        "mean": "['드문', '진귀한', '살짝 익힌']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "considered",
-        "mean": "['깊이 생각한 (후의)', '존경받는, 중히 여겨지는']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "build",
-        "mean": "['짓다', '체구', '만들어 내다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "level",
-        "mean": "['정도', '평평한', '평평하게 하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "client",
-        "mean": "['의뢰인', '클라이언트']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "received",
-        "mean": "['일반적으로 인정되는']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "combined",
-        "mean": "['결합된, 합동의, 연합의', '화합한']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "closure",
-        "mean": "['(공장·학교·병원 등의 영구적인) 폐쇄(되는 상황)', '(도로·교량의 일시적) 폐쇄', '(힘든 일의) 종료']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "internal",
-        "mean": "['내부의', '체내의', '국내의']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "depend",
-        "mean": "['의존하다, 의지하다', '믿다, 신뢰하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "true",
-        "mean": "['사실인', '일직선으로', '진실을 말하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "stable",
-        "mean": "['안정된', '마구간', '넣다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "prefer",
-        "mean": "['…을 좋아하다', '선호하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "alternate",
-        "mean": "['번갈아 생기는', '번갈아 나오게 만들다', '대체 요원']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ready",
-        "mean": "['준비가 된', '준비시키다', '이미 …되어 있는']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "thrown",
-        "mean": "['THROW의 과거분사', '꼰']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "deal",
-        "mean": "['돌리다', '많은; 많이', '거래']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "selected",
-        "mean": "['선택된', '선발된']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "prevent",
-        "mean": "['막다[예방/방지하다]']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "original",
-        "mean": "['원래의', '원본', '특이한 사람']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "release",
-        "mean": "['풀어 주다', '석방', '발표; 개봉; 발간; 출시']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "suggestion",
-        "mean": "['제안', '시사', '기미']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "text",
-        "mean": "['본문', '문자를 보내다', '글']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "refer",
-        "mean": "['<…을> <…에게> 알아보도록 하다, 조회하다', '참조하게 하다', '지시하다, 나타내다; 주목시키다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "small",
-        "mean": "['작은', '잘게', '허리의 잘록한 부분']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "legacy",
-        "mean": "['(죽은 사람이 남긴) 유산', '(과거의) 유산']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "event",
-        "mean": "['사건', '행사', '경기']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "renderer",
-        "mean": "['만들다', '주다', '제시하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "get",
-        "mean": "['받다', '얻다', '가져 오다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "jest",
-        "mean": "['농담', '농담하다']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "next",
-        "mean": "['(시간순서공간상으로 바로 무엇) 다음의', '그 다음에','그리고는']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "recipe",
-        "mean": "['조리법', '(특정 결과를 가져올 듯한) 방안']",
-        "frequency": "2",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "advantage",
-        "mean": "['유리한 점', '유리하게 하다', '어드밴티지']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "integration",
-        "mean": "['통합']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "pair",
-        "mean": "['쌍', '짝을 짓다', '한 쌍']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "explain",
-        "mean": "['설명하다', '이유를 대다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "today",
-        "mean": "['오늘', '오늘날에, 요즈음, 현재', '오늘']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "live",
-        "mean": "['살다', '하다', '남아 있다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "query",
-        "mean": "['문의', '문의하다', '묻다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "transcript",
-        "mean": "['글로 옮긴 기록', '성적 증명서']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "angular",
-        "mean": "['뼈가 앙상한', '각이 진']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "vanilla",
-        "mean": "['바닐라', '바닐라 맛의', '평범한, 특별할 것 없는']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "independent",
-        "mean": "['독립된', '무소속 의원', '독립적인']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tie",
-        "mean": "['묶다', '넥타이', '끈']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "general",
-        "mean": "['일반적인', '장군', '보통의']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "discussion",
-        "mean": "['논의', '논한 것']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "consistent",
-        "mean": "['한결같은', '거듭되는', '~와 일치하는']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "become",
-        "mean": "['…지다', '알맞다', '어울리다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "repetitive",
-        "mean": "['반복적인', '반복되는']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "made",
-        "mean": "['make의 과거, 과거분사', '…하게 만든']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "history",
-        "mean": "['역사', '역사서', '이력']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "team",
-        "mean": "['팀', '팀을 짜다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "date",
-        "mean": "['날짜', '날짜를 적다', '…의 연대를 추정하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "design",
-        "mean": "['디자인', '디자인하다', '설계하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "wasted",
-        "mean": "['헛된', '(특히 병으로) 쇠약한', '술에 찌든']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "effort",
-        "mean": "['수고', '노력', '활동']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "output",
-        "mean": "['생산량', '출력해 내다', '출력']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "improve",
-        "mean": "['개선되다', '나아지다; 개선하다', '향상시키다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "large",
-        "mean": "['큰; 많은', '대형의', '큰']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reuse",
-        "mean": "['재사용하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "knowledge",
-        "mean": "['지식', '알고 있음']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "teach",
-        "mean": "['학생들을 가르치다', '가르쳐 주다', '가르치다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "focus",
-        "mean": "['집중하다', '초점; 주목', '초점']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "main",
-        "mean": "['가장 큰', '본관; 간선', '본관']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "structure",
-        "mean": "['구조', '조직하다', '구조물']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "whatever",
-        "mean": "['…한 어떤; …한 어떤 것, …한 무엇', '어떤 …일지라도, 어떤 …이든', '전혀, 어떤 종류의 것도']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "empty",
-        "mean": "['비어 있는', '비우다', '비게 되다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "configure",
-        "mean": "['환경을 설정하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "inspect",
-        "mean": "['점검하다', '사찰하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "index",
-        "mean": "['색인', '색인을 만들다', '물가와 연동시키다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "string",
-        "mean": "['끈', '묶다', '현악기의']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "identify",
-        "mean": "['확인하다', '찾다', '알아보게 하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "decrement",
-        "mean": "['감소; 소모', '감액, 감량; 감소율', '<…의> 감소를 나타내다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "brief",
-        "mean": "['짧은', '업무', '~에게 알려주다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "overview",
-        "mean": "['개관', '개요']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "running",
-        "mean": "['달리기', '운영, 경영', '(‘수사 + yeardaytime 등의 명사’ 뒤에 쓰여) … 연속의']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "compiler",
-        "mean": "['편집자, 편찬자', '컴파일러(명령어 번역 프로그램)']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "accept",
-        "mean": "['받아들이다', '받아 주다', '믿다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tighten",
-        "mean": "['팽팽해지다', '더 엄격하게 하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "extended",
-        "mean": "['(보통 때나 예상보다) 길어진[늘어난]']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "fine",
-        "mean": "['질 높은', '잘', '벌금']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "older",
-        "mean": "['연상의']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "recommend",
-        "mean": "['추천하다', '권고하다', '매력적으로 만들다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reading",
-        "mean": "['독서', '읽기', '읽을거리, 읽기 자료, 독서물']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "style",
-        "mean": "['방식', '스타일을 만들다', '칭하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "jump",
-        "mean": "['뛰다', '뜀질; 급격한 변화; 벌떡 움직임', '장애물']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "portion",
-        "mean": "['부분', '나누다', '분']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reset",
-        "mean": "['다시 맞추다', '다시 제자리에 넣다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "hooked",
-        "mean": "['갈고리 모양의', '중독된', '대단히 즐기는']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "responsible",
-        "mean": "['책임지고 있는', '책임이 있는', '원인이 되는']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "post",
-        "mean": "['우편', '발송하다', '우체통에 넣다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "map",
-        "mean": "['지도; 약도', '지도를 만들다', '발견하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "turn",
-        "mean": "['돌다; 돌리다', '돌기', '방향 전환']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "screen",
-        "mean": "['화면', '가리다', '은닉하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "pause",
-        "mean": "['잠시 멈추다', '멈춤', '늘임표']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "bit",
-        "mean": "['조금', '잠깐', '조금; 한 조각']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "keen",
-        "mean": "['간절히 …하고 싶은', '애끊는 소리로 울부짖다', '열정적인']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reader",
-        "mean": "['읽는 사람', '구독자', '읽기 교재']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "answer",
-        "mean": "['대답', '대답하다', '들어맞다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "point",
-        "mean": "['의견', '가리키다', '겨누다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "leave",
-        "mean": "['떠나다', '휴가', '허가']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "surprise",
-        "mean": "['뜻밖의 일', '놀라게 하다', '기습하다; 발견하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "status",
-        "mean": "['신분', '지위', '높은 지위']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "finished",
-        "mean": "['(~와의 관계·일 등이) 끝난', '(권력·효력 등이) 끝난', '완성된, 마무리된']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "all",
-        "mean": "['모든', '모든', '다, 모두']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "nice",
-        "mean": "['좋은', '퍽도 좋은', '미묘한']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "experience",
-        "mean": "['경험', '겪다', '느끼다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "helper",
-        "mean": "['도와주는 사람']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "feel",
-        "mean": "['들다', '촉감', '만져 봄']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unusual",
-        "mean": "['특이한', '색다른']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "while",
-        "mean": "['…하는 동안', '잠깐', '…하는 동안에']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "declare",
-        "mean": "['선언하다', '언명하다', '신고하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "shorten",
-        "mean": "['짧게 하다', '단축하다; 짧아지다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "arrow",
-        "mean": "['화살', '화살표']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "least",
-        "mean": "['(크기양정도 등이) 가장 적은; 최소(의)', '가장 덜, 최소로']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "merge",
-        "mean": "['합병하다', '어우러지다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "control",
-        "mean": "['지배(권)', '통제(력)', '지배하다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "lot",
-        "mean": "['많음', '많은 ~', '훨씬']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "responsibility",
-        "mean": "['책임', '책무']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "encourage",
-        "mean": "['격려하다', '권장하다', '부추기다']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "key",
-        "mean": "['열쇠', '입력하다', '가장 중요한']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "role",
-        "mean": "['(조직·사회·관계 내에서의) 역할', '(배우의) 역할', '(어떤 상황·활동에 영향을 미치는) 역할']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "bottleneck",
-        "mean": "['(차량 흐름이 느려지는) 좁은 도로, 병목 지역', '(특히 산업 발전의) 장애물']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "idea",
-        "mean": "['발상', '감', '견해']",
-        "frequency": "1",
-        "level": 3,
-        "category": "reactRedux"
-    },
-    {
-        "word": "various",
-        "mean": "['여러 가지의', '다양한 특징을 지닌']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "cost",
-        "mean": "['값', '…이다', '희생시키다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "transformation",
-        "mean": "['변화', '민주화']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mistake",
-        "mean": "['실수', '오해하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "author",
-        "mean": "['작가', '쓰다', '입안자']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "lee",
-        "mean": "['바람이 없는 곳', '앙금']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "twitter",
-        "mean": "['지저귀다', '지저귐', '흥분한 상태']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tip",
-        "mean": "['끝', '기울어지다', '따르다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "structural",
-        "mean": "['구조상의', '구조적인']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "useless",
-        "mean": "['소용없는', '잘 못하는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "end",
-        "mean": "['끝', '끝나다; 끝내다', '종말']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "every",
-        "mean": "['(단수 명사와 함께 쓰여) 모든', '가능한 모든; 충분한', '(빈도를 나타내어) 매…']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "identical",
-        "mean": "['동일한', '바로 그']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "utility",
-        "mean": "['공익사업', '다용도의', '유용성']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "none",
-        "mean": "['아무도 (…않다)', '(‘the + 비교급’과 함께 쓰여) 조금도 더 …인 것은 아니다', '(‘too + 형용사부사’와 함께 쓰여) 전혀 …아니다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "old",
-        "mean": "['나이가 …인', '늙은', '노인들']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mutation",
-        "mean": "['돌연변이', '변화']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "lead",
-        "mean": "['안내하다', '선두', '앞섬']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "flow",
-        "mean": "['흐름', '흐르다', '계속 흘러가다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "sense",
-        "mean": "['감각', '감지하다', '-감']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "free",
-        "mean": "['자유로운', '석방하다', '요금을 안 내고']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "worry",
-        "mean": "['걱정하다', '걱정', '걱정거리']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "flexibility",
-        "mean": "['신축성']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "chance",
-        "mean": "['가능성', '운에 맡기다', '우연한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mount",
-        "mean": "['시작하다', '산', '말']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tedious",
-        "mean": "['지루한', '싫증나는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reason",
-        "mean": "['이유', '판단하다', '사고하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "known",
-        "mean": "['(특히 많은 사람들에게) 알려진']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "response",
-        "mean": "['대답', '반응', '응창']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "intention",
-        "mean": "['의사', '의도; 목적']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "entry",
-        "mean": "['들어감', '출입', '가입']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "exact",
-        "mean": "['정확한', '요구하다', '가하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "certain",
-        "mean": "['확실한', '…중 어떤 사람들', '확신하는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "accessible",
-        "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "deeply",
-        "mean": "['(대단히·몹시의 뜻으로) 깊이', '(일부 동사와 함께 쓰여 완전할 정도로) 깊이', '(위에서 아래까지) 깊이']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "one",
-        "mean": "['하나(의),  한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unavoidable",
-        "mean": "['불가피한', '어쩔 수 없는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "position",
-        "mean": "['위치', '두다', '자리']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "natural",
-        "mean": "['자연의', '재능을 타고난 사람', '제자리음']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "isolation",
-        "mean": "['고립, 분리, 격리', '외로운 상태']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "appropriate",
-        "mean": "['적절한', '도용하다', '책정하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "public",
-        "mean": "['일반인의', '일반 사람들', '사람들']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "recognize",
-        "mean": "['알아보다', '인정하다', '공인하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "try",
-        "mean": "['노력하다', '시도', '트라이']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "functionality",
-        "mean": "['기능성', '목적', '기능']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "covered",
-        "mean": "['(온통) ~이 덮인', '지붕이 덮인']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "discuss",
-        "mean": "['상의하다', '논하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "mechanism",
-        "mean": "['기계 장치', '(목적을 달성하기 위한) 방법, 메커니즘', '(생물체 내에서 특정한 기능을 수행하는) 구조']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "failure",
-        "mean": "['실패', '실패자; 실패작', '~하지 않음']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "apply",
-        "mean": "['신청하다; 지원하다', '쓰다', '바르다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "attached",
-        "mean": "['애착을 가진', '~ 소속의', '부착된, 첨부된']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "window",
-        "mean": "['창문', '창', '창구; 창문 모양의 것']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "local",
-        "mean": "['지역의', '주민', '집에서 가까운 술집']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "side",
-        "mean": "['쪽', '옆', '옆면']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "listed",
-        "mean": "['표에 실린', '전화 번호부에 실려 있는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "arbitrary",
-        "mean": "['임의적인', '전횡을 일삼는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "equivalent",
-        "mean": "['동등한', '상당하는 것']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "last",
-        "mean": "['마지막의', '맨 끝에', '마지막 사람']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "strict",
-        "mean": "['엄격한', '엄밀한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "force",
-        "mean": "['물리력', '~를 강요하다', '억지로 …하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "something",
-        "mean": "['어떤 것, 무엇', '중요한 것', '정말(진술 내용을 강조하기 위해 씀)']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "maintain",
-        "mean": "['유지하다', '주장하다', '부양하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "thorough",
-        "mean": "['빈틈없는', '철저한', '순']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "explanation",
-        "mean": "['해명', '설명서']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "lint",
-        "mean": "['린트', '보푸라기실', '보풀']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "know",
-        "mean": "['알다', '깨닫다', '확신하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "warn",
-        "mean": "['경고하다', '강력히 충고하다', '경고를 주다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "primary",
-        "mean": "['주된', '예비 선거', '최초의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "choice",
-        "mean": "['선택', '아주 질 좋은', '상당히 질 좋은']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "less",
-        "mean": "['더 적은; 더 적은 것', '더 적게', '…을 빼고']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "collide",
-        "mean": "['충돌하다', '상충하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "production",
-        "mean": "['생산', '생산량', '생성']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "occur",
-        "mean": "['일어나다', '존재하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "aware",
-        "mean": "['알고 있는', '눈치 채고 있는', '의식이 높은']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "problem",
-        "mean": "['문제', '문제를 일으키는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "difficult",
-        "mean": "['어려운, 힘든', '힘겨운, 곤란한', '까다로운; 비협조적인']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "latest",
-        "mean": "['(가장) 최근의', '(가장) 최근의 것']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "had",
-        "mean": "['가졌다, (가지고) 있었다', '[가정 용법]', '⇒ have']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "guarantee",
-        "mean": "['굳은 약속', '보장하다', '품질 보증을 하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "consistency",
-        "mean": "['한결같음', '농도']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ancestor",
-        "mean": "['조상', '원형']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unique",
-        "mean": "['유일무이한', '특별한', '고유의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "forced",
-        "mean": "['강제적인', '진심이 아닌']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "description",
-        "mean": "['(~이 어떠한지에 대한) 서술', '일부, 온갖 종류 등의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "consider",
-        "mean": "['사려하다', '여기다', '고려하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "minimal",
-        "mean": "['아주 적은', '최소의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "paste",
-        "mean": "['반죽', '풀로 붙이다', '만들다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "removed",
-        "mean": "['떨어진, 먼', '<혈연 관계가> …촌의, …등친(等親)의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "conceptual",
-        "mean": "['개념의', '구상의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "overhead",
-        "mean": "['머리 위에, 하늘 높이', '머리 위의, (지상에서) 높이 세운', '(비용이) 간접비의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "complexity",
-        "mean": "['복잡성', '복잡한 특징들']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "passing",
-        "mean": "['(시간/세월의) 경과', '소멸, 죽음', '잠깐의, 일시적인']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "architectural",
-        "mean": "['건축학[술]의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "trade",
-        "mean": "['거래', '거래하다', '사업을 하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "separation",
-        "mean": "['분리', '헤어짐', '별거']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "third",
-        "mean": "['셋째의', '의', '급']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "determined",
-        "mean": "['단단히 결심한', '단호한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "select",
-        "mean": "['선발하다', '엄선된', '고급의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "option",
-        "mean": "['선택', '선택 과목', '선택권']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "concerned",
-        "mean": "['걱정하는', '관심이 있는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "ignore",
-        "mean": "['무시하다', '못 본 척하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "everything",
-        "mean": "['모든 것, 모두', '(현재의 일반적인 상황·생활을 나타내는) 모든 것', '전부, 가장 중요한 것']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "effective",
-        "mean": "['효과적인', '실질적인', '시행되는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "interested",
-        "mean": "['관심 있어 하는', '이해관계가 있는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "impact",
-        "mean": "['영향', '영향을 주다', '충돌하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "achieve",
-        "mean": "['달성하다', '해내다', '잘 해내다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "recompose",
-        "mean": "['다시 만들다, 개조(改組)하다', '<감정 등을> 가라앉히다, 진정시키다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "slight",
-        "mean": "['약간의', '모욕', '무시하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "improvement",
-        "mean": "['향상', '개선, 호전']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "extra",
-        "mean": "['추가의, 가외의', '추가되는 것', '엑스트라, 단역 배우']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "deep",
-        "mean": "['깊은', '깊이', '바다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "equal",
-        "mean": "['동일한', '동등한 사람', '같다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "temporary",
-        "mean": "['일시적인', '임시의']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "flexible",
-        "mean": "['신축성 있는', '잘 구부러지는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "don",
-        "mean": "['교수', '입다', '우두머리']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "better",
-        "mean": "['더 좋은', '더 잘', '더 좋은 것']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "granular",
-        "mean": "['알갱이가 든', '알갱이 모양의', '오돌토돌한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "view",
-        "mean": "['견해', '여기다', '보다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "length",
-        "mean": "['길이', '시간', '길이가 …인']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "stayed",
-        "mean": "['계속 있다', '머무름', '스테이']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "compatible",
-        "mean": "['호환이 되는', '양립될 수 있는', '화합할 수 있는']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unstable",
-        "mean": "['금방이라도 급변할 듯한', '흔들릴 듯한']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "loop",
-        "mean": "['고리', '고리 모양을 만들다', '고리 모양으로 이동하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "tick",
-        "mean": "['째깍거리다', '체크 표시', '진드기']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "handler",
-        "mean": "['(동물, 특히 개) 조련사', 취급하는 사람', '조직자; 조언자, 참모']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "web",
-        "mean": "['-망', '물갈퀴']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "duplicate",
-        "mean": "['복사하다', '똑같은', '사본']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "follow",
-        "mean": "['따라가다', '뒤를 잇다; 뒤따르다', '~ 뒤에 ~을 하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "linked",
-        "mean": "['연쇄된', '연계된']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "test",
-        "mean": "['시험', '시험하다', '검사를 하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "reshape",
-        "mean": "['모양을 고치다', '개장하다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "perform",
-        "mean": "['행하다', '해 보이다', '돌아가다']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    },
-    {
-        "word": "unit",
-        "mean": "['구성 단위', '한 개', '부대']",
-        "frequency": "1",
-        "level": 4,
-        "category": "reactRedux"
-    }
+  {
+    "word": "react",
+    "mean": "['반응하다', '화학 반응을 일으키다']",
+    "frequency": "166",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "store",
+    "mean": "['백화점', '저장하다', '가게']",
+    "frequency": "147",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "component",
+    "mean": "['요소', '부품']",
+    "frequency": "140",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "function",
+    "mean": "['기능', '기능하다', '행사']",
+    "frequency": "98",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "state",
+    "mean": "['상태', '국가의', '말하다']",
+    "frequency": "75",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "dispatch",
+    "mean": "['보내다', '파견; 발송', '긴급 공문']",
+    "frequency": "73",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "connect",
+    "mean": "['잇다', '연결하다', '접속하다']",
+    "frequency": "72",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "use",
+    "mean": "['쓰다', '사용', '용도']",
+    "frequency": "68",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "object",
+    "mean": "['물건', '반대하다', '반대 이유를 대다']",
+    "frequency": "41",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "context",
+    "mean": "['맥락', '문맥']",
+    "frequency": "40",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "action",
+    "mean": "['행동', '확인 조치하다', '동작']",
+    "frequency": "39",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "selector",
+    "mean": "['(스포츠 팀의) 선발 위원', '(엔진·기계 등에서 기능) 선택 장치']",
+    "frequency": "39",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "connected",
+    "mean": "['관련이 있는']",
+    "frequency": "36",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "type",
+    "mean": "['형', '타자 치다', '유형을 알아내다']",
+    "frequency": "29",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "return",
+    "mean": "['돌아오다', '돌아옴', '돌려줌']",
+    "frequency": "29",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "new",
+    "mean": "['새', '새 것', '새로 산']",
+    "frequency": "28",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "provider",
+    "mean": "['제공자', '제공 기관']",
+    "frequency": "27",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "argument",
+    "mean": "['논쟁; 언쟁', '논거', '논의']",
+    "frequency": "26",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "default",
+    "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
+    "frequency": "25",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "instance",
+    "mean": "['사례', '…을 예로 들다']",
+    "frequency": "25",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "used",
+    "mean": "['중고의']",
+    "frequency": "24",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "parameter",
+    "mean": "['매개 변수']",
+    "frequency": "23",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "render",
+    "mean": "['만들다', '주다', '제시하다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "see",
+    "mean": "['보다', '주교의 관구', '앞을 보다']",
+    "frequency": "21",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "example",
+    "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
+    "frequency": "20",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "value",
+    "mean": "['가치', '소중하게 생각하다', '평가하다']",
+    "frequency": "19",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "more",
+    "mean": "['더 많은 수(의)', '더 (많이)']",
+    "frequency": "19",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "usage",
+    "mean": "['용법', '사용; 사용량']",
+    "frequency": "19",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "performance",
+    "mean": "['공연; 연주회', '(개인의) 연기', '실적, 성과']",
+    "frequency": "18",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "import",
+    "mean": "['수입품', '수입하다', '불러오다']",
+    "frequency": "18",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "data",
+    "mean": "['(증명·판단·결정 등을 위한) 자료', '(컴퓨터에 저장된) 자료']",
+    "frequency": "17",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "same",
+    "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
+    "frequency": "17",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "own",
+    "mean": "['… 자신의', '소유하다', '인정하다']",
+    "frequency": "17",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "second",
+    "mean": "['두 번째의', '둘째로', '초']",
+    "frequency": "17",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "custom",
+    "mean": "['관습', '습관', '구입']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "file",
+    "mean": "['파일', '보관하다', '제기하다']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "call",
+    "mean": "['이름을 지어주다', '전화', '울음소리; 외침']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "first",
+    "mean": "['첫, 첫 (번)째의; 첫째', '첫째의', '우선, 맨 먼저']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "wrapper",
+    "mean": "['(특히 식품) 포장지', '래퍼(몸에 휘감아서 입는 가운·치마 등)']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "result",
+    "mean": "['결과', '발생하다', '승리']",
+    "frequency": "16",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "time",
+    "mean": "['시간', '시간을 맞추다', '시간을 측정하다']",
+    "frequency": "15",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "prop",
+    "mean": "['지주', '받치다', '소품']",
+    "frequency": "15",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "define",
+    "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
+    "frequency": "15",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "pass",
+    "mean": "['지나가다; 통과하다', '합격', '출입증']",
+    "frequency": "15",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "create",
+    "mean": "['창조하다', '자아내다', '수여하다']",
+    "frequency": "14",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "need",
+    "mean": "['필요로 하다', '…할 필요가 있다','필요']",
+    "frequency": "14",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "slice",
+    "mean": "['조각', '썰다', '베다']",
+    "frequency": "14",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "receive",
+    "mean": "['받다', '받다; 입다', '환영하다']",
+    "frequency": "14",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "hook",
+    "mean": "['고리', '갈고리로 잠그다', '…에 걸다']",
+    "frequency": "14",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "version",
+    "mean": "['-판', '설명']",
+    "frequency": "13",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reference",
+    "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
+    "frequency": "13",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "multiple",
+    "mean": "['많은', '배수']",
+    "frequency": "12",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "application",
+    "mean": "['지원', '적용', '바르기']",
+    "frequency": "12",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "single",
+    "mean": "['단 하나의', '편도 차표', '싱글']",
+    "frequency": "12",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "wrapped",
+    "mean": "['싸여진', '포장된']",
+    "frequency": "12",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "returned",
+    "mean": "['돌려 보내진, 반송되어진', '돌아온, 귀환한']",
+    "frequency": "12",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "way",
+    "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
+    "frequency": "11",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "let",
+    "mean": "['놓아두다', '레트', '임대']",
+    "frequency": "11",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "different",
+    "mean": "['다른', '각각 다른', '색다른']",
+    "frequency": "11",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tutorial",
+    "mean": "['(대학의) 개별 지도 시간', '사용 지침서, (컴퓨터의) 사용 지침 프로그램', '개인 지도의']",
+    "frequency": "11",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "access",
+    "mean": "['입장', '접속하다', '접근하다; 들어가다; 이용하다']",
+    "frequency": "11",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "make",
+    "mean": "['만들다', '제품', '정리하다']",
+    "frequency": "10",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "write",
+    "mean": "['쓰다', '집필하다', '편지를 쓰다']",
+    "frequency": "10",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "setup",
+    "mean": "['(조직 등의) 기구, 구조']",
+    "frequency": "10",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "provide",
+    "mean": "['제공하다', '규정하다']",
+    "frequency": "10",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "behavior",
+    "mean": "['행동, 거동, 행실, 품행, 태도', '행동; 습성']",
+    "frequency": "10",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "set",
+    "mean": "['놓다', '세트', '위치한']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "page",
+    "mean": "['페이지', '안내 방송을 하다', '연락하다']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "possible",
+    "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "part",
+    "mean": "['일부', '헤어지다', '반쯤; 어느 정도']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "additional",
+    "mean": "['추가의']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "case",
+    "mean": "['경우', '실정', '사례']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "defined",
+    "mean": "['정의된']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "run",
+    "mean": "['달리다', '달리기', '배달; 운행; 운항']",
+    "frequency": "9",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "official",
+    "mean": "['공무상의', '공무원', '공인된']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "order",
+    "mean": "['순서', '명령하다', '주문하다']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "start",
+    "mean": "['시작하다', '시작', '시작하기']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "library",
+    "mean": "['도서관', '서재', '장서들']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "other",
+    "mean": "['(그 밖의) 다른; 다른 사람']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ensure",
+    "mean": "['반드시 …하게 하다', '보장하다']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "full",
+    "mean": "['가득한', '똑바로', '~이 그득한']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "project",
+    "mean": "['계획', '계획하다', '예상하다']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "read",
+    "mean": "['읽다', '읽기', '아는 것이 많은']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "extract",
+    "mean": "['발췌', '뽑다', '얻어내다']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "such",
+    "mean": "['앞에 이미 언급한, 그런', '(곧 언급하려는) 그런', '(정도를 강조하여) 그 정도의']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "list",
+    "mean": "['리스트', '리스트을 작성하다', '리스트에 언급하다']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "creator",
+    "mean": "['창조자', '창조주']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "common",
+    "mean": "['흔한', '공유지', '식당']",
+    "frequency": "8",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "update",
+    "mean": "['갱신하다', '가장 최근의 정보를 알려주다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "learn",
+    "mean": "['배우다', '~을 알게 되다', '외우다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "help",
+    "mean": "['돕다', '도움', '지원']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "logic",
+    "mean": "['논리', '타당성', '논리학']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tree",
+    "mean": "['나무']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "specific",
+    "mean": "['구체적인', '특정한', '특유의']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "based",
+    "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "add",
+    "mean": "['첨가하다', '합하다', '보태다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "counter",
+    "mean": "['계산대; 판매대', '반박하다', '~의 반대 방향에서; ~과 반대로']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "field",
+    "mean": "['들판', '내보내다', '수비를 보다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "implement",
+    "mean": "['시행하다', '도구']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "approach",
+    "mean": "['다가가다', '접근법', '다가감']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "plain",
+    "mean": "['분명한', '평원', '분명히']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "subscribe",
+    "mean": "['구독하다; 가입하다', '가입하다; 기부하다', '청약하다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "note",
+    "mean": "['메모', '…에 주목하다', '언급하다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "factory",
+    "mean": "['공장']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "equality",
+    "mean": "['평등', '균등']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "root",
+    "mean": "['뿌리', '뿌리를 내리다; 뿌리 내리게 하다', '파헤치다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "form",
+    "mean": "['종류', '형성되다; 형성시키다', '구성되다; 구성하다']",
+    "frequency": "7",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "written",
+    "mean": "['(말이 아닌) 글로 표현된, 서면으로 된', '필기로 된, 문자로 하는']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "community",
+    "mean": "['주민', '공동체', '공동체 의식']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "code",
+    "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "want",
+    "mean": "['원하다', '원하는 것', '부족']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "implementation",
+    "mean": "['시행', '이행']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "name",
+    "mean": "['이름', '이름을 지어주다', '이름을 대다']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "actual",
+    "mean": "['실제의', '사실상의']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "number",
+    "mean": "['수', '번호를 매기다', '모두 …이 되다']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "variable",
+    "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "current",
+    "mean": "['현재의', '흐름', '전류']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "entire",
+    "mean": "['전체의', '온']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "wish",
+    "mean": "['원하다', '바람', '바라는 것']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "comparison",
+    "mean": "['비교함', '비교']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "child",
+    "mean": "['아이', '자식', '사람']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "error",
+    "mean": "['실수']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "previous",
+    "mean": "['이전의', '바로 앞의']",
+    "frequency": "6",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "template",
+    "mean": "['형판(形板)', '견본, 본보기']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "available",
+    "mean": "['구할 수 있는', '시간이 있는']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "show",
+    "mean": "['보여 주다', '쇼', '프로']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ask",
+    "mean": "['묻다', '부탁하다', '구하다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "addition",
+    "mean": "['덧셈', '추가된 것', '추가']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "cause",
+    "mean": "['원인', '…을 야기하다', '이유']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "work",
+    "mean": "['일하다', '일', '업무']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "given",
+    "mean": "['(이미) 정해진', '특정한', '…을 고려해 볼 때']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "most",
+    "mean": "['최대', '가장', '가장']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "top",
+    "mean": "['맨 위', '맨 위의', '더 높다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "core",
+    "mean": "['속', '핵심적인', '심을 파내다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "standard",
+    "mean": "['수준', '일반적인', '표준 규격에 맞춘']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "initial",
+    "mean": "['처음의', '이름의 첫 글자', '성명의 첫 글자들을 표시하다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "immutable",
+    "mean": "['변경할 수 없는', '불변의']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "handle",
+    "mean": "['다루다', '손잡이', '손잡이가 …한']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "package",
+    "mean": "['상자; 포장물', '포장하다', '제시하다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "provided",
+    "mean": "['(만약) ~라면']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "guide",
+    "mean": "['안내', '안내하여 데려가다', '인도하다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "change",
+    "mean": "['변하다', '변화', '색다른 것; 기분 전환']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "information",
+    "mean": "['정보']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "complex",
+    "mean": "['복잡한', '복합 건물', '덩어리']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "only",
+    "mean": "['유일한, 오직 …만의', '(가장 좋은) 단 하나의']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "array",
+    "mean": "['집합체', '배열하다', '배치하다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mandatory",
+    "mean": "['법에 정해진', '의무적인']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "find",
+    "mean": "['찾다', '발견물', '찾아내다']",
+    "frequency": "5",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "layer",
+    "mean": "['막', '켜켜로 놓다', '층']",
+    "frequency": "4",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "dependency",
+    "mean": "['의존', '속국']",
+    "frequency": "4",
+    "level": "1",
+    "category": "reactRedux"
+  },
+  {
+    "word": "allow",
+    "mean": "['허락하다; 용납하다', '허락하다', '들어오게 하다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "place",
+    "mean": "['장소', '놓다', '두다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "binding",
+    "mean": "['법적 구속력이 있는', '표지', '가장자리 장식']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "bind",
+    "mean": "['묶다', '곤경', '감다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "hand",
+    "mean": "['손', '건네주다', '… 손을 사용하는']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "process",
+    "mean": "['과정', '가공하다', '처리하다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "interaction",
+    "mean": "['상호작용']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "concern",
+    "mean": "['영향을 미치다', '우려', '배려']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "skip",
+    "mean": "['깡충깡충 뛰다', '깡충깡충 뛰기', '쓰레기 수거통']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unnecessary",
+    "mean": "['불필요한', '쓸데없는']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "quick",
+    "mean": "['빠른', '빨리', '속살']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "typical",
+    "mean": "['전형적인', '보통의', '늘 하는 식의']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "export",
+    "mean": "['수출하다', '수출', '수출품']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "separate",
+    "mean": "['분리된', '분리되다', '갈라지다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "important",
+    "mean": "['중요한', '영향력이 큰']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "potential",
+    "mean": "['가능성이 있는', '가능성', '잠재력']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "optional",
+    "mean": "['선택적인']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "input",
+    "mean": "['조언; 투입', '입력하다', '입력']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "section",
+    "mean": "['부분', '절개하다', '박편을 만들다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "have",
+    "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "take",
+    "mean": "['가지고 가다', '테이크', '수익']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "undefined",
+    "mean": "['한정되지 않은', '확실하지 않은']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "expensive",
+    "mean": "['비싼', '돈이 많이 드는']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "pure",
+    "mean": "['순수한', '깨끗한', '완전한']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "shallow",
+    "mean": "['얕은', '얄팍한']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "avoid",
+    "mean": "['방지하다', '피하다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "edge",
+    "mean": "['끝', '조금씩 움직이다', '테두리를 두르다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "issue",
+    "mean": "['주제', '발표하다', '발부하다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "supply",
+    "mean": "['공급', '공급하다', '보급품']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "necessary",
+    "mean": "['필요한', '필연적인']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "hierarchy",
+    "mean": "['계급', '지배층', '체계']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "executed",
+    "mean": "['처형하다', '실행하다', '해내다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "individual",
+    "mean": "['각각의', '개인', '개성 있는 사람']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "override",
+    "mean": "['기각하다', '…보다 더 중요하다', '중단시키다']",
+    "frequency": "4",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "native",
+    "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "install",
+    "mean": "['설치하다', '취임시키다', '자리를 잡게 하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "rest",
+    "mean": "['나머지', '쉬다', '받치다; 받쳐지다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "interact",
+    "mean": "['소통하다', '상호 작용을 하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "modern",
+    "mean": "['현대의', '현대적인', '최신의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "related",
+    "mean": "['관련된', '친척의', '동족의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "come",
+    "mean": "['오다', '자', '정액']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "framework",
+    "mean": "['(건물 등의) 뼈대', '(판단·결정 등을 위한) 틀', '체제, 체계']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "please",
+    "mean": "['부디', '기쁘게 하다', '…하고 싶다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "intended",
+    "mean": "['대상으로 삼은', '만들어진']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "require",
+    "mean": "['필요하다', '요구하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "designed",
+    "mean": "['계획적인', '고의의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "many",
+    "mean": "['많은']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "rendering",
+    "mean": "['(특정한 해석을 가미한) 연주', '번역', '(벽돌벽·석벽 등에 하는) 회반죽 칠']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "best",
+    "mean": "['최상의', '가장', '최고']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "put",
+    "mean": "['놓다', '밀어 넣다', '들어가게 하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "correct",
+    "mean": "['맞는', '바로잡다', '검사하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "increment",
+    "mean": "['임금 인상', '증가']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "shown",
+    "mean": "['보여진']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "complete",
+    "mean": "['가능한 최대의', '완료하다', '기입하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "give",
+    "mean": "['주다', '탄력성', '제공하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "major",
+    "mean": "['주요한', '소령', '전공']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "fix",
+    "mean": "['고정시키다', '해결책', '한 번 필요한 양']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "modify",
+    "mean": "['수정하다', '수식하다; 한정하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "couple",
+    "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "circular",
+    "mean": "['원형의', '회람용 편지; 광고 전단', '순회하는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "check",
+    "mean": "['살피다', '확인', '좋아']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "notice",
+    "mean": "['신경씀', '…을 의식하다', '주목하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "trigger",
+    "mean": "['방아쇠', '촉발시키다', '작동시키다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "able",
+    "mean": "['…할 수 있는', '재능 있는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "parent",
+    "mean": "['부모', '모체']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "optimize",
+    "mean": "['~을 최대한 좋게[적합하게] 만들다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "basic",
+    "mean": "['기본적인', '기초적인']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "environment",
+    "mean": "['(주변의)환경']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "good",
+    "mean": "['좋은', '선', '잘']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "similar",
+    "mean": "['비슷한', '유사한', '닮은']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "filter",
+    "mean": "['필터', '여과하다', '필터를 쓰다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "simpler",
+    "mean": "['간단한', '단순한', '순전한']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "short",
+    "mean": "['짧은', '…이 부족하다', '한 잔']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "matter",
+    "mean": "['문제', '중요하다; 문제되다', '상황']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "retrieve",
+    "mean": "['되찾아오다', '검색하다', '수습하다; 되찾다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "final",
+    "mean": "['마지막의', '결승전', '졸업 시험']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "advanced",
+    "mean": "['선진의', '고급의', '(발달 단계상) 후기의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "corresponding",
+    "mean": "['(~에) 해당[상응]하는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "relevant",
+    "mean": "['관련 있는', '의의가 있는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "copy",
+    "mean": "['복사', '복사하다', '옮겨 적다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "several",
+    "mean": "['몇의', '각각의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "won",
+    "mean": "['win의 과거', '과거분사']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "formal",
+    "mean": "['격식을 차린', '공식적인', '정규적인']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "definition",
+    "mean": "['정의', '의미', '선명도']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "specify",
+    "mean": "['(구체적으로) 명시하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "button",
+    "mean": "['단추', '단추를 잠그다', '단추로 잠그게 되어 있다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ability",
+    "mean": "['할 수 있음', '재능']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "wrap",
+    "mean": "['싸다', '랩', '포장지']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "shorthand",
+    "mean": "['속기', '약칭']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "further",
+    "mean": "['더 멀리에', '더 이상의', '발전시키다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "care",
+    "mean": "['돌봄', '상관하다', '배려하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "invariant",
+    "mean": "['변함없는', '변치 않는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "hydration",
+    "mean": "['수화(작용)']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "server",
+    "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "added",
+    "mean": "['추가된', '부가된']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "subscription",
+    "mean": "['구독료; 구독', '기부금; 기부; 가입; 사용', '모금']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "determine",
+    "mean": "['알아내다', '결정하다', '확정하다']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "due",
+    "mean": "['~로 인한; ~ 때문에', '~하기로 되어 있는', '~에게 마땅히 주어져야 하는 것']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "useful",
+    "mean": "['유용한', '유능한']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "real",
+    "mean": "['진짜의', '아주', '진정한']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "class",
+    "mean": "['학급', '수업', '동기생']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "stale",
+    "mean": "['신선하지 않은', '퀴퀴한', '신선미가 없는']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "zombie",
+    "mean": "['무기력한 사람', '좀비']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "convention",
+    "mean": "['관습', '대회', '조약']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "maximum",
+    "mean": "['최고의', '최고']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "subsequent",
+    "mean": "['그 다음의', '차후의']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "batch",
+    "mean": "['집단', '함께 묶다', '한 회분']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "warning",
+    "mean": "['경고', '계고']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "browser",
+    "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', '(가게를) 둘러보는 사람']",
+    "frequency": "3",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "included",
+    "mean": "['함유된, 포함된', '<수술·암술이> 꽃부리 밖으로 튀어나오지 않은']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "method",
+    "mean": "['방법', '체계성']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mark",
+    "mean": "['표시하다', '자국', '점']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "fetching",
+    "mean": "['멋진', '매력적인']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "source",
+    "mean": "['원천', '얻다', '자료; 정보원']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "channel",
+    "mean": "['채널', '쏟다', '보내다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "discord",
+    "mean": "['불화', '불협화음']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "resource",
+    "mean": "['자원', '자원을 제공하다', '재료']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "great",
+    "mean": "['큰', '위대한 인물', '아주 잘']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "join",
+    "mean": "['연결하다', '합쳐지다', '가입하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "stack",
+    "mean": "['무더기', '쌓다; 쌓이다', '채우다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "overflow",
+    "mean": "['넘치다', '넘침', '넘쳐흐름']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tag",
+    "mean": "['꼬리표', '꼬리표를 붙이다', '태그를 붙이다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "kind",
+    "mean": "['종류', '친절한']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "understand",
+    "mean": "['이해하다', '합의되다', '감안하여 이해하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "generic",
+    "mean": "['포괄적인', '회사 이름이 붙지 않은']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "look",
+    "mean": "['보다', '보기', '이봐']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "idiomatic",
+    "mean": "['자연스러운', '관용구가 든']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "likely",
+    "mean": "['…할 공산이 있는', '그럴듯한']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "welcome",
+    "mean": "['맞이하다', '반가운', '환영']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "briefly",
+    "mean": "['잠시', '간단히']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "introduce",
+    "mean": "['소개하다', '진행하다; 소개하다', '내놓다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "pattern",
+    "mean": "['양식', '무늬를 만들다', '양식을 형성시키다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "folder",
+    "mean": "['서류철, 폴더', '(일부 컴퓨터 시스템에서 파일 보관용) 폴더']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "extension",
+    "mean": "['확대', '증축한 방', '증축 건물']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "whole",
+    "mean": "['전체의', '완전체', '~의 전체']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "understanding",
+    "mean": "['이해', '이해심 있는', '합의']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "built",
+    "mean": "['~하게 지어진']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "remove",
+    "mean": "['치우다', '동떨어져 있는 정도', '벗다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tell",
+    "mean": "['알리다', '알려 주다', '하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "manager",
+    "mean": "['경영자', '매니저', '감독']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "resolve",
+    "mean": "['해결하다', '결심', '다짐하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "safe",
+    "mean": "['안전한', '금고', '위험하지 않은']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "infer",
+    "mean": "['추론하다', '뜻하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "practice",
+    "mean": "['실행', '관행', '다반사']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "step",
+    "mean": "['걸음', '움직이다', '걸음걸이']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "item",
+    "mean": "['항목', '물품', '한 가지']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "continue",
+    "mean": "['계속되다', '계속하다', '계속 가다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "detail",
+    "mean": "['세부 사항', '상세히 알리다', '특별 임무를 부여하다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "feature",
+    "mean": "['특색', '특별히 포함하다', '특징을 이루다']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "active",
+    "mean": "['활동적인', '능동태', '적극적인']",
+    "frequency": "2",
+    "level": "2",
+    "category": "reactRedux"
+  },
+  {
+    "word": "simple",
+    "mean": "['간단한', '단순한', '순전한']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "contain",
+    "mean": "['…이 들어 있다', '억누르다', '방지하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "done",
+    "mean": "['다 끝난, 다 된, 완료된', '완전히 요리된, 푹 삶은, 바싹 구운']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "normally",
+    "mean": "['보통(은), 보통 때는', '정상적으로']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "simplify",
+    "mean": "['간소화하다', '간단하게 하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "break",
+    "mean": "['깨어지다', '휴식', '쉬는 시간']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "static",
+    "mean": "['고정된', '잡음', '정전기']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "solution",
+    "mean": "['해법', '해답', '용액']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "explicit",
+    "mean": "['분명한', '솔직한', '명백한; 노골적인']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "incorrect",
+    "mean": "['부정확한', '맞지 않는', '사실이 아닌']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "include",
+    "mean": "['포함하다', '~을 포함시키다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "particular",
+    "mean": "['특정한', '자세한 사실', '서면 정보']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "following",
+    "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "slow",
+    "mean": "['느린', '느리게', '천천히 가다; 속도를 줄이다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "transform",
+    "mean": "['변형시키다', '완전히 바꿔 놓다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "execute",
+    "mean": "['처형하다', '실행하다', '해내다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "much",
+    "mean": "['많은; 많음', '매우']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "easy",
+    "mean": "['쉬운', '조심해서', '편안한']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "few",
+    "mean": "['많지 않은', '소수', '약간의 수']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "consideration",
+    "mean": "['사려', '고려 사항', '배려']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "therefore",
+    "mean": "['그러므로', '그러니']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "forward",
+    "mean": "['앞으로', '앞으로 가는', '보내다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "bring",
+    "mean": "['가져오다', '가져다 주다', '야기하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "dan",
+    "mean": "['(태권도·유도 등의) 단', '유단자']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "handled",
+    "mean": "['핸들이 있는, 자루가 달린']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "either",
+    "mean": "['(둘 중) 어느 하나(의)', '(두 개) 각각(의)', '(부정문에서) …도 (그렇다)']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "rare",
+    "mean": "['드문', '진귀한', '살짝 익힌']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "considered",
+    "mean": "['깊이 생각한 (후의)', '존경받는, 중히 여겨지는']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "build",
+    "mean": "['짓다', '체구', '만들어 내다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "level",
+    "mean": "['정도', '평평한', '평평하게 하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "client",
+    "mean": "['의뢰인', '클라이언트']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "received",
+    "mean": "['일반적으로 인정되는']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "combined",
+    "mean": "['결합된, 합동의, 연합의', '화합한']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "closure",
+    "mean": "['(공장·학교·병원 등의 영구적인) 폐쇄(되는 상황)', '(도로·교량의 일시적) 폐쇄', '(힘든 일의) 종료']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "internal",
+    "mean": "['내부의', '체내의', '국내의']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "depend",
+    "mean": "['의존하다, 의지하다', '믿다, 신뢰하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "true",
+    "mean": "['사실인', '일직선으로', '진실을 말하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "stable",
+    "mean": "['안정된', '마구간', '넣다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "prefer",
+    "mean": "['…을 좋아하다', '선호하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "alternate",
+    "mean": "['번갈아 생기는', '번갈아 나오게 만들다', '대체 요원']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ready",
+    "mean": "['준비가 된', '준비시키다', '이미 …되어 있는']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "thrown",
+    "mean": "['THROW의 과거분사', '꼰']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "deal",
+    "mean": "['돌리다', '많은; 많이', '거래']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "selected",
+    "mean": "['선택된', '선발된']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "prevent",
+    "mean": "['막다[예방/방지하다]']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "original",
+    "mean": "['원래의', '원본', '특이한 사람']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "release",
+    "mean": "['풀어 주다', '석방', '발표; 개봉; 발간; 출시']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "suggestion",
+    "mean": "['제안', '시사', '기미']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "text",
+    "mean": "['본문', '문자를 보내다', '글']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "refer",
+    "mean": "['<…을> <…에게> 알아보도록 하다, 조회하다', '참조하게 하다', '지시하다, 나타내다; 주목시키다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "small",
+    "mean": "['작은', '잘게', '허리의 잘록한 부분']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "legacy",
+    "mean": "['(죽은 사람이 남긴) 유산', '(과거의) 유산']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "event",
+    "mean": "['사건', '행사', '경기']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "renderer",
+    "mean": "['만들다', '주다', '제시하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "get",
+    "mean": "['받다', '얻다', '가져 오다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "jest",
+    "mean": "['농담', '농담하다']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "next",
+    "mean": "['(시간순서공간상으로 바로 무엇) 다음의', '그 다음에','그리고는']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "recipe",
+    "mean": "['조리법', '(특정 결과를 가져올 듯한) 방안']",
+    "frequency": "2",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "advantage",
+    "mean": "['유리한 점', '유리하게 하다', '어드밴티지']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "integration",
+    "mean": "['통합']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "pair",
+    "mean": "['쌍', '짝을 짓다', '한 쌍']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "explain",
+    "mean": "['설명하다', '이유를 대다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "today",
+    "mean": "['오늘', '오늘날에, 요즈음, 현재', '오늘']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "live",
+    "mean": "['살다', '하다', '남아 있다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "query",
+    "mean": "['문의', '문의하다', '묻다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "transcript",
+    "mean": "['글로 옮긴 기록', '성적 증명서']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "angular",
+    "mean": "['뼈가 앙상한', '각이 진']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "vanilla",
+    "mean": "['바닐라', '바닐라 맛의', '평범한, 특별할 것 없는']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "independent",
+    "mean": "['독립된', '무소속 의원', '독립적인']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tie",
+    "mean": "['묶다', '넥타이', '끈']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "general",
+    "mean": "['일반적인', '장군', '보통의']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "discussion",
+    "mean": "['논의', '논한 것']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "consistent",
+    "mean": "['한결같은', '거듭되는', '~와 일치하는']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "become",
+    "mean": "['…지다', '알맞다', '어울리다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "repetitive",
+    "mean": "['반복적인', '반복되는']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "made",
+    "mean": "['make의 과거, 과거분사', '…하게 만든']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "history",
+    "mean": "['역사', '역사서', '이력']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "team",
+    "mean": "['팀', '팀을 짜다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "date",
+    "mean": "['날짜', '날짜를 적다', '…의 연대를 추정하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "design",
+    "mean": "['디자인', '디자인하다', '설계하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "wasted",
+    "mean": "['헛된', '(특히 병으로) 쇠약한', '술에 찌든']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "effort",
+    "mean": "['수고', '노력', '활동']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "output",
+    "mean": "['생산량', '출력해 내다', '출력']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "improve",
+    "mean": "['개선되다', '나아지다; 개선하다', '향상시키다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "large",
+    "mean": "['큰; 많은', '대형의', '큰']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reuse",
+    "mean": "['재사용하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "knowledge",
+    "mean": "['지식', '알고 있음']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "teach",
+    "mean": "['학생들을 가르치다', '가르쳐 주다', '가르치다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "focus",
+    "mean": "['집중하다', '초점; 주목', '초점']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "main",
+    "mean": "['가장 큰', '본관; 간선', '본관']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "structure",
+    "mean": "['구조', '조직하다', '구조물']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "whatever",
+    "mean": "['…한 어떤; …한 어떤 것, …한 무엇', '어떤 …일지라도, 어떤 …이든', '전혀, 어떤 종류의 것도']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "empty",
+    "mean": "['비어 있는', '비우다', '비게 되다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "configure",
+    "mean": "['환경을 설정하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "inspect",
+    "mean": "['점검하다', '사찰하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "index",
+    "mean": "['색인', '색인을 만들다', '물가와 연동시키다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "string",
+    "mean": "['끈', '묶다', '현악기의']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "identify",
+    "mean": "['확인하다', '찾다', '알아보게 하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "decrement",
+    "mean": "['감소; 소모', '감액, 감량; 감소율', '<…의> 감소를 나타내다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "brief",
+    "mean": "['짧은', '업무', '~에게 알려주다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "overview",
+    "mean": "['개관', '개요']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "running",
+    "mean": "['달리기', '운영, 경영', '(‘수사 + yeardaytime 등의 명사’ 뒤에 쓰여) … 연속의']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "compiler",
+    "mean": "['편집자, 편찬자', '컴파일러(명령어 번역 프로그램)']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "accept",
+    "mean": "['받아들이다', '받아 주다', '믿다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tighten",
+    "mean": "['팽팽해지다', '더 엄격하게 하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "extended",
+    "mean": "['(보통 때나 예상보다) 길어진[늘어난]']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "fine",
+    "mean": "['질 높은', '잘', '벌금']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "older",
+    "mean": "['연상의']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "recommend",
+    "mean": "['추천하다', '권고하다', '매력적으로 만들다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reading",
+    "mean": "['독서', '읽기', '읽을거리, 읽기 자료, 독서물']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "style",
+    "mean": "['방식', '스타일을 만들다', '칭하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "jump",
+    "mean": "['뛰다', '뜀질; 급격한 변화; 벌떡 움직임', '장애물']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "portion",
+    "mean": "['부분', '나누다', '분']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reset",
+    "mean": "['다시 맞추다', '다시 제자리에 넣다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "hooked",
+    "mean": "['갈고리 모양의', '중독된', '대단히 즐기는']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "responsible",
+    "mean": "['책임지고 있는', '책임이 있는', '원인이 되는']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "post",
+    "mean": "['우편', '발송하다', '우체통에 넣다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "map",
+    "mean": "['지도; 약도', '지도를 만들다', '발견하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "turn",
+    "mean": "['돌다; 돌리다', '돌기', '방향 전환']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "screen",
+    "mean": "['화면', '가리다', '은닉하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "pause",
+    "mean": "['잠시 멈추다', '멈춤', '늘임표']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "bit",
+    "mean": "['조금', '잠깐', '조금; 한 조각']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "keen",
+    "mean": "['간절히 …하고 싶은', '애끊는 소리로 울부짖다', '열정적인']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reader",
+    "mean": "['읽는 사람', '구독자', '읽기 교재']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "answer",
+    "mean": "['대답', '대답하다', '들어맞다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "point",
+    "mean": "['의견', '가리키다', '겨누다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "leave",
+    "mean": "['떠나다', '휴가', '허가']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "surprise",
+    "mean": "['뜻밖의 일', '놀라게 하다', '기습하다; 발견하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "status",
+    "mean": "['신분', '지위', '높은 지위']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "finished",
+    "mean": "['(~와의 관계·일 등이) 끝난', '(권력·효력 등이) 끝난', '완성된, 마무리된']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "all",
+    "mean": "['모든', '모든', '다, 모두']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "nice",
+    "mean": "['좋은', '퍽도 좋은', '미묘한']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "experience",
+    "mean": "['경험', '겪다', '느끼다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "helper",
+    "mean": "['도와주는 사람']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "feel",
+    "mean": "['들다', '촉감', '만져 봄']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unusual",
+    "mean": "['특이한', '색다른']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "while",
+    "mean": "['…하는 동안', '잠깐', '…하는 동안에']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "declare",
+    "mean": "['선언하다', '언명하다', '신고하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "shorten",
+    "mean": "['짧게 하다', '단축하다; 짧아지다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "arrow",
+    "mean": "['화살', '화살표']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "least",
+    "mean": "['(크기양정도 등이) 가장 적은; 최소(의)', '가장 덜, 최소로']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "merge",
+    "mean": "['합병하다', '어우러지다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "control",
+    "mean": "['지배(권)', '통제(력)', '지배하다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "lot",
+    "mean": "['많음', '많은 ~', '훨씬']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "responsibility",
+    "mean": "['책임', '책무']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "encourage",
+    "mean": "['격려하다', '권장하다', '부추기다']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "key",
+    "mean": "['열쇠', '입력하다', '가장 중요한']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "role",
+    "mean": "['(조직·사회·관계 내에서의) 역할', '(배우의) 역할', '(어떤 상황·활동에 영향을 미치는) 역할']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "bottleneck",
+    "mean": "['(차량 흐름이 느려지는) 좁은 도로, 병목 지역', '(특히 산업 발전의) 장애물']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "idea",
+    "mean": "['발상', '감', '견해']",
+    "frequency": "1",
+    "level": "3",
+    "category": "reactRedux"
+  },
+  {
+    "word": "various",
+    "mean": "['여러 가지의', '다양한 특징을 지닌']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "cost",
+    "mean": "['값', '…이다', '희생시키다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "transformation",
+    "mean": "['변화', '민주화']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mistake",
+    "mean": "['실수', '오해하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "author",
+    "mean": "['작가', '쓰다', '입안자']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "lee",
+    "mean": "['바람이 없는 곳', '앙금']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "twitter",
+    "mean": "['지저귀다', '지저귐', '흥분한 상태']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tip",
+    "mean": "['끝', '기울어지다', '따르다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "structural",
+    "mean": "['구조상의', '구조적인']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "useless",
+    "mean": "['소용없는', '잘 못하는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "end",
+    "mean": "['끝', '끝나다; 끝내다', '종말']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "every",
+    "mean": "['(단수 명사와 함께 쓰여) 모든', '가능한 모든; 충분한', '(빈도를 나타내어) 매…']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "identical",
+    "mean": "['동일한', '바로 그']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "utility",
+    "mean": "['공익사업', '다용도의', '유용성']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "none",
+    "mean": "['아무도 (…않다)', '(‘the + 비교급’과 함께 쓰여) 조금도 더 …인 것은 아니다', '(‘too + 형용사부사’와 함께 쓰여) 전혀 …아니다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "old",
+    "mean": "['나이가 …인', '늙은', '노인들']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mutation",
+    "mean": "['돌연변이', '변화']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "lead",
+    "mean": "['안내하다', '선두', '앞섬']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "flow",
+    "mean": "['흐름', '흐르다', '계속 흘러가다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "sense",
+    "mean": "['감각', '감지하다', '-감']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "free",
+    "mean": "['자유로운', '석방하다', '요금을 안 내고']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "worry",
+    "mean": "['걱정하다', '걱정', '걱정거리']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "flexibility",
+    "mean": "['신축성']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "chance",
+    "mean": "['가능성', '운에 맡기다', '우연한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mount",
+    "mean": "['시작하다', '산', '말']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tedious",
+    "mean": "['지루한', '싫증나는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reason",
+    "mean": "['이유', '판단하다', '사고하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "known",
+    "mean": "['(특히 많은 사람들에게) 알려진']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "response",
+    "mean": "['대답', '반응', '응창']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "intention",
+    "mean": "['의사', '의도; 목적']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "entry",
+    "mean": "['들어감', '출입', '가입']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "exact",
+    "mean": "['정확한', '요구하다', '가하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "certain",
+    "mean": "['확실한', '…중 어떤 사람들', '확신하는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "accessible",
+    "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "deeply",
+    "mean": "['(대단히·몹시의 뜻으로) 깊이', '(일부 동사와 함께 쓰여 완전할 정도로) 깊이', '(위에서 아래까지) 깊이']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "one",
+    "mean": "['하나(의),  한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unavoidable",
+    "mean": "['불가피한', '어쩔 수 없는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "position",
+    "mean": "['위치', '두다', '자리']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "natural",
+    "mean": "['자연의', '재능을 타고난 사람', '제자리음']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "isolation",
+    "mean": "['고립, 분리, 격리', '외로운 상태']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "appropriate",
+    "mean": "['적절한', '도용하다', '책정하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "public",
+    "mean": "['일반인의', '일반 사람들', '사람들']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "recognize",
+    "mean": "['알아보다', '인정하다', '공인하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "try",
+    "mean": "['노력하다', '시도', '트라이']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "functionality",
+    "mean": "['기능성', '목적', '기능']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "covered",
+    "mean": "['(온통) ~이 덮인', '지붕이 덮인']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "discuss",
+    "mean": "['상의하다', '논하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "mechanism",
+    "mean": "['기계 장치', '(목적을 달성하기 위한) 방법, 메커니즘', '(생물체 내에서 특정한 기능을 수행하는) 구조']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "failure",
+    "mean": "['실패', '실패자; 실패작', '~하지 않음']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "apply",
+    "mean": "['신청하다; 지원하다', '쓰다', '바르다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "attached",
+    "mean": "['애착을 가진', '~ 소속의', '부착된, 첨부된']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "window",
+    "mean": "['창문', '창', '창구; 창문 모양의 것']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "local",
+    "mean": "['지역의', '주민', '집에서 가까운 술집']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "side",
+    "mean": "['쪽', '옆', '옆면']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "listed",
+    "mean": "['표에 실린', '전화 번호부에 실려 있는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "arbitrary",
+    "mean": "['임의적인', '전횡을 일삼는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "equivalent",
+    "mean": "['동등한', '상당하는 것']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "last",
+    "mean": "['마지막의', '맨 끝에', '마지막 사람']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "strict",
+    "mean": "['엄격한', '엄밀한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "force",
+    "mean": "['물리력', '~를 강요하다', '억지로 …하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "something",
+    "mean": "['어떤 것, 무엇', '중요한 것', '정말(진술 내용을 강조하기 위해 씀)']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "maintain",
+    "mean": "['유지하다', '주장하다', '부양하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "thorough",
+    "mean": "['빈틈없는', '철저한', '순']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "explanation",
+    "mean": "['해명', '설명서']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "lint",
+    "mean": "['린트', '보푸라기실', '보풀']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "know",
+    "mean": "['알다', '깨닫다', '확신하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "warn",
+    "mean": "['경고하다', '강력히 충고하다', '경고를 주다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "primary",
+    "mean": "['주된', '예비 선거', '최초의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "choice",
+    "mean": "['선택', '아주 질 좋은', '상당히 질 좋은']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "less",
+    "mean": "['더 적은; 더 적은 것', '더 적게', '…을 빼고']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "collide",
+    "mean": "['충돌하다', '상충하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "production",
+    "mean": "['생산', '생산량', '생성']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "occur",
+    "mean": "['일어나다', '존재하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "aware",
+    "mean": "['알고 있는', '눈치 채고 있는', '의식이 높은']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "problem",
+    "mean": "['문제', '문제를 일으키는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "difficult",
+    "mean": "['어려운, 힘든', '힘겨운, 곤란한', '까다로운; 비협조적인']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "latest",
+    "mean": "['(가장) 최근의', '(가장) 최근의 것']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "had",
+    "mean": "['가졌다, (가지고) 있었다', '[가정 용법]', '⇒ have']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "guarantee",
+    "mean": "['굳은 약속', '보장하다', '품질 보증을 하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "consistency",
+    "mean": "['한결같음', '농도']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ancestor",
+    "mean": "['조상', '원형']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unique",
+    "mean": "['유일무이한', '특별한', '고유의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "forced",
+    "mean": "['강제적인', '진심이 아닌']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "description",
+    "mean": "['(~이 어떠한지에 대한) 서술', '일부, 온갖 종류 등의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "consider",
+    "mean": "['사려하다', '여기다', '고려하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "minimal",
+    "mean": "['아주 적은', '최소의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "paste",
+    "mean": "['반죽', '풀로 붙이다', '만들다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "removed",
+    "mean": "['떨어진, 먼', '<혈연 관계가> …촌의, …등친(等親)의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "conceptual",
+    "mean": "['개념의', '구상의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "overhead",
+    "mean": "['머리 위에, 하늘 높이', '머리 위의, (지상에서) 높이 세운', '(비용이) 간접비의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "complexity",
+    "mean": "['복잡성', '복잡한 특징들']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "passing",
+    "mean": "['(시간/세월의) 경과', '소멸, 죽음', '잠깐의, 일시적인']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "architectural",
+    "mean": "['건축학[술]의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "trade",
+    "mean": "['거래', '거래하다', '사업을 하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "separation",
+    "mean": "['분리', '헤어짐', '별거']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "third",
+    "mean": "['셋째의', '의', '급']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "determined",
+    "mean": "['단단히 결심한', '단호한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "select",
+    "mean": "['선발하다', '엄선된', '고급의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "option",
+    "mean": "['선택', '선택 과목', '선택권']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "concerned",
+    "mean": "['걱정하는', '관심이 있는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "ignore",
+    "mean": "['무시하다', '못 본 척하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "everything",
+    "mean": "['모든 것, 모두', '(현재의 일반적인 상황·생활을 나타내는) 모든 것', '전부, 가장 중요한 것']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "effective",
+    "mean": "['효과적인', '실질적인', '시행되는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "interested",
+    "mean": "['관심 있어 하는', '이해관계가 있는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "impact",
+    "mean": "['영향', '영향을 주다', '충돌하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "achieve",
+    "mean": "['달성하다', '해내다', '잘 해내다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "recompose",
+    "mean": "['다시 만들다, 개조(改組)하다', '<감정 등을> 가라앉히다, 진정시키다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "slight",
+    "mean": "['약간의', '모욕', '무시하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "improvement",
+    "mean": "['향상', '개선, 호전']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "extra",
+    "mean": "['추가의, 가외의', '추가되는 것', '엑스트라, 단역 배우']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "deep",
+    "mean": "['깊은', '깊이', '바다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "equal",
+    "mean": "['동일한', '동등한 사람', '같다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "temporary",
+    "mean": "['일시적인', '임시의']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "flexible",
+    "mean": "['신축성 있는', '잘 구부러지는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "don",
+    "mean": "['교수', '입다', '우두머리']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "better",
+    "mean": "['더 좋은', '더 잘', '더 좋은 것']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "granular",
+    "mean": "['알갱이가 든', '알갱이 모양의', '오돌토돌한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "view",
+    "mean": "['견해', '여기다', '보다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "length",
+    "mean": "['길이', '시간', '길이가 …인']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "stayed",
+    "mean": "['계속 있다', '머무름', '스테이']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "compatible",
+    "mean": "['호환이 되는', '양립될 수 있는', '화합할 수 있는']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unstable",
+    "mean": "['금방이라도 급변할 듯한', '흔들릴 듯한']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "loop",
+    "mean": "['고리', '고리 모양을 만들다', '고리 모양으로 이동하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "tick",
+    "mean": "['째깍거리다', '체크 표시', '진드기']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "handler",
+    "mean": "['(동물, 특히 개) 조련사', '취급하는 사람', '조직자; 조언자, 참모']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "web",
+    "mean": "['-망', '물갈퀴']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "duplicate",
+    "mean": "['복사하다', '똑같은', '사본']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "follow",
+    "mean": "['따라가다', '뒤를 잇다; 뒤따르다', '~ 뒤에 ~을 하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "linked",
+    "mean": "['연쇄된', '연계된']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "test",
+    "mean": "['시험', '시험하다', '검사를 하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "reshape",
+    "mean": "['모양을 고치다', '개장하다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "perform",
+    "mean": "['행하다', '해 보이다', '돌아가다']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  },
+  {
+    "word": "unit",
+    "mean": "['구성 단위', '한 개', '부대']",
+    "frequency": "1",
+    "level": "4",
+    "category": "reactRedux"
+  }
 ]

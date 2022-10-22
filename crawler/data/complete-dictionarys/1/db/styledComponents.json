@@ -1,2963 +1,2963 @@
 [
-    {
-        "word": "component",
-        "mean": "['요소', '부품']",
-        "frequency": "403",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "react",
-        "mean": "['반응하다', '화학 반응을 일으키다']",
-        "frequency": "233",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "use",
-        "mean": "['쓰다', '사용', '용도']",
-        "frequency": "189",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "native",
-        "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
-        "frequency": "104",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "style",
-        "mean": "['방식', '스타일을 만들다', '칭하다']",
-        "frequency": "100",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "example",
-        "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
-        "frequency": "91",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "prop",
-        "mean": "['지주', '받치다', '소품']",
-        "frequency": "87",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "element",
-        "mean": "['요소', '약간의 놀라움', '부류']",
-        "frequency": "83",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "single",
-        "mean": "['단 하나의', '편도 차표', '싱글']",
-        "frequency": "72",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "used",
-        "mean": "['중고의']",
-        "frequency": "66",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "pass",
-        "mean": "['지나가다; 통과하다', '합격', '출입증']",
-        "frequency": "61",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "global",
-        "mean": "['세계적인; 지구의', '전반적인']",
-        "frequency": "56",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "input",
-        "mean": "['조언; 투입', '입력하다', '입력']",
-        "frequency": "56",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "dom",
-        "mean": "['<‘...의 상태’를 뜻함>', '<‘...의 지위’, ‘...의 영지’를 뜻함>', '<‘... 집단’을 뜻함>']",
-        "frequency": "54",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "method",
-        "mean": "['방법', '체계성']",
-        "frequency": "51",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "render",
-        "mean": "['만들다', '주다', '제시하다']",
-        "frequency": "51",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "work",
-        "mean": "['일하다', '일', '업무']",
-        "frequency": "47",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "same",
-        "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
-        "frequency": "47",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "class",
-        "mean": "['학급', '수업', '동기생']",
-        "frequency": "46",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "function",
-        "mean": "['기능', '기능하다', '행사']",
-        "frequency": "46",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "package",
-        "mean": "['상자; 포장물', '포장하다', '제시하다']",
-        "frequency": "44",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "page",
-        "mean": "['페이지', '안내 방송을 하다', '연락하다']",
-        "frequency": "44",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "version",
-        "mean": "['-판', '설명']",
-        "frequency": "42",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "usage",
-        "mean": "['용법', '사용; 사용량']",
-        "frequency": "42",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "avoid",
-        "mean": "['방지하다', '피하다']",
-        "frequency": "40",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "button",
-        "mean": "['단추', '단추를 잠그다', '단추로 잠그게 되어 있다']",
-        "frequency": "39",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "new",
-        "mean": "['새', '새 것', '새로 산']",
-        "frequency": "39",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "way",
-        "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
-        "frequency": "39",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "theme",
-        "mean": "['주제', '…풍의 퍼브/바/식당 등', '주제 부분']",
-        "frequency": "39",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "code",
-        "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
-        "frequency": "37",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "side",
-        "mean": "['쪽', '옆', '옆면']",
-        "frequency": "37",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "attribute",
-        "mean": "['결과로 보다', '자질', '…것이라고 보다']",
-        "frequency": "37",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "tag",
-        "mean": "['꼬리표', '꼬리표를 붙이다', '태그를 붙이다']",
-        "frequency": "36",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "color",
-        "mean": "['색(깔), 빛깔', '총천연색의, 컬러의', '…에 색칠하다']",
-        "frequency": "36",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "helper",
-        "mean": "['도와주는 사람']",
-        "frequency": "36",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "property",
-        "mean": "['재산', '부동산', '건물']",
-        "frequency": "36",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "write",
-        "mean": "['쓰다', '집필하다', '편지를 쓰다']",
-        "frequency": "34",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "add",
-        "mean": "['첨가하다', '합하다', '보태다']",
-        "frequency": "34",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "additional",
-        "mean": "['추가의']",
-        "frequency": "34",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "based",
-        "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
-        "frequency": "34",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "instance",
-        "mean": "['사례', '…을 예로 들다']",
-        "frequency": "34",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "template",
-        "mean": "['형판(形板)', '견본, 본보기']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "added",
-        "mean": "['추가된', '부가된']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "change",
-        "mean": "['변하다', '변화', '색다른 것; 기분 전환']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "note",
-        "mean": "['메모', '…에 주목하다', '언급하다']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "type",
-        "mean": "['형', '타자 치다', '유형을 알아내다']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "attach",
-        "mean": "['붙이다', '중요성', '들러붙다']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "flex",
-        "mean": "['몸을 풀다', '전선']",
-        "frequency": "33",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "server",
-        "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
-        "frequency": "31",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "more",
-        "mean": "['더 많은 수(의)', '더 (많이)']",
-        "frequency": "31",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "access",
-        "mean": "['입장', '접속하다', '접근하다; 들어가다; 이용하다']",
-        "frequency": "31",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "make",
-        "mean": "['만들다', '제품', '정리하다']",
-        "frequency": "31",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "result",
-        "mean": "['결과', '발생하다', '승리']",
-        "frequency": "28",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "have",
-        "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
-        "frequency": "28",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "custom",
-        "mean": "['관습', '습관', '구입']",
-        "frequency": "28",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "useful",
-        "mean": "['유용한', '유능한']",
-        "frequency": "28",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "support",
-        "mean": "['지지하다', '지지', '도움']",
-        "frequency": "28",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "advanced",
-        "mean": "['선진의', '고급의', '(발달 단계상) 후기의']",
-        "frequency": "26",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "next",
-        "mean": "['(시간순서공간상으로 바로 무엇) 다음의', '그 다음에','그리고는']",
-        "frequency": "26",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "case",
-        "mean": "['경우', '실정', '사례']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "wrapper",
-        "mean": "['(특히 식품) 포장지', '래퍼(몸에 휘감아서 입는 가운·치마 등)']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "third",
-        "mean": "['셋째의', '의', '급']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "party",
-        "mean": "['정당', '파티를 하다', '파티']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "web",
-        "mean": "['-망', '물갈퀴']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "define",
-        "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "dynamic",
-        "mean": "['역학', '정력적인', '역동적인']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "applied",
-        "mean": "['응용의']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "split",
-        "mean": "['분열되다', '분열', '분할; 몫']",
-        "frequency": "25",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "sheet",
-        "mean": "['시트(침대에 깔거나 위로 덮는 얇은 천)', '(보통 표준 크기의 종이) 한 장']",
-        "frequency": "24",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "primary",
-        "mean": "['주된', '예비 선거', '최초의']",
-        "frequency": "23",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "selector",
-        "mean": "['(스포츠 팀의) 선발 위원', '(엔진·기계 등에서 기능) 선택 장치']",
-        "frequency": "23",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "refer",
-        "mean": "['<…을> <…에게> 알아보도록 하다, 조회하다', '참조하게 하다', '지시하다, 나타내다; 주목시키다']",
-        "frequency": "23",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "sure",
-        "mean": "['확신하는', '그럼', '정말']",
-        "frequency": "23",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "experience",
-        "mean": "['경험', '겪다', '느끼다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "manager",
-        "mean": "['경영자', '매니저', '감독']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "script",
-        "mean": "['대본', '대본을 쓰다', '글씨']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "attached",
-        "mean": "['애착을 가진', '~ 소속의', '부착된, 첨부된']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "simple",
-        "mean": "['간단한', '단순한', '순전한']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "get",
-        "mean": "['받다', '얻다', '가져 오다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "want",
-        "mean": "['원하다', '원하는 것', '부족']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "styling",
-        "mean": "['(특정한 스타일로) 머리 자르기', '디자인, 스타일']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "constructor",
-        "mean": "['제작자']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "special",
-        "mean": "['특수한', '특별한 것', '특별가']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "see",
-        "mean": "['보다', '주교의 관구', '앞을 보다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "extend",
-        "mean": "['더 길게 만들다', '연장하다', '확대하다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "removed",
-        "mean": "['떨어진, 먼', '<혈연 관계가> …촌의, …등친(等親)의']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "counter",
-        "mean": "['계산대; 판매대', '반박하다', '~의 반대 방향에서; ~과 반대로']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "don",
-        "mean": "['교수', '입다', '우두머리']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "world",
-        "mean": "['세계', '…세계', '지구']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "double",
-        "mean": "['두 배의', '두 배', '두 배로 되다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "static",
-        "mean": "['고정된', '잡음', '정전기']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "import",
-        "mean": "['수입품', '수입하다', '불러오다']",
-        "frequency": "22",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "create",
-        "mean": "['창조하다', '자아내다', '수여하다']",
-        "frequency": "21",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "array",
-        "mean": "['집합체', '배열하다', '배치하다']",
-        "frequency": "20",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "link",
-        "mean": "['관련', '연결하다', '관련되다; 관련짓다']",
-        "frequency": "19",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bundle",
-        "mean": "['꾸러미', '~을 마구 싸 보내다', '무리 지어 가다']",
-        "frequency": "18",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "end",
-        "mean": "['끝', '끝나다; 끝내다', '종말']",
-        "frequency": "17",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "multiple",
-        "mean": "['많은', '배수']",
-        "frequency": "17",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "file",
-        "mean": "['파일', '보관하다', '제기하다']",
-        "frequency": "17",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "factory",
-        "mean": "['공장']",
-        "frequency": "17",
-        "level": 1,
-        "category": "styledComponents"
-    },
-    {
-        "word": "call",
-        "mean": "['이름을 지어주다', '전화', '울음소리; 외침']",
-        "frequency": "17",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "possible",
-        "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
-        "frequency": "17",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "default",
-        "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
-        "frequency": "17",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "override",
-        "mean": "['기각하다', '…보다 더 중요하다', '중단시키다']",
-        "frequency": "16",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "string",
-        "mean": "['끈', '묶다', '현악기의']",
-        "frequency": "15",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "client",
-        "mean": "['의뢰인', '클라이언트']",
-        "frequency": "15",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "output",
-        "mean": "['생산량', '출력해 내다', '출력']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "ready",
-        "mean": "['준비가 된', '준비시키다', '이미 …되어 있는']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "many",
-        "mean": "['많은']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "following",
-        "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "normal",
-        "mean": "['보통의', '보통', '정상인']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "information",
-        "mean": "['정보']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "true",
-        "mean": "['사실인', '일직선으로', '진실을 말하다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "background",
-        "mean": "['(개인의) 배경', '(일의) 배경; 배후 사정', '(사진 등의) 배경']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "last",
-        "mean": "['마지막의', '맨 끝에', '마지막 사람']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "common",
-        "mean": "['흔한', '공유지', '식당']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "escape",
-        "mean": "['달아나다', '탈출', '도피']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "older",
-        "mean": "['연상의']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "own",
-        "mean": "['… 자신의', '소유하다', '인정하다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "target",
-        "mean": "['목표; 대상', '목표로 삼다', '대상으로 삼다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "known",
-        "mean": "['(특히 많은 사람들에게) 알려진']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "node",
-        "mean": "['(나무줄기의) 마디', '(뿌리·가지의) 옹이', '(연결망의) 교점']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "standard",
-        "mean": "['수준', '일반적인', '표준 규격에 맞춘']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "something",
-        "mean": "['어떤 것, 무엇', '중요한 것', '정말(진술 내용을 강조하기 위해 씀)']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "practical",
-        "mean": "['현실적인', '실습; 실기 시험', '타당한']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "apply",
-        "mean": "['신청하다; 지원하다', '쓰다', '바르다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "precedence",
-        "mean": "['우선(함)']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "boost",
-        "mean": "['신장시키다', '격려', '증가']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "object",
-        "mean": "['물건', '반대하다', '반대 이유를 대다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "value",
-        "mean": "['가치', '소중하게 생각하다', '평가하다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "defined",
-        "mean": "['정의된']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "first",
-        "mean": "['첫, 첫 (번)째의; 첫째', '첫째의', '우선, 맨 먼저']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "try",
-        "mean": "['노력하다', '시도', '트라이']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "available",
-        "mean": "['구할 수 있는', '시간이 있는']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "continue",
-        "mean": "['계속되다', '계속하다', '계속 가다']",
-        "frequency": "14",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "addition",
-        "mean": "['덧셈', '추가된 것', '추가']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "yarn",
-        "mean": "['(직물·편물용) 실, 방적사', '(특히 과장되거나 지어낸) 긴 이야기']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "module",
-        "mean": "['모듈, 교과목 단위', '모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)','부품']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "text",
-        "mean": "['본문', '문자를 보내다', '글']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "syntax",
-        "mean": "['구문론', '문법']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "previous",
-        "mean": "['이전의', '바로 앞의']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "nest",
-        "mean": "['둥지', '둥지를 틀다', '끼워 넣다']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "user",
-        "mean": "['이용자, 사용자', '마약쟁이']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "installation",
-        "mean": "['설치', '장치', '시설']",
-        "frequency": "12",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "optimize",
-        "mean": "['~을 최대한 좋게[적합하게] 만들다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "love",
-        "mean": "['사랑', '사랑하다', '대단히 좋아하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bound",
-        "mean": "['꼭 …할 것 같은', '껑충껑충 달리다', '껑충 뜀']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "individual",
-        "mean": "['각각의', '개인', '개성 있는 사람']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "command",
-        "mean": "['명령', '명령하다', '지휘하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "roll",
-        "mean": "['통', '구르다', '뒹굴다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "field",
-        "mean": "['들판', '내보내다', '수비를 보다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "recommend",
-        "mean": "['추천하다', '권고하다', '매력적으로 만들다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "entry",
-        "mean": "['들어감', '출입', '가입']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "major",
-        "mean": "['주요한', '소령', '전공']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "range",
-        "mean": "['다양성', 'A에서 B 사이이다', '포함하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "entire",
-        "mean": "['전체의', '온']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "project",
-        "mean": "['계획', '계획하다', '예상하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "legible",
-        "mean": "['읽을 수 있는', '또렷한']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "compatibility",
-        "mean": "['양립 가능성', '(컴퓨터의) 호환성']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "build",
-        "mean": "['짓다', '체구', '만들어 내다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "simply",
-        "mean": "['그냥 (간단히), 그저 (단순히) (어떤 것이 얼마나 쉽거나 간단한지를 강조함)', '(진술 내용을 강조하여) 그야말로', '간단히, 평이하게']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bottom",
-        "mean": "['맨 아래', '맨 아래쪽에', '뒷면']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "window",
-        "mean": "['창문', '창', '창구; 창문 모양의 것']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "variable",
-        "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "title",
-        "mean": "['제목', '제목을 붙이다', '서적']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "live",
-        "mean": "['살다', '하다', '남아 있다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "editor",
-        "mean": "['편집장', '편집자', '담당 기자']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "play",
-        "mean": "['놀다', '놀이', '희곡; 연극']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "feel",
-        "mean": "['들다', '촉감', '만져 봄']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "vendor",
-        "mean": "['(거리의) 행상인', '(특정한 제품) 판매 회사', '(주택 등의) 매도인']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "prefixed",
-        "mean": "['접두사', '앞에 붙이다', '앞에 오는 것']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "care",
-        "mean": "['돌봄', '상관하다', '배려하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "hood",
-        "mean": "['모자', '복면', '학위 표시 휘장']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "repository",
-        "mean": "['저장소', '보고']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "literal",
-        "mean": "['문자 그대로의', '직역의', '상상력이 부족한']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "adapt",
-        "mean": "['맞추다', '적응하다', '개작하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "state",
-        "mean": "['상태', '국가의', '말하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "lot",
-        "mean": "['많음', '많은 ~', '훨씬']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "effort",
-        "mean": "['수고', '노력', '활동']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "wrap",
-        "mean": "['싸다', '랩', '포장지']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "section",
-        "mean": "['부분', '절개하다', '박편을 만들다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "related",
-        "mean": "['관련된', '친척의', '동족의']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "navigation",
-        "mean": "['항해', '운항']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bar",
-        "mean": "['술집', '빗장을 지르다', '~을 제외하고']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "mix",
-        "mean": "['섞이다', '혼합체', '혼합 가루']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "anchor",
-        "mean": "['닻', '닻을 내리다', '고정시키다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "situation",
-        "mean": "['상황', '위치', '직장']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "hatch",
-        "mean": "['부화하다', '화물 출입구', '창구']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "swap",
-        "mean": "['바꾸다', '바꾸기', '교환품; 교체된 사람']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "fine",
-        "mean": "['질 높은', '잘', '벌금']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "achieve",
-        "mean": "['달성하다', '해내다', '잘 해내다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "marked",
-        "mean": "['뚜렷한', '유표적인']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "candidate",
-        "mean": "['입후보자', '지원자', '…할 가능성이 큰 사람']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "future",
-        "mean": "['미래', '미래의', '장래']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "keep",
-        "mean": "['유지하다', '먹고 사는 데 필요한 것들; 생활비', '아성']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "mind",
-        "mean": "['마음', '언짢아하다', '상관하지 않다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "fact",
-        "mean": "['점', '사실']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "mounted",
-        "mean": "['말을 탄', '(전시품 등을) 받침대로 받쳐 놓은','…에 고정시킨']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "smart",
-        "mean": "['맵시 좋은', '욱신거리다', '속상해 하다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "filter",
-        "mean": "['필터', '여과하다', '필터를 쓰다']",
-        "frequency": "11",
-        "level": 2,
-        "category": "styledComponents"
-    },
-    {
-        "word": "familiar",
-        "mean": "['익숙한', '~을 아주 잘 아는', '스스럼없는']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "combination",
-        "mean": "['조합', '부호', '콤비네이션']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "prefix",
-        "mean": "['접두사', '앞에 붙이다', '앞에 오는 것']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "clash",
-        "mean": "['충돌', '맞붙다', '의견 충돌을 일으키다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "identifiable",
-        "mean": "['인식 가능한', '알아볼 수 있는']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "developer",
-        "mean": "['(부동산) 개발업자', '(신상품) 개발자', '(사진) 현상액']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "inspector",
-        "mean": "['조사관', '경위', '검표원']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "important",
-        "mean": "['중요한', '영향력이 큰']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "slow",
-        "mean": "['느린', '느리게', '천천히 가다; 속도를 줄이다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "speed",
-        "mean": "['속도', '빨리 가다', '빠르게 데려다 주다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "reading",
-        "mean": "['독서', '읽기', '읽을거리, 읽기 자료, 독서물']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "great",
-        "mean": "['큰', '위대한 인물', '아주 잘']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "review",
-        "mean": "['검토', '재검토하다', '되새기다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "real",
-        "mean": "['진짜의', '아주', '진정한']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "solid",
-        "mean": "['단단한; 고체의', '고체', '입체']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "broad",
-        "mean": "['넓은', '계집', '넓이가 …인']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "conditional",
-        "mean": "['조건부의', '조건문', '조건법']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "particular",
-        "mean": "['특정한', '자세한 사실', '서면 정보']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "behavior",
-        "mean": "['행동, 거동, 행실, 품행, 태도', '행동; 습성']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "mixed",
-        "mean": "['뒤섞인', '혼합된', '여러 종류를 섞은']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "vanilla",
-        "mean": "['바닐라', '바닐라 맛의', '평범한, 특별할 것 없는']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "environment",
-        "mean": "['(주변의)환경']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "unnecessary",
-        "mean": "['불필요한', '쓸데없는']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "router",
-        "mean": "['라우터(네트워크에서 데이터의 전달을 촉진하는 중계 장치)']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "return",
-        "mean": "['돌아오다', '돌아옴', '돌려줌']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "notice",
-        "mean": "['신경씀', '…을 의식하다', '주목하다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "innermost",
-        "mean": "['가장 사적인', '가장 안쪽의']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "password",
-        "mean": "['(어떤 장소에 들어가는 데 필요한) 암호', '비밀번호']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "size",
-        "mean": "['크기', '크기를 표시하다', '크기를 바꾸다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "name",
-        "mean": "['이름', '이름을 지어주다', '이름을 대다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "generate",
-        "mean": "['발생시키다', '만들어 내다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "unique",
-        "mean": "['유일무이한', '특별한', '고유의']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "animated",
-        "mean": "['활기찬', '동영상으로 된']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "snack",
-        "mean": "['간단한 식사', '식사를 간단히 하다', '아주 쉬운 일']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "complex",
-        "mean": "['복잡한', '복합 건물', '덩어리']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "transform",
-        "mean": "['변형시키다', '완전히 바꿔 놓다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "margin",
-        "mean": "['여백', '차이', '여유']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "shorthand",
-        "mean": "['속기', '약칭']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "legacy",
-        "mean": "['(죽은 사람이 남긴) 유산', '(과거의) 유산']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "setting",
-        "mean": "['(어떤 일이 일어나는) 환경', '(연극·소설 등의) 배경', '(기계의 속도·고도·온도 등을 조절하는) 설정']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "imagine",
-        "mean": "['상상하다', '생각하다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "guess",
-        "mean": "['추측하다', '추측', '알아맞히다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "transfer",
-        "mean": "['옮기다', '이동', '이적']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "right",
-        "mean": "['옳은', '정확히', '옳은 것']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "warn",
-        "mean": "['경고하다', '강력히 충고하다', '경고를 주다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "enforce",
-        "mean": "['집행하다', '강요하다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "prefer",
-        "mean": "['…을 좋아하다', '선호하다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "configuration",
-        "mean": "['배열', '환경 설정']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "haul",
-        "mean": "['끌다', '많은 양', '많은 점수']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "point",
-        "mean": "['의견', '가리키다', '겨누다']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "need",
-        "mean": "['필요로 하다', '…할 필요가 있다','필요']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "hello",
-        "mean": "['안녕; 인사; 여보세요', '이런', '얼씨구']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "simpler",
-        "mean": "['간단한', '단순한', '순전한']",
-        "frequency": "11",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "context",
-        "mean": "['맥락', '문맥']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "tree",
-        "mean": "['나무']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "current",
-        "mean": "['현재의', '흐름', '전류']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "order",
-        "mean": "['순서', '명령하다', '주문하다']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "implementation",
-        "mean": "['시행', '이행']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "head",
-        "mean": "['머리', '가다', '~을 이끌다']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "take",
-        "mean": "['가지고 가다', '테이크', '수익']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "host",
-        "mean": "['주인', '주최하다', '진행하다']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "rule",
-        "mean": "['규칙', '통치하다', '결정을 내리다']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "interpolation",
-        "mean": "['써넣음; 써넣은 어구', '보간법(補間法), 내삽법(內揷法)']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "provider",
-        "mean": "['제공자', '제공 기관']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "loader",
-        "mean": "['짐을 싣는 사람; 적하기(積荷機)', '(총포의) 장전자']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "streaming",
-        "mean": "['흐름', '스트리밍']",
-        "frequency": "9",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "other",
-        "mean": "['(그 밖의) 다른; 다른 사람'],",
-        "frequency": "7",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "rendering",
-        "mean": "['(특정한 해석을 가미한) 연주', '번역', '(벽돌벽·석벽 등에 하는) 회반죽 칠']",
-        "frequency": "7",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "receive",
-        "mean": "['받다', '받다; 입다', '환영하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "parent",
-        "mean": "['부모', '모체']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "made",
-        "mean": "['make의 과거, 과거분사', '…하게 만든']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "contextual",
-        "mean": "['맥락[전후 사정]과 관련된']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "second",
-        "mean": "['두 번째의', '둘째로', '초']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "give",
-        "mean": "['주다', '탄력성', '제공하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "arbitrary",
-        "mean": "['임의적인', '전횡을 일삼는']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "careful",
-        "mean": "['조심하는', '세심한']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "sanitize",
-        "mean": "['불쾌한 부분을 제거하다', '위생 처리하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "lead",
-        "mean": "['안내하다', '선두', '앞섬']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "browser",
-        "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', (가게를) 둘러보는 사람']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bad",
-        "mean": "['안 좋은', '나쁜 사람들', '몹시']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "document",
-        "mean": "['서류', '기록하다', '서류로 입증하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "ensure",
-        "mean": "['반드시 …하게 하다', '보장하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "problem",
-        "mean": "['문제', '문제를 일으키는']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "complete",
-        "mean": "['가능한 최대의', '완료하다', '기입하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "good",
-        "mean": "['좋은', '선', '잘']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "able",
-        "mean": "['…할 수 있는', '재능 있는']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "pure",
-        "mean": "['순수한', '깨끗한', '완전한']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "rehydration",
-        "mean": "['(요업공학) 재수화', '(식품공학) 복원']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "basic",
-        "mean": "['기본적인', '기초적인']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "idea",
-        "mean": "['발상', '감', '견해']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "error",
-        "mean": "['실수']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "thrown",
-        "mean": "['THROW의 과거분사', '꼰']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "inject",
-        "mean": "['주사하다', '주입하다', '더하다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "compiler",
-        "mean": "['편집자, 편찬자', '컴파일러(명령어 번역 프로그램)']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "setup",
-        "mean": "['(조직 등의) 기구, 구조']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "stream",
-        "mean": "['개울', '줄줄 흐르다', '줄을 지어 이어지다']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "wrapped",
-        "mean": "['싸여진', '포장된']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "icon",
-        "mean": "['(컴퓨터 화면의) 아이콘', '(특정한 사상·생활 방식 등의 상징으로 여겨지는) 우상', '성상, 성화']",
-        "frequency": "6",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "actual",
-        "mean": "['실제의', '사실상의']",
-        "frequency": "4",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "documentation",
-        "mean": "['(무엇에 요구되는, 또는 무엇을 입증할) 서류']",
-        "frequency": "4",
-        "level": 3,
-        "category": "styledComponents"
-    },
-    {
-        "word": "reference",
-        "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
-        "frequency": "4",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "security",
-        "mean": "['보안', '경비 담당 부서', '보장']",
-        "frequency": "4",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "full",
-        "mean": "['가득한', '똑바로', '~이 그득한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "underneath",
-        "mean": "['…의 밑에(특히 다른 것에 가려지거나 덮이는 경우에 씀)', '(겉으로 보이는 감정성격과 달리) 속으로', '밑면, 하부']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "provided",
-        "mean": "['(만약) ~라면']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "illustrate",
-        "mean": "['삽화를 쓰다; 이용하다', '분명히 보여주다', '실증하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "let",
-        "mean": "['놓아두다', '레트', '임대']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "time",
-        "mean": "['시간', '시간을 맞추다', '시간을 측정하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "one",
-        "mean": "['하나(의),  한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "invert",
-        "mean": "['뒤집다', '도치시키다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "foreground",
-        "mean": "['전경', '특히 중시하다', '중요한 위치']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "upper",
-        "mean": "['(특히 같은 종류한 쌍으로 된 두 개 중에서 다른 것보다) 더 위에 있는', '(어떤 것에서) 위쪽의', '(구두의) 윗부분']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "big",
-        "mean": "['큰', '크게', '나이가 더 많은']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "circumvent",
-        "mean": "['피하다', '피해 가다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "missing",
-        "mean": "['(제자리나 집에 있지 않고) 없어진', '(원래 있던 것이) 빠진', '행방불명된']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "place",
-        "mean": "['장소', '놓다', '두다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "application",
-        "mean": "['지원', '적용', '바르기']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "injection",
-        "mean": "['주사', '자금 투입', '주입']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "upcoming",
-        "mean": "['다가오는', '곧 있을']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "couple",
-        "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "aware",
-        "mean": "['알고 있는', '눈치 채고 있는', '의식이 높은']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "issue",
-        "mean": "['주제', '발표하다', '발부하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "combine",
-        "mean": "['결합하다', '콤바인', '연합체']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "win",
-        "mean": "['이기다', '승리', '따다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "above",
-        "mean": "['(위치나 지위 면에서) …보다 위에', '(수나이 등이) …보다 많은, …을 넘는', '(위치가) 위에']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "thus",
-        "mean": "['이렇게 하여; 이와 같이', '따라서, 그러므로']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "solution",
-        "mean": "['해법', '해답', '용액']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "bump",
-        "mean": "['부딪치다', '쿵', '혹']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "conflict",
-        "mean": "['갈등', '상충하다', '물리적 충돌']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "immunity",
-        "mean": "['면역력', '면제']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "least",
-        "mean": "['(크기양정도 등이) 가장 적은; 최소(의)', '가장 덜, 최소로']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "specify",
-        "mean": "['(구체적으로) 명시하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "container",
-        "mean": "['그릇, 용기', '(화물 수송용) 컨테이너']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "number",
-        "mean": "['수', '번호를 매기다', '모두 …이 되다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "process",
-        "mean": "['과정', '가공하다', '처리하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "lower",
-        "mean": "['더 낮은 쪽의', '…을 내리다', '낮추다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "recognize",
-        "mean": "['알아보다', '인정하다', '공인하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "feature",
-        "mean": "['특색', '특별히 포함하다', '특징을 이루다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "argument",
-        "mean": "['논쟁; 언쟁', '논거', '논의']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "rest",
-        "mean": "['나머지', '쉬다', '받치다; 받쳐지다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "cumbersome",
-        "mean": "['크고 무거운', '복잡하고 느린', '길고 복잡한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "flatten",
-        "mean": "['납작해지다; 납작하게 만들다', '깨부수다', '코를 납작하게 만들다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "speaking",
-        "mean": "['말하는, 이야기하는, 말을 할 정도의; 말하기에 알맞은', '말이라도 할 것 같은, 박진감 넘치는; 의미심장한; 실증적인, 생생한 <보기 등>', '말하기, 이야기하기; 담화, 연설']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "undefined",
-        "mean": "['한정되지 않은', '확실하지 않은']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "false",
-        "mean": "['틀린', '인조의', '위조된']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "empty",
-        "mean": "['비어 있는', '비우다', '비게 되다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "free",
-        "mean": "['자유로운', '석방하다', '요금을 안 내고']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "short",
-        "mean": "['짧은', '…이 부족하다', '한 잔']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "circuit",
-        "mean": "['순환', '회로', '연맹전']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "evaluation",
-        "mean": "['인사 고과', '평가', '감정']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "learn",
-        "mean": "['배우다', '~을 알게 되다', '외우다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "article",
-        "mean": "['(신문·잡지의) 글, 기사', '(합의서·계약서의) 조항', '(특히 세트로 된 물건의 개별) 물품']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "magic",
-        "mean": "['마법', '마법의', '요술을 부려서 나타나게 하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "concurrent",
-        "mean": "['공존하는, 동시에 발생하는']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "such",
-        "mean": "['앞에 이미 언급한, 그런', '(곧 언급하려는) 그런', '(정도를 강조하여) 그 정도의']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "various",
-        "mean": "['여러 가지의', '다양한 특징을 지닌']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "perform",
-        "mean": "['행하다', '해 보이다', '돌아가다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "tooling",
-        "mean": "['공구 세공', '정 자국이 나란히 나게 하는 다듬질']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "resident",
-        "mean": "['거주자', '거주하는', '투숙객']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "guru",
-        "mean": "['구루', '전문가']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "put",
-        "mean": "['놓다', '밀어 넣다', '들어가게 하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "awesome",
-        "mean": "['경탄할 만한', '기막히게 좋은']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "similar",
-        "mean": "['비슷한', '유사한', '닮은']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "compile",
-        "mean": "['엮다', '명령어를 번역하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "worth",
-        "mean": "['…의 가치가 있는', '달러', '일주일']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "reap",
-        "mean": "['거두다', '수확하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "ecosystem",
-        "mean": "['생태계']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "just",
-        "mean": "['딱', '공정한', '공정한 사람들']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "account",
-        "mean": "['계좌', '간주하다', '장부']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "reason",
-        "mean": "['이유', '판단하다', '사고하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "catch",
-        "mean": "['잡다', '잡기', '잡은 양']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "garbage",
-        "mean": "['(음식물·휴지 등의) 쓰레기', '(음식물·휴지 등을 버리는) 쓰레기장', '말도 안 되는 것']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "collection",
-        "mean": "['수집품', '무리', '수집']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "seal",
-        "mean": "['봉하다', '직인', '확정해 주는 것']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "different",
-        "mean": "['다른', '각각 다른', '색다른']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "combined",
-        "mean": "['결합된, 합동의, 연합의', '화합한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "logic",
-        "mean": "['논리', '타당성', '논리학']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "date",
-        "mean": "['날짜', '날짜를 적다', '…의 연대를 추정하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "rust",
-        "mean": "['녹', '녹슬다', '녹병']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "modify",
-        "mean": "['수정하다', '수식하다; 한정하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "official",
-        "mean": "['공무상의', '공무원', '공인된']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "readable",
-        "mean": "['읽기 쉬운', '알아보기 쉬운']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "whole",
-        "mean": "['전체의', '완전체', '~의 전체']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "corresponding",
-        "mean": "['(~에) 해당[상응]하는']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "block",
-        "mean": "['사각형 덩어리', '막다', '~의 길']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "usual",
-        "mean": "['흔히 하는', '늘 있는 일; 늘 마시는 것']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "further",
-        "mean": "['더 멀리에', '더 이상의', '발전시키다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "specific",
-        "mean": "['구체적인', '특정한', '특유의']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "won",
-        "mean": "['win의 과거', '과거분사']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "said",
-        "mean": "['say의 과거, 과거분사', '= aforementioned']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "easy",
-        "mean": "['쉬운', '조심해서', '편안한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "paradigm",
-        "mean": "['전형적인 예', '어형 변화표']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "accessible",
-        "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "pattern",
-        "mean": "['양식', '무늬를 만들다', '양식을 형성시키다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "assigned",
-        "mean": "['할당된']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "stable",
-        "mean": "['안정된', '마구간', '넣다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "powerful",
-        "mean": "['영향력 있는', '강력한', '강한']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "composition",
-        "mean": "['구성 요소들; 구성', '작품', '작곡']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "fuss",
-        "mean": "['호들갑', '법석을 떨다', '안달하다']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "naming",
-        "mean": "['네이밍', '이름 붙여 주기']",
-        "frequency": "3",
-        "level": 4,
-        "category": "styledComponents"
-    },
-    {
-        "word": "response",
-        "mean": "['대답', '반응', '응창']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "consider",
-        "mean": "['사려하다', '여기다', '고려하다']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "understand",
-        "mean": "['이해하다', '합의되다', '감안하여 이해하다']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "behaviour",
-        "mean": "['처신', '행동 방식']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "mount",
-        "mean": "['시작하다', '산', '말']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "fail",
-        "mean": "['실패하다', '낙제', '…하지 않다']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "eligible",
-        "mean": "['…을 가질 수 있는', '신랑감으로 좋은']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "move",
-        "mean": "['움직이다; 움직이게 하다', '조치', '이동']",
-        "frequency": "3",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "migrate",
-        "mean": "['이동하다', '이주하다', '옮기다']",
-        "frequency": "2",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "library",
-        "mean": "['도서관', '서재', '장서들']",
-        "frequency": "2",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "fix",
-        "mean": "['고정시키다', '해결책', '한 번 필요한 양']",
-        "frequency": "2",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "power",
-        "mean": "['힘', '동력을 공급하다', '맹렬히 나아가다']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "low",
-        "mean": "['낮은', '낮게', '낮은 수준']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "level",
-        "mean": "['정도', '평평한', '평평하게 하다']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "construct",
-        "mean": "['건설하다', '생각', '단어들']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "test",
-        "mean": "['시험', '시험하다', '검사를 하다']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "flow",
-        "mean": "['흐름', '흐르다', '계속 흘러가다']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "jest",
-        "mean": "['농담', '농담하다']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "integration",
-        "mean": "['통합']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "author",
-        "mean": "['작가', '쓰다', '입안자']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "warning",
-        "mean": "['경고', '계고']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "several",
-        "mean": "['몇의', '각각의']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    },
-    {
-        "word": "which",
-        "mean": "['어느; 어떤 사람(들), 어느 것(들)']",
-        "frequency": "1",
-        "level": 5,
-        "category": "styledComponents"
-    }
+  {
+    "word": "component",
+    "mean": "['요소', '부품']",
+    "frequency": "403",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "react",
+    "mean": "['반응하다', '화학 반응을 일으키다']",
+    "frequency": "233",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "use",
+    "mean": "['쓰다', '사용', '용도']",
+    "frequency": "189",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "native",
+    "mean": "['태어난 곳의', '… 태생인 사람', '토착민']",
+    "frequency": "104",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "style",
+    "mean": "['방식', '스타일을 만들다', '칭하다']",
+    "frequency": "100",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "example",
+    "mean": "['(설명·증명을 위한) 예', '(대표적인) 본보기, 전형', '(따라 배울 만한) 본보기']",
+    "frequency": "91",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "prop",
+    "mean": "['지주', '받치다', '소품']",
+    "frequency": "87",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "element",
+    "mean": "['요소', '약간의 놀라움', '부류']",
+    "frequency": "83",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "single",
+    "mean": "['단 하나의', '편도 차표', '싱글']",
+    "frequency": "72",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "used",
+    "mean": "['중고의']",
+    "frequency": "66",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "pass",
+    "mean": "['지나가다; 통과하다', '합격', '출입증']",
+    "frequency": "61",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "global",
+    "mean": "['세계적인; 지구의', '전반적인']",
+    "frequency": "56",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "input",
+    "mean": "['조언; 투입', '입력하다', '입력']",
+    "frequency": "56",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "dom",
+    "mean": "['<‘...의 상태’를 뜻함>', '<‘...의 지위’, ‘...의 영지’를 뜻함>', '<‘... 집단’을 뜻함>']",
+    "frequency": "54",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "method",
+    "mean": "['방법', '체계성']",
+    "frequency": "51",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "render",
+    "mean": "['만들다', '주다', '제시하다']",
+    "frequency": "51",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "work",
+    "mean": "['일하다', '일', '업무']",
+    "frequency": "47",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "same",
+    "mean": "['(똑)같은, 동일한(동일한 하나를 가리킴)', '꼭같은(앞에 언급한 것과 아주 비슷함을 나타냄)']",
+    "frequency": "47",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "class",
+    "mean": "['학급', '수업', '동기생']",
+    "frequency": "46",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "function",
+    "mean": "['기능', '기능하다', '행사']",
+    "frequency": "46",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "package",
+    "mean": "['상자; 포장물', '포장하다', '제시하다']",
+    "frequency": "44",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "page",
+    "mean": "['페이지', '안내 방송을 하다', '연락하다']",
+    "frequency": "44",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "version",
+    "mean": "['-판', '설명']",
+    "frequency": "42",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "usage",
+    "mean": "['용법', '사용; 사용량']",
+    "frequency": "42",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "avoid",
+    "mean": "['방지하다', '피하다']",
+    "frequency": "40",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "button",
+    "mean": "['단추', '단추를 잠그다', '단추로 잠그게 되어 있다']",
+    "frequency": "39",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "new",
+    "mean": "['새', '새 것', '새로 산']",
+    "frequency": "39",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "way",
+    "mean": "['방법, 방식, 식, 투', '(특정한 행동) 방식, 태도', '아주 멀리; 큰 차이로, 훨씬']",
+    "frequency": "39",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "theme",
+    "mean": "['주제', '…풍의 퍼브/바/식당 등', '주제 부분']",
+    "frequency": "39",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "code",
+    "mean": "['암호', '부호로 처리하다', '암호로 쓰다']",
+    "frequency": "37",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "side",
+    "mean": "['쪽', '옆', '옆면']",
+    "frequency": "37",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "attribute",
+    "mean": "['결과로 보다', '자질', '…것이라고 보다']",
+    "frequency": "37",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "tag",
+    "mean": "['꼬리표', '꼬리표를 붙이다', '태그를 붙이다']",
+    "frequency": "36",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "color",
+    "mean": "['색(깔), 빛깔', '총천연색의, 컬러의', '…에 색칠하다']",
+    "frequency": "36",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "helper",
+    "mean": "['도와주는 사람']",
+    "frequency": "36",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "property",
+    "mean": "['재산', '부동산', '건물']",
+    "frequency": "36",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "write",
+    "mean": "['쓰다', '집필하다', '편지를 쓰다']",
+    "frequency": "34",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "add",
+    "mean": "['첨가하다', '합하다', '보태다']",
+    "frequency": "34",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "additional",
+    "mean": "['추가의']",
+    "frequency": "34",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "based",
+    "mean": "['(~에) 기반을 둔', '(…에) 근거지를 둔', '(…을) 기본으로 한']",
+    "frequency": "34",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "instance",
+    "mean": "['사례', '…을 예로 들다']",
+    "frequency": "34",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "template",
+    "mean": "['형판(形板)', '견본, 본보기']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "added",
+    "mean": "['추가된', '부가된']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "change",
+    "mean": "['변하다', '변화', '색다른 것; 기분 전환']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "note",
+    "mean": "['메모', '…에 주목하다', '언급하다']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "type",
+    "mean": "['형', '타자 치다', '유형을 알아내다']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "attach",
+    "mean": "['붙이다', '중요성', '들러붙다']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "flex",
+    "mean": "['몸을 풀다', '전선']",
+    "frequency": "33",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "server",
+    "mean": "['(컴퓨터의) 서버', '(테니스 등에서) 서브하는 사람']",
+    "frequency": "31",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "more",
+    "mean": "['더 많은 수(의)', '더 (많이)']",
+    "frequency": "31",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "access",
+    "mean": "['입장', '접속하다', '접근하다; 들어가다; 이용하다']",
+    "frequency": "31",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "make",
+    "mean": "['만들다', '제품', '정리하다']",
+    "frequency": "31",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "result",
+    "mean": "['결과', '발생하다', '승리']",
+    "frequency": "28",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "have",
+    "mean": "['가지다', '…으로 되어 있다', '잡고 있다']",
+    "frequency": "28",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "custom",
+    "mean": "['관습', '습관', '구입']",
+    "frequency": "28",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "useful",
+    "mean": "['유용한', '유능한']",
+    "frequency": "28",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "support",
+    "mean": "['지지하다', '지지', '도움']",
+    "frequency": "28",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "advanced",
+    "mean": "['선진의', '고급의', '(발달 단계상) 후기의']",
+    "frequency": "26",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "next",
+    "mean": "['(시간순서공간상으로 바로 무엇) 다음의', '그 다음에','그리고는']",
+    "frequency": "26",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "case",
+    "mean": "['경우', '실정', '사례']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "wrapper",
+    "mean": "['(특히 식품) 포장지', '래퍼(몸에 휘감아서 입는 가운·치마 등)']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "third",
+    "mean": "['셋째의', '의', '급']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "party",
+    "mean": "['정당', '파티를 하다', '파티']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "web",
+    "mean": "['-망', '물갈퀴']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "define",
+    "mean": "['정의하다', '규정하다', '윤곽을 분명히 나타내다']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "dynamic",
+    "mean": "['역학', '정력적인', '역동적인']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "applied",
+    "mean": "['응용의']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "split",
+    "mean": "['분열되다', '분열', '분할; 몫']",
+    "frequency": "25",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "sheet",
+    "mean": "['시트(침대에 깔거나 위로 덮는 얇은 천)', '(보통 표준 크기의 종이) 한 장']",
+    "frequency": "24",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "primary",
+    "mean": "['주된', '예비 선거', '최초의']",
+    "frequency": "23",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "selector",
+    "mean": "['(스포츠 팀의) 선발 위원', '(엔진·기계 등에서 기능) 선택 장치']",
+    "frequency": "23",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "refer",
+    "mean": "['<…을> <…에게> 알아보도록 하다, 조회하다', '참조하게 하다', '지시하다, 나타내다; 주목시키다']",
+    "frequency": "23",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "sure",
+    "mean": "['확신하는', '그럼', '정말']",
+    "frequency": "23",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "experience",
+    "mean": "['경험', '겪다', '느끼다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "manager",
+    "mean": "['경영자', '매니저', '감독']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "script",
+    "mean": "['대본', '대본을 쓰다', '글씨']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "attached",
+    "mean": "['애착을 가진', '~ 소속의', '부착된, 첨부된']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "simple",
+    "mean": "['간단한', '단순한', '순전한']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "get",
+    "mean": "['받다', '얻다', '가져 오다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "want",
+    "mean": "['원하다', '원하는 것', '부족']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "styling",
+    "mean": "['(특정한 스타일로) 머리 자르기', '디자인, 스타일']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "constructor",
+    "mean": "['제작자']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "special",
+    "mean": "['특수한', '특별한 것', '특별가']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "see",
+    "mean": "['보다', '주교의 관구', '앞을 보다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "extend",
+    "mean": "['더 길게 만들다', '연장하다', '확대하다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "removed",
+    "mean": "['떨어진, 먼', '<혈연 관계가> …촌의, …등친(等親)의']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "counter",
+    "mean": "['계산대; 판매대', '반박하다', '~의 반대 방향에서; ~과 반대로']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "don",
+    "mean": "['교수', '입다', '우두머리']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "world",
+    "mean": "['세계', '…세계', '지구']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "double",
+    "mean": "['두 배의', '두 배', '두 배로 되다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "static",
+    "mean": "['고정된', '잡음', '정전기']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "import",
+    "mean": "['수입품', '수입하다', '불러오다']",
+    "frequency": "22",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "create",
+    "mean": "['창조하다', '자아내다', '수여하다']",
+    "frequency": "21",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "array",
+    "mean": "['집합체', '배열하다', '배치하다']",
+    "frequency": "20",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "link",
+    "mean": "['관련', '연결하다', '관련되다; 관련짓다']",
+    "frequency": "19",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bundle",
+    "mean": "['꾸러미', '~을 마구 싸 보내다', '무리 지어 가다']",
+    "frequency": "18",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "end",
+    "mean": "['끝', '끝나다; 끝내다', '종말']",
+    "frequency": "17",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "multiple",
+    "mean": "['많은', '배수']",
+    "frequency": "17",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "file",
+    "mean": "['파일', '보관하다', '제기하다']",
+    "frequency": "17",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "factory",
+    "mean": "['공장']",
+    "frequency": "17",
+    "level": "1",
+    "category": "styledComponents"
+  },
+  {
+    "word": "call",
+    "mean": "['이름을 지어주다', '전화', '울음소리; 외침']",
+    "frequency": "17",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "possible",
+    "mean": "['가능한', '가능성 있는 사람', '있을 수 있는']",
+    "frequency": "17",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "default",
+    "mean": "['채무 불이행', '이행하지 않다', '디폴트로 되다']",
+    "frequency": "17",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "override",
+    "mean": "['기각하다', '…보다 더 중요하다', '중단시키다']",
+    "frequency": "16",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "string",
+    "mean": "['끈', '묶다', '현악기의']",
+    "frequency": "15",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "client",
+    "mean": "['의뢰인', '클라이언트']",
+    "frequency": "15",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "output",
+    "mean": "['생산량', '출력해 내다', '출력']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "ready",
+    "mean": "['준비가 된', '준비시키다', '이미 …되어 있는']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "many",
+    "mean": "['많은']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "following",
+    "mean": "['(시간상으로) 그 다음의', '다음에 나오는', '추종자들']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "normal",
+    "mean": "['보통의', '보통', '정상인']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "information",
+    "mean": "['정보']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "true",
+    "mean": "['사실인', '일직선으로', '진실을 말하다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "background",
+    "mean": "['(개인의) 배경', '(일의) 배경; 배후 사정', '(사진 등의) 배경']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "last",
+    "mean": "['마지막의', '맨 끝에', '마지막 사람']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "common",
+    "mean": "['흔한', '공유지', '식당']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "escape",
+    "mean": "['달아나다', '탈출', '도피']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "older",
+    "mean": "['연상의']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "own",
+    "mean": "['… 자신의', '소유하다', '인정하다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "target",
+    "mean": "['목표; 대상', '목표로 삼다', '대상으로 삼다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "known",
+    "mean": "['(특히 많은 사람들에게) 알려진']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "node",
+    "mean": "['(나무줄기의) 마디', '(뿌리·가지의) 옹이', '(연결망의) 교점']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "standard",
+    "mean": "['수준', '일반적인', '표준 규격에 맞춘']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "something",
+    "mean": "['어떤 것, 무엇', '중요한 것', '정말(진술 내용을 강조하기 위해 씀)']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "practical",
+    "mean": "['현실적인', '실습; 실기 시험', '타당한']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "apply",
+    "mean": "['신청하다; 지원하다', '쓰다', '바르다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "precedence",
+    "mean": "['우선(함)']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "boost",
+    "mean": "['신장시키다', '격려', '증가']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "object",
+    "mean": "['물건', '반대하다', '반대 이유를 대다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "value",
+    "mean": "['가치', '소중하게 생각하다', '평가하다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "defined",
+    "mean": "['정의된']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "first",
+    "mean": "['첫, 첫 (번)째의; 첫째', '첫째의', '우선, 맨 먼저']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "try",
+    "mean": "['노력하다', '시도', '트라이']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "available",
+    "mean": "['구할 수 있는', '시간이 있는']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "continue",
+    "mean": "['계속되다', '계속하다', '계속 가다']",
+    "frequency": "14",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "addition",
+    "mean": "['덧셈', '추가된 것', '추가']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "yarn",
+    "mean": "['(직물·편물용) 실, 방적사', '(특히 과장되거나 지어낸) 긴 이야기']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "module",
+    "mean": "['모듈, 교과목 단위', '모듈(특정 기능을 하는 컴퓨터 시스템이나 프로그램의 단위)','부품']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "text",
+    "mean": "['본문', '문자를 보내다', '글']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "syntax",
+    "mean": "['구문론', '문법']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "previous",
+    "mean": "['이전의', '바로 앞의']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "nest",
+    "mean": "['둥지', '둥지를 틀다', '끼워 넣다']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "user",
+    "mean": "['이용자, 사용자', '마약쟁이']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "installation",
+    "mean": "['설치', '장치', '시설']",
+    "frequency": "12",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "optimize",
+    "mean": "['~을 최대한 좋게[적합하게] 만들다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "love",
+    "mean": "['사랑', '사랑하다', '대단히 좋아하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bound",
+    "mean": "['꼭 …할 것 같은', '껑충껑충 달리다', '껑충 뜀']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "individual",
+    "mean": "['각각의', '개인', '개성 있는 사람']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "command",
+    "mean": "['명령', '명령하다', '지휘하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "roll",
+    "mean": "['통', '구르다', '뒹굴다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "field",
+    "mean": "['들판', '내보내다', '수비를 보다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "recommend",
+    "mean": "['추천하다', '권고하다', '매력적으로 만들다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "entry",
+    "mean": "['들어감', '출입', '가입']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "major",
+    "mean": "['주요한', '소령', '전공']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "range",
+    "mean": "['다양성', 'A에서 B 사이이다', '포함하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "entire",
+    "mean": "['전체의', '온']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "project",
+    "mean": "['계획', '계획하다', '예상하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "legible",
+    "mean": "['읽을 수 있는', '또렷한']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "compatibility",
+    "mean": "['양립 가능성', '(컴퓨터의) 호환성']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "build",
+    "mean": "['짓다', '체구', '만들어 내다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "simply",
+    "mean": "['그냥 (간단히), 그저 (단순히) (어떤 것이 얼마나 쉽거나 간단한지를 강조함)', '(진술 내용을 강조하여) 그야말로', '간단히, 평이하게']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bottom",
+    "mean": "['맨 아래', '맨 아래쪽에', '뒷면']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "window",
+    "mean": "['창문', '창', '창구; 창문 모양의 것']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "variable",
+    "mean": "['변동이 심한; 가변적인', '변수', '변화를 줄 수 있는']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "title",
+    "mean": "['제목', '제목을 붙이다', '서적']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "live",
+    "mean": "['살다', '하다', '남아 있다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "editor",
+    "mean": "['편집장', '편집자', '담당 기자']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "play",
+    "mean": "['놀다', '놀이', '희곡; 연극']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "feel",
+    "mean": "['들다', '촉감', '만져 봄']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "vendor",
+    "mean": "['(거리의) 행상인', '(특정한 제품) 판매 회사', '(주택 등의) 매도인']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "prefixed",
+    "mean": "['접두사', '앞에 붙이다', '앞에 오는 것']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "care",
+    "mean": "['돌봄', '상관하다', '배려하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "hood",
+    "mean": "['모자', '복면', '학위 표시 휘장']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "repository",
+    "mean": "['저장소', '보고']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "literal",
+    "mean": "['문자 그대로의', '직역의', '상상력이 부족한']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "adapt",
+    "mean": "['맞추다', '적응하다', '개작하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "state",
+    "mean": "['상태', '국가의', '말하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "lot",
+    "mean": "['많음', '많은 ~', '훨씬']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "effort",
+    "mean": "['수고', '노력', '활동']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "wrap",
+    "mean": "['싸다', '랩', '포장지']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "section",
+    "mean": "['부분', '절개하다', '박편을 만들다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "related",
+    "mean": "['관련된', '친척의', '동족의']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "navigation",
+    "mean": "['항해', '운항']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bar",
+    "mean": "['술집', '빗장을 지르다', '~을 제외하고']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "mix",
+    "mean": "['섞이다', '혼합체', '혼합 가루']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "anchor",
+    "mean": "['닻', '닻을 내리다', '고정시키다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "situation",
+    "mean": "['상황', '위치', '직장']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "hatch",
+    "mean": "['부화하다', '화물 출입구', '창구']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "swap",
+    "mean": "['바꾸다', '바꾸기', '교환품; 교체된 사람']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "fine",
+    "mean": "['질 높은', '잘', '벌금']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "achieve",
+    "mean": "['달성하다', '해내다', '잘 해내다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "marked",
+    "mean": "['뚜렷한', '유표적인']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "candidate",
+    "mean": "['입후보자', '지원자', '…할 가능성이 큰 사람']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "future",
+    "mean": "['미래', '미래의', '장래']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "keep",
+    "mean": "['유지하다', '먹고 사는 데 필요한 것들; 생활비', '아성']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "mind",
+    "mean": "['마음', '언짢아하다', '상관하지 않다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "fact",
+    "mean": "['점', '사실']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "mounted",
+    "mean": "['말을 탄', '(전시품 등을) 받침대로 받쳐 놓은','…에 고정시킨']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "smart",
+    "mean": "['맵시 좋은', '욱신거리다', '속상해 하다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "filter",
+    "mean": "['필터', '여과하다', '필터를 쓰다']",
+    "frequency": "11",
+    "level": "2",
+    "category": "styledComponents"
+  },
+  {
+    "word": "familiar",
+    "mean": "['익숙한', '~을 아주 잘 아는', '스스럼없는']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "combination",
+    "mean": "['조합', '부호', '콤비네이션']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "prefix",
+    "mean": "['접두사', '앞에 붙이다', '앞에 오는 것']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "clash",
+    "mean": "['충돌', '맞붙다', '의견 충돌을 일으키다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "identifiable",
+    "mean": "['인식 가능한', '알아볼 수 있는']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "developer",
+    "mean": "['(부동산) 개발업자', '(신상품) 개발자', '(사진) 현상액']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "inspector",
+    "mean": "['조사관', '경위', '검표원']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "important",
+    "mean": "['중요한', '영향력이 큰']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "slow",
+    "mean": "['느린', '느리게', '천천히 가다; 속도를 줄이다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "speed",
+    "mean": "['속도', '빨리 가다', '빠르게 데려다 주다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "reading",
+    "mean": "['독서', '읽기', '읽을거리, 읽기 자료, 독서물']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "great",
+    "mean": "['큰', '위대한 인물', '아주 잘']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "review",
+    "mean": "['검토', '재검토하다', '되새기다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "real",
+    "mean": "['진짜의', '아주', '진정한']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "solid",
+    "mean": "['단단한; 고체의', '고체', '입체']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "broad",
+    "mean": "['넓은', '계집', '넓이가 …인']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "conditional",
+    "mean": "['조건부의', '조건문', '조건법']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "particular",
+    "mean": "['특정한', '자세한 사실', '서면 정보']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "behavior",
+    "mean": "['행동, 거동, 행실, 품행, 태도', '행동; 습성']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "mixed",
+    "mean": "['뒤섞인', '혼합된', '여러 종류를 섞은']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "vanilla",
+    "mean": "['바닐라', '바닐라 맛의', '평범한, 특별할 것 없는']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "environment",
+    "mean": "['(주변의)환경']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "unnecessary",
+    "mean": "['불필요한', '쓸데없는']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "router",
+    "mean": "['라우터(네트워크에서 데이터의 전달을 촉진하는 중계 장치)']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "return",
+    "mean": "['돌아오다', '돌아옴', '돌려줌']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "notice",
+    "mean": "['신경씀', '…을 의식하다', '주목하다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "innermost",
+    "mean": "['가장 사적인', '가장 안쪽의']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "password",
+    "mean": "['(어떤 장소에 들어가는 데 필요한) 암호', '비밀번호']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "size",
+    "mean": "['크기', '크기를 표시하다', '크기를 바꾸다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "name",
+    "mean": "['이름', '이름을 지어주다', '이름을 대다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "generate",
+    "mean": "['발생시키다', '만들어 내다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "unique",
+    "mean": "['유일무이한', '특별한', '고유의']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "animated",
+    "mean": "['활기찬', '동영상으로 된']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "snack",
+    "mean": "['간단한 식사', '식사를 간단히 하다', '아주 쉬운 일']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "complex",
+    "mean": "['복잡한', '복합 건물', '덩어리']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "transform",
+    "mean": "['변형시키다', '완전히 바꿔 놓다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "margin",
+    "mean": "['여백', '차이', '여유']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "shorthand",
+    "mean": "['속기', '약칭']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "legacy",
+    "mean": "['(죽은 사람이 남긴) 유산', '(과거의) 유산']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "setting",
+    "mean": "['(어떤 일이 일어나는) 환경', '(연극·소설 등의) 배경', '(기계의 속도·고도·온도 등을 조절하는) 설정']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "imagine",
+    "mean": "['상상하다', '생각하다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "guess",
+    "mean": "['추측하다', '추측', '알아맞히다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "transfer",
+    "mean": "['옮기다', '이동', '이적']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "right",
+    "mean": "['옳은', '정확히', '옳은 것']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "warn",
+    "mean": "['경고하다', '강력히 충고하다', '경고를 주다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "enforce",
+    "mean": "['집행하다', '강요하다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "prefer",
+    "mean": "['…을 좋아하다', '선호하다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "configuration",
+    "mean": "['배열', '환경 설정']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "haul",
+    "mean": "['끌다', '많은 양', '많은 점수']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "point",
+    "mean": "['의견', '가리키다', '겨누다']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "need",
+    "mean": "['필요로 하다', '…할 필요가 있다','필요']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "hello",
+    "mean": "['안녕; 인사; 여보세요', '이런', '얼씨구']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "simpler",
+    "mean": "['간단한', '단순한', '순전한']",
+    "frequency": "11",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "context",
+    "mean": "['맥락', '문맥']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "tree",
+    "mean": "['나무']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "current",
+    "mean": "['현재의', '흐름', '전류']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "order",
+    "mean": "['순서', '명령하다', '주문하다']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "implementation",
+    "mean": "['시행', '이행']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "head",
+    "mean": "['머리', '가다', '~을 이끌다']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "take",
+    "mean": "['가지고 가다', '테이크', '수익']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "host",
+    "mean": "['주인', '주최하다', '진행하다']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "rule",
+    "mean": "['규칙', '통치하다', '결정을 내리다']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "interpolation",
+    "mean": "['써넣음; 써넣은 어구', '보간법(補間法), 내삽법(內揷法)']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "provider",
+    "mean": "['제공자', '제공 기관']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "loader",
+    "mean": "['짐을 싣는 사람; 적하기(積荷機)', '(총포의) 장전자']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "streaming",
+    "mean": "['흐름', '스트리밍']",
+    "frequency": "9",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "other",
+    "mean": "['(그 밖의) 다른; 다른 사람']",
+    "frequency": "7",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "rendering",
+    "mean": "['(특정한 해석을 가미한) 연주', '번역', '(벽돌벽·석벽 등에 하는) 회반죽 칠']",
+    "frequency": "7",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "receive",
+    "mean": "['받다', '받다; 입다', '환영하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "parent",
+    "mean": "['부모', '모체']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "made",
+    "mean": "['make의 과거, 과거분사', '…하게 만든']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "contextual",
+    "mean": "['맥락[전후 사정]과 관련된']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "second",
+    "mean": "['두 번째의', '둘째로', '초']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "give",
+    "mean": "['주다', '탄력성', '제공하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "arbitrary",
+    "mean": "['임의적인', '전횡을 일삼는']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "careful",
+    "mean": "['조심하는', '세심한']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "sanitize",
+    "mean": "['불쾌한 부분을 제거하다', '위생 처리하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "lead",
+    "mean": "['안내하다', '선두', '앞섬']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "browser",
+    "mean": "['브라우저(인터넷의 자료들을 읽을 수 있게 해 주는 프로그램)', '(가게를) 둘러보는 사람']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bad",
+    "mean": "['안 좋은', '나쁜 사람들', '몹시']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "document",
+    "mean": "['서류', '기록하다', '서류로 입증하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "ensure",
+    "mean": "['반드시 …하게 하다', '보장하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "problem",
+    "mean": "['문제', '문제를 일으키는']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "complete",
+    "mean": "['가능한 최대의', '완료하다', '기입하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "good",
+    "mean": "['좋은', '선', '잘']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "able",
+    "mean": "['…할 수 있는', '재능 있는']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "pure",
+    "mean": "['순수한', '깨끗한', '완전한']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "rehydration",
+    "mean": "['(요업공학) 재수화', '(식품공학) 복원']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "basic",
+    "mean": "['기본적인', '기초적인']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "idea",
+    "mean": "['발상', '감', '견해']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "error",
+    "mean": "['실수']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "thrown",
+    "mean": "['THROW의 과거분사', '꼰']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "inject",
+    "mean": "['주사하다', '주입하다', '더하다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "compiler",
+    "mean": "['편집자, 편찬자', '컴파일러(명령어 번역 프로그램)']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "setup",
+    "mean": "['(조직 등의) 기구, 구조']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "stream",
+    "mean": "['개울', '줄줄 흐르다', '줄을 지어 이어지다']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "wrapped",
+    "mean": "['싸여진', '포장된']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "icon",
+    "mean": "['(컴퓨터 화면의) 아이콘', '(특정한 사상·생활 방식 등의 상징으로 여겨지는) 우상', '성상, 성화']",
+    "frequency": "6",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "actual",
+    "mean": "['실제의', '사실상의']",
+    "frequency": "4",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "documentation",
+    "mean": "['(무엇에 요구되는, 또는 무엇을 입증할) 서류']",
+    "frequency": "4",
+    "level": "3",
+    "category": "styledComponents"
+  },
+  {
+    "word": "reference",
+    "mean": "['말하기', '참고 표시를 하다; 참조 문헌을 달다', '찾아봄']",
+    "frequency": "4",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "security",
+    "mean": "['보안', '경비 담당 부서', '보장']",
+    "frequency": "4",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "full",
+    "mean": "['가득한', '똑바로', '~이 그득한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "underneath",
+    "mean": "['…의 밑에(특히 다른 것에 가려지거나 덮이는 경우에 씀)', '(겉으로 보이는 감정성격과 달리) 속으로', '밑면, 하부']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "provided",
+    "mean": "['(만약) ~라면']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "illustrate",
+    "mean": "['삽화를 쓰다; 이용하다', '분명히 보여주다', '실증하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "let",
+    "mean": "['놓아두다', '레트', '임대']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "time",
+    "mean": "['시간', '시간을 맞추다', '시간을 측정하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "one",
+    "mean": "['하나(의),  한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "invert",
+    "mean": "['뒤집다', '도치시키다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "foreground",
+    "mean": "['전경', '특히 중시하다', '중요한 위치']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "upper",
+    "mean": "['(특히 같은 종류한 쌍으로 된 두 개 중에서 다른 것보다) 더 위에 있는', '(어떤 것에서) 위쪽의', '(구두의) 윗부분']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "big",
+    "mean": "['큰', '크게', '나이가 더 많은']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "circumvent",
+    "mean": "['피하다', '피해 가다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "missing",
+    "mean": "['(제자리나 집에 있지 않고) 없어진', '(원래 있던 것이) 빠진', '행방불명된']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "place",
+    "mean": "['장소', '놓다', '두다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "application",
+    "mean": "['지원', '적용', '바르기']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "injection",
+    "mean": "['주사', '자금 투입', '주입']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "upcoming",
+    "mean": "['다가오는', '곧 있을']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "couple",
+    "mean": "['두 사람', '연결하다', '성교하다; 교미하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "aware",
+    "mean": "['알고 있는', '눈치 채고 있는', '의식이 높은']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "issue",
+    "mean": "['주제', '발표하다', '발부하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "combine",
+    "mean": "['결합하다', '콤바인', '연합체']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "win",
+    "mean": "['이기다', '승리', '따다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "above",
+    "mean": "['(위치나 지위 면에서) …보다 위에', '(수나이 등이) …보다 많은, …을 넘는', '(위치가) 위에']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "thus",
+    "mean": "['이렇게 하여; 이와 같이', '따라서, 그러므로']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "solution",
+    "mean": "['해법', '해답', '용액']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "bump",
+    "mean": "['부딪치다', '쿵', '혹']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "conflict",
+    "mean": "['갈등', '상충하다', '물리적 충돌']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "immunity",
+    "mean": "['면역력', '면제']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "least",
+    "mean": "['(크기양정도 등이) 가장 적은; 최소(의)', '가장 덜, 최소로']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "specify",
+    "mean": "['(구체적으로) 명시하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "container",
+    "mean": "['그릇, 용기', '(화물 수송용) 컨테이너']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "number",
+    "mean": "['수', '번호를 매기다', '모두 …이 되다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "process",
+    "mean": "['과정', '가공하다', '처리하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "lower",
+    "mean": "['더 낮은 쪽의', '…을 내리다', '낮추다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "recognize",
+    "mean": "['알아보다', '인정하다', '공인하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "feature",
+    "mean": "['특색', '특별히 포함하다', '특징을 이루다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "argument",
+    "mean": "['논쟁; 언쟁', '논거', '논의']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "rest",
+    "mean": "['나머지', '쉬다', '받치다; 받쳐지다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "cumbersome",
+    "mean": "['크고 무거운', '복잡하고 느린', '길고 복잡한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "flatten",
+    "mean": "['납작해지다; 납작하게 만들다', '깨부수다', '코를 납작하게 만들다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "speaking",
+    "mean": "['말하는, 이야기하는, 말을 할 정도의; 말하기에 알맞은', '말이라도 할 것 같은, 박진감 넘치는; 의미심장한; 실증적인, 생생한 <보기 등>', '말하기, 이야기하기; 담화, 연설']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "undefined",
+    "mean": "['한정되지 않은', '확실하지 않은']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "false",
+    "mean": "['틀린', '인조의', '위조된']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "empty",
+    "mean": "['비어 있는', '비우다', '비게 되다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "free",
+    "mean": "['자유로운', '석방하다', '요금을 안 내고']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "short",
+    "mean": "['짧은', '…이 부족하다', '한 잔']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "circuit",
+    "mean": "['순환', '회로', '연맹전']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "evaluation",
+    "mean": "['인사 고과', '평가', '감정']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "learn",
+    "mean": "['배우다', '~을 알게 되다', '외우다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "article",
+    "mean": "['(신문·잡지의) 글, 기사', '(합의서·계약서의) 조항', '(특히 세트로 된 물건의 개별) 물품']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "magic",
+    "mean": "['마법', '마법의', '요술을 부려서 나타나게 하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "concurrent",
+    "mean": "['공존하는, 동시에 발생하는']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "such",
+    "mean": "['앞에 이미 언급한, 그런', '(곧 언급하려는) 그런', '(정도를 강조하여) 그 정도의']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "various",
+    "mean": "['여러 가지의', '다양한 특징을 지닌']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "perform",
+    "mean": "['행하다', '해 보이다', '돌아가다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "tooling",
+    "mean": "['공구 세공', '정 자국이 나란히 나게 하는 다듬질']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "resident",
+    "mean": "['거주자', '거주하는', '투숙객']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "guru",
+    "mean": "['구루', '전문가']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "put",
+    "mean": "['놓다', '밀어 넣다', '들어가게 하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "awesome",
+    "mean": "['경탄할 만한', '기막히게 좋은']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "similar",
+    "mean": "['비슷한', '유사한', '닮은']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "compile",
+    "mean": "['엮다', '명령어를 번역하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "worth",
+    "mean": "['…의 가치가 있는', '달러', '일주일']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "reap",
+    "mean": "['거두다', '수확하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "ecosystem",
+    "mean": "['생태계']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "just",
+    "mean": "['딱', '공정한', '공정한 사람들']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "account",
+    "mean": "['계좌', '간주하다', '장부']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "reason",
+    "mean": "['이유', '판단하다', '사고하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "catch",
+    "mean": "['잡다', '잡기', '잡은 양']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "garbage",
+    "mean": "['(음식물·휴지 등의) 쓰레기', '(음식물·휴지 등을 버리는) 쓰레기장', '말도 안 되는 것']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "collection",
+    "mean": "['수집품', '무리', '수집']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "seal",
+    "mean": "['봉하다', '직인', '확정해 주는 것']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "different",
+    "mean": "['다른', '각각 다른', '색다른']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "combined",
+    "mean": "['결합된, 합동의, 연합의', '화합한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "logic",
+    "mean": "['논리', '타당성', '논리학']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "date",
+    "mean": "['날짜', '날짜를 적다', '…의 연대를 추정하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "rust",
+    "mean": "['녹', '녹슬다', '녹병']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "modify",
+    "mean": "['수정하다', '수식하다; 한정하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "official",
+    "mean": "['공무상의', '공무원', '공인된']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "readable",
+    "mean": "['읽기 쉬운', '알아보기 쉬운']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "whole",
+    "mean": "['전체의', '완전체', '~의 전체']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "corresponding",
+    "mean": "['(~에) 해당[상응]하는']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "block",
+    "mean": "['사각형 덩어리', '막다', '~의 길']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "usual",
+    "mean": "['흔히 하는', '늘 있는 일; 늘 마시는 것']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "further",
+    "mean": "['더 멀리에', '더 이상의', '발전시키다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "specific",
+    "mean": "['구체적인', '특정한', '특유의']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "won",
+    "mean": "['win의 과거', '과거분사']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "said",
+    "mean": "['say의 과거, 과거분사', '= aforementioned']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "easy",
+    "mean": "['쉬운', '조심해서', '편안한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "paradigm",
+    "mean": "['전형적인 예', '어형 변화표']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "accessible",
+    "mean": "['접근 가능한', '이해하기 쉬운', '다가가기 쉬운']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "pattern",
+    "mean": "['양식', '무늬를 만들다', '양식을 형성시키다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "assigned",
+    "mean": "['할당된']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "stable",
+    "mean": "['안정된', '마구간', '넣다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "powerful",
+    "mean": "['영향력 있는', '강력한', '강한']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "composition",
+    "mean": "['구성 요소들; 구성', '작품', '작곡']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "fuss",
+    "mean": "['호들갑', '법석을 떨다', '안달하다']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "naming",
+    "mean": "['네이밍', '이름 붙여 주기']",
+    "frequency": "3",
+    "level": "4",
+    "category": "styledComponents"
+  },
+  {
+    "word": "response",
+    "mean": "['대답', '반응', '응창']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "consider",
+    "mean": "['사려하다', '여기다', '고려하다']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "understand",
+    "mean": "['이해하다', '합의되다', '감안하여 이해하다']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "behaviour",
+    "mean": "['처신', '행동 방식']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "mount",
+    "mean": "['시작하다', '산', '말']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "fail",
+    "mean": "['실패하다', '낙제', '…하지 않다']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "eligible",
+    "mean": "['…을 가질 수 있는', '신랑감으로 좋은']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "move",
+    "mean": "['움직이다; 움직이게 하다', '조치', '이동']",
+    "frequency": "3",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "migrate",
+    "mean": "['이동하다', '이주하다', '옮기다']",
+    "frequency": "2",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "library",
+    "mean": "['도서관', '서재', '장서들']",
+    "frequency": "2",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "fix",
+    "mean": "['고정시키다', '해결책', '한 번 필요한 양']",
+    "frequency": "2",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "power",
+    "mean": "['힘', '동력을 공급하다', '맹렬히 나아가다']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "low",
+    "mean": "['낮은', '낮게', '낮은 수준']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "level",
+    "mean": "['정도', '평평한', '평평하게 하다']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "construct",
+    "mean": "['건설하다', '생각', '단어들']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "test",
+    "mean": "['시험', '시험하다', '검사를 하다']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "flow",
+    "mean": "['흐름', '흐르다', '계속 흘러가다']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "jest",
+    "mean": "['농담', '농담하다']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "integration",
+    "mean": "['통합']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "author",
+    "mean": "['작가', '쓰다', '입안자']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "warning",
+    "mean": "['경고', '계고']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "several",
+    "mean": "['몇의', '각각의']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  },
+  {
+    "word": "which",
+    "mean": "['어느; 어떤 사람(들), 어느 것(들)']",
+    "frequency": "1",
+    "level": "5",
+    "category": "styledComponents"
+  }
 ]

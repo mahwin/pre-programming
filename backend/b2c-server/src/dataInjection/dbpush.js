@@ -1,20 +1,18 @@
-// import { PrismaService } from 'prisma/prisma.service';
-// import datas from '../../../../crawler/data/complete-dictionarys/1/mean-word-frequency-level/react.json';
-
-const PrismaClient = require('@prisma/client');
+const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const categories = [
-  'recoil',
-  'react',
-  'next',
-  'reactRedux',
-  'reactQuery',
-  'reactHookForm',
-  'tailwindCss',
-  'reactRouter',
+  // 'recoil',
+  // 'axios',
+  // 'react',
+  // 'next',
+  // 'reactRedux',
+  // 'reactQuery',
+  // 'reactHookForm',
+  // 'tailwindcss',
+  // 'reactRouter',
   'styledComponents',
-  'axios',
+  //
 ];
 
 function sleep(sec) {
@@ -23,11 +21,10 @@ function sleep(sec) {
 
 async function dbPush() {
   for (let category of categories) {
-    const dicObj = require(`../../../crawler/data/complete-dictionarys/1/db/${category}.json`);
-    sleep(3);
-    for (let i = 1; i < dicObj.length; i++) {
+    const dicObj = require(`../../../../crawler/data/complete-dictionarys/1/db/${category}.json`);
+    for (let i = 0; i < dicObj.length; i++) {
       if (i % 100 === 0) {
-        sleep(10);
+        sleep(1);
         console.log(i, category);
       }
       const newData = await prisma.vocabulary.create({
