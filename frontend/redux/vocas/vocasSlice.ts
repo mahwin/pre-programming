@@ -7,7 +7,8 @@ const vocasSlice = createSlice({
   initialState: initialState.vocas,
   reducers: {
     getVoca: (state, { payload: { data, category } }) => {
-      state[category as VocasType] = data;
+      state.data = data;
+      state.category = category;
     },
   },
 });

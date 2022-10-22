@@ -10,6 +10,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
   // yield all([call([getUserSaga])]);
+  yield all([getUserSaga()]);
 }
 
 const createStore = () => {

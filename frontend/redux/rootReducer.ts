@@ -3,12 +3,12 @@ import vocasReducer from "./vocas/vocasSlice";
 import userReducer from "./user/userSlice";
 import { HYDRATE } from "next-redux-wrapper";
 import { IUserState } from "./user/user.dto";
-import { IVocasState } from "./vocas/vocas.dto";
+import { ITmpVocaState } from "./vocas/vocas.dto";
 import { AnyAction, CombinedState } from "redux";
 
 interface IState {
   user: IUserState;
-  vocas: IVocasState;
+  vocas: ITmpVocaState;
 }
 
 const rootReducer = (state: any, action: AnyAction): CombinedState<IState> => {

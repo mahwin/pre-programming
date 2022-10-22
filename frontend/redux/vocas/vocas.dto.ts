@@ -31,18 +31,34 @@ interface IVocaState {
   data: IVocas;
 }
 
-const initialVocasState = {
-  react: { data: null },
-  tailwindCss: { data: null },
-  recoil: { data: null },
-  next: { data: null },
-  reactRedux: { data: null },
-  reactQuery: { data: null },
-  reactHookForm: { data: null },
-  styledComponenets: { data: null },
-  reactRouter: { data: null },
-  axios: { data: null },
+// const initialVocasState = {
+//   react: { data: null },
+//   tailwindCss: { data: null },
+//   recoil: { data: null },
+//   next: { data: null },
+//   reactRedux: { data: null },
+//   reactQuery: { data: null },
+//   reactHookForm: { data: null },
+//   styledComponenets: { data: null },
+//   reactRouter: { data: null },
+//   axios: { data: null },
+// };
+
+const initialVocasState: ITmpVocaState = {
+  data: null,
+  category: null,
 };
+
+interface IVocaItem {
+  word: string;
+  mean: string;
+  frequency: string;
+}
+
+interface ITmpVocaState {
+  data: [IVocaItem[]] | null;
+  category: string | null;
+}
 
 const VocaArray = [
   "react",
@@ -70,4 +86,4 @@ type VocasType =
   | "axios";
 
 export { initialVocasState, VocaArray };
-export type { IVocas, IVocaState, VocasType, IVoca };
+export type { IVocas, IVocaState, VocasType, IVoca, ITmpVocaState };
