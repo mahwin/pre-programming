@@ -6,10 +6,12 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 
 export default function Me() {
-  const { loading, data, error } = useSelector(
-    (state: any) => state.userReducer
-  );
+  const { loading, data, error } = useSelector((state: any) => {
+    state.userReducer;
+    return state.user;
+  });
   const router = useRouter();
+
   useEffect(() => {
     if (error) router.push("singIn");
   }, [loading, error]);

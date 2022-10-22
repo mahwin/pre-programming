@@ -108,13 +108,12 @@ interface MutationResult {
 type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
 function Nav() {
-  const { loading, data, error } = useSelector(
-    (state: any) => state.userReducer
-  );
+  const { loading, data, error } = useSelector((state: any) => {
+    return state.user;
+  });
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
-
+  console.log(loading, data);
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(userActions.getUser());
   }, []);
