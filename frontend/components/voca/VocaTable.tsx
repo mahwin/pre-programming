@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const TableWrapper = styled.div`
@@ -8,7 +9,7 @@ const TableWrapper = styled.div`
 `;
 
 const Table = styled.table`
-  width: 300px;
+  width: 400px;
   table-layout: fixed;
   th {
     position: sticky;
@@ -48,12 +49,14 @@ const Table = styled.table`
   }
 `;
 
-interface ITableData {
+interface ITableVoca {
   word: string;
-  correct: string;
+  mean: string;
+  frequency: string;
 }
 
-export default function VocaTable({ tableData }: { tableData: ITableData[] }) {
+export default function VocaTable({ voca }: any) {
+  console.log(voca);
   return (
     <TableWrapper>
       <Table>
@@ -65,11 +68,15 @@ export default function VocaTable({ tableData }: { tableData: ITableData[] }) {
         </thead>
 
         <tbody>
-          {tableData?.map((item, idx) => {
+          {voca?.map((item: ITableVoca, idx: number) => {
             return (
               <tr key={idx}>
                 <td>{item.word}</td>
-                <td>{item.correct}</td>
+                <td>
+                  {eval(item.mean)
+                    .map((item: string, idx: number) => idx + 1 + " ." + item)
+                    .join(" ")}
+                </td>
               </tr>
             );
           })}

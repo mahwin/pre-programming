@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Table from "@components/voca/Table";
 import { OpenSvg } from "@svg";
 import VocaTable from "@components/voca/VocaTable";
@@ -160,57 +160,90 @@ const Overlay = styled(motion.div)`
   z-index: 99;
 `;
 
-interface IVocaDetail {
-  data: number[];
-  voca: string;
-  tableData: { word: string; correct: string }[];
+interface IVocaItem {
+  word: string;
+  mean: string;
+  frequency: string;
 }
 
-export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
+interface IVoca {
+  [key: string]: IVocaItem[];
+}
+
+interface IVocaDetail {
+  voca: IVoca;
+  category: string;
+}
+
+interface ICard {
+  amount: string;
+  frequency: string;
+}
+
+export default function VocaDetail({ voca, category }: any) {
   const [id, setId] = useState<string | null>(null);
-  const [vocas, setVocas] = useState<boolean[]>(
+  const [selectedCard, setSelectedCard] = useState<boolean[]>(
     Array.from({ length: 7 }, () => false)
   );
+  const [total, setTotal] = useState<number>(0);
+  const [cardData, setCardData] = useState<ICard[] | null>(null);
+
+  useEffect(() => {
+    let sum = voca.reduce((pre: number, cur: any) => (pre += cur.length), 0);
+    setTotal(sum);
+    let baseData: ICard[] = [];
+    voca.forEach((item: any) => {
+      let tmp = {
+        amount: item.length + "",
+        frequency: item[Math.round(item.length / 2)].frequency,
+      };
+      baseData.push(tmp);
+    });
+    setCardData(baseData);
+  }, [voca]);
 
   const onClickCheck = (e: any) => {
     const voca = Number(e.currentTarget.id || e.currentTarget.name);
-    const copyVocas = [...vocas];
+    const copyVocas = [...selectedCard];
     copyVocas[voca] = !copyVocas[voca];
-    setVocas(copyVocas);
+    setSelectedCard(copyVocas);
   };
-
   return (
     <Wrapper>
       <DetailWrapper>
-        <Title>{voca}</Title>
+        <Title>{category}</Title>
         <VocaCardWrapper>
-          {data.map((n, idx) => (
-            <VocaCard key={n + ""} layoutId={n + ""}>
+          {voca.map((item: any, idx: number) => (
+            <VocaCard key={idx + ""} layoutId={idx + ""}>
               <CheckBox>
                 <input
                   onChange={onClickCheck}
                   type="checkbox"
                   value="None"
-                  id={n + ""}
+                  id={idx + ""}
                   name="check"
-                  checked={vocas[n]}
+                  checked={selectedCard[idx]}
                 />
-                <label htmlFor={n + ""}></label>
+                <label htmlFor={idx + ""}></label>
               </CheckBox>
               <LevelBox>
-                <ContentTitle>{voca}</ContentTitle>
+                <ContentTitle>{category}</ContentTitle>
                 <Level> Level : {idx + 1}</Level>
               </LevelBox>
               <VocaContentBox>
-                <Table />
+                {cardData && <Table cardData={cardData?.[idx]} total={total} />}
               </VocaContentBox>
-              <SvgBox onClick={() => setId(n + "")}>
+              <SvgBox onClick={() => setId(idx + "")}>
                 <OpenSvg width="20" height="20" />
               </SvgBox>
             </VocaCard>
           ))}
         </VocaCardWrapper>
-        <AddVoca vocas={vocas} onClickCheck={onClickCheck} />
+        <AddVoca
+          cardData={cardData}
+          selected={selectedCard}
+          onClickCheck={onClickCheck}
+        />
       </DetailWrapper>
       <AnimatePresence>
         {id ? (
@@ -224,18 +257,18 @@ export default function VocaDetail({ data, voca, tableData }: IVocaDetail) {
               layoutId={id + ""}
               style={{
                 position: "fixed",
-                width: 400,
-                height: 400,
-                top: "100px",
+                width: 600,
+                height: 500,
+                top: "80px",
               }}
             >
               <ModalTitleBox>
                 <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
                 <Button name={id + ""} onClick={onClickCheck}>
-                  {vocas[+id] ? "해제" : "추가"}
+                  {selectedCard[+id] ? "해제" : "추가"}
                 </Button>
               </ModalTitleBox>
-              <VocaTable tableData={tableData} />
+              <VocaTable voca={voca[+id]} />
             </VocaCard>
           </Overlay>
         ) : null}

@@ -219,7 +219,7 @@ interface ITestData {
   exampl2: string;
 }
 
-function FloatingButton({ testData }: any) {
+function FloatingButton({ voca }: any) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isTestOpen, setIsTestOpen] = useState<boolean>(false);
   const [testCondition, setTestCondition] = useState<ITestCondition>({
@@ -300,7 +300,6 @@ function FloatingButton({ testData }: any) {
               <ContentBox>
                 <Ul>
                   <SubTitle>how long : </SubTitle>
-
                   <li>
                     <Label>
                       <RadioInput
@@ -349,7 +348,7 @@ function FloatingButton({ testData }: any) {
             >
               Stop
             </TestCloseBtn>
-            <Quiz testData={testData} testCondition={testCondition} />
+            <Quiz voca={voca} testCondition={testCondition} />
           </Overlay>
         </>
       ) : null}

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   explode,
   dropOne,
@@ -13,6 +13,7 @@ import {
 } from "../../assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg } from "@svg";
 import Answers from "./Answers";
+import makeTestVoca from "@utils/makeTestVoca";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -26,7 +27,7 @@ const Container = styled.div`
   position: absolute;
   right: 0;
   left: 0;
-  top: 5rem;
+  top: 2rem;
   margin: 0 auto;
   height: 85vh;
   width: 80vw;
@@ -339,14 +340,14 @@ const ResultBtn = styled(Button)`
 type TypeAnser = number | null;
 
 interface ITestData {
-  word: string;
-  correct: string;
-  example: string;
-  example1: string;
-  example2: string;
+  question: string;
+  selectList: string[];
 }
 
-export default function Quiz({ testData, testCondition }: any) {
+export default function Quiz({ voca, testCondition }: any) {
+  const [testData, setTestData] = useState<ITestData[] | null>(null);
+  const [testAnswer, setTestAnswer] = useState<number[] | null>(null);
+
   const [answerList, setAnswerList] = useState<number[]>([]);
   const [answer, setAnswer] = useState<boolean[]>(
     Array.from({ length: 5 }, () => false)
@@ -391,6 +392,12 @@ export default function Quiz({ testData, testCondition }: any) {
     setAnswerList([]);
   };
 
+  useEffect(() => {
+    let quiz = makeTestVoca(voca, maxNum);
+    setTestData(() => quiz.testData);
+    setTestAnswer(() => quiz.testAnswer);
+  }, [voca, testCondition]);
+
   return (
     <Wrapper>
       <Container>
@@ -400,8 +407,8 @@ export default function Quiz({ testData, testCondition }: any) {
               <>
                 <Answers
                   answerList={answerList}
-                  testData={testData}
-                  correctAnswer={[1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}
+                  testData={testData!}
+                  testAnswer={testAnswer!}
                   onBack={onAnswerClick}
                 />
               </>
@@ -448,12 +455,17 @@ export default function Quiz({ testData, testCondition }: any) {
             <TestContainer>
               <>
                 <h1>
-                  다음 중 {testData?.[currentStep].word}의 의미로 올바른 것은 ?
+                  다음 중 {testData?.[currentStep].question}의 의미로 올바른
+                  것은 ?
                 </h1>
                 <Ul>
                   <li>
-                    <Input onChange={onChangeInput} id="1" />
-                    <label>{testData?.[currentStep].correct}</label>
+                    <Input
+                      onChange={onChangeInput}
+                      id="1"
+                      checked={answer[1]}
+                    />
+                    <label>{testData?.[currentStep].selectList[0]}</label>
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -466,8 +478,14 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <label htmlFor="2">{testData?.[currentStep].example}</label>
-                    <Input onChange={onChangeInput} id="2" />
+                    <label htmlFor="2">
+                      {testData?.[currentStep].selectList[1]}
+                    </label>
+                    <Input
+                      onChange={onChangeInput}
+                      id="2"
+                      checked={answer[2]}
+                    />
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -480,8 +498,12 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <Input onChange={onChangeInput} id="3" />
-                    <label>{testData?.[currentStep].example1}</label>
+                    <Input
+                      onChange={onChangeInput}
+                      id="3"
+                      checked={answer[3]}
+                    />
+                    <label>{testData?.[currentStep].selectList[2]}</label>
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -494,9 +516,13 @@ export default function Quiz({ testData, testCondition }: any) {
                     </Bullet>
                   </li>
                   <li>
-                    <Input onChange={onChangeInput} id="4" />
+                    <Input
+                      onChange={onChangeInput}
+                      id="4"
+                      checked={answer[4]}
+                    />
                     <label htmlFor="4">
-                      {testData?.[currentStep].example2}
+                      {testData?.[currentStep].selectList[3]}
                     </label>
                     <Bullet>
                       <BulletLineZero />

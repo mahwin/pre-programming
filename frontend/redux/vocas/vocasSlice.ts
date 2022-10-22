@@ -1,20 +1,13 @@
 import initialState from "../initialState";
 import { createSlice } from "@reduxjs/toolkit";
+import { VocasType } from "./vocas.dto";
 
 const vocasSlice = createSlice({
   name: "voca",
   initialState: initialState.vocas,
   reducers: {
-    getVoca: (state) => {
-      state.loading = true;
-    },
-    getVocaSuccess: (state, { payload }) => {
-      state.data = payload;
-      state.loading = false;
-    },
-    getVocaError: (state, { payload }) => {
-      state.error = payload;
-      state.loading = false;
+    getVoca: (state, { payload: { data, category } }) => {
+      state[category as VocasType] = data;
     },
   },
 });

@@ -5,64 +5,69 @@ interface IVoca {
   frequency: number;
   word: string;
   category: string;
-  level: string;
+  level: number;
   mean: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-interface IVocasState {
-  loading: boolean;
-  data: IVoca[] | null;
-  error: AxiosError | null;
+interface IVocas {
+  vocas: {
+    react: { data: IVoca[] | null };
+    tailwindCss: { data: IVoca[] | null };
+    recoil: { data: IVoca[] | null };
+    next: { data: IVoca[] | null };
+    reactRedux: { data: IVoca[] | null };
+    reactQuery: { data: IVoca[] | null };
+    reactHookForm: { data: IVoca[] | null };
+    styledComponenets: { data: IVoca[] | null };
+    reactRouter: { data: IVoca[] | null };
+    axios: { data: IVoca[] | null };
+  };
 }
 
-const initialVocasState: IVocasState = {
-  loading: false,
-  data: null,
-  error: null,
+interface IVocaState {
+  error: AxiosError | null;
+  data: IVocas;
+}
+
+const initialVocasState = {
+  react: { data: null },
+  tailwindCss: { data: null },
+  recoil: { data: null },
+  next: { data: null },
+  reactRedux: { data: null },
+  reactQuery: { data: null },
+  reactHookForm: { data: null },
+  styledComponenets: { data: null },
+  reactRouter: { data: null },
+  axios: { data: null },
 };
-
-// interface IVocas {
-//   react: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   tailwindCss: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   recoil: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   next: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactRedux: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactQuery: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactHookForm: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   styledComponenets: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactRouter: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   axios: { ok: boolean; data: null | IVoca[]; loading: boolean };
-// }
-
-// const VocasState ={
-//   vocas:{
-//     react: { ok: boolean, data: null | IVoca[], loading: boolean };
-//   tailwindCss: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   recoil: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   next: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactRedux: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactQuery: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactHookForm: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   styledComponenets: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   reactRouter: { ok: boolean; data: null | IVoca[]; loading: boolean };
-//   axios: { ok: boolean; data: null | IVoca[]; loading: boolean };
-// }
-// }
 
 const VocaArray = [
   "react",
-  "tailwindCss",
+  "tailwindcss",
   "recoil",
   "next",
   "react-redux",
   "react-query",
   "react-hook-form",
-  "styled-componenets",
+  "styled-components",
   "react-router",
   "axios",
 ];
 
+type VocasType =
+  | "react"
+  | "tailwindCss"
+  | "recoil"
+  | "next"
+  | "reactRedux"
+  | "reactQuery"
+  | "reactHookForm"
+  | "styledComponenets"
+  | "reactRouter"
+  | "axios";
+
 export { initialVocasState, VocaArray };
-export type { IVoca, IVocasState };
+export type { IVocas, IVocaState, VocasType, IVoca };

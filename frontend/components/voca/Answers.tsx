@@ -93,25 +93,22 @@ const BackBtn = styled.button`
 
 interface IAnswers {
   answerList: number[];
-  correctAnswer: number[];
+  testAnswer: number[];
   testData: ITestData[];
   onBack: () => void;
 }
 
 interface ITestData {
-  word: string;
-  correct: string;
-  example: string;
-  example1: string;
-  example2: string;
+  question: string;
+  selectList: string[];
 }
 
-type Result = [null, number] | [number, number];
+type Result = [null, string] | [string, string];
 
 export default function Answers({
   answerList,
   testData,
-  correctAnswer,
+  testAnswer,
   onBack,
 }: IAnswers) {
   const [result, setResult] = useState<Result[] | null>(null);
@@ -119,12 +116,19 @@ export default function Answers({
   useEffect(() => {
     let copy: Result[] = [];
     answerList.forEach((answer, idx) => {
-      if (correctAnswer[idx] === answer) copy.push([null, correctAnswer[idx]]);
-      else copy.push([answer, correctAnswer[idx]]);
+      const correct = testAnswer[idx];
+      if (correct === answer)
+        copy.push([null, testData[idx]?.selectList[correct - 1].slice(0, 10)]);
+      else
+        copy.push([
+          testData[idx]?.selectList[answer - 1].slice(0, 10),
+          testData[idx]?.selectList[correct - 1].slice(0, 10),
+        ]);
     });
-
-    setResult(copy);
+    console.log(copy);
+    setResult(result);
   }, []);
+  console.log(result);
   return (
     <Wrapper>
       <h1>Your Answers</h1>
@@ -133,17 +137,17 @@ export default function Answers({
           <Card key={idx}>
             <>
               <Word>
-                <p> {testData[idx].word}</p>
+                <p> {testData[idx].question}</p>
               </Word>
               <ResultWrapper>
                 {result?.[idx][0] && (
                   <WrongBox>
-                    {testData[idx]["example1"]}
+                    {result[idx][0]}
                     <XMarkSvg width="30" height="30" color="#ff383e" />
                   </WrongBox>
                 )}
                 <CorrectBox>
-                  {testData[idx].correct}
+                  {result?.[idx][1]}
                   <CheckSvg width="30" height="30" color="#2dceb1" />
                 </CorrectBox>
               </ResultWrapper>

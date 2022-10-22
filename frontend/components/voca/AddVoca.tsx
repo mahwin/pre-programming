@@ -140,9 +140,7 @@ const Grid = styled.div`
 `;
 
 const CardContentBox = styled.div``;
-interface IAddVoca {
-  vocas: boolean[];
-}
+
 const cardsVariants: Variants = {
   open: {
     clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -182,11 +180,21 @@ const cardVariants: Variants = {
 };
 
 interface IAddVoca {
-  vocas: boolean[];
+  cardData:
+    | {
+        amount: string;
+        frequency: string;
+      }[]
+    | null;
+  selected: boolean[];
   onClickCheck: (e: any) => void;
 }
 
-export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
+export default function AddVaca({
+  cardData,
+  selected,
+  onClickCheck,
+}: IAddVoca) {
   const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
   // const [saveVocas,{loading,data,error}] = useMutation('/')
 
@@ -194,7 +202,7 @@ export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
     setIsCardOpen((prev) => !prev);
   };
   const onClickSaved = () => {};
-
+  console.log(selected);
   return (
     <Wrapper>
       <ButtonBox>
@@ -222,7 +230,7 @@ export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
               pointerEvents: isCardOpen ? "auto" : "none",
             }}
           >
-            {vocas.map(
+            {selected?.map(
               (voca, idx) =>
                 voca && (
                   <Card variants={cardVariants} key={idx + ""}>
@@ -231,7 +239,7 @@ export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
                       <Bar />
                     </CancleBtnBox>
                     <CardContents>
-                      <h3>Level {idx}</h3>
+                      <h3>Level {idx + 1}</h3>
                       <Grid>
                         <CardContentBox>
                           <p>
@@ -241,7 +249,7 @@ export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
                           </p>
 
                           <h2>
-                            <b>52</b>
+                            <b>{cardData?.[idx].amount}</b>
                           </h2>
                         </CardContentBox>
                         <CardContentBox>
@@ -251,7 +259,7 @@ export default function AddVaca({ vocas, onClickCheck }: IAddVoca) {
                             </small>
                           </p>
                           <h2>
-                            <p>8 이상</p>
+                            <p>{cardData?.[idx].frequency} 이상</p>
                           </h2>
                         </CardContentBox>
                       </Grid>

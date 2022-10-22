@@ -43,7 +43,12 @@ const TableWapper = styled.table`
   }
 `;
 
-export default function Table() {
+interface ITable {
+  cardData: { amount: string; frequency: string };
+  total: number;
+}
+
+export default function Table({ cardData, total }: ITable) {
   return (
     <TableWapper>
       <tbody>
@@ -53,9 +58,9 @@ export default function Table() {
           <th>총 단어수</th>
         </tr>
         <tr>
-          <td>8</td>
-          <td>580</td>
-          <td>1230</td>
+          <td>{cardData?.frequency}</td>
+          <td>{cardData?.amount}</td>
+          <td>{total}</td>
         </tr>
       </tbody>
     </TableWapper>
