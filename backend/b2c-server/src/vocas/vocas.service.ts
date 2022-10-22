@@ -9,13 +9,15 @@ export class VocasService {
   private voca: VocaDto[] = [];
 
   async getAll(voca) {
-    console.log(voca);
     const data = await this.prisma.vocabulary.findMany({
       where: { category: voca },
     });
-
     let splittedData = dataSplitter(data);
-    console.log(splittedData);
     return { ok: true, data: splittedData };
+  }
+
+  async levelUpdate(category, updateData) {
+    console.log(category, updateData);
+    return { ok: true };
   }
 }
