@@ -114,6 +114,10 @@ const Button = styled.button`
   margin-top: 30px;
   margin-bottom: 10px;
   height: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.textSecondary};
   font-weight: ${(props) => props.theme.fontWeight.bold};
@@ -262,7 +266,9 @@ export default function SignIn() {
                   />
                 </InputBox>
                 <Error>{errors?.phone?.message}</Error>
-                <Button>{loading ? <LoadingSvg /> : "Login"}</Button>
+                <Button>
+                  {loading ? <LoadingSvg color="rgb(3, 169, 244)" /> : "Login"}
+                </Button>
               </Form>
             </>
           )}
