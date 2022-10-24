@@ -18,6 +18,7 @@ import { XMarkSvg } from "./XMarkSvg";
 import { SmileSvg } from "./SmileSvg";
 import { FrownSvg } from "./FrownSvg";
 import { LoadingSvg } from "./LoadingSvg";
+import { FolderSvg } from "./FolderSvg";
 export {
   MailSvg,
   PhoneSvg,
@@ -32,6 +33,7 @@ export {
   TestSvg,
   DownArrowSvg,
   ResultCircleSvg,
+  FolderSvg,
   FolderOpenSvg,
   ChangeSvg,
   CheckSvg,
