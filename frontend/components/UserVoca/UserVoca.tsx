@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { FolderSvg, FolderOpenSvg, LoadingSvg } from "@svg";
-import { motion, Variants } from "framer-motion";
+import { FolderSvg, FolderOpenSvg, LoadingSvg, XMarkSvg } from "@svg";
+import { motion, transform, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -27,6 +27,7 @@ const VocaWrapper = styled.div`
   background-color: white;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   margin-bottom: 50px;
+  transition: all ease 2s 0s;
 `;
 
 const VocaCard = styled(motion.div)`
@@ -41,12 +42,6 @@ const VocaCard = styled(motion.div)`
   font-weight: 500;
   span {
     display: block;
-  }
-  :hover {
-    transform: scale(1.05);
-    background-color: #1abc9c;
-    transition: all 0.1s ease-in-out;
-    cursor: pointer;
   }
 `;
 
@@ -84,40 +79,62 @@ const Overray = styled.div`
 
 const Board = styled(motion.div)`
   grid-column: 5/1;
+
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 100%;
   background-color: #333a45;
+`;
+
+const XBtnBox = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  right: 5px;
+  transition: all ease 2s;
+  :hover {
+    cursor: pointer;
+    transform: rotate(180deg);
+  }
 `;
 
 const Arrow = styled(motion.div)`
   position: absolute;
   width: 0;
   height: 0;
-  bottom: -20px;
-  border-bottom: 20px solid #333a45;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
+  top: 105px;
+  border-bottom: 18px solid #333a45;
+  border-right: 18px solid transparent;
+  border-left: 18px solid transparent;
+  :hover {
+    transition: none;
+  }
 `;
 
 const Row = styled.div`
   position: relative;
-  display: flex;
   width: 100%;
   height: 100%;
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-bottom: 20px;
-  grid-template-columns: repeat(4, 1fr);
   :last-child {
     margin-bottom: 0px;
   }
 `;
 
 const ArrowVariants: Variants = {
-  open: { opacity: 1, transition: { delay: 0.2, duration: 1 } },
+  open: {
+    opacity: 1,
+    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
+    transition: { delay: 0.2, duration: 1 },
+  },
   closed: {
     opacity: 0,
+    clipPath: "polygon(50% 100%, 0% 100%, 100% 100%)",
     transition: { delay: 0.05, duration: 0.1 },
   },
 };
@@ -125,6 +142,7 @@ const ArrowVariants: Variants = {
 const BoardVariants: Variants = {
   open: {
     clipPath: "inset(0% 0% 0% 0%)",
+    height: "120px",
     transition: {
       type: "linear",
       bounce: 0,
@@ -134,15 +152,12 @@ const BoardVariants: Variants = {
     },
   },
   closed: {
-    clipPath: "inset(10% 50% 90% 50%)",
-    display: "none",
+    clipPath: "inset(0% 0% 100% 0%)",
+    height: "0px",
     transition: {
       type: "linear",
       bounce: 0,
       duration: 0.3,
-      display: {
-        delay: 0.3,
-      },
     },
   },
 };
@@ -182,23 +197,27 @@ export default function UserVoca({ data }: { data: IProps[] }) {
         .then((data) => setUserVocaData(data));
     }
   }, [userInfo]);
-  console.log(userVocaData);
 
-  const handleClick = (e: any) => {
+  const handleClickOpen = (e: any) => {
+    console.log("open");
+    console.log(e.target);
     const [tag, row] = e.target.id.split("|");
-    console.log(tag, row);
-    if (clickId === tag) {
-      setClickedRow(null);
-      return setClickId(null);
-    }
+    console.log(row);
     setClickId(tag);
     setClickedRow(row);
+  };
+
+  const handleClickClose = () => {
+    console.log("close");
+    setClickId(null);
+    setClickedRow(null);
   };
 
   useEffect(() => {
     setRowData(chunk(data, 4));
   }, [data]);
 
+  console.log(clickId);
   return (
     <Wrapper>
       <h1>Saved Vocabulary</h1>
@@ -208,43 +227,102 @@ export default function UserVoca({ data }: { data: IProps[] }) {
             <Row key={rowIdx}>
               {data.map((item, colIdx) => (
                 <>
-                  <VocaCard
-                    id={item.title + "|" + rowIdx}
-                    key={item.title}
-                    style={{
-                      backgroundColor:
-                        clickId === item.title ? "#00b894" : "#949fb0",
-                    }}
-                    onClick={handleClick}
-                  >
-                    {!item.ok && (
-                      <Overray>
-                        <div>
-                          <p>Not Yet</p>
-                        </div>
-                      </Overray>
-                    )}
-                    <Column>
-                      <span>{item.title}</span>
-                      <Center>
-                        {clickId === item.title ? (
-                          <FolderOpenSvg />
-                        ) : (
-                          <FolderSvg />
-                        )}
-                      </Center>
-                    </Column>
-                    <Arrow
-                      variants={ArrowVariants}
-                      animate={clickId === item.title ? "open" : "closed"}
-                    />
-                  </VocaCard>
+                  {clickId !== null ? (
+                    <VocaCard
+                      initial={false}
+                      id={item.title + "|" + rowIdx}
+                      key={item.title}
+                      onClick={handleClickClose}
+                      style={
+                        clickId === item.title
+                          ? {
+                              backgroundColor: "#00b894",
+                              opacity: 1,
+                            }
+                          : {
+                              backgroundColor: "#949fb0",
+                              opacity: 0.5,
+                              pointerEvents: "none",
+                            }
+                      }
+                      whileHover={
+                        clickId === item.title
+                          ? { cursor: "pointer" }
+                          : { cursor: "none" }
+                      }
+                    >
+                      {!item.ok && (
+                        <Overray>
+                          <div>
+                            <p>Not Yet</p>
+                          </div>
+                        </Overray>
+                      )}
+                      <Column>
+                        <span>{item.title}</span>
+                        <Center>
+                          {clickId === item.title ? (
+                            <FolderOpenSvg />
+                          ) : (
+                            <FolderSvg />
+                          )}
+                        </Center>
+                      </Column>
+                      <Arrow
+                        initial={false}
+                        variants={ArrowVariants}
+                        animate={clickId === item.title ? "open" : "closed"}
+                      />
+                    </VocaCard>
+                  ) : (
+                    <VocaCard
+                      initial={false}
+                      whileHover={{
+                        scale: 1.05,
+                        transition: { duration: 0.2 },
+                      }}
+                      id={item.title + "|" + rowIdx}
+                      key={item.title}
+                      style={{
+                        backgroundColor: "#949fb0",
+                      }}
+                      onClick={handleClickOpen}
+                    >
+                      {!item.ok && (
+                        <Overray>
+                          <div>
+                            <p>Not Yet</p>
+                          </div>
+                        </Overray>
+                      )}
+                      <Column>
+                        <span>{item.title}</span>
+                        <Center>
+                          {clickId === item.title ? (
+                            <FolderOpenSvg />
+                          ) : (
+                            <FolderSvg />
+                          )}
+                        </Center>
+                      </Column>
+                      <Arrow
+                        initial={false}
+                        variants={ArrowVariants}
+                        animate={clickId === item.title ? "open" : "closed"}
+                      />
+                    </VocaCard>
+                  )}
                 </>
               ))}
               <Board
+                initial={false}
                 variants={BoardVariants}
                 animate={clickedRow === rowIdx + "" ? "open" : "closed"}
-              />
+              >
+                <XBtnBox onClick={handleClickClose}>
+                  <XMarkSvg width="18" height="18" color="white" />
+                </XBtnBox>
+              </Board>
             </Row>
           </>
         ))}
