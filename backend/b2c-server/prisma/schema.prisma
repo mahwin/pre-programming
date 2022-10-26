@@ -67,3 +67,6 @@ model SeperatedVocabulary{
   id                  Int      @id @default(autoincrement())
   data                String   @db.LongText
 }
+
+
+
