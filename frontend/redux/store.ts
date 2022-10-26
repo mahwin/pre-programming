@@ -9,7 +9,6 @@ import { createWrapper } from "next-redux-wrapper";
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
-  // yield all([call([getUserSaga])]);
   yield all([getUserSaga()]);
 }
 
@@ -22,7 +21,6 @@ const createStore = () => {
   return store;
 };
 
-export type AppStore = ReturnType<typeof createStore>;
+const store = createStore();
 
-const wrapper = createWrapper<AppStore>(createStore);
-export default wrapper;
+export default store;

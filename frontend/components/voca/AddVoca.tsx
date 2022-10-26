@@ -1,7 +1,11 @@
 import styled from "styled-components";
-import { FolderOpenSvg } from "@svg";
-import React, { useState } from "react";
+import { FolderOpenSvg, LoadingSvg } from "@svg";
+import React, { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
+import { IState } from "../../redux/initialState";
+import useMutation from "@utils/useMutation";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -176,7 +180,7 @@ const cardVariants: Variants = {
     y: 0,
     transition: { type: "linear", stiffness: 800, damping: 34 },
   },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.1 } },
+  closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
 };
 
 interface IAddVoca {
@@ -186,23 +190,61 @@ interface IAddVoca {
         frequency: string;
       }[]
     | null;
+  category: string;
   selected: boolean[];
+  resetSelected: () => void;
   onClickCheck: (e: any) => void;
 }
 
 export default function AddVaca({
   cardData,
   selected,
+  category,
+  resetSelected,
   onClickCheck,
 }: IAddVoca) {
+  console.log(cardData);
+
+  console.log(category);
+  console.log(cardData, "cardData");
+
   const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
-  // const [saveVocas,{loading,data,error}] = useMutation('/')
+  const [saveVoca, { loading, data, error }] = useMutation(
+    `/vocas/${category}`
+  );
 
   const onClickCard = () => {
     setIsCardOpen((prev) => !prev);
   };
-  const onClickSaved = () => {};
-  console.log(selected);
+
+  const userId = useSelector((state: IState) => {
+    return state.user.data?.id;
+  });
+
+  const router = useRouter();
+  const onClickSaved = () => {
+    //로그인한 유저가 아닐 경우 로그인 페이지로
+    if (!userId) router.push("/signIn");
+
+    const level: number[] = [];
+    selected.forEach((check, idx) => {
+      if (check) level.push(idx + 1);
+    });
+
+    //선택한 단어장이 없으면 동작 x
+
+    if (level.length === 0) {
+      alert("내 단어장어 포함될 단어 카드를 선택해 주세요.");
+    }
+
+    saveVoca({ userId, level: JSON.stringify(level) });
+  };
+
+  useEffect(() => {
+    const len = selected.length;
+    if (data?.ok) resetSelected();
+  }, [data]);
+
   return (
     <Wrapper>
       <ButtonBox>
@@ -215,10 +257,10 @@ export default function AddVaca({
           <FolderOpenSvg />
         </Button>
         <Button onClick={onClickSaved} whileTap={{ scale: 0.97 }}>
-          단어장에 저장
+          {loading ? <LoadingSvg color="rgb(0, 184, 148)" /> : "단어장에 저장"}
         </Button>
       </ButtonBox>
-      <Board initial={false} animate={isCardOpen ? "open" : "closed"}>
+      <Board animate={isCardOpen ? "open" : "closed"}>
         <div>
           <Arrow
             variants={ArrowVariants}
@@ -239,7 +281,7 @@ export default function AddVaca({
                       <Bar />
                     </CancleBtnBox>
                     <CardContents>
-                      <h3>Level {idx + 1}</h3>
+                      <h3>Level {idx}</h3>
                       <Grid>
                         <CardContentBox>
                           <p>
@@ -249,7 +291,7 @@ export default function AddVaca({
                           </p>
 
                           <h2>
-                            <b>{cardData?.[idx].amount}</b>
+                            <b>{cardData?.[idx - 1].amount}</b>
                           </h2>
                         </CardContentBox>
                         <CardContentBox>
@@ -259,7 +301,7 @@ export default function AddVaca({
                             </small>
                           </p>
                           <h2>
-                            <p>{cardData?.[idx].frequency} 이상</p>
+                            <p>{cardData?.[idx - 1].frequency} 이상</p>
                           </h2>
                         </CardContentBox>
                       </Grid>

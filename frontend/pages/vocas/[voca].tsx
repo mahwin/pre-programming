@@ -3,68 +3,78 @@ import Footer from "@components/Commons/Footer";
 import VocaDetail from "@components/voca/VocaDetail";
 import Banner from "@components/Commons/Banner";
 import TestButton from "@components/voca/TestButton";
-
+import camelCaser from "@utils/camelCaser";
 import { useEffect } from "react";
 import { VocaArray } from "../../redux/vocas/vocas.dto";
-import wrapper from "../../redux/store";
 import { vocasActions } from "redux/vocas/vocasSlice";
 import { GetServerSideProps } from "next";
 import axios from "axios";
-import camelCaser from "@utils/camelCaser";
 
-interface IVocaItem {
-  word: string;
-  mean: string;
-  frequency: string;
-}
+type Category =
+  | "axios"
+  | "next"
+  | "react"
+  | "styledComponents"
+  | "recoil"
+  | "reactRedux"
+  | "reactQuery"
+  | "reactRouter"
+  | "tailwindcss"
+  | "reactHookForm";
 
+type CategoryKey = {
+  [key in Category]: string;
+};
 interface IVoca {
-  [key: string]: IVocaItem[];
+  category: {
+    [key: string]: {
+      level: {
+        [key: string]: { mean: string; word: string; frequency: string }[];
+      };
+    };
+  };
 }
 
-interface IVocaDetail {
+interface VocaPageProps {
   voca: IVoca;
   category: string;
 }
 
-export default function VocaPage({ voca, category }: IVocaDetail) {
-  console.log(voca);
+export default function VocaPage({ voca, category }: VocaPageProps) {
   return (
     <>
       <Nav />
       <Banner />
-      <VocaDetail voca={voca} category={category} />
-      <TestButton voca={voca} />
+      <VocaDetail voca={voca.category[category].level} category={category} />
+      {/* <TestButton voca={pageProps} /> */}
       <Footer />
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps =
-  //@ts-ignore
-  wrapper.getServerSideProps((store) => async ({ params: { voca } }: any) => {
-    if (!VocaArray.includes(voca)) {
-      return {
-        // redirect: { permanent: false, destination: "/404" },
-        props: {},
-      };
-    }
-    const camelCasedName = camelCaser(voca);
-
-    const data = await (
-      await axios.get(`${process.env.API_HOST}/vocas/${camelCasedName}`)
-    ).data;
-    //데이터 통신이 정상이면 vocas 페이지 보여주고
-    if (data.ok) {
-      store.dispatch(vocasActions.getVoca({ data: data.data, category: voca }));
-      return {
-        props: { voca: data.data, category: voca },
-      };
-    }
-
-    //데이터 동신에 이상이 있으면 홈페이지로
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const voca = params?.voca as string;
+  //잘못된 주소 일 경우 404page로 이동
+  if (!VocaArray.includes(voca)) {
     return {
-      // redirect: { permanent: false, destination: "." },
+      redirect: { permanent: false, destination: "/404" },
       props: {},
     };
-  });
+  }
+
+  const response = await (
+    await axios.get(`${process.env.API_HOST}/vocas/all`)
+  ).data;
+
+  if (response.ok) {
+    return {
+      props: { voca: JSON.parse(response.data), category: camelCaser(voca) },
+    };
+    //통신 장애시 home으로
+  } else {
+    return {
+      redirect: { permanent: false, destination: "/" },
+      props: {},
+    };
+  }
+};

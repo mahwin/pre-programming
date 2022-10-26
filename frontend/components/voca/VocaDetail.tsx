@@ -157,21 +157,19 @@ const Overlay = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99;
+  z-index: 1;
 `;
 
 interface IVocaItem {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
-interface IVoca {
-  [key: string]: IVocaItem[];
+  [key: string]: {
+    mean: string;
+    word: string;
+    frequency: string;
+  }[];
 }
 
 interface IVocaDetail {
-  voca: IVoca;
+  voca: IVocaItem;
   category: string;
 }
 
@@ -180,19 +178,21 @@ interface ICard {
   frequency: string;
 }
 
-export default function VocaDetail({ voca, category }: any) {
+export default function VocaDetail({ voca, category }: IVocaDetail) {
+  console.log(voca);
   const [id, setId] = useState<string | null>(null);
   const [selectedCard, setSelectedCard] = useState<boolean[]>(
-    Array.from({ length: 7 }, () => false)
+    Array.from({ length: 10 }, () => false)
   );
   const [total, setTotal] = useState<number>(0);
   const [cardData, setCardData] = useState<ICard[] | null>(null);
 
   useEffect(() => {
-    let sum = voca.reduce((pre: number, cur: any) => (pre += cur.length), 0);
-    setTotal(sum);
+    const levelArr = Object.keys(voca);
+    setTotal(levelArr.length);
     let baseData: ICard[] = [];
-    voca.forEach((item: any) => {
+    levelArr.forEach((level: string) => {
+      const item = voca[level];
       let tmp = {
         amount: item.length + "",
         frequency: item[Math.round(item.length / 2)].frequency,
@@ -201,6 +201,10 @@ export default function VocaDetail({ voca, category }: any) {
     });
     setCardData(baseData);
   }, [voca]);
+
+  const onResetSelected = () => {
+    setSelectedCard(Array.from({ length: 10 }, () => false));
+  };
 
   const onClickCheck = (e: any) => {
     const voca = Number(e.currentTarget.id || e.currentTarget.name);
@@ -213,35 +217,39 @@ export default function VocaDetail({ voca, category }: any) {
       <DetailWrapper>
         <Title>{category}</Title>
         <VocaCardWrapper>
-          {voca.map((item: any, idx: number) => (
-            <VocaCard key={idx + ""} layoutId={idx + ""}>
+          {Object.keys(voca).map((level: string) => (
+            <VocaCard key={level + ""} layoutId={level + ""}>
               <CheckBox>
                 <input
                   onChange={onClickCheck}
                   type="checkbox"
                   value="None"
-                  id={idx + ""}
+                  id={level + ""}
                   name="check"
-                  checked={selectedCard[idx]}
+                  checked={selectedCard[+level]}
                 />
-                <label htmlFor={idx + ""}></label>
+                <label htmlFor={level + ""}></label>
               </CheckBox>
               <LevelBox>
                 <ContentTitle>{category}</ContentTitle>
-                <Level> Level : {idx + 1}</Level>
+                <Level> Level : {level}</Level>
               </LevelBox>
               <VocaContentBox>
-                {cardData && <Table cardData={cardData?.[idx]} total={total} />}
+                {cardData && (
+                  <Table cardData={cardData?.[+level]} total={total} />
+                )}
               </VocaContentBox>
-              <SvgBox onClick={() => setId(idx + "")}>
+              <SvgBox onClick={() => setId(level + "")}>
                 <OpenSvg width="20" height="20" />
               </SvgBox>
             </VocaCard>
           ))}
         </VocaCardWrapper>
         <AddVoca
+          category={category}
           cardData={cardData}
           selected={selectedCard}
+          resetSelected={onResetSelected}
           onClickCheck={onClickCheck}
         />
       </DetailWrapper>
@@ -260,6 +268,7 @@ export default function VocaDetail({ voca, category }: any) {
                 width: 600,
                 height: 500,
                 top: "80px",
+                zIndex: 100,
               }}
             >
               <ModalTitleBox>

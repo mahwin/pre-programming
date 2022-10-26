@@ -4,14 +4,12 @@ import GlobalStyle from "../styles/global-styles";
 import theme, { lightTheme, darkTheme } from "../styles/theme";
 import { Provider } from "react-redux";
 import { useState } from "react";
-import wrapper from "../redux/store";
+import store from "../redux/store";
 import ThemeButton from "@components/Commons/ThemeButton";
 import axios from "axios";
 import LocalStorage from "@utils/localStorage";
 
-function App({ Component, ...rest }: AppProps) {
-  const { store, props } = wrapper.useWrappedStore(rest);
-  const { pageProps } = props;
+function App({ Component, pageProps }: AppProps) {
   const [isDark, setTheme] = useState(true);
   const toggleTheme = () => {
     setTheme((prev) => !prev);
