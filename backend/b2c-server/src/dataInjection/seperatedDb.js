@@ -40,7 +40,7 @@ async function dbPush() {
     const levelObj = dataSplitter(dicObj);
     categoryObj[category] = levelObj;
   }
-  const savedData = JSON.stringify({ cateogry: categoryObj });
+  const savedData = JSON.stringify({ category: categoryObj });
   console.log(savedData);
   await prisma.SeperatedVocabulary.create({
     data: {
