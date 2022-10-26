@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { FolderSvg, FolderOpenSvg, LoadingSvg, XMarkSvg } from "@svg";
-import { motion, transform, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -43,6 +43,9 @@ const VocaCard = styled(motion.div)`
   span {
     display: block;
   }
+  div {
+    pointer-events: none;
+  }
 `;
 
 const Center = styled.div`
@@ -55,6 +58,7 @@ const Center = styled.div`
 const Column = styled.div``;
 
 const Overray = styled.div`
+  pointer-events: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -79,10 +83,8 @@ const Overray = styled.div`
 
 const Board = styled(motion.div)`
   grid-column: 5/1;
-
   position: relative;
   width: 100%;
-  height: 100%;
   background-color: #333a45;
 `;
 
@@ -113,16 +115,15 @@ const Arrow = styled(motion.div)`
   }
 `;
 
-const Row = styled.div`
+const Row = styled(motion.div)`
   position: relative;
   width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-bottom: 20px;
   :last-child {
-    margin-bottom: 0px;
+    margin-bottom: -20px;
   }
 `;
 
@@ -143,6 +144,7 @@ const BoardVariants: Variants = {
   open: {
     clipPath: "inset(0% 0% 0% 0%)",
     height: "120px",
+    marginBottom: "20px",
     transition: {
       type: "linear",
       bounce: 0,
@@ -224,8 +226,8 @@ export default function UserVoca({ data }: { data: IProps[] }) {
       <VocaWrapper>
         {rowData?.map((data, rowIdx) => (
           <>
-            <Row key={rowIdx}>
-              {data.map((item, colIdx) => (
+            <Row key={rowIdx} initial={false}>
+              {data.map((item) => (
                 <>
                   {clickId !== null ? (
                     <VocaCard
@@ -277,15 +279,18 @@ export default function UserVoca({ data }: { data: IProps[] }) {
                   ) : (
                     <VocaCard
                       initial={false}
-                      whileHover={{
-                        scale: 1.05,
-                        transition: { duration: 0.2 },
-                      }}
+                      whileHover={
+                        item.ok
+                          ? {
+                              scale: 1.05,
+                              transition: { duration: 0.2 },
+                              cursor: "pointer",
+                            }
+                          : {}
+                      }
+                      style={{ pointerEvents: item.ok ? "auto" : "none" }}
                       id={item.title + "|" + rowIdx}
                       key={item.title}
-                      style={{
-                        backgroundColor: "#949fb0",
-                      }}
                       onClick={handleClickOpen}
                     >
                       {!item.ok && (
