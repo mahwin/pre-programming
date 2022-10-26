@@ -112,6 +112,9 @@ export default function Answers({
   onBack,
 }: IAnswers) {
   const [result, setResult] = useState<Result[] | null>(null);
+  console.log("answerList", answerList);
+  console.log("testData:", testData);
+  console.log("testAnswer:", testAnswer);
 
   useEffect(() => {
     let copy: Result[] = [];
@@ -125,10 +128,9 @@ export default function Answers({
           testData[idx]?.selectList[correct - 1].slice(0, 10),
         ]);
     });
-    console.log(copy);
-    setResult(result);
-  }, []);
-  console.log(result);
+    setResult(copy);
+  }, [answerList, testData, testAnswer]);
+
   return (
     <Wrapper>
       <h1>Your Answers</h1>

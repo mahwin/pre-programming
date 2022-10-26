@@ -192,7 +192,7 @@ const Overlay = styled(motion.div)`
 
 const TestCloseBtn = styled.button`
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   right: 15vw;
   z-index: 99;
   height: 40px;
@@ -231,15 +231,21 @@ function FloatingButton({ testData }: any) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const keys = Object.keys(testCondition);
-    const blank = keys.map((key) => {
+    let isBlank = false;
+    keys.forEach((key) => {
       if (testCondition[key as KeyType] === null) {
         alert(`${key === "long" ? "시간을" : "단어수를"} 선택해주세요!`);
-        return key;
+        isBlank = true;
       }
     });
-    if (!blank) return;
-    setIsTestOpen(true);
-    setIsOpen(false);
+    console.log(isBlank);
+    if (isBlank) {
+      return;
+    }
+    if (!isBlank) {
+      setIsTestOpen(true);
+      setIsOpen(false);
+    }
   };
 
   return (

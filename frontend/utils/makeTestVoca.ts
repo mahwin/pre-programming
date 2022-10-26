@@ -34,7 +34,6 @@ export default function makeTestVoca(array: IVocas, many: number) {
   const need = 4 * many;
   const shuffleArr = shuffle(spreadArr, need);
   const answerList = answerMaker(many);
-  console.log(answerList);
   let testData = [];
   for (let i = 0; i < many; i++) {
     let quiz = { question: "", selectList: [] as string[] };
