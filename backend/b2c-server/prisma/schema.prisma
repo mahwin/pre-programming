@@ -65,6 +65,5 @@ model UserAddVocabulary {
 
 model SeperatedVocabulary{
   id                  Int      @id @default(autoincrement())
-  category            String   @unique
   data                String   @db.LongText
 }
