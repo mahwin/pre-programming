@@ -211,15 +211,7 @@ interface ITestCondition {
 
 type KeyType = "many" | "long";
 
-interface ITestData {
-  word: string;
-  correct: string;
-  example: string;
-  exampl1: string;
-  exampl2: string;
-}
-
-function FloatingButton({ voca }: any) {
+function FloatingButton({ testData }: any) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isTestOpen, setIsTestOpen] = useState<boolean>(false);
   const [testCondition, setTestCondition] = useState<ITestCondition>({
@@ -348,7 +340,7 @@ function FloatingButton({ voca }: any) {
             >
               Stop
             </TestCloseBtn>
-            <Quiz voca={voca} testCondition={testCondition} />
+            <Quiz voca={testData} testCondition={testCondition} />
           </Overlay>
         </>
       ) : null}
