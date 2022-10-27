@@ -1,5 +1,5 @@
 import { initialUserState, IUserState } from "./user/user.dto";
-import { initialVocasState, ITmpVocaState } from "./vocas/vocas.dto";
+import { initialVocasState, IVocaState } from "./vocas/vocas.dto";
 
 const initialState = {
   user: initialUserState,
@@ -8,7 +8,7 @@ const initialState = {
 
 interface IState {
   user: IUserState;
-  vocas: ITmpVocaState;
+  vocas: IVocaState;
 }
 
 export default initialState;

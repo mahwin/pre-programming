@@ -1,63 +1,59 @@
 import { AxiosError } from "axios";
 
-interface IVoca {
-  id: number;
+interface IVocaItem {
   frequency: number;
   word: string;
-  category: string;
-  level: number;
   mean: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
-interface IVocas {
-  vocas: {
-    react: { data: IVoca[] | null };
-    tailwindCss: { data: IVoca[] | null };
-    recoil: { data: IVoca[] | null };
-    next: { data: IVoca[] | null };
-    reactRedux: { data: IVoca[] | null };
-    reactQuery: { data: IVoca[] | null };
-    reactHookForm: { data: IVoca[] | null };
-    styledComponenets: { data: IVoca[] | null };
-    reactRouter: { data: IVoca[] | null };
-    axios: { data: IVoca[] | null };
+const categories = [
+  "axios",
+  "next",
+  "react",
+  "styledComponents",
+  "recoil",
+  "reactRedux",
+  "reactQuery",
+  "reactRouter",
+  "tailwindcss",
+  "reactHookForm",
+];
+
+type CategoryType =
+  | "axios"
+  | "next"
+  | "react"
+  | "styledComponents"
+  | "recoil"
+  | "reactRedux"
+  | "reactQuery"
+  | "reactRouter"
+  | "tailwindcss"
+  | "reactHookForm";
+
+type CategoryKey = {
+  [key in CategoryType]: string;
+};
+interface IVoca {
+  category: {
+    [key: string]: {
+      level: {
+        [key: string]: IVocaItem[];
+      };
+    };
   };
 }
 
-interface IVocaState {
-  error: AxiosError | null;
-  data: IVocas;
-}
-
-// const initialVocasState = {
-//   react: { data: null },
-//   tailwindCss: { data: null },
-//   recoil: { data: null },
-//   next: { data: null },
-//   reactRedux: { data: null },
-//   reactQuery: { data: null },
-//   reactHookForm: { data: null },
-//   styledComponenets: { data: null },
-//   reactRouter: { data: null },
-//   axios: { data: null },
-// };
-
-const initialVocasState: ITmpVocaState = {
+const initialVocasState: IVocaState = {
+  loading: false,
   data: null,
-  category: null,
+  error: null,
 };
 
-interface IVocaItem {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
-interface ITmpVocaState {
-  data: [IVocaItem[]] | null;
-  category: string | null;
+interface IVocaState {
+  loading: boolean;
+  data: IVoca | null;
+  error: null | AxiosError;
 }
 
 const VocaArray = [
@@ -85,5 +81,5 @@ type VocasType =
   | "reactRouter"
   | "axios";
 
-export { initialVocasState, VocaArray };
-export type { IVocas, IVocaState, VocasType, IVoca, ITmpVocaState };
+export { VocaArray, initialVocasState };
+export type { IVocaState, VocasType, IVoca };

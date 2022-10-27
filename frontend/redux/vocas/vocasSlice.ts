@@ -3,12 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 import { VocasType } from "./vocas.dto";
 
 const vocasSlice = createSlice({
-  name: "voca",
+  name: "vocas",
   initialState: initialState.vocas,
   reducers: {
-    getVoca: (state, { payload: { data, category } }) => {
-      state.data = data;
-      state.category = category;
+    getVocas: (state) => {
+      state.loading = true;
+    },
+    getVocasSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.data = JSON.parse(payload.data);
+    },
+    getVocasError: (state, { payload }) => {
+      state.error = payload;
+      state.loading = false;
     },
   },
 });
