@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { VocaDto } from './dto/vocas-voca.dto';
 import { PrismaService } from 'prisma/prisma.service';
-import dataSplitter from '../utils/dataSplitter';
+import camelCaser from 'src/utils/camelCaser';
 import uniqueArr from 'src/utils/uniqueArr';
 import { UserDto } from '../user/dto/user.dto';
 import { JwtService } from '@nestjs/jwt';
@@ -11,12 +11,13 @@ export class VocasService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
   private voca: VocaDto[] = [];
 
-  async getAll(voca) {
-    const data = await this.prisma.vocabulary.findMany({
-      where: { category: voca },
+  async getAll() {
+    const data = await this.prisma.seperatedVocabulary.findUnique({
+      where: {
+        id: 2,
+      },
     });
-    let splittedData = dataSplitter(data);
-    return { ok: true, data: splittedData };
+    return { ok: true, data: data.data };
   }
 
   async levelUpdate(category: string, { userId, level }) {
@@ -24,7 +25,8 @@ export class VocasService {
       where: { userId },
     });
     if (isExisted) {
-      const oldLevel = isExisted[category];
+      category = camelCaser(category);
+      const oldLevel = isExisted[category] || '[]';
       const data = await this.prisma.userAddVocabulary.update({
         where: {
           userId,
@@ -48,12 +50,20 @@ export class VocasService {
     }
     return { ok: true, message: '저장 성공' };
   }
-  async getMyVoca(userId) {
-    const levels = await this.prisma.userAddVocabulary.findUnique({
+  async getUserVocas(req) {
+    const userId = await this.parsePayload(req);
+    const userVocas = await this.prisma.userAddVocabulary.findUnique({
       where: {
-        ...userId,
+        userId: +userId,
       },
     });
-    return { ok: true, data: levels };
+
+    return { ok: true, data: userVocas };
+  }
+
+  async parsePayload(req): Promise<UserDto> {
+    const signedJwtAccessToken = req.headers.authorization.split(' ')[1];
+    const { userId }: any = this.jwtService.decode(signedJwtAccessToken);
+    return userId;
   }
 }

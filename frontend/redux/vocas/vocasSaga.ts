@@ -12,10 +12,10 @@ function* getVocas() {
   }
 }
 
-function* watchGetUser() {
+function* watchGetVocas() {
   yield takeLatest(vocasActions.getVocas, getVocas);
 }
 
-export default function* getUserSaga() {
-  yield all([fork(watchGetUser)]);
+export default function* getVocasSaga() {
+  yield all([fork(watchGetVocas)]);
 }
