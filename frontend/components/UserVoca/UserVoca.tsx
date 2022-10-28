@@ -1,11 +1,15 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
-import { FolderSvg, FolderOpenSvg, LoadingSvg, XMarkSvg } from "@svg";
+import { Component, Fragment, useEffect, useState } from "react";
+import { FolderSvg, FolderOpenSvg, LoadingSvg, XMarkSvg, FrownSvg } from "@svg";
 import { motion, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
-import axios from "axios";
-import { useSelector } from "react-redux";
+import { camelCaserHeadLower } from "@utils/camelCaser";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import { userVocasActions } from "redux/userVocas/userVocasSlice";
+import { vocasActions } from "redux/vocas/vocasSlice";
+import LevelCard from "./LevelCard";
+import { title } from "process";
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,7 +31,6 @@ const VocaWrapper = styled.div`
   background-color: white;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   margin-bottom: 50px;
-  transition: all ease 2s 0s;
 `;
 
 const VocaCard = styled(motion.div)`
@@ -55,7 +58,16 @@ const Center = styled.div`
   margin: 5px 0px;
 `;
 
-const Column = styled.div``;
+const Column = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    color: white;
+    font-weight: 500;
+  }
+`;
 
 const Overray = styled.div`
   pointer-events: none;
@@ -81,11 +93,22 @@ const Overray = styled.div`
   }
 `;
 
-const Board = styled(motion.div)`
+const Board = styled(motion.ul)`
   grid-column: 5/1;
   position: relative;
   width: 100%;
+  height: 100%;
   background-color: #333a45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const BoardItemWrapper = styled.div`
+  padding: 24px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
 `;
 
 const XBtnBox = styled.div`
@@ -95,6 +118,7 @@ const XBtnBox = styled.div`
   align-items: center;
   padding: 8px;
   right: 5px;
+  top: 5px;
   transition: all ease 2s;
   :hover {
     cursor: pointer;
@@ -141,9 +165,33 @@ const ArrowVariants: Variants = {
 };
 
 const BoardVariants: Variants = {
-  open: {
+  smallOpen: {
     clipPath: "inset(0% 0% 0% 0%)",
     height: "120px",
+    marginBottom: "20px",
+    transition: {
+      type: "linear",
+      bounce: 0,
+      duration: 0.7,
+      delayChildren: 0.3,
+      staggerChildren: 0.05,
+    },
+  },
+  normalOpen: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    height: "240px",
+    marginBottom: "20px",
+    transition: {
+      type: "linear",
+      bounce: 0,
+      duration: 0.7,
+      delayChildren: 0.3,
+      staggerChildren: 0.05,
+    },
+  },
+  bigOpen: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    height: "360px",
     marginBottom: "20px",
     transition: {
       type: "linear",
@@ -171,165 +219,299 @@ interface IProps {
   install: string;
 }
 
-export default function UserVoca({ data }: { data: IProps[] }) {
+type categoriesType =
+  | "next"
+  | "react"
+  | "reactHookForm"
+  | "reactQuery"
+  | "reactRedux"
+  | "reactRouter"
+  | "recoil"
+  | "styledComponents"
+  | "tailwindcss"
+  | "axios";
+
+const categories = [
+  "next",
+  "react",
+  "reactHookForm",
+  "reactQuery",
+  "reactRedux",
+  "reactRouter",
+  "recoil",
+  "styledComponents",
+  "tailwindcss",
+  "axios",
+];
+
+interface IWord {
+  word: string;
+  mean: string;
+  frequency: string;
+}
+
+interface ITmp {
+  data: number[] | null;
+  len: number;
+}
+
+interface IuserVocaData {
+  [key: string]: ITmp | null;
+}
+
+interface IclickedVoca {
+  next?: string[];
+  react?: string[];
+  reactHookForm?: string[];
+  reactQuery?: string[];
+  reactRedux?: string[];
+  reactRouter?: string[];
+  recoil?: string[];
+  styledComponents?: string[];
+  tailwindcss?: string[];
+  axios?: string[];
+}
+
+export default function UserVoca({ baseData }: { baseData: IProps[] }) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<IProps[][] | null>(null);
-  const [userVocaData, setUserVocaData] = useState<any>(null);
-  const {
-    loading,
-    data: userInfo,
-    error,
-  } = useSelector((state: any) => {
+  const [userVocaData, setUserVocaData] = useState<IuserVocaData | null>(null);
+  const [clickedVoca, setClickedVoca] = useState<IclickedVoca>({});
+  //유저 정보 없으면 로그인 페이지
+  const userInfo = useSelector((state: any) => {
     state.userReducer;
     return state.user;
   });
   const router = useRouter();
-
   useEffect(() => {
-    if (error) router.push("singIn");
-  }, [loading, error]);
-  useEffect(() => {
-    if (userInfo) {
-      axios
-        .post(`${process.env.API_HOST}/vocas/me`, {
-          userId: userInfo.id,
-        })
-        .then((res) => res.data)
-        .then((data) => setUserVocaData(data));
-    }
+    if (userInfo.error) router.push("singIn");
   }, [userInfo]);
 
+  //유저가 저장한 보카 목록 불러오기 ,항상 다시 불러옴
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userVocasActions.getUserVocas());
+  }, [userInfo.data]);
+
+  const userVocas = useSelector((state: any) => {
+    state.userVocasReducer;
+    return state.userVocas;
+  });
+
+  //전체 보카 데이터 없으면 api 콜
+  const vocas = useSelector((state: any) => {
+    return state.vocas;
+  });
+  useEffect(() => {
+    if (!vocas.data) {
+      dispatch(vocasActions.getVocas());
+    }
+  }, [vocas]);
+
+  useEffect(() => {
+    setRowData(chunk(baseData, 4));
+  }, [baseData]);
+
+  useEffect(() => {
+    if (vocas.data && userVocas.data) {
+      let userSavedData: IuserVocaData = {};
+      for (let category of categories) {
+        let savedData = userVocas.data[category];
+        if (savedData) {
+          let tmp = JSON.parse(userVocas.data[category]);
+          userSavedData[category] = { data: tmp, len: tmp.length };
+        } else {
+          userSavedData[category] = { data: null, len: 0 };
+        }
+      }
+      setUserVocaData(userSavedData);
+    }
+  }, [vocas.data, userVocas.data]);
+
   const handleClickOpen = (e: any) => {
-    console.log("open");
-    console.log(e.target);
     const [tag, row] = e.target.id.split("|");
-    console.log(row);
-    setClickId(tag);
+    setClickId(camelCaserHeadLower(tag));
     setClickedRow(row);
   };
 
   const handleClickClose = () => {
-    console.log("close");
     setClickId(null);
     setClickedRow(null);
   };
 
-  useEffect(() => {
-    setRowData(chunk(data, 4));
-  }, [data]);
-
-  console.log(clickId);
+  const handleClickCard = (e: any) => {
+    const [category, level] = e.currentTarget.id.split("|");
+    let copy = clickedVoca[category as categoriesType] || [];
+    if (copy.includes(level)) {
+      copy = copy.filter((item) => level !== item);
+    } else {
+      copy.push(level);
+    }
+    setClickedVoca((prev) => ({ ...prev, [category]: copy }));
+  };
+  console.log(clickedVoca);
   return (
     <Wrapper>
       <h1>Saved Vocabulary</h1>
       <VocaWrapper>
         {rowData?.map((data, rowIdx) => (
-          <>
-            <Row key={rowIdx} initial={false}>
-              {data.map((item) => (
-                <>
-                  {clickId !== null ? (
-                    <VocaCard
+          <Row key={rowIdx} initial={false}>
+            {data.map((item, colIdx) => (
+              <Fragment key={item.title}>
+                {clickId !== null ? (
+                  <VocaCard
+                    initial={false}
+                    id={item.title + "|" + rowIdx}
+                    onClick={handleClickClose}
+                    style={
+                      clickId === camelCaserHeadLower(item.title)
+                        ? {
+                            backgroundColor: "#00b894",
+                            opacity: 1,
+                          }
+                        : {
+                            backgroundColor: "#949fb0",
+                            opacity: 0.5,
+                            pointerEvents: "none",
+                          }
+                    }
+                    whileHover={
+                      clickId === camelCaserHeadLower(item.title)
+                        ? { cursor: "pointer" }
+                        : { cursor: "none" }
+                    }
+                  >
+                    {!item.ok && (
+                      <Overray>
+                        <div>
+                          <p>Not Yet</p>
+                        </div>
+                      </Overray>
+                    )}
+                    <Column>
+                      <span>
+                        {item.title}
+                        {userVocaData &&
+                          " (" +
+                            userVocaData?.[camelCaserHeadLower(item.title)]
+                              ?.len +
+                            ")"}
+                      </span>
+                      <Center>
+                        {clickId === camelCaserHeadLower(item.title) ? (
+                          <FolderOpenSvg />
+                        ) : (
+                          <FolderSvg />
+                        )}
+                      </Center>
+                    </Column>
+                    <Arrow
                       initial={false}
-                      id={item.title + "|" + rowIdx}
-                      key={item.title}
-                      onClick={handleClickClose}
-                      style={
-                        clickId === item.title
-                          ? {
-                              backgroundColor: "#00b894",
-                              opacity: 1,
-                            }
-                          : {
-                              backgroundColor: "#949fb0",
-                              opacity: 0.5,
-                              pointerEvents: "none",
-                            }
+                      variants={ArrowVariants}
+                      animate={
+                        clickId === camelCaserHeadLower(item.title)
+                          ? "open"
+                          : "closed"
                       }
-                      whileHover={
-                        clickId === item.title
-                          ? { cursor: "pointer" }
-                          : { cursor: "none" }
-                      }
-                    >
-                      {!item.ok && (
-                        <Overray>
-                          <div>
-                            <p>Not Yet</p>
-                          </div>
-                        </Overray>
-                      )}
-                      <Column>
-                        <span>{item.title}</span>
-                        <Center>
-                          {clickId === item.title ? (
-                            <FolderOpenSvg />
-                          ) : (
-                            <FolderSvg />
-                          )}
-                        </Center>
-                      </Column>
-                      <Arrow
-                        initial={false}
-                        variants={ArrowVariants}
-                        animate={clickId === item.title ? "open" : "closed"}
-                      />
-                    </VocaCard>
-                  ) : (
-                    <VocaCard
+                    />
+                  </VocaCard>
+                ) : (
+                  <VocaCard
+                    initial={false}
+                    whileHover={
+                      item.ok
+                        ? {
+                            scale: 1.05,
+                            transition: { duration: 0.2 },
+                            cursor: "pointer",
+                          }
+                        : {}
+                    }
+                    style={{ pointerEvents: item.ok ? "auto" : "none" }}
+                    id={item.title + "|" + rowIdx}
+                    onClick={handleClickOpen}
+                  >
+                    {!item.ok && (
+                      <Overray>
+                        <div>
+                          <p>Not Yet</p>
+                        </div>
+                      </Overray>
+                    )}
+                    <Column>
+                      <span>
+                        {item.title}
+                        {userVocaData &&
+                          " (" +
+                            userVocaData?.[camelCaserHeadLower(item.title)]
+                              ?.len +
+                            ")"}
+                      </span>
+                      <Center>
+                        {clickId === item.title ? (
+                          <FolderOpenSvg />
+                        ) : (
+                          <FolderSvg />
+                        )}
+                      </Center>
+                    </Column>
+                    <Arrow
                       initial={false}
-                      whileHover={
-                        item.ok
-                          ? {
-                              scale: 1.05,
-                              transition: { duration: 0.2 },
-                              cursor: "pointer",
+                      variants={ArrowVariants}
+                      animate={clickId === item.title ? "open" : "closed"}
+                    />
+                  </VocaCard>
+                )}
+              </Fragment>
+            ))}
+            <Board
+              key={rowIdx}
+              initial={false}
+              variants={BoardVariants}
+              animate={
+                clickedRow === rowIdx + ""
+                  ? (userVocaData?.[clickId as string]?.len as number) <= 4
+                    ? "smallOpen"
+                    : (userVocaData?.[clickId as string]?.len as number) <= 8
+                    ? "normalOpen"
+                    : "bigOpen"
+                  : "closed"
+              }
+            >
+              <XBtnBox onClick={handleClickClose}>
+                <XMarkSvg width="18" height="18" color="white" />
+              </XBtnBox>
+              <BoardItemWrapper>
+                {userVocas.data && clickId && (
+                  <>
+                    {userVocas.data[clickId] ? (
+                      JSON.parse(userVocas?.data[clickId]).map(
+                        (level: string) => (
+                          <LevelCard
+                            key={level}
+                            amount={
+                              vocas.data.category[clickId].level[level].length
                             }
-                          : {}
-                      }
-                      style={{ pointerEvents: item.ok ? "auto" : "none" }}
-                      id={item.title + "|" + rowIdx}
-                      key={item.title}
-                      onClick={handleClickOpen}
-                    >
-                      {!item.ok && (
-                        <Overray>
-                          <div>
-                            <p>Not Yet</p>
-                          </div>
-                        </Overray>
-                      )}
-                      <Column>
-                        <span>{item.title}</span>
-                        <Center>
-                          {clickId === item.title ? (
-                            <FolderOpenSvg />
-                          ) : (
-                            <FolderSvg />
-                          )}
-                        </Center>
-                      </Column>
-                      <Arrow
-                        initial={false}
-                        variants={ArrowVariants}
-                        animate={clickId === item.title ? "open" : "closed"}
-                      />
-                    </VocaCard>
-                  )}
-                </>
-              ))}
-              <Board
-                initial={false}
-                variants={BoardVariants}
-                animate={clickedRow === rowIdx + "" ? "open" : "closed"}
-              >
-                <XBtnBox onClick={handleClickClose}>
-                  <XMarkSvg width="18" height="18" color="white" />
-                </XBtnBox>
-              </Board>
-            </Row>
-          </>
+                            onClickCard={handleClickCard}
+                            level={level}
+                            category={clickId}
+                          />
+                        )
+                      )
+                    ) : (
+                      <div style={{ gridColumn: "5/1" }}>
+                        <Column style={{ marginTop: "20px" }}>
+                          <FrownSvg width="80" height="80" color="white" />
+                          <h1>Empty</h1>
+                        </Column>
+                      </div>
+                    )}
+                  </>
+                )}
+              </BoardItemWrapper>
+            </Board>
+          </Row>
         ))}
       </VocaWrapper>
     </Wrapper>
