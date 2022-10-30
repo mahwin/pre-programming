@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ChangeSvg, LoadingSvg } from "@svg";
 import dynamic from "next/dynamic";
 import Form from "./Form";
+import PageLoading from "@components/Commons/PageLoading";
 
 const Avatars = dynamic(() => import("./Avatars"), {
   ssr: false,
@@ -162,81 +163,98 @@ export default function UserInfo({ data }: { data: IUser }) {
     setIsAvatarsOpen(false);
   };
 
+  useEffect(() => {
+    setAvatar(data?.avatar);
+  }, [data]);
+
   const onClickAvatars = () => setIsAvatarsOpen(!isAvatarsOpen);
   const onSelectedAvatar = (e: MouseEvent) => {
     setAvatar(e.currentTarget.id);
   };
+  console.log(data);
 
   return (
     <>
-      <Wrapper>
-        <Row>
-          <Header>
-            <h1>Profile</h1>
-            <ToggleBox onChange={canChangeSwitch}>
-              <div style={{ position: "relative" }}>
-                <NormalSpan>CAN</NormalSpan>
-                {!Mutatable ? (
-                  <>
-                    <NormalSpan
-                      style={{ color: "#a29bfe", position: "absolute" }}
-                    >
-                      '
+      {!data ? (
+        <PageLoading />
+      ) : (
+        <>
+          <Wrapper>
+            <Row>
+              <Header>
+                <h1>Profile</h1>
+                <ToggleBox onChange={canChangeSwitch}>
+                  <div style={{ position: "relative" }}>
+                    <NormalSpan>CAN</NormalSpan>
+                    {!Mutatable ? (
+                      <>
+                        <NormalSpan
+                          style={{ color: "#a29bfe", position: "absolute" }}
+                        >
+                          '
+                        </NormalSpan>
+                        <Label
+                          // initial={false}
+                          animate={{ y: bounceY }}
+                          transition={{ duration: 2.5 }}
+                        >
+                          <span>T</span>
+                        </Label>
+                      </>
+                    ) : null}
+                    <NormalSpan style={{ marginLeft: "24px" }}>
+                      CHANGE
                     </NormalSpan>
-                    <Label
+                  </div>
+                  <Toggle
+                    initial={false}
+                    variants={toggleBarVariants}
+                    onClick={canChangeSwitch}
+                    animate={Mutatable ? "left" : "right"}
+                  >
+                    <ToggleCircle
                       initial={false}
-                      animate={{ y: bounceY }}
-                      transition={{ duration: 2.5 }}
-                    >
-                      <span>T</span>
-                    </Label>
-                  </>
-                ) : null}
-                <NormalSpan style={{ marginLeft: "24px" }}>CHANGE</NormalSpan>
-              </div>
-              <Toggle
-                initial={false}
-                variants={toggleBarVariants}
-                onClick={canChangeSwitch}
-                animate={Mutatable ? "left" : "right"}
-              >
-                <ToggleCircle
-                  initial={false}
-                  variants={toggleCircleVariants}
-                  animate={Mutatable ? "left" : "right"}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                      variants={toggleCircleVariants}
+                      animate={Mutatable ? "left" : "right"}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    />
+                  </Toggle>
+                </ToggleBox>
+              </Header>
+              <Cicle>
+                {data && (
+                  <Image
+                    src={`/avatars/${avatar}.png`}
+                    layout="fill"
+                    priority
+                  />
+                )}
+                {Mutatable && (
+                  <SvgBox
+                    onClick={onClickAvatars}
+                    variants={changeVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    <ChangeSvg width="30" height="30" color="#a29bfe" />
+                  </SvgBox>
+                )}
+              </Cicle>
+              {data && (
+                <Form
+                  data={{
+                    name: data?.name,
+                    phone: data?.phone,
+                    currentAvatar: avatar,
+                  }}
+                  isAvatarChange={avatar !== data?.avatar ? true : false}
+                  isCan={Mutatable}
                 />
-              </Toggle>
-            </ToggleBox>
-          </Header>
-          <Cicle>
-            {data && (
-              <Image src={`/avatars/${avatar}.png`} layout="fill" priority />
-            )}
-            {Mutatable && (
-              <SvgBox
-                onClick={onClickAvatars}
-                variants={changeVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <ChangeSvg width="30" height="30" color="#a29bfe" />
-              </SvgBox>
-            )}
-          </Cicle>
-          {data && (
-            <Form
-              data={{
-                name: data.name,
-                phone: data.phone,
-                currentAvatar: avatar,
-              }}
-              isAvatarChange={avatar !== data.avatar ? true : false}
-              isCan={Mutatable}
-            />
-          )}
-        </Row>
-      </Wrapper>
+              )}
+            </Row>
+          </Wrapper>
+        </>
+      )}
       {Mutatable && (
         <Avatars
           avatar={avatar}

@@ -9,8 +9,8 @@ const userSlice = createSlice({
       state.loading = true;
     },
     getUserSuccess: (state, { payload }) => {
+      state.data = payload.data.data;
       state.loading = false;
-      state.data = payload;
     },
     getUserError: (state, { payload }) => {
       state.error = payload;

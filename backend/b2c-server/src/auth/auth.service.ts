@@ -10,7 +10,7 @@ const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 @Injectable()
 export class AuthService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
-  async signIn(phone: LoginDto) {
+  async signIn({ phone }: LoginDto) {
     const payload = Math.floor(100000 + Math.random() * 900000) + '';
     const token = await this.prisma.token.create({
       data: {
@@ -18,21 +18,20 @@ export class AuthService {
         user: {
           connectOrCreate: {
             where: {
-              ...phone,
+              phone,
             },
             create: {
               name: generateName(),
               avatar: '1',
-              ...phone,
+              phone,
             },
           },
         },
       },
     });
-    // 비용 문제로 주석처리
     // const message = await twilioClient.messages.create({
     //   messagingServiceSid: process.env.TWILIO_MSID,
-    //   to: `82${phone.slice(1)}`
+    //   to: `82${phone.slice(1)}`,
     //   body: `Your login token is ${payload}.`,
     // });
     return {
@@ -46,7 +45,6 @@ export class AuthService {
         payload: token,
       },
     });
-
     // await this.prisma.token.deleteMany({
     //   where: {
     //     userId: foundToken.userId,

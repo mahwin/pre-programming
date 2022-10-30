@@ -22,7 +22,7 @@ const Home = ({ data }: IHome) => {
 export default Home;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3001/api/vocas");
+  const res = await fetch(`${process.env.NEXT_API_HOST}/api/vocas`);
   const jsonData = await res.json();
   return {
     props: {

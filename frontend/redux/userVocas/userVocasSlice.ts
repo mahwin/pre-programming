@@ -9,7 +9,6 @@ const userVocasSlice = createSlice({
       state.loading = true;
     },
     getUserVocasSuccess: (state, { payload }) => {
-      console.log(payload.data);
       state.loading = false;
       state.data = payload.data;
     },

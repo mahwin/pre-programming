@@ -30,7 +30,7 @@ const TitleBox = styled.div`
   width: 100%;
   display: flex;
   position: absolute;
-  top: 50px;
+  top: 60px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

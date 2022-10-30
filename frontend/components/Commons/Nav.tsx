@@ -112,7 +112,6 @@ function Nav() {
     return state.user;
   });
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
-  console.log(loading, data);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userActions.getUser());

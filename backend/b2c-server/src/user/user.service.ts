@@ -7,9 +7,10 @@ import { ConfirmUserDto } from './dto/confirm-user.dto';
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
-
   async getUser(req) {
-    return this.parsePayload(req);
+    const user = await this.parsePayload(req);
+    console.log(user);
+    return { ok: true, data: user };
   }
 
   async confirm(confirmData: ConfirmUserDto) {
@@ -26,7 +27,6 @@ export class UserService {
   }
   async update(req, updateUser) {
     const userData = this.parsePayload(req);
-    console.log(updateUser);
     const newData = await this.prisma.user.update({
       where: {
         id: (await userData).id,

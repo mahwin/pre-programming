@@ -1,8 +1,8 @@
 import Nav from "@components/Commons/Nav";
 import Footer from "@components/Commons/Footer";
-import VocaDetail from "@components/voca/VocaDetail";
+import VocaDetail from "@components/Vocas/VocaDetail";
 import Banner from "@components/Commons/Banner";
-import TestButton from "@components/voca/TestButton";
+import TestButton from "@components/Vocas/TestButton";
 import camelCaser from "@utils/camelCaser";
 import { useEffect, useState } from "react";
 import { VocaArray } from "../../redux/vocas/vocas.dto";
@@ -10,12 +10,13 @@ import { vocasActions } from "redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { LoadingSvg } from "@svg";
+import PageLoading from "@components/Commons/PageLoading";
 
 const categories = [
   "axios",
   "next",
   "react",
-  "styled-Components",
+  "styled-components",
   "recoil",
   "react-redux",
   "react-query",
@@ -94,7 +95,7 @@ export default function VocaPage() {
           <TestButton testData={vocas} />
         </>
       ) : (
-        <LoadingSvg width="100px" height="100px" color="#00b894" />
+        <PageLoading />
       )}
       <Footer />
     </>

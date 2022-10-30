@@ -1,15 +1,36 @@
 import Nav from "@components/Commons/Nav";
 import Footer from "@components/Commons/Footer";
-// import { get } from "react-redux";
+import UserVoca from "@components/UserVoca/UserVoca";
 
-function Me() {
+interface IProps {
+  title: string;
+  ok: boolean;
+  amount: string;
+  install: string;
+}
+
+interface IUserVocaProps {
+  baseData: IProps[];
+}
+
+function UserVocaPage({ baseData }: IUserVocaProps) {
   return (
     <>
       <Nav />
-      <h1> 내 단어장 </h1>
+      <UserVoca baseData={baseData} />
       <Footer />
     </>
   );
 }
 
-export default Me;
+export default UserVocaPage;
+
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:3001/api/vocas");
+  const jsonData = await res.json();
+  return {
+    props: {
+      baseData: jsonData?.data?.Frontend,
+    },
+  };
+}

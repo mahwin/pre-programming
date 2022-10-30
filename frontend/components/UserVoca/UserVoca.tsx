@@ -278,22 +278,25 @@ export default function UserVoca({ baseData }: { baseData: IProps[] }) {
   const [rowData, setRowData] = useState<IProps[][] | null>(null);
   const [userVocaData, setUserVocaData] = useState<IuserVocaData | null>(null);
   const [clickedVoca, setClickedVoca] = useState<IclickedVoca>({});
+
   //유저 정보 없으면 로그인 페이지
   const userInfo = useSelector((state: any) => {
     state.userReducer;
     return state.user;
   });
-  const router = useRouter();
-  useEffect(() => {
-    if (userInfo.error) router.push("singIn");
-  }, [userInfo]);
 
-  //유저가 저장한 보카 목록 불러오기 ,항상 다시 불러옴
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userVocasActions.getUserVocas());
   }, [userInfo.data]);
 
+  const router = useRouter();
+  useEffect(() => {
+    if (userInfo.error && !userInfo.data)
+      router.push("http://localhost:3001/signIn");
+  }, [userInfo]);
+
+  //유저가 저장한 보카 목록 불러오기 ,항상 다시 불러옴
   const userVocas = useSelector((state: any) => {
     state.userVocasReducer;
     return state.userVocas;

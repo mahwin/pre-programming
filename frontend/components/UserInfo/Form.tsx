@@ -212,7 +212,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
   };
   const router = useRouter();
   useEffect(() => {
-    if (updateResponse?.ok) router.reload();
+    if (updateResponse?.ok) router.push("/");
   }, [updateResponse]);
   return (
     <Container

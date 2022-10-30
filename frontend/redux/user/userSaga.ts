@@ -6,7 +6,7 @@ import { AxiosResponse } from "axios";
 function* getUser() {
   try {
     const response: AxiosResponse = yield call(userAPI.getUser);
-    yield put(userActions.getUserSuccess(response.data));
+    yield put(userActions.getUserSuccess(response));
   } catch (error) {
     yield put(userActions.getUserError(error));
   }

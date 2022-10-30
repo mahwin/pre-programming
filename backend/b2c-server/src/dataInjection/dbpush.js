@@ -11,13 +11,13 @@ const categories = [
   // 'reactHookForm',
   // 'tailwindcss',
   // 'reactRouter',
-  'styledComponents',
+  // 'styledComponents',
   //
 ];
 
 function sleep(sec) {
   return new Promise((resolve) => setTimeout(resolve, sec * 1000));
-} //
+}
 
 async function dbPush() {
   for (let category of categories) {

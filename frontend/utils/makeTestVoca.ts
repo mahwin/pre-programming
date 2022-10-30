@@ -37,7 +37,6 @@ export default function makeTestVoca(
   } else {
     spreadArr = [...array];
   }
-  // let spreadArr = array.reduce((p, c) => p.concat(c), []);
   const need = 4 * many;
   const shuffleArr = shuffle(spreadArr, need);
   const answerList = answerMaker(many);
