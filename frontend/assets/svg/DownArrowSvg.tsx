@@ -1,13 +1,13 @@
-export function DownArrowSvg() {
+export function DownArrowSvg({ stroke = 1.5 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      viewBox="0 0 48 48"
-      strokeWidth={1.5}
+      viewBox="0 0 24 24"
+      strokeWidth={stroke}
       stroke="currentColor"
-      width={40}
-      height={40}
+      width={30}
+      height={30}
     >
       <path
         strokeLinecap="round"

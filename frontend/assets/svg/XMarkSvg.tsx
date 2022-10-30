@@ -2,15 +2,16 @@ interface IXMarkSvg {
   width: string;
   height: string;
   color: string;
+  stroke?: number;
 }
 
-export function XMarkSvg({ width, height, color }: IXMarkSvg) {
+export function XMarkSvg({ width, height, color, stroke = 8 }: IXMarkSvg) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={8}
+      strokeWidth={stroke}
       stroke="currentColor"
       width={width}
       height={height}

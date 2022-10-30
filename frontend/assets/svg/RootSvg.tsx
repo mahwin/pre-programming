@@ -19,7 +19,17 @@ import { SmileSvg } from "./SmileSvg";
 import { FrownSvg } from "./FrownSvg";
 import { LoadingSvg } from "./LoadingSvg";
 import { FolderSvg } from "./FolderSvg";
+import { StudySvg } from "./StudySvg";
+import { LeftArrowSvg } from "./LeftArrowSvg";
+import { RightArrowSvg } from "./RightArrowSvg";
+import { KeyDownSvg } from "./KeyDownSvg";
+import { KeyUpSvg } from "./KeyUpSvg";
 export {
+  KeyDownSvg,
+  KeyUpSvg,
+  RightArrowSvg,
+  LeftArrowSvg,
+  StudySvg,
   MailSvg,
   PhoneSvg,
   LogoSvg,
