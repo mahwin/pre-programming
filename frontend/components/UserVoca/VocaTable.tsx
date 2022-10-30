@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
+import FloatingBtn from "./FloatingBtn";
 const TableWrapper = styled.div`
   height: 500px;
   position: relative;
   overflow: auto;
   border-radius: 5px;
+  margin-bottom: 100px;
+  transition: all 1s ease-in-out;
 `;
 
 const Table = styled.table`
@@ -110,65 +112,72 @@ interface IToTalWords {
 }
 
 export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
-  const [totalWords, setTotalWords] = useState<IToTalWords[] | null>(null);
+  const [totalWords, setTotalWords] = useState<IToTalWords[]>([]);
+  const [totalAmount, setTotalAmount] = useState<number>(0);
   useEffect(() => {
     let words: IToTalWords[] = [];
+    let amount = 0;
     Object.keys(clickedVoca).forEach((category: string) => {
       const levels = clickedVoca[category as categoriesType];
       if (levels!.length > 0) {
         levels?.forEach((level: string) => {
+          amount += vocas.category[category].level[level].length;
           words = words.concat([
             { [category]: vocas.category[category].level[level] },
           ]);
         });
       }
     });
+    setTotalAmount(amount);
     setTotalWords(words);
   }, [clickedVoca, vocas]);
-  console.log(totalWords);
+
   return (
     <>
-      {totalWords && (
-        <TableWrapper>
-          <Table>
-            <thead>
-              <tr>
-                <th>Word</th>
-                <th>Category</th>
-                <th>Frequency</th>
-                <th>Mean</th>
-              </tr>
-            </thead>
+      {totalWords?.length > 0 ? (
+        <>
+          <TableWrapper>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Word</th>
+                  <th>Category</th>
+                  <th>Frequency</th>
+                  <th>Mean</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {totalWords.map((totalWord: IToTalWords) => {
-                const [category, words] = Object.entries(totalWord)[0];
-                return (
-                  <>
-                    {words.map((item: IWord, idx: number) => {
-                      return (
-                        <tr key={idx}>
-                          <td>{item.word}</td>
-                          <td>{category}</td>
-                          <td>{item.frequency}</td>
-                          <td>
-                            {eval(item.mean)
-                              .map(
-                                (item: string, idx: number) =>
-                                  idx + 1 + " ." + item
-                              )
-                              .join(" ")}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </>
-                );
-              })}
-            </tbody>
-          </Table>
-        </TableWrapper>
-      )}
+              <tbody>
+                {totalWords.map((totalWord: IToTalWords) => {
+                  const [category, words] = Object.entries(totalWord)[0];
+                  return (
+                    <>
+                      {words.map((item: IWord, idx: number) => {
+                        return (
+                          <tr key={idx}>
+                            <td>{item.word}</td>
+                            <td>{category}</td>
+                            <td>{item.frequency}</td>
+                            <td>
+                              {eval(item.mean)
+                                .map(
+                                  (item: string, idx: number) =>
+                                    idx + 1 + " ." + item
+                                )
+                                .join(" ")}
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </>
+                  );
+                })}
+              </tbody>
+            </Table>
+          </TableWrapper>
+          <FloatingBtn amount={totalAmount} data={totalWords} />
+        </>
+      ) : null}
     </>
   );
 }

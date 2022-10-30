@@ -3,6 +3,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { DownArrowSvg, StudySvg, TestSvg } from "@svg";
 import Study from "./Study";
+import Test from "./Test";
 
 const Wrapper = styled(motion.div)`
   z-index: 99;
@@ -15,7 +16,6 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-
   background-color: rgb(29, 46, 81);
   button {
     appearance: none;
@@ -186,8 +186,9 @@ const BtnBox = styled.div`
     font-size: 20px;
     cursor: pointer;
     :hover {
-      opacity: 0.85;
+      background-color: rgba(255, 255, 255, 0.8);
       transition: all 0.25s ease-in-out;
+      box-shadow: inset 0 0 0 2px #1e90ff;
     }
   }
   h3 {
@@ -245,6 +246,8 @@ interface IToTalWords {
 }
 
 export default function FloatingBtn({ amount, data }: IFloatingBtn) {
+  const [spreadData, setSpreadData] = useState<IWord[] | null>(null);
+
   const [maxNumber, setMaxNumber] = useState<number>(0);
   const [inputN, setInputN] = useState<string>("");
 
@@ -257,6 +260,15 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
     setMaxNumber(Math.floor(amount / 4));
   }, [amount]);
 
+  useEffect(() => {
+    let spread: IWord[] = [];
+    data.forEach((items) => {
+      console.log(Object.values(items)[0]);
+      spread = spread.concat(Object.values(items)[0]);
+    });
+    setSpreadData(spread);
+  }, [data]);
+
   const handleBtnClick = () => {
     setIsOpen((prev) => !prev);
     setTestMAkerOpen(false);
@@ -267,10 +279,14 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
   };
 
   const handleClickStudy = () => {
+    setIsTestOpen(false);
     setIsStudyOpen((prev) => !prev);
   };
 
-  const handleClickTest = () => {};
+  const handleClickTest = () => {
+    setIsStudyOpen(false);
+    setIsTestOpen((prev) => !prev);
+  };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
@@ -315,7 +331,7 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
                     </InputBox>
                     <BtnBox>
                       {+inputN > 0 ? (
-                        <button>Can Start !</button>
+                        <button onClick={handleClickTest}>Can Start !</button>
                       ) : (
                         <h3>Fill Input !</h3>
                       )}
@@ -327,9 +343,14 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
           ) : null}
         </AnimatePresence>
       </Wrapper>
-      {isStudyOpen && (
-        <Study handleClick={handleClickStudy} amount={amount} words={data} />
+      {spreadData && isStudyOpen && (
+        <Study
+          handleClick={handleClickStudy}
+          amount={amount}
+          spreadData={spreadData}
+        />
       )}
+      {spreadData && isTestOpen && <Test vocas={spreadData} howMany={inputN} />}
     </>
   );
 }

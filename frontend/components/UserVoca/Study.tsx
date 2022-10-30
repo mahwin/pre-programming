@@ -93,7 +93,7 @@ const WordBox = styled.div`
 `;
 
 const Word = styled.div`
-  width: 350px;
+  width: 500px;
 `;
 const Mean = styled.div`
   width: 100%;
@@ -116,21 +116,11 @@ interface IToTalWords {
 interface IStudy {
   handleClick: () => void;
   amount: number;
-  words: IToTalWords[];
+  spreadData: IWord[] | null;
 }
 
-export default function Study({ handleClick, amount, words }: IStudy) {
+export default function Study({ handleClick, amount, spreadData }: IStudy) {
   const [current, setCurrent] = useState<number>(1);
-  const [spreadData, setSpreadData] = useState<IWord[] | null>(null);
-
-  useEffect(() => {
-    let spread: IWord[] = [];
-    words.forEach((items) => {
-      console.log(Object.values(items)[0]);
-      spread = spread.concat(Object.values(items)[0]);
-    });
-    setSpreadData(spread);
-  }, [words]);
 
   const handleKeyBoeadEvent = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft" && current > 1) {
@@ -148,6 +138,7 @@ export default function Study({ handleClick, amount, words }: IStudy) {
       else setCurrent(1);
     }
   };
+
   return (
     <AnimatePresence>
       <Overay
@@ -169,7 +160,7 @@ export default function Study({ handleClick, amount, words }: IStudy) {
           {spreadData && (
             <WordBox>
               <Word>
-                <h2>{spreadData?.[current - 1].word} : </h2>
+                <h2>{`${spreadData?.[current - 1].word} : `} </h2>
               </Word>
               <Mean>
                 <h3>
