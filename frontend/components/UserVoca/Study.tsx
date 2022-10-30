@@ -7,7 +7,7 @@ import {
   KeyUpSvg,
 } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, KeyboardEvent, useEffect } from "react";
+import { useState, KeyboardEvent } from "react";
 
 const Overay = styled(motion.div)`
   position: fixed;

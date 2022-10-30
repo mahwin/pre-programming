@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Component, Fragment, useEffect, useState } from "react";
-import { FolderSvg, FolderOpenSvg, LoadingSvg, XMarkSvg, FrownSvg } from "@svg";
+import { Fragment, useEffect, useState } from "react";
+import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { motion, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
 import { camelCaserHeadLower } from "@utils/camelCaser";
