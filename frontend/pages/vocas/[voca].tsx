@@ -5,11 +5,9 @@ import Banner from "@components/Commons/Banner";
 import TestButton from "@components/Vocas/TestButton";
 import camelCaser from "@utils/camelCaser";
 import { useEffect, useState } from "react";
-import { VocaArray } from "../../redux/vocas/vocas.dto";
 import { vocasActions } from "redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
-import { LoadingSvg } from "@svg";
 import PageLoading from "@components/Commons/PageLoading";
 
 const categories = [
