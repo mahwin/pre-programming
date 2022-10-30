@@ -33,7 +33,7 @@ const Container = styled.div`
   position: absolute;
   right: 0;
   left: 0;
-  top: 10rem;
+  top: 15rem;
   margin: 0 auto;
   height: 600px;
   width: 80vw;
