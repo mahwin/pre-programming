@@ -11,7 +11,6 @@ export default function Me() {
     state.userReducer;
     return state.user;
   });
-
   const router = useRouter();
   useEffect(() => {
     if (error && !data) router.push("signIn");
