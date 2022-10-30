@@ -23,13 +23,20 @@ function shuffle(spreadArr: Voca[], need: number) {
 }
 
 //@ts-ignore
-export default function makeTestVoca(array: IVocas, many: number) {
+export default function makeTestVoca(
+  array: any,
+  many: number,
+  isNeedSpread = true
+) {
   //정답 하나, 예시 3개  한 문제당 총 4개 필요
   let spreadArr = [];
-  for (let level of Object.keys(array)) {
-    spreadArr.push(...array[level as keyType]);
+  if (isNeedSpread) {
+    for (let level of Object.keys(array)) {
+      spreadArr.push(...array[level as keyType]);
+    }
+  } else {
+    spreadArr = [...array];
   }
-
   // let spreadArr = array.reduce((p, c) => p.concat(c), []);
   const need = 4 * many;
   const shuffleArr = shuffle(spreadArr, need);
