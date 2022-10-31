@@ -29,11 +29,11 @@ export class AuthService {
         },
       },
     });
-    // const message = await twilioClient.messages.create({
-    //   messagingServiceSid: process.env.TWILIO_MSID,
-    //   to: `82${phone.slice(1)}`,
-    //   body: `Your login token is ${payload}.`,
-    // });
+    const message = await twilioClient.messages.create({
+      messagingServiceSid: process.env.TWILIO_MSID,
+      to: `82${phone.slice(1)}`,
+      body: `Your login token is ${payload}.`,
+    });
     return {
       ok: true,
       payload,
@@ -45,11 +45,11 @@ export class AuthService {
         payload: token,
       },
     });
-    // await this.prisma.token.deleteMany({
-    //   where: {
-    //     userId: foundToken.userId,
-    //   },
-    // });
+    await this.prisma.token.deleteMany({
+      where: {
+        userId: foundToken.userId,
+      },
+    });
     if (foundToken) {
       const payload = {
         userId: foundToken.userId,
