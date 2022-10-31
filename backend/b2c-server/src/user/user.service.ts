@@ -9,7 +9,6 @@ export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
   async getUser(req) {
     const user = await this.parsePayload(req);
-    console.log(user);
     return { ok: true, data: user };
   }
 
