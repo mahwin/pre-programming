@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -54,10 +55,21 @@ table {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'NotoSans';
+  src: url(../public/fonts/NotoSansKR-Regular.otf) format('truetype') font-weight-regular,
+      url(../public/fonts/NotoSansKR-Medium.otf) format('truetype') font-weight-medium,
+      url(../public/fonts/NotoSansKR-Bold.otf) format('truetype') font-weight-bold,
+      url(../public/fonts/NotoSansKR-Light.otf) format('truetype') font-weight-light,
+      url(../public/fonts/NotoSansKR-Thin.otf) format('truetype') font-weight-thin,
+      url(../public/fonts/NotoSansKR-black.otf) format('truetype') font-weight-black,
+}
+
+
 body {
   font-weight: 300;
-  font-family: 'Source Sans Pro', sans-serif;
-  
+  font-family: 'NotoSans', sans-serif;
   line-height: 1.2;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 }
@@ -71,6 +83,7 @@ a {
   text-decoration:none;
   color:inherit;
 }
+
 `;
 
 export default GlobalStyle;
