@@ -223,6 +223,7 @@ export default function UserInfo({ data }: { data: IUser }) {
               <Cicle>
                 {data && (
                   <Image
+                    alt="아바타 이미지입니다."
                     src={`/avatars/${avatar}.png`}
                     layout="fill"
                     priority
