@@ -112,10 +112,6 @@ export default function Answers({
   onBack,
 }: IAnswers) {
   const [result, setResult] = useState<Result[] | null>(null);
-  console.log("answerList", answerList);
-  console.log("testData:", testData);
-  console.log("testAnswer:", testAnswer);
-
   useEffect(() => {
     let copy: Result[] = [];
     answerList.forEach((answer, idx) => {
@@ -130,7 +126,6 @@ export default function Answers({
     });
     setResult(copy);
   }, [answerList, testData, testAnswer]);
-
   return (
     <Wrapper>
       <h1>Your Answers</h1>

@@ -12,7 +12,7 @@ import {
   dropSix,
   dropZero,
 } from "../../assets/keyframes/RootKeyFrame";
-import { ResultCircleSvg } from "@svg";
+import { ResultCircleSvg, XMarkSvg } from "@svg";
 import Answers from "./Answers";
 import makeTestVoca from "@utils/makeTestVoca";
 
@@ -337,6 +337,24 @@ const ButtonBox = styled.div`
   }
 `;
 
+const XBtn = styled.button`
+  position: absolute;
+  right: 20px;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  :hover {
+    svg {
+      color: darkorange;
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+`;
+
 const ResultBtn = styled(Button)`
   position: relative;
   top: 0;
@@ -359,9 +377,10 @@ interface IWord {
 interface IQuiz {
   vocas: IWord[];
   howMany: string;
+  handleClickTest: () => void;
 }
 
-export default function Quiz({ vocas, howMany }: IQuiz) {
+export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
   const [testData, setTestData] = useState<ITestData[] | null>(null);
   const [testAnswer, setTestAnswer] = useState<number[] | null>(null);
 
@@ -392,10 +411,10 @@ export default function Quiz({ vocas, howMany }: IQuiz) {
   const onSubmit = () => {
     const answerIdx = answer.findIndex((bool) => bool === true);
     setAnswerList((prev) => [...prev, answerIdx]);
-    const correctList = Array.from({ length: maxNum }, () => 1);
+    const userAnswer = [...answerList, answerIdx];
     let correctCount = 0;
-    answerList.forEach((answer, idx) => {
-      correctCount += correctList[idx] === answer ? 1 : 0;
+    userAnswer.forEach((answer, idx) => {
+      correctCount += testAnswer?.[idx] === answer ? 1 : 0;
     });
     setCorrectNum(correctCount);
     setIsSubmit(true);
@@ -418,6 +437,9 @@ export default function Quiz({ vocas, howMany }: IQuiz) {
   return (
     <Overay>
       <Container>
+        <XBtn onClick={handleClickTest}>
+          <XMarkSvg width="20" height="20" color="white" />
+        </XBtn>
         {isSubmit ? (
           <>
             {answerOpen ? (

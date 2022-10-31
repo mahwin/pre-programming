@@ -287,7 +287,7 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
     setIsStudyOpen(false);
     setIsTestOpen((prev) => !prev);
   };
-
+  console.log(isTestOpen);
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
     const onlyNum = value.replace(/[^0-9]/g, "");
@@ -350,7 +350,13 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
           spreadData={spreadData}
         />
       )}
-      {spreadData && isTestOpen && <Test vocas={spreadData} howMany={inputN} />}
+      {spreadData && isTestOpen && (
+        <Test
+          vocas={spreadData}
+          howMany={inputN}
+          handleClickTest={handleClickTest}
+        />
+      )}
     </>
   );
 }
