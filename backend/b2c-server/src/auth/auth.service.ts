@@ -4,13 +4,20 @@ import { LoginDto } from './dto/auth.dto';
 import * as twilio from 'twilio';
 import { JwtService } from '@nestjs/jwt';
 import generateName from '../utils/generateName';
-
-const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
-  constructor(private prisma: PrismaService, private jwtService: JwtService) {}
+  constructor(
+    private prisma: PrismaService,
+    private jwtService: JwtService,
+    private configService: ConfigService,
+  ) {}
   async signIn({ phone }: LoginDto) {
+    const twilioClient = twilio(
+      this.configService.get('TWILIO_SID'),
+      this.configService.get('TWILIO_TOKEN'),
+    );
     const payload = Math.floor(100000 + Math.random() * 900000) + '';
     const token = await this.prisma.token.create({
       data: {
