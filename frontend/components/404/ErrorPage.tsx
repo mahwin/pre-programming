@@ -48,7 +48,12 @@ export default function ErrorPage() {
   return (
     <Wrapper>
       <ContentsWrapper>
-        <Image src="/404.png" width={400} height={500} />
+        <Image
+          src="/404.png"
+          width={400}
+          height={500}
+          alt="에러 페이지입니다."
+        />
         <TextWrapper>
           <div>
             <Title>원하는 페이지를 찾을 수 없습니다.</Title>

@@ -100,7 +100,7 @@ const Search = styled.input.attrs({
 export default function Banner() {
   return (
     <Wapper>
-      <Image src="/banner.png" layout="fill" priority />
+      <Image src="/banner.png" layout="fill" priority alt="베너 사진입니다." />
       <BannerWapper>
         <ContentWrapper>
           <TitleBox>
