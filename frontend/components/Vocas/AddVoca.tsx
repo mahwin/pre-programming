@@ -253,7 +253,7 @@ export default function AddVaca({
           <FolderOpenSvg />
         </Button>
         <Button onClick={onClickSaved} whileTap={{ scale: 0.97 }}>
-          {loading ? <LoadingSvg color="rgb(0, 184, 148)" /> : "단어장에 저장"}
+          {loading ? <LoadingSvg color="white" /> : "단어장에 저장"}
         </Button>
       </ButtonBox>
       <Board animate={isCardOpen ? "open" : "closed"}>
