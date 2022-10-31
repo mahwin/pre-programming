@@ -191,10 +191,9 @@ export default function UserInfo({ data }: { data: IUser }) {
                         <NormalSpan
                           style={{ color: "#a29bfe", position: "absolute" }}
                         >
-                          '
+                          &rsquo;
                         </NormalSpan>
                         <Label
-                          // initial={false}
                           animate={{ y: bounceY }}
                           transition={{ duration: 2.5 }}
                         >

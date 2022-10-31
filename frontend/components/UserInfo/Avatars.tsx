@@ -153,7 +153,11 @@ export default function Avatars({
           <Items>
             {avatarList.map((avatar, idx) => (
               <Item key={idx + ""} onClick={onSelect} id={avatar + ""} layout>
-                <Image src={`/avatar/${avatar}.png`} layout="fill" />
+                <Image
+                  src={`/avatar/${avatar}.png`}
+                  layout="fill"
+                  alt="아바타 이미지입니다."
+                />
               </Item>
             ))}
           </Items>

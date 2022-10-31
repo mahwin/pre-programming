@@ -115,7 +115,7 @@ function Nav() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userActions.getUser());
-  }, []);
+  }, [dispatch]);
 
   const router = useRouter();
   useEffect(() => {

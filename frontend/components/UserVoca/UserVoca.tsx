@@ -288,13 +288,13 @@ export default function UserVoca({ baseData }: { baseData: IProps[] }) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(userVocasActions.getUserVocas());
-  }, [userInfo.data]);
+  }, [userInfo.data, dispatch]);
 
   const router = useRouter();
   useEffect(() => {
     if (userInfo.error && !userInfo.data)
       router.push("http://localhost:3001/signIn");
-  }, [userInfo]);
+  }, [userInfo, router]);
 
   //유저가 저장한 보카 목록 불러오기 ,항상 다시 불러옴
   const userVocas = useSelector((state: any) => {
@@ -310,7 +310,7 @@ export default function UserVoca({ baseData }: { baseData: IProps[] }) {
     if (!vocas.data) {
       dispatch(vocasActions.getVocas());
     }
-  }, [vocas]);
+  }, [vocas, dispatch]);
 
   useEffect(() => {
     setRowData(chunk(baseData, 4));

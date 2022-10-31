@@ -390,7 +390,7 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
   );
   const [currentStep, setSteps] = useState<number>(0);
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
-  const [maxNum, _] = useState(+howMany);
+  const [maxNum, _] = useState<number>(+howMany);
   const [pregressStep, __] = useState((1 / maxNum) * 100);
   const [correctNum, setCorrectNum] = useState(0);
   const [answerOpen, setAnswerOpen] = useState(false);
@@ -432,7 +432,7 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
     let quiz = makeTestVoca(vocas, maxNum, false);
     setTestData(() => quiz.testData);
     setTestAnswer(() => quiz.testAnswer);
-  }, [vocas, howMany]);
+  }, [vocas, howMany, maxNum]);
 
   return (
     <Overay>

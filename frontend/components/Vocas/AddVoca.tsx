@@ -234,12 +234,11 @@ export default function AddVaca({
   };
 
   useEffect(() => {
-    const len = selected.length;
     if (data?.ok) {
       resetSelected();
       setIsCardOpen(false);
     }
-  }, [data]);
+  }, [data, resetSelected]);
 
   return (
     <Wrapper>

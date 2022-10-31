@@ -199,7 +199,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
       setUpdateData((prev) => ({ ...prev, ...confirmPhone.data }));
     if (isAvatarChange)
       setUpdateData((prev) => ({ ...prev, avatar: data.currentAvatar }));
-  }, [isAvatarChange, confirmName, confirmPhone]);
+  }, [isAvatarChange, confirmName, confirmPhone, data.currentAvatar]);
 
   //유효한 데이터 서버로 전송 후 정상적으로 바꼈으면 화면 reload
   const [update, { loading: updateLoading, data: updateResponse }] =
@@ -213,7 +213,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
   const router = useRouter();
   useEffect(() => {
     if (updateResponse?.ok) router.push("/");
-  }, [updateResponse]);
+  }, [updateResponse, router]);
   return (
     <Container
       style={{ backgroundColor: isCan ? "white" : "rgba(200,200,200,1)" }}
