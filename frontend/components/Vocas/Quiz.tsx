@@ -354,7 +354,7 @@ export default function Quiz({ voca, testCondition }: any) {
   );
   const [currentStep, setSteps] = useState<number>(0);
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
-  const [maxNum, _] = useState(+testCondition.many.split("_")[0]);
+  const [maxNum, _] = useState<number>(+testCondition.many.split("_")[0]);
   const [pregressStep, __] = useState((1 / maxNum) * 100);
   const [correctNum, setCorrectNum] = useState(0);
   const [answerOpen, setAnswerOpen] = useState(false);
@@ -396,7 +396,7 @@ export default function Quiz({ voca, testCondition }: any) {
     let quiz = makeTestVoca(voca, maxNum);
     setTestData(() => quiz.testData);
     setTestAnswer(() => quiz.testAnswer);
-  }, [voca, testCondition]);
+  }, [voca, testCondition, maxNum]);
 
   return (
     <Wrapper>

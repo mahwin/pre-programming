@@ -81,7 +81,7 @@ export default function VocaPage() {
         setVocas(data?.category[camelCaser(category) as CategoryType].level);
       }
     }
-  }, [data, category]);
+  }, [data, category, dispatch]);
 
   return (
     <>

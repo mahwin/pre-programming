@@ -14,8 +14,7 @@ export default function Me() {
   const router = useRouter();
   useEffect(() => {
     if (error && !data) router.push("signIn");
-  }, [loading, error, data]);
-  console.log(error);
+  }, [loading, error, data, router]);
   return (
     <>
       <Nav />
