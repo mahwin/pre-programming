@@ -18,6 +18,7 @@ export class AuthService {
       this.configService.get('TWILIO_SID'),
       this.configService.get('TWILIO_TOKEN'),
     );
+
     const payload = Math.floor(100000 + Math.random() * 900000) + '';
     const token = await this.prisma.token.create({
       data: {
@@ -36,8 +37,9 @@ export class AuthService {
         },
       },
     });
+    console.log(payload);
     const message = await twilioClient.messages.create({
-      messagingServiceSid: process.env.TWILIO_MSID,
+      messagingServiceSid: this.configService.get('TWILIO_MSID'),
       to: `82${phone.slice(1)}`,
       body: `Your login token is ${payload}.`,
     });
