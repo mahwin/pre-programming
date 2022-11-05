@@ -438,7 +438,7 @@ export default function Quiz({ voca, testCondition }: any) {
           </>
         ) : (
           <>
-            <Title>Quiz {`${currentStep} / ${maxNum}`}</Title>
+            <Title>Quiz {`${currentStep + 1} / ${maxNum}`}</Title>
             <ProgressBarBox>
               <Progress value={currentStep} max={maxNum} />
               {[...Array(maxNum + 1)].map((v, i) => (
