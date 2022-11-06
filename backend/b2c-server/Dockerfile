@@ -1,4 +1,4 @@
-FROM node:16 As builder
+FROM node:16-alpine As builder
 
 WORKDIR /app/backend
 
@@ -9,7 +9,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-FROM node:16
+FROM node:16-alpine
 
 
 COPY --from=builder /app/backend/node_modules ./node_modules

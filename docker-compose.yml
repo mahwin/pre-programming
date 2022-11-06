@@ -1,0 +1,15 @@
+version: "3"
+services:
+  backend:
+    build: ./backend/b2c-server
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/b2c-server/.env
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./frontend/.env
