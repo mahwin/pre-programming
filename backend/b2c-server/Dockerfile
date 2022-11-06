@@ -1,15 +1,18 @@
-FROM node:16-alpine As builder
+FROM node:16 As builder
 
 WORKDIR /app/backend
 
 COPY package*.json ./
 COPY prisma ./prisma/
 
+RUN apt-get update
+RUN apt-get install -y openssl
+
 RUN npm install
 COPY . .
 RUN npm run build
 
-FROM node:16-alpine
+FROM node:16
 
 
 COPY --from=builder /app/backend/node_modules ./node_modules
