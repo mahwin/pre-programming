@@ -16,7 +16,7 @@ const Avatars = dynamic(() => import("./Avatars"), {
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-  align-items: center;
+  margin-top: 15vh;
   justify-content: center;
 `;
 
