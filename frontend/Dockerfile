@@ -1,14 +1,16 @@
-FROM node:16
+FROM node:16-alpine
 
-WORKDIR /app/frontend
-
+WORKDIR /app_frontend
 
 COPY package*.json ./
+COPY .env ./
 
 RUN npm install
 COPY . .
 RUN npm run build
 
-EXPOSE 8080
+EXPOSE 3001
 
-CMD [ "npm", "run", "start"]
+CMD [ "npm", "start"]
+
+
