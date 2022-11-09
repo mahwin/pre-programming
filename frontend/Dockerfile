@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM amd64/node:16-alpine
 
 WORKDIR /app_frontend
 
@@ -9,8 +9,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-EXPOSE 3001
+EXPOSE 80
 
 CMD [ "npm", "start"]
+
 
 
