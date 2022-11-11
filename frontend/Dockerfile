@@ -1,17 +1,15 @@
 FROM amd64/node:16-alpine
 
-WORKDIR /app_frontend
+WORKDIR /usr/src/app
 
 COPY package*.json ./
 COPY .env ./
-
-RUN npm install
 COPY . .
+RUN npm install
+
 RUN npm run build
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD [ "npm", "start"]
-
-
 
