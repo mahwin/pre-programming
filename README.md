@@ -1,9 +1,8 @@
 # pre-programming
+## : What to do before you studying programming!
 
-Pre-programming Web for RFC (Notion url)
+--------------------
 
-https://www.notion.so/Pre-programming-Web-for-RFC-79e640870fd744ca8804318bc3ec7066
+# 프로젝트 계획이유 
 
-웹 이미지 구현 (figma url)
-
-https://www.figma.com/file/qh6cB2NeCQP4Z8DhhKlSaw/pre-programming?node-id=35%3A103
+![IMG_6F1A489231C2-1](https://user-images.githubusercontent.com/78193416/205482961-de927c4c-84f0-45cb-9a51-477ea4407342.jpeg)
