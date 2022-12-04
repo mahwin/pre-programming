@@ -1,5 +1,4 @@
-<img width="524" alt="스크린샷 2022-12-04 오후 7 31 13" src="https://user-images.githubusercontent.com/78193416/205485873-128385c0-0c3e-4117-8345-e240923b4d3e.png">
-
+<img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 # pre-programming
 
 ## : What to do before you studying programming!
