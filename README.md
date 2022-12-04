@@ -41,12 +41,12 @@
 
 ## 작동 모습
 
-1. 학습할 기술 선택                     &nasp;             (:airplane: 바로가기)
-2. 레벨 별 단어 학습 및 테스트                 &nasp;        (:airplane: 바로가기)
-3. 내 단어장에 저장                         &nasp;         (:airplane: 바로가기)
-4. 저장한 단어장을 모아 나만의 테스트 실행       &nasp;          (:airplane: 바로가기)
-5. 로그인                                 &nasp;         (:airplane: 바로가기)
+1. 학습할 기술 선택                     &nbsp;             (:airplane: 바로가기)
+2. 레벨 별 단어 학습 및 테스트                 &nbsp;        (:airplane: 바로가기)
+3. 내 단어장에 저장                         &nbsp;         (:airplane: 바로가기)
+4. 저장한 단어장을 모아 나만의 테스트 실행       &nbsp;          (:airplane: 바로가기)
+5. 로그인                                 &nbsp;         (:airplane: 바로가기)
 
-0. 전체                                   &nasp;        (:airplane: 바로가기)
+0. 전체                                   &nbsp;        (:airplane: 바로가기)
 
 
