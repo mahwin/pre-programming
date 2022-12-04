@@ -1,15 +1,16 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 
 # pre-programming
-
 ## : What to do before you studying programming!
 
+----------------------
 
 # 프로젝트 계획 이유 
 
 개발자 관련 유튜브를 보던 중 아래와 같은 흥미로운 설문조사를 발견했습니다.
 
 ![IMG_B324941C660F-1](https://user-images.githubusercontent.com/78193416/205483487-15d7f9e0-3011-42fb-aaef-3f3290c9f864.jpeg)
+ &nbsp; &nbsp; &nbsp;(출처 : https://www.youtube.com/@nomadcoders )
 
 본 설문조사를 통해 많은 사람들이 특정 프로그래밍 언어 보단 그 언어를 학습하는 데 필요한 영어를 더 중요시 한다는 사실을 알았고,
 
