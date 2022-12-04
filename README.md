@@ -1,11 +1,11 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
+
 # pre-programming
 
 ## : What to do before you studying programming!
 
 
-
-#프로젝트 계획이유 
+# 프로젝트 계획이유 
 
 개발자 관련 유튜브를 보던 중 아래와 같은 흥미로운 설문조사를 발견했습니다.
 
