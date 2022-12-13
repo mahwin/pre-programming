@@ -23,9 +23,6 @@
 -------------
 
 
-
-
-
 ### 프로젝트 계획 이유  
 
 개발자 관련 유튜브를 보던 중 아래와 같은 흥미로운 설문조사를 발견했습니다.
@@ -57,7 +54,6 @@
 <details>
 <summary>표 보기</summary>
 <div markdown="1">
-
 
 
 | 기술              | 주간 다운로드 수 | 제공 유무 |
@@ -127,17 +123,19 @@
 
 ## 작동 모습
 
-1. 학습할 기술 선택                     &nbsp;    &nbsp;          (:airplane: 바로가기)
-2. 레벨 별 단어 학습 및 테스트                 &nbsp;   &nbsp;      (:airplane: 바로가기)
-3. 내 단어장에 저장                         &nbsp;     &nbsp;     (:airplane: 바로가기)
-4. 저장한 단어장을 모아 나만의 테스트 실행       &nbsp;      &nbsp;     (:airplane: 바로가기)
-5. 로그인                                 &nbsp;     &nbsp;     (:airplane: 바로가기)
 
-6. 전체                                   &nbsp;    &nbsp;     (:airplane: 바로가기)
+
+1. 로그인                               &nbsp;&nbsp;(:airplane: 바로가기)
+2. 학습할 기술 선택                       &nbsp;&nbsp;(:airplane: 바로가기)
+3. 레벨 별 단어 학습 및 테스트               &nbsp;&nbsp;(:airplane: 바로가기)
+4. 내 단어장에 저장                       &nbsp;&nbsp;(:airplane: 바로가기)
+5. 저장한 단어장을 모아 나만의 테스트 실행      &nbsp;&nbsp;(:airplane: 바로가기)
+6. 전체                                 &nbsp;&nbsp;(:airplane: 바로가기)
 
 -----------------------
 
 ### 기술 스택
+next, nest, redux, redux-saga, styled-componenets
 
 ---------------
 
