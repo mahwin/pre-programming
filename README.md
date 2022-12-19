@@ -1,6 +1,6 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 
-# Pre-programming &nbsp;  [바로가기](http://www.pre-programming.com)
+# Pre-programming &nbsp;  [바로가기](https://www.pre-programming.com)
 
 ## : What to do before you studying programming! 
 
@@ -247,7 +247,7 @@ Database : vitess 사용
 
 1차 배포 : Aws Elastic Beanstalk ( 30$/month = 1 loadBalancer 0.02$/1h ) 
 
-2차 배포 : Heroku (5$ / month)
+2차 배포 : Heroku (7$ / month) 
 
 --------------
 
