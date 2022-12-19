@@ -1,6 +1,6 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 
-# Pre-programming &nbsp;  [바로가기](http://http://www.pre-programming.com/)
+# Pre-programming &nbsp;  [바로가기](http://www.pre-programming.com)
 
 ## : What to do before you studying programming! 
 
@@ -195,7 +195,10 @@ next, nest, redux, prisma, axios, vitess
 
 Form 검증 : react-hook-form 사용
 
-URL 구조 :  next 프레임워크는 pages 폴더 안의 폴더 네임이 그대로 url 주소가 됨. 
+URL 구조 : 
+
+ *  next 프레임워크는 pages 폴더 안의 폴더 네임이 그대로 url 주소가 됨
+ *  폴더 구조와 다른 url로 접속시 404page로 url 주소 변경
 
  *	pages/vocas/index.js  이  www.example.com/vocas로 변경
 
@@ -212,28 +215,32 @@ Database : vitess 사용
 
 로그인 :
 
-1. 클라이언트 단에서 phone number를 입력하면 db에 저장되었는지 확인
-2. db user table에 새로운 사용자로 저장
-3. 6 자리 무작위 수(token)를 문자로 발신 , token table에 유저 id 와 token을 묶어서 저장
-   * send grid 사용(문자 발신)
-4. 다시 유저가 입력한 토큰과 token table에 저장한 값이 일치 확인 
-   1. 일치하면 JWT를 header에 응답
-   2. 불일치하면 401에러 응답
-5.  header에 넣은 값을 local storage에 저장해 인증에 사용
+1. 클라이언트 단에서 phone number를 검증 후 서버로 넘겨주면  데이터 베이스에 phone number가 저장되어 있는지 확인
+  * 없을 경우 user table에 phone number 저장
+  
+2. 6 자리 무작위 수(token)를 문자로 발신, user table의 phone number와 일치하는 id와 앞에서 만든 무작위 수를 token table에 저장
+  * send grid 사용(문자 발신)
+
+3. 유저가 서버로 보낸 토큰 값과 token table에 저장된 값이 일치한지 확인
+   1. 일치하면 phone number와 일치하는 토큰 중 하나만을 남겨두고 나머지 토큰을 제거.(여러번 토큰을 발송했을 경우)
+   2. 1.에서 남겨둔 무작위 수를 JWT로 변환해 클라이언트 단으로 전송
+   3. 서버에서 넘어온 값 중 JWT 값을 local storage에 저장
+   
+   1. 불일치하면 401에러 응답
+
 
 인증 :
 
- * _app.js에서 local storage에 JWT 값이 있는지 확인 후 있으면 axios  common header로 설정
-   * axios로 api call이 있으면 JWT 값이 항상 헤더에 붙어서 이동함
+ * _app.js에서 local storage에 JWT 값이 있는지 확인 후 존재하면, 서버와 api 통신을 할 때 요청 헤더의 Authorization 필드에 담아서 보냄.(type은 bearer)
 
- *  인증이 필요한 페이지(내정보, 내 단어장)에 접속 시 
+ *  인증이 필요한 페이지(내정보 변경, 내 단어장)에 접속 시 
     *  local storage에 JWT 값이 없으면 로그인 페이지로 이동
     *  local storage에 JWT 값이 있을 경우
        *  페이지에서 사용할 정보가 redux에 저장 중이면 그대로 실행
-       *  페이지에서 사용할 정보가 redux에 없으면 api call 
+       *  페이지에서 사용할 정보가 redux-saga로 비동기 api call을 실행
+  
 
 -----------
-
 
 
 ### 배포
