@@ -1,15 +1,15 @@
-FROM amd64/node:16
-
+FROM amd64/node:16 AS builder
 WORKDIR /app
 
-COPY package*.json ./
-COPY prisma ./prisma/
-COPY .env ./
+COPY . .
 
 RUN npm install
-COPY . .
 RUN npm run build
 
+FROM amd64/node:16-alpine
+WORKDIR /app
 
+COPY --from=builder /app ./
 EXPOSE 3000
-CMD [ "npm", "run", "start:prod" ]
+
+CMD ["npm", "run", "start:prod"]
