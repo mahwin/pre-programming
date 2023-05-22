@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    API_HOST: process.env.API_HOST,
+    API_HOST:
+      process.env.NODE_ENV === "development"
+        ? process.env.DEV_API_HOST
+        : process.env.API_HOST,
   },
 };
 
