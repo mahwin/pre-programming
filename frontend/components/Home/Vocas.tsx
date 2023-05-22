@@ -100,48 +100,48 @@ const Overray = styled.div`
   }
 `;
 
-type vocaType = {
+type titleType = {
   title: string;
   ok: boolean;
   amount: string;
   install: string;
 };
 
-interface Ivocas {
-  data: { Frontend: vocaType[] };
+interface Ititle {
+  data: titleType[];
 }
 
-export default function Vocas({ data }: Ivocas) {
+const typeKeys = ["title"];
+
+// const ttt =   { title: string; ok: boolean; amount: string; install: string }[];
+
+export default function Vocas({ data }: Ititle) {
+  console.log(data.map((el) => console.log(el)));
   return (
     <Wrapper>
-      {Object.keys(data).map((key) => (
-        <Container key={key}>
-          <Title>{key}</Title>
-          <Items>
-            {data[key as "Frontend"].map((item: vocaType, idx: number) => (
-              <Link
-                href={`/vocas/${item.title.toLocaleLowerCase()}`}
-                key={item.title}
-              >
-                <Item>
-                  {!item.ok && (
-                    <Overray>
-                      <div>
-                        <p>Upcoming</p>
-                      </div>
-                    </Overray>
-                  )}
-                  <ItemBox>
-                    <h3 style={{ color: colors[idx % 9] }}>{item.title} </h3>
-                    <p>단어 수 : {item.amount} </p>
-                    <p>다운 수 : {item.install} </p>
-                  </ItemBox>
-                </Item>
-              </Link>
-            ))}
-          </Items>
-        </Container>
-      ))}
+      <Container key="Web">
+        <Title>for web.dev</Title>
+        <Items>
+          {data.map((item: titleType, idx) => (
+            <Link href={`/vocas/${item.title.toLowerCase()}`} key={item.title}>
+              <Item>
+                {!item.ok && (
+                  <Overray>
+                    <div>
+                      <p>Upcoming</p>
+                    </div>
+                  </Overray>
+                )}
+                <ItemBox>
+                  <h3 style={{ color: colors[idx % 9] }}>{item.title} </h3>
+                  <p>단어 수 : {item.amount} </p>
+                  <p>다운 수 : {item.install} </p>
+                </ItemBox>
+              </Item>
+            </Link>
+          ))}
+        </Items>
+      </Container>
     </Wrapper>
   );
 }
