@@ -272,7 +272,16 @@ interface IclickedVoca {
   axios?: string[];
 }
 
-export default function UserVoca({ baseData }: { baseData: IProps[] }) {
+interface ITitles {
+  data: {
+    title: string;
+    ok: boolean;
+    amount: string;
+    install: string;
+  }[];
+}
+
+export default function UserVoca({ data }: ITitles) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<IProps[][] | null>(null);
@@ -296,9 +305,8 @@ export default function UserVoca({ baseData }: { baseData: IProps[] }) {
       router.push("http://localhost:3001/signIn");
   }, [userInfo, router]);
 
-  //유저가 저장한 보카 목록 불러오기 ,항상 다시 불러옴
+  //유저가 저장한 보카 목록 불러오기, 항상 다시 불러옴
   const userVocas = useSelector((state: any) => {
-    state.userVocasReducer;
     return state.userVocas;
   });
 
@@ -307,14 +315,12 @@ export default function UserVoca({ baseData }: { baseData: IProps[] }) {
     return state.vocas;
   });
   useEffect(() => {
-    if (!vocas.data) {
-      dispatch(vocasActions.getVocas());
-    }
+    if (!vocas.data) dispatch(vocasActions.getVocas());
   }, [vocas, dispatch]);
 
   useEffect(() => {
-    setRowData(chunk(baseData, 4));
-  }, [baseData]);
+    if (data) setRowData(chunk(data, 4));
+  }, [data]);
 
   useEffect(() => {
     if (vocas.data && userVocas.data) {
