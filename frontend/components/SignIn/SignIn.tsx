@@ -133,7 +133,7 @@ const TextLineBox = styled.div`
   margin-top: 20px;
   margin-bottom: 25px;
   width: 100%;
-  border: 1px solid ${(props) => props.theme.colorTheme.textPrimary}; ;
+  border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
 const TextInLine = styled(Text)`
