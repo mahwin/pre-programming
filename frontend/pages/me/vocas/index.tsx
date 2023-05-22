@@ -3,17 +3,6 @@ import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";
 
-interface IProps {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-}
-
-interface IUserVocaProps {
-  baseData: IProps[];
-}
-
 interface ITitles {
   vocas: {
     title: string;
