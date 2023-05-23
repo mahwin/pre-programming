@@ -15,11 +15,11 @@ export class AuthService {
   ) {}
   async signIn({ phone }: LoginDto) {
     // 개발모드면 twillio 사용하지 않고 토큰만 발행
-    if (process.env.node_env === 'develpment')
-      return {
+    if (process.env.NODE_ENV === 'development')
+      ({
         ok: true,
-        payload: '758428',
-      };
+        payload: '529880',
+      });
 
     const twilioClient = twilio(
       this.configService.get('TWILIO_SID'),
@@ -27,6 +27,9 @@ export class AuthService {
     );
 
     const payload = Math.floor(100000 + Math.random() * 900000) + '';
+    //토큰이랑 user id를 연결 시킬껀데
+    //만약 가입한 적이 있으면 그 id와 token을 같이 저장하고 아니라면
+    //유저를 생성하고 생성된 유저의 id와 token을 같이 저장한다.
     const token = await this.prisma.token.create({
       data: {
         payload,
@@ -55,7 +58,9 @@ export class AuthService {
       payload,
     };
   }
+
   async confirm({ token }) {
+    console.log(token);
     const foundToken = await this.prisma.token.findUnique({
       where: {
         payload: token,
