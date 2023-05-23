@@ -14,6 +14,13 @@ export class AuthService {
     private configService: ConfigService,
   ) {}
   async signIn({ phone }: LoginDto) {
+    // 개발모드면 twillio 사용하지 않고 토큰만 발행
+    if (process.env.node_env === 'develpment')
+      return {
+        ok: true,
+        payload: '758428',
+      };
+
     const twilioClient = twilio(
       this.configService.get('TWILIO_SID'),
       this.configService.get('TWILIO_TOKEN'),
@@ -37,7 +44,7 @@ export class AuthService {
         },
       },
     });
-    console.log(payload);
+
     const message = await twilioClient.messages.create({
       messagingServiceSid: this.configService.get('TWILIO_MSID'),
       to: `82${phone.slice(1)}`,
