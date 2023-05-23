@@ -100,48 +100,56 @@ const Overray = styled.div`
   }
 `;
 
-type titleType = {
+type DevCategoryType = "web";
+
+type titleItemType = {
   title: string;
   ok: boolean;
   amount: string;
   install: string;
 };
 
+type titleType = {
+  [key in DevCategoryType]: titleItemType[];
+};
+
 interface Ititle {
-  data: titleType[];
+  data: titleType;
 }
 
-const typeKeys = ["title"];
-
-// const ttt =   { title: string; ok: boolean; amount: string; install: string }[];
-
 export default function Vocas({ data }: Ititle) {
-  console.log(data.map((el) => console.log(el)));
   return (
     <Wrapper>
-      <Container key="Web">
-        <Title>for web.dev</Title>
-        <Items>
-          {data.map((item: titleType, idx) => (
-            <Link href={`/vocas/${item.title.toLowerCase()}`} key={item.title}>
-              <Item>
-                {!item.ok && (
-                  <Overray>
-                    <div>
-                      <p>Upcoming</p>
-                    </div>
-                  </Overray>
-                )}
-                <ItemBox>
-                  <h3 style={{ color: colors[idx % 9] }}>{item.title} </h3>
-                  <p>단어 수 : {item.amount} </p>
-                  <p>다운 수 : {item.install} </p>
-                </ItemBox>
-              </Item>
-            </Link>
-          ))}
-        </Items>
-      </Container>
+      {Object.keys(data).map((key) => (
+        <Container key={key}>
+          <Title>for {key}.dev</Title>
+          <Items>
+            {data[key as DevCategoryType].map(
+              (item: titleItemType, idx: number) => (
+                <Link
+                  href={`/vocas/${item.title.toLowerCase()}`}
+                  key={item.title}
+                >
+                  <Item>
+                    {!item.ok && (
+                      <Overray>
+                        <div>
+                          <p>Upcoming</p>
+                        </div>
+                      </Overray>
+                    )}
+                    <ItemBox>
+                      <h3 style={{ color: colors[idx % 9] }}>{item.title} </h3>
+                      <p>단어 수 : {item.amount} </p>
+                      <p>다운 수 : {item.install} </p>
+                    </ItemBox>
+                  </Item>
+                </Link>
+              )
+            )}
+          </Items>
+        </Container>
+      ))}
     </Wrapper>
   );
 }
