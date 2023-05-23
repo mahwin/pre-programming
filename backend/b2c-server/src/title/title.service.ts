@@ -11,6 +11,6 @@ export class TitleService {
         id: 1,
       },
     });
-    return { ok: true, [data.category]: eval(data.data) };
+    return { [data.category]: eval(data.data) };
   }
 }
