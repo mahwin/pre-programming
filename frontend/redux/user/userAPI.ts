@@ -2,7 +2,9 @@ import axios from "axios";
 
 async function getUser() {
   try {
-    const response = await axios.get(`${process.env.API_HOST}/user`);
+    const response = await axios.get(
+      `${process.env.API_HOST}:${process.env.PORT}/user`
+    );
     return response;
   } catch (error: any) {
     new Error(error.message);

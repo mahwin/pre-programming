@@ -7,7 +7,11 @@ async function getUserVocas() {
     if (token) {
       axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     }
-    const response = await axios.get(`${process.env.API_HOST}/vocas/user`);
+    console.log(`Bearer ${token}`);
+    const response = await axios.get(
+      `${process.env.API_HOST}:${process.env.PORT}/vocas/user`
+    );
+    console.log(response);
     return response;
   } catch (error: any) {
     new Error(error.message);
