@@ -32,7 +32,7 @@ export const lightTheme = {
   inputPrimary: "#E0ECE4",
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
-  hoverPrimary: "#00b894",
+  hoverPrimary: "#218c74",
   activePrimary: "#00b894",
 };
 // 1.색상은 나중에 선택
@@ -44,7 +44,7 @@ export const darkTheme = {
   inputPrimary: "#E0ECE4",
   buttonPrimary: "#004445",
   buttonSecondary: "#E0ECE4",
-  hoverPrimary: "#00b894",
+  hoverPrimary: "#218c74",
   activePrimary: "#55efc4",
 };
 

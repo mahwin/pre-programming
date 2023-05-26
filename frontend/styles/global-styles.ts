@@ -82,6 +82,12 @@ input::-webkit-inner-spin-button {
 a {
   text-decoration:none;
   color:inherit;
+  display: block;
+  cursor: pointer; 
+}
+button{
+  border:none;
+  cursor: pointer; 
 }
 
 `;
