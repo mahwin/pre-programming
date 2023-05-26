@@ -29,10 +29,6 @@ const NavWapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.pc};
 `;
 
-const Row = styled.div`
-  display: flex;
-`;
-
 const Items = styled.ul`
   display: flex;
   align-items: center;
@@ -111,6 +107,7 @@ function Nav() {
   const { loading, data, error } = useSelector((state: any) => {
     return state.user;
   });
+
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
   const dispatch = useDispatch();
   useEffect(() => {
@@ -130,8 +127,8 @@ function Nav() {
   return (
     <Wapper>
       <NavWapper>
-        <Row>
-          <>
+        <Items>
+          <Item>
             <Link href="/">
               <LogoBox>
                 <a>
@@ -140,7 +137,7 @@ function Nav() {
                 <p>Pre-programming</p>
               </LogoBox>
             </Link>
-          </>
+          </Item>
           {data && (
             <Items>
               <Item>
@@ -157,7 +154,7 @@ function Nav() {
               </Item>
             </Items>
           )}
-        </Row>
+        </Items>
         <Items>
           {data ? (
             <>
