@@ -3,24 +3,27 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global-styles";
 import theme, { lightTheme, darkTheme } from "../styles/theme";
 import { Provider } from "react-redux";
-import { useState } from "react";
 import store from "../redux/store";
-import ThemeButton from "@components/Commons/ThemeButton";
 import axios from "axios";
 import LocalStorage from "@utils/localStorage";
+import { useState } from "react";
+import { getMediaTheme } from "@utils/getMedia";
+import ThemeButton from "@components/Commons/ThemeButton";
 
 function App({ Component, pageProps }: AppProps) {
-  const [isDark, setTheme] = useState(true);
-  const toggleTheme = () => {
-    setTheme((prev) => !prev);
-  };
   const token = LocalStorage.getItem("accessToken");
   if (token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
+
+  const [isDark, setTheme] = useState<boolean>(getMediaTheme());
+
+  const toggleTheme = () => {
+    setTheme((prev) => !prev);
+  };
+
   return (
     <Provider store={store}>
-      <ThemeButton onClick={toggleTheme} isDark={isDark} />
       <ThemeProvider
         theme={{
           ...theme,
@@ -28,6 +31,7 @@ function App({ Component, pageProps }: AppProps) {
         }}
       >
         <GlobalStyle />
+        <ThemeButton onClick={toggleTheme} isDark={isDark} />
         <Component {...pageProps} />
       </ThemeProvider>
     </Provider>
