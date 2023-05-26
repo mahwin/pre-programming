@@ -1,47 +1,51 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+import { MoonSvg } from "assets/svg/MoonSvg";
+import { SunSvg } from "assets/svg/SunSvg";
+
 const ToggleBox = styled.div<{ isDark: boolean }>`
   position: fixed;
-  width: 150px;
-  top: 10px;
-  height: 40px;
-  right: 30%;
-  margin-right: 20px;
+  right: 5%;
+  top: 10%;
+  width: 100px;
+  height: 30px;
   border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: black;
+
   z-index: 100;
   overflow: hidden;
   cursor: pointer;
-  justify-content: ${(props) => (props.isDark ? "end" : "start")};
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 
-const Toggle = styled(motion.div)`
-  z-index: 1;
+const Shadow = styled(motion.div)<{ isDark: boolean }>`
   height: 100%;
-  width: 80px;
+  width: 50%;
   border-radius: 20px;
+  position: absolute;
   background-color: white;
   opacity: 0.3;
+  ${(props) => (props.isDark ? "right: 0;" : "left: 0")}
 `;
 
-const ToggleItem = styled.p<{ isRight: boolean }>`
-  position: absolute;
-  ${(props) => (props.isRight ? "right: 20px;" : "left: 20px;")};
-  font-size: 20px;
-  font-weight: 400;
-  color: white;
+const ToggleItem = styled.div`
+  display: flex;
 `;
 
 function ThemeButton({ onClick, isDark }: any) {
   return (
     <ToggleBox isDark={isDark} onClick={onClick}>
-      <Toggle layout />
-      <ToggleItem isRight={false}>Light</ToggleItem>
-      <ToggleItem isRight={true}>Dark</ToggleItem>
+      <Shadow layout isDark={isDark} />
+      <ToggleItem>
+        <SunSvg width="25" height="30" />
+      </ToggleItem>
+      <ToggleItem>
+        <MoonSvg width="25" height="30" />
+      </ToggleItem>
     </ToggleBox>
   );
 }
