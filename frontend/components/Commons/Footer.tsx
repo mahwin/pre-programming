@@ -9,27 +9,27 @@ import {
   GithubSvg,
   SendSvg,
 } from "@svg";
+import Link from "next/link";
 
 const Wrapper = styled.footer`
-  background-color: #141414;
-  width: 100%;
+  background-color: #202020;
+  opacity: 0.9;
   display: flex;
-  height: 100%;
+  width: 100%;
   justify-content: center;
-  position: relative;
 `;
 
-const FooterWrapper = styled.div`
+const Container = styled.div`
   width: 100%;
   height: 80vh;
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 30px;
   max-width: ${(props) => props.theme.windowSize.pc};
   display: flex;
   flex-direction: column;
 `;
 
-const ColumnBox = styled.div`
+const Row = styled.div`
   display: grid;
   height: 25%;
   grid-template-columns: repeat(3, 1fr);
@@ -77,30 +77,31 @@ const TitleLine = styled.hr`
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
 `;
 
-const LogoBox = styled.div`
-  padding: 5px;
-  margin-right: 20px;
-`;
-
-const FooterMiddleBox = styled.div`
+const BottomBox = styled.div`
   display: flex;
+
   flex-direction: column;
   height: 40vh;
+`;
+
+const LogoBox = styled.div`
+  display: flex;
+  margin-top: -15px;
+  gap: 15px;
+  align-items: center;
 `;
 
 const SnsBox = styled.div`
   display: flex;
   width: 50%;
-  margin-top: 10px;
   margin-bottom: 10px;
   justify-content: space-between;
 `;
 
-const LinksWrapper = styled.div`
-  width: 100%;
-  height: 60%;
+const LinkWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 35px;
 `;
 
 const Links = styled.ul`
@@ -109,23 +110,21 @@ const Links = styled.ul`
   grid-template-columns: 1fr 1fr;
 `;
 const LinkItem = styled.li`
-  display: flex;
   h4:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colorTheme.hoverPrimary};
     text-decoration: underline;
+    transition: ease-in-out 0.3s;
   }
 `;
-const EmailWrapper = styled.div`
-  height: 60%;
+const EmailBox = styled.div`
+  margin-top: 35px;
   display: flex;
-  width: 100%;
-  justify-content: center;
   flex-direction: column;
 `;
 
 const InputWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
 `;
 
@@ -155,19 +154,11 @@ const Button = styled.button`
   border: none;
 `;
 
-const FooterBottom = styled.footer`
-  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
-  height: 5vh;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-`;
-
 export default function Footer() {
   return (
     <Wrapper>
-      <FooterWrapper>
-        <ColumnBox>
+      <Container>
+        <Row>
           <Box>
             <SvgBox>
               <MapPinSvg width="50" height="50" />
@@ -195,58 +186,53 @@ export default function Footer() {
               <SubTitle>mahwin7085@gmail.com</SubTitle>
             </TitleBox>
           </Box>
-        </ColumnBox>
+        </Row>
         <Line />
-        <ColumnBox>
-          <FooterMiddleBox style={{ justifyContent: "space-between" }}>
+        <Row>
+          <BottomBox style={{ justifyContent: "space-between" }}>
             <Box>
               <LogoBox>
                 <LogoSvg width="40" height="60" />
-              </LogoBox>
-              <TitleBox>
                 <Title>Pre-programming</Title>
-              </TitleBox>
+              </LogoBox>
             </Box>
             <SubTitle>: What to do before you studying programming!</SubTitle>
             <Title>Follow us</Title>
             <SnsBox>
               <FacebookSvg width="40" height="40" />
               <TwitterSvg width="40" height="40" />
-              <GithubSvg width="40" height="40" />
+              <Link href="https://github.com/mahwin">
+                <a target="_blank" rel="noopener noreferrer">
+                  <GithubSvg width="40" height="40" />
+                </a>
+              </Link>
             </SnsBox>
-          </FooterMiddleBox>
-          <FooterMiddleBox>
+          </BottomBox>
+          <BottomBox>
             <Box>
               <TitleBox>
                 <Title>Useful Links</Title>
                 <TitleLine />
               </TitleBox>
             </Box>
-            <LinksWrapper>
+            <LinkWrapper>
               <Links>
-                <LinkItem>
-                  <SubTitle>Home</SubTitle>
-                </LinkItem>
-                <LinkItem>
-                  <SubTitle>About</SubTitle>
-                </LinkItem>
-                <LinkItem>
-                  <SubTitle>Services</SubTitle>
-                </LinkItem>
-                <LinkItem>
-                  <SubTitle>Contact Us</SubTitle>
-                </LinkItem>
+                {["Home", "About", "Services", "Contact Us"].map((info) => (
+                  <LinkItem>
+                    <SubTitle>{info}</SubTitle>
+                  </LinkItem>
+                ))}
               </Links>
-            </LinksWrapper>
-          </FooterMiddleBox>
-          <FooterMiddleBox>
+            </LinkWrapper>
+          </BottomBox>
+          <BottomBox>
             <Box>
               <TitleBox>
                 <Title>Subscribe</Title>
                 <TitleLine />
               </TitleBox>
             </Box>
-            <EmailWrapper>
+            <EmailBox>
               <SubTitle>
                 Don’t miss to subscribe to our new feeds, kindly fill the form
                 below.
@@ -257,11 +243,10 @@ export default function Footer() {
                   <SendSvg width="24" height="24" />
                 </Button>
               </InputWrapper>
-            </EmailWrapper>
-          </FooterMiddleBox>
-        </ColumnBox>
-      </FooterWrapper>
-      <FooterBottom />
+            </EmailBox>
+          </BottomBox>
+        </Row>
+      </Container>
     </Wrapper>
   );
 }
