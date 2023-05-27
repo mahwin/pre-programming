@@ -14,7 +14,7 @@ const Wapper = styled.nav`
   justify-content: center;
   position: fixed;
   top: 0;
-  height: 60px;
+  height: 55px;
   z-index: 99;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -33,7 +33,6 @@ const Items = styled.ul`
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  height: 100%;
 `;
 
 const Item = styled.li`
@@ -51,24 +50,23 @@ const Item = styled.li`
       transition: background-color 0.3s ease-in-out;
     }
   }
-  button {
-    padding: 8px 12px;
-    border: none;
-    background-color: transparent;
-    color: ${(props) => props.theme.colorTheme.textPrimary};
-    font-weight: ${(props) => props.theme.fontWeight.base};
-    font-size: ${(props) => props.theme.fontSize.base};
-    cursor: pointer;
-    &:hover {
-      border-radius: 3px;
-      color: darkorange;
-      transition: color 0.3s ease-in-out;
-    }
+`;
+
+const LogOutBtn = styled.button`
+  padding: 8px 12px;
+  background-color: transparent;
+  color: ${(props) => props.theme.colorTheme.textPrimary};
+  font-size: ${(props) => props.theme.fontSize.base};
+
+  &:hover {
+    border-radius: 3px;
+    color: darkorange;
+    transition: color 0.3s ease-in-out;
   }
 `;
 
 const LogoBox = styled.div`
-  padding: 8px 12px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -91,10 +89,11 @@ const CurrentPosition = styled(motion.span).attrs({
   right: 0;
   margin: 0 auto;
   bottom: 10px;
-  width: 5px;
-  height: 5px;
-  border-radius: 3px;
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
+  opacity: 0.5;
 `;
 
 interface MutationResult {
@@ -131,9 +130,7 @@ function Nav() {
           <Item>
             <Link href="/">
               <LogoBox>
-                <a>
-                  <LogoSvg width="30" height="30" />
-                </a>
+                <LogoSvg width="30" height="30" />
                 <p>Pre-programming</p>
               </LogoBox>
             </Link>
@@ -165,7 +162,7 @@ function Nav() {
                 {currentNav === "/me" && <CurrentPosition />}
               </Item>
               <Item>
-                <button onClick={logoutClick}>로그아웃</button>
+                <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
               </Item>
             </>
           ) : (
