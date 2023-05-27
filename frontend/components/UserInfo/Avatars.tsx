@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState, MouseEvent } from "react";
+import { userInfoColors } from "../../assets/color/userInfoColors";
 
 const Wrapper = styled(motion.div)`
   position: absolute;
@@ -82,7 +83,7 @@ const wrapperVariants = {
 const avatarVariants = {
   open: {
     clipPath: "circle(500px at 40px 40px)",
-    backgroundColor: "#06acf9",
+    backgroundColor: userInfoColors.avatarBgColor,
     opacity: 1,
     transition: {
       clipPath: { duration: 1.5 },
@@ -93,7 +94,7 @@ const avatarVariants = {
   },
   closed: {
     clipPath: "circle(30px at 40px 40px)",
-    backgroundColor: "#06acf9",
+    backgroundColor: userInfoColors.avatarBgColor,
     opacity: 0,
     transition: {
       clipPath: { duration: 1.5 },
