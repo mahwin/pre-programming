@@ -4,30 +4,27 @@ import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState, MouseEvent } from "react";
 
-const BtnWapper = styled(motion.div)`
+const Wrapper = styled(motion.div)`
   position: absolute;
-  border-radius: 18px;
-  bottom: 30px;
+  bottom: 5%;
   right: 10%;
-  background-color: transparent;
-  overflow: hidden;
-  height: 60%;
+  height: 55%;
   width: 280px;
+  border-radius: 18px;
   z-index: 3;
+  overflow: hidden;
+  text-align: center;
+  color: white;
 `;
 
 const AvatarsWrapper = styled(motion.div)`
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  background-color: transparent;
+  height: 100%;
 `;
 
 const BtnBox = styled.div`
-  width: 100%;
-  height: 8vh;
+  margin-top: 10px;
   display: flex;
   justify-content: flex-end;
 `;
@@ -35,10 +32,8 @@ const BtnBox = styled.div`
 const Button = styled.button`
   width: 50px;
   border: none;
-  background-color: transparent;
-  color: white;
-  padding: 20px 10px 0px 0px;
-  font-size: 24px;
+  background-color: inherit;
+  color: inherit;
   cursor: pointer;
   :hover {
     transform: scale(1.2);
@@ -46,20 +41,16 @@ const Button = styled.button`
 `;
 
 const Title = styled.h3`
-  text-align: center;
-  color: white;
-  font-size: 24px;
-  font-weight: 700;
+  color: inherit;
+  font-size: ${(props) => props.theme.fontSize.lg};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
 `;
 const Items = styled(motion.ul)`
-  position: relative;
-  width: 100%;
-  height: 70%;
   padding: 24px;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   row-gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
 `;
 
 const Item = styled(motion.li)`
@@ -68,7 +59,6 @@ const Item = styled(motion.li)`
   height: 60px;
   margin: 0 auto;
   :hover {
-    transform: scale(1.2);
     border-radius: 30px;
     border: 2px solid orange;
   }
@@ -92,7 +82,6 @@ const wrapperVariants = {
 const avatarVariants = {
   open: {
     clipPath: "circle(500px at 40px 40px)",
-    backgroundColor: "#06acf9",
     opacity: 1,
     transition: {
       clipPath: { duration: 1.5 },
@@ -103,7 +92,6 @@ const avatarVariants = {
   },
   closed: {
     clipPath: "circle(30px at 40px 40px)",
-    backgroundColor: "#06acf9",
     opacity: 0,
     transition: {
       clipPath: { duration: 1.5 },
@@ -132,7 +120,7 @@ export default function Avatars({
     setAvatarList(allList.filter((num) => num + "" !== avatar));
   }, [avatar]);
   return (
-    <BtnWapper variants={wrapperVariants} animate={isOpen ? "open" : "closed"}>
+    <Wrapper variants={wrapperVariants} animate={isOpen ? "open" : "closed"}>
       <motion.div initial={false} animate={isOpen ? "open" : "closed"}>
         <AvatarsWrapper
           variants={avatarVariants}
@@ -163,6 +151,6 @@ export default function Avatars({
           </Items>
         </AvatarsWrapper>
       </motion.div>
-    </BtnWapper>
+    </Wrapper>
   );
 }
