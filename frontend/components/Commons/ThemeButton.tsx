@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { MoonSvg } from "assets/svg/MoonSvg";
 import { SunSvg } from "assets/svg/SunSvg";
 
-const ToggleBox = styled.div<{ isDark: boolean }>`
+const ToggleBox = styled.div`
   position: fixed;
   right: 5%;
   top: 10%;
@@ -22,24 +22,33 @@ const ToggleBox = styled.div<{ isDark: boolean }>`
   justify-content: space-around;
 `;
 
-const Shadow = styled(motion.div)<{ isDark: boolean }>`
+const Shadow = styled(motion.div)<{ isdark: boolean }>`
   height: 100%;
   width: 50%;
   border-radius: 20px;
   position: absolute;
   background-color: white;
   opacity: 0.3;
-  ${(props) => (props.isDark ? "right: 0;" : "left: 0")}
+  ${(props) => (props.isdark ? "left: 0;" : "right: 0;")}
 `;
 
 const ToggleItem = styled.div`
   display: flex;
 `;
 
-function ThemeButton({ onClick, isDark }: any) {
+interface IThemeButtonProps {
+  onClick: () => void;
+  isDark: boolean;
+}
+
+function ThemeButton({ onClick, isDark }: IThemeButtonProps) {
   return (
-    <ToggleBox isDark={isDark} onClick={onClick}>
-      <Shadow layout isDark={isDark} />
+    <ToggleBox onClick={onClick}>
+      {isDark ? (
+        <Shadow isdark={true} layout />
+      ) : (
+        <Shadow isdark={false} layout />
+      )}
       <ToggleItem>
         <SunSvg width="25" height="30" />
       </ToggleItem>
