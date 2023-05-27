@@ -82,6 +82,7 @@ const wrapperVariants = {
 const avatarVariants = {
   open: {
     clipPath: "circle(500px at 40px 40px)",
+    backgroundColor: "#06acf9",
     opacity: 1,
     transition: {
       clipPath: { duration: 1.5 },
@@ -92,6 +93,7 @@ const avatarVariants = {
   },
   closed: {
     clipPath: "circle(30px at 40px 40px)",
+    backgroundColor: "#06acf9",
     opacity: 0,
     transition: {
       clipPath: { duration: 1.5 },
