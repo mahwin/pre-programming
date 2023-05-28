@@ -12,6 +12,11 @@ const userVocaColors = {
     hoverBgColor: "#152649",
     pColor: "#0d1e41",
   },
+  study: {
+    borderColor: "#636e72",
+    btnHoverColor: "orange",
+    etcColor: "#b2bec3",
+  },
 };
 
 export { userVocaColors };

@@ -8,12 +8,14 @@ import {
 } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, KeyboardEvent } from "react";
+import { userVocaColors } from "assets/color/userVocaColor";
 
 const Overay = styled(motion.div)`
   position: fixed;
-  height: 250%;
-  z-index: 999;
+  top: 0;
+  height: 100vh;
   width: 100%;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 1);
   display: flex;
   justify-content: center;
@@ -22,23 +24,24 @@ const Overay = styled(motion.div)`
 `;
 
 const Container = styled.div`
-  position: fixed;
-  top: 5em;
+  position: relative;
   width: ${(props) => props.theme.windowSize.tablet};
   height: 400px;
-  border: 2px solid #636e72;
+  border: 2px solid ${userVocaColors.study.borderColor};
 `;
 
 const XBtn = styled.div`
   position: absolute;
-  right: 2em;
   top: 1em;
+  right: 2em;
   width: 10px;
   height: 10px;
   cursor: pointer;
   :hover {
     svg {
-      stroke: orange;
+      transition: ease-in-out 0.3s;
+      transform: scale(1.1);
+      stroke: ${userVocaColors.study.btnHoverColor};
     }
   }
 `;
@@ -51,7 +54,7 @@ const KeyBoard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #b2bec3;
+  color: ${userVocaColors.study.etcColor};
 `;
 
 const CounterBox = styled.div`
@@ -60,10 +63,9 @@ const CounterBox = styled.div`
   width: 400px;
   top: 2rem;
   left: 2rem;
-
   h3 {
     font-size: ${(props) => props.theme.fontSize.xlg};
-    color: #b2bec3;
+    color: ${userVocaColors.study.etcColor};
   }
 `;
 
@@ -73,7 +75,7 @@ const Col = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const WordBox = styled.div`
@@ -87,19 +89,19 @@ const WordBox = styled.div`
   text-align: left;
   justify-content: space-around;
   h2 {
-    font-size: 40px;
+    font-size: ${(props) => props.theme.fontSize.xlg};
     color: white;
   }
 `;
 
 const Word = styled.div`
-  width: 500px;
+  width: 600px;
 `;
 const Mean = styled.div`
   width: 100%;
   h3 {
     white-space: pre-wrap;
-    font-size: 24px;
+    font-size: ${(props) => props.theme.fontSize.lg};
     color: white;
   }
 `;
@@ -176,7 +178,12 @@ export default function Study({ handleClick, amount, spreadData }: IStudy) {
           )}
 
           <KeyBoard>
-            <div style={{ color: current > 1 ? "#b2bec3" : "black" }}>
+            <div
+              style={{
+                color:
+                  current > 1 ? userVocaColors.study.etcColor : "transparent",
+              }}
+            >
               <LeftArrowSvg />
             </div>
             <Col>
@@ -187,10 +194,16 @@ export default function Study({ handleClick, amount, spreadData }: IStudy) {
                 <KeyDownSvg />
               </div>
             </Col>
-            <div style={{ color: current < amount ? "#b2bec3" : "black" }}>
+            <div
+              style={{
+                color:
+                  current < amount
+                    ? userVocaColors.study.etcColor
+                    : "transparent",
+              }}
+            >
               <RightArrowSvg />
             </div>
-            <div></div>
           </KeyBoard>
         </Container>
       </Overay>
