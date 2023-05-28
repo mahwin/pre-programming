@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
-const TableWrapper = styled.div`
-  height: 500px;
-  position: relative;
+import { userVocaColors } from "assets/color/userVocaColor";
+const Wrapper = styled.div`
+  height: 100%;
+  max-height: 70vh;
+  width: ${(props) => props.theme.windowSize.tablet};
   overflow: auto;
   border-radius: 5px;
   margin-bottom: 100px;
@@ -11,30 +13,14 @@ const TableWrapper = styled.div`
 `;
 
 const Table = styled.table`
-  width: ${(props) => props.theme.windowSize.tablet};
   table-layout: fixed;
   th {
     position: sticky;
-    top: 0px;
-    color: #d5dde5;
-    background: #1b1e24;
+    color: ${userVocaColors.table.thColor};
+    background: ${userVocaColors.table.thBgColor};
     font-size: 20px;
     font-weight: ${(props) => props.theme.fontWeight.bold};
     padding: 12px 20px;
-    text-align: middle;
-    vertical-align: middle;
-    :nth-child(1) {
-      width: 150px;
-    }
-    :nth-child(2) {
-      width: 150px;
-    }
-    :nth-child(3) {
-      width: 120px;
-    }
-    :nth-child(4) {
-      width: 100%;
-    }
   }
   td {
     background: #ffffff;
@@ -51,25 +37,21 @@ const Table = styled.table`
   tr td:nth-child(1),
   td:nth-child(2),
   td:nth-child(3) {
-    border-right: 1px solid #c1c3d1;
+    border-right: 1px solid ${userVocaColors.table.tdLine};
   }
 
   tr td:nth-child(3) {
     text-align: center;
   }
   tr td {
-    border-bottom: 1px solid #c1c3d1;
+    border-bottom: 1px solid ${userVocaColors.table.tdLine};
   }
   tr:nth-child(odd) td {
-    background: #ebebeb;
-  }
-  tr:nth-child(odd):hover td {
-    background: #4e5066;
+    opacity: 0.85;
   }
   tr:hover td {
-    background: #4e5066;
+    background: ${userVocaColors.table.trHover};
     color: #ffffff;
-    border-top: 1px solid #22262e;
   }
 `;
 type categoriesType =
@@ -136,7 +118,7 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
     <>
       {totalWords?.length > 0 ? (
         <>
-          <TableWrapper>
+          <Wrapper>
             <Table>
               <thead>
                 <tr>
@@ -174,7 +156,7 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
                 })}
               </tbody>
             </Table>
-          </TableWrapper>
+          </Wrapper>
           <FloatingBtn amount={totalAmount} data={totalWords} />
         </>
       ) : null}
