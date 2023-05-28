@@ -4,71 +4,46 @@ import { useEffect, useState } from "react";
 import { DownArrowSvg, StudySvg, TestSvg } from "@svg";
 import Study from "./Study";
 import Test from "./Test";
+import { userVocaColors } from "assets/color/userVocaColor";
 
 const Wrapper = styled(motion.div)`
   z-index: 99;
-  position: fixed;
   height: 50px;
   width: 50px;
+  border-radius: 25px;
+  position: fixed;
   right: 4em;
   bottom: 4em;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 25px;
-  background-color: rgb(29, 46, 81);
+  background-color: ${userVocaColors.floatBtn.bgColor};
   button {
     appearance: none;
     border: none;
+    display: flex;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: transparent;
-    display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 40px;
+    font-size: ${(props) => props.theme.fontSize.lg};
     cursor: pointer;
     :hover {
-      background-color: #152649;
-    }
-    :active {
-      background-color: #0d1e41;
+      color: ${userVocaColors.floatBtn.hoverColor};
     }
   }
 `;
 
-const StudyDescription = styled.p`
-  z-index: 999;
-  display: none;
-  position: absolute;
-  width: 100px;
-  left: -35px;
-  top: -80px;
-  padding: 10px;
-  height: 60px;
-  border-radius: 8px;
-  background: #0d1e41;
-  color: #fff;
-  font-size: 13px;
-  white-space: pre-wrap;
-  line-height: 20px;
-  &:after {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 0;
-    height: 0;
-    border: 1px solid red;
-    transform: rotate(180deg);
-    border-color: rgba(51, 51, 51, 0);
-    border-bottom-color: #0d1e41;
-    border-width: 10px;
-    pointer-events: none;
-    content: "";
+const BtnWrapper = styled.div`
+  position: relative;
+  cursor: pointer;
+  :hover {
+    p {
+      display: inline-block;
+    }
   }
 `;
 
@@ -82,7 +57,7 @@ const Description = styled.p`
   padding: 10px;
   height: 60px;
   border-radius: 8px;
-  background: #0d1e41;
+  background: ${userVocaColors.floatBtn.pColor};
   color: #fff;
   font-size: 14px;
   line-height: 20px;
@@ -96,48 +71,71 @@ const Description = styled.p`
     height: 0;
     border: 1px solid red;
     transform: rotate(180deg);
-    border-color: rgba(51, 51, 51, 0);
-    border-bottom-color: #0d1e41;
+    border-color: transparent;
+    border-bottom-color: ${userVocaColors.floatBtn.pColor};
     border-width: 10px;
     pointer-events: none;
     content: "";
   }
 `;
-const BtnWrapper = styled.div`
-  position: relative;
-  cursor: pointer;
-  :hover {
-    p {
-      display: inline-block;
-    }
-  }
-`;
 
-const TwoBtn = styled(motion.div)`
+const StudyDescription = styled(Description)``;
+
+const TwoBtnBox = styled(motion.div)`
   position: absolute;
   top: -4em;
   width: 120px;
   height: 50px;
   border-radius: 10px;
-  background-color: #0d1e41;
+  background-color: ${userVocaColors.floatBtn.bgColor};
   transition: all 0.4s ease-in-out;
   display: flex;
   justify-content: space-around;
   div:nth-child(1) {
     margin-top: 3px;
     svg:hover {
-      stroke: orange;
+      stroke: ${userVocaColors.floatBtn.hoverColor};
     }
   }
   div:nth-child(2) {
     margin-top: 2px;
     svg:hover {
-      fill: orange;
+      fill: ${userVocaColors.floatBtn.hoverColor};
     }
   }
 `;
 
-const TestMakerWrapper = styled(motion.div)`
+const TestStartBox = styled.div`
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  text-align: center;
+  font-size: ${(props) => props.theme.fontSize.lg};
+  button {
+    border-radius: 5px;
+    background-color: white;
+    color: ${userVocaColors.floatBtn.bgColor};
+    font-size: inherit;
+    cursor: pointer;
+    :hover {
+      transition: all 0.25s ease-in-out;
+    }
+  }
+  h3 {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: inherit;
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: not-allowed;
+  }
+`;
+
+const TestMakerBox = styled(motion.div)`
+  padding: 12px;
   position: absolute;
   background-color: #0d1e41;
   top: -150px;
@@ -149,60 +147,21 @@ const TestMakerWrapper = styled(motion.div)`
   height: 0px;
 `;
 
-const TestMaker = styled.div`
-  padding: 12px;
-`;
-
 const InputBox = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-around;
   padding-top: 5px;
+  font-size: ${(props) => props.theme.fontSize.lg};
   input {
-    font-size: 22px;
+    font-size: inherit;
     width: 100px;
   }
   span {
     display: inline-flex;
     width: 100px;
     justify-content: center;
-    font-size: 26px;
-  }
-`;
-
-const BtnBox = styled.div`
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  button {
-    width: 100%;
-    height: 30px;
-    border-radius: 5px;
-    background-color: white;
-    color: #0d1e41;
-    font-size: 20px;
-    cursor: pointer;
-    :hover {
-      background-color: rgba(255, 255, 255, 0.8);
-      transition: all 0.25s ease-in-out;
-      box-shadow: inset 0 0 0 2px #1e90ff;
-    }
-  }
-  h3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 30px;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 5px;
-    background-color: rgba(200, 200, 200, 0.5);
-    color: #ffa502;
-    cursor: not-allowed;
+    font-size: inherit;
   }
 `;
 
@@ -306,8 +265,8 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
           {isOpen ? <DownArrowSvg stroke={3} /> : "+"}
         </button>
         <AnimatePresence>
-          {isOpen ? (
-            <TwoBtn>
+          {isOpen && (
+            <TwoBtnBox>
               <BtnWrapper onClick={handleClickStudy}>
                 <StudySvg />
                 <StudyDescription>
@@ -319,28 +278,28 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
                 <Description>실력을 테스트 해보세요!</Description>
               </BtnWrapper>
               {isTestMakerOpen && (
-                <TestMakerWrapper
+                <TestMakerBox
                   variants={TestMakerVariants}
                   animate={isTestMakerOpen ? "open" : "close"}
                 >
-                  <TestMaker>
-                    <p>문제 수 입력</p>
+                  <div>
+                    <label>문제 수 입력</label>
                     <InputBox>
                       <input value={inputN} onChange={handleInput}></input>
                       <span> / {maxNumber}</span>
                     </InputBox>
-                    <BtnBox>
-                      {+inputN > 0 ? (
+                    <TestStartBox>
+                      {Number(inputN) > 0 ? (
                         <button onClick={handleClickTest}>Can Start !</button>
                       ) : (
                         <h3>Fill Input !</h3>
                       )}
-                    </BtnBox>
-                  </TestMaker>
-                </TestMakerWrapper>
+                    </TestStartBox>
+                  </div>
+                </TestMakerBox>
               )}
-            </TwoBtn>
-          ) : null}
+            </TwoBtnBox>
+          )}
         </AnimatePresence>
       </Wrapper>
       {spreadData && isStudyOpen && (
