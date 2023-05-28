@@ -22,6 +22,8 @@ const userVocaColors = {
     textColor: "#f1f2ec",
     progressBarColor: "#153f65;",
     selectedColor: "orange",
+    correctColor: "#ac4e6b",
+    inCorrectColor: "#977f89",
   },
 };
 
