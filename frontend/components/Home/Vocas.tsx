@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { vocaColors } from "../../assets/color/vocaColors";
+import { titleColor } from "assets/color/titleColors";
 
 const Wrapper = styled.div`
   display: flex;
@@ -122,7 +122,7 @@ export default function Vocas({ data }: Ititle) {
                       </Overray>
                     )}
                     <ItemContents>
-                      <h3 style={{ color: vocaColors[idx % 9] }}>
+                      <h3 style={{ color: titleColor[idx % 9] }}>
                         {item.title}{" "}
                       </h3>
                       <p>단어 수 : {item.amount} </p>

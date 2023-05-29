@@ -1,4 +1,4 @@
-const vocaColors = [
+const titleColor = [
   "#ED7D7F",
   "#FEFCBF",
   "#9AE6B4",
@@ -11,4 +11,4 @@ const vocaColors = [
   "#ffeaa7",
 ];
 
-export { vocaColors };
+export { titleColor };
