@@ -1,13 +1,13 @@
-export default function camelCaser(name: string) {
+export default function formatter(name: string) {
   const nameList = name.split("-");
   nameList.forEach((string, idx) => {
     if (idx !== 0) {
-      nameList[idx] = string.slice(0, 1).toUpperCase() + string.slice(1);
+      nameList[idx] = string[1].toUpperCase() + string.slice(1);
     }
   });
   return nameList.join("");
 }
 
-export function camelCaserHeadLower(name: string) {
-  return name.slice(0, 1).toLowerCase() + camelCaser(name.slice(1));
+export function camelCaser(name: string) {
+  return name[0].toLowerCase() + formatter(name.slice(1));
 }

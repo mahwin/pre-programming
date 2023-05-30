@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { motion, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
-import { camelCaserHeadLower } from "@utils/camelCaser";
+import formatter from "@utils/camelCaser";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { userVocasActions } from "redux/userVocas/userVocasSlice";
@@ -340,7 +340,7 @@ export default function UserVoca({ data }: ITitles) {
 
   const handleClickOpen = (e: any) => {
     const [tag, row] = e.target.id.split("|");
-    setClickId(camelCaserHeadLower(tag));
+    setClickId(formatter(tag));
     setClickedRow(row);
   };
 
@@ -375,7 +375,7 @@ export default function UserVoca({ data }: ITitles) {
                       id={item.title + "|" + rowIdx}
                       onClick={handleClickClose}
                       style={
-                        clickId === camelCaserHeadLower(item.title)
+                        clickId === formatter(item.title)
                           ? {
                               backgroundColor: "#00b894",
                               opacity: 1,
@@ -387,7 +387,7 @@ export default function UserVoca({ data }: ITitles) {
                             }
                       }
                       whileHover={
-                        clickId === camelCaserHeadLower(item.title)
+                        clickId === formatter(item.title)
                           ? { cursor: "pointer" }
                           : { cursor: "none" }
                       }
@@ -404,12 +404,11 @@ export default function UserVoca({ data }: ITitles) {
                           {item.title}
                           {userVocaData &&
                             " (" +
-                              userVocaData?.[camelCaserHeadLower(item.title)]
-                                ?.len +
+                              userVocaData?.[formatter(item.title)]?.len +
                               ")"}
                         </span>
                         <Center>
-                          {clickId === camelCaserHeadLower(item.title) ? (
+                          {clickId === formatter(item.title) ? (
                             <FolderOpenSvg />
                           ) : (
                             <FolderSvg />
@@ -420,9 +419,7 @@ export default function UserVoca({ data }: ITitles) {
                         initial={false}
                         variants={ArrowVariants}
                         animate={
-                          clickId === camelCaserHeadLower(item.title)
-                            ? "open"
-                            : "closed"
+                          clickId === formatter(item.title) ? "open" : "closed"
                         }
                       />
                     </VocaCard>
@@ -454,8 +451,7 @@ export default function UserVoca({ data }: ITitles) {
                           {item.title}
                           {userVocaData &&
                             " (" +
-                              userVocaData?.[camelCaserHeadLower(item.title)]
-                                ?.len +
+                              userVocaData?.[formatter(item.title)]?.len +
                               ")"}
                         </span>
                         <Center>
