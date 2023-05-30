@@ -3,7 +3,7 @@ import Footer from "@components/Commons/Footer";
 import VocaDetail from "@components/Vocas/VocaDetail";
 import Banner from "@components/Commons/Banner";
 import TestButton from "@components/Vocas/TestButton";
-import camelCaser from "@utils/camelCaser";
+import formatter from "@utils/camelCaser";
 import { useEffect, useState } from "react";
 import { vocasActions } from "redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
@@ -78,7 +78,7 @@ export default function VocaPage() {
       dispatch(vocasActions.getVocas());
     } else {
       if (category) {
-        setVocas(data?.category[camelCaser(category) as CategoryType].level);
+        setVocas(data?.category[formatter(category) as CategoryType].level);
       }
     }
   }, [data, category, dispatch]);
