@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import LocalStorage from "@utils/localStorage";
+import { SignInColors } from "assets/color/SignInColors";
 
 const Wapper = styled.div`
   height: 100vh;
@@ -21,6 +22,7 @@ const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 `;
 const TitleBox = styled.div`
   margin-bottom: 50px;
@@ -33,13 +35,11 @@ const Title = styled.h2`
 `;
 
 const SubTitle = styled.h4`
-  text-align: center;
   font-size: ${(props) => props.theme.fontSize.base};
   font-weight: ${(props) => props.theme.fontWeight.base};
   color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 const Line = styled.hr`
-  text-align: center;
   width: 100%;
   border-radius: 2px;
   border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
@@ -51,57 +51,48 @@ const Text = styled.p`
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const PhoneBox = styled.div`
+const FormBox = styled.div`
   width: 100%;
-`;
-const Form = styled.form`
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-`;
-
-const PostInput = styled.span`
-  width: 10%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.textSecondary};
-  p {
-    font-size: 18px;
-  }
 `;
 
 const InputBox = styled.div`
+  margin-top: 10px;
   display: flex;
+  height: 40px;
 `;
+
+// +82를 의미
+const PreNumber = styled.div`
+  flex-grow: 1;
+  line-height: 40px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: ${(props) => props.theme.colorTheme.textSecondary};
+`;
+
 const Input = styled.input.attrs({
   type: "number",
 })`
+  flex-grow: 9;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 90%;
-  padding: 5px;
-  height: 40px;
+  padding: 10px;
   border: none;
   font-size: ${(props) => props.theme.fontSize.lg};
-  margin-bottom: 5px;
   &:focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
 `;
+
 const TokenInput = styled(Input)`
   width: 100%;
+  margin-top: 10px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 `;
 
 const Error = styled.span`
-  color: #ff7675;
+  color: ${SignInColors.errorColor};
   font-weight: ${(props) => props.theme.fontWeight.base};
   position: absolute;
   top: 50px;
@@ -109,15 +100,10 @@ const Error = styled.span`
 
 const Button = styled.button`
   width: 100%;
+  height: 40px;
+  margin: 30px 0;
   border-radius: 5px;
   border: none;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  height: 40px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.textSecondary};
   font-weight: ${(props) => props.theme.fontWeight.bold};
@@ -127,10 +113,8 @@ const Button = styled.button`
   }
 `;
 
-const TextLineBox = styled.div`
+const TextInLineBox = styled.div`
   position: relative;
-  text-align: center;
-  margin-top: 20px;
   margin-bottom: 25px;
   width: 100%;
   border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
@@ -140,13 +124,13 @@ const TextInLine = styled(Text)`
   position: absolute;
   right: 0;
   left: 0;
-  top: -12px;
   margin: 0 auto;
+  top: -12px;
   width: 25%;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 `;
 
-const SnsLoginwrapper = styled.div`
+const SnsBox = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
@@ -156,12 +140,8 @@ const SnsLoginwrapper = styled.div`
 
 const SnsButton = styled.button`
   width: 100%;
-  height: 40px;
   border-radius: 5px;
   border: 1.5px solid ${(props) => props.theme.colorTheme.textPrimary};
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 interface EnterForm {
@@ -222,11 +202,11 @@ export default function SignIn() {
         </TitleBox>
         <Text>Phone</Text>
         <Line />
-        <PhoneBox>
+        <FormBox>
           {data?.ok ? (
             <>
-              <Text>Cerification Number</Text>
-              <Form onSubmit={tokenHandleSubmit(onTokenValid)}>
+              <Text style={{ textAlign: "left" }}>Cerification Number</Text>
+              <form onSubmit={tokenHandleSubmit(onTokenValid)}>
                 <TokenInput
                   placeholder="인증 번호를 입력하세요."
                   {...tokenRegister("token", {
@@ -235,16 +215,16 @@ export default function SignIn() {
                 />
                 <Error>{tokenData?.message}</Error>
                 <Button>인증번호 입력</Button>
-              </Form>
+              </form>
             </>
           ) : (
             <>
-              <Text>Phone number</Text>
-              <Form onSubmit={handleSubmit(onValid)}>
+              <Text style={{ textAlign: "left" }}>Phone number</Text>
+              <form onSubmit={handleSubmit(onValid)}>
                 <InputBox>
-                  <PostInput>
+                  <PreNumber>
                     <Text>+82</Text>
-                  </PostInput>
+                  </PreNumber>
                   <Input
                     placeholder="01012345678형식의 번호를 입력하세요."
                     {...register("phone", {
@@ -267,23 +247,31 @@ export default function SignIn() {
                 </InputBox>
                 <Error>{errors?.phone?.message}</Error>
                 <Button>
-                  {loading ? <LoadingSvg color="rgb(3, 169, 244)" /> : "Login"}
+                  {loading ? (
+                    <LoadingSvg color={SignInColors.snsBgColor} />
+                  ) : (
+                    "Login"
+                  )}
                 </Button>
-              </Form>
+              </form>
             </>
           )}
-        </PhoneBox>
-        <TextLineBox>
+        </FormBox>
+        <TextInLineBox>
           <TextInLine>or enter with</TextInLine>
-        </TextLineBox>
-        <SnsLoginwrapper>
+        </TextInLineBox>
+        <SnsBox>
           <SnsButton>
-            <TwitterSvg isCircle={false} fillColor="#03a9f4" />
+            <TwitterSvg isCircle={false} fillColor={SignInColors.snsBgColor} />
           </SnsButton>
           <SnsButton>
-            <FacebookSvg isCircle={false} fillColor="#03a9f4" height="30" />
+            <FacebookSvg
+              isCircle={false}
+              fillColor={SignInColors.snsBgColor}
+              height="30"
+            />
           </SnsButton>
-        </SnsLoginwrapper>
+        </SnsBox>
       </LoginContainer>
     </Wapper>
   );
