@@ -15,13 +15,15 @@ import {
 import { ResultCircleSvg, XMarkSvg } from "@svg";
 import Answers from "./Answers";
 import makeTestVoca from "@utils/makeTestVoca";
+import { userVocaColors } from "assets/color/userVocaColor";
 
 const Overay = styled(motion.div)`
   position: fixed;
-  height: 270%;
+  top: 0;
+  height: 100%;
   z-index: 999;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,105 +31,80 @@ const Overay = styled(motion.div)`
 `;
 
 const Container = styled.div`
-  z-index: 10;
   position: absolute;
-  right: 0;
-  left: 0;
-  top: 15rem;
-  margin: 0 auto;
   height: 600px;
   width: 80vw;
   padding: 20px 24px;
   overflow: scroll;
-  background-color: #7aa4a9;
+  background-color: ${userVocaColors.test.bgColor};
+  //상속
+  font-size: ${(props) => props.theme.fontSize.xlg};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
+  text-align: center;
 `;
 
 const TestContainer = styled.div`
   height: 70%;
   width: 100%;
-  padding: 24px;
-  h1 {
-    margin-top: 40px;
-    width: 100%;
-    text-align: center;
-    color: #f1f2ec;
-    font-size: 40px;
-    font-weight: ${(props) => props.theme.fontWeight.xbold};
-  }
+  padding: 5rem;
 `;
 
 const Title = styled.h1`
   padding-top: 10px;
-  text-align: center;
-  color: #3a5336;
-  font-size: ${(props) => props.theme.fontSize.xlg};
-  font-weight: 800;
 `;
 
 const ProgressBarBox = styled.div`
+  position: relative;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 30px;
-  position: relative;
+  background-color: ${userVocaColors.test.textColor};
 `;
 
 const Progress = styled.progress.attrs({
   min: "0",
 })`
+  position: absolute;
   display: block;
   width: 100%;
-  position: absolute;
   top: 20px;
-  appearance: none;
-  background: none;
   height: 2.5px;
-  background-color: #f1f2ec;
+  background-color: inherit;
   transition: all 0.5s ease-in-out;
   &::-webkit-progress-bar {
-    background-color: #f1f2ec;
+    background-color: inherit;
   }
   &::-webkit-progress-value {
-    background-color: #153f65;
+    background-color: ${userVocaColors.test.progressBarColor};
     transition: all 0.5s ease-in-out;
   }
 `;
 
 const ProgressCicle = styled.div`
+  position: absolute;
+  top: 16px;
   height: 12px;
   width: 12px;
   border-radius: 6px;
-  border: 3px solid #f1f2ec;
-  position: absolute;
-  top: 16px;
-  background-color: #7aa4a9;
+  border: 3px solid ${userVocaColors.test.textColor};
+  background-color: ${userVocaColors.test.bgColor};
   transition: all 1s ease-in-out;
 `;
 
-const AnswerBox = styled.div`
-  width: 100%;
-  height: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
 const Ul = styled.ul`
-  list-style-type: none;
   margin: auto;
   margin-top: 10px;
+  text-align: left;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  list-style-type: none;
   cursor: pointer;
   li {
-    width: 350px;
+    width: 400px;
     position: relative;
-    padding: 10px;
-    padding-left: 60px;
+    padding: 10px 10px 10px 60px;
     display: flex;
-    align-items: center;
     input:checked ~ div {
       opacity: 1;
       animation-name: ${explode};
@@ -181,35 +158,31 @@ const Ul = styled.ul`
         animation-fill-mode: forwards;
       }
     }
-  }
-
-  label {
-    cursor: pointer;
-    color: #f1f2ec;
-    font-weight: 700;
-    margin-left: 20px;
-    font-size: 24px;
-    :hover {
-      border: 1px solid red;
+    label {
+      cursor: pointer;
+      color: #f1f2ec;
+      font-weight: 700;
+      margin-left: 20px;
+      font-size: 24px;
     }
-  }
-  label:before {
-    content: "";
-    width: 10px;
-    height: 10px;
-    background: #fff;
-    position: absolute;
-    left: 2.5px;
-    top: 17.5px;
-    box-sizing: border-box;
-    border-radius: 50%;
+    label:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      position: absolute;
+      left: 2.5px;
+      top: 17.5px;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
   }
 `;
 
 const Bullet = styled.div`
-  position: absolute;
   width: 30px;
   height: 30px;
+  position: absolute;
   left: calc(-15px / 2);
   top: calc(15px / 2);
   border: 5px solid #fff;
@@ -221,20 +194,21 @@ const Line = styled.div`
   position: absolute;
   width: 10px;
   height: 2px;
+  border: 1px solid ${userVocaColors.test.selectedColor};
   background-color: #fff;
-  opacity: 0;
+  opacity: 1;
 `;
 const BulletLineZero = styled(Line)`
   left: 11px;
   top: -21px;
-  transform: translateY(20px);
+  transform: translateY(9px);
   width: 2px;
   height: 10px;
 `;
 const BulletLineOne = styled(Line)`
-  right: -7px;
-  top: -11px;
-  transform: rotate(-55deg) translate(-9px);
+  right: -12px;
+  top: -10px;
+  transform: rotate(-45deg) translate(-9px);
 `;
 const BulletLineTwo = styled(Line)`
   right: -20px;
@@ -242,12 +216,12 @@ const BulletLineTwo = styled(Line)`
   transform: translate(-9px);
 `;
 const BulletLineThree = styled(Line)`
-  right: -8px;
-  top: 35px;
+  right: -12px;
+  top: 32px;
   transform: rotate(55deg) translate(-9px);
 `;
 const BulletLineFour = styled(Line)`
-  left: -8px;
+  left: -10px;
   top: -11px;
   transform: rotate(55deg) translate(9px);
 `;
@@ -258,20 +232,19 @@ const BulletLineFive = styled(Line)`
 `;
 const BulletLineSix = styled(Line)`
   left: -8px;
-  top: 35px;
+  top: 33px;
   transform: rotate(-55deg) translate(9px);
 `;
 
 const BulletLineSeven = styled(Line)`
-  left: 11px;
-  bottom: -21px;
-  transform: translateY(-20px);
   width: 2px;
   height: 10px;
+  left: 11px;
+  bottom: -22px;
+  transform: translateY(-9px);
 `;
 const Input = styled.input.attrs({ type: "radio", name: "answer" })`
   opacity: 0;
-  vertical-align: middle;
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -279,39 +252,43 @@ const Input = styled.input.attrs({ type: "radio", name: "answer" })`
   padding: 0;
   position: absolute;
   left: 0;
-
   cursor: pointer;
 `;
 
 const Button = styled.button`
   position: absolute;
-  right: 150px;
+  right: 50px;
   bottom: 50px;
   height: 50px;
   width: 130px;
   border-radius: 5px;
   border: none;
-  color: #7aa4a9;
   text-transform: uppercase;
+  color: ${userVocaColors.test.bgColor};
+  font-size: ${(props) => props.theme.fontSize.base};
+  background-color: ${userVocaColors.test.textColor};
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  background-color: #f1f2ec;
-  transition: all 0.3s cubic-bezier(0.4, 0, 2, 1);
+  :hover {
+    font-size: ${(props) => props.theme.fontSize.md};
+  }
 `;
 
 const Row = styled.div`
   display: flex;
+  width: 50%;
   height: 100px;
-  width: 300px;
   align-items: center;
   justify-content: space-around;
   margin: auto;
+  font-size: ${(props) => props.theme.fontSize.lg};
 `;
 
 const ColorBox = styled.div`
   display: flex;
-  height: 30px;
+  align-items: center;
   p {
-    font-weight: 600;
+    font-weight: ${(props) => props.theme.fontWeight.base};
   }
 `;
 
@@ -322,43 +299,34 @@ const Color = styled.div`
   margin-right: 5px;
 `;
 
-const SvgBox = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 const ButtonBox = styled.div`
-  position: relative;
   display: flex;
-
   justify-content: center;
-  button:first-child {
-    margin-right: 10px;
-  }
-`;
-
-const XBtn = styled.button`
-  position: absolute;
-  right: 20px;
-  appearance: none;
-  border: none;
-  background-color: transparent;
-  width: 100px;
-  height: 40px;
-  cursor: pointer;
-  :hover {
-    svg {
-      color: darkorange;
-      transform: scale(1.05);
-      transition: all 0.2s ease-in-out;
-    }
-  }
+  gap: 10px;
+  height: 50px;
 `;
 
 const ResultBtn = styled(Button)`
   position: relative;
   top: 0;
   left: 0;
+`;
+const XBtn = styled.button`
+  position: absolute;
+  right: 40px;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  :hover {
+    svg {
+      color: ${userVocaColors.test.selectedColor};
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+  }
 `;
 
 type TypeAnser = number | null;
@@ -454,22 +422,36 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
             ) : (
               <>
                 <Title>Result Summary</Title>
-                <div style={{ border: "1px solid #325b79" }} />
+                <div
+                  style={{
+                    border: `1px solid ${userVocaColors.test.progressBarColor}`,
+                  }}
+                />
                 <Row>
                   <ColorBox>
-                    <Color style={{ backgroundColor: "#ac4e6b" }}></Color>
+                    <Color
+                      style={{
+                        backgroundColor: userVocaColors.test.correctColor,
+                      }}
+                    ></Color>
                     <p>Correct : {`${correctNum}`}</p>
                   </ColorBox>
                   <ColorBox>
-                    <Color style={{ backgroundColor: "#977f89" }}></Color>
+                    <Color
+                      style={{
+                        backgroundColor: userVocaColors.test.inCorrectColor,
+                      }}
+                    ></Color>
                     <p>InCorrect : {`${maxNum - correctNum}`}</p>
                   </ColorBox>
                 </Row>
-                <SvgBox>
+                <div>
                   <ResultCircleSvg
                     percent={((correctNum * 100) / maxNum).toFixed(2) + ""}
+                    correctColor={userVocaColors.test.correctColor}
+                    inCorrectColor={userVocaColors.test.inCorrectColor}
                   />
-                </SvgBox>
+                </div>
                 <ButtonBox>
                   <ResultBtn onClick={onAnswerClick}>View answer</ResultBtn>
                   <ResultBtn onClick={onResetTest}>Retry</ResultBtn>

@@ -5,9 +5,10 @@ import Table from "@components/Vocas/Table";
 import { OpenSvg } from "@svg";
 import VocaTable from "@components/Vocas/VocaTable";
 import AddVoca from "./AddVoca";
+import { vocaColors } from "assets/color/vocaColors";
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   display: flex;
   margin-bottom: 80px;
@@ -41,7 +42,7 @@ const VocaCard = styled(motion.div)`
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  background-color: #485460;
+  background-color: ${vocaColors.vocaDetail.cardBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +53,7 @@ const VocaContentBox = styled.div`
   overflow: hidden;
   border-radius: 5px;
   margin-bottom: 20px;
-  border: 1px solid #dfe6e9;
+  border: 1px solid ${vocaColors.vocaDetail.cardBoarderColor};
 `;
 
 const SvgBox = styled.div`
@@ -62,25 +63,20 @@ const SvgBox = styled.div`
   bottom: 10px;
 `;
 
-const CheckBox = styled.div`
+const CardHeader = styled.div`
   position: relative;
-  margin: 20px;
   display: flex;
-  width: 60%;
-  justify-content: center;
   align-items: center;
+  height: 60px;
   label {
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    background-color: #dfe6e9;
     position: absolute;
-    top: 0;
-    left: 0;
-    background: linear-gradient(top, #222 0%, #45484d 100%);
+    background-color: ${vocaColors.vocaDetail.cardBoarderColor};
     border-radius: 4px;
     box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
       0px 1px 0px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
     &:after {
       content: "";
       width: 9px;
@@ -88,10 +84,9 @@ const CheckBox = styled.div`
       position: absolute;
       top: 4px;
       left: 4px;
-      border: 3px solid #485460;
+      border: 3px solid ${vocaColors.vocaDetail.checkColor};
       border-top: none;
       border-right: none;
-      background: transparent;
       opacity: 0;
       transform: rotate(-45deg);
     }
@@ -108,47 +103,49 @@ const CheckBox = styled.div`
 `;
 
 const Level = styled.h4`
-  margin-top: 2px;
-  margin-left: 40px;
-  color: #dfe6e9;
+  margin: 4px 0 0 40px;
+  color: ${vocaColors.vocaDetail.titleColor};
   font-size: ${(props) => props.theme.fontSize.base};
   font-weight: ${(props) => props.theme.fontWeight.xbold};
 `;
 
 const ModalTitleBox = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   width: 300px;
-  padding: 10px 8px 24px 8px;
-  justify-content: space-around;
-`;
-
-const ModalLevel = styled(Level)`
+  height: 80px;
+  align-items: center;
   text-align: center;
-  margin-top: 5px;
 `;
 
-const Button = styled.button`
-  width: 100%;
+const ModalLevel = styled.label`
+  flex-grow: 1;
+  font-size: ${(props) => props.theme.fontSize.base};
+  font-weight: ${(props) => props.theme.fontWeight.xbold};
+`;
+
+const ModalButton = styled.button`
+  flex-grow: 1;
   height: 30px;
-  color: whitesmoke;
+  color: white;
   border: none;
-  background-color: #00b894;
+  background-color: ${vocaColors.vocaDetail.modalBtnColor};
   border-radius: 5px;
+  cursor: pointer;
   &:hover {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
+    box-shadow: 0 0 0 2px white,
+      0 0 0 3px ${vocaColors.vocaDetail.modalBtnColor};
   }
 `;
 
 const Overlay = styled(motion.div)`
-  width: 100vw;
+  width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 `;
 
 interface IVocaItem {
@@ -211,7 +208,7 @@ export default function VocaDetail({ voca, category }: IVocaDetail) {
         <VocaCardWrapper>
           {Object.keys(voca).map((level: string) => (
             <VocaCard key={level + ""} layoutId={level + ""}>
-              <CheckBox>
+              <CardHeader>
                 <Level> Level : {level}</Level>
                 <input
                   onChange={onClickCheck}
@@ -222,7 +219,7 @@ export default function VocaDetail({ voca, category }: IVocaDetail) {
                   checked={selectedCard[+level]}
                 />
                 <label htmlFor={level + ""}></label>
-              </CheckBox>
+              </CardHeader>
               <VocaContentBox>
                 {cardData && (
                   <Table cardData={cardData?.[+level - 1]} total={total} />
@@ -262,9 +259,9 @@ export default function VocaDetail({ voca, category }: IVocaDetail) {
             >
               <ModalTitleBox>
                 <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
-                <Button name={id + ""} onClick={onClickCheck}>
+                <ModalButton name={id + ""} onClick={onClickCheck}>
                   {selectedCard[+id] ? "해제" : "추가"}
-                </Button>
+                </ModalButton>
               </ModalTitleBox>
               <VocaTable voca={voca[+id]} />
             </VocaCard>

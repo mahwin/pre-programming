@@ -3,30 +3,30 @@ import { TestSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "./Quiz";
+import { vocaColors } from "assets/color/vocaColors";
 
-const Cicle = styled(motion.div)`
+const Wrapper = styled(motion.div)`
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
   z-index: 99;
   height: 50px;
   width: 50px;
   border-radius: 25px;
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 50px;
-  right: 50px;
   cursor: pointer;
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
   &:hover {
-    stroke: red;
-    transform: scale(1.1);
-    p {
+    transform: scale(1.2);
+    label {
       display: block;
     }
   }
 `;
 
-const Description = styled.p`
+const Description = styled.label`
   display: none;
   position: absolute;
   width: 100px;
@@ -34,69 +34,67 @@ const Description = styled.p`
   height: 60px;
   margin-bottom: 150px;
   border-radius: 8px;
-  background: #d1ccc0;
-  color: #fff;
+  background: ${vocaColors.testBtn.labelBgColor};
+  color: ${vocaColors.testBtn.labelTextColor};
   font-size: 14px;
+  font-weight: ${(props) => props.theme.fontWeight.bold};
   &:after {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    margin: 0 auto;
     width: 0;
     height: 0;
+    margin: 0 auto;
     border: 1px solid red;
     transform: rotate(180deg);
-    border-color: rgba(51, 51, 51, 0);
-    border-bottom-color: #d1ccc0;
+    border-color: transparent;
+    border-bottom-color: ${vocaColors.testBtn.labelBgColor};
     border-width: 10px;
     pointer-events: none;
     content: "";
   }
 `;
 
-const Shape = styled.span`
-  margin-top: 2px;
-  font-size: 36px;
-  font-weight: 500;
-  color: white;
+const SvgBox = styled.div`
+  margin-bottom: 5px;
 `;
 
 const TestInputBox = styled(motion.div)`
+  position: relative;
   z-index: 1;
   position: fixed;
   bottom: 100px;
   right: 50px;
   width: 250px;
   height: 400px;
-  padding: 24px;
-  background-color: #f9f9f9;
+  padding: 30px;
+  background-color: ${vocaColors.testBtn.testInputColor};
   border-radius: 1px;
 `;
 
-const BtnBox = styled.div`
-  display: flex;
-`;
-const Title = styled.h2`
-  color: #f96;
-  font-size: 24px;
-  font-weight: 900;
+const TestInputTitle = styled.h2`
+  color: ${vocaColors.testBtn.testInputTitleColor};
+  font-size: ${(props) => props.theme.fontSize.lg};
+  font-weight: ${(props) => props.theme.fontWeight.xxbold};
   margin-bottom: 10px;
 `;
 
-const Btn = styled.div`
+const TestInputXBtn = styled.div`
   position: absolute;
-  right: 0;
+  right: 8px;
+  top: 30px;
+  color: ${vocaColors.testBtn.labelTextColor};
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.theme.colorTheme.hoverPrimary};
+    color: ${vocaColors.testBtn.testInputTitleColor};
     transform: scale(1.2);
+    transition: ease-in-out 0.3s;
   }
 `;
 
 const Label = styled.label`
   display: flex;
-
   align-items: center;
   font-size: 20px;
   font-weight: 500;
@@ -149,14 +147,16 @@ const ContentBox = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  width: 100%;
-  background-color: #f96;
   height: 30px;
-  color: white;
+  width: 100%;
   border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: ${vocaColors.testBtn.testInputTitleColor};
+  font-size: ${(props) => props.theme.fontSize.md};
   cursor: pointer;
   :hover {
-    background: #f97f51;
+    background-color: ${vocaColors.testBtn.btnHoverColor};
     transition: background-color 0.3s ease-in-out;
   }
 `;
@@ -168,15 +168,15 @@ const Ul = styled.ul`
     align-items: center;
     :hover {
       border-radius: 2px;
-      background-color: lightgray;
+      background-color: ${vocaColors.testBtn.ulHoverColor};
     }
   }
 `;
 
 const SubTitle = styled.h3`
   font-size: 20px;
-  font-weight: 500;
-  color: #2d3436;
+  font-weight: ${(props) => props.theme.fontWeight.bold};
+  color: ${vocaColors.testBtn.labelTextColor};
 `;
 
 const Overlay = styled(motion.div)`
@@ -199,7 +199,7 @@ const TestCloseBtn = styled.button`
   border: none;
   border-radius: 5px;
   :hover {
-    color: orangered;
+    color: ${vocaColors.testBtn.btnHoverColor};
     transform: scale(1.2);
   }
 `;
@@ -253,12 +253,12 @@ function FloatingButton({ testData }: any) {
       {isOpen ? (
         <AnimatePresence>
           <TestInputBox layoutId="test">
-            <BtnBox>
-              <Title> Test your level ! </Title>
-              <Btn onClick={onToggleBtn}>
+            <div>
+              <TestInputTitle> Test your level ! </TestInputTitle>
+              <TestInputXBtn onClick={onToggleBtn}>
                 <DownArrowSvg />
-              </Btn>
-            </BtnBox>
+              </TestInputXBtn>
+            </div>
             <form onSubmit={handleSubmit}>
               <ContentBox>
                 <SubTitle>how many :</SubTitle>
@@ -325,18 +325,18 @@ function FloatingButton({ testData }: any) {
           </TestInputBox>
         </AnimatePresence>
       ) : (
-        <Cicle onClick={onToggleBtn} layoutId="test">
+        <Wrapper onClick={onToggleBtn} layoutId="test">
           <Description>실력을 테스트 해보세요!</Description>
-          <Shape>
+          <SvgBox>
             <TestSvg />
-          </Shape>
-        </Cicle>
+          </SvgBox>
+        </Wrapper>
       )}
       {isTestOpen ? (
         <>
           <Overlay
             initial={{ backgroundColor: "rgba(0,0,0,0)" }}
-            animate={{ backgroundColor: "rgba(0,0,0,0.7)" }}
+            animate={{ backgroundColor: "rgba(0,0,0,0.9)" }}
             exit={{ backgroundColor: "rgba(0,0,0,0)" }}
           >
             <TestCloseBtn

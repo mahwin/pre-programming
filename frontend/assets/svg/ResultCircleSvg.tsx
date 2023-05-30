@@ -1,6 +1,18 @@
 import styled, { keyframes } from "styled-components";
+import { userVocaColors } from "assets/color/userVocaColor";
 
-export function ResultCircleSvg({ percent }: { percent: string }) {
+interface IResultCircleSvg {
+  percent: string;
+  correctColor: string;
+  inCorrectColor: string;
+}
+
+export function ResultCircleSvg({
+  percent,
+  correctColor,
+  inCorrectColor,
+}: IResultCircleSvg) {
+  console.log(correctColor, inCorrectColor);
   const clockAnimation = keyframes`
   0%{
 		stroke-dashoffset: 0;
@@ -20,7 +32,7 @@ export function ResultCircleSvg({ percent }: { percent: string }) {
         cx="150"
         cy="150"
         r="120"
-        stroke="#ab4e6b"
+        stroke={correctColor}
         strokeWidth="20"
         fill="none"
       ></circle>
@@ -28,9 +40,8 @@ export function ResultCircleSvg({ percent }: { percent: string }) {
         cx="150"
         cy="150"
         r="120"
-        stroke="#968089"
+        stroke={inCorrectColor}
         strokeWidth="20"
-        // strokeDasharray="183.35999999999999,764"
         strokeDasharray="760"
         fill="none"
       ></Circle>

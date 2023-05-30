@@ -5,8 +5,9 @@ import { SmileSvg, FrownSvg, LoadingSvg } from "@svg";
 import useMutation from "@utils/useMutation";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
+import { userInfoColors } from "assets/color/userInfoColors";
 
-const Container = styled.div`
+const Wrapper = styled.div`
   padding: 60px 14px 24px 14px;
   height: 100%;
   border-top-left-radius: 25px;
@@ -14,33 +15,31 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const FormContainer = styled.div``;
-
 const InputBox = styled.div`
   display: flex;
   flex-direction: column;
   input {
     border-radius: 5px;
-    border: 1px solid #ced4da;
+    border: 1px solid ${userInfoColors.inputColor.abled};
     margin: 10px 0 10px 0;
     height: 40px;
     padding: 8px 12px;
-    color: #212529;
-    font-size: 24px;
+    color: ${userInfoColors.inputColor.text};
+    font-size: ${(props) => props.theme.fontSize.lg};
     :disabled {
-      background-color: #dadcdc;
+      background-color: ${userInfoColors.inputColor.disabled};
     }
   }
   label {
-    color: #636e72;
-    font-weight: 400;
-  }
-  :nth-child(1) {
-    margin-bottom: 10px;
+    color: ${userInfoColors.labelColor};
+    font-weight: ${(props) => props.theme.fontWeight.base};
   }
   button {
     margin-left: 5px;
     border-radius: 3px;
+  }
+  :nth-child(1) {
+    margin-bottom: 10px;
   }
 `;
 
@@ -53,24 +52,18 @@ const Row = styled.div`
 const Btn = styled.button`
   width: 100%;
   height: 40px;
-  background-color: rgb(0, 206, 201);
+  background-color: ${() => userInfoColors.bgColor};
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: ${(props) => props.theme.fontSize.base};
   :enabled:hover {
-    background-color: rgb(0, 180, 180);
+    opacity: 0.8;
+    transition: ease-in-out 0.3s;
   }
   :disabled {
     cursor: not-allowed;
   }
-`;
-
-const SvgBox = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const SubmitBtn = styled(Btn)`
@@ -94,7 +87,7 @@ const Changables = styled.div`
   justify-content: space-around;
 `;
 
-const Changable = styled.div`
+const ChangableBox = styled.div`
   height: 60px;
   display: flex;
   flex-direction: column;
@@ -215,10 +208,10 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
     if (updateResponse?.ok) router.push("/");
   }, [updateResponse, router]);
   return (
-    <Container
+    <Wrapper
       style={{ backgroundColor: isCan ? "white" : "rgba(200,200,200,1)" }}
     >
-      <FormContainer>
+      <div>
         <form onSubmit={handleSubmit(onValid)}>
           <InputBox>
             <label>
@@ -296,58 +289,52 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
             </Row>
           </InputBox>
           <Changables>
-            <Changable>
+            <ChangableBox>
               <Row>
                 <span>avatar</span>
                 <div>{isAvatarChange ? <Smile /> : <Frown />}</div>
               </Row>
-            </Changable>
-            <Changable>
+            </ChangableBox>
+            <ChangableBox>
               <Row>
                 <span>name</span>
-                <div>
-                  {confirmName && (
-                    <>
-                      {loading ? (
-                        <LoadingSvg />
-                      ) : confirmName?.ok ? (
-                        <Smile />
-                      ) : (
-                        <Frown />
-                      )}
-                    </>
-                  )}
-                </div>
+                {confirmName && (
+                  <div>
+                    {loading ? (
+                      <LoadingSvg />
+                    ) : confirmName?.ok ? (
+                      <Smile />
+                    ) : (
+                      <Frown />
+                    )}
+                  </div>
+                )}
               </Row>
               <Error>{confirmName?.message}</Error>
-            </Changable>
-            <Changable>
+            </ChangableBox>
+            <ChangableBox>
               <Row>
                 <span>phone</span>
-                <div>
-                  {confirmPhone && (
-                    <>
-                      {phoneLoading ? (
-                        <LoadingSvg />
-                      ) : confirmPhone?.ok ? (
-                        <Smile />
-                      ) : (
-                        <Frown />
-                      )}
-                    </>
-                  )}
-                </div>
+                {confirmPhone && (
+                  <div>
+                    {phoneLoading ? (
+                      <LoadingSvg />
+                    ) : confirmPhone?.ok ? (
+                      <Smile />
+                    ) : (
+                      <Frown />
+                    )}
+                  </div>
+                )}
               </Row>
               <Error>{confirmPhone?.message}</Error>
-            </Changable>
+            </ChangableBox>
           </Changables>
         </form>
         {updateLoading ? (
-          <>
-            <SubmitBtn disabled>
-              <LoadingSvg color="#006266" />
-            </SubmitBtn>
-          </>
+          <SubmitBtn disabled>
+            <LoadingSvg color={userInfoColors.toggle.cicle} />
+          </SubmitBtn>
         ) : (
           <>
             {Object.keys(updateData).length !== 0 ? (
@@ -359,7 +346,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
             )}
           </>
         )}
-      </FormContainer>
-    </Container>
+      </div>
+    </Wrapper>
   );
 }

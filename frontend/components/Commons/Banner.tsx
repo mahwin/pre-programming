@@ -19,17 +19,16 @@ const BannerWapper = styled.div`
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 const ContentWrapper = styled.div`
+  margin-top: 80px;
   z-index: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 `;
 const TitleBox = styled.div`
   width: 100%;
   display: flex;
-  position: absolute;
   top: 60px;
   flex-direction: column;
   justify-content: center;
@@ -51,14 +50,12 @@ const SubTitle = styled.h4`
 `;
 
 const SearchBox = styled.div`
-  position: absolute;
-  bottom: 100px;
+  margin-top: 12px;
+  display: flex;
   width: 70%;
   max-width: ${(props) => props.theme.windowSize.tablet};
-  display: flex;
   justify-content: center;
   align-items: center;
-
   height: 28px;
   border: none;
   &:focus {
@@ -70,7 +67,7 @@ const SvgBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
+  width: 40px;
   height: 36px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -81,16 +78,14 @@ const Search = styled.input.attrs({
   tpye: "text",
   placeholder: "단어를 입력하세요",
 })`
-  font-size: ${(props) => props.theme.fontSize.base};
-
   padding: 10px;
-  display: flex;
   height: 36px;
   width: 100%;
   border: none;
-  color: ${(props) => props.theme.colorTheme.textPrimary};
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  font-size: ${(props) => props.theme.fontSize.base};
+  color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   &:focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
@@ -105,7 +100,7 @@ export default function Banner() {
         <ContentWrapper>
           <TitleBox>
             <Title>Pre-Programming</Title>
-            <SubTitle>: What to do before you studying programming!</SubTitle>
+            <SubTitle>:What to do before you studying programming!</SubTitle>
           </TitleBox>
           <SearchBox>
             <SvgBox>
