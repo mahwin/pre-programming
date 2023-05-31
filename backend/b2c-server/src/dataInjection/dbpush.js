@@ -25,7 +25,6 @@ async function dbPush() {
     for (let i = 0; i < dicObj.length; i++) {
       if (i % 100 === 0) {
         sleep(1);
-        console.log(i, category);
       }
       const newData = await prisma.vocabulary.create({
         data: {
