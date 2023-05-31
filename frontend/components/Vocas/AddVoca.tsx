@@ -210,6 +210,7 @@ export default function AddVaca({
   });
 
   const router = useRouter();
+
   const onClickSaved = () => {
     //로그인한 유저가 아닐 경우 로그인 페이지로
     if (!userId) router.push("/signIn");
@@ -220,10 +221,10 @@ export default function AddVaca({
     });
 
     //선택한 단어장이 없으면 동작 x
-
     if (level.length === 0) {
       alert("내 단어장어 포함될 단어 카드를 선택해 주세요.");
     }
+    console.log({ userId, level: JSON.stringify(level) });
     saveVoca({ userId, level: JSON.stringify(level) });
   };
 
@@ -232,7 +233,7 @@ export default function AddVaca({
       resetSelected();
       setIsCardOpen(false);
     }
-  }, [data, resetSelected]);
+  }, [data]);
 
   return (
     <Wrapper>
