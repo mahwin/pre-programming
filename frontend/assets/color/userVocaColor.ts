@@ -32,6 +32,11 @@ const userVocaColors = {
     inCorrectBgColor: "#ab4e6b",
     backBtnColor: "#7aa4a9",
   },
+  userVoca: {
+    vocaCardBgColor: "#949fb0",
+    overlayColor: "#4a5568;",
+    levelCardBgColor: "#333a45",
+  },
 };
 
 export { userVocaColors };
