@@ -37,6 +37,15 @@ const userVocaColors = {
     overlayColor: "#4a5568;",
     levelCardBgColor: "#333a45",
   },
+  quizResult: {
+    titleLineColor: "#153f65",
+    cardBoardColor: "rgba(255, 255, 255, 0.2)",
+    correctColor: "#2dceb1",
+    correctBgColor: "#968089",
+    inCorrectColor: "#f08199",
+    inCorrectBgColor: "#ab4e6b",
+    backBtnColor: "#7aa4a9",
+  },
 };
 
 export { userVocaColors };
