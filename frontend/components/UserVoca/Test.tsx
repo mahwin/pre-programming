@@ -14,7 +14,7 @@ import {
 } from "../../assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
 import Answers from "./Answers";
-import makeTestVoca from "@utils/makeTestVoca";
+import getQuiz from "@utils/makeQuiz";
 import { userVocaColors } from "assets/color/userVocaColor";
 import { vocaColors } from "assets/color/vocaColors";
 
@@ -402,9 +402,9 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
   };
 
   useEffect(() => {
-    let quiz = makeTestVoca(vocas, maxNum, false);
-    setTestData(() => quiz.testData);
-    setTestAnswer(() => quiz.testAnswer);
+    let data = getQuiz(vocas, maxNum);
+    setTestData(() => data.quizs);
+    setTestAnswer(() => data.corrects);
   }, [vocas, howMany, maxNum]);
 
   return (
