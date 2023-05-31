@@ -1,25 +1,25 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
+import { userVocaColors } from "assets/color/userVocaColor";
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   h1 {
-    padding-bottom: 24px;
+    padding: 10px;
     width: 500px;
-    text-align: center;
-    font-size: 30px;
-    color: #3a5336;
-    font-weight: 500;
-    border-bottom: 2px solid rgba(21, 63, 101, 0.9);
+    font-size: ${(props) => props.theme.fontSize.xlg};
+    font-weight: ${(props) => props.theme.fontWeight.base};
+    border-bottom: 2px solid ${userVocaColors.quizResult.titleLineColor};
   }
 `;
 
-const CardsWrapper = styled.ul`
-  margin-top: 24px;
+const Cards = styled.ul`
+  margin-top: 12px;
   height: 100%;
   width: 400px;
   display: grid;
@@ -29,16 +29,16 @@ const CardsWrapper = styled.ul`
 const Card = styled.li`
   position: relative;
   display: inline-block;
+  color: white;
   padding: 2%;
   width: 100%;
-  height: 170px;
+  height: 160px;
   text-align: left;
   margin-bottom: 4px;
-
-  border-bottom: 0.6px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 0.6px solid ${userVocaColors.quizResult.cardBoardColor};
   :nth-child(even) {
     margin-left: 5px;
-    border-left: 0.6px solid rgba(255, 255, 255, 0.2);
+    border-left: 0.6px solid ${userVocaColors.quizResult.cardBoardColor};
   }
   :nth-last-child(2),
   :nth-last-child(1) {
@@ -46,18 +46,15 @@ const Card = styled.li`
   }
 `;
 
-const Word = styled.div`
+const CardTitle = styled.div`
   padding-top: 12px;
-  font-size: 24px;
-  font-weight: 600;
-  color: white;
+  font-size: ${(props) => props.theme.fontSize.md};
 `;
 
-const ResultWrapper = styled.div`
+const CardContents = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  color: white;
   font-weight: 700;
   font-size: 14px;
   div {
@@ -70,20 +67,19 @@ const ResultWrapper = styled.div`
     justify-content: space-between;
   }
 `;
-const CorrectBox = styled.div`
-  background: #968089;
+const Correct = styled.div`
+  background: ${userVocaColors.quizResult.correctBgColor};
 `;
-const WrongBox = styled.div`
-  background: #ab4e6b;
+const InCorrect = styled.div`
+  background: ${userVocaColors.quizResult.inCorrectBgColor};
 `;
 
 const BackBtn = styled.button`
   width: 100px;
-  border: none;
   height: 30px;
   border-radius: 5px;
   letter-spacing: 0.4em;
-  color: #7aa4a9;
+  color: ${userVocaColors.quizResult.backBtnColor};
   margin-left: 40%;
   cursor: pointer;
   :hover {
@@ -105,7 +101,7 @@ interface ITestData {
 
 type Result = [null, string] | [string, string];
 
-export default function Answers({
+export default function QuizResult({
   answerList,
   testData,
   testAnswer,
@@ -129,31 +125,38 @@ export default function Answers({
   return (
     <Wrapper>
       <h1>Your Answers</h1>
-      <CardsWrapper>
+      <Cards>
         {answerList.map((answer, idx) => (
           <Card key={idx}>
             <>
-              <Word>
-                <p> {testData[idx].question}</p>
-              </Word>
-              <ResultWrapper>
+              <CardTitle>
+                <h3> {testData[idx].question}</h3>
+              </CardTitle>
+              <CardContents>
                 {result?.[idx][0] && (
-                  <WrongBox>
+                  <InCorrect>
                     {result[idx][0]}
-                    <XMarkSvg width="30" height="30" color="#ff383e" />
-                  </WrongBox>
+                    <XMarkSvg
+                      width="30"
+                      height="30"
+                      color={userVocaColors.quizResult.inCorrectColor}
+                    />
+                  </InCorrect>
                 )}
-                <CorrectBox>
+                <Correct>
                   {result?.[idx][1]}
-                  <CheckSvg width="30" height="30" color="#2dceb1" />
-                </CorrectBox>
-              </ResultWrapper>
+                  <CheckSvg
+                    width="30"
+                    height="30"
+                    color={userVocaColors.quizResult.correctColor}
+                  />
+                </Correct>
+              </CardContents>
             </>
           </Card>
         ))}
-      </CardsWrapper>
+      </Cards>
       <BackBtn onClick={onBack}>BACK</BackBtn>
     </Wrapper>
   );
 }
-
