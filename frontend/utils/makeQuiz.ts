@@ -16,7 +16,7 @@ function correctArr(many: number) {
   //정답 List 랜덤으로 만들기
   const answerList = [];
   for (let trial = 0; trial < many; trial++) {
-    answerList.push(randomPick(0, 4, 1)[0]);
+    answerList.push(randomPick(1, 4, 1)[0]);
   }
   return answerList;
 }
@@ -30,12 +30,15 @@ function getQuiz(spreadArr: IVoca[], many: number) {
   const corrects = correctArr(many);
 
   let quizs = [];
-
+  console.log(corrects);
   for (let i = 0; i < many; i++) {
     let quiz = { question: "", selectList: [] as string[] };
     for (let j = 0; j < 4; j++) {
       const correct = corrects[i];
+
       if (j + 1 === correct) {
+        console.log(shuffleArr.length, i * 4 + j);
+        console.log(shuffleArr);
         quiz.question = shuffleArr[i * 4 + j].word;
       }
       let mean = shuffleArr[i * 4 + j].mean;
