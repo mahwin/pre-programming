@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
@@ -99,13 +99,15 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
   useEffect(() => {
     let words: IToTalWords[] = [];
     let amount = 0;
-    Object.keys(clickedVoca).forEach((category: string) => {
-      const levels = clickedVoca[category as categoriesType];
+    Object.keys(clickedVoca).forEach((clicked: string) => {
+      const levels = clickedVoca[clicked as categoriesType];
       if (levels!.length > 0) {
         levels?.forEach((level: string) => {
-          amount += vocas.category[category].level[level].length;
+          amount += vocas.category[clicked].level[level].length;
           words = words.concat([
-            { [category]: vocas.category[category].level[level] },
+            {
+              [`${clicked}|${level}`]: vocas.category[clicked].level[level],
+            },
           ]);
         });
       }
@@ -131,27 +133,26 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
 
               <tbody>
                 {totalWords.map((totalWord: IToTalWords) => {
-                  const [category, words] = Object.entries(totalWord)[0];
+                  const key = Object.keys(totalWord)[0];
+                  const [category, level] = key.split("|");
                   return (
-                    <>
-                      {words.map((item: IWord, idx: number) => {
-                        return (
-                          <tr key={idx}>
-                            <td>{item.word}</td>
-                            <td>{category}</td>
-                            <td>{item.frequency}</td>
-                            <td>
-                              {eval(item.mean)
-                                .map(
-                                  (item: string, idx: number) =>
-                                    idx + 1 + " ." + item
-                                )
-                                .join(" ")}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </>
+                    <Fragment key={category + level}>
+                      {totalWord[key].map((item: IWord, idx: number) => (
+                        <tr key={idx}>
+                          <td>{item.word}</td>
+                          <td>{category}</td>
+                          <td>{item.frequency}</td>
+                          <td>
+                            {eval(item.mean)
+                              .map(
+                                (item: string, idx: number) =>
+                                  idx + 1 + " ." + item
+                              )
+                              .join(" ")}
+                          </td>
+                        </tr>
+                      ))}
+                    </Fragment>
                   );
                 })}
               </tbody>
