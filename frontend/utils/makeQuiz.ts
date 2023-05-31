@@ -34,7 +34,10 @@ function getQuiz(spreadArr: IVoca[], many: number) {
     let quiz = { question: "", selectList: [] as string[] };
     for (let j = 0; j < 4; j++) {
       const correct = corrects[i];
+
       if (j + 1 === correct) {
+        console.log(shuffleArr.length, i * 4 + j);
+        console.log(shuffleArr);
         quiz.question = shuffleArr[i * 4 + j].word;
       }
       let mean = shuffleArr[i * 4 + j].mean;
