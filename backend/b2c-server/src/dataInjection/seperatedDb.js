@@ -36,12 +36,10 @@ async function dbPush() {
   const categoryObj = {};
   for (let category of categories) {
     const dicObj = require(`../../../../crawler/data/complete-dictionarys/1/db/${category}.json`);
-
     const levelObj = dataSplitter(dicObj);
     categoryObj[category] = levelObj;
   }
   const savedData = JSON.stringify({ category: categoryObj });
-  console.log(savedData);
   await prisma.SeperatedVocabulary.create({
     data: {
       data: savedData,
@@ -50,17 +48,3 @@ async function dbPush() {
 }
 
 dbPush();
-
-// const a = { category: { [category]: { level: { 1: ['saddasdsads'] } } } };
-
-// for (let i = 0; i < dicObj.length; i++) {
-//   if (i % 100 === 0) {
-//     sleep(1);
-//     console.log(i, category);
-//   }
-//   const newData = await prisma.vocabulary.create({
-//     data: {
-//       ...dicObj[i],
-//     },
-//   });
-// }

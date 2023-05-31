@@ -60,7 +60,6 @@ export class AuthService {
   }
 
   async confirm({ token }) {
-    console.log(token);
     const foundToken = await this.prisma.token.findUnique({
       where: {
         payload: token,
