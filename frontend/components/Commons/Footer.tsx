@@ -218,7 +218,7 @@ export default function Footer() {
             <LinkWrapper>
               <Links>
                 {["Home", "About", "Services", "Contact Us"].map((info) => (
-                  <LinkItem>
+                  <LinkItem key={info}>
                     <SubTitle>{info}</SubTitle>
                   </LinkItem>
                 ))}
