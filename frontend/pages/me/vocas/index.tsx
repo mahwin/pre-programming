@@ -3,20 +3,29 @@ import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";
 
-interface ITitles {
-  vocas: {
-    title: string;
-    ok: boolean;
-    amount: string;
-    install: string;
-  }[];
+type DevCategoryType = "web";
+
+type titleItemType = {
+  title: string;
+  ok: boolean;
+  amount: string;
+  install: string;
+};
+
+type titleType = {
+  [key in DevCategoryType]: titleItemType[];
+};
+
+interface Ititle {
+  data: titleType;
 }
 
-function UserVocaPage({ vocas }: ITitles) {
+function UserVocaPage({ data }: Ititle) {
+  console.log(data);
   return (
     <>
       <Nav />
-      <UserVoca data={vocas} />
+      <UserVoca data={data.web} />
       <Footer />
     </>
   );
@@ -25,13 +34,13 @@ function UserVocaPage({ vocas }: ITitles) {
 export default UserVocaPage;
 
 export async function getServerSideProps() {
-  const propsObj = { props: { vocas: [] } };
+  const propsObj = { props: { data: null } };
   try {
-    //  TODO : rest.js에서 처리할 수 있게 옮겨줘야함.
-    // const res = await axios(process.env.API_HOST/vocas);
-    const res = await axios.get("http://localhost:3000/api/vocas");
+    const API_HOST = process.env.API_HOST;
+    const PORT = process.env.PORT;
+    const res = await axios.get(`${API_HOST}:${PORT}/title/all`);
     if (res.status === 200) {
-      propsObj.props.vocas = res.data.frontEnd;
+      propsObj.props.data = res.data;
       return propsObj;
     } else return propsObj;
   } catch (e) {
