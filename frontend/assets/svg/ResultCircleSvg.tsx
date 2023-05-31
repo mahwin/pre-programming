@@ -3,8 +3,8 @@ import { userVocaColors } from "assets/color/userVocaColor";
 
 interface IResultCircleSvg {
   percent: string;
-  correctColor: string;
-  inCorrectColor: string;
+  correctColor?: string;
+  inCorrectColor?: string;
 }
 
 export function ResultCircleSvg({
