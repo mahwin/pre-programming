@@ -13,7 +13,7 @@ import {
 } from "../../assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg } from "@svg";
 import Answers from "./Answers";
-import makeTestVoca from "@utils/makeTestVoca";
+import makeQuiz from "@utils/makeQuiz";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -393,9 +393,9 @@ export default function Quiz({ voca, testCondition }: any) {
   };
 
   useEffect(() => {
-    let quiz = makeTestVoca(voca, maxNum);
-    setTestData(() => quiz.testData);
-    setTestAnswer(() => quiz.testAnswer);
+    let data = makeQuiz(voca, maxNum);
+    setTestData(() => data.quizs);
+    setTestAnswer(() => data.corrects);
   }, [voca, testCondition, maxNum]);
 
   return (
