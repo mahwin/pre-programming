@@ -11,9 +11,9 @@ import {
   dropSeven,
   dropSix,
   dropZero,
-} from "../../assets/keyframes/RootKeyFrame";
+} from "assets/keyframes/RootKeyFrame";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
-import Answers from "./Answers";
+import QuizResult from "./QuizResult";
 import getQuiz from "@utils/makeQuiz";
 import { userVocaColors } from "assets/color/userVocaColor";
 import { vocaColors } from "assets/color/vocaColors";
@@ -31,7 +31,7 @@ const Overay = styled(motion.div)`
   transition: all 0.5s ease-in-out;
 `;
 
-const Container = styled.div`
+const Wrapper = styled.div`
   position: absolute;
   height: 600px;
   width: 80vw;
@@ -403,27 +403,26 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
 
   useEffect(() => {
     let data = getQuiz(vocas, maxNum);
+    console.log(data);
     setTestData(() => data.quizs);
     setTestAnswer(() => data.corrects);
   }, [vocas, howMany, maxNum]);
 
   return (
     <Overay>
-      <Container>
+      <Wrapper>
         <XBtn onClick={handleClickTest}>
           <XMarkSvg width="20" height="20" color="white" />
         </XBtn>
         {isSubmit ? (
           <>
             {answerOpen ? (
-              <>
-                <Answers
-                  answerList={answerList}
-                  testData={testData!}
-                  testAnswer={testAnswer!}
-                  onBack={onAnswerClick}
-                />
-              </>
+              <QuizResult
+                answerList={answerList}
+                testData={testData!}
+                testAnswer={testAnswer!}
+                onBack={onAnswerClick}
+              />
             ) : (
               <>
                 <Title>Result Summary</Title>
@@ -563,7 +562,7 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
             </TestContainer>
           </>
         )}
-      </Container>
+      </Wrapper>
     </Overay>
   );
 }
