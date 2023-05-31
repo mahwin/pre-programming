@@ -16,6 +16,8 @@ const Table = styled.table`
   table-layout: fixed;
   th {
     position: sticky;
+    top: 0;
+    z-index: 5;
     color: ${userVocaColors.table.thColor};
     background: ${userVocaColors.table.thBgColor};
     font-size: 20px;
