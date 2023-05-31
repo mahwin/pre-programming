@@ -222,7 +222,6 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
   useEffect(() => {
     let spread: IWord[] = [];
     data.forEach((items) => {
-      console.log(Object.values(items)[0]);
       spread = spread.concat(Object.values(items)[0]);
     });
     setSpreadData(spread);
@@ -246,11 +245,11 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
     setIsStudyOpen(false);
     setIsTestOpen((prev) => !prev);
   };
-  console.log(isTestOpen);
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.currentTarget;
     const onlyNum = value.replace(/[^0-9]/g, "");
-    console.log(onlyNum);
+
     if (+onlyNum <= maxNumber) {
       setInputN(onlyNum);
     } else {

@@ -238,7 +238,7 @@ function FloatingButton({ testData }: any) {
         isBlank = true;
       }
     });
-    console.log(isBlank);
+
     if (isBlank) {
       return;
     }
