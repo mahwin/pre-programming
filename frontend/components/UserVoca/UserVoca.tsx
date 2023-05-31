@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Fragment, useEffect, useState } from "react";
+import { MouseEvent, Fragment, useEffect, useState } from "react";
 import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { motion, Variants } from "framer-motion";
 import chunk from "@utils/chunk";
@@ -10,6 +10,7 @@ import { userVocasActions } from "redux/userVocas/userVocasSlice";
 import { vocasActions } from "redux/vocas/vocasSlice";
 import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
+import { userVocaColors } from "assets/color/userVocaColor";
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,12 +20,12 @@ const Wrapper = styled.div`
   margin-top: 100px;
   h1 {
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: ${(props) => props.theme.fontSize.lg};
     color: ${(props) => props.theme.colorTheme.textPrimary};
   }
 `;
 
-const VocaWrapper = styled.div`
+const VocaCardWrapper = styled.div`
   max-width: ${(props) => props.theme.windowSize.tablet};
   width: 100%;
   padding: 30px;
@@ -34,39 +35,34 @@ const VocaWrapper = styled.div`
 `;
 
 const VocaCard = styled(motion.div)`
-  width: 100%;
   height: 100px;
-  display: flex;
   position: relative;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
-  background-color: #949fb0;
-  font-weight: 500;
-  span {
-    display: block;
-  }
+  background-color: ${userVocaColors.userVoca.vocaCardBgColor};
+  font-weight: ${(props) => props.theme.fontWeight.base};
   div {
     pointer-events: none;
   }
 `;
 
-const Center = styled.div`
+const SvgBox = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   margin: 5px 0px;
 `;
 
-const Column = styled.div`
+const Col = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  h1 {
-    color: white;
-    font-weight: 500;
-  }
+  color: white;
+  font-weight: ${(props) => props.theme.fontWeight.bold};
+  font-size: 14px;
 `;
 
 const Overray = styled.div`
@@ -80,31 +76,27 @@ const Overray = styled.div`
   align-items: center;
   div {
     padding: 15px 10px;
-    background-color: #4a5568;
+    background-color: ${userVocaColors.userVoca.overlayColor};
     border-radius: 10px;
     display: flex;
     align-items: center;
     height: 30px;
-    p {
-      font-size: 16px;
-      font-weight: 600;
-      color: white;
-    }
+    font-weight: ${(props) => props.theme.fontWeight.xbold};
   }
 `;
 
-const Board = styled(motion.ul)`
+const CardDetail = styled(motion.ul)`
   grid-column: 5/1;
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #333a45;
+  background-color: ${userVocaColors.userVoca.levelCardBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const BoardItemWrapper = styled.div`
+const DetailBox = styled.div`
   padding: 24px;
   display: grid;
   gap: 30px;
@@ -131,7 +123,7 @@ const Arrow = styled(motion.div)`
   width: 0;
   height: 0;
   top: 105px;
-  border-bottom: 18px solid #333a45;
+  border-bottom: 18px solid ${userVocaColors.userVoca.levelCardBgColor};
   border-right: 18px solid transparent;
   border-left: 18px solid transparent;
   :hover {
@@ -244,12 +236,6 @@ const categories = [
   "axios",
 ];
 
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
 interface ITmp {
   data: number[] | null;
   len: number;
@@ -302,7 +288,7 @@ export default function UserVoca({ data }: ITitles) {
   const router = useRouter();
   useEffect(() => {
     if (userInfo.error && !userInfo.data)
-      router.push("http://localhost:3001/signIn");
+      router.push(`${process.env.NODE_ENV}/${process.env.PORT}/signIn`);
   }, [userInfo, router]);
 
   //유저가 저장한 보카 목록 불러오기, 항상 다시 불러옴
@@ -314,6 +300,7 @@ export default function UserVoca({ data }: ITitles) {
   const vocas = useSelector((state: any) => {
     return state.vocas;
   });
+
   useEffect(() => {
     if (!vocas.data) dispatch(vocasActions.getVocas());
   }, [vocas, dispatch]);
@@ -338,8 +325,8 @@ export default function UserVoca({ data }: ITitles) {
     }
   }, [vocas.data, userVocas.data]);
 
-  const handleClickOpen = (e: any) => {
-    const [tag, row] = e.target.id.split("|");
+  const handleClickOpen = (e: MouseEvent<HTMLDivElement>) => {
+    const [tag, row] = e.currentTarget.id.split("|");
     setClickId(formatter(tag));
     setClickedRow(row);
   };
@@ -349,7 +336,7 @@ export default function UserVoca({ data }: ITitles) {
     setClickedRow(null);
   };
 
-  const handleClickCard = (e: any) => {
+  const handleClickCard = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const [category, level] = e.currentTarget.id.split("|");
     let copy = clickedVoca[category as categoriesType] || [];
     if (copy.includes(level)) {
@@ -364,7 +351,7 @@ export default function UserVoca({ data }: ITitles) {
     <>
       <Wrapper>
         <h1>Saved Vocabulary</h1>
-        <VocaWrapper>
+        <VocaCardWrapper>
           {rowData?.map((data, rowIdx) => (
             <Row key={rowIdx} initial={false}>
               {data.map((item, colIdx) => (
@@ -399,22 +386,22 @@ export default function UserVoca({ data }: ITitles) {
                           </div>
                         </Overray>
                       )}
-                      <Column>
-                        <span>
+                      <Col>
+                        <h2>
                           {item.title}
                           {userVocaData &&
-                            " (" +
-                              userVocaData?.[formatter(item.title)]?.len +
-                              ")"}
-                        </span>
-                        <Center>
+                            ` (
+                              ${userVocaData?.[formatter(item.title)]?.len}
+                              )`}
+                        </h2>
+                        <SvgBox>
                           {clickId === formatter(item.title) ? (
                             <FolderOpenSvg />
                           ) : (
                             <FolderSvg />
                           )}
-                        </Center>
-                      </Column>
+                        </SvgBox>
+                      </Col>
                       <Arrow
                         initial={false}
                         variants={ArrowVariants}
@@ -446,22 +433,22 @@ export default function UserVoca({ data }: ITitles) {
                           </div>
                         </Overray>
                       )}
-                      <Column>
-                        <span>
+                      <Col>
+                        <h2>
                           {item.title}
                           {userVocaData &&
-                            " (" +
-                              userVocaData?.[formatter(item.title)]?.len +
-                              ")"}
-                        </span>
-                        <Center>
+                            ` (
+                              ${userVocaData?.[formatter(item.title)]?.len}
+                              )`}
+                        </h2>
+                        <SvgBox>
                           {clickId === item.title ? (
                             <FolderOpenSvg />
                           ) : (
                             <FolderSvg />
                           )}
-                        </Center>
-                      </Column>
+                        </SvgBox>
+                      </Col>
                       <Arrow
                         initial={false}
                         variants={ArrowVariants}
@@ -471,7 +458,7 @@ export default function UserVoca({ data }: ITitles) {
                   )}
                 </Fragment>
               ))}
-              <Board
+              <CardDetail
                 key={rowIdx}
                 initial={false}
                 variants={BoardVariants}
@@ -488,7 +475,7 @@ export default function UserVoca({ data }: ITitles) {
                 <XBtnBox onClick={handleClickClose}>
                   <XMarkSvg width="18" height="18" color="white" />
                 </XBtnBox>
-                <BoardItemWrapper>
+                <DetailBox>
                   {userVocas.data && clickId && (
                     <>
                       {userVocas.data[clickId] ? (
@@ -512,19 +499,19 @@ export default function UserVoca({ data }: ITitles) {
                         )
                       ) : (
                         <div style={{ gridColumn: "5/1" }}>
-                          <Column style={{ marginTop: "20px" }}>
+                          <Col>
                             <FrownSvg width="80" height="80" color="white" />
-                            <h1>Empty</h1>
-                          </Column>
+                            <span>Empty</span>
+                          </Col>
                         </div>
                       )}
                     </>
                   )}
-                </BoardItemWrapper>
-              </Board>
+                </DetailBox>
+              </CardDetail>
             </Row>
           ))}
-        </VocaWrapper>
+        </VocaCardWrapper>
         {clickedVoca && vocas.data && (
           <VocaTable clickedVoca={clickedVoca} vocas={vocas.data} />
         )}
