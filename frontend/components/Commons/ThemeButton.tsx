@@ -22,7 +22,7 @@ const ToggleBox = styled.div`
   justify-content: space-around;
 `;
 
-const Shadow = styled(motion.div)<{ isdark: boolean }>`
+const Shadow = styled(motion.div)<{ isdark: string }>`
   height: 100%;
   width: 50%;
   border-radius: 20px;
@@ -44,11 +44,7 @@ interface IThemeButtonProps {
 function ThemeButton({ onClick, isDark }: IThemeButtonProps) {
   return (
     <ToggleBox onClick={onClick}>
-      {isDark ? (
-        <Shadow isdark={true} layout />
-      ) : (
-        <Shadow isdark={false} layout />
-      )}
+      <Shadow isdark={`${isDark}`} layout />
       <ToggleItem>
         <SunSvg width="25" height="30" />
       </ToggleItem>
