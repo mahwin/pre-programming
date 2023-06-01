@@ -35,24 +35,6 @@ type CategoryType =
   | "tailwindcss"
   | "reactHookForm";
 
-type CategoryKey = {
-  [key in CategoryType]: string;
-};
-interface IVoca {
-  category: {
-    [key: string]: {
-      level: {
-        [key: string]: { mean: string; word: string; frequency: string }[];
-      };
-    };
-  };
-}
-
-interface VocaPageProps {
-  voca: IVoca;
-  category: string;
-}
-
 export default function VocaPage() {
   const { loading, data, error } = useSelector((state: any) => {
     return state.vocas;
