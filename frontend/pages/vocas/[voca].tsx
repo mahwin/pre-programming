@@ -82,7 +82,7 @@ export default function VocaPage() {
       }
     }
   }, [data, category, dispatch]);
-
+  console.log(vocas);
   return (
     <>
       <Nav />
@@ -90,7 +90,7 @@ export default function VocaPage() {
       {vocas && category ? (
         <>
           <Vocas voca={vocas!} category={category as CategoryType} />
-          <QuizButton testData={vocas} />
+          <QuizButton quizData={vocas} />
         </>
       ) : (
         <PageLoading />

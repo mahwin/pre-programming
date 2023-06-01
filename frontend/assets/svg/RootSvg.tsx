@@ -8,7 +8,7 @@ import { TwitterSvg } from "./TwitterSvg";
 import { GithubSvg } from "./GitihubSvg";
 import { SendSvg } from "./Send";
 import { OpenSvg } from "./OpenSvg";
-import { TestSvg } from "./TestSvg";
+import { QuizSvg } from "./QuizSvg";
 import { DownArrowSvg } from "./DownArrowSvg";
 import { ResultCircleSvg } from "./ResultCircleSvg";
 import { FolderOpenSvg } from "./FolderOpenSvg";
@@ -42,7 +42,7 @@ export {
   GithubSvg,
   SendSvg,
   OpenSvg,
-  TestSvg,
+  QuizSvg,
   DownArrowSvg,
   ResultCircleSvg,
   FolderSvg,

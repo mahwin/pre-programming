@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TestSvg, DownArrowSvg } from "@svg";
+import { QuizSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
@@ -34,8 +34,8 @@ const Description = styled.label`
   height: 60px;
   margin-bottom: 150px;
   border-radius: 8px;
-  background: ${vocaColors.testBtn.labelBgColor};
-  color: ${vocaColors.testBtn.labelTextColor};
+  background: ${vocaColors.quizBtn.labelBgColor};
+  color: ${vocaColors.quizBtn.labelTextColor};
   font-size: 14px;
   font-weight: ${(props) => props.theme.fontWeight.bold};
   &:after {
@@ -49,7 +49,7 @@ const Description = styled.label`
     border: 1px solid red;
     transform: rotate(180deg);
     border-color: transparent;
-    border-bottom-color: ${vocaColors.testBtn.labelBgColor};
+    border-bottom-color: ${vocaColors.quizBtn.labelBgColor};
     border-width: 10px;
     pointer-events: none;
     content: "";
@@ -60,7 +60,7 @@ const SvgBox = styled.div`
   margin-bottom: 5px;
 `;
 
-const TestInputBox = styled(motion.div)`
+const QuizInputBox = styled(motion.div)`
   position: relative;
   z-index: 1;
   position: fixed;
@@ -69,25 +69,25 @@ const TestInputBox = styled(motion.div)`
   width: 250px;
   height: 400px;
   padding: 30px;
-  background-color: ${vocaColors.testBtn.testInputColor};
+  background-color: ${vocaColors.quizBtn.inputColor};
   border-radius: 1px;
 `;
 
-const TestInputTitle = styled.h2`
-  color: ${vocaColors.testBtn.testInputTitleColor};
+const QuizInputTitle = styled.h2`
+  color: ${vocaColors.quizBtn.inputTitleColor};
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   margin-bottom: 10px;
 `;
 
-const TestInputXBtn = styled.div`
+const QuizInputXBtn = styled.div`
   position: absolute;
   right: 8px;
   top: 30px;
-  color: ${vocaColors.testBtn.labelTextColor};
+  color: ${vocaColors.quizBtn.labelTextColor};
   &:hover {
     cursor: pointer;
-    color: ${vocaColors.testBtn.testInputTitleColor};
+    color: ${vocaColors.quizBtn.inputTitleColor};
     transform: scale(1.2);
     transition: ease-in-out 0.3s;
   }
@@ -152,11 +152,11 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: ${vocaColors.testBtn.testInputTitleColor};
+  background-color: ${vocaColors.quizBtn.inputTitleColor};
   font-size: ${(props) => props.theme.fontSize.md};
   cursor: pointer;
   :hover {
-    background-color: ${vocaColors.testBtn.btnHoverColor};
+    background-color: ${vocaColors.quizBtn.btnHoverColor};
     transition: background-color 0.3s ease-in-out;
   }
 `;
@@ -168,7 +168,7 @@ const Ul = styled.ul`
     align-items: center;
     :hover {
       border-radius: 2px;
-      background-color: ${vocaColors.testBtn.ulHoverColor};
+      background-color: ${vocaColors.quizBtn.ulHoverColor};
     }
   }
 `;
@@ -176,7 +176,7 @@ const Ul = styled.ul`
 const SubTitle = styled.h3`
   font-size: 20px;
   font-weight: ${(props) => props.theme.fontWeight.bold};
-  color: ${vocaColors.testBtn.labelTextColor};
+  color: ${vocaColors.quizBtn.labelTextColor};
 `;
 
 const Overlay = styled(motion.div)`
@@ -190,61 +190,56 @@ const Overlay = styled(motion.div)`
   z-index: 100;
 `;
 
-const TestCloseBtn = styled.button`
-  position: absolute;
-  top: 10vh;
-  right: 15vw;
-  z-index: 99;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  :hover {
-    color: ${vocaColors.testBtn.btnHoverColor};
-    transform: scale(1.2);
-  }
-`;
-
-interface ITestCondition {
+interface IQuizSetting {
   many: string | null;
   long: string | null;
 }
 
 type KeyType = "many" | "long";
 
-function FloatingButton({ testData }: any) {
+interface IWord {
+  word: string;
+  mean: string;
+  frequency: string;
+}
+interface IFloatingButton {
+  [key: string]: IWord[];
+}
+
+function QuizButton({ quizData }: IFloatingButton) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isTestOpen, setIsTestOpen] = useState<boolean>(false);
-  const [testCondition, setTestCondition] = useState<ITestCondition>({
+  const [isQuizOpen, setQuizOpen] = useState<boolean>(false);
+  const [quizSetting, setQuizSetting] = useState<IQuizSetting>({
     many: null,
     long: null,
   });
 
   const onToggleTestBtn = () => {
-    setIsTestOpen((prev) => !prev);
+    setQuizOpen((prev) => !prev);
   };
 
   const onToggleBtn = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const checkHandler = ({ target }: any) => {
-    const copy = { ...testCondition };
-    copy[target.name as KeyType] = target.value;
-    setTestCondition({ ...copy });
+  const checkHandler = (e: React.FormEvent<HTMLInputElement>) => {
+    const copy = Object.assign(quizSetting);
+    copy[e.currentTarget.name as KeyType] = e.currentTarget.value;
+    setQuizSetting({ ...copy });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const keys = Object.keys(testCondition);
+    const keys = Object.keys(quizSetting);
     let isBlank = false;
     keys.forEach((key) => {
-      if (testCondition[key as KeyType] === null) {
+      if (quizSetting[key as KeyType] === null) {
         alert(`${key === "long" ? "시간을" : "단어수를"} 선택해주세요!`);
         isBlank = true;
       }
     });
     if (isBlank) return;
-    setIsTestOpen(true);
+    setQuizOpen(true);
     setIsOpen(false);
   };
 
@@ -252,12 +247,12 @@ function FloatingButton({ testData }: any) {
     <>
       {isOpen ? (
         <AnimatePresence>
-          <TestInputBox layoutId="test">
+          <QuizInputBox layoutId="quiz">
             <div>
-              <TestInputTitle> Test your level ! </TestInputTitle>
-              <TestInputXBtn onClick={onToggleBtn}>
+              <QuizInputTitle> Test your level ! </QuizInputTitle>
+              <QuizInputXBtn onClick={onToggleBtn}>
                 <DownArrowSvg />
-              </TestInputXBtn>
+              </QuizInputXBtn>
             </div>
             <form onSubmit={handleSubmit}>
               <ContentBox>
@@ -322,17 +317,17 @@ function FloatingButton({ testData }: any) {
               </ContentBox>
               <SubmitButton type="submit">start test</SubmitButton>
             </form>
-          </TestInputBox>
+          </QuizInputBox>
         </AnimatePresence>
       ) : (
-        <Wrapper onClick={onToggleBtn} layoutId="test">
+        <Wrapper onClick={onToggleBtn} layoutId="quiz">
           <Description>실력을 테스트 해보세요!</Description>
           <SvgBox>
-            <TestSvg />
+            <QuizSvg />
           </SvgBox>
         </Wrapper>
       )}
-      {isTestOpen ? (
+      {isQuizOpen && (
         <>
           <Overlay
             initial={{ backgroundColor: "rgba(0,0,0,0)" }}
@@ -340,15 +335,15 @@ function FloatingButton({ testData }: any) {
             exit={{ backgroundColor: "rgba(0,0,0,0)" }}
           >
             <Quiz
-              vocas={testData}
-              howMany={testCondition.many!}
-              handleClickTest={onToggleTestBtn}
+              vocas={quizData}
+              howMany={quizSetting.many!}
+              handleClick={onToggleTestBtn}
             />
           </Overlay>
         </>
-      ) : null}
+      )}
     </>
   );
 }
 
-export default FloatingButton;
+export default QuizButton;

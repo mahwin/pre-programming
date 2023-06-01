@@ -33,13 +33,14 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const TestContainer = styled.div`
+const QuizContainer = styled.div`
   height: 70%;
   width: 100%;
   padding: 5rem;
   h2 {
     font-size: ${(props) => props.theme.fontSize.lg};
     color: ${quizColors.quiz.titleColor};
+    margin-bottom: 30px;
   }
 `;
 
@@ -161,7 +162,7 @@ const XBtn = styled.button`
   }
 `;
 
-interface ITestData {
+interface IQuizData {
   question: string;
   selectList: string[];
 }
@@ -175,12 +176,12 @@ interface IWord {
 interface IQuiz {
   vocas: IWord[];
   howMany: string;
-  handleClickTest: () => void;
+  handleClick: () => void;
 }
 
-export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
-  const [testData, setTestData] = useState<ITestData[] | null>(null);
-  const [testAnswer, setTestAnswer] = useState<number[] | null>(null);
+export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
+  const [quizData, setQuizData] = useState<IQuizData[] | null>(null);
+  const [quizAnswer, setQuizAnswer] = useState<number[] | null>(null);
 
   const [answerList, setAnswerList] = useState<number[]>([]);
   const [answer, setAnswer] = useState<boolean[]>(
@@ -212,7 +213,7 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
     const userAnswer = [...answerList, answerIdx];
     let correctCount = 0;
     userAnswer.forEach((answer, idx) => {
-      correctCount += testAnswer?.[idx] === answer ? 1 : 0;
+      correctCount += quizAnswer?.[idx] === answer ? 1 : 0;
     });
     setCorrectNum(correctCount);
     setIsSubmit(true);
@@ -228,14 +229,14 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
 
   useEffect(() => {
     let data = getQuiz(vocas, maxNum);
-    setTestData(() => data.quizs);
-    setTestAnswer(() => data.corrects);
+    setQuizData(() => data.quizs);
+    setQuizAnswer(() => data.corrects);
   }, [vocas, howMany, maxNum]);
 
   return (
     <Overay>
       <Wrapper>
-        <XBtn onClick={handleClickTest}>
+        <XBtn onClick={handleClick}>
           <XMarkSvg width="20" height="20" color="white" />
         </XBtn>
         {isSubmit ? (
@@ -243,8 +244,8 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
             {answerOpen ? (
               <QuizResult
                 answerList={answerList}
-                testData={testData!}
-                testAnswer={testAnswer!}
+                quizData={quizData!}
+                quizAnswer={quizAnswer!}
                 onBack={onAnswerClick}
               />
             ) : (
@@ -303,19 +304,19 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
                 ></ProgressCicle>
               ))}
             </ProgressBarBox>
-            <TestContainer>
+            <QuizContainer>
               <>
                 <h2>
-                  다음 중 {testData?.[currentStep].question}의 의미로 올바른
+                  다음 중 {quizData?.[currentStep].question}의 의미로 올바른
                   것은 ?
                 </h2>
                 <CheckList
                   onChangeInput={onChangeInput}
                   currentStep={currentStep}
-                  testData={testData}
+                  testData={quizData}
                   answer={answer}
                 ></CheckList>
-                {answer.includes(true) ? (
+                {answer.includes(true) && (
                   <>
                     {answerList.length === maxNum - 1 ? (
                       <Button onClick={onSubmit}>S u b m i t</Button>
@@ -323,9 +324,9 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
                       <Button onClick={onNextStep}>N E X T</Button>
                     )}
                   </>
-                ) : null}
+                )}
               </>
-            </TestContainer>
+            </QuizContainer>
           </>
         )}
       </Wrapper>

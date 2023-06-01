@@ -89,8 +89,8 @@ const BackBtn = styled.button`
 
 interface IAnswers {
   answerList: number[];
-  testAnswer: number[];
-  testData: ITestData[];
+  quizAnswer: number[];
+  quizData: ITestData[];
   onBack: () => void;
 }
 
@@ -103,25 +103,25 @@ type Result = [null, string] | [string, string];
 
 export default function QuizResult({
   answerList,
-  testData,
-  testAnswer,
+  quizData,
+  quizAnswer,
   onBack,
 }: IAnswers) {
   const [result, setResult] = useState<Result[] | null>(null);
   useEffect(() => {
     let copy: Result[] = [];
     answerList.forEach((answer, idx) => {
-      const correct = testAnswer[idx];
+      const correct = quizAnswer[idx];
       if (correct === answer)
-        copy.push([null, testData[idx]?.selectList[correct - 1].slice(0, 10)]);
+        copy.push([null, quizData[idx]?.selectList[correct - 1].slice(0, 10)]);
       else
         copy.push([
-          testData[idx]?.selectList[answer - 1].slice(0, 10),
-          testData[idx]?.selectList[correct - 1].slice(0, 10),
+          quizData[idx]?.selectList[answer - 1].slice(0, 10),
+          quizData[idx]?.selectList[correct - 1].slice(0, 10),
         ]);
     });
     setResult(copy);
-  }, [answerList, testData, testAnswer]);
+  }, [answerList, quizData, quizAnswer]);
   return (
     <Wrapper>
       <h1>Your Answers</h1>
@@ -130,7 +130,7 @@ export default function QuizResult({
           <Card key={idx}>
             <>
               <CardTitle>
-                <h3> {testData[idx].question}</h3>
+                <h3> {quizData[idx].question}</h3>
               </CardTitle>
               <CardContents>
                 {result?.[idx][0] && (
