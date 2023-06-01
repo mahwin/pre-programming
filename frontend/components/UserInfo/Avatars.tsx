@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState, MouseEvent } from "react";
-import { userInfoColors } from "../../assets/color/userInfoColors";
+import { userInfoColors } from "@color/userInfoColors";
 
 const Wrapper = styled(motion.div)`
   position: absolute;

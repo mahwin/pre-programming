@@ -5,7 +5,7 @@ import { SmileSvg, FrownSvg, LoadingSvg } from "@svg";
 import useMutation from "@utils/useMutation";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
-import { userInfoColors } from "assets/color/userInfoColors";
+import { userInfoColors } from "@color/userInfoColors";
 
 const Wrapper = styled.div`
   padding: 60px 14px 24px 14px;
@@ -75,48 +75,38 @@ const SubmitBtn = styled(Btn)`
 `;
 
 const Error = styled.span`
-  color: #ff7675;
+  color: ${userInfoColors.errorColor};
   font-size: 12px;
   font-weight: ${(props) => props.theme.fontWeight.base};
 `;
 
 const Changables = styled.div`
   height: 40px;
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 const ChangableBox = styled.div`
-  height: 60px;
   display: flex;
-  flex-direction: column;
-  color: #2d3436;
-  font-weight: 400;
+  align-items: center;
+  color: ${userInfoColors.textColor};
+  font-weight: ${(props) => props.theme.fontWeight.base};
   span {
-    display: flexbox;
-    width: 50px;
-    align-items: center;
-    justify-content: center;
-  }
-  div {
-    display: flex;
-    justify-content: center;
-    width: 50px;
-    height: 30px;
+    margin-right: 10px;
   }
 `;
 
 const Smile = styled(SmileSvg).attrs({
   width: "30",
   height: "30",
-  color: "green",
+  color: userInfoColors.svg.smile,
 })``;
 
 const Frown = styled(FrownSvg).attrs({
   width: "30",
   height: "30",
-  color: "orange",
+  color: userInfoColors.svg.frown,
 })``;
 
 interface IForm {
@@ -290,43 +280,39 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
           </InputBox>
           <Changables>
             <ChangableBox>
-              <Row>
-                <span>avatar</span>
-                <div>{isAvatarChange ? <Smile /> : <Frown />}</div>
-              </Row>
+              <span>avatar</span>
+              <div>{isAvatarChange ? <Smile /> : <Frown />}</div>
             </ChangableBox>
             <ChangableBox>
-              <Row>
-                <span>name</span>
-                {confirmName && (
-                  <div>
-                    {loading ? (
-                      <LoadingSvg />
-                    ) : confirmName?.ok ? (
-                      <Smile />
-                    ) : (
-                      <Frown />
-                    )}
-                  </div>
-                )}
-              </Row>
+              <span>name</span>
+              {confirmName && (
+                <div>
+                  {loading ? (
+                    <LoadingSvg />
+                  ) : confirmName?.ok ? (
+                    <Smile />
+                  ) : (
+                    <Frown />
+                  )}
+                </div>
+              )}
+
               <Error>{confirmName?.message}</Error>
             </ChangableBox>
             <ChangableBox>
-              <Row>
-                <span>phone</span>
-                {confirmPhone && (
-                  <div>
-                    {phoneLoading ? (
-                      <LoadingSvg />
-                    ) : confirmPhone?.ok ? (
-                      <Smile />
-                    ) : (
-                      <Frown />
-                    )}
-                  </div>
-                )}
-              </Row>
+              <span>phone</span>
+              {confirmPhone && (
+                <div>
+                  {phoneLoading ? (
+                    <LoadingSvg />
+                  ) : confirmPhone?.ok ? (
+                    <Smile />
+                  ) : (
+                    <Frown />
+                  )}
+                </div>
+              )}
+
               <Error>{confirmPhone?.message}</Error>
             </ChangableBox>
           </Changables>
