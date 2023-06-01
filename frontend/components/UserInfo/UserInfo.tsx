@@ -92,12 +92,11 @@ const ToggleCircle = styled(motion.div)`
 `;
 
 const Label = styled(motion.label)`
-  color: ${() => userInfoColors.textColor};
+  color: ${() => userInfoColors.highlightColor};
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   top: -5px;
   left: 38px;
-
   position: absolute;
 `;
 
@@ -161,7 +160,7 @@ export default function UserInfo({ data }: { data: IUser }) {
                       <>
                         <NormalSpan
                           style={{
-                            color: userInfoColors.textColor,
+                            color: userInfoColors.highlightColor,
                             position: "absolute",
                           }}
                         >
