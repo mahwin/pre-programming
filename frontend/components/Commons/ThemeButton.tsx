@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-
-import { MoonSvg } from "assets/svg/MoonSvg";
-import { SunSvg } from "assets/svg/SunSvg";
+import { MoonSvg } from "@svg";
+import { SunSvg } from "@svg";
 
 const ToggleBox = styled.div`
   position: fixed;
@@ -42,7 +41,6 @@ interface IThemeButtonProps {
 }
 
 function ThemeButton({ onClick, isDark }: IThemeButtonProps) {
-  console.log(isDark);
   return (
     <ToggleBox onClick={onClick}>
       <Shadow isdark={isDark ? 1 : 0} layout />

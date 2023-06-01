@@ -1,23 +1,11 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  explode,
-  dropOne,
-  dropTwo,
-  dropThree,
-  dropFour,
-  dropFive,
-  dropSeven,
-  dropSix,
-  dropZero,
-} from "assets/keyframes/RootKeyFrame";
+import React, { useState, useEffect } from "react";
+import QuizResult from "@components/Commons/QuizResult";
+import CheckList from "@components/Commons/CheckList";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
-import QuizResult from "../Commons/QuizResult";
-import getQuiz from "@utils/makeQuiz";
-
 import { quizColors } from "assets/color/quizColors";
-import CheckList from "./CheckList";
+import getQuiz from "@utils/makeQuiz";
 
 const Overay = styled(motion.div)`
   position: fixed;
@@ -240,7 +228,6 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
 
   useEffect(() => {
     let data = getQuiz(vocas, maxNum);
-    console.log(data);
     setTestData(() => data.quizs);
     setTestAnswer(() => data.corrects);
   }, [vocas, howMany, maxNum]);
