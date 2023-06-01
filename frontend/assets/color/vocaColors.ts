@@ -14,11 +14,11 @@ const vocaColors = {
     titleColor: "#dfe6e9",
     modalBtnColor: "#45b9a5",
   },
-  testBtn: {
+  quizBtn: {
     labelBgColor: "#d1ccc0",
     labelTextColor: "#2f3640",
-    testInputColor: "#f9f9f9;",
-    testInputTitleColor: "#f96",
+    inputColor: "#f9f9f9;",
+    inputTitleColor: "#f96",
     ulHoverColor: "#dcdde1",
     btnHoverColor: "#e17055",
   },
