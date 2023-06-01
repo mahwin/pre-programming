@@ -24,6 +24,8 @@ import { LeftArrowSvg } from "./LeftArrowSvg";
 import { RightArrowSvg } from "./RightArrowSvg";
 import { KeyDownSvg } from "./KeyDownSvg";
 import { KeyUpSvg } from "./KeyUpSvg";
+import { MoonSvg } from "./MoonSvg";
+import { SunSvg } from "./SunSvg";
 export {
   KeyDownSvg,
   KeyUpSvg,
@@ -51,4 +53,6 @@ export {
   SmileSvg,
   FrownSvg,
   LoadingSvg,
+  MoonSvg,
+  SunSvg,
 };
