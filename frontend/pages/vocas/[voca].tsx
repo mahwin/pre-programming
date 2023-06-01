@@ -1,8 +1,8 @@
 import Nav from "@components/Commons/Nav";
 import Footer from "@components/Commons/Footer";
-import VocaDetail from "@components/Vocas/VocaDetail";
+import Vocas from "@components/Vocas/Vocas";
 import Banner from "@components/Commons/Banner";
-import TestButton from "@components/Vocas/TestButton";
+import QuizButton from "@components/Vocas/QuizButton";
 import formatter from "@utils/camelCaser";
 import { useEffect, useState } from "react";
 import { vocasActions } from "redux/vocas/vocasSlice";
@@ -89,8 +89,8 @@ export default function VocaPage() {
       <Banner />
       {vocas && category ? (
         <>
-          <VocaDetail voca={vocas!} category={category as CategoryType} />
-          <TestButton testData={vocas} />
+          <Vocas voca={vocas!} category={category as CategoryType} />
+          <QuizButton testData={vocas} />
         </>
       ) : (
         <PageLoading />
