@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { TestSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-// import Quiz from "./Quiz";
 import Quiz from "@components/Commons/Quiz";
 import { vocaColors } from "assets/color/vocaColors";
 
