@@ -17,14 +17,7 @@ const userVocaColors = {
     btnHoverColor: "orange",
     etcColor: "#b2bec3",
   },
-  test: {
-    bgColor: "#7aa4a9",
-    textColor: "#f1f2ec",
-    progressBarColor: "#153f65;",
-    selectedColor: "orange",
-    correctColor: "#ac4e6b",
-    inCorrectColor: "#977f89",
-  },
+
   userVoca: {
     vocaCardBgColor: "#949fb0",
     overlayColor: "#4a5568;",
