@@ -7,6 +7,7 @@ const Wapper = styled.div`
   position: relative;
   width: 100%;
   height: 50vh;
+  min-height: 330px;
   display: flex;
   justify-content: center;
 `;
@@ -38,40 +39,26 @@ const TitleBox = styled.div`
 const Title = styled.h2`
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   font-size: ${(props) => props.theme.fontSize.xxlg};
-  color: #dfe6e9;
   letter-spacing: 0.2rem;
 `;
 
 const SubTitle = styled.h4`
   font-weight: ${(props) => props.theme.fontWeight.base};
   font-size: ${(props) => props.theme.fontSize.lg};
-  color: #dfe6e9;
   letter-spacing: 0.1rem;
 `;
 
 const SearchBox = styled.div`
-  margin-top: 12px;
+  margin-top: 17px;
   display: flex;
   width: 70%;
   max-width: ${(props) => props.theme.windowSize.tablet};
   justify-content: center;
   align-items: center;
   height: 28px;
-  border: none;
   &:focus {
     border: 2px solid red;
   }
-`;
-
-const SvgBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 36px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 
 const Search = styled.input.attrs({
@@ -90,6 +77,17 @@ const Search = styled.input.attrs({
   &:focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
+`;
+
+const SvgBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 36px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 
 export default function Banner() {
