@@ -4,7 +4,9 @@
     "paths": {
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
-      "@svg": ["assets/svg/RootSvg.tsx"]
+      "@svg": ["assets/svg/RootSvg.tsx"],
+      "@color/*": ["assets/color/*"],
+      "@redux/*": ["redux/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
