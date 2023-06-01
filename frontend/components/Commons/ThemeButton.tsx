@@ -40,7 +40,6 @@ interface IThemeButtonProps {
 }
 
 function ThemeButton({ onClick, isDark }: IThemeButtonProps) {
-  console.log(isDark);
   return (
     <ToggleBox onClick={onClick}>
       <Shadow isdark={isDark ? 1 : 0} layout />
