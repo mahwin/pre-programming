@@ -476,7 +476,7 @@ export default function UserVoca({ data }: ITitles) {
                   <XMarkSvg width="18" height="18" color="white" />
                 </XBtnBox>
                 <DetailBox>
-                  {userVocas.data && clickId && (
+                  {userVocas.data && vocas.data && clickId && (
                     <>
                       {userVocas.data[clickId] ? (
                         JSON.parse(userVocas?.data[clickId]).map(
