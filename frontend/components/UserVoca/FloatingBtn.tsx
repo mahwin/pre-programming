@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
-import { DownArrowSvg, StudySvg, TestSvg } from "@svg";
+import { DownArrowSvg, StudySvg, QuizSvg } from "@svg";
 import Study from "./Study";
-import Quiz from "../Commons/Quiz";
-import { userVocaColors } from "assets/color/userVocaColor";
+import Quiz from "@components/Commons/Quiz";
+import { userVocaColors } from "@color/userVocaColor";
 
 const Wrapper = styled(motion.div)`
   z-index: 99;
@@ -79,8 +79,6 @@ const Description = styled.p`
   }
 `;
 
-const StudyDescription = styled(Description)``;
-
 const TwoBtnBox = styled(motion.div)`
   position: absolute;
   top: -4em;
@@ -105,39 +103,10 @@ const TwoBtnBox = styled(motion.div)`
   }
 `;
 
-const TestStartBox = styled.div`
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-  text-align: center;
-  font-size: ${(props) => props.theme.fontSize.lg};
-  button {
-    border-radius: 5px;
-    background-color: white;
-    color: ${userVocaColors.floatBtn.bgColor};
-    font-size: inherit;
-    cursor: pointer;
-    :hover {
-      transition: all 0.25s ease-in-out;
-    }
-  }
-  h3 {
-    width: 100%;
-    height: 30px;
-    border-radius: 5px;
-    font-size: inherit;
-    font-weight: ${(props) => props.theme.fontWeight.bold};
-    background-color: rgba(200, 200, 200, 0.5);
-    cursor: not-allowed;
-  }
-`;
-
-const TestMakerBox = styled(motion.div)`
+const QuizMaker = styled(motion.div)`
   padding: 12px;
   position: absolute;
-  background-color: #0d1e41;
+  background-color: ${userVocaColors.floatBtn.bgColor};
   top: -150px;
   right: 0px;
   width: 200px;
@@ -145,6 +114,31 @@ const TestMakerBox = styled(motion.div)`
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   color: white;
   height: 0px;
+`;
+
+const QuizStartBtn = styled.div`
+  margin-top: 12px;
+  height: 30px;
+  text-align: center;
+  font-size: ${(props) => props.theme.fontSize.lg};
+  button {
+    background-color: white;
+    width: 100%;
+    border-radius: 5px;
+    color: ${userVocaColors.floatBtn.bgColor};
+    cursor: pointer;
+    :hover {
+      transition: all 0.25s ease-in-out;
+    }
+  }
+  h3 {
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: inherit;
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: not-allowed;
+  }
 `;
 
 const InputBox = styled.div`
@@ -165,7 +159,7 @@ const InputBox = styled.div`
   }
 `;
 
-const TestMakerVariants: Variants = {
+const QuizMakerVariants: Variants = {
   open: {
     clipPath: "inset(0% 0% 0% 0%)",
     height: "130px",
@@ -190,11 +184,6 @@ const TestMakerVariants: Variants = {
   },
 };
 
-interface IFloatingBtn {
-  amount: number;
-  data: IToTalWords[];
-}
-
 interface IWord {
   word: string;
   mean: string;
@@ -202,6 +191,11 @@ interface IWord {
 }
 interface IToTalWords {
   [key: string]: IWord[];
+}
+
+interface IFloatingBtn {
+  amount: number;
+  data: IToTalWords[];
 }
 
 export default function FloatingBtn({ amount, data }: IFloatingBtn) {
@@ -212,8 +206,8 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isStudyOpen, setIsStudyOpen] = useState<boolean>(false);
-  const [isTestMakerOpen, setTestMAkerOpen] = useState<boolean>(false);
-  const [isTestOpen, setIsTestOpen] = useState<boolean>(false);
+  const [isQuizMakerOpen, setQuizMakerOpen] = useState<boolean>(false);
+  const [isQuizOpen, setQuizOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setMaxNumber(Math.floor(amount / 4));
@@ -229,21 +223,21 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
 
   const handleBtnClick = () => {
     setIsOpen((prev) => !prev);
-    setTestMAkerOpen(false);
+    setQuizMakerOpen(false);
   };
 
-  const handleClickTestMaker = () => {
-    setTestMAkerOpen((prev) => !prev);
+  const handleClickQuizMaker = () => {
+    setQuizMakerOpen((prev) => !prev);
   };
 
   const handleClickStudy = () => {
-    setIsTestOpen(false);
+    setQuizOpen(false);
     setIsStudyOpen((prev) => !prev);
   };
 
-  const handleClickTest = () => {
+  const handleClickQuiz = () => {
     setIsStudyOpen(false);
-    setIsTestOpen((prev) => !prev);
+    setQuizOpen((prev) => !prev);
   };
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -268,18 +262,16 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
             <TwoBtnBox>
               <BtnWrapper onClick={handleClickStudy}>
                 <StudySvg />
-                <StudyDescription>
-                  {`${amount} 개의 단어를 학습합니다.`}
-                </StudyDescription>
+                <Description>{`${amount} 개의 단어를 학습합니다.`}</Description>
               </BtnWrapper>
-              <BtnWrapper onClick={handleClickTestMaker}>
-                <TestSvg />
+              <BtnWrapper onClick={handleClickQuizMaker}>
+                <QuizSvg />
                 <Description>실력을 테스트 해보세요!</Description>
               </BtnWrapper>
-              {isTestMakerOpen && (
-                <TestMakerBox
-                  variants={TestMakerVariants}
-                  animate={isTestMakerOpen ? "open" : "close"}
+              {isQuizMakerOpen && (
+                <QuizMaker
+                  variants={QuizMakerVariants}
+                  animate={isQuizMakerOpen ? "open" : "close"}
                 >
                   <div>
                     <label>문제 수 입력</label>
@@ -287,15 +279,15 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
                       <input value={inputN} onChange={handleInput}></input>
                       <span> / {maxNumber}</span>
                     </InputBox>
-                    <TestStartBox>
+                    <QuizStartBtn>
                       {Number(inputN) > 0 ? (
-                        <button onClick={handleClickTest}>Can Start !</button>
+                        <button onClick={handleClickQuiz}>Can Start !</button>
                       ) : (
                         <h3>Fill Input !</h3>
                       )}
-                    </TestStartBox>
+                    </QuizStartBtn>
                   </div>
-                </TestMakerBox>
+                </QuizMaker>
               )}
             </TwoBtnBox>
           )}
@@ -308,11 +300,11 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
           spreadData={spreadData}
         />
       )}
-      {spreadData && isTestOpen && (
+      {spreadData && isQuizOpen && (
         <Quiz
           vocas={spreadData}
           howMany={inputN}
-          handleClickTest={handleClickTest}
+          handleClick={handleClickQuiz}
         />
       )}
     </>

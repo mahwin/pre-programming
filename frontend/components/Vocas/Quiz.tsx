@@ -14,6 +14,7 @@ import {
 import { ResultCircleSvg } from "@svg";
 import Answers from "./Answers";
 import makeQuiz from "@utils/makeQuiz";
+import QuizResult from "@components/Commons/QuizResult";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -337,14 +338,14 @@ const ResultBtn = styled(Button)`
   left: 0;
 `;
 
-interface ITestData {
+interface IQuiztData {
   question: string;
   selectList: string[];
 }
 
 export default function Quiz({ voca, testCondition }: any) {
-  const [testData, setTestData] = useState<ITestData[] | null>(null);
-  const [testAnswer, setTestAnswer] = useState<number[] | null>(null);
+  const [quizData, setQuizData] = useState<IQuiztData[] | null>(null);
+  const [quizAnswer, setQuizAnswer] = useState<number[] | null>(null);
 
   const [answerList, setAnswerList] = useState<number[]>([]);
   const [answer, setAnswer] = useState<boolean[]>(
@@ -392,9 +393,9 @@ export default function Quiz({ voca, testCondition }: any) {
 
   useEffect(() => {
     let data = makeQuiz(voca, maxNum);
-    setTestData(() => data.quizs);
-    setTestAnswer(() => data.corrects);
-  }, [voca, testCondition, maxNum]);
+    setQuizData(() => data.quizs);
+    setQuizAnswer(() => data.corrects);
+  }, [voca, maxNum]);
 
   return (
     <Wrapper>
@@ -403,10 +404,10 @@ export default function Quiz({ voca, testCondition }: any) {
           <>
             {answerOpen ? (
               <>
-                <Answers
+                <QuizResult
                   answerList={answerList}
-                  testData={testData!}
-                  testAnswer={testAnswer!}
+                  quizData={quizData!}
+                  quizAnswer={quizAnswer!}
                   onBack={onAnswerClick}
                 />
               </>
@@ -453,7 +454,7 @@ export default function Quiz({ voca, testCondition }: any) {
             <TestContainer>
               <>
                 <h1>
-                  다음 중 {testData?.[currentStep].question}의 의미로 올바른
+                  다음 중 {quizData?.[currentStep].question}의 의미로 올바른
                   것은 ?
                 </h1>
                 <Ul>
@@ -463,7 +464,7 @@ export default function Quiz({ voca, testCondition }: any) {
                       id="1"
                       checked={answer[1]}
                     />
-                    <label>{testData?.[currentStep].selectList[0]}</label>
+                    <label>{quizData?.[currentStep].selectList[0]}</label>
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -477,7 +478,7 @@ export default function Quiz({ voca, testCondition }: any) {
                   </li>
                   <li>
                     <label htmlFor="2">
-                      {testData?.[currentStep].selectList[1]}
+                      {quizData?.[currentStep].selectList[1]}
                     </label>
                     <Input
                       onChange={onChangeInput}
@@ -501,7 +502,7 @@ export default function Quiz({ voca, testCondition }: any) {
                       id="3"
                       checked={answer[3]}
                     />
-                    <label>{testData?.[currentStep].selectList[2]}</label>
+                    <label>{quizData?.[currentStep].selectList[2]}</label>
                     <Bullet>
                       <BulletLineZero />
                       <BulletLineOne />
@@ -520,7 +521,7 @@ export default function Quiz({ voca, testCondition }: any) {
                       checked={answer[4]}
                     />
                     <label htmlFor="4">
-                      {testData?.[currentStep].selectList[3]}
+                      {quizData?.[currentStep].selectList[3]}
                     </label>
                     <Bullet>
                       <BulletLineZero />
