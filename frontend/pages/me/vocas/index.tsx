@@ -21,7 +21,6 @@ interface Ititle {
 }
 
 function UserVocaPage({ data }: Ititle) {
-  console.log(data);
   return (
     <>
       <Nav />

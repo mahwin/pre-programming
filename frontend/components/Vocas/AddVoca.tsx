@@ -224,7 +224,6 @@ export default function AddVaca({
     if (level.length === 0) {
       alert("내 단어장어 포함될 단어 카드를 선택해 주세요.");
     }
-    console.log({ userId, level: JSON.stringify(level) });
     saveVoca({ userId, level: JSON.stringify(level) });
   };
 
