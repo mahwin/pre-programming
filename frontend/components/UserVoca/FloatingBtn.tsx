@@ -3,7 +3,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { DownArrowSvg, StudySvg, TestSvg } from "@svg";
 import Study from "./Study";
-import Test from "./Test";
+import Quiz from "../Commons/Quiz";
 import { userVocaColors } from "assets/color/userVocaColor";
 
 const Wrapper = styled(motion.div)`
@@ -309,7 +309,7 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
         />
       )}
       {spreadData && isTestOpen && (
-        <Test
+        <Quiz
           vocas={spreadData}
           howMany={inputN}
           handleClickTest={handleClickTest}
