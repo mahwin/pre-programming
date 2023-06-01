@@ -337,8 +337,6 @@ const ResultBtn = styled(Button)`
   left: 0;
 `;
 
-type TypeAnser = number | null;
-
 interface ITestData {
   question: string;
   selectList: string[];
