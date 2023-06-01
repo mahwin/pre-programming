@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { quizColors } from "assets/color/quizColors";
+import { quizColors } from "@color/quizColors";
 import {
   explode,
   dropOne,

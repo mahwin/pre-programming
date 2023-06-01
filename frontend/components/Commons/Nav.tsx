@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
-import { userActions } from "../../redux/user/userSlice";
+import { userActions } from "@redux/user/userSlice";
+import { navColors } from "@color/navColors";
 
 const Wapper = styled.nav`
   width: 100%;
@@ -60,7 +61,7 @@ const LogOutBtn = styled.button`
 
   &:hover {
     border-radius: 3px;
-    color: darkorange;
+    color: ${navColors.hoverColor};
     transition: color 0.3s ease-in-out;
   }
 `;

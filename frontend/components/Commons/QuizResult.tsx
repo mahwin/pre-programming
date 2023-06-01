@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { userVocaColors } from "@color/userVocaColor";
 
 const Wrapper = styled.div`
   display: flex;
