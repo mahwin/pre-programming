@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import Link from "next/link";
 import { titleColor } from "assets/color/titleColors";
+import { vocasColors } from "@color/vocasColors";
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 10px 20px 10px;
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   padding: 10px;
   width: 100%;
   max-width: ${(props) => props.theme.windowSize.tablet};
@@ -21,15 +22,14 @@ const Title = styled.h2`
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const ItemsWrapper = styled.div`
+const ItemsWrapper = styled.section`
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  cursor: pointer;
 `;
 
-const ItemContents = styled.div`
+const Item = styled.article`
   padding: 20px;
   h3 {
     font-size: 20px;
@@ -38,7 +38,7 @@ const ItemContents = styled.div`
   }
   p {
     font-size: 13px;
-    color: #e2e8f0;
+    color: ${vocasColors.testColor};
   }
 `;
 
@@ -47,16 +47,15 @@ const ItemBox = styled.a`
   height: 100px;
   border-radius: 10px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  background-color: rgba(56, 57, 68, 0.5);
+  background-color: ${vocasColors.vocaBgColor};
   font-size: ${(props) => props.theme.fontSize.md};
   font-weight: ${(props) => props.theme.fontWeight.bold};
-  cursor: pointer;
   /* for overlay */
   position: relative;
   overflow: hidden;
   :hover {
     transition: background-color 0.2s ease-in-out;
-    background-color: rgba(63, 64, 75, 1);
+    background-color: ${vocasColors.vocaHoverBgColor};
   }
 `;
 
@@ -70,14 +69,14 @@ const Overray = styled.div`
   align-items: center;
   div {
     padding: 15px 10px;
-    background-color: #4a5568;
+    background-color: ${vocasColors.overlayTextColor};
     border-radius: 10px;
     display: flex;
     align-items: center;
     height: 30px;
     p {
-      font-size: 16px;
-      font-weight: 600;
+      font-size: ${(props) => props.theme.fontSize.base};
+      font-weight: ${(props) => props.theme.fontWeight.base};
       color: white;
     }
   }
@@ -105,7 +104,9 @@ export default function Vocas({ data }: Ititle) {
     <Wrapper>
       {Object.keys(data).map((key) => (
         <Container key={key}>
-          <Title>for {key}.dev</Title>
+          <header>
+            <Title>for {key}.dev</Title>
+          </header>
           <ItemsWrapper>
             {data[key as DevCategoryType].map(
               (item: titleItemType, idx: number) => (
@@ -113,7 +114,9 @@ export default function Vocas({ data }: Ititle) {
                   href={`/vocas/${item.title.toLowerCase()}`}
                   key={item.title}
                 >
-                  <ItemBox>
+                  <ItemBox
+                    style={{ pointerEvents: item.ok ? "visible" : "none" }}
+                  >
                     {!item.ok && (
                       <Overray>
                         <div>
@@ -121,13 +124,13 @@ export default function Vocas({ data }: Ititle) {
                         </div>
                       </Overray>
                     )}
-                    <ItemContents>
+                    <Item>
                       <h3 style={{ color: titleColor[idx % 9] }}>
                         {item.title}{" "}
                       </h3>
                       <p>단어 수 : {item.amount} </p>
                       <p>다운 수 : {item.install} </p>
-                    </ItemContents>
+                    </Item>
                   </ItemBox>
                 </Link>
               )
