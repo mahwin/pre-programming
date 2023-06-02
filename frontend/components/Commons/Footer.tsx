@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useCallback } from "react";
 import {
   LogoSvg,
   MailSvg,
@@ -10,16 +11,17 @@ import {
   SendSvg,
 } from "@svg";
 import Link from "next/link";
+import { footerColors } from "@color/footerColors";
 
 const Wrapper = styled.footer`
-  background-color: #202020;
+  background-color: ${footerColors.bgColor};
   opacity: 0.9;
   display: flex;
   width: 100%;
   justify-content: center;
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 80vh;
   margin-top: 40px;
@@ -29,7 +31,7 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const Row = styled.div`
+const Row = styled.section`
   display: grid;
   height: 25%;
   grid-template-columns: repeat(3, 1fr);
@@ -46,7 +48,7 @@ const TitleBox = styled.div``;
 const Title = styled.h3`
   font-weight: ${(props) => props.theme.fontWeight.bold};
   font-size: ${(props) => props.theme.fontSize.lg};
-  color: #dfe6e9;
+  color: ${footerColors.titleColor};
 `;
 
 const SubTitle = styled.h4`
@@ -79,7 +81,6 @@ const TitleLine = styled.hr`
 
 const BottomBox = styled.div`
   display: flex;
-
   flex-direction: column;
   height: 40vh;
 `;
@@ -141,10 +142,10 @@ const Input = styled.input.attrs({
   width: 80%;
   border: none;
   height: 40px;
-  color: #2d3436;
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.bold};
-  background-color: #2d3436;
+  background-color: ${footerColors.inputBgColor};
+  color: ${footerColors.inputColor};
 `;
 
 const Button = styled.button`
@@ -155,6 +156,10 @@ const Button = styled.button`
 `;
 
 export default function Footer() {
+  const notYetClick = useCallback(() => {
+    alert("준비 중입니다!");
+  }, []);
+
   return (
     <Wrapper>
       <Container>
@@ -198,15 +203,21 @@ export default function Footer() {
             </Box>
             <SubTitle>: What to do before you studying programming!</SubTitle>
             <Title>Follow us</Title>
-            <SnsBox>
-              <FacebookSvg width="40" height="40" />
-              <TwitterSvg width="40" height="40" />
-              <Link href="https://github.com/mahwin">
-                <a target="_blank" rel="noopener noreferrer">
-                  <GithubSvg width="40" height="40" />
+            <nav>
+              <SnsBox>
+                <a onClick={notYetClick}>
+                  <FacebookSvg width="40" height="40" />
                 </a>
-              </Link>
-            </SnsBox>
+                <a onClick={notYetClick}>
+                  <TwitterSvg width="40" height="40" />
+                </a>
+                <Link href="https://github.com/mahwin">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <GithubSvg width="40" height="40" />
+                  </a>
+                </Link>
+              </SnsBox>
+            </nav>
           </BottomBox>
           <BottomBox>
             <Box>
@@ -216,13 +227,15 @@ export default function Footer() {
               </TitleBox>
             </Box>
             <LinkWrapper>
-              <Links>
-                {["Home", "About", "Services", "Contact Us"].map((info) => (
-                  <LinkItem key={info}>
-                    <SubTitle>{info}</SubTitle>
-                  </LinkItem>
-                ))}
-              </Links>
+              <nav>
+                <Links>
+                  {["Home", "About", "Services", "Contact Us"].map((info) => (
+                    <LinkItem key={info} onClick={notYetClick}>
+                      <SubTitle>{info}</SubTitle>
+                    </LinkItem>
+                  ))}
+                </Links>
+              </nav>
             </LinkWrapper>
           </BottomBox>
           <BottomBox>
@@ -239,7 +252,7 @@ export default function Footer() {
               </SubTitle>
               <InputWrapper>
                 <Input />
-                <Button>
+                <Button onClick={notYetClick}>
                   <SendSvg width="24" height="24" />
                 </Button>
               </InputWrapper>
