@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { MagnifyingGlassSvg } from "@svg";
 
-const Wapper = styled.div`
+const Wapper = styled.section`
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 55vh;
   min-height: 330px;
   display: flex;
   justify-content: center;
@@ -27,7 +26,15 @@ const ContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-const TitleBox = styled.div`
+
+const BannerImg = styled.div`
+  position: absolute;
+  background-image: url("/banner.png");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+`;
+const TitleBox = styled.header`
   width: 100%;
   display: flex;
   top: 60px;
@@ -93,7 +100,7 @@ const SvgBox = styled.div`
 export default function Banner() {
   return (
     <Wapper>
-      <Image src="/banner.png" layout="fill" priority alt="베너 사진입니다." />
+      <BannerImg role="img" aria-label="배경화면 입니다" />
       <BannerWapper>
         <ContentWrapper>
           <TitleBox>
