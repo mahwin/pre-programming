@@ -2,30 +2,27 @@ import Image from "next/image";
 import styled from "styled-components";
 import { CursorAnimate } from "../../assets/keyframes/RootKeyFrame";
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: flex;
   justify-content: center;
   margin-top: 20vh;
   margin-bottom: 20vh;
 `;
 
-const ContentsWrapper = styled.div`
+const ContentsWrapper = styled.section`
   display: flex;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   background-color: white;
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
 `;
 
-const TextWrapper = styled.div`
+const TextBox = styled.div`
   width: 400px;
-  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   h3 {
     width: 235px;
-    font-weight: 800;
+    font-weight: ${(props) => props.theme.fontWeight.xxbold};
   }
 `;
 
@@ -48,18 +45,20 @@ export default function ErrorPage() {
   return (
     <Wrapper>
       <ContentsWrapper>
-        <Image
-          src="/404.png"
-          width={400}
-          height={500}
-          alt="에러 페이지입니다."
-        />
-        <TextWrapper>
-          <div>
-            <Title>원하는 페이지를 찾을 수 없습니다.</Title>
-            <Error>Error 404</Error>
-          </div>
-        </TextWrapper>
+        <figure>
+          <Image
+            src="/404.png"
+            width={400}
+            height={500}
+            alt="에러 페이지입니다."
+          />
+        </figure>
+        <TextBox>
+          <Title>
+            <strong>원하는 페이지를 찾을 수 없습니다.</strong>
+          </Title>
+          <Error>Error 404</Error>
+        </TextBox>
       </ContentsWrapper>
     </Wrapper>
   );
