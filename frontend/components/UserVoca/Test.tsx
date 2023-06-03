@@ -16,6 +16,7 @@ import { ResultCircleSvg, XMarkSvg } from "@svg";
 import Answers from "./Answers";
 import makeTestVoca from "@utils/makeTestVoca";
 import { userVocaColors } from "assets/color/userVocaColor";
+import { vocaColors } from "assets/color/vocaColors";
 
 const Overay = styled(motion.div)`
   position: fixed;
@@ -164,6 +165,9 @@ const Ul = styled.ul`
       font-weight: 700;
       margin-left: 20px;
       font-size: 24px;
+      :hover {
+        /* border: 1px solid orange; */
+      }
     }
     label:before {
       content: "";
@@ -304,6 +308,7 @@ const ButtonBox = styled.div`
   justify-content: center;
   gap: 10px;
   height: 50px;
+  border: 1px solid;
 `;
 
 const ResultBtn = styled(Button)`
@@ -422,34 +427,20 @@ export default function Quiz({ vocas, howMany, handleClickTest }: IQuiz) {
             ) : (
               <>
                 <Title>Result Summary</Title>
-                <div
-                  style={{
-                    border: `1px solid ${userVocaColors.test.progressBarColor}`,
-                  }}
-                />
+                <div style={{ border: "1px solid #325b79" }} />
                 <Row>
                   <ColorBox>
-                    <Color
-                      style={{
-                        backgroundColor: userVocaColors.test.correctColor,
-                      }}
-                    ></Color>
+                    <Color style={{ backgroundColor: "#ac4e6b" }}></Color>
                     <p>Correct : {`${correctNum}`}</p>
                   </ColorBox>
                   <ColorBox>
-                    <Color
-                      style={{
-                        backgroundColor: userVocaColors.test.inCorrectColor,
-                      }}
-                    ></Color>
+                    <Color style={{ backgroundColor: "#977f89" }}></Color>
                     <p>InCorrect : {`${maxNum - correctNum}`}</p>
                   </ColorBox>
                 </Row>
                 <div>
                   <ResultCircleSvg
                     percent={((correctNum * 100) / maxNum).toFixed(2) + ""}
-                    correctColor={userVocaColors.test.correctColor}
-                    inCorrectColor={userVocaColors.test.inCorrectColor}
                   />
                 </div>
                 <ButtonBox>
