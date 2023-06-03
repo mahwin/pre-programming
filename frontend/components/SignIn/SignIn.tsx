@@ -3,11 +3,11 @@ import { TwitterSvg, FacebookSvg, LoadingSvg } from "@svg";
 import useMutation from "@utils/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import LocalStorage from "@utils/localStorage";
 import { SignInColors } from "assets/color/SignInColors";
 
-const Wapper = styled.div`
+const Wapper = styled.main`
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -15,7 +15,7 @@ const Wapper = styled.div`
   align-items: center;
 `;
 
-const LoginContainer = styled.div`
+const LoginContainer = styled.section`
   min-width: ${(props) => props.theme.windowSize.mobile};
   height: 60vh;
   display: flex;
@@ -24,17 +24,17 @@ const LoginContainer = styled.div`
   flex-direction: column;
   text-align: center;
 `;
-const TitleBox = styled.div`
+const TitleBox = styled.header`
   margin-bottom: 50px;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   font-weight: ${(props) => props.theme.fontWeight.xbold};
   font-size: ${(props) => props.theme.fontSize.xlg};
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const SubTitle = styled.h4`
+const SubTitle = styled.h2`
   font-size: ${(props) => props.theme.fontSize.base};
   font-weight: ${(props) => props.theme.fontWeight.base};
   color: ${(props) => props.theme.colorTheme.textSecondary};
@@ -51,7 +51,7 @@ const Text = styled.p`
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const FormBox = styled.div`
+const FormBox = styled.section`
   width: 100%;
 `;
 
@@ -92,13 +92,14 @@ const TokenInput = styled(Input)`
 `;
 
 const Error = styled.span`
+  margin-top: 5px;
+  text-align: left;
+  position: absolute;
   color: ${SignInColors.errorColor};
   font-weight: ${(props) => props.theme.fontWeight.base};
-  position: absolute;
-  top: 50px;
 `;
 
-const Button = styled.button`
+const SubmitButton = styled.button`
   width: 100%;
   height: 40px;
   margin: 30px 0;
@@ -111,6 +112,10 @@ const Button = styled.button`
   :hover {
     border: 2px solid ${(props) => props.theme.colorTheme.hoverPrimary};
   }
+`;
+
+const SnsBox = styled.footer`
+  width: 100%;
 `;
 
 const TextInLineBox = styled.div`
@@ -130,7 +135,7 @@ const TextInLine = styled(Text)`
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 `;
 
-const SnsBox = styled.div`
+const SvgBox = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
@@ -186,12 +191,17 @@ export default function SignIn() {
   };
 
   const router = useRouter();
+
   useEffect(() => {
     if (tokenData?.ok) {
       LocalStorage.setItem("accessToken", tokenData.accessToken!);
       router.push("/");
     }
   }, [tokenData, router]);
+
+  const notYetClick = useCallback(() => {
+    alert("준비 중입니다!");
+  }, []);
 
   return (
     <Wapper>
@@ -214,7 +224,7 @@ export default function SignIn() {
                   })}
                 />
                 <Error>{tokenData?.message}</Error>
-                <Button>인증번호 입력</Button>
+                <SubmitButton>인증번호 입력</SubmitButton>
               </form>
             </>
           ) : (
@@ -246,31 +256,36 @@ export default function SignIn() {
                   />
                 </InputBox>
                 <Error>{errors?.phone?.message}</Error>
-                <Button>
+                <SubmitButton>
                   {loading ? (
                     <LoadingSvg color={SignInColors.snsBgColor} />
                   ) : (
                     "Login"
                   )}
-                </Button>
+                </SubmitButton>
               </form>
             </>
           )}
         </FormBox>
-        <TextInLineBox>
-          <TextInLine>or enter with</TextInLine>
-        </TextInLineBox>
         <SnsBox>
-          <SnsButton>
-            <TwitterSvg isCircle={false} fillColor={SignInColors.snsBgColor} />
-          </SnsButton>
-          <SnsButton>
-            <FacebookSvg
-              isCircle={false}
-              fillColor={SignInColors.snsBgColor}
-              height="30"
-            />
-          </SnsButton>
+          <TextInLineBox>
+            <TextInLine>or enter with</TextInLine>
+          </TextInLineBox>
+          <SvgBox>
+            <SnsButton onClick={notYetClick}>
+              <TwitterSvg
+                isCircle={false}
+                fillColor={SignInColors.snsBgColor}
+              />
+            </SnsButton>
+            <SnsButton onClick={notYetClick}>
+              <FacebookSvg
+                isCircle={false}
+                fillColor={SignInColors.snsBgColor}
+                height="30"
+              />
+            </SnsButton>
+          </SvgBox>
         </SnsBox>
       </LoginContainer>
     </Wapper>
