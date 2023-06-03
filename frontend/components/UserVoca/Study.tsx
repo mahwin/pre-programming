@@ -23,7 +23,7 @@ const Overay = styled(motion.div)`
   transition: all 0.5s ease-in-out;
 `;
 
-const Container = styled.div`
+const Container = styled.section`
   position: relative;
   width: ${(props) => props.theme.windowSize.tablet};
   height: 400px;
@@ -111,9 +111,6 @@ interface IWord {
   mean: string;
   frequency: string;
 }
-interface IToTalWords {
-  [key: string]: IWord[];
-}
 
 interface IStudy {
   handleClick: () => void;
@@ -176,7 +173,6 @@ export default function Study({ handleClick, amount, spreadData }: IStudy) {
               </Mean>
             </WordBox>
           )}
-
           <KeyBoard>
             <div
               style={{

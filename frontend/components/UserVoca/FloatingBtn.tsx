@@ -6,7 +6,7 @@ import Study from "./Study";
 import Quiz from "@components/Commons/Quiz";
 import { userVocaColors } from "@color/userVocaColor";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.section)`
   z-index: 99;
   height: 50px;
   width: 50px;
@@ -103,7 +103,7 @@ const TwoBtnBox = styled(motion.div)`
   }
 `;
 
-const QuizMaker = styled(motion.div)`
+const QuizMaker = styled(motion.section)`
   padding: 12px;
   position: absolute;
   background-color: ${userVocaColors.floatBtn.bgColor};

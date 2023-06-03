@@ -10,7 +10,6 @@ const Card = styled.li`
   padding: 10px;
   cursor: pointer;
   :hover {
-    transform: scale(1.05);
     transition: all 0.2s ease-in-out;
   }
 `;
