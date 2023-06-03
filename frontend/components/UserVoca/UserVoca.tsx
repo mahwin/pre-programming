@@ -12,7 +12,7 @@ import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
 import { userVocaColors } from "assets/color/userVocaColor";
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const VocaCardWrapper = styled.div`
+const VocaCardWrapper = styled.section`
   max-width: ${(props) => props.theme.windowSize.tablet};
   width: 100%;
   padding: 30px;
@@ -34,7 +34,7 @@ const VocaCardWrapper = styled.div`
   margin-bottom: 50px;
 `;
 
-const VocaCard = styled(motion.div)`
+const VocaCard = styled(motion.article)`
   height: 100px;
   position: relative;
   display: flex;
@@ -131,7 +131,7 @@ const Arrow = styled(motion.div)`
   }
 `;
 
-const Row = styled(motion.div)`
+const Row = styled(motion.section)`
   position: relative;
   width: 100%;
   height: 100%;
@@ -350,11 +350,13 @@ export default function UserVoca({ data }: ITitles) {
   return (
     <>
       <Wrapper>
-        <h1>Saved Vocabulary</h1>
+        <header>
+          <h1>Saved Vocabulary</h1>
+        </header>
         <VocaCardWrapper>
           {rowData?.map((data, rowIdx) => (
             <Row key={rowIdx} initial={false}>
-              {data.map((item, colIdx) => (
+              {data.map((item) => (
                 <Fragment key={item.title}>
                   {clickId !== null ? (
                     <VocaCard

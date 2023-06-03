@@ -2,7 +2,8 @@ import { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
-const Wrapper = styled.div`
+
+const Wrapper = styled.section`
   height: 100%;
   max-height: 70vh;
   width: ${(props) => props.theme.windowSize.tablet};
