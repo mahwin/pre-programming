@@ -14,12 +14,12 @@ const Avatars = dynamic(() => import("./Avatars"), {
   loading: () => <LoadingSvg />,
 });
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   width: 400px;
   margin: 100px auto;
 `;
 
-const Row = styled.div`
+const Container = styled.section`
   position: relative;
   height: 500px;
   max-width: ${(props) => props.theme.windowSize.tablet};
@@ -29,7 +29,7 @@ const Row = styled.div`
   overflow: hidden;
 `;
 
-const Header = styled.div`
+const Header = styled.header`
   display: flex;
   padding: 30px 5px 30px 5px;
   width: 100%;
@@ -150,7 +150,7 @@ export default function UserInfo({ data }: { data: IUser }) {
       ) : (
         <>
           <Wrapper>
-            <Row>
+            <Container>
               <Header>
                 <h1>Profile</h1>
                 <ToggleBox onChange={canChangeSwitch}>
@@ -194,13 +194,14 @@ export default function UserInfo({ data }: { data: IUser }) {
                 </ToggleBox>
               </Header>
               <Avartar>
-                <Image
-                  alt="아바타 이미지입니다."
-                  src={`/avatars/${avatar}.png`}
-                  layout="fill"
-                  priority
-                />
-
+                <figure>
+                  <Image
+                    alt="아바타 이미지입니다."
+                    src={`/avatars/${avatar}.png`}
+                    layout="fill"
+                    priority
+                  />
+                </figure>
                 {Mutatable && (
                   <SvgBox
                     onClick={onClickAvatars}
@@ -225,7 +226,7 @@ export default function UserInfo({ data }: { data: IUser }) {
                 isAvatarChange={avatar !== data?.avatar ? true : false}
                 isCan={Mutatable}
               />
-            </Row>
+            </Container>
           </Wrapper>
         </>
       )}
