@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState, MouseEvent } from "react";
 import { userInfoColors } from "@color/userInfoColors";
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled(motion.section)`
   position: absolute;
   bottom: 5%;
   right: 10%;
@@ -141,17 +141,21 @@ export default function Avatars({
             </Button>
           </BtnBox>
           <Title>Choose your avatar!</Title>
-          <Items>
-            {avatarList.map((avatar, idx) => (
-              <Item key={idx + ""} onClick={onSelect} id={avatar + ""} layout>
-                <Image
-                  src={`/avatars/${avatar}.png`}
-                  layout="fill"
-                  alt="아바타 이미지입니다."
-                />
-              </Item>
-            ))}
-          </Items>
+          <section>
+            <Items>
+              {avatarList.map((avatar, idx) => (
+                <Item key={idx + ""} onClick={onSelect} id={avatar + ""} layout>
+                  <figure>
+                    <Image
+                      src={`/avatars/${avatar}.png`}
+                      layout="fill"
+                      alt="아바타 이미지입니다."
+                    />
+                  </figure>
+                </Item>
+              ))}
+            </Items>
+          </section>
         </AvatarsWrapper>
       </motion.div>
     </Wrapper>

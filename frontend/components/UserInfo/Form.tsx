@@ -7,15 +7,14 @@ import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   padding: 60px 14px 24px 14px;
   height: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-color: white;
 `;
 
-const InputBox = styled.div`
+const InputBox = styled.section`
   display: flex;
   flex-direction: column;
   input {
@@ -80,7 +79,7 @@ const Error = styled.span`
   font-weight: ${(props) => props.theme.fontWeight.base};
 `;
 
-const Changables = styled.div`
+const Changable = styled.div`
   height: 40px;
   display: flex;
   justify-content: space-evenly;
@@ -278,7 +277,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
               </Btn>
             </Row>
           </InputBox>
-          <Changables>
+          <Changable>
             <ChangableBox>
               <span>avatar</span>
               <div>{isAvatarChange ? <Smile /> : <Frown />}</div>
@@ -296,7 +295,6 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
                   )}
                 </div>
               )}
-
               <Error>{confirmName?.message}</Error>
             </ChangableBox>
             <ChangableBox>
@@ -312,10 +310,9 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
                   )}
                 </div>
               )}
-
               <Error>{confirmPhone?.message}</Error>
             </ChangableBox>
-          </Changables>
+          </Changable>
         </form>
         {updateLoading ? (
           <SubmitBtn disabled>
