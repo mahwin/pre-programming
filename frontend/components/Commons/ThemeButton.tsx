@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { MoonSvg } from "@svg";
-import { SunSvg } from "@svg";
+import { MoonSvg, SunSvg } from "@svg";
 
 const ToggleBox = styled.div`
   position: fixed;
