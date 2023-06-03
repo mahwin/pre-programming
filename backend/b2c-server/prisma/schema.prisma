@@ -13,7 +13,7 @@ datasource db {
 }
 
 model User {
-  id              Int         @id @default(autoincrement())
+  id              Int        @id @default(autoincrement())
   phone           String     @unique
   name            String     @unique
   avatar          String?
@@ -27,10 +27,10 @@ model Token {
   id        Int      @id @default(autoincrement())
   payload   String   @unique
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    Int
+  userId    Int      @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+
 }
 
 model Vocabulary {
