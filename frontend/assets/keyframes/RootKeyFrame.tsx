@@ -154,6 +154,38 @@ const CursorAnimate = keyframes`
 	}
 `;
 
+const vibration = keyframes`
+	from {
+		transform: rotate(3deg);
+	}
+  to {
+    transform: rotate(-3deg);
+  }
+`;
+
+const fadeInAndOut = keyframes`
+	/* 효과를 동작시간 동안 0 ~ 1까지 */
+		0% {
+			opacity: 0;
+		}
+		50%{
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	`;
+
+const fadeout = keyframes`
+	/* 효과를 동작시간 동안 0 ~ 1까지 */
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	`;
+
 export {
   explode,
   dropZero,
@@ -166,4 +198,6 @@ export {
   dropSeven,
   clockAnimation,
   CursorAnimate,
+  vibration,
+  fadeInAndOut,
 };
