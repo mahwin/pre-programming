@@ -26,6 +26,8 @@ import { KeyDownSvg } from "./KeyDownSvg";
 import { KeyUpSvg } from "./KeyUpSvg";
 import { MoonSvg } from "./MoonSvg";
 import { SunSvg } from "./SunSvg";
+import { BellSvg } from "./BellSvg";
+import { CopySvg } from "./CopySvg";
 export {
   KeyDownSvg,
   KeyUpSvg,
@@ -55,4 +57,6 @@ export {
   LoadingSvg,
   MoonSvg,
   SunSvg,
+  BellSvg,
+  CopySvg,
 };
