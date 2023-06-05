@@ -10,6 +10,6 @@ FROM amd64/node:16-alpine
 WORKDIR /app
 
 COPY --from=builder /app ./
-EXPOSE 3000
+EXPOSE 3306
 
 CMD ["npm", "run", "start:prod"]
