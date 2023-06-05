@@ -85,6 +85,7 @@ const Input = styled.input.attrs({
 `;
 
 const TokenInput = styled(Input)`
+  display: block;
   width: 100%;
   margin-top: 10px;
   border-top-left-radius: 5px;
