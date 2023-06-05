@@ -217,7 +217,7 @@ export default function SignIn() {
           {data?.ok ? (
             <>
               <Text style={{ textAlign: "left" }}>Cerification Number</Text>
-              <form onSubmit={tokenHandleSubmit(onTokenValid)}>
+              <form id="token" onSubmit={tokenHandleSubmit(onTokenValid)}>
                 <TokenInput
                   placeholder="인증 번호를 입력하세요."
                   {...tokenRegister("token", {
@@ -231,7 +231,7 @@ export default function SignIn() {
           ) : (
             <>
               <Text style={{ textAlign: "left" }}>Phone number</Text>
-              <form onSubmit={handleSubmit(onValid)}>
+              <form id="phone" onSubmit={handleSubmit(onValid)}>
                 <InputBox>
                   <PreNumber>
                     <Text>+82</Text>

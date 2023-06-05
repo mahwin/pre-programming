@@ -188,8 +188,11 @@ export default function CheckList({
     <Ul>
       {[1, 2, 3, 4].map((el) => (
         <li>
-          <Input onChange={onChangeInput} id={`${el}`} checked={answer[el]} />
-          <Label>{testData?.[currentStep].selectList[el - 1]}</Label>
+          <Input onChange={onChangeInput} id={`${el}`} checked={answer[el]}>
+            <Label htmlFor={`${el}`}>
+              {testData?.[currentStep].selectList[el - 1]}
+            </Label>
+          </Input>
           <Bullet>
             <BulletLineZero />
             <BulletLineOne />

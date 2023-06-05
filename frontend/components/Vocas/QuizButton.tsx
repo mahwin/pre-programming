@@ -254,7 +254,7 @@ function QuizButton({ quizData }: IFloatingButton) {
                 <DownArrowSvg />
               </QuizInputXBtn>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form id="quiz-info" onSubmit={handleSubmit}>
               <ContentBox>
                 <SubTitle>how many :</SubTitle>
                 <Ul>

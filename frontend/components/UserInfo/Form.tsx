@@ -201,7 +201,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
       style={{ backgroundColor: isCan ? "white" : "rgba(200,200,200,1)" }}
     >
       <div>
-        <form onSubmit={handleSubmit(onValid)}>
+        <form id="nickname" onSubmit={handleSubmit(onValid)}>
           <InputBox>
             <label>
               닉네임
@@ -239,7 +239,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
             </Row>
           </InputBox>
         </form>
-        <form onSubmit={phoneSubmit(onValid)}>
+        <form id="phone" onSubmit={phoneSubmit(onValid)}>
           <InputBox>
             <label>
               폰 번호
