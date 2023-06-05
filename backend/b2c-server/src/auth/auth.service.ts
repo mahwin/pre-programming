@@ -68,18 +68,19 @@ export class AuthService {
         payload: token,
       },
     });
-    await this.prisma.token.deleteMany({
-      where: {
-        userId: foundToken.userId,
-      },
-    });
+
     if (foundToken) {
+      await this.prisma.token.deleteMany({
+        where: {
+          userId: foundToken.userId,
+        },
+      });
       const payload = {
         userId: foundToken.userId,
       };
       return { ok: true, accessToken: this.jwtService.sign(payload) };
     } else {
-      throw new NotFoundException(`인증 번호가 일치하지 않습니다.`);
+      return { ok: false, message: `인증 번호가 일치하지 않습니다.` };
     }
   }
 
