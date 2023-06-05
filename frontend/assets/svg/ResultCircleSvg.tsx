@@ -9,8 +9,8 @@ interface IResultCircleSvg {
 
 export function ResultCircleSvg({
   percent,
-  correctColor = `${userVocaColors.test.correctColor}`,
-  inCorrectColor = `${userVocaColors.test.correctColor}`,
+  correctColor = `${userVocaColors.quizResult.correctColor}`,
+  inCorrectColor = `${userVocaColors.quizResult.correctColor}`,
 }: IResultCircleSvg) {
   const clockAnimation = keyframes`
   0%{
