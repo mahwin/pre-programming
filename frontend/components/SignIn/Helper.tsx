@@ -4,6 +4,7 @@ import { BellSvg, CopySvg } from "@svg";
 import { vibration, fadeInAndOut } from "assets/keyframes/RootKeyFrame";
 import { SignInColors } from "@color/SignInColors";
 import { motion, AnimatePresence, Variants } from "framer-motion";
+import { throttling } from "@utils/throttling";
 
 const Wrapper = styled.section`
   z-index: 99;
@@ -168,9 +169,10 @@ const PublicVariants: Variants = {
 export default function Helper() {
   const [isOpen, setOpen] = useState(false);
   const [isCopy, setCopy] = useState({
-    isClicked: false,
-    data: "",
+    throttle: false,
+    type: "",
   });
+
   const onClick = useCallback(() => {
     setOpen(!isOpen);
   }, [isOpen]);
@@ -187,13 +189,11 @@ export default function Helper() {
       // but Clipboard API는 IE X라서 일단 사용함.
       document.execCommand("copy");
       document.body.removeChild($textarea);
-      setCopy({ isClicked: true, data: type! });
-      setTimeout(() => {
-        setCopy({ isClicked: false, data: "" });
-      }, 2000);
+      throttling({ setCopy, isCopy, type });
     },
     []
   );
+  console.log(isCopy);
 
   return (
     <>
@@ -236,9 +236,9 @@ export default function Helper() {
           </Public>
         </AnimatePresence>
       </Wrapper>
-      {isCopy.isClicked && (
+      {isCopy.throttle && (
         <CopyAlarm>
-          <span>{`COPIED! PUBLIC ${isCopy.data}`}</span>
+          <span>{`COPIED! PUBLIC ${isCopy.type}`}</span>
         </CopyAlarm>
       )}
     </>
