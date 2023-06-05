@@ -190,7 +190,6 @@ export default function PublicInfo() {
     },
     []
   );
-  console.log(isCopy);
 
   return (
     <>

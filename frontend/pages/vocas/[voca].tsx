@@ -64,7 +64,7 @@ export default function VocaPage() {
       }
     }
   }, [data, category, dispatch]);
-  console.log(vocas);
+
   return (
     <>
       <Nav />
