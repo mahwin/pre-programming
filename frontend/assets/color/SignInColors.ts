@@ -4,6 +4,7 @@ const SignInColors = {
   helper: {
     labelColor: "#a9a9a9",
     svgColor: "#dcd0ff",
+    alarmBgColor: "#5f9ea0",
   },
 };
 

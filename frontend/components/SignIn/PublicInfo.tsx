@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   right: 50px;
 `;
 
-const HelperBtn = styled.button`
+const Btn = styled.button`
   z-index: 99;
   height: 60px;
   width: 60px;
@@ -63,15 +63,13 @@ const Description = styled.p`
     transform: rotate(180deg);
     border-color: transparent;
     border-bottom-color: ${SignInColors.helper.labelColor};
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
     border-width: 10px;
     pointer-events: none;
     content: "";
   }
 `;
 
-const Public = styled(motion.section)`
+const PublicBox = styled(motion.section)`
   position: absolute;
   right: 0;
   top: -120px;
@@ -111,9 +109,9 @@ const InfoBox = styled.div`
 
 const CopyBtn = styled.button`
   background-color: transparent;
-  margin-left: 10px;
+  margin-left: 15px;
   :hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
     transition: 0.3s ease-in-out;
   }
 `;
@@ -127,12 +125,11 @@ const CopyAlarm = styled.section`
   width: 400px;
   height: 50px;
   border-radius: 10px;
-  background-color: cadetblue;
+  background-color: ${SignInColors.helper.alarmBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
   animation: ${fadeInAndOut} 2s;
-
   span {
     color: white;
     font-size: ${(props) => props.theme.fontSize.lg};
@@ -166,14 +163,14 @@ const PublicVariants: Variants = {
   },
 };
 
-export default function Helper() {
+export default function PublicInfo() {
   const [isOpen, setOpen] = useState(false);
   const [isCopy, setCopy] = useState({
     throttle: false,
     type: "",
   });
 
-  const onClick = useCallback(() => {
+  const onClickOpen = useCallback(() => {
     setOpen(!isOpen);
   }, [isOpen]);
 
@@ -198,14 +195,19 @@ export default function Helper() {
   return (
     <>
       <Wrapper>
-        <HelperBtn onClick={onClick}>
-          <Description>{"공용 아이디가 필요하면  클릭하세요!"}</Description>
+        <Btn onClick={onClickOpen}>
+          {!isOpen && (
+            <Description>{"공용 아이디가 필요하면  클릭하세요!"}</Description>
+          )}
           <SvgBox>
             <BellSvg />
           </SvgBox>
-        </HelperBtn>
+        </Btn>
         <AnimatePresence>
-          <Public variants={PublicVariants} animate={isOpen ? "open" : "close"}>
+          <PublicBox
+            variants={PublicVariants}
+            animate={isOpen ? "open" : "close"}
+          >
             {isOpen && (
               <>
                 <InfoBox>
@@ -222,7 +224,6 @@ export default function Helper() {
                 <InfoBox>
                   <label>TOKEN</label>
                   <label>000000</label>
-
                   <CopyBtn
                     data-type="TOKEN"
                     data-value="000000"
@@ -233,7 +234,7 @@ export default function Helper() {
                 </InfoBox>
               </>
             )}
-          </Public>
+          </PublicBox>
         </AnimatePresence>
       </Wrapper>
       {isCopy.throttle && (
