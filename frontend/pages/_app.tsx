@@ -7,6 +7,7 @@ import store from "../redux/store";
 import axios from "axios";
 import LocalStorage from "@utils/localStorage";
 import { useState } from "react";
+import Head from "next/head";
 import { getMediaTheme } from "@utils/getMedia";
 import ThemeButton from "@components/Commons/ThemeButton";
 
@@ -23,18 +24,24 @@ function App({ Component, pageProps }: AppProps) {
   };
 
   return (
-    <Provider store={store}>
-      <ThemeProvider
-        theme={{
-          ...theme,
-          colorTheme: isDark ? darkTheme : lightTheme,
-        }}
-      >
-        <GlobalStyle />
-        <ThemeButton onClick={toggleTheme} isDark={isDark} />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </Provider>
+    <>
+      <Head>
+        <title>Pre-Prograaming</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
+      </Head>
+      <Provider store={store}>
+        <ThemeProvider
+          theme={{
+            ...theme,
+            colorTheme: isDark ? darkTheme : lightTheme,
+          }}
+        >
+          <GlobalStyle />
+          <ThemeButton onClick={toggleTheme} isDark={isDark} />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </Provider>
+    </>
   );
 }
 
