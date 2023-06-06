@@ -26,8 +26,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Pre-Prograaming</title>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>Pre-Programming</title>
+        <link rel="shortcut icon" href="/favicon1.ico" />
       </Head>
       <Provider store={store}>
         <ThemeProvider
