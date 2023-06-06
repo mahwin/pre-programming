@@ -9,7 +9,7 @@ const Wrapper = styled(motion.section)`
   position: absolute;
   bottom: 5%;
   right: 10%;
-  height: 55%;
+  height: 370px;
   width: 280px;
   border-radius: 18px;
   z-index: 3;

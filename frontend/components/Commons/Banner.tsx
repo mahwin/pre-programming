@@ -5,8 +5,7 @@ import { MagnifyingGlassSvg } from "@svg";
 const Wapper = styled.section`
   position: relative;
   width: 100%;
-  height: 55vh;
-  min-height: 330px;
+  height: 390px;
   display: flex;
   justify-content: center;
 `;
@@ -56,7 +55,7 @@ const SubTitle = styled.h4`
 `;
 
 const SearchBox = styled.div`
-  margin-top: 17px;
+  margin-top: 30px;
   display: flex;
   width: 70%;
   max-width: ${(props) => props.theme.windowSize.tablet};
