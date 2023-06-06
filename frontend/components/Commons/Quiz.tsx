@@ -52,6 +52,7 @@ const Title = styled.h2`
 
 const ProgressBarBox = styled.div`
   position: relative;
+  left: -6px;
   width: 100%;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -220,7 +221,7 @@ export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
   };
 
   const onAnswerClick = () => setAnswerOpen(!answerOpen);
-  const onResetTest = () => {
+  const onResetQuiz = () => {
     setSteps(0);
     setIsSubmit(false);
     setAnswer(Array.from({ length: 5 }, () => false));
@@ -283,7 +284,7 @@ export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
                 </div>
                 <ButtonBox>
                   <ResultBtn onClick={onAnswerClick}>View answer</ResultBtn>
-                  <ResultBtn onClick={onResetTest}>Retry</ResultBtn>
+                  <ResultBtn onClick={onResetQuiz}>Retry</ResultBtn>
                 </ButtonBox>
               </>
             )}
@@ -313,7 +314,7 @@ export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
                 <CheckList
                   onChangeInput={onChangeInput}
                   currentStep={currentStep}
-                  testData={quizData}
+                  quizData={quizData}
                   answer={answer}
                 ></CheckList>
                 {answer.includes(true) && (

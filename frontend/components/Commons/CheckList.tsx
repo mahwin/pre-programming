@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React, { useCallback } from "react";
 import { quizColors } from "@color/quizColors";
 import {
   explode,
@@ -113,6 +114,12 @@ const Input = styled.input.attrs({ type: "radio", name: "answer" })`
   cursor: pointer;
 `;
 
+const Li = styled.li`
+  :hover {
+    opacity: 0.7;
+  }
+`;
+
 const Bullet = styled.div`
   width: 30px;
   height: 30px;
@@ -178,21 +185,33 @@ const BulletLineSeven = styled(Line)`
   transform: translateY(-9px);
 `;
 
+interface IQuizData {
+  question: string;
+  selectList: string[];
+}
+
+interface ICheckList {
+  onChangeInput: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+  currentStep: number;
+  quizData: IQuizData[] | null;
+  answer: boolean[];
+  onNextStep: () => void;
+}
+
 export default function CheckList({
   onChangeInput,
   currentStep,
-  testData,
+  quizData,
   answer,
-}: any) {
+}: ICheckList) {
   return (
     <Ul>
       {[1, 2, 3, 4].map((el) => (
-        <li>
-          <Input onChange={onChangeInput} id={`${el}`} checked={answer[el]}>
-            <Label htmlFor={`${el}`}>
-              {testData?.[currentStep].selectList[el - 1]}
-            </Label>
-          </Input>
+        <Li key={`${el}`}>
+          <Input onChange={onChangeInput} id={`${el}`} checked={answer[el]} />
+          <Label htmlFor={`${el}`}>
+            {quizData?.[currentStep].selectList[el - 1]}
+          </Label>
           <Bullet>
             <BulletLineZero />
             <BulletLineOne />
@@ -203,7 +222,7 @@ export default function CheckList({
             <BulletLineSix />
             <BulletLineSeven />
           </Bullet>
-        </li>
+        </Li>
       ))}
     </Ul>
   );
