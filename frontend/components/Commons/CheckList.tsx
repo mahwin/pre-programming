@@ -116,7 +116,8 @@ const Input = styled.input.attrs({ type: "radio", name: "answer" })`
 
 const Li = styled.li`
   :hover {
-    opacity: 0.7;
+    opacity: 0.6;
+    transition: ease-in-out 0.3s opacity;
   }
 `;
 
@@ -195,7 +196,6 @@ interface ICheckList {
   currentStep: number;
   quizData: IQuizData[] | null;
   answer: boolean[];
-  onNextStep: () => void;
 }
 
 export default function CheckList({
