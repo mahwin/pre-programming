@@ -108,8 +108,6 @@
 
     5. db에 저장
 
-위 과정은 많은 부분이 생략된 프로세스이며 실제 프로세스는  아래 경로에서 확인 하실 수 있습니다.
-
 ```bash
 ├── crawler
 │   └── parser
@@ -127,12 +125,15 @@
 
 ## 작동 모습
 
+### Version 1
+
 1. 로그인                              
 
    <details><summary>(✈️보기) </summary><div markdown="1">       
    <image src="https://user-images.githubusercontent.com/78193416/208283144-4e1db15f-6b71-496e-a027-9e22ea3af668.gif"></image>
    </div></details>
-
+   
+ 
 2. 학습할 기술 선택  및 내 단어장에 저장 
 
    <details><summary>(✈️ 보기) </summary><div markdown="1">
@@ -172,12 +173,35 @@
        <image src="https://user-images.githubusercontent.com/78193416/208287943-fdfcbe33-3983-450b-b7f7-357927251b6a.gif"></image>
    </div>
    </details>  
+   
+ ### Version 2 
+ 
+ 1. 둘러보기 기능 추가
+ 
+ <details><summary>(✈️보기) </summary><div markdown="1">
+ <image src="https://github.com/mahwin/pre-programming/assets/78193416/57d4127a-6255-4961-9f9b-b1e309b497a4"></image>
+ </div></details>  
+
 
 -----------------------
 
 ### 기술 스택
 
-next, nest, redux, prisma, axios, vitess 
+![NEXT.JS](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&amp;logo=Next.js&amp;logoColor=white)
+![REDUX](https://img.shields.io/badge/-Redux-764ABC?style=for-the-badge&amp;logo=Redux&amp;logoColor=white)
+![REDUX-SAGA](https://img.shields.io/badge/-Redux--Saga-999999?style=for-the-badge&amp;logo=Redux-Saga&amp;logoColor=white)
+![FRAMER-MOTION](https://img.shields.io/badge/-Framer--Motion-6700ed?style=for-the-badge&amp;logo=FramerMotion&amp;logoColor=white)
+![AXIOS](https://img.shields.io/badge/-AXIOS-5A29E4?style=for-the-badge&amp;logo=AXIOS&amp;logoColor=white)
+![Styled-components](https://img.shields.io/badge/-Styled--components-DB7093?style=for-the-badge&amp;logo=styledcomponents&amp;logoColor=white)
+![NEST.JS](https://img.shields.io/badge/-Nest.js-E0234E?style=for-the-badge&amp;logo=NestJs&amp;logoColor=white)
+![PYTHON](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&amp;logo=Python&amp;logoColor=white)
+![MYSQL](https://img.shields.io/badge/-Mysql-4479A1?style=for-the-badge&amp;logo=Mysql&amp;logoColor=white)
+![PRISMA](https://img.shields.io/badge/-Prisma-2D3748?style=for-the-badge&amp;logo=Prisma&amp;logoColor=white)
+![DOCKER](https://img.shields.io/badge/-DOCKER-2496ED?style=for-the-badge&amp;logo=DOCKER&amp;logoColor=white)
+![heroku](https://img.shields.io/badge/-Heroku-430098?style=for-the-badge&amp;logo=Heroku&amp;logoColor=white)
+![AWS](https://img.shields.io/badge/-aws-232F3E?style=for-the-badge&amp;logo=amazonaws&amp;logoColor=white)
+
+
 
 ---------------
 
