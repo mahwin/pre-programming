@@ -1,11 +1,11 @@
 class TrieNode {
   value: string;
   cnt: number;
-  end: boolean | string;
+  end: string;
   child: { [key: string]: TrieNode };
   constructor(value = "") {
     this.value = value;
-    this.end = false;
+    this.end = "";
     this.cnt = 0;
     this.child = {};
   }
@@ -13,13 +13,40 @@ class TrieNode {
 
 class Trie {
   root: TrieNode;
+  words: [string, number][];
   constructor() {
     this.root = new TrieNode();
+    this.words = [];
+  }
+
+  push(chars: string) {
+    let currentNode = this.root;
+
+    for (let i = 0; i < chars.length; i++) {
+      const currentChar = chars[i];
+
+      if (currentNode.child[currentChar] === undefined) {
+        currentNode.child[currentChar] = new TrieNode(
+          currentNode.value + currentChar
+        );
+      }
+      currentNode = currentNode.child[currentChar];
+    }
+    currentNode.cnt++;
+    currentNode.end = chars;
+  }
+
+  sort() {
+    this.words
+      .sort((a, b) => {
+        if (a[1] == b[1]) return a[0].length - b[0].length;
+        else return b[1] - a[1];
+      })
+      .slice(0, 5);
   }
 
   autoComplete(chars: string) {
     let currentNode = this.root;
-    let result = [];
     for (let i = 0; i < chars.length; i++) {
       let currentChar = chars[i];
       if (currentNode.child[currentChar]) {
@@ -29,18 +56,18 @@ class Trie {
       }
     }
     if (currentNode.end) {
-      result.push(currentNode.end);
+      this.words.push([currentNode.end, currentNode.cnt]);
     }
     const nodes = Object.values(currentNode.child);
 
     while (nodes.length) {
       const node = nodes.pop();
       if (node!.end) {
-        result.push(node!.end);
+        this.words.push([node!.end, node!.cnt]);
       } else {
         nodes.push(...Object.values(node!.child));
       }
     }
-    return result;
+    return this.words.length > 5 ? this.sort() : this.words;
   }
 }
