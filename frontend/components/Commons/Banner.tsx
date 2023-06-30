@@ -58,22 +58,30 @@ const SubTitle = styled.h4`
   letter-spacing: 0.1rem;
 `;
 
-const SearchBox = styled.div`
+const SearchBox = styled.section`
   margin-top: 30px;
-  display: flex;
-  width: 70%;
   max-width: ${(props) => props.theme.windowSize.tablet};
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 28px;
+  flex-direction: column;
+  position: relative;
   &:focus {
     border: 2px solid red;
   }
 `;
 
-const Suggestion = styled.ul``;
-
-const SuggestionItem = styled.li``;
+const InputBox = styled.div`
+  border-radius: 5px;
+  overflow: hidden;
+  height: 40px;
+  width: 400px;
+  display: flex;
+  padding: 20px 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
+`;
 
 const Search = styled.input.attrs({
   tpye: "text",
@@ -83,8 +91,6 @@ const Search = styled.input.attrs({
   height: 36px;
   width: 100%;
   border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   font-size: ${(props) => props.theme.fontSize.base};
   color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
@@ -93,16 +99,30 @@ const Search = styled.input.attrs({
   }
 `;
 
-const SvgBox = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 36px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
+const Suggestion = styled.ul`
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background: slategray;
+  padding: 0.8em 12px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin: 0;
+  list-style-type: none;
 `;
+
+const UnSelectedItem = styled.li`
+  margin-bottom: 0.8em;
+  font-size: 1.1em;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`;
+
+const SelectedItem = styled(UnSelectedItem)`
+  background-color: orange;
+`;
+
 interface IInfo {
   frequency: string;
   word: string;
@@ -113,14 +133,14 @@ interface IInfo {
 
 interface IRecommendObj {
   recommends: IInfo[];
-  selecetedIndex: number;
+  selectedIndex: number;
 }
 
 export default function Banner() {
   const [keyword, setKeyword] = useState("");
   const [recommedObj, setRecommed] = useState<IRecommendObj>({
     recommends: [],
-    selecetedIndex: 0,
+    selectedIndex: 0,
   });
   const [trie, setTrie] = useState<Trie | undefined>();
 
@@ -142,6 +162,38 @@ export default function Banner() {
     }
   }, [data]);
 
+  const handleKeyboardEvent = (e: React.KeyboardEvent<HTMLImageElement>) => {
+    if (recommedObj.recommends.length == 0) return;
+    const activateKey = ["ArrowUp", "ArrowDown", "Enter"];
+    const lastIndex = recommedObj.recommends.length - 1;
+    if (activateKey.includes(e.key)) {
+      switch (e.key) {
+        case "ArrowUp":
+          setRecommed({
+            ...recommedObj,
+            selectedIndex:
+              recommedObj.selectedIndex === 0
+                ? lastIndex
+                : recommedObj.selectedIndex - 1,
+          });
+          break;
+        case "ArrowDown":
+          setRecommed({
+            ...recommedObj,
+            selectedIndex:
+              recommedObj.selectedIndex === lastIndex
+                ? 0
+                : recommedObj.selectedIndex + 1,
+          });
+          break;
+        case "Enter":
+          console.log(recommedObj.recommends[recommedObj.selectedIndex].word);
+          setKeyword(recommedObj.recommends[recommedObj.selectedIndex].word);
+          break;
+      }
+    }
+  };
+
   return (
     <Wapper>
       <BannerImg role="img" aria-label="배경화면 입니다" />
@@ -151,13 +203,26 @@ export default function Banner() {
             <Title>Pre-Programming</Title>
             <SubTitle>:What to do before you studying programming!</SubTitle>
           </TitleBox>
-          <SearchBox>
-            <SvgBox>
+          <SearchBox onKeyUp={handleKeyboardEvent}>
+            <InputBox>
               <MagnifyingGlassSvg width="24" height="24" color="green" />
-            </SvgBox>
-            <Search onChange={handleChange} value={keyword} />
-
-            <Suggestion></Suggestion>
+              <Search onChange={handleChange} value={keyword} />
+            </InputBox>
+            {keyword && (
+              <Suggestion>
+                {recommedObj.recommends.length === 0 ? (
+                  <UnSelectedItem key="empty">No results found</UnSelectedItem>
+                ) : (
+                  recommedObj.recommends.map((info, i) =>
+                    recommedObj.selectedIndex === i ? (
+                      <SelectedItem key={i}>{info.word}</SelectedItem>
+                    ) : (
+                      <UnSelectedItem key={i}>{info.word}</UnSelectedItem>
+                    )
+                  )
+                )}
+              </Suggestion>
+            )}
           </SearchBox>
         </ContentWrapper>
       </BannerWapper>
