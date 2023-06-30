@@ -1,12 +1,5 @@
 interface IInfo {
-  frequency: number;
-  category: string;
-  word: string;
-  level: string;
-  mean: string[];
-}
-interface IVocaItem {
-  frequency: number;
+  frequency: string;
   word: string;
   mean: string;
   category?: string;
@@ -18,6 +11,7 @@ class TrieNode {
   end: boolean;
   child: { [key: string]: TrieNode };
   infos: IInfo[];
+
   constructor(value = "") {
     this.value = value;
     this.end = false;
@@ -43,7 +37,7 @@ class Trie {
     this.words = [];
   }
 
-  push(info: IVocaItem) {
+  add(info: IInfo) {
     const chars = info.word;
     let currentNode = this.root;
     for (let i = 0; i < chars.length; i++) {
@@ -55,18 +49,19 @@ class Trie {
         );
       }
       currentNode = currentNode.child[currentChar];
+      currentNode.infos.push(info);
     }
-
     currentNode.end = true;
   }
 
   sort(len: number) {
     if (this.words.length === 0) return [];
-
     return this.words
       .sort((a, b) => {
         if (a.frequency == b.frequency) return a.word.length - b.word.length;
-        else return b.frequency - a.frequency;
+        else {
+          return b.frequency > a.frequency ? 1 : -1;
+        }
       })
       .slice(0, len);
   }
@@ -75,6 +70,7 @@ class Trie {
     if (chars === "") return [];
     this.words = [];
     let currentNode = this.root;
+
     for (let i = 0; i < chars.length; i++) {
       let currentChar = chars[i];
       if (currentNode.child[currentChar]) {
@@ -83,6 +79,7 @@ class Trie {
         return [];
       }
     }
+
     if (currentNode.end) {
       this.words.push(...currentNode.infos);
     }
@@ -90,10 +87,10 @@ class Trie {
 
     while (nodes.length) {
       const node = nodes.pop();
-      if (node!.end) {
-        this.words.push(...node!.infos);
-      } else {
-        nodes.push(...Object.values(node!.child));
+      if (node) {
+        if (node.end) {
+          this.words.push(...node!.infos);
+        } else nodes.push(...Object.values(node!.child));
       }
     }
     return this.sort(len);

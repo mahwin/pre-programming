@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import getTrie from "@utils/getTrie";
+import Trie from "@utils/trie";
+import { IState } from "@redux/initialState";
 import styled from "styled-components";
 import { MagnifyingGlassSvg } from "@svg";
 
@@ -67,6 +71,10 @@ const SearchBox = styled.div`
   }
 `;
 
+const Suggestion = styled.ul``;
+
+const SuggestionItem = styled.li``;
+
 const Search = styled.input.attrs({
   tpye: "text",
   placeholder: "단어를 입력하세요",
@@ -93,10 +101,47 @@ const SvgBox = styled.div`
   height: 36px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.textSecondary};
+  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
 `;
+interface IInfo {
+  frequency: string;
+  word: string;
+  category?: string;
+  level?: string;
+  mean: string;
+}
+
+interface IRecommendObj {
+  recommends: IInfo[];
+  selecetedIndex: number;
+}
 
 export default function Banner() {
+  const [keyword, setKeyword] = useState("");
+  const [recommedObj, setRecommed] = useState<IRecommendObj>({
+    recommends: [],
+    selecetedIndex: 0,
+  });
+  const [trie, setTrie] = useState<Trie | undefined>();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(e.currentTarget.value);
+  };
+
+  useEffect(() => {
+    if (trie) {
+      const recommends = trie.autoComplete(keyword, 10);
+      setRecommed({ ...recommedObj, recommends });
+    }
+  }, [keyword]);
+
+  const { loading, data, error } = useSelector((state: IState) => state.vocas);
+  useEffect(() => {
+    if (data !== null && trie === undefined) {
+      setTrie(getTrie(data));
+    }
+  }, [data]);
+
   return (
     <Wapper>
       <BannerImg role="img" aria-label="배경화면 입니다" />
@@ -110,7 +155,9 @@ export default function Banner() {
             <SvgBox>
               <MagnifyingGlassSvg width="24" height="24" color="green" />
             </SvgBox>
-            <Search />
+            <Search onChange={handleChange} value={keyword} />
+
+            <Suggestion></Suggestion>
           </SearchBox>
         </ContentWrapper>
       </BannerWapper>

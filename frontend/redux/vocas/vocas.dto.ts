@@ -1,7 +1,7 @@
 import { AxiosError } from "axios";
 
 interface IVocaItem {
-  frequency: number;
+  frequency: string;
   word: string;
   mean: string;
 }
@@ -34,11 +34,20 @@ type CategoryType =
 type CategoryKey = {
   [key in CategoryType]: string;
 };
+
+interface IInfo {
+  frequency: string;
+  word: string;
+  mean: string;
+  category?: string;
+  level?: string;
+}
+
 interface IVoca {
-  category: {
+  [key: string]: {
     [key: string]: {
       level: {
-        [key: string]: IVocaItem[];
+        [key: string]: IInfo[];
       };
     };
   };
