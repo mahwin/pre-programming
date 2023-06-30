@@ -1,27 +1,51 @@
+interface IInfo {
+  frequency: number;
+  category: string;
+  word: string;
+  level: string;
+  mean: string[];
+}
+interface IVocaItem {
+  frequency: number;
+  word: string;
+  mean: string;
+  category?: string;
+  level?: string;
+}
+
 class TrieNode {
   value: string;
-  cnt: number;
-  end: string;
+  end: boolean;
   child: { [key: string]: TrieNode };
+  infos: IInfo[];
   constructor(value = "") {
     this.value = value;
-    this.end = "";
-    this.cnt = 0;
+    this.end = false;
     this.child = {};
+    this.infos = [];
   }
 }
 
 class Trie {
+  private static instance: Trie | null = null;
   root: TrieNode;
-  words: [string, number][];
-  constructor() {
+  words: IInfo[];
+
+  public static getInstance(): Trie {
+    if (Trie.instance === null) {
+      Trie.instance = new Trie();
+    }
+    return Trie.instance;
+  }
+
+  private constructor() {
     this.root = new TrieNode();
     this.words = [];
   }
 
-  push(chars: string) {
+  push(info: IVocaItem) {
+    const chars = info.word;
     let currentNode = this.root;
-
     for (let i = 0; i < chars.length; i++) {
       const currentChar = chars[i];
 
@@ -32,42 +56,48 @@ class Trie {
       }
       currentNode = currentNode.child[currentChar];
     }
-    currentNode.cnt++;
-    currentNode.end = chars;
+
+    currentNode.end = true;
   }
 
-  sort() {
-    this.words
+  sort(len: number) {
+    if (this.words.length === 0) return [];
+
+    return this.words
       .sort((a, b) => {
-        if (a[1] == b[1]) return a[0].length - b[0].length;
-        else return b[1] - a[1];
+        if (a.frequency == b.frequency) return a.word.length - b.word.length;
+        else return b.frequency - a.frequency;
       })
-      .slice(0, 5);
+      .slice(0, len);
   }
 
-  autoComplete(chars: string) {
+  autoComplete(chars: string, len: number) {
+    if (chars === "") return [];
+    this.words = [];
     let currentNode = this.root;
     for (let i = 0; i < chars.length; i++) {
       let currentChar = chars[i];
       if (currentNode.child[currentChar]) {
         currentNode = currentNode.child[currentChar];
       } else {
-        return false;
+        return [];
       }
     }
     if (currentNode.end) {
-      this.words.push([currentNode.end, currentNode.cnt]);
+      this.words.push(...currentNode.infos);
     }
     const nodes = Object.values(currentNode.child);
 
     while (nodes.length) {
       const node = nodes.pop();
       if (node!.end) {
-        this.words.push([node!.end, node!.cnt]);
+        this.words.push(...node!.infos);
       } else {
         nodes.push(...Object.values(node!.child));
       }
     }
-    return this.words.length > 5 ? this.sort() : this.words;
+    return this.sort(len);
   }
 }
+
+export default Trie;
