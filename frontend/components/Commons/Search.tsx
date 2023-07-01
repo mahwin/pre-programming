@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import getTrie from "@utils/getTrie";
 import Trie from "@utils/trie";
 import { IState } from "@redux/initialState";
 import styled from "styled-components";
 import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
-import arrParser from "@utils/meanConvert";
 import { camelStrToMiddleBarStr } from "@utils/camelCaser";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -73,12 +71,30 @@ const Suggestion = styled.div`
   border-radius: 5px;
 `;
 
+const EmptySuggestion = styled(Suggestion)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: ${(props) => props.theme.fontSize.md};
+    font-weight: ${(props) => props.theme.fontWeight.xbold};
+    margin-right: 10px;
+  }
+`;
+
 const Ul = styled.ul<{ isSelected?: boolean }>`
-  background-color: ${(props) => props.isSelected && "orange"};
+  background-color: ${(props) => props.isSelected && "#fab1a0"};
   margin: 0;
   display: flex;
   align-items: center;
   margin-bottom: 0.8em;
+  background-image: linear-gradient(transparent calc(100% - 5px), #e17055 5px);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.8s;
+  &:not(:nth-child(1)):hover {
+    background-size: 100% 100%;
+  }
 `;
 
 const Li = styled.li`
@@ -92,24 +108,14 @@ const Li = styled.li`
   }
 `;
 
-const EmptyBox = styled.div`
-  display: flex;
-  align-items: center;
-  span {
-    font-size: ${(props) => props.theme.fontSize.md};
-    font-weight: ${(props) => props.theme.fontWeight.xbold};
-    margin-right: 10px;
-  }
-`;
-
 const Route = styled.div`
   margin-right: 1rem;
   display: flex;
   background-color: transparent;
   &:hover svg {
-    stroke: orange;
-    transform: scale(1.1);
-    transition: 0.5 ease-in;
+    stroke: #ff7675;
+    transform: scale(1.2);
+    transition: all 0.5s ease-in;
     cursor: pointer;
   }
 `;
@@ -156,7 +162,7 @@ export default function Search() {
     if (!data) {
       dispatch(vocasActions.getVocas());
     } else if (trie === undefined) {
-      setTrie(getTrie(data));
+      setTrie(Trie.getInstance(data));
     }
   }, [data, dispatch]);
 
@@ -220,14 +226,14 @@ export default function Search() {
         )}
       </InputBox>
       {keyword && trie && (
-        <Suggestion>
+        <>
           {recommedObj.recommends.length === 0 ? (
-            <EmptyBox>
+            <EmptySuggestion>
               <span>No results found</span>
               <FrownSvg color="orange" width="30" height="30" strokeWidth="2" />
-            </EmptyBox>
+            </EmptySuggestion>
           ) : (
-            <>
+            <Suggestion>
               <Ul key="title">
                 {titles.map((title) => (
                   <Li key={title}>{title}</Li>
@@ -269,9 +275,9 @@ export default function Search() {
                   </Route>
                 </Ul>
               ))}
-            </>
+            </Suggestion>
           )}
-        </Suggestion>
+        </>
       )}
     </Wrapper>
   );
