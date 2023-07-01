@@ -7,6 +7,8 @@ import styled from "styled-components";
 import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
 import arrParser from "@utils/meanConvert";
 import { camelStrToMiddleBarStr } from "@utils/camelCaser";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -92,13 +94,12 @@ const EmptyBox = styled.div`
 
 const Route = styled.div`
   display: flex;
-  button {
-    background-color: transparent;
-    &:hover svg {
-      stroke: orange;
-      transform: scale(1.1);
-      transition: 0.5 ease-in;
-    }
+  background-color: transparent;
+  &:hover svg {
+    stroke: orange;
+    transform: scale(1.1);
+    transition: 0.5 ease-in;
+    cursor: pointer;
   }
 `;
 
@@ -182,6 +183,15 @@ export default function Search() {
     });
   };
 
+  const router = useRouter();
+  useEffect(() => {
+    setKeyword("");
+    setRecommed({
+      recommends: [],
+      selectedIndex: 0,
+    });
+  }, [router]);
+
   return (
     <Wrapper onKeyUp={handleKeyboardEvent}>
       <InputBox>
@@ -199,7 +209,7 @@ export default function Search() {
             <>
               <Ul key="title">
                 {titles.map((title) => (
-                  <Li>{title}</Li>
+                  <Li key={title}>{title}</Li>
                 ))}
               </Ul>
               {recommedObj.recommends.map((info, i) => (
@@ -212,17 +222,29 @@ export default function Search() {
                   {titles.map((title) => {
                     switch (title) {
                       case "mean":
-                        return <Li>{arrParser(info[title], 2, 15)}</Li>;
+                        return (
+                          <Li key={title + i}>
+                            {arrParser(info[title], 2, 15)}
+                          </Li>
+                        );
                       case "category":
-                        return <Li>{camelStrToMiddleBarStr(info[title]!)}</Li>;
+                        return (
+                          <Li key={title + i}>
+                            {camelStrToMiddleBarStr(info[title]!)}
+                          </Li>
+                        );
                       default:
-                        return <Li>{info[title]!}</Li>;
+                        return <Li key={title + i}>{info[title]!}</Li>;
                     }
                   })}
                   <Route>
-                    <button>
-                      <SendSvg width="24" height="24" />
-                    </button>
+                    <Link
+                      href={`/vocas/${camelStrToMiddleBarStr(info.category!)}`}
+                    >
+                      <a>
+                        <SendSvg width="24" height="24" />
+                      </a>
+                    </Link>
                   </Route>
                 </Ul>
               ))}
