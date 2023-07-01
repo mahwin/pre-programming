@@ -4,7 +4,9 @@ import getTrie from "@utils/getTrie";
 import Trie from "@utils/trie";
 import { IState } from "@redux/initialState";
 import styled from "styled-components";
-import { MagnifyingGlassSvg, FrownSvg } from "@svg";
+import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
+import arrParser from "@utils/meanConvert";
+import { camelStrToMiddleBarStr } from "@utils/camelCaser";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -50,7 +52,8 @@ const Input = styled.input.attrs({
 const Suggestion = styled.div`
   position: absolute;
   top: 100%;
-  width: 100%;
+  left: 0;
+  width: 140%;
   list-style-type: none;
   padding: 0.8em 12px;
   background: slategray;
@@ -62,17 +65,18 @@ const Ul = styled.ul<{ isSelected?: boolean }>`
   background-color: ${(props) => props.isSelected && "orange"};
   margin: 0;
   display: flex;
+  align-items: center;
+  margin-bottom: 0.8em;
 `;
 
 const Li = styled.li`
+  white-space: pre-wrap;
   margin: 0;
   padding: 0;
-  margin-bottom: 0.8em;
   font-size: 1.1em;
-  flex-grow: 1;
-  width: 20%;
+  width: 30%;
   &:last-of-type {
-    flex-grow: 1;
+    flex-grow: 2;
   }
 `;
 
@@ -83,6 +87,18 @@ const EmptyBox = styled.div`
     font-size: ${(props) => props.theme.fontSize.md};
     font-weight: ${(props) => props.theme.fontWeight.xbold};
     margin-right: 10px;
+  }
+`;
+
+const Route = styled.div`
+  display: flex;
+  button {
+    background-color: transparent;
+    &:hover svg {
+      stroke: orange;
+      transform: scale(1.1);
+      transition: 0.5 ease-in;
+    }
   }
 `;
 
@@ -193,9 +209,21 @@ export default function Search() {
                   data-index={i}
                   isSelected={recommedObj.selectedIndex === i ? true : false}
                 >
-                  {titles.map((title) => (
-                    <Li>{info[title]}</Li>
-                  ))}
+                  {titles.map((title) => {
+                    switch (title) {
+                      case "mean":
+                        return <Li>{arrParser(info[title], 2, 15)}</Li>;
+                      case "category":
+                        return <Li>{camelStrToMiddleBarStr(info[title]!)}</Li>;
+                      default:
+                        return <Li>{info[title]!}</Li>;
+                    }
+                  })}
+                  <Route>
+                    <button>
+                      <SendSvg width="24" height="24" />
+                    </button>
+                  </Route>
                 </Ul>
               ))}
             </>

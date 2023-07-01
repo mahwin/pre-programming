@@ -1,5 +1,3 @@
-import { withTheme } from "styled-components";
-
 interface Iprops {
   width?: string;
   height?: string;
