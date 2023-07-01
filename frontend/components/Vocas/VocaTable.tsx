@@ -1,4 +1,6 @@
+import meanConvert from "@utils/meanConvert";
 import styled from "styled-components";
+import meanConver from "@utils/meanConvert";
 
 const TableWrapper = styled.div`
   height: 300px;
@@ -70,11 +72,7 @@ export default function VocaTable({ voca }: any) {
             return (
               <tr key={idx}>
                 <td>{item.word}</td>
-                <td>
-                  {eval(item.mean)
-                    .map((item: string, idx: number) => idx + 1 + " ." + item)
-                    .join(" ")}
-                </td>
+                <td>{meanConvert(item.mean).join(" ")}</td>
               </tr>
             );
           })}

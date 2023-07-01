@@ -2,6 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
+import meanConvert from "@utils/meanConvert";
 
 const Wrapper = styled.section`
   height: 100%;
@@ -145,14 +146,7 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
                           <td>{item.word}</td>
                           <td>{category}</td>
                           <td>{item.frequency}</td>
-                          <td>
-                            {eval(item.mean)
-                              .map(
-                                (item: string, idx: number) =>
-                                  idx + 1 + " ." + item
-                              )
-                              .join(" ")}
-                          </td>
+                          <td>{meanConvert(item.mean).join(" ")}</td>
                         </tr>
                       ))}
                     </Fragment>

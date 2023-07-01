@@ -10,6 +10,7 @@ import { camelStrToMiddleBarStr } from "@utils/camelCaser";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { vocasActions } from "@redux/vocas/vocasSlice";
+import meanConvert from "@utils/meanConvert";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -244,7 +245,7 @@ export default function Search() {
                       case "mean":
                         return (
                           <Li key={title + i}>
-                            {arrParser(info[title], 2, 15)}
+                            {meanConvert(info[title], 2, 15).join("\n")}
                           </Li>
                         );
                       case "category":
