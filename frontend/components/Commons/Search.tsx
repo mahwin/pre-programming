@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import getTrie from "@utils/getTrie";
 import Trie from "@utils/trie";
 import { IState } from "@redux/initialState";
@@ -9,6 +9,7 @@ import arrParser from "@utils/meanConvert";
 import { camelStrToMiddleBarStr } from "@utils/camelCaser";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { vocasActions } from "@redux/vocas/vocasSlice";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -49,6 +50,14 @@ const Input = styled.input.attrs({
   &:focus {
     box-shadow: 0 0 0 2px ${(props) => props.theme.colorTheme.activePrimary};
   }
+`;
+
+const LodingInput = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: not-allowed;
 `;
 
 const Suggestion = styled.div`
@@ -93,6 +102,7 @@ const EmptyBox = styled.div`
 `;
 
 const Route = styled.div`
+  margin-right: 1rem;
   display: flex;
   background-color: transparent;
   &:hover svg {
@@ -139,11 +149,15 @@ export default function Search() {
   }, [keyword]);
 
   const { loading, data, error } = useSelector((state: IState) => state.vocas);
+
+  const dispatch = useDispatch();
   useEffect(() => {
-    if (data !== null && trie === undefined) {
+    if (!data) {
+      dispatch(vocasActions.getVocas());
+    } else if (trie === undefined) {
       setTrie(getTrie(data));
     }
-  }, [data]);
+  }, [data, dispatch]);
 
   const handleKeyboardEvent = (e: React.KeyboardEvent<HTMLElement>) => {
     if (recommedObj.recommends.length == 0) return;
@@ -196,9 +210,15 @@ export default function Search() {
     <Wrapper onKeyUp={handleKeyboardEvent}>
       <InputBox>
         <MagnifyingGlassSvg width="24" height="24" color="green" />
-        <Input onChange={handleChange} value={keyword} />
+        {!loading ? (
+          <Input onChange={handleChange} value={keyword} />
+        ) : (
+          <LodingInput>
+            <FrownSvg color="gray" width="30" height="30" strokeWidth="2" />
+          </LodingInput>
+        )}
       </InputBox>
-      {keyword && (
+      {keyword && trie && (
         <Suggestion>
           {recommedObj.recommends.length === 0 ? (
             <EmptyBox>
