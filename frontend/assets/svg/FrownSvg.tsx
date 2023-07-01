@@ -2,15 +2,16 @@ interface ISvg {
   width: string;
   height: string;
   color?: string;
+  strokeWidth?: string;
 }
 
-export function FrownSvg({ width, height, color }: ISvg) {
+export function FrownSvg({ width, height, color, strokeWidth = "1.5" }: ISvg) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
+      strokeWidth={strokeWidth}
       stroke={color}
       width={width}
       height={height}
