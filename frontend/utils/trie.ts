@@ -6,6 +6,16 @@ interface IInfo {
   level?: string;
 }
 
+interface IVoca {
+  [key: string]: {
+    [key: string]: {
+      level: {
+        [key: string]: IInfo[];
+      };
+    };
+  };
+}
+
 class TrieNode {
   value: string;
   end: boolean;
@@ -25,9 +35,10 @@ class Trie {
   root: TrieNode;
   words: IInfo[];
 
-  public static getInstance(): Trie {
+  public static getInstance(data: IVoca): Trie {
     if (Trie.instance === null) {
       Trie.instance = new Trie();
+      Trie.instance.fillTrie(data);
     }
     return Trie.instance;
   }
@@ -52,6 +63,20 @@ class Trie {
       currentNode.infos.push(info);
     }
     currentNode.end = true;
+  }
+
+  fillTrie(data: IVoca) {
+    for (const key of Object.keys(data.category)) {
+      for (const level of Object.keys(data.category[key].level)) {
+        const infos = data.category[key].level[level];
+        for (const info of infos) {
+          const copy = { ...info };
+          copy.category = key;
+          copy.level = level;
+          Trie.instance!.add(copy);
+        }
+      }
+    }
   }
 
   sort(len: number) {
