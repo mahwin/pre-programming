@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import meanConvert from "@utils/meanConvert";
+import { bannerColors } from "@color/bannerColors";
+import LocalStorage from "@utils/localStorage";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -63,12 +65,12 @@ const Suggestion = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
-  width: 140%;
+  width: 600px;
   list-style-type: none;
-  padding: 0.8em 12px;
-  background: slategray;
+  padding: 1em 2em;
   font-weight: 600;
   border-radius: 5px;
+  background-color: ${(props) => props.theme.colorTheme.backgroundSecondary};
 `;
 
 const EmptySuggestion = styled(Suggestion)`
@@ -83,15 +85,24 @@ const EmptySuggestion = styled(Suggestion)`
 `;
 
 const Ul = styled.ul<{ isSelected?: boolean }>`
-  background-color: ${(props) => props.isSelected && "#fab1a0"};
+  background-color: ${(props) =>
+    props.isSelected && bannerColors.search.selecetedColor};
   margin: 0;
   display: flex;
   align-items: center;
   margin-bottom: 0.8em;
-  background-image: linear-gradient(transparent calc(100% - 5px), #e17055 5px);
+  background-image: linear-gradient(
+    transparent calc(100% - 5px),
+    ${bannerColors.search.hoverColor} 5px
+  );
   background-repeat: no-repeat;
   background-size: 0% 100%;
   transition: background-size 0.8s;
+  :nth-child(1) {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid
+      ${(props) => props.theme.colorTheme.backgroundColor};
+  }
   &:not(:nth-child(1)):hover {
     background-size: 100% 100%;
   }
@@ -109,11 +120,10 @@ const Li = styled.li`
 `;
 
 const Route = styled.div`
-  margin-right: 1rem;
   display: flex;
   background-color: transparent;
   &:hover svg {
-    stroke: #ff7675;
+    stroke: ${bannerColors.search.hoverColor};
     transform: scale(1.2);
     transition: all 0.5s ease-in;
     cursor: pointer;
@@ -136,6 +146,7 @@ interface IRecommendObj {
 type titleType = keyof IInfo;
 
 export default function Search() {
+  const [isDark, setIsDark] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [recommedObj, setRecommed] = useState<IRecommendObj>({
     recommends: [],
@@ -147,6 +158,10 @@ export default function Search() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   };
+
+  useEffect(() => {
+    setIsDark(LocalStorage.getItem("isDark") == "1" ? false : true);
+  }, [LocalStorage.getItem("isDark")]);
 
   useEffect(() => {
     if (trie) {
