@@ -1,9 +1,5 @@
 import { IVoca } from "@redux/vocas/vocas.dto";
 
-interface IVocas {
-  [key: string]: IVoca[];
-}
-
 interface IFloatingBtn {
   amount: number;
   data: IVocas[];
@@ -41,7 +37,7 @@ interface IVocaTable {
   vocas: any;
 }
 
-interface IToTalWords {
+interface IVocas {
   [key: string]: IVoca[];
 }
 
@@ -53,5 +49,4 @@ export type {
   IclickedVoca,
   IVocas,
   IVocaTable,
-  IToTalWords,
 };
