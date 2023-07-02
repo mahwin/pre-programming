@@ -10,6 +10,7 @@ import Link from "next/link";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import meanConvert from "@utils/meanConvert";
 import { bannerColors } from "@color/bannerColors";
+import { IVoca } from "@redux/vocas/vocas.dto";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -130,20 +131,12 @@ const Route = styled.div`
   }
 `;
 
-interface IInfo {
-  frequency: string;
-  word: string;
-  category?: string;
-  level?: string;
-  mean: string;
-}
-
 interface IRecommendObj {
-  recommends: IInfo[];
+  recommends: IVoca[];
   selectedIndex: number;
 }
 
-type titleType = keyof IInfo;
+type titleType = keyof IVoca;
 
 export default function Search() {
   const [keyword, setKeyword] = useState("");

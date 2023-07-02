@@ -9,7 +9,6 @@ const ToggleBox = styled.div`
   width: 100px;
   height: 30px;
   border-radius: 20px;
-
   z-index: 100;
   overflow: hidden;
   cursor: pointer;
