@@ -11,6 +11,8 @@ import { vocasActions } from "redux/vocas/vocasSlice";
 import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
 import { userVocaColors } from "assets/color/userVocaColor";
+import { categories, categoriesType, titleItemType, ITitle } from "types/title";
+import { IuserVocaData, IclickedVoca } from "types/userVoca";
 
 const Wrapper = styled.main`
   display: flex;
@@ -204,73 +206,10 @@ const BoardVariants: Variants = {
   },
 };
 
-interface IProps {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-}
-
-type categoriesType =
-  | "next"
-  | "react"
-  | "reactHookForm"
-  | "reactQuery"
-  | "reactRedux"
-  | "reactRouter"
-  | "recoil"
-  | "styledComponents"
-  | "tailwindcss"
-  | "axios";
-
-const categories = [
-  "next",
-  "react",
-  "reactHookForm",
-  "reactQuery",
-  "reactRedux",
-  "reactRouter",
-  "recoil",
-  "styledComponents",
-  "tailwindcss",
-  "axios",
-];
-
-interface ITmp {
-  data: number[] | null;
-  len: number;
-}
-
-interface IuserVocaData {
-  [key: string]: ITmp | null;
-}
-
-interface IclickedVoca {
-  next?: string[];
-  react?: string[];
-  reactHookForm?: string[];
-  reactQuery?: string[];
-  reactRedux?: string[];
-  reactRouter?: string[];
-  recoil?: string[];
-  styledComponents?: string[];
-  tailwindcss?: string[];
-  axios?: string[];
-}
-
-interface ITitles {
-  data: {
-    title: string;
-    ok: boolean;
-    amount: string;
-    install: string;
-  }[];
-}
-
-export default function UserVoca({ data }: ITitles) {
+export default function UserVoca({ data }: ITitle) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
-  const [rowData, setRowData] = useState<IProps[][] | null>(null);
+  const [rowData, setRowData] = useState<titleItemType[][] | null>(null);
   const [userVocaData, setUserVocaData] = useState<IuserVocaData | null>(null);
   const [clickedVoca, setClickedVoca] = useState<IclickedVoca>({});
 

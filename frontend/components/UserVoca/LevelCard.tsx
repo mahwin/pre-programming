@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { CheckSvg } from "@svg";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { userVocaColors } from "@color/userVocaColor";
+import { ICard } from "types/userVoca";
 
 const Card = styled.li`
   background-color: #fff;
@@ -59,14 +60,6 @@ const Row = styled.div`
     color: #2d3436;
   }
 `;
-
-interface ICard {
-  level: string;
-  category: string;
-  amount: number;
-  isClick: boolean | undefined;
-  onClickCard: (e: any) => void;
-}
 
 export default function LevelCard({
   level,

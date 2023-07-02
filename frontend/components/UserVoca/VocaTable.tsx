@@ -3,7 +3,9 @@ import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
 import meanConvert from "@utils/meanConvert";
-
+import { categoriesType } from "types/title";
+import { IVoca, IVocas } from "@redux/vocas/vocas.dto";
+import { IVocaTable, IToTalWords } from "types/userVoca";
 const Wrapper = styled.section`
   height: 100%;
   max-height: 70vh;
@@ -58,44 +60,6 @@ const Table = styled.table`
     color: #ffffff;
   }
 `;
-type categoriesType =
-  | "next"
-  | "react"
-  | "reactHookForm"
-  | "reactQuery"
-  | "reactRedux"
-  | "reactRouter"
-  | "recoil"
-  | "styledComponents"
-  | "tailwindcss"
-  | "axios";
-
-interface IclickedVoca {
-  next?: string[];
-  react?: string[];
-  reactHookForm?: string[];
-  reactQuery?: string[];
-  reactRedux?: string[];
-  reactRouter?: string[];
-  recoil?: string[];
-  styledComponents?: string[];
-  tailwindcss?: string[];
-  axios?: string[];
-}
-
-interface IVocaTable {
-  clickedVoca: IclickedVoca;
-  vocas: any;
-}
-
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-interface IToTalWords {
-  [key: string]: IWord[];
-}
 
 export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
   const [totalWords, setTotalWords] = useState<IToTalWords[]>([]);
@@ -141,7 +105,7 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
                   const [category, level] = key.split("|");
                   return (
                     <Fragment key={category + level}>
-                      {totalWord[key].map((item: IWord, idx: number) => (
+                      {totalWord[key].map((item: IVoca, idx: number) => (
                         <tr key={idx}>
                           <td>{item.word}</td>
                           <td>{category}</td>

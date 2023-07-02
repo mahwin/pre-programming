@@ -8,7 +8,8 @@ import {
 } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, KeyboardEvent } from "react";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { userVocaColors } from "@color/userVocaColor";
+import { IStudy } from "types/userVoca";
 
 const Overay = styled(motion.div)`
   position: fixed;
@@ -105,18 +106,6 @@ const Mean = styled.div`
     color: white;
   }
 `;
-
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
-interface IStudy {
-  handleClick: () => void;
-  amount: number;
-  spreadData: IWord[] | null;
-}
 
 export default function Study({ handleClick, amount, spreadData }: IStudy) {
   const [current, setCurrent] = useState<number>(1);
