@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect, useCallback } from "react";
 import LocalStorage from "@utils/localStorage";
 import { SignInColors } from "assets/color/SignInColors";
+import { IForm, TokenForm, MutationResult } from "types/signIn";
 
 const Wapper = styled.main`
   height: 100vh;
@@ -150,24 +151,6 @@ const SnsButton = styled.button`
   border: 1.5px solid ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-interface EnterForm {
-  phone: string;
-}
-interface IForm {
-  phone: string;
-  serverError?: string;
-}
-
-interface TokenForm {
-  token: string;
-}
-
-interface MutationResult {
-  ok: boolean;
-  message?: string;
-  accessToken?: string;
-}
-
 export default function SignIn() {
   //phone 입력과 서버 연결
   const [enter, { loading, data, error }] =
@@ -177,7 +160,7 @@ export default function SignIn() {
     handleSubmit,
     formState: { errors },
     setError,
-  } = useForm<EnterForm>();
+  } = useForm<IForm>();
   const onValid = (validForm: IForm) => {
     enter(validForm);
   };
