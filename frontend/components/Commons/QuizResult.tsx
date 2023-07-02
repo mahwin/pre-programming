@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
+import { IAnswers, Result } from "types/quiz";
 
 const Wrapper = styled.div`
   display: flex;
@@ -86,20 +87,6 @@ const BackBtn = styled.button`
     letter-spacing: 0.8em;
   }
 `;
-
-interface IAnswers {
-  answerList: number[];
-  quizAnswer: number[];
-  quizData: ITestData[];
-  onBack: () => void;
-}
-
-interface ITestData {
-  question: string;
-  selectList: string[];
-}
-
-type Result = [null, string] | [string, string];
 
 export default function QuizResult({
   answerList,

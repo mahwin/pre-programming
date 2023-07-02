@@ -6,6 +6,7 @@ import CheckList from "@components/Commons/CheckList";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
 import { quizColors } from "assets/color/quizColors";
 import getQuiz from "@utils/makeQuiz";
+import { IQuizData, IQuiz } from "types/quiz";
 
 const Overay = styled(motion.div)`
   position: fixed;
@@ -162,23 +163,6 @@ const XBtn = styled.button`
     }
   }
 `;
-
-interface IQuizData {
-  question: string;
-  selectList: string[];
-}
-
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
-interface IQuiz {
-  vocas: IWord[];
-  howMany: string;
-  handleClick: () => void;
-}
 
 export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
   const [quizData, setQuizData] = useState<IQuizData[] | null>(null);

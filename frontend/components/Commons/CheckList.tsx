@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import React, { useCallback } from "react";
+import React from "react";
 import { quizColors } from "@color/quizColors";
+import { ICheckList } from "types/quiz";
 import {
   explode,
   dropOne,
@@ -185,18 +186,6 @@ const BulletLineSeven = styled(Line)`
   bottom: -22px;
   transform: translateY(-9px);
 `;
-
-interface IQuizData {
-  question: string;
-  selectList: string[];
-}
-
-interface ICheckList {
-  onChangeInput: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
-  currentStep: number;
-  quizData: IQuizData[] | null;
-  answer: boolean[];
-}
 
 export default function CheckList({
   onChangeInput,
