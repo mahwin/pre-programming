@@ -2,8 +2,9 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { DownArrowSvg } from "@svg";
 import Image from "next/image";
-import React, { useEffect, useState, MouseEvent } from "react";
+import React, { useEffect, useState } from "react";
 import { userInfoColors } from "@color/userInfoColors";
+import { IAvatars } from "types/userInfo";
 
 const Wrapper = styled(motion.section)`
   position: absolute;
@@ -102,13 +103,6 @@ const avatarVariants = {
     },
   },
 };
-
-interface IAvatars {
-  isOpen: boolean;
-  avatar: string;
-  onClick: () => void;
-  onSelect: (e: MouseEvent) => void;
-}
 
 export default function Avatars({
   isOpen,

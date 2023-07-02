@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import React, { MouseEvent, useEffect, useState } from "react";
-import { IUser } from "../../redux/user/user.dto";
+import { IUser } from "@redux/user/user.dto";
 import Image from "next/image";
 import { ChangeSvg, LoadingSvg } from "@svg";
 import dynamic from "next/dynamic";
 import Form from "./Form";
 import PageLoading from "@components/Commons/PageLoading";
-import { userInfoColors } from "../../assets/color/userInfoColors";
+import { userInfoColors } from "@color/userInfoColors";
 
 const Avatars = dynamic(() => import("./Avatars"), {
   ssr: false,
