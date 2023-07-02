@@ -1,3 +1,4 @@
+import { IVoca } from "@redux/vocas/vocas.dto";
 interface ICheckList {
   onChangeInput: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
   currentStep: number;
@@ -10,14 +11,8 @@ interface IQuizData {
   selectList: string[];
 }
 
-interface IWordInfo {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
 interface IQuiz {
-  vocas: IWordInfo[];
+  vocas: IVoca[];
   howMany: string;
   handleClick: () => void;
 }
@@ -31,4 +26,4 @@ interface IAnswers {
 
 type Result = [null, string] | [string, string];
 
-export type { IAnswers, IQuiz, IWordInfo, IQuizData, ICheckList, Result };
+export type { IAnswers, IQuiz, IQuizData, ICheckList, Result };

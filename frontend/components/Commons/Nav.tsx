@@ -7,6 +7,7 @@ import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { userActions } from "@redux/user/userSlice";
+import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
 
 const Wapper = styled.nav`
@@ -97,14 +98,10 @@ const CurrentPosition = styled(motion.span).attrs({
   opacity: 0.5;
 `;
 
-interface MutationResult {
-  ok: boolean;
-}
-
 type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
 function Nav() {
-  const { loading, data, error } = useSelector((state: any) => {
+  const { loading, data, error } = useSelector((state: IState) => {
     return state.user;
   });
 

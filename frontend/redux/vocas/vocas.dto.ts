@@ -25,7 +25,7 @@ type VocasType =
   | "reactRouter"
   | "axios";
 
-interface IInfo {
+interface IVoca {
   frequency: string;
   word: string;
   mean: string;
@@ -33,11 +33,11 @@ interface IInfo {
   level?: string;
 }
 
-interface IVoca {
+interface IVocas {
   [key: string]: {
     [key: string]: {
       level: {
-        [key: string]: IInfo[];
+        [key: string]: IVoca[];
       };
     };
   };
@@ -51,9 +51,9 @@ const initialVocasState: IVocaState = {
 
 interface IVocaState {
   loading: boolean;
-  data: IVoca | null;
+  data: IVocas | null;
   error: null | AxiosError;
 }
 
 export { VocaArray, initialVocasState };
-export type { IVocaState, VocasType, IVoca };
+export type { IVocaState, VocasType, IVocas, IVoca };
