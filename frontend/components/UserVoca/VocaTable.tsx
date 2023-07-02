@@ -4,8 +4,8 @@ import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
 import meanConvert from "@utils/meanConvert";
 import { categoriesType } from "types/title";
-import { IVoca, IVocas } from "@redux/vocas/vocas.dto";
-import { IVocaTable, IToTalWords } from "types/userVoca";
+import { IVoca } from "@redux/vocas/vocas.dto";
+import { IVocaTable, IVocas } from "types/userVoca";
 const Wrapper = styled.section`
   height: 100%;
   max-height: 70vh;
@@ -62,10 +62,10 @@ const Table = styled.table`
 `;
 
 export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
-  const [totalWords, setTotalWords] = useState<IToTalWords[]>([]);
+  const [totalWords, setTotalWords] = useState<IVocas[]>([]);
   const [totalAmount, setTotalAmount] = useState<number>(0);
   useEffect(() => {
-    let words: IToTalWords[] = [];
+    let words: IVocas[] = [];
     let amount = 0;
     Object.keys(clickedVoca).forEach((clicked: string) => {
       const levels = clickedVoca[clicked as categoriesType];
@@ -100,7 +100,7 @@ export default function VocaTable({ clickedVoca, vocas }: IVocaTable) {
               </thead>
 
               <tbody>
-                {totalWords.map((totalWord: IToTalWords) => {
+                {totalWords.map((totalWord: IVocas) => {
                   const key = Object.keys(totalWord)[0];
                   const [category, level] = key.split("|");
                   return (
