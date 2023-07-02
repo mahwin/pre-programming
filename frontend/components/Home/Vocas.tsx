@@ -4,7 +4,7 @@ import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
 import { useSelector } from "react-redux";
 import { IState } from "@redux/initialState";
-import { ITitle, titleItemType, devCategoryType } from "types/title";
+import { ITitles, titleItemType, devCategoryType } from "types/title";
 
 const Wrapper = styled.main`
   display: flex;
@@ -86,7 +86,7 @@ const Overray = styled.div`
 `;
 
 //
-export default function Vocas({ data }: ITitle) {
+export default function Vocas({ data }: ITitles) {
   useSelector((state: IState) => state.vocas);
   return (
     <Wrapper>
@@ -96,33 +96,31 @@ export default function Vocas({ data }: ITitle) {
             <Title>for {key}.dev</Title>
           </header>
           <ItemsWrapper>
-            {data[key as devCategoryType].map(
-              (item: titleItemType, idx: number) => (
-                <Link
-                  href={`/vocas/${item.title.toLowerCase()}`}
-                  key={item.title}
+            {data[key].map((item: titleItemType, idx: number) => (
+              <Link
+                href={`/vocas/${item.title.toLowerCase()}`}
+                key={item.title}
+              >
+                <ItemBox
+                  style={{ pointerEvents: item.ok ? "visible" : "none" }}
                 >
-                  <ItemBox
-                    style={{ pointerEvents: item.ok ? "visible" : "none" }}
-                  >
-                    {!item.ok && (
-                      <Overray>
-                        <div>
-                          <p>Upcoming</p>
-                        </div>
-                      </Overray>
-                    )}
-                    <Item>
-                      <h3 style={{ color: titleColor[idx % 9] }}>
-                        {item.title}{" "}
-                      </h3>
-                      <p>단어 수 : {item.amount} </p>
-                      <p>다운 수 : {item.install} </p>
-                    </Item>
-                  </ItemBox>
-                </Link>
-              )
-            )}
+                  {!item.ok && (
+                    <Overray>
+                      <div>
+                        <p>Upcoming</p>
+                      </div>
+                    </Overray>
+                  )}
+                  <Item>
+                    <h3 style={{ color: titleColor[idx % 9] }}>
+                      {item.title}{" "}
+                    </h3>
+                    <p>단어 수 : {item.amount} </p>
+                    <p>다운 수 : {item.install} </p>
+                  </Item>
+                </ItemBox>
+              </Link>
+            ))}
           </ItemsWrapper>
         </Container>
       ))}

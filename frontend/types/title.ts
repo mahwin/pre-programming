@@ -1,4 +1,29 @@
-type DevCategoryType = "web";
+type categoriesType =
+  | "next"
+  | "react"
+  | "reactHookForm"
+  | "reactQuery"
+  | "reactRedux"
+  | "reactRouter"
+  | "recoil"
+  | "styledComponents"
+  | "tailwindcss"
+  | "axios";
+
+const categories = [
+  "next",
+  "react",
+  "reactHookForm",
+  "reactQuery",
+  "reactRedux",
+  "reactRouter",
+  "recoil",
+  "styledComponents",
+  "tailwindcss",
+  "axios",
+];
+
+type devCategoryType = "web";
 
 type titleItemType = {
   title: string;
@@ -7,12 +32,13 @@ type titleItemType = {
   install: string;
 };
 
-type titleType = {
-  [key in DevCategoryType]: titleItemType[];
-};
-
-interface Ititle {
-  data: titleType;
+interface ITitle {
+  [key: string]: titleItemType[];
 }
 
-export type { DevCategoryType, titleItemType, titleType, Ititle };
+interface ITitles {
+  data: ITitle;
+}
+
+export type { categoriesType, devCategoryType, titleItemType, ITitle, ITitles };
+export { categories };

@@ -5,6 +5,8 @@ import { DownArrowSvg, StudySvg, QuizSvg } from "@svg";
 import Study from "./Study";
 import Quiz from "@components/Commons/Quiz";
 import { userVocaColors } from "@color/userVocaColor";
+import { IVoca } from "@redux/vocas/vocas.dto";
+import { IFloatingBtn } from "types/userVoca";
 
 const Wrapper = styled(motion.section)`
   z-index: 99;
@@ -184,22 +186,8 @@ const QuizMakerVariants: Variants = {
   },
 };
 
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-interface IToTalWords {
-  [key: string]: IWord[];
-}
-
-interface IFloatingBtn {
-  amount: number;
-  data: IToTalWords[];
-}
-
 export default function FloatingBtn({ amount, data }: IFloatingBtn) {
-  const [spreadData, setSpreadData] = useState<IWord[] | null>(null);
+  const [spreadData, setSpreadData] = useState<IVoca[] | null>(null);
 
   const [maxNumber, setMaxNumber] = useState<number>(0);
   const [inputN, setInputN] = useState<string>("");
@@ -214,7 +202,7 @@ export default function FloatingBtn({ amount, data }: IFloatingBtn) {
   }, [amount]);
 
   useEffect(() => {
-    let spread: IWord[] = [];
+    let spread: IVoca[] = [];
     data.forEach((items) => {
       spread = spread.concat(Object.values(items)[0]);
     });

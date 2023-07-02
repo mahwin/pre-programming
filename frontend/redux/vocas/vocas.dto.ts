@@ -1,29 +1,29 @@
 import { AxiosError } from "axios";
 
-const VocaArray = [
-  "react",
-  "tailwindcss",
-  "recoil",
+type categoriesType =
+  | "next"
+  | "react"
+  | "reactHookForm"
+  | "reactQuery"
+  | "reactRedux"
+  | "reactRouter"
+  | "recoil"
+  | "styledComponents"
+  | "tailwindcss"
+  | "axios";
+
+const categories = [
   "next",
-  "react-redux",
-  "react-query",
-  "react-hook-form",
-  "styled-components",
-  "react-router",
+  "react",
+  "reactHookForm",
+  "reactQuery",
+  "reactRedux",
+  "reactRouter",
+  "recoil",
+  "styledComponents",
+  "tailwindcss",
   "axios",
 ];
-
-type VocasType =
-  | "react"
-  | "tailwindCss"
-  | "recoil"
-  | "next"
-  | "reactRedux"
-  | "reactQuery"
-  | "reactHookForm"
-  | "styledComponenets"
-  | "reactRouter"
-  | "axios";
 
 interface IVoca {
   frequency: string;
@@ -55,5 +55,5 @@ interface IVocaState {
   error: null | AxiosError;
 }
 
-export { VocaArray, initialVocasState };
-export type { IVocaState, VocasType, IVocas, IVoca };
+export { categories, initialVocasState };
+export type { IVocaState, categoriesType, IVocas, IVoca };
