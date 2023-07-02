@@ -82,13 +82,9 @@ class Trie {
   sort(len: number) {
     if (this.words.length === 0) return [];
     return this.words
-      .sort((a, b) => {
-        if (a.frequency == b.frequency) return a.word.length - b.word.length;
-        else {
-          return b.frequency > a.frequency ? 1 : -1;
-        }
-      })
-      .slice(0, len);
+      .sort((a, b) => (a.word > b.word ? 1 : -1))
+      .slice(0, len)
+      .sort((a, b) => a.word.length - b.word.length);
   }
 
   autoComplete(chars: string, len: number) {
@@ -118,6 +114,7 @@ class Trie {
         } else nodes.push(...Object.values(node!.child));
       }
     }
+    console.log("??");
     return this.sort(len);
   }
 }
