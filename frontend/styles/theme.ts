@@ -26,6 +26,7 @@ const fontWeight = {
 
 export const lightTheme = {
   backgroundColor: "#dfe6e9",
+  backgroundSecondary: "#c8d6e5",
   textPrimary: "#2d3436",
   textSecondary: "#b2bec3",
   textThird: "#2d3436",
@@ -38,6 +39,7 @@ export const lightTheme = {
 // 1.색상은 나중에 선택
 export const darkTheme = {
   backgroundColor: "#2d3436",
+  backgroundSecondary: "#708090",
   textPrimary: "#dfe6e9",
   textSecondary: "#636e72",
   textThird: "#2d3436",

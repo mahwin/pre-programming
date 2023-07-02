@@ -25,6 +25,7 @@ declare module "styled-components" {
     };
     colorTheme: {
       backgroundColor: string;
+      backgroundSecondary: string;
       textPrimary: string;
       textSecondary: string;
       textThird: string;
