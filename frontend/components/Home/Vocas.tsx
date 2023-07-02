@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
+import { useSelector } from "react-redux";
+import { IState } from "@redux/initialState";
 
 const Wrapper = styled.main`
   display: flex;
@@ -100,6 +102,7 @@ interface Ititle {
 }
 
 export default function Vocas({ data }: Ititle) {
+  useSelector((state: IState) => state.vocas);
   return (
     <Wrapper>
       {Object.keys(data).map((key) => (

@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import getTrie from "@utils/getTrie";
-import Trie from "@utils/trie";
-import { IState } from "@redux/initialState";
+import React from "react";
 import styled from "styled-components";
-import { MagnifyingGlassSvg } from "@svg";
 import Search from "./Search";
 
 const Wapper = styled.section`
