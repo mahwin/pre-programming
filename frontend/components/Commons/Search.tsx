@@ -10,7 +10,6 @@ import Link from "next/link";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import meanConvert from "@utils/meanConvert";
 import { bannerColors } from "@color/bannerColors";
-import LocalStorage from "@utils/localStorage";
 
 const Wrapper = styled.section`
   margin-top: 30px;
@@ -39,6 +38,7 @@ const InputBox = styled.div`
 
 const Input = styled.input.attrs({
   tpye: "text",
+  spellCheck: "false",
   placeholder: "단어를 입력하세요",
 })`
   padding: 10px;
@@ -146,7 +146,6 @@ interface IRecommendObj {
 type titleType = keyof IInfo;
 
 export default function Search() {
-  const [isDark, setIsDark] = useState(true);
   const [keyword, setKeyword] = useState("");
   const [recommedObj, setRecommed] = useState<IRecommendObj>({
     recommends: [],
@@ -160,12 +159,8 @@ export default function Search() {
   };
 
   useEffect(() => {
-    setIsDark(LocalStorage.getItem("isDark") == "1" ? false : true);
-  }, [LocalStorage.getItem("isDark")]);
-
-  useEffect(() => {
     if (trie) {
-      const recommends = trie.autoComplete(keyword, 10);
+      const recommends = trie.autoComplete(keyword, 8);
       setRecommed({ selectedIndex: 0, recommends });
     }
   }, [keyword]);
