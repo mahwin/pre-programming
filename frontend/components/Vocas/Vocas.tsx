@@ -6,6 +6,7 @@ import { OpenSvg } from "@svg";
 import VocaTable from "@components/Vocas/VocaTable";
 import AddVoca from "./AddVoca";
 import { vocaColors } from "assets/color/vocaColors";
+import { ICard, IVocaDetail } from "types/vocas";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -147,24 +148,6 @@ const Overlay = styled(motion.div)`
   align-items: center;
   z-index: 2;
 `;
-
-interface IVocaItem {
-  [key: string]: {
-    mean: string;
-    word: string;
-    frequency: string;
-  }[];
-}
-
-interface IVocaDetail {
-  voca: IVocaItem;
-  category: string;
-}
-
-interface ICard {
-  amount: string;
-  frequency: string;
-}
 
 export default function VocaDetail({ voca, category }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);

@@ -1,6 +1,6 @@
 import meanConvert from "@utils/meanConvert";
 import styled from "styled-components";
-import meanConver from "@utils/meanConvert";
+import { IVoca } from "@redux/vocas/vocas.dto";
 
 const TableWrapper = styled.div`
   height: 300px;
@@ -50,13 +50,7 @@ const Table = styled.table`
   }
 `;
 
-interface ITableVoca {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-
-export default function VocaTable({ voca }: any) {
+export default function VocaTable({ voca }: { voca: IVoca[] }) {
   return (
     <TableWrapper>
       <Table>
@@ -68,7 +62,7 @@ export default function VocaTable({ voca }: any) {
         </thead>
 
         <tbody>
-          {voca?.map((item: ITableVoca, idx: number) => {
+          {voca?.map((item: IVoca, idx: number) => {
             return (
               <tr key={idx}>
                 <td>{item.word}</td>

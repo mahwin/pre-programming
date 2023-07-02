@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
 import { vocaColors } from "assets/color/vocaColors";
+import { IVocas } from "types/userVoca";
+import { KeyType, IQuizSetting } from "types/vocas";
 
 const Wrapper = styled(motion.div)`
   position: fixed;
@@ -190,23 +192,7 @@ const Overlay = styled(motion.div)`
   z-index: 100;
 `;
 
-interface IQuizSetting {
-  many: string | null;
-  long: string | null;
-}
-
-type KeyType = "many" | "long";
-
-interface IWord {
-  word: string;
-  mean: string;
-  frequency: string;
-}
-interface IFloatingButton {
-  [key: string]: IWord[];
-}
-
-function QuizButton({ quizData }: IFloatingButton) {
+function QuizButton({ quizData }: IVocas) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isQuizOpen, setQuizOpen] = useState<boolean>(false);
   const [quizSetting, setQuizSetting] = useState<IQuizSetting>({

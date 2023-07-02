@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { IState } from "../../redux/initialState";
+import { IState } from "@redux/initialState";
 import useMutation from "@utils/useMutation";
 import { vocaColors } from "assets/color/vocaColors";
+import { IAddVoca } from "types/vocas";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -175,19 +176,6 @@ const cardVariants: Variants = {
   },
   closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
 };
-
-interface IAddVoca {
-  cardData:
-    | {
-        amount: string;
-        frequency: string;
-      }[]
-    | null;
-  category: string;
-  selected: boolean[];
-  resetSelected: () => void;
-  onClickCheck: (e: any) => void;
-}
 
 export default function AddVaca({
   cardData,
