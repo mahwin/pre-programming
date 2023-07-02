@@ -4,25 +4,9 @@ import Vocas from "@components/Home/Vocas";
 import Footer from "@components/Commons/Footer";
 import axios from "axios";
 import PageLoading from "@components/Commons/PageLoading";
+import { ITitle } from "types/title";
 
-type DevCategoryType = "web";
-
-type titleItemType = {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-};
-
-type titleType = {
-  [key in DevCategoryType]: titleItemType[];
-};
-
-interface Ititle {
-  data: titleType;
-}
-
-const Home = ({ data }: Ititle) => {
+const Home = ({ data }: ITitle) => {
   return (
     <>
       <Nav />

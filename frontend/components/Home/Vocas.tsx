@@ -4,6 +4,7 @@ import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
 import { useSelector } from "react-redux";
 import { IState } from "@redux/initialState";
+import { ITitle, titleItemType, devCategoryType } from "types/title";
 
 const Wrapper = styled.main`
   display: flex;
@@ -84,24 +85,8 @@ const Overray = styled.div`
   }
 `;
 
-type DevCategoryType = "web";
-
-type titleItemType = {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-};
-
-type titleType = {
-  [key in DevCategoryType]: titleItemType[];
-};
-
-interface Ititle {
-  data: titleType;
-}
-
-export default function Vocas({ data }: Ititle) {
+//
+export default function Vocas({ data }: ITitle) {
   useSelector((state: IState) => state.vocas);
   return (
     <Wrapper>
@@ -111,7 +96,7 @@ export default function Vocas({ data }: Ititle) {
             <Title>for {key}.dev</Title>
           </header>
           <ItemsWrapper>
-            {data[key as DevCategoryType].map(
+            {data[key as devCategoryType].map(
               (item: titleItemType, idx: number) => (
                 <Link
                   href={`/vocas/${item.title.toLowerCase()}`}
