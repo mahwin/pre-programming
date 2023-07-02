@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ITable } from "types/vocas";
 
 const TableWapper = styled.table`
   color: #fff;
@@ -42,11 +43,6 @@ const TableWapper = styled.table`
     color: #00b894;
   }
 `;
-
-interface ITable {
-  cardData: { amount: string; frequency: string };
-  total: number;
-}
 
 export default function Table({ cardData, total }: ITable) {
   return (
