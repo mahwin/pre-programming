@@ -6,6 +6,7 @@ import useMutation from "@utils/useMutation";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
+import { IForm, IConfirm, IUpdate, IFormData } from "types/userInfo";
 
 const Wrapper = styled.section`
   padding: 60px 14px 24px 14px;
@@ -107,36 +108,6 @@ const Frown = styled(FrownSvg).attrs({
   height: "30",
   color: userInfoColors.svg.frown,
 })``;
-
-interface IForm {
-  data: {
-    phone: string;
-    name: string;
-    currentAvatar: string;
-  };
-  isAvatarChange: boolean;
-  isCan: boolean;
-}
-
-interface IFormData {
-  name?: string;
-  phone?: string;
-}
-
-interface IConfirm {
-  ok: boolean;
-  message?: string;
-  data: {
-    name?: string;
-    phone?: string;
-  };
-}
-
-interface IUpdate {
-  name?: string;
-  phone?: string;
-  avatar?: string;
-}
 
 export default function Form({ data, isCan, isAvatarChange }: IForm) {
   const {
