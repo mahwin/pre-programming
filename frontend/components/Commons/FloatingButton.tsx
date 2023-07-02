@@ -23,11 +23,7 @@ const Shape = styled.div`
   color: white;
 `;
 
-interface IFloating {
-  text: string;
-}
-
-function FloatingButton({ text }: IFloating) {
+function FloatingButton(text: string) {
   return (
     <Cicle>
       <Shape>{text}</Shape>
