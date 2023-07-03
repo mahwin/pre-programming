@@ -1,11 +1,6 @@
-interface IProps {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-}
+import { titleItemType } from "@type/commons/title";
 
-export default function chunk(data: IProps[], size: number) {
+export default function chunk(data: titleItemType[], size: number) {
   let preIdx = 0;
   let result = [];
   const maxLen = Math.ceil(data.length / size);
