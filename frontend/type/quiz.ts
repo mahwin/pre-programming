@@ -24,6 +24,6 @@ interface ICheckList {
   answer: boolean[];
 }
 
-type Result = [null, string] | [string, string];
+type Result = [null | string, string];
 
 export type { IAnswers, IQuiz, IQuizData, ICheckList, Result };
