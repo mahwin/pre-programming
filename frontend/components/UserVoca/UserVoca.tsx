@@ -11,7 +11,12 @@ import { vocasActions } from "redux/vocas/vocasSlice";
 import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
 import { userVocaColors } from "assets/color/userVocaColor";
-import { categories, categoriesType, titleItemType, ITitle } from "types/title";
+import {
+  categories,
+  categoriesType,
+  titleItemType,
+  titlesType,
+} from "types/title";
 import { IuserVocaData, IclickedVoca } from "types/userVoca";
 
 const Wrapper = styled.main`
@@ -206,7 +211,7 @@ const BoardVariants: Variants = {
   },
 };
 
-export default function UserVoca({ data }: ITitle) {
+export default function UserVoca({ data }: titlesType) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<titleItemType[][] | null>(null);

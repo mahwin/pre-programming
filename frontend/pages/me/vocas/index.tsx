@@ -2,25 +2,9 @@ import Nav from "@components/Commons/Nav";
 import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";
+import { ITitles } from "types/title";
 
-type DevCategoryType = "web";
-
-type titleItemType = {
-  title: string;
-  ok: boolean;
-  amount: string;
-  install: string;
-};
-
-type titleType = {
-  [key in DevCategoryType]: titleItemType[];
-};
-
-interface Ititle {
-  data: titleType;
-}
-
-function UserVocaPage({ data }: Ititle) {
+function UserVocaPage({ data }: ITitles) {
   return (
     <>
       <Nav />

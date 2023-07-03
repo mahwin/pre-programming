@@ -9,42 +9,18 @@ import { vocasActions } from "redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
-
-const categories = [
-  "axios",
-  "next",
-  "react",
-  "styled-components",
-  "recoil",
-  "react-redux",
-  "react-query",
-  "react-router",
-  "tailwindcss",
-  "react-hook-form",
-];
-
-type CategoryType =
-  | "axios"
-  | "next"
-  | "react"
-  | "styledComponents"
-  | "recoil"
-  | "reactRedux"
-  | "reactQuery"
-  | "reactRouter"
-  | "tailwindcss"
-  | "reactHookForm";
+import { categories, categoriesType } from "types/title";
 
 export default function VocaPage() {
   const { loading, data, error } = useSelector((state: any) => {
     return state.vocas;
   });
-  const [category, setCategory] = useState<CategoryType | null>(null);
+  const [category, setCategory] = useState<categoriesType | null>(null);
   const [vocas, setVocas] = useState(null);
 
   const router = useRouter();
   useEffect(() => {
-    const category = router.query.voca as CategoryType;
+    const category = router.query.voca as categoriesType;
     if (category) {
       if (!categories.includes(category)) {
         router.push("/404");
@@ -60,7 +36,7 @@ export default function VocaPage() {
       dispatch(vocasActions.getVocas());
     } else {
       if (category) {
-        setVocas(data?.category[formatter(category) as CategoryType].level);
+        setVocas(data?.category[formatter(category) as categoriesType].level);
       }
     }
   }, [data, category, dispatch]);
@@ -71,7 +47,7 @@ export default function VocaPage() {
       <Banner />
       {vocas && category ? (
         <>
-          <Vocas voca={vocas!} category={category as CategoryType} />
+          <Vocas voca={vocas!} category={category as categoriesType} />
           <QuizButton quizData={vocas} />
         </>
       ) : (
