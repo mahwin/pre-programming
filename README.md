@@ -229,7 +229,7 @@
 
 👮🏻‍♀️ Form 검증 : react-hook-form과 정규식 사용
 
-👷🏻‍♂️ URL 구조 : 
+👨🏻‍🌾 URL 구조 : 
 
  *  next.js 프레임워크는 pages 폴더 안의 폴더 구조가 그대로 url 주소에 반영됨
  *  폴더 구조와 다른 url로 접속시 404page로 이동
