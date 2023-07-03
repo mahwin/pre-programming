@@ -1,30 +1,22 @@
 import { MouseEvent } from "react";
-interface IForm {
-  data: {
-    phone: string;
-    name: string;
-    currentAvatar: string;
-  };
-  isAvatarChange: boolean;
-  isCan: boolean;
-}
 
-interface IFormData {
+interface IProfile {
   name?: string;
   phone?: string;
+  currentAvatar?: string;
+  avatar?: string;
+}
+
+interface IForm {
+  data: IProfile;
+  isAvatarChange?: boolean;
+  isCan?: boolean;
 }
 
 interface IConfirm {
   ok: boolean;
   message?: string;
-  data: {
-    name?: string;
-    phone?: string;
-  };
-}
-
-interface IUpdate extends IFormData {
-  avatar?: string;
+  data: IProfile;
 }
 
 interface IAvatars {
@@ -34,4 +26,4 @@ interface IAvatars {
   onSelect: (e: MouseEvent) => void;
 }
 
-export type { IForm, IConfirm, IUpdate, IFormData, IAvatars };
+export type { IForm, IConfirm, IProfile, IAvatars };
