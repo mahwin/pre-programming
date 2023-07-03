@@ -1,4 +1,5 @@
-import { IVocas } from "./userVoca";
+import { IVocaObj } from "@type/commons/voca";
+
 interface IAddVoca {
   cardData:
     | {
@@ -12,19 +13,8 @@ interface IAddVoca {
   onClickCheck: (e: any) => void;
 }
 
-interface IAnswers {
-  answerList: number[];
-  testAnswer: number[];
-  testData: ITestData[];
-  onBack: () => void;
-}
-
-interface ITestData {
-  question: string;
-  selectList: string[];
-}
 interface IVocaDetail {
-  voca: IVocas;
+  voca: IVocaObj;
   title: string;
 }
 
@@ -48,6 +38,7 @@ interface IAddVoca {
   category: string;
   selected: boolean[];
   resetSelected: () => void;
+  // input, button, modal에도 사용됨. any 타입이 맞아!
   onClickCheck: (e: any) => void;
 }
 

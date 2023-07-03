@@ -5,8 +5,8 @@ import { DownArrowSvg, StudySvg, QuizSvg } from "@svg";
 import Study from "./Study";
 import Quiz from "@components/Commons/Quiz";
 import { userVocaColors } from "@color/userVocaColor";
-import { IVoca } from "@redux/vocas/vocas.dto";
-import { IFloatingBtn } from "type/userVoca";
+import { IVoca } from "@type/commons/voca";
+import { IFloatingBtn } from "@type/userVoca";
 
 const Wrapper = styled(motion.section)`
   z-index: 99;
