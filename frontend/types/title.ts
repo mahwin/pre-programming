@@ -23,7 +23,7 @@ const categories = [
   "axios",
 ];
 
-type devCategoryType = "web";
+type devCategoryType = "web" | string;
 
 type titleItemType = {
   title: string;
@@ -32,13 +32,19 @@ type titleItemType = {
   install: string;
 };
 
-interface ITitle {
+type titlesType = {
   [key: string]: titleItemType[];
-}
+};
 
 interface ITitles {
-  data: ITitle;
+  data: titlesType;
 }
 
-export type { categoriesType, devCategoryType, titleItemType, ITitle, ITitles };
+export type {
+  categoriesType,
+  devCategoryType,
+  titleItemType,
+  ITitles,
+  titlesType,
+};
 export { categories };

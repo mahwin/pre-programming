@@ -4,9 +4,9 @@ import Vocas from "@components/Home/Vocas";
 import Footer from "@components/Commons/Footer";
 import axios from "axios";
 import PageLoading from "@components/Commons/PageLoading";
-import { ITitle } from "types/title";
+import { titlesType } from "types/title";
 
-const Home = ({ data }: ITitle) => {
+const Home = (data: titlesType) => {
   return (
     <>
       <Nav />
