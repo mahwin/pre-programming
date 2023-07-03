@@ -5,27 +5,27 @@ import Banner from "@components/Commons/Banner";
 import QuizButton from "@components/Vocas/QuizButton";
 import formatter from "@utils/camelCaser";
 import { useEffect, useState } from "react";
-import { vocasActions } from "redux/vocas/vocasSlice";
+import { vocasActions } from "@redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
-import { categories, categoriesType } from "type/title";
+import { titlesType, titles } from "@type/commons/title";
 
 export default function VocaPage() {
   const { loading, data, error } = useSelector((state: any) => {
     return state.vocas;
   });
-  const [category, setCategory] = useState<categoriesType | null>(null);
+  const [title, setTitle] = useState<titlesType | null>(null);
   const [vocas, setVocas] = useState(null);
 
   const router = useRouter();
   useEffect(() => {
-    const category = router.query.voca as categoriesType;
-    if (category) {
-      if (!categories.includes(category)) {
+    const title = router.query.voca as titlesType;
+    if (title) {
+      if (!titles.includes(title)) {
         router.push("/404");
       } else {
-        setCategory(category);
+        setTitle(title);
       }
     }
   }, [router]);
@@ -35,19 +35,19 @@ export default function VocaPage() {
     if (!data) {
       dispatch(vocasActions.getVocas());
     } else {
-      if (category) {
-        setVocas(data?.category[formatter(category) as categoriesType].level);
+      if (title) {
+        setVocas(data?.category[formatter(title) as titlesType].level);
       }
     }
-  }, [data, category, dispatch]);
+  }, [data, title, dispatch]);
 
   return (
     <>
       <Nav />
       <Banner />
-      {vocas && category ? (
+      {vocas && title ? (
         <>
-          <Vocas voca={vocas!} category={category as categoriesType} />
+          <Vocas voca={vocas!} title={title as titlesType} />
           <QuizButton quizData={vocas} />
         </>
       ) : (

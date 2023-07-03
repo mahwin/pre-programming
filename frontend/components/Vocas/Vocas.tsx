@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "@components/Vocas/Table";
 import { OpenSvg } from "@svg";
 import VocaTable from "@components/Vocas/VocaTable";
 import AddVoca from "./AddVoca";
 import { vocaColors } from "assets/color/vocaColors";
-import { ICard, IVocaDetail } from "type/vocas";
+import { ICard, IVocaDetail } from "@type/vocas";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -178,7 +178,7 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
     setSelectedCard(Array.from({ length: 10 }, () => false));
   };
 
-  const onClickCheck = (e: any) => {
+  const onClickCheck = (e: any): void => {
     const voca = Number(e.currentTarget.id || e.currentTarget.name);
     const copyVocas = [...selectedCard];
     copyVocas[voca] = !copyVocas[voca];
@@ -194,7 +194,7 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
               <CardHeader>
                 <Level> Level : {level}</Level>
                 <input
-                  onChange={onClickCheck}
+                  onClick={onClickCheck}
                   type="checkbox"
                   value="None"
                   id={level + ""}

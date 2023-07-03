@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "../styles/global-styles";
 import theme, { lightTheme, darkTheme } from "../styles/theme";
 import { Provider } from "react-redux";
-import store from "../redux/store";
+import store from "@redux/store";
 import axios from "axios";
 import LocalStorage from "@utils/localStorage";
 import { useState } from "react";

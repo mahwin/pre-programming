@@ -36,7 +36,7 @@ type titleObjType = {
 };
 
 interface ITitles {
-  data: titlesType;
+  data: titleObjType;
 }
 
 export type { titleObjType, titleItemType, ITitles, titlesType, devType };
