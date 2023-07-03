@@ -1,8 +1,10 @@
-import { IVoca } from "@type/commons/voca";
+import { IVoca, IVocas, IVocaObj } from "@type/commons/voca";
+import { MouseEvent } from "react";
+import { AxiosError } from "axios";
 
 interface IFloatingBtn {
   amount: number;
-  data: IVocas[];
+  data: IVocaObj[];
 }
 
 interface ICard {
@@ -10,43 +12,43 @@ interface ICard {
   category: string;
   amount: number;
   isClick: boolean | undefined;
-  onClickCard: (e: any) => void;
+  onClickCard: (e: MouseEvent<HTMLElement>) => void;
 }
 
 interface IStudy {
   handleClick: () => void;
   amount: number;
-  spreadData: IVoca[] | null;
+  spreadData: IVoca[];
 }
 
-interface ITmp {
-  data: number[] | null;
-  len: number;
+interface IUserVocaData {
+  [index: string]: { data: number[]; len: number };
 }
-
-interface IuserVocaData {
-  [key: string]: ITmp | null;
-}
-
-interface IclickedVoca {
+interface ILevelItem {
   [index: string]: string[];
 }
 
-interface IVocaTable {
-  clickedVoca: IclickedVoca;
-  vocas: any;
+interface IClickedVoca {
+  [index: string]: string[];
 }
 
-interface IVocas {
-  [key: string]: IVoca[];
+interface IClickedVocaTable {
+  clickedVoca: IClickedVoca;
+  vocas: IVocas;
+}
+
+interface IUserVocasState {
+  loading: boolean;
+  data: null | ILevelItem;
+  error: null | AxiosError;
 }
 
 export type {
   ICard,
   IFloatingBtn,
   IStudy,
-  IuserVocaData,
-  IclickedVoca,
-  IVocas,
-  IVocaTable,
+  IUserVocaData,
+  IClickedVoca,
+  IClickedVocaTable,
+  IUserVocasState,
 };

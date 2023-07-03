@@ -17,7 +17,7 @@ import {
   titleItemType,
   ITitles,
 } from "@type/commons/title";
-import { IuserVocaData, IclickedVoca } from "type/userVoca";
+import { IUserVocaData, IClickedVoca } from "type/userVoca";
 import { IState } from "@redux/initialState";
 
 const Wrapper = styled.main`
@@ -217,8 +217,8 @@ export default function UserVoca({ data }: ITitles) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<titleItemType[][] | null>(null);
-  const [userVocaData, setUserVocaData] = useState<IuserVocaData | null>(null);
-  const [clickedVoca, setClickedVoca] = useState<IclickedVoca>({});
+  const [userVocaData, setUserVocaData] = useState<IUserVocaData>({});
+  const [clickedVoca, setClickedVoca] = useState<IClickedVoca>({});
 
   //유저 정보 없으면 로그인 페이지
   const userInfo = useSelector((state: IState) => {
@@ -263,9 +263,10 @@ export default function UserVoca({ data }: ITitles) {
           let tmp = JSON.parse(userVocas.data[title]);
           userSavedData[title] = { data: tmp, len: tmp.length };
         } else {
-          userSavedData[title] = { data: null, len: 0 };
+          userSavedData[title] = { data: [], len: 0 };
         }
       }
+
       setUserVocaData(userSavedData);
     }
   }, [vocas.data, userVocas.data]);
@@ -281,7 +282,7 @@ export default function UserVoca({ data }: ITitles) {
     setClickedRow(null);
   };
 
-  const handleClickCard = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleClickCard = (e: MouseEvent<HTMLElement>) => {
     const [category, level] = e.currentTarget.id.split("|");
     let copy = clickedVoca[category as titlesType] || [];
     if (copy.includes(level)) {

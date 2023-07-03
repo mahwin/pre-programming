@@ -1,14 +1,4 @@
-import { AxiosError } from "axios";
-
-interface IlevelItem {
-  [key: string]: null | string[];
-}
-
-interface IUserVocasState {
-  loading: boolean;
-  data: null | IlevelItem;
-  error: null | AxiosError;
-}
+import { IUserVocasState } from "@type/userVoca";
 
 const initialUserVocasState: IUserVocasState = {
   loading: false,
@@ -17,4 +7,3 @@ const initialUserVocasState: IUserVocasState = {
 };
 
 export { initialUserVocasState };
-export type { IUserVocasState };

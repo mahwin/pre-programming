@@ -33,12 +33,14 @@ interface IVoca {
   level?: string;
 }
 
+interface IVocaObj {
+  [key: string]: IVoca[];
+}
+
 interface IVocas {
   [key: string]: {
     [key: string]: {
-      level: {
-        [key: string]: IVoca[];
-      };
+      level: IVocaObj;
     };
   };
 }
@@ -50,4 +52,4 @@ interface IVocaState {
 }
 
 export { categories };
-export type { IVocaState, categoriesType, IVocas, IVoca };
+export type { IVocaState, categoriesType, IVocas, IVoca, IVocaObj };
