@@ -1,26 +1,10 @@
-interface IInfo {
-  frequency: string;
-  word: string;
-  mean: string;
-  category?: string;
-  level?: string;
-}
-
-interface IVoca {
-  [key: string]: {
-    [key: string]: {
-      level: {
-        [key: string]: IInfo[];
-      };
-    };
-  };
-}
+import { IVoca, IVocas } from "@type/commons/voca";
 
 class TrieNode {
   value: string;
   end: boolean;
   child: { [key: string]: TrieNode };
-  infos: IInfo[];
+  infos: IVoca[];
 
   constructor(value = "") {
     this.value = value;
@@ -33,9 +17,9 @@ class TrieNode {
 class Trie {
   private static instance: Trie | null = null;
   root: TrieNode;
-  words: IInfo[];
+  words: IVoca[];
 
-  public static getInstance(data: IVoca): Trie {
+  public static getInstance(data: IVocas): Trie {
     if (Trie.instance === null) {
       Trie.instance = new Trie();
       Trie.instance.fillTrie(data);
@@ -48,7 +32,7 @@ class Trie {
     this.words = [];
   }
 
-  add(info: IInfo) {
+  add(info: IVoca) {
     const chars = info.word;
     let currentNode = this.root;
     for (let i = 0; i < chars.length; i++) {
@@ -65,7 +49,7 @@ class Trie {
     currentNode.end = true;
   }
 
-  fillTrie(data: IVoca) {
+  fillTrie(data: IVocas) {
     for (const key of Object.keys(data.category)) {
       for (const level of Object.keys(data.category[key].level)) {
         const infos = data.category[key].level[level];

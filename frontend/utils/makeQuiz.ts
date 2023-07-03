@@ -1,8 +1,4 @@
-interface IVoca {
-  word: string;
-  mean: string;
-  frequency: string;
-}
+import { IVoca } from "@type/commons/voca";
 
 function randomPick(min: number, max: number, pick: number): number[] {
   let numSet: Set<number> = new Set();
