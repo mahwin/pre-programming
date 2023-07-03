@@ -6,7 +6,7 @@ import useMutation from "@utils/useMutation";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
-import { IForm, IConfirm, IProfile } from "type/userInfo";
+import { IForm, IConfirm, IProfile } from "@type/userInfo";
 
 const Wrapper = styled.section`
   padding: 60px 14px 24px 14px;

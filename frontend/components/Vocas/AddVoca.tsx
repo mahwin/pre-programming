@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { IState } from "@redux/initialState";
 import useMutation from "@utils/useMutation";
-import { vocaColors } from "assets/color/vocaColors";
-import { IAddVoca } from "type/vocas";
+import { vocaColors } from "@color/vocaColors";
+import { IAddVoca } from "@type/vocas";
 
 const Wrapper = styled.div`
   width: 100%;

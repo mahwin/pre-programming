@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
-import { IAnswers, Result } from "type/quiz";
+import { IAnswers, Result } from "@type/quiz";
 
 const Wrapper = styled.div`
   display: flex;

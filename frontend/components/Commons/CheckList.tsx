@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { quizColors } from "@color/quizColors";
-import { ICheckList } from "type/quiz";
+import { ICheckList } from "@type/quiz";
 import {
   explode,
   dropOne,

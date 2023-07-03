@@ -1,18 +1,5 @@
 import { IVocaObj } from "@type/commons/voca";
 
-interface IAddVoca {
-  cardData:
-    | {
-        amount: string;
-        frequency: string;
-      }[]
-    | null;
-  category: string;
-  selected: boolean[];
-  resetSelected: () => void;
-  onClickCheck: (e: any) => void;
-}
-
 interface IVocaDetail {
   voca: IVocaObj;
   title: string;
@@ -42,16 +29,4 @@ interface IAddVoca {
   onClickCheck: (e: any) => void;
 }
 
-type KeyType = "many" | "long";
-
-type Result = [null, string] | [string, string];
-
-export type {
-  IVocaDetail,
-  ICard,
-  Result,
-  IQuizSetting,
-  KeyType,
-  ITable,
-  IAddVoca,
-};
+export type { IVocaDetail, ICard, IQuizSetting, ITable, IAddVoca };

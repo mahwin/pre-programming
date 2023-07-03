@@ -1,6 +1,6 @@
 import meanConvert from "@utils/meanConvert";
 import styled from "styled-components";
-import { IVoca } from "@redux/vocas/vocas.dto";
+import { IVoca } from "@type/commons/voca";
 
 const TableWrapper = styled.div`
   height: 300px;

@@ -5,7 +5,7 @@ import Table from "@components/Vocas/Table";
 import { OpenSvg } from "@svg";
 import VocaTable from "@components/Vocas/VocaTable";
 import AddVoca from "./AddVoca";
-import { vocaColors } from "assets/color/vocaColors";
+import { vocaColors } from "@color/vocaColors";
 import { ICard, IVocaDetail } from "@type/vocas";
 
 const Wrapper = styled.div`

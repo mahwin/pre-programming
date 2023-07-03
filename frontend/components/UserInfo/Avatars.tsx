@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { DownArrowSvg } from "@svg";
 import { userInfoColors } from "@color/userInfoColors";
-import { IAvatars } from "type/userInfo";
+import { IAvatars } from "@type/userInfo";
 
 const Wrapper = styled(motion.section)`
   position: absolute;
