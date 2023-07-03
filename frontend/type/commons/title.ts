@@ -1,4 +1,5 @@
-type categoriesType =
+type devType = "web";
+type titlesType =
   | "next"
   | "react"
   | "reactHookForm"
@@ -10,7 +11,7 @@ type categoriesType =
   | "tailwindcss"
   | "axios";
 
-const categories = [
+const titles = [
   "next",
   "react",
   "reactHookForm",
@@ -23,8 +24,6 @@ const categories = [
   "axios",
 ];
 
-type devCategoryType = "web" | string;
-
 type titleItemType = {
   title: string;
   ok: boolean;
@@ -32,19 +31,13 @@ type titleItemType = {
   install: string;
 };
 
-type titlesType = {
-  [key: string]: titleItemType[];
+type titleObjType = {
+  [key in devType]: titleItemType[];
 };
 
 interface ITitles {
   data: titlesType;
 }
 
-export type {
-  categoriesType,
-  devCategoryType,
-  titleItemType,
-  ITitles,
-  titlesType,
-};
-export { categories };
+export type { titleObjType, titleItemType, ITitles, titlesType, devType };
+export { titles };

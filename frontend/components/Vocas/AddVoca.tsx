@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { IState } from "@redux/initialState";
 import useMutation from "@utils/useMutation";
 import { vocaColors } from "assets/color/vocaColors";
-import { IAddVoca } from "types/vocas";
+import { IAddVoca } from "type/vocas";
 
 const Wrapper = styled.div`
   width: 100%;

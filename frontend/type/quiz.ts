@@ -1,10 +1,4 @@
-import { IVoca } from "@redux/vocas/vocas.dto";
-interface ICheckList {
-  onChangeInput: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
-  currentStep: number;
-  quizData: IQuizData[] | null;
-  answer: boolean[];
-}
+import { IVoca } from "@type/commons/voca";
 
 interface IQuizData {
   question: string;
@@ -22,6 +16,12 @@ interface IAnswers {
   quizAnswer: number[];
   quizData: IQuizData[];
   onBack: () => void;
+}
+interface ICheckList {
+  onChangeInput: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+  currentStep: number;
+  quizData: IQuizData[] | null;
+  answer: boolean[];
 }
 
 type Result = [null, string] | [string, string];

@@ -6,7 +6,7 @@ import { OpenSvg } from "@svg";
 import VocaTable from "@components/Vocas/VocaTable";
 import AddVoca from "./AddVoca";
 import { vocaColors } from "assets/color/vocaColors";
-import { ICard, IVocaDetail } from "types/vocas";
+import { ICard, IVocaDetail } from "type/vocas";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -149,7 +149,7 @@ const Overlay = styled(motion.div)`
   z-index: 2;
 `;
 
-export default function VocaDetail({ voca, category }: IVocaDetail) {
+export default function VocaDetail({ voca, title }: IVocaDetail) {
   const [id, setId] = useState<string | null>(null);
   const [selectedCard, setSelectedCard] = useState<boolean[]>(
     Array.from({ length: 10 }, () => false)
@@ -187,7 +187,7 @@ export default function VocaDetail({ voca, category }: IVocaDetail) {
   return (
     <Wrapper>
       <DetailWrapper>
-        <Title>{category}</Title>
+        <Title>{title}</Title>
         <VocaCardWrapper>
           {Object.keys(voca).map((level: string) => (
             <VocaCard key={level + ""} layoutId={level + ""}>
@@ -215,7 +215,7 @@ export default function VocaDetail({ voca, category }: IVocaDetail) {
           ))}
         </VocaCardWrapper>
         <AddVoca
-          category={category}
+          category={title}
           cardData={cardData}
           selected={selectedCard}
           resetSelected={onResetSelected}

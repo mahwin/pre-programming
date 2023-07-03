@@ -6,7 +6,7 @@ import Study from "./Study";
 import Quiz from "@components/Commons/Quiz";
 import { userVocaColors } from "@color/userVocaColor";
 import { IVoca } from "@redux/vocas/vocas.dto";
-import { IFloatingBtn } from "types/userVoca";
+import { IFloatingBtn } from "type/userVoca";
 
 const Wrapper = styled(motion.section)`
   z-index: 99;

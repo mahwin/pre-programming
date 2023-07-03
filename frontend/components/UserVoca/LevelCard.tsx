@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CheckSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
-import { ICard } from "types/userVoca";
+import { ICard } from "type/userVoca";
 
 const Card = styled.li`
   background-color: #fff;

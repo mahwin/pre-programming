@@ -2,13 +2,13 @@ import Nav from "@components/Commons/Nav";
 import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";
-import { ITitles } from "types/title";
+import { ITitles } from "@type/commons/title";
 
 function UserVocaPage({ data }: ITitles) {
   return (
     <>
       <Nav />
-      <UserVoca data={data.web} />
+      <UserVoca data={data} />
       <Footer />
     </>
   );

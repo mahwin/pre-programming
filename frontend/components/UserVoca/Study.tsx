@@ -9,7 +9,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, KeyboardEvent } from "react";
 import { userVocaColors } from "@color/userVocaColor";
-import { IStudy } from "types/userVoca";
+import { IStudy } from "type/userVoca";
 
 const Overay = styled(motion.div)`
   position: fixed;

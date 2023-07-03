@@ -4,7 +4,7 @@ import { DownArrowSvg } from "@svg";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { userInfoColors } from "@color/userInfoColors";
-import { IAvatars } from "types/userInfo";
+import { IAvatars } from "type/userInfo";
 
 const Wrapper = styled(motion.section)`
   position: absolute;

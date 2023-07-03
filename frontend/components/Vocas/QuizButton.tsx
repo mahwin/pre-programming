@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
 import { vocaColors } from "assets/color/vocaColors";
-import { IVocas } from "types/userVoca";
-import { KeyType, IQuizSetting } from "types/vocas";
+import { IVocas } from "type/userVoca";
+import { KeyType, IQuizSetting } from "type/vocas";
 
 const Wrapper = styled(motion.div)`
   position: fixed;

@@ -4,7 +4,7 @@ import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
 import { useSelector } from "react-redux";
 import { IState } from "@redux/initialState";
-import { titleItemType, titlesType } from "types/title";
+import { titleItemType, titleObjType, devType } from "@type/commons/title";
 
 const Wrapper = styled.main`
   display: flex;
@@ -87,7 +87,8 @@ const Overray = styled.div`
 
 // 'string' 형식의 식을 'titlesType' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다.
 //   'titlesType' 형식에서 'string' 형식의 매개 변수가 포함된 인덱스 시그니처를 찾을 수 없습니다.
-export default function Vocas({ data }: { data: titlesType }) {
+export default function Vocas({ data }: { data: titleObjType }) {
+  console.log(data);
   useSelector((state: IState) => state.vocas);
   return (
     <Wrapper>
@@ -97,7 +98,7 @@ export default function Vocas({ data }: { data: titlesType }) {
             <Title>for {key}.dev</Title>
           </header>
           <ItemsWrapper>
-            {data[key].map((item: titleItemType, idx: number) => (
+            {data[key as devType].map((item: titleItemType, idx: number) => (
               <Link
                 href={`/vocas/${item.title.toLowerCase()}`}
                 key={item.title}
