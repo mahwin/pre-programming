@@ -1,11 +1,13 @@
-import { initialUserState, IUserState } from "./user/user.dto";
-import { initialVocasState, IVocaState } from "./vocas/vocas.dto";
+import { initialUserState } from "./user/user.dto";
+import { initialVocasState } from "./vocas/vocas.dto";
 import {
   initialUserVocasState,
   IUserVocasState,
 } from "./userVocas/userVocas.dto";
+import { IVocaState } from "@type/commons/voca";
+import { IUserState } from "@type/commons/user";
 
-const initialState = {
+const initialState: IState = {
   user: initialUserState,
   vocas: initialVocasState,
   userVocas: initialUserVocasState,

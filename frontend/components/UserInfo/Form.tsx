@@ -6,7 +6,7 @@ import useMutation from "@utils/useMutation";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
-import { IForm, IConfirm, IUpdate, IFormData } from "type/userInfo";
+import { IForm, IConfirm, IProfile } from "type/userInfo";
 
 const Wrapper = styled.section`
   padding: 60px 14px 24px 14px;
@@ -136,14 +136,14 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
   const [phoneConfirm, { loading: phoneLoading, data: confirmPhone }] =
     useMutation<IConfirm>("/user/confirm");
 
-  const onValid = (validForm: IFormData) => {
+  const onValid = (validForm: IProfile) => {
     Object.keys(validForm).includes("name")
       ? confirm(validForm)
       : phoneConfirm(validForm);
   };
 
   //유효하게 바꿀 수 있는 데이터 유무
-  const [updateData, setUpdateData] = useState<IUpdate>({});
+  const [updateData, setUpdateData] = useState<IProfile>({});
 
   useEffect(() => {
     if (confirmName?.ok)
