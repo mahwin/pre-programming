@@ -10,7 +10,7 @@ import Link from "next/link";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import meanConvert from "@utils/meanConvert";
 import { bannerColors } from "@color/bannerColors";
-import { IVoca } from "@redux/vocas/vocas.dto";
+import { IVoca } from "@type/commons/voca";
 
 const Wrapper = styled.section`
   margin-top: 30px;

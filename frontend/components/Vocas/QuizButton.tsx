@@ -3,9 +3,10 @@ import { QuizSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
-import { vocaColors } from "assets/color/vocaColors";
-import { IVocas } from "type/userVoca";
-import { KeyType, IQuizSetting } from "type/vocas";
+import { vocaColors } from "@color/vocaColors";
+import { IVocas } from "@type/commons/voca";
+import { IQuizSetting } from "@type/vocas";
+import { KeyType } from "@type/quiz";
 
 const Wrapper = styled(motion.div)`
   position: fixed;
@@ -125,7 +126,6 @@ const Label = styled.label`
     border-radius: 15px;
     position: relative;
     background-color: #e8e8e8;
-
     content: "";
     display: inline-block;
     visibility: visible;

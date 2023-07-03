@@ -1,25 +1,24 @@
 import styled from "styled-components";
 import { MouseEvent, Fragment, useEffect, useState } from "react";
-import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { motion, Variants } from "framer-motion";
-import chunk from "@utils/chunk";
-import formatter from "@utils/camelCaser";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-import { userVocasActions } from "redux/userVocas/userVocasSlice";
-import { vocasActions } from "redux/vocas/vocasSlice";
+import { userVocasActions } from "@redux/userVocas/userVocasSlice";
+import { vocasActions } from "@redux/vocas/vocasSlice";
+import { IState } from "@redux/initialState";
 import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
+import { userVocaColors } from "@color/userVocaColor";
+import chunk from "@utils/chunk";
+import formatter from "@utils/camelCaser";
+import { IUserVocaData, IClickedVoca } from "@type/userVoca";
 import {
   titlesType,
   titles,
   titleItemType,
   ITitles,
 } from "@type/commons/title";
-import { IUserVocaData, IClickedVoca } from "type/userVoca";
-import { IState } from "@redux/initialState";
-
 const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
@@ -256,7 +255,7 @@ export default function UserVoca({ data }: ITitles) {
 
   useEffect(() => {
     if (vocas.data && userVocas.data) {
-      let userSavedData: IuserVocaData = {};
+      let userSavedData: IUserVocaData = {};
       for (let title of titles) {
         let savedData = userVocas.data[title];
         if (savedData) {

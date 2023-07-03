@@ -6,7 +6,7 @@ import CheckList from "@components/Commons/CheckList";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
 import { quizColors } from "assets/color/quizColors";
 import getQuiz from "@utils/makeQuiz";
-import { IQuizData, IQuiz } from "type/quiz";
+import { IQuizData, IQuiz } from "@type/quiz";
 
 const Overay = styled(motion.div)`
   position: fixed;

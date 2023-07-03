@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
 import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { userVocaColors } from "@color/userVocaColor";
 import meanConvert from "@utils/meanConvert";
 import { IVoca, IVocaObj } from "@type/commons/voca";
 import { IClickedVocaTable } from "@type/userVoca";

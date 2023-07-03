@@ -1,4 +1,4 @@
-import { IVoca } from "@type/commons/voca";
+import { IVoca, IVocaObj } from "@type/commons/voca";
 
 interface IQuizData {
   question: string;
@@ -6,7 +6,13 @@ interface IQuizData {
 }
 
 interface IQuiz {
-  vocas: IVoca[];
+  vocas:
+    | IVoca[]
+    | {
+        [key: string]: {
+          level: IVocaObj;
+        };
+      };
   howMany: string;
   handleClick: () => void;
 }
@@ -26,4 +32,6 @@ interface ICheckList {
 
 type Result = [null | string, string];
 
-export type { IAnswers, IQuiz, IQuizData, ICheckList, Result };
+type KeyType = "long" | "many";
+
+export type { IAnswers, IQuiz, IQuizData, ICheckList, Result, KeyType };

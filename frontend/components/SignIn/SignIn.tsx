@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect, useCallback } from "react";
 import LocalStorage from "@utils/localStorage";
-import { SignInColors } from "assets/color/SignInColors";
-import { IForm, TokenForm, MutationResult } from "type/signIn";
+import { SignInColors } from "@color/SignInColors";
+import { IForm, TokenForm, MutationResult } from "@type/signIn";
 
 const Wapper = styled.main`
   height: 100vh;
