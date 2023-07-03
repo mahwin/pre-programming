@@ -3,9 +3,9 @@ import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "assets/color/userVocaColor";
 import meanConvert from "@utils/meanConvert";
-import { categoriesType } from "types/title";
+import { categoriesType } from "type/title";
 import { IVoca } from "@redux/vocas/vocas.dto";
-import { IVocaTable, IVocas } from "types/userVoca";
+import { IVocaTable, IVocas } from "type/userVoca";
 const Wrapper = styled.section`
   height: 100%;
   max-height: 70vh;

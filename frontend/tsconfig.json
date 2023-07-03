@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": "",
     "paths": {
+      "@type/*": ["type/*"],
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
       "@svg": ["assets/svg/RootSvg.tsx"],

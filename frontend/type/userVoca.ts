@@ -1,4 +1,4 @@
-import { IVoca } from "@redux/vocas/vocas.dto";
+import { IVoca } from "@type/commons/voca";
 
 interface IFloatingBtn {
   amount: number;

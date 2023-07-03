@@ -25,7 +25,7 @@ interface ITestData {
 }
 interface IVocaDetail {
   voca: IVocas;
-  category: string;
+  title: string;
 }
 
 interface ICard {

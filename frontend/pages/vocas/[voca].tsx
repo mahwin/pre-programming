@@ -9,7 +9,7 @@ import { vocasActions } from "redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
-import { categories, categoriesType } from "types/title";
+import { categories, categoriesType } from "type/title";
 
 export default function VocaPage() {
   const { loading, data, error } = useSelector((state: any) => {

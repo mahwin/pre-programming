@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ITable } from "types/vocas";
+import { ITable } from "type/vocas";
 
 const TableWapper = styled.table`
   color: #fff;

@@ -12,12 +12,13 @@ import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
 import { userVocaColors } from "assets/color/userVocaColor";
 import {
-  categories,
-  categoriesType,
-  titleItemType,
   titlesType,
-} from "types/title";
-import { IuserVocaData, IclickedVoca } from "types/userVoca";
+  titles,
+  titleItemType,
+  ITitles,
+} from "@type/commons/title";
+import { IuserVocaData, IclickedVoca } from "type/userVoca";
+import { IState } from "@redux/initialState";
 
 const Wrapper = styled.main`
   display: flex;
@@ -211,7 +212,8 @@ const BoardVariants: Variants = {
   },
 };
 
-export default function UserVoca({ data }: titlesType) {
+export default function UserVoca({ data }: ITitles) {
+  console.log(data);
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<titleItemType[][] | null>(null);
@@ -219,8 +221,7 @@ export default function UserVoca({ data }: titlesType) {
   const [clickedVoca, setClickedVoca] = useState<IclickedVoca>({});
 
   //유저 정보 없으면 로그인 페이지
-  const userInfo = useSelector((state: any) => {
-    state.userReducer;
+  const userInfo = useSelector((state: IState) => {
     return state.user;
   });
 
@@ -250,19 +251,19 @@ export default function UserVoca({ data }: titlesType) {
   }, [vocas, dispatch]);
 
   useEffect(() => {
-    if (data) setRowData(chunk(data, 4));
+    if (data) setRowData(chunk(data.web, 4));
   }, [data]);
 
   useEffect(() => {
     if (vocas.data && userVocas.data) {
       let userSavedData: IuserVocaData = {};
-      for (let category of categories) {
-        let savedData = userVocas.data[category];
+      for (let title of titles) {
+        let savedData = userVocas.data[title];
         if (savedData) {
-          let tmp = JSON.parse(userVocas.data[category]);
-          userSavedData[category] = { data: tmp, len: tmp.length };
+          let tmp = JSON.parse(userVocas.data[title]);
+          userSavedData[title] = { data: tmp, len: tmp.length };
         } else {
-          userSavedData[category] = { data: null, len: 0 };
+          userSavedData[title] = { data: null, len: 0 };
         }
       }
       setUserVocaData(userSavedData);
@@ -282,7 +283,7 @@ export default function UserVoca({ data }: titlesType) {
 
   const handleClickCard = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const [category, level] = e.currentTarget.id.split("|");
-    let copy = clickedVoca[category as categoriesType] || [];
+    let copy = clickedVoca[category as titlesType] || [];
     if (copy.includes(level)) {
       copy = copy.filter((item) => level !== item);
     } else {
@@ -429,9 +430,9 @@ export default function UserVoca({ data }: titlesType) {
                           (level: string) => (
                             <LevelCard
                               isClick={
-                                clickedVoca?.[
-                                  clickId as categoriesType
-                                ]?.includes("" + level) || false
+                                clickedVoca?.[clickId as titlesType]?.includes(
+                                  "" + level
+                                ) || false
                               }
                               key={level}
                               amount={
