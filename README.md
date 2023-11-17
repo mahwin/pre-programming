@@ -1,6 +1,6 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 
-# Pre-programming &nbsp;  [바로가기]([https://www.pre-programming.com](https://pre-programming-8b7b76496028.herokuapp.com/me)
+# Pre-programming &nbsp;  [바로가기](https://pre-programming-8b7b76496028.herokuapp.com)
 
 ## : What to do before you studying programming! 
 
@@ -280,6 +280,11 @@
 | 2023.08.31        | 반응형 웹 (모바일 및 테블릿)  | 1. 디스플레이 크기에 맞춘 UI를 개발한다 |
 
 - 네이버 부스트 캠프 참여로 2023.07.11 ~ 2023.12.15 세부 계획 수행 X
+
+| 타임라인             | 추가 기능 | 세부 계획 |
+| ----------------- | ---------------- | --------- |
+| 2024.01.01 ~ 2024.01.07 | 개발 컨벤션 정리 | 브랜치 전략 선택, lint 설정 |
+| 2024.01.08 ~ 2024.01.30 | 리팩토링 | npm => pnpm or yarn 베리로 마이그레이션, 코드 개선, redux, redux-saga => 상태관리 도구 안 쓰거나 리코일로 마이크 레이션  |
 
  
 --------------
