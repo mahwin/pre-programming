@@ -1,6 +1,6 @@
 <img width="1263" alt="스크린샷 2022-12-04 오후 7 34 24" src="https://user-images.githubusercontent.com/78193416/205485978-a63e1a6a-0129-49aa-bf35-56a2e982be2e.png">
 
-# Pre-programming &nbsp;  [바로가기](https://www.pre-programming.com)
+# Pre-programming &nbsp;  [바로가기]([https://www.pre-programming.com](https://pre-programming-8b7b76496028.herokuapp.com/me)
 
 ## : What to do before you studying programming! 
 
@@ -278,6 +278,9 @@
 | 2023.07.02        | 자동완성 기능   | 1. 단어 로드가 완료되면 트라이 자료구조에 영어 단어를 저장한다 <br/> 2. 유저가 찾는 단어와 가장 유사한 영어단어 8개를 보여준다 |                                  
 | 2023.07.23         | 유저 경험 개선   | 1. 퀴즈 결과 데이터를 db로 관리한다. <br/> 2. 단어장 커스텀 기능을 추가한다 |
 | 2023.08.31        | 반응형 웹 (모바일 및 테블릿)  | 1. 디스플레이 크기에 맞춘 UI를 개발한다 |
+
+- 네이버 부스트 캠프 참여로 2023.07.11 ~ 2023.12.15 세부 계획 수행 X
+
  
 --------------
 
