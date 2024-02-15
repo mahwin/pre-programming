@@ -21,12 +21,12 @@ const ToggleBox = styled.div`
 
 const Shadow = styled(motion.div)<{ isdark: number }>`
   height: 100%;
-  width: 50%;
-  border-radius: 20px;
+  width: 60%;
+  border-radius: 15px;
   position: absolute;
   background-color: white;
   opacity: 0.3;
-  ${(props) => (props.isdark ? "left: 0;" : "right: 0;")}
+  ${(props) => (props.isdark ? "left: -5px;" : "right: -5px;")}
 `;
 
 const ToggleItem = styled.div`

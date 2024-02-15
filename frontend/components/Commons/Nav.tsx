@@ -171,11 +171,6 @@ function Nav() {
                 </Link>
                 {currentNav === "/signIn" && <CurrentPosition />}
               </Item>
-              <Item>
-                <Link href="/signIn">
-                  <a>회원가입</a>
-                </Link>
-              </Item>
             </>
           )}
         </Items>

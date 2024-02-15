@@ -17,6 +17,10 @@ const Wapper = styled.main`
 `;
 
 const LoginContainer = styled.section`
+  border: 2px solid ${(props) => props.theme.colorTheme.textPrimary};
+
+  border-radius: 10px;
+  padding: 20px 10px;
   min-width: ${(props) => props.theme.windowSize.mobile};
   height: 60vh;
   display: flex;
