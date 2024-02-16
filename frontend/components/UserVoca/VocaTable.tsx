@@ -110,7 +110,7 @@ export default function VocaTable({ clickedVoca, vocas }: IClickedVocaTable) {
                           <td>{item.word}</td>
                           <td>{category}</td>
                           <td>{item.frequency}</td>
-                          <td>{meanConvert(item.mean).join(" ")}</td>
+                          <td>{meanConvert(item.mean)}</td>
                         </tr>
                       ))}
                     </Fragment>
