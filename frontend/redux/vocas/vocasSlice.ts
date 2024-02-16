@@ -1,6 +1,5 @@
 import initialState from "../initialState";
 import { createSlice } from "@reduxjs/toolkit";
-import { VocasType } from "./vocas.dto";
 
 const vocasSlice = createSlice({
   name: "vocas",

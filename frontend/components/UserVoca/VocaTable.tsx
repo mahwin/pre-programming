@@ -64,7 +64,6 @@ const Table = styled.table`
 export default function VocaTable({ clickedVoca, vocas }: IClickedVocaTable) {
   const [totalWords, setTotalWords] = useState<IVocaObj[]>([]);
   const [totalAmount, setTotalAmount] = useState<number>(0);
-  console.log(totalWords);
   useEffect(() => {
     let words: IVocaObj[] = [];
     let amount = 0;

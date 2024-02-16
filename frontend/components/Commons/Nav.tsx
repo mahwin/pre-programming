@@ -10,7 +10,7 @@ import { userActions } from "@redux/user/userSlice";
 import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
 
-const Wapper = styled.nav`
+const Wapper = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -22,25 +22,23 @@ const Wapper = styled.nav`
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
-const NavWapper = styled.div`
+const NavWapper = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   color: ${(props) => props.theme.colorTheme.textPrimary};
-  max-width: ${(props) => props.theme.windowSize.pc};
+  max-width: ${(props) => props.theme.windowSize.tablet};
 `;
 
 const Items = styled.ul`
   display: flex;
   align-items: center;
-  padding: 8px 12px;
 `;
 
 const Item = styled.li`
   position: relative;
   font-weight: ${(props) => props.theme.fontWeight.base};
-  padding: 8px 12px;
+
   color: ${(props) => props.theme.colorTheme.textPrimary};
   cursor: pointer;
   a {
@@ -68,14 +66,13 @@ const LogOutBtn = styled.button`
 `;
 
 const LogoBox = styled.div`
-  padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
   font-weight: ${(props) => props.theme.fontWeight.base};
   p {
-    margin-left: 5px;
+    margin: 0 10px;
   }
   &:hover {
     color: ${(props) => props.theme.colorTheme.hoverPrimary};
@@ -135,12 +132,6 @@ function Nav() {
           </Item>
           {data && (
             <Items>
-              <Item>
-                <Link href="/" id="home">
-                  <a>홈</a>
-                </Link>
-                {currentNav === "/" && <CurrentPosition />}
-              </Item>
               <Item>
                 <Link href="/me/vocas">
                   <a>내 단어장</a>

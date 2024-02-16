@@ -31,7 +31,7 @@ const BannerImg = styled.div`
   background-image: url("/banner.png");
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 350px;
 `;
 const TitleBox = styled.header`
   width: 100%;
