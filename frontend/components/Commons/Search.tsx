@@ -12,6 +12,8 @@ import meanConvert from "@utils/meanConvert";
 import { bannerColors } from "@color/bannerColors";
 import { IVoca } from "@type/commons/voca";
 
+import { HStack } from "@components/Commons/HStack";
+
 const Wrapper = styled.section`
   margin-top: 30px;
   max-width: ${(props) => props.theme.windowSize.tablet};
@@ -62,61 +64,17 @@ const LodingInput = styled.div`
   cursor: not-allowed;
 `;
 
-const Suggestion = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 600px;
-  list-style-type: none;
-  padding: 1em 2em;
-  font-weight: 600;
-  border-radius: 5px;
-  background-color: ${(props) => props.theme.colorTheme.backgroundSecondary};
-`;
-
-const EmptySuggestion = styled(Suggestion)`
-  width: 100%;
+const EmptySuggestion = styled.div`
   display: flex;
+  height: 60px;
+  width: 200px;
   align-items: center;
+  padding-left: 10px;
+
   span {
     font-size: ${(props) => props.theme.fontSize.md};
     font-weight: ${(props) => props.theme.fontWeight.xbold};
     margin-right: 10px;
-  }
-`;
-
-const Ul = styled.ul<{ isSelected?: boolean }>`
-  background-color: ${(props) =>
-    props.isSelected && bannerColors.search.selecetedColor};
-  margin: 0;
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.8em;
-  background-image: linear-gradient(
-    transparent calc(100% - 5px),
-    ${bannerColors.search.hoverColor} 5px
-  );
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  transition: background-size 0.8s;
-  :nth-child(1) {
-    padding-bottom: 1rem;
-    border-bottom: 2px solid
-      ${(props) => props.theme.colorTheme.backgroundColor};
-  }
-  &:not(:nth-child(1)):hover {
-    background-size: 100% 100%;
-  }
-`;
-
-const Li = styled.li`
-  white-space: pre-wrap;
-  margin: 0;
-  padding: 0;
-  font-size: 1.1em;
-  width: 30%;
-  &:last-of-type {
-    flex-grow: 2;
   }
 `;
 
@@ -129,6 +87,101 @@ const Route = styled.div`
     transition: all 0.5s ease-in;
     cursor: pointer;
   }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+  }
+`;
+
+const SuggestionTable = styled.table`
+  width: 574px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  background-color: ${(props) => props.theme.colorTheme.backgroundSecondary};
+`;
+
+const SuggestionHeader = styled.thead`
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  text-align: left;
+`;
+
+const TableRow = styled.tr<{ isSelected?: boolean }>`
+  :hover {
+    cursor: pointer;
+  }
+
+  &:not(:nth-child(1)):hover {
+    background-size: 100% 100%;
+  }
+
+  :nth-child(1)::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    width: 550px;
+    border: 0.5px solid ${(props) => props.theme.colorTheme.textPrimary};
+  }
+
+  & {
+    th:nth-child(1),
+    td:nth-child(1) {
+      width: 120px;
+    }
+  }
+
+  & {
+    th:nth-child(2),
+    td:nth-child(2) {
+      width: 120px;
+    }
+  }
+
+  & {
+    th:nth-child(3),
+    td:nth-child(3) {
+      width: 332px;
+    }
+  }
+
+  td,
+  th {
+    padding-left: 10px;
+  }
+
+  td {
+    line-height: 40px;
+    height: 40px;
+  }
+
+  td:nth-child(3) {
+    padding-right: 5px;
+  }
+
+  background-image: linear-gradient(
+    transparent calc(100% - 5px),
+    ${bannerColors.search.hoverColor} 2px
+  );
+
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.8s;
+  :nth-child(2) {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid
+      ${(props) => props.theme.colorTheme.backgroundSecondary};
+  }
+
+  background-color: ${(props) =>
+    props.isSelected && bannerColors.search.selecetedColor};
 `;
 
 interface IRecommendObj {
@@ -161,6 +214,7 @@ export default function Search() {
   const { loading, data, error } = useSelector((state: IState) => state.vocas);
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (!data) {
       dispatch(vocasActions.getVocas());
@@ -201,10 +255,13 @@ export default function Search() {
   };
 
   const handleItemClick = (e: React.MouseEvent<HTMLElement>) => {
+    const selectedIndex = Number(e.currentTarget.dataset.index);
     setRecommed({
       ...recommedObj,
-      selectedIndex: Number(e.currentTarget.dataset.index),
+      selectedIndex,
     });
+
+    setKeyword(recommedObj.recommends[selectedIndex].word);
   };
 
   const router = useRouter();
@@ -229,59 +286,89 @@ export default function Search() {
         )}
       </InputBox>
       {keyword && trie && (
-        <>
-          {recommedObj.recommends.length === 0 ? (
-            <EmptySuggestion>
-              <span>No results found</span>
-              <FrownSvg color="orange" width="30" height="30" strokeWidth="2" />
-            </EmptySuggestion>
-          ) : (
-            <Suggestion>
-              <Ul key="title">
-                {titles.map((title) => (
-                  <Li key={title}>{title}</Li>
-                ))}
-              </Ul>
-              {recommedObj.recommends.map((info, i) => (
-                <Ul
-                  onClick={handleItemClick}
-                  key={i}
-                  data-index={i}
-                  isSelected={recommedObj.selectedIndex === i ? true : false}
-                >
-                  {titles.map((title) => {
-                    switch (title) {
-                      case "mean":
-                        return (
-                          <Li key={title + i}>
-                            {meanConvert(info[title], 2, 15).join("\n")}
-                          </Li>
-                        );
-                      case "category":
-                        return (
-                          <Li key={title + i}>
-                            {camelStrToMiddleBarStr(info[title]!)}
-                          </Li>
-                        );
-                      default:
-                        return <Li key={title + i}>{info[title]!}</Li>;
-                    }
-                  })}
-                  <Route>
-                    <Link
-                      href={`/vocas/${camelStrToMiddleBarStr(info.category!)}`}
-                    >
-                      <a>
-                        <SendSvg width="24" height="24" />
-                      </a>
-                    </Link>
-                  </Route>
-                </Ul>
+        <SuggestionTable>
+          <SuggestionHeader>
+            <TableRow>
+              {titles.map((title, i) => (
+                <th>{title}</th>
               ))}
-            </Suggestion>
+            </TableRow>
+          </SuggestionHeader>
+          {recommedObj.recommends.length === 0 ? (
+            <tr>
+              <td colSpan={3}>
+                <EmptySuggestion>
+                  <span>No results found</span>
+                  <FrownSvg
+                    color="orange"
+                    width="30"
+                    height="30"
+                    strokeWidth="2"
+                  />
+                </EmptySuggestion>
+              </td>
+            </tr>
+          ) : (
+            recommedObj.recommends.map((info, i) => (
+              <TableRow
+                key={i}
+                data-index={i}
+                onClick={handleItemClick}
+                isSelected={recommedObj.selectedIndex === i ? true : false}
+              >
+                <td>{info.word}</td>
+                <td>{info.category}</td>
+                <td>
+                  <HStack layout="space-between">
+                    <span>{meanConvert(info.mean, 2, 15)}</span>
+                    <Route>
+                      <Link
+                        href={`/vocas/${camelStrToMiddleBarStr(
+                          info.category!
+                        )}`}
+                      >
+                        <a>
+                          <SendSvg width="24" height="24" />
+                        </a>
+                      </Link>
+                    </Route>
+                  </HStack>
+                </td>
+              </TableRow>
+            ))
           )}
-        </>
+        </SuggestionTable>
       )}
     </Wrapper>
   );
 }
+
+// {recommedObj.recommends.map((info, i) => (
+//   <Ul
+//     onClick={handleItemClick}
+//     key={i}
+//     data-index={i}
+//     isSelected={recommedObj.selectedIndex === i ? true : false}
+//   >
+
+//   </Ul>
+// ))}
+
+// {titles.map((title) => {
+//   switch (title) {
+//     case "mean":
+//       return (
+//         <Li key={title + i}>
+//           {meanConvert(info[title], 2, 15).join("\n")}
+//         </Li>
+//       );
+//     case "category":
+//       return (
+//         <Li key={title + i}>
+//           {camelStrToMiddleBarStr(info[title]!)}
+//         </Li>
+//       );
+//     default:
+//       return <Li key={title + i}>{info[title]!}</Li>;
+//   }
+// })}
