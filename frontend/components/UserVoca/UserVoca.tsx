@@ -212,7 +212,6 @@ const BoardVariants: Variants = {
 };
 
 export default function UserVoca({ data }: ITitles) {
-  console.log(data);
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
   const [rowData, setRowData] = useState<titleItemType[][] | null>(null);

@@ -29,7 +29,6 @@ const NavWapper = styled.nav`
   color: ${(props) => props.theme.colorTheme.textPrimary};
   max-width: ${(props) => props.theme.windowSize.tablet};
 `;
-
 const Items = styled.ul`
   display: flex;
   align-items: center;

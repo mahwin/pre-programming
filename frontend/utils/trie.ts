@@ -98,7 +98,6 @@ class Trie {
         } else nodes.push(...Object.values(node!.child));
       }
     }
-    console.log("??");
     return this.sort(len);
   }
 }
