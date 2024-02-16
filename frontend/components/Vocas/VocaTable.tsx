@@ -66,7 +66,7 @@ export default function VocaTable({ voca }: { voca: IVoca[] }) {
             return (
               <tr key={idx}>
                 <td>{item.word}</td>
-                <td>{meanConvert(item.mean).join(" ")}</td>
+                <td>{meanConvert(item.mean)}</td>
               </tr>
             );
           })}

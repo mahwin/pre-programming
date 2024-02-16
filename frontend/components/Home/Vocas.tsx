@@ -88,7 +88,6 @@ const Overray = styled.div`
 // 'string' 형식의 식을 'titlesType' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다.
 //   'titlesType' 형식에서 'string' 형식의 매개 변수가 포함된 인덱스 시그니처를 찾을 수 없습니다.
 export default function Vocas({ data }: { data: titleObjType }) {
-  console.log(data);
   useSelector((state: IState) => state.vocas);
   return (
     <Wrapper>
