@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
 import { vocaColors } from "@color/vocaColors";
-import { IVocas } from "@type/commons/voca";
+import { IVocaObj } from "@type/commons/voca";
 import { IQuizSetting } from "@type/vocas";
 import { KeyType } from "@type/quiz";
 
@@ -192,7 +192,10 @@ const Overlay = styled(motion.div)`
   z-index: 100;
 `;
 
-function QuizButton({ quizData }: IVocas) {
+interface Props {
+  quizData: IVocaObj;
+}
+function QuizButton({ quizData }: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isQuizOpen, setQuizOpen] = useState<boolean>(false);
   const [quizSetting, setQuizSetting] = useState<IQuizSetting>({

@@ -10,36 +10,32 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
 import { titlesType, titles } from "@type/commons/title";
+import { isNil } from "@utils/typeGuard/isNil";
+import { IState } from "@redux/initialState";
+import { IVocaObj } from "@type/commons/voca";
 
 export default function VocaPage() {
-  const { loading, data, error } = useSelector((state: any) => {
-    return state.vocas;
-  });
-  const [title, setTitle] = useState<titlesType | null>(null);
-  const [vocas, setVocas] = useState(null);
+  const { data } = useSelector(({ vocas }: IState) => vocas);
+
+  const [vocas, setVocas] = useState<IVocaObj | null>(null);
 
   const router = useRouter();
+  const title = router.query.voca as titlesType;
+
   useEffect(() => {
-    const title = router.query.voca as titlesType;
-    if (title) {
-      if (!titles.includes(title)) {
-        router.push("/404");
-      } else {
-        setTitle(title);
-      }
+    if (!titles.includes(formatter(title))) {
+      router.push("/404");
     }
-  }, [router]);
+  }, []);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (!data) {
-      dispatch(vocasActions.getVocas());
-    } else {
-      if (title) {
-        setVocas(data?.category[formatter(title) as titlesType].level);
-      }
+    if (isNil(data)) {
+      vocasActions.getVocas();
+      return;
     }
-  }, [data, title, dispatch]);
+    setVocas(data.category[formatter(title) as titlesType].level);
+  }, [data, dispatch]);
 
   return (
     <>
@@ -47,7 +43,7 @@ export default function VocaPage() {
       <Banner />
       {vocas && title ? (
         <>
-          <Vocas voca={vocas!} title={title as titlesType} />
+          <Vocas voca={vocas} title={title as titlesType} />
           <QuizButton quizData={vocas} />
         </>
       ) : (

@@ -6,13 +6,7 @@ interface IQuizData {
 }
 
 interface IQuiz {
-  vocas:
-    | IVoca[]
-    | {
-        [key: string]: {
-          level: IVocaObj;
-        };
-      };
+  vocas: IVoca[] | IVocaObj;
   howMany: string;
   handleClick: () => void;
 }
