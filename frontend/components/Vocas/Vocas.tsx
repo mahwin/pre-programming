@@ -8,6 +8,114 @@ import AddVoca from "./AddVoca";
 import { vocaColors } from "@color/vocaColors";
 import { ICard, IVocaDetail } from "@type/vocas";
 
+const MAX_CARD_NUM = 10;
+
+export default function VocaDetail({ voca, title }: IVocaDetail) {
+  const [id, setId] = useState<string | null>(null);
+  const [selectedCard, setSelectedCard] = useState<boolean[]>(
+    Array.from({ length: MAX_CARD_NUM }, () => false)
+  );
+  const [total, setTotal] = useState<number>(0);
+  const [cardData, setCardData] = useState<ICard[] | null>(null);
+
+  useEffect(() => {
+    const levelArr = Object.keys(voca);
+    let totalAmount = 0;
+    let baseData: ICard[] = [];
+    levelArr.forEach((level: string) => {
+      const item = voca[level];
+      let tmp = {
+        amount: item.length + "",
+        frequency: item[Math.round(item.length / 2)].frequency,
+      };
+      totalAmount += +tmp.amount;
+      baseData.push(tmp);
+    });
+    setTotal(totalAmount);
+    setCardData(baseData);
+  }, [voca]);
+
+  const onResetSelected = () => {
+    setSelectedCard(Array.from({ length: 10 }, () => false));
+  };
+
+  const onClickCheck = (e: any): void => {
+    const voca = Number(e.currentTarget.id || e.currentTarget.name);
+    const copyVocas = [...selectedCard];
+    copyVocas[voca] = !copyVocas[voca];
+    setSelectedCard(copyVocas);
+  };
+  return (
+    <Wrapper>
+      <DetailWrapper>
+        <Title>{title}</Title>
+        <VocaCardWrapper>
+          {Object.keys(voca).map((level: string) => (
+            <VocaCard key={level + ""} layoutId={level + ""}>
+              <CardHeader>
+                <Level> Level : {level}</Level>
+                <input
+                  onClick={onClickCheck}
+                  type="checkbox"
+                  value="None"
+                  id={level + ""}
+                  name="check"
+                  checked={selectedCard[+level]}
+                />
+                <label htmlFor={level + ""}></label>
+              </CardHeader>
+              <VocaContentBox>
+                {cardData && (
+                  <Table cardData={cardData?.[+level - 1]} total={total} />
+                )}
+              </VocaContentBox>
+              <SvgBox onClick={() => setId(level + "")}>
+                <OpenSvg width="20" height="20" />
+              </SvgBox>
+            </VocaCard>
+          ))}
+        </VocaCardWrapper>
+        <AddVoca
+          category={title}
+          cardData={cardData}
+          selected={selectedCard}
+          resetSelected={onResetSelected}
+          onClickCheck={onClickCheck}
+        />
+      </DetailWrapper>
+      <AnimatePresence>
+        {id ? (
+          <Overlay
+            onClick={() => setId(null)}
+            initial={{ backgroundColor: "rgba(0,0,0,0)" }}
+            animate={{ backgroundColor: "rgba(0,0,0,0.7)" }}
+            exit={{ backgroundColor: "rgba(0,0,0,0)" }}
+          >
+            <VocaCard
+              layoutId={id + ""}
+              style={{
+                position: "fixed",
+                width: 600,
+                height: 500,
+                top: "80px",
+                zIndex: 100,
+              }}
+            >
+              <ModalTitleBox>
+                <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
+                <ModalButton name={id + ""} onClick={onClickCheck}>
+                  {selectedCard[+id] ? "해제" : "추가"}
+                </ModalButton>
+              </ModalTitleBox>
+              <VocaTable voca={voca[+id]} />
+            </VocaCard>
+          </Overlay>
+        ) : null}
+      </AnimatePresence>
+    </Wrapper>
+  );
+}
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -148,109 +256,3 @@ const Overlay = styled(motion.div)`
   align-items: center;
   z-index: 2;
 `;
-
-export default function VocaDetail({ voca, title }: IVocaDetail) {
-  const [id, setId] = useState<string | null>(null);
-  const [selectedCard, setSelectedCard] = useState<boolean[]>(
-    Array.from({ length: 10 }, () => false)
-  );
-  const [total, setTotal] = useState<number>(0);
-  const [cardData, setCardData] = useState<ICard[] | null>(null);
-
-  useEffect(() => {
-    const levelArr = Object.keys(voca);
-    let totalAmount = 0;
-    let baseData: ICard[] = [];
-    levelArr.forEach((level: string) => {
-      const item = voca[level];
-      let tmp = {
-        amount: item.length + "",
-        frequency: item[Math.round(item.length / 2)].frequency,
-      };
-      totalAmount += +tmp.amount;
-      baseData.push(tmp);
-    });
-    setTotal(totalAmount);
-    setCardData(baseData);
-  }, [voca]);
-
-  const onResetSelected = () => {
-    setSelectedCard(Array.from({ length: 10 }, () => false));
-  };
-
-  const onClickCheck = (e: any): void => {
-    const voca = Number(e.currentTarget.id || e.currentTarget.name);
-    const copyVocas = [...selectedCard];
-    copyVocas[voca] = !copyVocas[voca];
-    setSelectedCard(copyVocas);
-  };
-  return (
-    <Wrapper>
-      <DetailWrapper>
-        <Title>{title}</Title>
-        <VocaCardWrapper>
-          {Object.keys(voca).map((level: string) => (
-            <VocaCard key={level + ""} layoutId={level + ""}>
-              <CardHeader>
-                <Level> Level : {level}</Level>
-                <input
-                  onClick={onClickCheck}
-                  type="checkbox"
-                  value="None"
-                  id={level + ""}
-                  name="check"
-                  checked={selectedCard[+level]}
-                />
-                <label htmlFor={level + ""}></label>
-              </CardHeader>
-              <VocaContentBox>
-                {cardData && (
-                  <Table cardData={cardData?.[+level - 1]} total={total} />
-                )}
-              </VocaContentBox>
-              <SvgBox onClick={() => setId(level + "")}>
-                <OpenSvg width="20" height="20" />
-              </SvgBox>
-            </VocaCard>
-          ))}
-        </VocaCardWrapper>
-        <AddVoca
-          category={title}
-          cardData={cardData}
-          selected={selectedCard}
-          resetSelected={onResetSelected}
-          onClickCheck={onClickCheck}
-        />
-      </DetailWrapper>
-      <AnimatePresence>
-        {id ? (
-          <Overlay
-            onClick={() => setId(null)}
-            initial={{ backgroundColor: "rgba(0,0,0,0)" }}
-            animate={{ backgroundColor: "rgba(0,0,0,0.7)" }}
-            exit={{ backgroundColor: "rgba(0,0,0,0)" }}
-          >
-            <VocaCard
-              layoutId={id + ""}
-              style={{
-                position: "fixed",
-                width: 600,
-                height: 500,
-                top: "80px",
-                zIndex: 100,
-              }}
-            >
-              <ModalTitleBox>
-                <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
-                <ModalButton name={id + ""} onClick={onClickCheck}>
-                  {selectedCard[+id] ? "해제" : "추가"}
-                </ModalButton>
-              </ModalTitleBox>
-              <VocaTable voca={voca[+id]} />
-            </VocaCard>
-          </Overlay>
-        ) : null}
-      </AnimatePresence>
-    </Wrapper>
-  );
-}
