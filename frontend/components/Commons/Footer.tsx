@@ -63,16 +63,20 @@ export default function Footer() {
             <Title>Follow us</Title>
             <nav>
               <SnsBox>
-                <a onClick={notYetClick}>
+                <li onClick={notYetClick}>
                   <FacebookSvg width="40" height="40" />
-                </a>
-                <a onClick={notYetClick}>
+                </li>
+                <li onClick={notYetClick}>
                   <TwitterSvg width="40" height="40" />
-                </a>
-                <Link href="https://github.com/mahwin">
-                  <a target="_blank" rel="noopener noreferrer">
+                </li>
+                <Link
+                  href="https://github.com/mahwin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <li>
                     <GithubSvg width="40" height="40" />
-                  </a>
+                  </li>
                 </Link>
               </SnsBox>
             </nav>
@@ -202,11 +206,12 @@ const LogoBox = styled.div`
   align-items: center;
 `;
 
-const SnsBox = styled.div`
+const SnsBox = styled.ul`
   display: flex;
   width: 50%;
   margin-bottom: 10px;
   justify-content: space-between;
+  cursor: pointer;
 `;
 
 const LinkWrapper = styled.div`

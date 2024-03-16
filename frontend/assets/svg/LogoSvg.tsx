@@ -6,7 +6,14 @@ interface ILogo {
   height: string;
 }
 
-const Svg = styled(Icon)`
+const Svg = styled.svg<
+  React.HTMLAttributes<SVGSVGElement> & {
+    width: string;
+    height: string;
+    viewBox: string;
+    fill: string;
+  }
+>`
   display: block;
   max-width: 100%;
   height: auto;
@@ -18,13 +25,7 @@ const Svg = styled(Icon)`
 
 function LogoSvg({ width, height }: ILogo) {
   return (
-    <Svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
-      viewBox="0 0 78 110"
-      fill="none"
-    >
+    <Svg width={width} height={height} viewBox="0 0 78 110" fill="none">
       <g clipPath="url(#clip0_102_178)">
         <path
           d="M1.1704 29.7875C1.14442 25.8786 5.38163 23.4323 8.71847 25.4296L72.3486 63.5176C75.6214 65.4766 75.5731 70.2598 72.2614 72.1718L40.6941 90.3972L9.12678 108.623C5.81498 110.535 1.69143 108.16 1.66594 104.326L1.1704 29.7875Z"

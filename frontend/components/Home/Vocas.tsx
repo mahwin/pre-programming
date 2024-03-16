@@ -25,7 +25,7 @@ const Title = styled.h2`
   color: ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const ItemsWrapper = styled.section`
+const ItemsWrapper = styled.ul`
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,7 +45,7 @@ const Item = styled.article`
   }
 `;
 
-const ItemBox = styled.a<React.HTMLAttributes<HTMLAnchorElement>>`
+const ItemBox = styled.li<React.HTMLAttributes<HTMLAnchorElement>>`
   width: 100%;
   height: 100px;
   border-radius: 10px;
