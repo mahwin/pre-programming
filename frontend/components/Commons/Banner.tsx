@@ -2,6 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
 
+export default function Banner() {
+  return (
+    <Wapper>
+      <BannerImg role="img" aria-label="배경화면 입니다" />
+      <BannerWapper>
+        <ContentWrapper>
+          <TitleBox>
+            <Title>Pre-Programming</Title>
+            <SubTitle>:What to do before you studying programming!</SubTitle>
+          </TitleBox>
+          <Search />
+        </ContentWrapper>
+      </BannerWapper>
+    </Wapper>
+  );
+}
+
 const Wapper = styled.section`
   position: relative;
   width: 100%;
@@ -53,20 +70,3 @@ const SubTitle = styled.h4`
   font-size: ${(props) => props.theme.fontSize.lg};
   letter-spacing: 0.1rem;
 `;
-
-export default function Banner() {
-  return (
-    <Wapper>
-      <BannerImg role="img" aria-label="배경화면 입니다" />
-      <BannerWapper>
-        <ContentWrapper>
-          <TitleBox>
-            <Title>Pre-Programming</Title>
-            <SubTitle>:What to do before you studying programming!</SubTitle>
-          </TitleBox>
-          <Search />
-        </ContentWrapper>
-      </BannerWapper>
-    </Wapper>
-  );
-}
