@@ -1,4 +1,4 @@
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 import styled from "styled-components";
 
 interface ILogo {
@@ -6,11 +6,10 @@ interface ILogo {
   height: string;
 }
 
-const Svg = styled.svg`
+const Svg = styled(Icon)`
   display: block;
   max-width: 100%;
   height: auto;
-
   path {
     width: 100%;
     height: 100%;

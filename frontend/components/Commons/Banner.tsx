@@ -5,7 +5,7 @@ import Search from "./Search";
 export default function Banner() {
   return (
     <Wapper>
-      <BannerImg role="img" aria-label="배경화면 입니다" />
+      <BannerImg aria-label="배경화면 입니다" />
       <BannerWapper>
         <ContentWrapper>
           <TitleBox>

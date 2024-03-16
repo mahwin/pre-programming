@@ -51,7 +51,7 @@ const Item = styled.li`
   }
 `;
 
-const LogOutBtn = styled.button`
+const LogOutBtn = styled.button<React.HTMLProps<HTMLDivElement>>`
   padding: 8px 12px;
   background-color: transparent;
   color: ${(props) => props.theme.colorTheme.textPrimary};

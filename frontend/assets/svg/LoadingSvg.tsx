@@ -8,8 +8,6 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const SvgWrapper = styled.div``;
-
 interface ISvg {
   width?: string;
   height?: string;
@@ -22,7 +20,7 @@ export function LoadingSvg({
 }: ISvg) {
   return (
     <Wrapper>
-      <SvgWrapper style={{ height, width }}>
+      <div style={{ height, width }}>
         <svg
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +44,7 @@ export function LoadingSvg({
             ></animateTransform>
           </path>
         </svg>
-      </SvgWrapper>
+      </div>
     </Wrapper>
   );
 }

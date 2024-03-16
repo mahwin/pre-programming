@@ -102,7 +102,7 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
               }}
             >
               <ModalTitleBox>
-                <ModalLevel style={{ color: "white" }}>Level : {id}</ModalLevel>
+                <ModalLevel>Level : {id}</ModalLevel>
                 <ModalButton name={id + ""} onClick={onClickCheck}>
                   {selectedCard[+id] ? "해제" : "추가"}
                 </ModalButton>
@@ -165,7 +165,7 @@ const VocaContentBox = styled.div`
   border: 1px solid ${vocaColors.vocaDetail.cardBoarderColor};
 `;
 
-const SvgBox = styled.div`
+const SvgBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   cursor: pointer;
   position: absolute;
   right: 10px;
@@ -227,12 +227,15 @@ const ModalTitleBox = styled.div`
 `;
 
 const ModalLevel = styled.label`
+  color: white;
   flex-grow: 1;
   font-size: ${(props) => props.theme.fontSize.base};
   font-weight: ${(props) => props.theme.fontWeight.xbold};
 `;
 
-const ModalButton = styled.button`
+const ModalButton = styled.button<
+  React.HTMLAttributes<HTMLButtonElement> & { name: string }
+>`
   flex-grow: 1;
   height: 30px;
   color: white;

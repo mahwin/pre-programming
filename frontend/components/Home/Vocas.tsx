@@ -13,7 +13,7 @@ const Wrapper = styled.main`
   margin: 10px 10px 20px 10px;
 `;
 
-const Container = styled.section`
+const Container = styled.section<React.HTMLAttributes<HTMLElement>>`
   padding: 10px;
   width: 100%;
   max-width: ${(props) => props.theme.windowSize.tablet};
@@ -45,7 +45,7 @@ const Item = styled.article`
   }
 `;
 
-const ItemBox = styled.a`
+const ItemBox = styled.a<React.HTMLAttributes<HTMLAnchorElement>>`
   width: 100%;
   height: 100px;
   border-radius: 10px;

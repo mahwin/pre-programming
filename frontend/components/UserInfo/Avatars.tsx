@@ -31,7 +31,7 @@ const BtnBox = styled.div`
   justify-content: flex-end;
 `;
 
-const Button = styled.button`
+const Button = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   width: 50px;
   border: none;
   background-color: inherit;

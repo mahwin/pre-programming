@@ -84,7 +84,7 @@ const Ul = styled.ul`
   }
 `;
 
-const Label = styled.label`
+const Label = styled.label<React.LabelHTMLAttributes<HTMLLabelElement>>`
   cursor: pointer;
   color: ${quizColors.quiz.lableColor};
   font-weight: 700;
@@ -103,7 +103,9 @@ const Label = styled.label`
   }
 `;
 
-const Input = styled.input.attrs({ type: "radio", name: "answer" })`
+const Input = styled.input.attrs({ type: "radio", name: "answer" })<
+  React.InputHTMLAttributes<HTMLInputElement>
+>`
   opacity: 0;
   z-index: 1;
   width: 100%;
@@ -115,7 +117,7 @@ const Input = styled.input.attrs({ type: "radio", name: "answer" })`
   cursor: pointer;
 `;
 
-const Li = styled.li`
+const Li = styled.li<React.LiHTMLAttributes<HTMLLIElement>>`
   :hover {
     opacity: 0.6;
     transition: ease-in-out 0.3s opacity;

@@ -39,7 +39,7 @@ const Wrapper = styled(motion.section)`
   }
 `;
 
-const BtnWrapper = styled.div`
+const BtnWrapper = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: relative;
   cursor: pointer;
   :hover {

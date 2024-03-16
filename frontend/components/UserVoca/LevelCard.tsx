@@ -3,7 +3,7 @@ import { CheckSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
 import { ICard } from "@type/userVoca";
 
-const Card = styled.li`
+const Card = styled.li<React.HTMLAttributes<HTMLElement>>`
   background-color: #fff;
   height: 80px;
   width: 125px;
@@ -15,7 +15,7 @@ const Card = styled.li`
   }
 `;
 
-const ClickedCard = styled(Card)`
+const ClickedCard = styled(Card)<React.HTMLAttributes<HTMLElement>>`
   position: relative;
   box-shadow: 0 0 0 4px ${userVocaColors.selectedColor};
   span {

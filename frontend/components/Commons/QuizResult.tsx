@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
 import { IAnswers, Result } from "@type/quiz";
@@ -27,7 +27,7 @@ const Cards = styled.ul`
   grid-template-columns: 1fr 1fr;
 `;
 
-const Card = styled.li`
+const Card = styled.li<React.HTMLProps<HTMLDivElement>>`
   position: relative;
   display: inline-block;
   color: white;
@@ -75,7 +75,7 @@ const InCorrect = styled.div`
   background: ${userVocaColors.quizResult.inCorrectBgColor};
 `;
 
-const BackBtn = styled.button`
+const BackBtn = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   width: 100px;
   height: 30px;
   border-radius: 5px;

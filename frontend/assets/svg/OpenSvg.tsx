@@ -1,5 +1,6 @@
 import styled from "styled-components";
-const Svg = styled.svg`
+import { Icon } from "./Icon";
+const Svg = styled(Icon)`
   &:hover {
     stroke-width: 2;
     transform: scale(1.4);

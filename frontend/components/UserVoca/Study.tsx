@@ -31,7 +31,7 @@ const Container = styled.section`
   border: 2px solid ${userVocaColors.study.borderColor};
 `;
 
-const XBtn = styled.div`
+const XBtn = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: absolute;
   top: 1em;
   right: 2em;

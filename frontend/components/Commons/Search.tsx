@@ -14,7 +14,7 @@ import { IVoca } from "@type/commons/voca";
 
 import { HStack } from "@components/Commons/HStack";
 
-const Wrapper = styled.section`
+const Wrapper = styled.section<React.HTMLAttributes<HTMLElement>>`
   margin-top: 30px;
   max-width: ${(props) => props.theme.windowSize.tablet};
   display: flex;
@@ -43,7 +43,7 @@ const Input = styled.input.attrs({
   tpye: "text",
   spellCheck: "false",
   placeholder: "단어를 입력하세요",
-})`
+})<React.HTMLAttributes<HTMLInputElement> & { value: string }>`
   padding: 10px;
   height: 36px;
   width: 100%;
@@ -113,7 +113,9 @@ const SuggestionHeader = styled.thead`
   text-align: left;
 `;
 
-const TableRow = styled.tr<{ isSelected?: boolean }>`
+const TableRow = styled.tr<
+  React.HTMLAttributes<HTMLTableElement> & { isSelected?: boolean }
+>`
   :hover {
     cursor: pointer;
   }
@@ -342,33 +344,3 @@ export default function Search() {
     </Wrapper>
   );
 }
-
-// {recommedObj.recommends.map((info, i) => (
-//   <Ul
-//     onClick={handleItemClick}
-//     key={i}
-//     data-index={i}
-//     isSelected={recommedObj.selectedIndex === i ? true : false}
-//   >
-
-//   </Ul>
-// ))}
-
-// {titles.map((title) => {
-//   switch (title) {
-//     case "mean":
-//       return (
-//         <Li key={title + i}>
-//           {meanConvert(info[title], 2, 15).join("\n")}
-//         </Li>
-//       );
-//     case "category":
-//       return (
-//         <Li key={title + i}>
-//           {camelStrToMiddleBarStr(info[title]!)}
-//         </Li>
-//       );
-//     default:
-//       return <Li key={title + i}>{info[title]!}</Li>;
-//   }
-// })}

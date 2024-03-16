@@ -50,7 +50,8 @@ const Line = styled.hr`
   border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
 `;
 
-const Text = styled.p`
+const Text = styled.p<React.HTMLAttributes<HTMLParagraphElement>>`
+  text-align: left;
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.base};
   color: ${(props) => props.theme.colorTheme.textPrimary};
@@ -77,7 +78,7 @@ const PreNumber = styled.div`
 
 const Input = styled.input.attrs({
   type: "number",
-})`
+})<React.HTMLAttributes<HTMLInputElement>>`
   flex-grow: 9;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -89,7 +90,7 @@ const Input = styled.input.attrs({
   }
 `;
 
-const TokenInput = styled(Input)`
+const TokenInput = styled(Input)<React.HTMLAttributes<HTMLInputElement>>`
   display: block;
   width: 100%;
   margin-top: 10px;
@@ -149,7 +150,7 @@ const SvgBox = styled.div`
   gap: 20px;
 `;
 
-const SnsButton = styled.button`
+const SnsButton = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   width: 100%;
   border-radius: 5px;
   border: 1.5px solid ${(props) => props.theme.colorTheme.textPrimary};
@@ -203,7 +204,7 @@ export default function SignIn() {
         <FormBox>
           {data?.ok ? (
             <>
-              <Text style={{ textAlign: "left" }}>Cerification Number</Text>
+              <Text>Cerification Number</Text>
               <form id="token" onSubmit={tokenHandleSubmit(onTokenValid)}>
                 <TokenInput
                   placeholder="인증 번호를 입력하세요."
@@ -217,7 +218,7 @@ export default function SignIn() {
             </>
           ) : (
             <>
-              <Text style={{ textAlign: "left" }}>Phone number</Text>
+              <Text>Phone number</Text>
               <form id="phone" onSubmit={handleSubmit(onValid)}>
                 <InputBox>
                   <PreNumber>
@@ -240,7 +241,6 @@ export default function SignIn() {
                         message: "phone number의 형식은 01012345678입니다.",
                       },
                     })}
-                    required
                   />
                 </InputBox>
                 <Error>{errors?.phone?.message}</Error>

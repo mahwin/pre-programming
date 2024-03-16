@@ -53,7 +53,7 @@ const Avartar = styled.div`
   border-radius: 50px;
 `;
 
-const ToggleBox = styled.div`
+const ToggleBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   width: 120px;
   height: 40px;
   margin-top: 25px;
@@ -64,7 +64,7 @@ const ToggleBox = styled.div`
   position: relative;
 `;
 
-const NormalSpan = styled.span`
+const NormalSpan = styled.span<React.HTMLAttributes<HTMLElement>>`
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   color: white;
 `;

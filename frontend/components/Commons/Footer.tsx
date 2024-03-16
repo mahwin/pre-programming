@@ -13,6 +13,115 @@ import {
 import Link from "next/link";
 import { footerColors } from "@color/footerColors";
 
+export default function Footer() {
+  const notYetClick = useCallback(() => {
+    alert("준비 중입니다!");
+  }, []);
+
+  return (
+    <Wrapper>
+      <Container>
+        <Row>
+          <Box>
+            <SvgBox>
+              <MapPinSvg width="50" height="50" />
+            </SvgBox>
+            <TitleBox>
+              <Title>Find us</Title>
+              <SubTitle>Republic of Korea</SubTitle>
+            </TitleBox>
+          </Box>
+          <Box>
+            <SvgBox>
+              <PhoneSvg width="50" height="50" />
+            </SvgBox>
+            <TitleBox>
+              <Title>Call us</Title>
+              <SubTitle>+82 1027597085</SubTitle>
+            </TitleBox>
+          </Box>
+          <Box>
+            <SvgBox>
+              <MailSvg width="50" height="50" />
+            </SvgBox>
+            <TitleBox>
+              <Title>Mail us</Title>
+              <SubTitle>mahwin7085@gmail.com</SubTitle>
+            </TitleBox>
+          </Box>
+        </Row>
+        <Line />
+        <Row>
+          <BottomBox>
+            <Box>
+              <LogoBox>
+                <LogoSvg width="40" height="60" />
+                <Title>Pre-programming</Title>
+              </LogoBox>
+            </Box>
+            <SubTitle>: What to do before you studying programming!</SubTitle>
+            <Title>Follow us</Title>
+            <nav>
+              <SnsBox>
+                <a onClick={notYetClick}>
+                  <FacebookSvg width="40" height="40" />
+                </a>
+                <a onClick={notYetClick}>
+                  <TwitterSvg width="40" height="40" />
+                </a>
+                <Link href="https://github.com/mahwin">
+                  <a target="_blank" rel="noopener noreferrer">
+                    <GithubSvg width="40" height="40" />
+                  </a>
+                </Link>
+              </SnsBox>
+            </nav>
+          </BottomBox>
+          <BottomBox>
+            <Box>
+              <TitleBox>
+                <Title>Useful Links</Title>
+                <TitleLine />
+              </TitleBox>
+            </Box>
+            <LinkWrapper>
+              <nav>
+                <Links>
+                  {["Home", "About", "Services", "Contact Us"].map((info) => (
+                    <LinkItem key={info} onClick={notYetClick}>
+                      <SubTitle>{info}</SubTitle>
+                    </LinkItem>
+                  ))}
+                </Links>
+              </nav>
+            </LinkWrapper>
+          </BottomBox>
+          <BottomBox>
+            <Box>
+              <TitleBox>
+                <Title>Subscribe</Title>
+                <TitleLine />
+              </TitleBox>
+            </Box>
+            <EmailBox>
+              <SubTitle>
+                Don’t miss to subscribe to our new feeds, kindly fill the form
+                below.
+              </SubTitle>
+              <InputWrapper>
+                <Input />
+                <Button onClick={notYetClick}>
+                  <SendSvg width="24" height="24" />
+                </Button>
+              </InputWrapper>
+            </EmailBox>
+          </BottomBox>
+        </Row>
+      </Container>
+    </Wrapper>
+  );
+}
+
 const Wrapper = styled.footer`
   background-color: ${footerColors.bgColor};
   opacity: 0.9;
@@ -83,6 +192,7 @@ const BottomBox = styled.div`
   display: flex;
   flex-direction: column;
   height: 40vh;
+  justify-content: space-between;
 `;
 
 const LogoBox = styled.div`
@@ -110,7 +220,7 @@ const Links = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr;
 `;
-const LinkItem = styled.li`
+const LinkItem = styled.li<React.LiHTMLAttributes<HTMLLIElement>>`
   h4:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colorTheme.hoverPrimary};
@@ -148,118 +258,9 @@ const Input = styled.input.attrs({
   color: ${footerColors.inputColor};
 `;
 
-const Button = styled.button`
+const Button = styled.button<React.ButtonHTMLAttributes<HTMLButtonElement>>`
   width: 20%;
   height: 40px;
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
   border: none;
 `;
-
-export default function Footer() {
-  const notYetClick = useCallback(() => {
-    alert("준비 중입니다!");
-  }, []);
-
-  return (
-    <Wrapper>
-      <Container>
-        <Row>
-          <Box>
-            <SvgBox>
-              <MapPinSvg width="50" height="50" />
-            </SvgBox>
-            <TitleBox>
-              <Title>Find us</Title>
-              <SubTitle>Republic of Korea</SubTitle>
-            </TitleBox>
-          </Box>
-          <Box>
-            <SvgBox>
-              <PhoneSvg width="50" height="50" />
-            </SvgBox>
-            <TitleBox>
-              <Title>Call us</Title>
-              <SubTitle>+82 1027597085</SubTitle>
-            </TitleBox>
-          </Box>
-          <Box>
-            <SvgBox>
-              <MailSvg width="50" height="50" />
-            </SvgBox>
-            <TitleBox>
-              <Title>Mail us</Title>
-              <SubTitle>mahwin7085@gmail.com</SubTitle>
-            </TitleBox>
-          </Box>
-        </Row>
-        <Line />
-        <Row>
-          <BottomBox style={{ justifyContent: "space-between" }}>
-            <Box>
-              <LogoBox>
-                <LogoSvg width="40" height="60" />
-                <Title>Pre-programming</Title>
-              </LogoBox>
-            </Box>
-            <SubTitle>: What to do before you studying programming!</SubTitle>
-            <Title>Follow us</Title>
-            <nav>
-              <SnsBox>
-                <a onClick={notYetClick}>
-                  <FacebookSvg width="40" height="40" />
-                </a>
-                <a onClick={notYetClick}>
-                  <TwitterSvg width="40" height="40" />
-                </a>
-                <Link href="https://github.com/mahwin">
-                  <a target="_blank" rel="noopener noreferrer">
-                    <GithubSvg width="40" height="40" />
-                  </a>
-                </Link>
-              </SnsBox>
-            </nav>
-          </BottomBox>
-          <BottomBox>
-            <Box>
-              <TitleBox>
-                <Title>Useful Links</Title>
-                <TitleLine />
-              </TitleBox>
-            </Box>
-            <LinkWrapper>
-              <nav>
-                <Links>
-                  {["Home", "About", "Services", "Contact Us"].map((info) => (
-                    <LinkItem key={info} onClick={notYetClick}>
-                      <SubTitle>{info}</SubTitle>
-                    </LinkItem>
-                  ))}
-                </Links>
-              </nav>
-            </LinkWrapper>
-          </BottomBox>
-          <BottomBox>
-            <Box>
-              <TitleBox>
-                <Title>Subscribe</Title>
-                <TitleLine />
-              </TitleBox>
-            </Box>
-            <EmailBox>
-              <SubTitle>
-                Don’t miss to subscribe to our new feeds, kindly fill the form
-                below.
-              </SubTitle>
-              <InputWrapper>
-                <Input />
-                <Button onClick={notYetClick}>
-                  <SendSvg width="24" height="24" />
-                </Button>
-              </InputWrapper>
-            </EmailBox>
-          </BottomBox>
-        </Row>
-      </Container>
-    </Wrapper>
-  );
-}

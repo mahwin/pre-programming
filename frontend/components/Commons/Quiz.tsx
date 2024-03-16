@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, HTMLAttributes } from "react";
 import QuizResult from "@components/Commons/QuizResult";
 import CheckList from "@components/Commons/CheckList";
 import { ResultCircleSvg, XMarkSvg } from "@svg";
@@ -62,7 +62,7 @@ const ProgressBarBox = styled.div`
 
 const Progress = styled.progress.attrs({
   min: "0",
-})`
+})<any>`
   position: absolute;
   display: block;
   width: 100%;
@@ -79,7 +79,7 @@ const Progress = styled.progress.attrs({
   }
 `;
 
-const ProgressCicle = styled.div`
+const ProgressCicle = styled.div<HTMLAttributes<HTMLDivElement>>`
   position: absolute;
   top: 16px;
   height: 12px;
@@ -90,7 +90,7 @@ const ProgressCicle = styled.div`
   transition: all 1s ease-in-out;
 `;
 
-const Button = styled.button`
+const Button = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   position: absolute;
   right: 50px;
   bottom: 50px;
@@ -127,26 +127,27 @@ const ColorBox = styled.div`
   }
 `;
 
-const Color = styled.div`
+const Color = styled.div<{ color: string }>`
   border: none;
   width: 50px;
   height: 20px;
   margin-right: 5px;
+  color: ${(props) => props.color};
 `;
 
-const ButtonBox = styled.div`
+const ButtonBox = styled.div<React.HTMLProps<HTMLDivElement>>`
   display: flex;
   justify-content: center;
   gap: 10px;
   height: 50px;
 `;
 
-const ResultBtn = styled(Button)`
+const ResultBtn = styled(Button)<React.HTMLAttributes<HTMLButtonElement>>`
   position: relative;
   top: 0;
   left: 0;
 `;
-const XBtn = styled.button`
+const XBtn = styled.button<React.HTMLProps<HTMLDivElement>>`
   position: absolute;
   right: 40px;
   appearance: none;
@@ -243,19 +244,13 @@ export default function Quiz({ vocas, howMany, handleClick }: IQuiz) {
                 />
                 <Row>
                   <ColorBox>
-                    <Color
-                      style={{
-                        backgroundColor: quizColors.quiz.correctColor,
-                      }}
-                    ></Color>
+                    <Color color={quizColors.quiz.inCorrectColor} />
+
                     <p>Correct : {`${correctNum}`}</p>
                   </ColorBox>
                   <ColorBox>
-                    <Color
-                      style={{
-                        backgroundColor: quizColors.quiz.inCorrectColor,
-                      }}
-                    ></Color>
+                    <Color color={quizColors.quiz.inCorrectColor} />
+
                     <p>InCorrect : {`${maxNum - correctNum}`}</p>
                   </ColorBox>
                 </Row>

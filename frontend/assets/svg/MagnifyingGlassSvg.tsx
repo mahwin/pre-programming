@@ -1,5 +1,14 @@
-import Icon from "./Icon";
+import React from "react";
+import { Icon } from "./Icon";
 import styled from "styled-components";
+
+interface Iprops {
+  width?: string;
+  height?: string;
+  color?: string;
+  fill?: string;
+  children?: React.ReactNode;
+}
 
 const Svg = styled(Icon)`
   padding: 3px;
@@ -9,12 +18,6 @@ const Svg = styled(Icon)`
     stroke: ${(props) => props.color};
   }
 `;
-
-interface Iprops {
-  width?: string;
-  height?: string;
-  color?: string;
-}
 
 export const MagnifyingGlassSvg = ({ width, height, color }: Iprops) => {
   return (

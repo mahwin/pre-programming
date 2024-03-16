@@ -74,7 +74,7 @@ const Arrow = styled(motion.div)`
   border-right: 20px solid transparent;
 `;
 
-const CancleBtnBox = styled.div`
+const CancleBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: absolute;
   height: 30px;
   width: 30px;

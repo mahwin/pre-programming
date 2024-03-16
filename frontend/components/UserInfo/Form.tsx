@@ -8,7 +8,7 @@ import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
 import { IForm, IConfirm, IProfile } from "@type/userInfo";
 
-const Wrapper = styled.section`
+const Wrapper = styled.section<React.HTMLAttributes<HTMLElement>>`
   padding: 60px 14px 24px 14px;
   height: 100%;
   border-top-left-radius: 25px;
@@ -49,7 +49,9 @@ const Row = styled.div`
   align-items: center;
 `;
 
-const Btn = styled.button`
+const Btn = styled.button<
+  React.HTMLAttributes<HTMLButtonElement> & { name: string; disabled: boolean }
+>`
   width: 100%;
   height: 40px;
   background-color: ${() => userInfoColors.bgColor};
@@ -66,7 +68,7 @@ const Btn = styled.button`
   }
 `;
 
-const SubmitBtn = styled(Btn)`
+const SubmitBtn = styled(Btn)<any>`
   border-radius: 5px;
   margin-top: 10px;
   display: flex;
@@ -75,6 +77,7 @@ const SubmitBtn = styled(Btn)`
 `;
 
 const Error = styled.span`
+  margin-left: 10px;
   color: ${userInfoColors.errorColor};
   font-size: 12px;
   font-weight: ${(props) => props.theme.fontWeight.base};
@@ -176,9 +179,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
           <InputBox>
             <label>
               닉네임
-              <Error style={{ marginLeft: "10px" }}>
-                {errors?.name?.message}
-              </Error>
+              <Error>{errors?.name?.message}</Error>
             </label>
             <Row>
               <input
@@ -204,7 +205,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
                     text === data.name ? "변경 사항이 없습니다." : undefined,
                 })}
               />
-              <Btn disabled={!isCan} name="name">
+              <Btn name="name" disabled={!isCan}>
                 Confirm
               </Btn>
             </Row>
@@ -214,9 +215,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
           <InputBox>
             <label>
               폰 번호
-              <Error style={{ marginLeft: "10px" }}>
-                {phoneErorrs.phone?.message}
-              </Error>
+              <Error>{phoneErorrs.phone?.message}</Error>
             </label>
             <Row>
               <input
@@ -243,7 +242,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
                 })}
               />
 
-              <Btn disabled={!isCan} name="phone">
+              <Btn name="phone" disabled={!isCan}>
                 Confirm
               </Btn>
             </Row>
@@ -286,7 +285,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
           </Changable>
         </form>
         {updateLoading ? (
-          <SubmitBtn disabled>
+          <SubmitBtn disabled={true}>
             <LoadingSvg color={userInfoColors.toggle.cicle} />
           </SubmitBtn>
         ) : (
@@ -296,7 +295,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
                 Update profile
               </SubmitBtn>
             ) : (
-              <SubmitBtn disabled>Nothing has changed</SubmitBtn>
+              <SubmitBtn disabled={true}>Nothing has changed</SubmitBtn>
             )}
           </>
         )}

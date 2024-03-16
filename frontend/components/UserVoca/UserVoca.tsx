@@ -110,7 +110,7 @@ const DetailBox = styled.div`
   grid-template-columns: repeat(4, 1fr);
 `;
 
-const XBtnBox = styled.div`
+const XBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: absolute;
   display: flex;
   justify-content: center;

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MoonSvg, SunSvg } from "@svg";
 
-const ToggleBox = styled.div`
+const ToggleBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: fixed;
   right: 5%;
   top: 10%;

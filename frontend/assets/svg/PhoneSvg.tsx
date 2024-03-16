@@ -1,4 +1,4 @@
-import Icon from "./Icon";
+import { Icon } from "./Icon";
 import styled from "styled-components";
 
 const Svg = styled(Icon)`

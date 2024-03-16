@@ -83,7 +83,7 @@ const QuizInputTitle = styled.h2`
   margin-bottom: 10px;
 `;
 
-const QuizInputXBtn = styled.div`
+const QuizInputXBtn = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: absolute;
   right: 8px;
   top: 30px;
@@ -136,7 +136,7 @@ const Label = styled.label`
 const RadioInput = styled.input.attrs({
   type: "radio",
   require: true,
-})`
+})<React.HTMLAttributes<HTMLElement> & { name: string; value: string }>`
   cursor: pointer;
   width: 8%;
   height: 34px;
@@ -148,7 +148,9 @@ const ContentBox = styled.div`
   margin-bottom: 10px;
 `;
 
-const SubmitButton = styled.button`
+const SubmitButton = styled.button<
+  React.HTMLAttributes<HTMLButtonElement> & { type: "submit" }
+>`
   height: 30px;
   width: 100%;
   border: none;

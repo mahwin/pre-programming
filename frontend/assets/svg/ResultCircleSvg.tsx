@@ -20,7 +20,7 @@ export function ResultCircleSvg({
 		stroke-dashoffset: ${+percent * 7.2};    
 	}`;
 
-  const Circle = styled.circle`
+  const Circle = styled.circle<React.SVGProps<SVGCircleElement>>`
     transform-origin: center;
     animation: ${clockAnimation} 3s linear forwards;
   `;

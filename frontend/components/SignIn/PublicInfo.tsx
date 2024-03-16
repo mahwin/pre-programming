@@ -14,7 +14,7 @@ const Wrapper = styled.section`
   right: 50px;
 `;
 
-const Btn = styled.button`
+const Btn = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   z-index: 99;
   height: 60px;
   width: 60px;
@@ -107,7 +107,7 @@ const InfoBox = styled.div`
   }
 `;
 
-const CopyBtn = styled.button`
+const CopyBtn = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   background-color: transparent;
   margin-left: 15px;
   :hover {

@@ -9,7 +9,7 @@ export function HStack({ children, layout }: Props) {
   return <Row layout={layout}>{children}</Row>;
 }
 
-const Row = styled.div<{ layout: string }>`
+const Row = styled.div<React.HTMLProps<HTMLDivElement> & { layout: string }>`
   display: flex;
   align-items: center;
   justify-content: ${(props) => props.layout};
