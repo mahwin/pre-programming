@@ -5,59 +5,46 @@ import Image from "next/image";
 
 export default function Banner() {
   return (
-    <Wapper>
+    <Wrapper>
       <Image
         src="/banner.png"
         alt="배경화면 입니다"
-        layout="fill"
-        objectFit="cover"
+        width={1600}
+        height={300}
+        layout="fixed"
         quality={100}
         priority={true}
       />
-      <BannerWapper>
-        <ContentWrapper>
-          <TitleBox>
-            <Title>Pre-Programming</Title>
-            <SubTitle>:What to do before you studying programming!</SubTitle>
-          </TitleBox>
-          <Search />
-        </ContentWrapper>
-      </BannerWapper>
-    </Wapper>
+      <ContentWrapper>
+        <TitleBox>
+          <Title>Pre-Programming</Title>
+          <SubTitle>:What to do before you studying programming!</SubTitle>
+        </TitleBox>
+        <Search />
+      </ContentWrapper>
+    </Wrapper>
   );
 }
 
-const Wapper = styled.div`
-  position: relative;
+const Wrapper = styled.div`
   width: 100%;
   height: 300px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  display: relative;
 `;
 
-const BannerWapper = styled.section`
-  position: relative;
-  width: 100%;
-  display: flex;
-  max-width: ${(props) => props.theme.windowSize.tablet};
-  color: ${(props) => props.theme.colorTheme.textPrimary};
-`;
-const ContentWrapper = styled.div`
-  margin-top: 80px;
-  z-index: 1;
-  width: 100%;
+const ContentWrapper = styled.section`
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 const TitleBox = styled.header`
-  width: 100%;
-  display: flex;
-  top: 60px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
+  text-align: center;
 `;
 
 const Title = styled.h1`

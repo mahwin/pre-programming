@@ -39,7 +39,7 @@ function Nav() {
           <Item visibilty={true}>
             <Link href="/">
               <LogoBox>
-                {/* <LogoSvg width="30" height="30" /> */}
+                <LogoSvg width="30" height="30" />
                 <p>Pre-programming</p>
               </LogoBox>
             </Link>
@@ -82,8 +82,6 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: fixed;
-  top: 0;
   height: 55px;
   z-index: 99;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
