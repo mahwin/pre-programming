@@ -9,15 +9,15 @@ import { JwtService } from '@nestjs/jwt';
 @Injectable()
 export class VocasService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
-  private voca: VocaDto[] = [];
 
   async getAll() {
-    const data = await this.prisma.seperatedVocabulary.findUnique({
+    const vocas = await this.prisma.seperatedVocabulary.findUnique({
       where: {
         id: 2,
       },
     });
-    return { ok: true, data: data.data };
+
+    return { ok: true, data: vocas.data };
   }
 
   async levelUpdate(category: string, { userId, level }) {
@@ -27,7 +27,7 @@ export class VocasService {
     if (isExisted) {
       category = camelCaser(category);
       const oldLevel = isExisted[category] || '[]';
-      const data = await this.prisma.userAddVocabulary.update({
+      await this.prisma.userAddVocabulary.update({
         where: {
           userId,
         },
