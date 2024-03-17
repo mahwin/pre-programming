@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Nav";
+import Nav from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import UserInfo from "@components/UserInfo/UserInfo";
 import { useSelector } from "react-redux";

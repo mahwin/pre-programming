@@ -9,8 +9,76 @@ import { motion } from "framer-motion";
 import { userActions } from "@redux/user/userSlice";
 import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
+import { Space } from "@components/Commons/Space";
 
-const Wapper = styled.section`
+type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
+
+function Nav() {
+  const { data: userInfo } = useSelector((state: IState) => state.user);
+
+  const [currentNav, setCurrentNav] = useState<currentNavType>("/");
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(userActions.getUser());
+  }, [dispatch]);
+
+  const router = useRouter();
+  useEffect(() => {
+    setCurrentNav(router.asPath as currentNavType);
+  }, [router]);
+
+  const logoutClick = () => {
+    LocalStorage.removeItem("accessToken");
+    router.reload();
+  };
+
+  return (
+    <Wrapper>
+      <NavWapper>
+        <Items>
+          <Item visibilty={true}>
+            <Link href="/">
+              <LogoBox>
+                {/* <LogoSvg width="30" height="30" /> */}
+                <p>Pre-programming</p>
+              </LogoBox>
+            </Link>
+            {currentNav === "/" && <CurrentPosition />}
+          </Item>
+
+          <Item visibilty={userInfo !== null}>
+            <Link href="/me/vocas">
+              <span>내 단어장</span>
+            </Link>
+            {currentNav === "/me/vocas" && <CurrentPosition />}
+          </Item>
+
+          <Space as="li" />
+
+          <Item visibilty={userInfo !== null}>
+            <Link href="/me">
+              <span>내 정보</span>
+            </Link>
+            {currentNav === "/me" && <CurrentPosition />}
+          </Item>
+          <Item visibilty={userInfo !== null}>
+            <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
+          </Item>
+          <Item visibilty={userInfo === null}>
+            <Link href="/signIn">
+              <a>로그인</a>
+            </Link>
+            {currentNav === "/signIn" && <CurrentPosition />}
+          </Item>
+        </Items>
+      </NavWapper>
+    </Wrapper>
+  );
+}
+
+export default Nav;
+
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -22,19 +90,24 @@ const Wapper = styled.section`
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
-const NavWapper = styled.nav`
-  width: 100%;
+const NavWapper = styled.section`
   display: flex;
+  width: 100%;
   justify-content: space-between;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   max-width: ${(props) => props.theme.windowSize.tablet};
 `;
 const Items = styled.ul`
   display: flex;
+  width: 100%;
   align-items: center;
+  gap: 10px;
 `;
 
-const Item = styled.li`
+const Item = styled.li<
+  React.HTMLAttributes<HTMLLIElement> & { visibilty: boolean }
+>`
+  display: ${(props) => (props.visibilty ? "block" : "none")};
   position: relative;
   font-weight: ${(props) => props.theme.fontWeight.base};
 
@@ -86,87 +159,11 @@ const CurrentPosition = styled(motion.span).attrs({
   left: 0;
   right: 0;
   margin: 0 auto;
-  bottom: 10px;
-  width: 20px;
+  bottom: -5px;
+  width: 100%;
+  max-width: 50px;
   height: 4px;
   border-radius: 2px;
   background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
   opacity: 0.5;
 `;
-
-type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
-
-function Nav() {
-  const { loading, data, error } = useSelector((state: IState) => {
-    return state.user;
-  });
-
-  const [currentNav, setCurrentNav] = useState<currentNavType>("/");
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(userActions.getUser());
-  }, [dispatch]);
-
-  const router = useRouter();
-  useEffect(() => {
-    setCurrentNav(router.asPath as currentNavType);
-  }, [router]);
-
-  const logoutClick = () => {
-    LocalStorage.removeItem("accessToken");
-    router.reload();
-  };
-
-  return (
-    <Wapper>
-      <NavWapper>
-        <Items>
-          <Item>
-            <Link href="/">
-              <LogoBox>
-                <LogoSvg width="30" height="30" />
-                <p>Pre-programming</p>
-              </LogoBox>
-            </Link>
-          </Item>
-          {data && (
-            <Items>
-              <Item>
-                <Link href="/me/vocas">
-                  <a>내 단어장</a>
-                </Link>
-                {currentNav === "/me/vocas" && <CurrentPosition />}
-              </Item>
-            </Items>
-          )}
-        </Items>
-        <Items>
-          {data ? (
-            <>
-              <Item>
-                <Link href="/me">
-                  <a>내 정보</a>
-                </Link>
-                {currentNav === "/me" && <CurrentPosition />}
-              </Item>
-              <Item>
-                <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
-              </Item>
-            </>
-          ) : (
-            <>
-              <Item>
-                <Link href="/signIn">
-                  <a>로그인</a>
-                </Link>
-                {currentNav === "/signIn" && <CurrentPosition />}
-              </Item>
-            </>
-          )}
-        </Items>
-      </NavWapper>
-    </Wapper>
-  );
-}
-
-export default Nav;

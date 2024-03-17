@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Nav";
+import Nav from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import Vocas from "@components/Vocas/Vocas";
 import Banner from "@components/Commons/Banner";

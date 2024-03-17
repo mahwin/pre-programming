@@ -1,10 +1,14 @@
-import Nav from "@components/Commons/Nav";
+import Nav from "@components/Commons/Header";
 import Banner from "@components/Commons/Banner";
 import Vocas from "@components/Home/Vocas";
-import Footer from "@components/Commons/Footer";
 import axios from "axios";
 import PageLoading from "@components/Commons/PageLoading";
 import { ITitles } from "@type/commons/title";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@components/Commons/Footer"), {
+  loading: () => <p>loading...</p>,
+});
 
 const Home = ({ data }: ITitles) => {
   return (

@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Nav";
+import Nav from "@components/Commons/Header";
 import SignIn from "@components/SignIn/SignIn";
 import Footer from "@components/Commons/Footer";
 import PublicInfo from "@components/SignIn/PublicInfo";

@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Nav";
+import Nav from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";

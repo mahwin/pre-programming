@@ -25,7 +25,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Pre-Programming !</title>
+        <title>Pre-Programming</title>
       </Head>
       <Provider store={store}>
         <ThemeProvider

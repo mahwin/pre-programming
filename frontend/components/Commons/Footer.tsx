@@ -114,7 +114,7 @@ export default function Footer() {
               </SubTitle>
               <InputWrapper>
                 <Input />
-                <Button onClick={notYetClick}>
+                <Button onClick={notYetClick} aria-label="이메일 보내기 버튼">
                   <SendSvg width="24" height="24" />
                 </Button>
               </InputWrapper>

@@ -1,9 +1,38 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
 import Script from "next/script";
+import { ServerStyleSheet } from "styled-components";
 
 import * as gtag from "../lib/gtag";
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const originalRenderPage = ctx.renderPage;
+    const sheet = new ServerStyleSheet();
+
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App) => App,
+        enhanceComponent: (Component) => Component,
+      });
+
+    const initialProps = await Document.getInitialProps(ctx);
+
+    return {
+      ...initialProps,
+      styles: [
+        <>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>,
+      ],
+    };
+  }
   render() {
     return (
       <Html lang="ko">

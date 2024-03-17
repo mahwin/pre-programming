@@ -1,11 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import Search from "./Search";
+import Image from "next/image";
 
 export default function Banner() {
   return (
     <Wapper>
-      <BannerImg aria-label="배경화면 입니다" />
+      <Image
+        src="/banner.png"
+        alt="배경화면 입니다"
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority={true}
+      />
       <BannerWapper>
         <ContentWrapper>
           <TitleBox>
@@ -19,15 +27,15 @@ export default function Banner() {
   );
 }
 
-const Wapper = styled.section`
+const Wapper = styled.div`
   position: relative;
   width: 100%;
-  height: 390px;
+  height: 300px;
   display: flex;
   justify-content: center;
 `;
 
-const BannerWapper = styled.div`
+const BannerWapper = styled.section`
   position: relative;
   width: 100%;
   display: flex;
@@ -43,13 +51,6 @@ const ContentWrapper = styled.div`
   align-items: center;
 `;
 
-const BannerImg = styled.div`
-  position: absolute;
-  background-image: url("/banner.png");
-  background-size: cover;
-  width: 100%;
-  height: 350px;
-`;
 const TitleBox = styled.header`
   width: 100%;
   display: flex;
@@ -59,13 +60,13 @@ const TitleBox = styled.header`
   align-items: center;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   font-weight: ${(props) => props.theme.fontWeight.xxbold};
   font-size: ${(props) => props.theme.fontSize.xxlg};
   letter-spacing: 0.2rem;
 `;
 
-const SubTitle = styled.h4`
+const SubTitle = styled.h2`
   font-weight: ${(props) => props.theme.fontWeight.base};
   font-size: ${(props) => props.theme.fontSize.lg};
   letter-spacing: 0.1rem;
