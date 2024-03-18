@@ -1,15 +1,13 @@
-FROM amd64/node:16 AS builder
-WORKDIR /app
+FROM amd64/node:16-alpine
+
+WORKDIR /usr/src/app
 
 COPY . .
 
-RUN npm install
-RUN npm run build
+RUN npm install -g pnpm                         
+RUN pnpm install                                
+RUN pnpm run build                             
 
-FROM amd64/node:16-alpine
-WORKDIR /app
-
-COPY --from=builder /app ./
 EXPOSE 3306
 
-CMD ["npm", "run", "start:prod"]
+CMD [ "pnpm", "start:prod"]
