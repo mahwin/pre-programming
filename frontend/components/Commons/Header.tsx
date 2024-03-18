@@ -34,44 +34,36 @@ function Nav() {
 
   return (
     <Wrapper>
-      <NavWapper>
-        <Items>
-          <Item visibilty={true}>
-            <Link href="/">
-              <LogoBox>
-                <LogoSvg width="30" height="30" />
-                <p>Pre-programming</p>
-              </LogoBox>
-            </Link>
-            {currentNav === "/" && <CurrentPosition />}
-          </Item>
+      <Items>
+        <Item visibilty={true}>
+          <LogoSvg width="30px" height="30px" />
+          <Link href="/">
+            <Span underline={currentNav === "/"}>Pre-programming</Span>
+          </Link>
+        </Item>
 
-          <Item visibilty={userInfo !== null}>
-            <Link href="/me/vocas">
-              <span>내 단어장</span>
-            </Link>
-            {currentNav === "/me/vocas" && <CurrentPosition />}
-          </Item>
+        <Item visibilty={userInfo !== null}>
+          <Link href="/me/vocas">
+            <Span underline={currentNav === "/me/vocas"}>내 단어장</Span>
+          </Link>
+        </Item>
 
-          <Space as="li" />
+        <Space as="li" />
 
-          <Item visibilty={userInfo !== null}>
-            <Link href="/me">
-              <span>내 정보</span>
-            </Link>
-            {currentNav === "/me" && <CurrentPosition />}
-          </Item>
-          <Item visibilty={userInfo !== null}>
-            <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
-          </Item>
-          <Item visibilty={userInfo === null}>
-            <Link href="/signIn">
-              <a>로그인</a>
-            </Link>
-            {currentNav === "/signIn" && <CurrentPosition />}
-          </Item>
-        </Items>
-      </NavWapper>
+        <Item visibilty={userInfo !== null}>
+          <Link href="/me">
+            <Span underline={currentNav === "/me"}>내 정보</Span>
+          </Link>
+        </Item>
+        <Item visibilty={userInfo !== null}>
+          <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
+        </Item>
+        <Item visibilty={userInfo === null}>
+          <Link href="/signIn">
+            <Span underline={currentNav === "/me"}>로그인</Span>
+          </Link>
+        </Item>
+      </Items>
     </Wrapper>
   );
 }
@@ -79,37 +71,32 @@ function Nav() {
 export default Nav;
 
 const Wrapper = styled.div`
-  width: 100%;
+  height: 55px;
   display: flex;
   justify-content: center;
-  height: 55px;
-  z-index: 99;
+  align-items: center;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
-const NavWapper = styled.section`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  color: ${(props) => props.theme.colorTheme.textPrimary};
-  max-width: ${(props) => props.theme.windowSize.tablet};
-`;
 const Items = styled.ul`
   display: flex;
-  width: 100%;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  color: ${(props) => props.theme.colorTheme.textPrimary};
+  width: 100%;
+  max-width: ${(props) => props.theme.windowSize.tablet};
+
+  gap: 16px;
 `;
 
 const Item = styled.li<
   React.HTMLAttributes<HTMLLIElement> & { visibilty: boolean }
 >`
-  display: ${(props) => (props.visibilty ? "block" : "none")};
-  position: relative;
+  display: ${(props) => (props.visibilty ? "flex" : "none")};
+  align-items: center;
+  gap: 10px;
   font-weight: ${(props) => props.theme.fontWeight.base};
-
-  color: ${(props) => props.theme.colorTheme.textPrimary};
   cursor: pointer;
   a {
     display: block;
@@ -123,11 +110,11 @@ const Item = styled.li<
 `;
 
 const LogOutBtn = styled.button<React.HTMLProps<HTMLDivElement>>`
-  padding: 8px 12px;
   background-color: transparent;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   font-size: ${(props) => props.theme.fontSize.base};
 
+  border-bottom: 2px solid transparent;
   &:hover {
     border-radius: 3px;
     color: ${navColors.hoverColor};
@@ -135,33 +122,10 @@ const LogOutBtn = styled.button<React.HTMLProps<HTMLDivElement>>`
   }
 `;
 
-const LogoBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  cursor: pointer;
-  font-weight: ${(props) => props.theme.fontWeight.base};
-  p {
-    margin: 0 10px;
-  }
-  &:hover {
-    color: ${(props) => props.theme.colorTheme.hoverPrimary};
-  }
-`;
-
-const CurrentPosition = styled(motion.span).attrs({
-  layoutId: "position",
-  initial: false,
-})`
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: -5px;
-  width: 100%;
-  max-width: 50px;
-  height: 4px;
-  border-radius: 2px;
-  background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
-  opacity: 0.5;
+const Span = styled.span<
+  React.HTMLAttributes<HTMLSpanElement> & { underline: boolean }
+>`
+  border-bottom: 2px solid;
+  border-color: ${({ underline, theme }) =>
+    underline ? theme.colorTheme.hoverPrimary : "transparent"};
 `;

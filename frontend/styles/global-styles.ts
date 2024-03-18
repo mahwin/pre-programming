@@ -14,7 +14,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 main, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video ,picture {
   margin: 0;
   padding: 0;
   border: 0;
@@ -27,6 +27,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
   display: block;
 }
+
 /* HTML5 hidden-attribute fix for newer browsers */
 *:focus {
     outline: none;

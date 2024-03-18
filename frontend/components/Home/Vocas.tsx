@@ -10,7 +10,6 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 10px 20px 10px;
 `;
 
 const Container = styled.section<React.HTMLAttributes<HTMLElement>>`
@@ -85,8 +84,6 @@ const Overray = styled.div`
   }
 `;
 
-// 'string' 형식의 식을 'titlesType' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다.
-//   'titlesType' 형식에서 'string' 형식의 매개 변수가 포함된 인덱스 시그니처를 찾을 수 없습니다.
 export default function Vocas({ data }: { data: titleObjType }) {
   useSelector((state: IState) => state.vocas);
   return (
@@ -113,9 +110,7 @@ export default function Vocas({ data }: { data: titleObjType }) {
                     </Overray>
                   )}
                   <Item>
-                    <h3 style={{ color: titleColor[idx % 9] }}>
-                      {item.title}{" "}
-                    </h3>
+                    <h3 style={{ color: titleColor[idx % 9] }}>{item.title}</h3>
                     <p>단어 수 : {item.amount} </p>
                     <p>다운 수 : {item.install} </p>
                   </Item>

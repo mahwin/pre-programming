@@ -15,7 +15,7 @@ const Home = ({ data }: ITitles) => {
     <>
       <Nav />
       <Banner />
-      {data ? <Vocas data={data} /> : <PageLoading />}
+      <Vocas data={data} />
       <Footer />
     </>
   );
@@ -31,8 +31,8 @@ export async function getServerSideProps() {
     const res = await axios.get(`${API_HOST}:${PORT}/title/all`);
     if (res.status === 200) {
       propsObj.props.data = res.data;
-      return propsObj;
-    } else return propsObj;
+    }
+    return propsObj;
   } catch (e) {
     console.warn(e);
     return propsObj;
