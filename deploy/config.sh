@@ -1,4 +1,6 @@
-BASE_DIRECTORY=$(pwd)
+BASE_DIRECTORY="/Users/jeong-youseock/Desktop/pre-programming/"
+
+DEPLOY_SHELL_DIRECTORY="$BASE_DIRECTORY/deploy"
 
 FRONTEND_DIRECTORY="$BASE_DIRECTORY/frontend"
 BACKEND_DIRECTORY="$BASE_DIRECTORY/backend"
