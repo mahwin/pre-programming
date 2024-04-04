@@ -1,10 +1,17 @@
-import { Injectable, NotFoundException, Header } from '@nestjs/common';
+import { Injectable, Header } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
-import { LoginDto } from './dto/auth.dto';
-import * as twilio from 'twilio';
+import { LoginDto, TokenDto } from './dto/auth.dto';
+import coolsms from 'coolsms-node-sdk';
 import { JwtService } from '@nestjs/jwt';
-import generateName from '../utils/generateName';
 import { ConfigService } from '@nestjs/config';
+import { getRandomNumber, createName } from 'src/utils';
+
+function isSMSPass(phone = '') {
+  return process.env.NODE_ENV === 'development' || phone === '01012341234';
+}
+function isTokenValidPass(token = '') {
+  return token === '000000';
+}
 
 @Injectable()
 export class AuthService {
@@ -14,22 +21,16 @@ export class AuthService {
     private configService: ConfigService,
   ) {}
   async signIn({ phone }: LoginDto) {
-    // 개발모드거나 공용 아이디면 twillio 사용하지 않고 통과 토큰 전송
-    if (process.env.NODE_ENV === 'development' || phone === '01012341234') {
-      return {
-        ok: true,
-      };
-    }
+    // 개발모드거나 공용 아이디면 twillio 사용하지 않고 통과
+    // if (isSMSPass(phone)) return { ok: true };
 
-    const twilioClient = twilio(
-      this.configService.get('TWILIO_SID'),
-      this.configService.get('TWILIO_TOKEN'),
+    const coolsmsClient = new coolsms(
+      process.env.COOLSMS_API_KEY,
+      process.env.COOLSMS_API_SECRET,
     );
 
-    const payload = Math.floor(100000 + Math.random() * 900000) + '';
-    // 토큰이랑 user id를 연결 시킬껀데
-    // 만약 가입한 적이 있으면 그 id와 token을 같이 저장하고 아니라면
-    // 유저를 생성하고 생성된 유저의 id와 token을 같이 저장한다.
+    const payload = getRandomNumber(6);
+
     const token = await this.prisma.token.create({
       data: {
         payload,
@@ -39,7 +40,7 @@ export class AuthService {
               phone,
             },
             create: {
-              name: generateName(),
+              name: createName(),
               avatar: '1',
               phone,
             },
@@ -48,24 +49,25 @@ export class AuthService {
       },
     });
 
-    const message = await twilioClient.messages.create({
-      messagingServiceSid: this.configService.get('TWILIO_MSID'),
-      to: `82${phone.slice(1)}`,
-      body: `Wellcome! we are pre-programmers.               Your login token is ${payload}.`,
+    await coolsmsClient.sendOne({
+      to: phone,
+      from: '01027597085',
+      autoTypeDetect: true,
+      text: `환영합니다. \n인증번호는 ${payload} 입니다.`,
     });
-    return {
-      ok: true,
-    };
+
+    return token.userId;
   }
 
-  async confirm({ token }) {
+  async confirmToken({ token }: TokenDto, userId: number) {
     // 000000 토큰은 검증안 하고 공용 아이디로 로그인 허락
-    if (token == '000000')
+    if (isTokenValidPass(token))
       return { ok: true, accessToken: this.jwtService.sign({ userId: 1 }) };
 
     const foundToken = await this.prisma.token.findUnique({
       where: {
         payload: token,
+        userId,
       },
     });
 
@@ -75,10 +77,8 @@ export class AuthService {
           userId: foundToken.userId,
         },
       });
-      const payload = {
-        userId: foundToken.userId,
-      };
-      return { ok: true, accessToken: this.jwtService.sign(payload) };
+
+      return { ok: true, accessToken: this.jwtService.sign({ userId }) };
     } else {
       return { ok: false, message: `인증 번호가 일치하지 않습니다.` };
     }

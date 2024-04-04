@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { VocaDto } from './dto/vocas-voca.dto';
 import { PrismaService } from 'prisma/prisma.service';
 import camelCaser from 'src/utils/camelCaser';
 import uniqueArr from 'src/utils/uniqueArr';

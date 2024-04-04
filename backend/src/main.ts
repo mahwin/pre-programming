@@ -3,12 +3,20 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import * as compression from 'compression';
+import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-  app.enableCors();
+  app.enableCors({
+    origin: [
+      `http://localhost:${process.env.DEV_FRONT_PORT}`,
+      process.env.ORIGIN,
+    ],
+    credentials: true,
+  });
+  app.use(cookieParser());
   app.use(
     compression({
       filter: () => {
