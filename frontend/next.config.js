@@ -15,6 +15,9 @@ const nextConfig = {
         ? process.env.DEV_PORT || 3306
         : process.env.DEPLOY_PORT || 443,
   },
+  images: {
+    formats: ["image/webp"],
+  },
 };
 
 module.exports = nextConfig;

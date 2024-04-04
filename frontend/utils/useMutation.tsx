@@ -20,6 +20,7 @@ export default function useMutation<T = any>(
     setState((prev) => ({ ...prev, loading: true }));
     axios
       .post(`${process.env.API_HOST}:${process.env.PORT}${url}`, data, {
+        withCredentials: true,
         headers: {
           "Content-Type": "application/json",
         },
