@@ -62,7 +62,17 @@ export class AuthService {
   async confirmToken({ token }: TokenDto, userId: number) {
     // 000000 토큰은 검증안 하고 공용 아이디로 로그인 허락
     if (isTokenValidPass(token))
-      return { ok: true, accessToken: this.jwtService.sign({ userId: 1 }) };
+      return {
+        ok: true,
+        accessToken: this.jwtService.sign(
+          { userId: 1 },
+          { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
+        ),
+        refreshToken: this.jwtService.sign(
+          { userId: 1 },
+          { expiresIn: process.env.JWT_REFRESH_EXPIRATION_TIME },
+        ),
+      };
 
     const foundToken = await this.prisma.token.findUnique({
       where: {
@@ -78,7 +88,16 @@ export class AuthService {
         },
       });
 
-      return { ok: true, accessToken: this.jwtService.sign({ userId }) };
+      const refreshToken = this.jwtService.sign(
+        { userId },
+        { expiresIn: process.env.JWT_REFRESH_EXPIRATION_TIME },
+      );
+      const accessToken = this.jwtService.sign(
+        { userId },
+        { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
+      );
+
+      return { ok: true, refreshToken, accessToken };
     } else {
       return { ok: false, message: `인증 번호가 일치하지 않습니다.` };
     }
@@ -87,5 +106,13 @@ export class AuthService {
   @Header('authorization', '')
   async signOut() {
     return { ok: true, message: '로그아웃 성공' };
+  }
+
+  async validateUser(payload: any) {
+    return await this.prisma.user.findUnique({
+      where: {
+        id: payload.userId,
+      },
+    });
   }
 }

@@ -1,24 +1,23 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { ExtractJwt, Strategy } from 'passport-jwt';
+import { ExtractJwt, Strategy, VerifiedCallback } from 'passport-jwt';
 import { Payload } from './jwt.payload';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
-  constructor() {
+  constructor(private authService: AuthService) {
     super({
-      // 헤더 Authentication 에서 Bearer 토큰으로부터 jwt를 추출하겠다는 의미
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: ExtractJwt.fromHeader('cookie'),
       secretOrKey: process.env.JWT_KEY,
-      ignoreExpiration: false, // jwt 만료를 무시할 것인지
+      ignoreExpiration: false,
     });
   }
 
-  async validate(payload: Payload) {
-    if (payload.userId) {
-      return payload.userId;
-    } else {
-      throw new UnauthorizedException('토큰이 일치하지 않습니다.');
-    }
+  async validate(payload: Payload, done: VerifiedCallback) {
+    const user = await this.authService.validateUser(payload);
+    if (!user) throw new UnauthorizedException('토큰이 일치하지 않습니다.');
+
+    return done(null, user);
   }
 }

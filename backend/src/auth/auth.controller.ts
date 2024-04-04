@@ -40,9 +40,25 @@ export class AuthController {
     description: '인증번호가 일치한다면 JWT값을 반환합니다.',
     type: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdG9rZW4iOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKMGIydGxiaUk2SWpFNU1UUXpNaUlzSW5OMVlpSTZJakFpTENKa1lYUmhJam9pZFhObGNpSXNJbWxoZENJNk1UWTJNelF4TmpFNU9Td2laWGh3SWpveE5qazBPVGN6TnprNWZRLl9ZUENYYkFoeVpjbUsyUlhsQWE1MUdaMGM5aXMzT21OcXI5VUQyenI5NzgiLCJpYXQiOjE2NjM0MTYxOTksImV4cCI6MTY5NDk3Mzc5OX0.BXjHx6cjvl7V8BY5zlfXkvyzhaIDkDo2ym0uLgIHxl0',
   })
-  confirmToken(@Req() req: Request, @Body() token: TokenDto) {
+  async confirmToken(
+    @Req() req: Request,
+    @Body() token: TokenDto,
+    @Res() res: Response,
+  ) {
     const userId = toInteger(req.cookies.userId);
-    return this.authService.confirmToken(token, userId);
+    const { ok, refreshToken, accessToken } =
+      await this.authService.confirmToken(token, userId);
+
+    if (!ok) return res.status(401).send({ ok: false });
+
+    res
+      .cookie('accessToken', accessToken, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+      })
+      .status(201)
+      .send({ ok: true, refreshToken });
   }
 
   @Get('signout')
