@@ -8,7 +8,6 @@ import { ConfirmUserDto } from './dto/confirm-user.dto';
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
   async getUser(req) {
-    console.log('req', req);
     const user = await this.parsePayload(req);
     return { ok: true, data: user };
   }
@@ -27,7 +26,7 @@ export class UserService {
   }
   async update(req, updateUser) {
     const userData = this.parsePayload(req);
-    const newData = await this.prisma.user.update({
+    await this.prisma.user.update({
       where: {
         id: (await userData).id,
       },

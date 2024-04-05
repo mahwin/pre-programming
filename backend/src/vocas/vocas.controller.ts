@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { VocasService } from './vocas.service';
 import { LevelUpdateDto } from './dto/vocas-level-update.dto';
-import { JwtAuthGuard } from '../jwt/jwt.guard';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { Request } from 'express';
 
 @Controller('vocas')

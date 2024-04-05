@@ -4,6 +4,7 @@ import { LoginDto, TokenDto } from './dto/auth.dto';
 import coolsms from 'coolsms-node-sdk';
 import { JwtService } from '@nestjs/jwt';
 import { getRandomNumber, createName } from 'src/utils';
+import { JwtPayload } from './type';
 
 function isSMSPass(phone = '') {
   return process.env.NODE_ENV === 'development' || phone === '01012341234';
@@ -61,11 +62,11 @@ export class AuthService {
         ok: true,
         accessToken: this.jwtService.sign(
           { userId: 1 },
-          { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
+          { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
         ),
         refreshToken: this.jwtService.sign(
           { userId: 1 },
-          { expiresIn: process.env.JWT_REFRESH_EXPIRATION_TIME },
+          { expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME },
         ),
       };
 
@@ -79,18 +80,17 @@ export class AuthService {
     if (foundToken) {
       await this.prisma.token.deleteMany({
         where: {
-          userId: foundToken.userId,
+          userId,
         },
       });
 
-      const refreshToken = this.jwtService.sign(
-        { userId },
-        { expiresIn: process.env.JWT_REFRESH_EXPIRATION_TIME },
-      );
-      const accessToken = this.jwtService.sign(
-        { userId },
-        { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
-      );
+      const payload = { userId };
+      const refreshToken = this.jwtService.sign(payload, {
+        expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME,
+      });
+      const accessToken = this.jwtService.sign(payload, {
+        expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
+      });
 
       return { ok: true, refreshToken, accessToken };
     } else {
@@ -103,30 +103,24 @@ export class AuthService {
     return { ok: true, message: '로그아웃 성공' };
   }
 
-  async validateUser(payload: any) {
+  async validateUser({ userId }: JwtPayload) {
     return await this.prisma.user.findUnique({
       where: {
-        id: payload.userId,
+        id: userId,
       },
     });
   }
 
-  async createAccessToken(refreshToken: string) {
-    const payload = this.jwtService.verify(refreshToken);
-    const newAccessToken = this.jwtService.sign(
-      { userId: payload.userId },
-      { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
-    );
-    return newAccessToken;
-  }
-
-  async getAccessTokenByRefreshToken(refreshToken: string) {
-    const payload = this.jwtService.verify(refreshToken);
-    const newAccessToken = this.jwtService.sign(
-      { userId: payload.userId },
-      { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
-    );
-    console.log(newAccessToken);
-    return newAccessToken;
+  async getAccessTokenByRefreshToken({ userId }: JwtPayload) {
+    try {
+      const newAccessToken = this.jwtService.sign(
+        { userId },
+        { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
+      );
+      return newAccessToken;
+    } catch (e) {
+      console.error(e);
+      return Error(e);
+    }
   }
 }

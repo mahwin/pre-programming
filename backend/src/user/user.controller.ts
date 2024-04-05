@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { JwtAuthGuard } from '../jwt/jwt.guard';
+import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { Request } from 'express';
 import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
@@ -34,6 +34,7 @@ export class UserController {
     description: '중복 확인 후 사용 여부 발송',
     type: UserDto,
   })
+  @UseGuards(JwtAuthGuard)
   @Post('confirm')
   confirmData(@Body() confirmData: ConfirmUserDto) {
     return this.userService.confirm(confirmData);

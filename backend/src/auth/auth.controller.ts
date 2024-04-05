@@ -1,10 +1,19 @@
-import { Body, Controller, Post, Get, Res, Req } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Post,
+  Get,
+  Res,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { Response, Request } from 'express';
 import { AuthService } from './auth.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
 import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { toInteger } from 'src/utils';
-
+import { JwtRefreshAuthGuard } from './guard/jwt-refresh-auth.guard';
+import { JwtPayload } from './type';
 @Controller('auth')
 @ApiTags('auth API')
 export class AuthController {
@@ -82,9 +91,9 @@ export class AuthController {
   @ApiCreatedResponse({
     description: '새로운 accessToken을 반환',
   })
+  @UseGuards(JwtRefreshAuthGuard)
   async getAccessTokenByRefreshToken(@Req() req: Request) {
-    const refreshToken = req.cookies.refreshToken;
-    console.log('refreshToken', refreshToken);
-    return this.authService.getAccessTokenByRefreshToken(refreshToken);
+    const payload = req.user as JwtPayload;
+    return this.authService.getAccessTokenByRefreshToken(payload);
   }
 }

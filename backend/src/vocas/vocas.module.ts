@@ -3,7 +3,7 @@ import { VocasController } from './vocas.controller';
 import { VocasService } from './vocas.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
-import { JwtStrategy } from '../jwt/jwt.strategy';
+import { JwtStrategy } from '../auth/strategy/jwt-strategy';
 import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
@@ -11,7 +11,7 @@ import { AuthModule } from 'src/auth/auth.module';
     PassportModule.register({ defaultStrategy: 'jwt', session: false }),
 
     JwtModule.register({
-      secret: process.env.JWT_KEY,
+      secret: process.env.JWT_ACCESS_TOKEN_KEY,
       signOptions: { expiresIn: '1y' },
     }),
     AuthModule,
