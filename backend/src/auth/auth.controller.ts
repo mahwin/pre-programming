@@ -79,8 +79,11 @@ export class AuthController {
     description: 'headers에서 JWT를 삭제함',
     type: null,
   })
-  signOut() {
-    return this.authService.signOut();
+  signOut(@Res() res: Response) {
+    console.log('???');
+    res.clearCookie('userId');
+    res.clearCookie('refreshToken');
+    return res.status(200).send({ ok: true });
   }
 
   @Get('refresh')

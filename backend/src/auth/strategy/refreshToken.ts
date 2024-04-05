@@ -5,11 +5,15 @@ import { Request } from 'express';
 import { JwtPayload } from '../type';
 
 function getRefreshToken(request: Request) {
-  const cookies = request.headers.cookie.split('; ');
-  const refreshToken = cookies.find((cookie) =>
-    cookie.startsWith('refreshToken='),
-  );
-  return refreshToken ? refreshToken.split('=')[1] : null;
+  try {
+    const cookies = request.headers.cookie.split('; ');
+    const refreshToken = cookies.find((cookie) =>
+      cookie.startsWith('refreshToken='),
+    );
+    return refreshToken ? refreshToken.split('=')[1] : null;
+  } catch (e) {
+    return null;
+  }
 }
 
 @Injectable()

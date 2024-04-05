@@ -44,7 +44,7 @@ export default function SignIn() {
   useEffect(() => {
     if (isNil(tokenValidateResponse)) return;
     if (!tokenValidateResponse.ok) return;
-    console.log(tokenValidateResponse.accessToken);
+
     authManager.set(tokenValidateResponse.accessToken);
     router.push("/");
   }, [tokenValidateResponse, router]);

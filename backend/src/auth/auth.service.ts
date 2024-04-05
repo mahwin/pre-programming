@@ -98,11 +98,6 @@ export class AuthService {
     }
   }
 
-  @Header('authorization', '')
-  async signOut() {
-    return { ok: true, message: '로그아웃 성공' };
-  }
-
   async validateUser({ userId }: JwtPayload) {
     return await this.prisma.user.findUnique({
       where: {

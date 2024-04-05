@@ -3,13 +3,13 @@ import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
-import LocalStorage from "@utils/localStorage";
 import { useSelector, useDispatch } from "react-redux";
-import { motion } from "framer-motion";
 import { userActions } from "@redux/user/userSlice";
 import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
 import { Space } from "@components/Commons/Space";
+import { authManager } from "@utils/Auth";
+import { api } from "@api/index";
 
 type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
@@ -28,7 +28,8 @@ function Nav() {
   }, [router]);
 
   const logoutClick = () => {
-    LocalStorage.removeItem("accessToken");
+    api.get("/auth/signout");
+    authManager.set("");
     router.reload();
   };
 
