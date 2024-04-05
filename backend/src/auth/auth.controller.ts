@@ -52,13 +52,13 @@ export class AuthController {
     if (!ok) return res.status(401).send({ ok: false });
 
     res
-      .cookie('accessToken', accessToken, {
+      .cookie('refreshToken', refreshToken, {
         httpOnly: true,
         secure: true,
         sameSite: 'strict',
       })
       .status(201)
-      .send({ ok: true, refreshToken });
+      .send({ ok: true, accessToken });
   }
 
   @Get('signout')
@@ -72,5 +72,19 @@ export class AuthController {
   })
   signOut() {
     return this.authService.signOut();
+  }
+
+  @Get('refresh')
+  @ApiOperation({
+    summary: '토큰 재발급',
+    description: 'refreshToken을 이용해 accessToken 재발급',
+  })
+  @ApiCreatedResponse({
+    description: '새로운 accessToken을 반환',
+  })
+  async getAccessTokenByRefreshToken(@Req() req: Request) {
+    const refreshToken = req.cookies.refreshToken;
+    console.log('refreshToken', refreshToken);
+    return this.authService.getAccessTokenByRefreshToken(refreshToken);
   }
 }

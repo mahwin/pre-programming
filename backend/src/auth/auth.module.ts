@@ -10,12 +10,12 @@ import { JwtStrategy } from '../jwt/jwt.strategy';
     PassportModule.register({ defaultStrategy: 'jwt', session: false }),
 
     JwtModule.register({
-      secret: process.env.JWT_KEY,
+      secret: process.env.JWT_SECRET_KEY,
       signOptions: { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
     }),
 
     JwtModule.register({
-      secret: process.env.JWT_KEY,
+      secret: process.env.JWT_SECRET_KEY,
       signOptions: { expiresIn: process.env.JWT_REFRESH_EXPIRATION_TIME },
     }),
   ],

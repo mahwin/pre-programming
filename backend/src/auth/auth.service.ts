@@ -3,7 +3,6 @@ import { PrismaService } from 'prisma/prisma.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
 import coolsms from 'coolsms-node-sdk';
 import { JwtService } from '@nestjs/jwt';
-import { ConfigService } from '@nestjs/config';
 import { getRandomNumber, createName } from 'src/utils';
 
 function isSMSPass(phone = '') {
@@ -15,14 +14,10 @@ function isTokenValidPass(token = '') {
 
 @Injectable()
 export class AuthService {
-  constructor(
-    private prisma: PrismaService,
-    private jwtService: JwtService,
-    private configService: ConfigService,
-  ) {}
+  constructor(private prisma: PrismaService, private jwtService: JwtService) {}
   async signIn({ phone }: LoginDto) {
     // 개발모드거나 공용 아이디면 twillio 사용하지 않고 통과
-    // if (isSMSPass(phone)) return { ok: true };
+    if (isSMSPass(phone)) return { ok: true };
 
     const coolsmsClient = new coolsms(
       process.env.COOLSMS_API_KEY,
@@ -114,5 +109,24 @@ export class AuthService {
         id: payload.userId,
       },
     });
+  }
+
+  async createAccessToken(refreshToken: string) {
+    const payload = this.jwtService.verify(refreshToken);
+    const newAccessToken = this.jwtService.sign(
+      { userId: payload.userId },
+      { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
+    );
+    return newAccessToken;
+  }
+
+  async getAccessTokenByRefreshToken(refreshToken: string) {
+    const payload = this.jwtService.verify(refreshToken);
+    const newAccessToken = this.jwtService.sign(
+      { userId: payload.userId },
+      { expiresIn: process.env.JWT_ACCESS_EXPIRATION_TIME },
+    );
+    console.log(newAccessToken);
+    return newAccessToken;
   }
 }

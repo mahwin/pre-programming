@@ -8,6 +8,7 @@ import { ConfirmUserDto } from './dto/confirm-user.dto';
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
   async getUser(req) {
+    console.log('req', req);
     const user = await this.parsePayload(req);
     return { ok: true, data: user };
   }
