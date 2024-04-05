@@ -4,18 +4,20 @@ import GlobalStyle from "../styles/global-styles";
 import theme, { lightTheme, darkTheme } from "../styles/theme";
 import { Provider } from "react-redux";
 import store from "@redux/store";
-import axios from "axios";
-import LocalStorage from "@utils/localStorage";
 import { useState } from "react";
 import { getMediaTheme } from "@utils/getMedia";
 import ThemeButton from "@components/Commons/ThemeButton";
 import Head from "next/head";
-function App({ Component, pageProps }: AppProps) {
-  const token = LocalStorage.getItem("accessToken");
-  if (token) {
-    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  }
 
+// import { authManager } from "@utils/Auth";
+// import axios from "axios";
+
+// const accessToken = authManager.get();
+// if (accessToken) {
+//   axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
+// }
+
+function App({ Component, pageProps }: AppProps) {
   const [isDark, setTheme] = useState<boolean>(getMediaTheme());
 
   const toggleTheme = () => {

@@ -7,9 +7,19 @@ interface TokenForm {
   token: string;
 }
 
-interface MutationResult {
+interface PhoneConfirmResponse {
   ok: boolean;
-  message?: string;
-  accessToken?: string;
 }
-export type { IForm, TokenForm, MutationResult };
+
+type TokenConfirmResponse =
+  | {
+      ok: true;
+      accessToken: string;
+      refreshToken: string;
+    }
+  | {
+      ok: false;
+      message: string;
+    };
+
+export type { IForm, TokenForm, TokenConfirmResponse, PhoneConfirmResponse };

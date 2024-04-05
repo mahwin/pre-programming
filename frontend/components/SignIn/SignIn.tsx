@@ -4,9 +4,146 @@ import useMutation from "@utils/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect, useCallback } from "react";
-import LocalStorage from "@utils/localStorage";
 import { SignInColors } from "@color/SignInColors";
-import { IForm, TokenForm, MutationResult } from "@type/signIn";
+import {
+  IForm,
+  TokenForm,
+  TokenConfirmResponse,
+  PhoneConfirmResponse,
+} from "@type/signIn";
+import { isNil } from "@utils/typeGuard";
+import { authManager } from "@utils/Auth";
+
+export default function SignIn() {
+  //phone 입력과 서버 연결
+  const [enter, { loading, data, error }] =
+    useMutation<PhoneConfirmResponse>("/auth");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm<IForm>();
+  const onValid = (validForm: IForm) => {
+    enter(validForm);
+  };
+
+  //인증 번호 입력과 서버 연결
+  const [confirmToken, { loading: tokenLoading, data: tokenValidateResponse }] =
+    useMutation<TokenConfirmResponse>("/auth/confirm");
+
+  const { register: tokenRegister, handleSubmit: tokenHandleSubmit } =
+    useForm<TokenForm>();
+
+  const onTokenValid = (validForm: TokenForm) => {
+    confirmToken(validForm);
+  };
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (isNil(tokenValidateResponse)) return;
+    if (!tokenValidateResponse.ok) return;
+    console.log(tokenValidateResponse.accessToken);
+    authManager.set(tokenValidateResponse.accessToken);
+    router.push("/");
+  }, [tokenValidateResponse, router]);
+
+  const notYetClick = useCallback(() => {
+    alert("준비 중입니다!");
+  }, []);
+
+  return (
+    <Wapper>
+      <LoginContainer>
+        <TitleBox>
+          <Title>Pre-Programming</Title>
+          <SubTitle>: What to do before you studying programming!</SubTitle>
+        </TitleBox>
+        <Text>Phone</Text>
+        <Line />
+        <FormBox>
+          {data?.ok ? (
+            <>
+              <Text>Cerification Number</Text>
+              <form id="token" onSubmit={tokenHandleSubmit(onTokenValid)}>
+                <TokenInput
+                  placeholder="인증 번호를 입력하세요."
+                  {...tokenRegister("token", {
+                    required: "인증 번호는 필수입력 항목입니다.",
+                  })}
+                />
+                {}
+                <Error>
+                  {tokenValidateResponse?.ok === false &&
+                    tokenValidateResponse.message}
+                </Error>
+                <SubmitButton>인증번호 입력</SubmitButton>
+              </form>
+            </>
+          ) : (
+            <>
+              <Text>Phone number</Text>
+              <form id="phone" onSubmit={handleSubmit(onValid)}>
+                <InputBox>
+                  <PreNumber>
+                    <Text>+82</Text>
+                  </PreNumber>
+                  <Input
+                    placeholder="01012345678형식의 번호를 입력하세요."
+                    {...register("phone", {
+                      required: "phone number는 필수입력 항목입니다.",
+                      pattern: {
+                        value: /^[0-9]*$/,
+                        message: "숫자만 입력 가능합니다.",
+                      },
+                      minLength: {
+                        value: 11,
+                        message: "phone number의 형식은 01012345678입니다.",
+                      },
+                      maxLength: {
+                        value: 11,
+                        message: "phone number의 형식은 01012345678입니다.",
+                      },
+                    })}
+                  />
+                </InputBox>
+                <Error>{errors?.phone?.message}</Error>
+                <SubmitButton>
+                  {loading ? (
+                    <LoadingSvg color={SignInColors.snsBgColor} />
+                  ) : (
+                    "Login"
+                  )}
+                </SubmitButton>
+              </form>
+            </>
+          )}
+        </FormBox>
+        <SnsBox>
+          <TextInLineBox>
+            <TextInLine>or enter with</TextInLine>
+          </TextInLineBox>
+          <SvgBox>
+            <SnsButton onClick={notYetClick}>
+              <TwitterSvg
+                isCircle={false}
+                fillColor={SignInColors.snsBgColor}
+              />
+            </SnsButton>
+            <SnsButton onClick={notYetClick}>
+              <FacebookSvg
+                isCircle={false}
+                fillColor={SignInColors.snsBgColor}
+                height="30"
+              />
+            </SnsButton>
+          </SvgBox>
+        </SnsBox>
+      </LoginContainer>
+    </Wapper>
+  );
+}
 
 const Wapper = styled.main`
   height: 100vh;
@@ -155,127 +292,3 @@ const SnsButton = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   border-radius: 5px;
   border: 1.5px solid ${(props) => props.theme.colorTheme.textPrimary};
 `;
-
-export default function SignIn() {
-  //phone 입력과 서버 연결
-  const [enter, { loading, data, error }] =
-    useMutation<MutationResult>("/auth");
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setError,
-  } = useForm<IForm>();
-  const onValid = (validForm: IForm) => {
-    enter(validForm);
-  };
-
-  //인증 번호 입력과 서버 연결
-  const [confirmToken, { loading: tokenLoading, data: tokenData }] =
-    useMutation<MutationResult>("/auth/confirm");
-  const { register: tokenRegister, handleSubmit: tokenHandleSubmit } =
-    useForm<TokenForm>();
-  const onTokenValid = (validForm: TokenForm) => {
-    confirmToken(validForm);
-  };
-
-  const router = useRouter();
-
-  useEffect(() => {
-    if (tokenData?.ok) {
-      LocalStorage.setItem("accessToken", tokenData.accessToken!);
-      router.push("/");
-    }
-  }, [tokenData, router]);
-
-  const notYetClick = useCallback(() => {
-    alert("준비 중입니다!");
-  }, []);
-
-  return (
-    <Wapper>
-      <LoginContainer>
-        <TitleBox>
-          <Title>Pre-Programming</Title>
-          <SubTitle>: What to do before you studying programming!</SubTitle>
-        </TitleBox>
-        <Text>Phone</Text>
-        <Line />
-        <FormBox>
-          {data?.ok ? (
-            <>
-              <Text>Cerification Number</Text>
-              <form id="token" onSubmit={tokenHandleSubmit(onTokenValid)}>
-                <TokenInput
-                  placeholder="인증 번호를 입력하세요."
-                  {...tokenRegister("token", {
-                    required: "인증 번호는 필수입력 항목입니다.",
-                  })}
-                />
-                <Error>{tokenData?.message}</Error>
-                <SubmitButton>인증번호 입력</SubmitButton>
-              </form>
-            </>
-          ) : (
-            <>
-              <Text>Phone number</Text>
-              <form id="phone" onSubmit={handleSubmit(onValid)}>
-                <InputBox>
-                  <PreNumber>
-                    <Text>+82</Text>
-                  </PreNumber>
-                  <Input
-                    placeholder="01012345678형식의 번호를 입력하세요."
-                    {...register("phone", {
-                      required: "phone number는 필수입력 항목입니다.",
-                      pattern: {
-                        value: /^[0-9]*$/,
-                        message: "숫자만 입력 가능합니다.",
-                      },
-                      minLength: {
-                        value: 11,
-                        message: "phone number의 형식은 01012345678입니다.",
-                      },
-                      maxLength: {
-                        value: 11,
-                        message: "phone number의 형식은 01012345678입니다.",
-                      },
-                    })}
-                  />
-                </InputBox>
-                <Error>{errors?.phone?.message}</Error>
-                <SubmitButton>
-                  {loading ? (
-                    <LoadingSvg color={SignInColors.snsBgColor} />
-                  ) : (
-                    "Login"
-                  )}
-                </SubmitButton>
-              </form>
-            </>
-          )}
-        </FormBox>
-        <SnsBox>
-          <TextInLineBox>
-            <TextInLine>or enter with</TextInLine>
-          </TextInLineBox>
-          <SvgBox>
-            <SnsButton onClick={notYetClick}>
-              <TwitterSvg
-                isCircle={false}
-                fillColor={SignInColors.snsBgColor}
-              />
-            </SnsButton>
-            <SnsButton onClick={notYetClick}>
-              <FacebookSvg
-                isCircle={false}
-                fillColor={SignInColors.snsBgColor}
-                height="30"
-              />
-            </SnsButton>
-          </SvgBox>
-        </SnsBox>
-      </LoginContainer>
-    </Wapper>
-  );
-}

@@ -7,7 +7,8 @@
       "@utils/*": ["utils/*"],
       "@svg": ["assets/svg/RootSvg.tsx"],
       "@color/*": ["assets/color/*"],
-      "@redux/*": ["redux/*"]
+      "@redux/*": ["redux/*"],
+      "@api/*": ["api"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
