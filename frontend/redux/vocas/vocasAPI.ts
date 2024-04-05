@@ -1,10 +1,8 @@
-import axios from "axios";
+import { api } from "@api/index";
 
 async function getVocas() {
   try {
-    const response = await axios.get(
-      `${process.env.API_HOST}:${process.env.PORT}/vocas/all`
-    );
+    const response = await api.get(`/vocas/all`);
     return response;
   } catch (error: any) {
     new Error(error.message);

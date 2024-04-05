@@ -1,6 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
-
+import { api } from "@api/index";
 interface UseMutationState<T> {
   loading: boolean;
   data?: T;
@@ -16,20 +15,15 @@ export default function useMutation<T = any>(
     data: undefined,
     error: undefined,
   });
-  function mutation(data: any) {
+  function mutation(data: unknown) {
     setState((prev) => ({ ...prev, loading: true }));
-    axios
-      .post(`${process.env.API_HOST}:${process.env.PORT}${url}`, data, {
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
+    api
+      .post(url, data)
       .then((response) => response.data)
       .then((data) => setState((prev) => ({ ...prev, data, loading: false })))
-      .catch((error) =>
-        setState((prev) => ({ ...prev, error, loading: false }))
-      );
+      .catch((error) => {
+        setState((prev) => ({ ...prev, error, loading: false }));
+      });
   }
   return [mutation, { ...state }];
 }

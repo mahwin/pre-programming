@@ -1,24 +1,20 @@
-import axios from "axios";
+import { authApi } from "@api/index";
 
 async function getUser() {
   try {
-    const response = await axios.get(
-      `${process.env.API_HOST}:${process.env.PORT}/user`
-    );
+    const response = await authApi.get(`/user`);
     return response;
   } catch (error: any) {
-    new Error(error.message);
+    console.log(error);
+    console.warn("user 데이터 받아오기 실패");
   }
 }
 
 async function updateUser(data: any) {
   try {
-    const response = await axios.put(
-      `${process.env.API_HOST}/users/${data.id}`,
-      data
-    );
+    const response = await authApi.put(`/users/${data.id}`, data);
   } catch (error) {
-    console.warn(new Error("user 데이터 받아오기 실패"));
+    console.warn(new Error("user 데이터 업데이트 실패"));
   }
 }
 
