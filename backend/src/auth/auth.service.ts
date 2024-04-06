@@ -15,7 +15,7 @@ function isTokenValidPass(token = '') {
   return token === '000000';
 }
 
-const publicUserId = 49;
+const publicUserId = 1;
 
 @Injectable()
 export class AuthService {
