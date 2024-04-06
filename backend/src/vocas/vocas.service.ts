@@ -12,7 +12,7 @@ export class VocasService {
   async getAll() {
     const vocas = await this.prisma.seperatedVocabulary.findUnique({
       where: {
-        id: 2,
+        id: 1,
       },
     });
 

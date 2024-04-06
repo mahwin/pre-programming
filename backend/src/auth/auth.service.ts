@@ -1,10 +1,12 @@
-import { Injectable, Header } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { LoginDto, TokenDto } from './dto/auth.dto';
 import coolsms from 'coolsms-node-sdk';
 import { JwtService } from '@nestjs/jwt';
 import { getRandomNumber, createName } from 'src/utils';
 import { JwtPayload } from './type';
+
+import * as fs from 'fs';
 
 function isSMSPass(phone = '') {
   return process.env.NODE_ENV === 'development' || phone === '01012341234';
@@ -13,11 +15,18 @@ function isTokenValidPass(token = '') {
   return token === '000000';
 }
 
+const publicUserId = 49;
+
 @Injectable()
 export class AuthService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
+
   async signIn({ phone }: LoginDto) {
-    // 개발모드거나 공용 아이디면 twillio 사용하지 않고 통과
+    const data = fs.readFileSync(
+      '/Users/jeong-youseock/Desktop/pre-programming/backend/test.txt',
+      'utf8',
+    );
+
     if (isSMSPass(phone)) return { ok: true };
 
     const coolsmsClient = new coolsms(
@@ -44,7 +53,7 @@ export class AuthService {
         },
       },
     });
-
+    console.log(phone);
     await coolsmsClient.sendOne({
       to: phone,
       from: '01027597085',
@@ -61,11 +70,11 @@ export class AuthService {
       return {
         ok: true,
         accessToken: this.jwtService.sign(
-          { userId: 1 },
+          { userId: publicUserId },
           { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
         ),
         refreshToken: this.jwtService.sign(
-          { userId: 1 },
+          { userId: publicUserId },
           { expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME },
         ),
       };
@@ -91,6 +100,8 @@ export class AuthService {
       const accessToken = this.jwtService.sign(payload, {
         expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
       });
+
+      const a = await this.prisma.title.findFirst({ where: { id: 1 } });
 
       return { ok: true, refreshToken, accessToken };
     } else {

@@ -4,8 +4,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  url = env("JAWSDB_URL")  
   relationMode = "prisma"
 }
 
@@ -17,6 +16,7 @@ model User {
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @updatedAt
   tokens            Token[]
+  refreshToken      RefreshToken?
   UserAddVocabulary UserAddVocabulary?
 }
 
@@ -43,7 +43,7 @@ model Vocabulary {
 
 model UserAddVocabulary {
   id               Int      @id @default(autoincrement())
-  user             User     @relation(fields: [userId], references: [id])
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId           Int      @unique
   react            String?
   next             String?
@@ -68,4 +68,14 @@ model Title {
   id       Int    @id @default(autoincrement())
   category String
   data     String @db.LongText
+}
+
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  expires   Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int      @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

@@ -80,7 +80,6 @@ export class AuthController {
     type: null,
   })
   signOut(@Res() res: Response) {
-    console.log('???');
     res.clearCookie('userId');
     res.clearCookie('refreshToken');
     return res.status(200).send({ ok: true });
