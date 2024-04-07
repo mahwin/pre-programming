@@ -26,7 +26,9 @@ interface IAddVoca {
   selected: boolean[];
   resetSelected: () => void;
   // input, button, modal에도 사용됨. any 타입이 맞아!
-  onClickCheck: (e: any) => void;
+  handleClick: (
+    e: React.MouseEvent<HTMLInputElement | HTMLButtonElement>
+  ) => void;
 }
 
 export type { IVocaDetail, ICard, IQuizSetting, ITable, IAddVoca };

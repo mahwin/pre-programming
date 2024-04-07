@@ -20,13 +20,14 @@ export default function VocaPage() {
   const [vocas, setVocas] = useState<IVocaObj | null>(null);
 
   const router = useRouter();
-  const title = router.query.voca as titlesType;
+  const title = router.query.voca as string;
 
   useEffect(() => {
+    if (isNil(title)) return;
     if (!titles.includes(formatter(title))) {
       router.push("/404");
     }
-  }, []);
+  }, [title]);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -34,21 +35,26 @@ export default function VocaPage() {
       vocasActions.getVocas();
       return;
     }
+
     setVocas(data.category[formatter(title) as titlesType].level);
   }, [data, dispatch]);
+
+  if (isNil(title) || isNil(vocas))
+    return (
+      <>
+        <Nav />
+        <Banner />
+        <PageLoading />
+        <Footer />
+      </>
+    );
 
   return (
     <>
       <Nav />
       <Banner />
-      {vocas && title ? (
-        <>
-          <Vocas voca={vocas} title={title as titlesType} />
-          <QuizButton quizData={vocas} />
-        </>
-      ) : (
-        <PageLoading />
-      )}
+      <Vocas voca={vocas} title={title as titlesType} />
+      {/* <QuizButton quizData={vocas} /> */}
       <Footer />
     </>
   );

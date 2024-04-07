@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
 import Table from "@components/Vocas/Table";
 import { OpenSvg } from "@svg";
@@ -31,6 +30,7 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
       totalAmount += +tmp.amount;
       baseData.push(tmp);
     });
+
     setTotal(totalAmount);
     setCardData(baseData);
   }, [voca]);
@@ -39,7 +39,9 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
     setSelectedCard(Array.from({ length: 10 }, () => false));
   };
 
-  const onClickCheck = (e: any): void => {
+  const onClickCheck = (
+    e: React.MouseEvent<HTMLInputElement | HTMLButtonElement>
+  ): void => {
     const voca = Number(e.currentTarget.id || e.currentTarget.name);
     const copyVocas = [...selectedCard];
     copyVocas[voca] = !copyVocas[voca];
@@ -51,67 +53,53 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
         <Title>{title}</Title>
         <VocaCardWrapper>
           {Object.keys(voca).map((level: string) => (
-            <VocaCard key={level + ""} layoutId={level + ""}>
+            <VocaCard key={level}>
               <CardHeader>
                 <Level> Level : {level}</Level>
                 <input
-                  onClick={onClickCheck}
                   type="checkbox"
                   value="None"
-                  id={level + ""}
+                  id={level}
                   name="check"
+                  onClick={onClickCheck}
+                  onChange={() => {}}
                   checked={selectedCard[+level]}
                 />
-                <label htmlFor={level + ""}></label>
+                <label htmlFor={level}></label>
               </CardHeader>
               <VocaContentBox>
                 {cardData && (
                   <Table cardData={cardData?.[+level - 1]} total={total} />
                 )}
               </VocaContentBox>
-              <SvgBox onClick={() => setId(level + "")}>
+              <SvgBox onClick={() => setId(level)}>
                 <OpenSvg width="20" height="20" />
               </SvgBox>
             </VocaCard>
           ))}
         </VocaCardWrapper>
-        <AddVoca
+        {/* <AddVoca
           category={title}
           cardData={cardData}
           selected={selectedCard}
           resetSelected={onResetSelected}
-          onClickCheck={onClickCheck}
-        />
+          handleClick={onClickCheck}
+        /> */}
       </DetailWrapper>
-      <AnimatePresence>
-        {id ? (
-          <Overlay
-            onClick={() => setId(null)}
-            initial={{ backgroundColor: "rgba(0,0,0,0)" }}
-            animate={{ backgroundColor: "rgba(0,0,0,0.7)" }}
-            exit={{ backgroundColor: "rgba(0,0,0,0)" }}
-          >
-            <VocaCard
-              layoutId={id + ""}
-              style={{
-                position: "fixed",
-                width: 600,
-                height: 500,
-                top: "80px",
-                zIndex: 100,
-              }}
-            >
-              <ModalTitleBox>
-                <ModalLevel>Level : {id}</ModalLevel>
-                <ModalButton name={id + ""} onClick={onClickCheck}>
-                  {selectedCard[+id] ? "해제" : "추가"}
-                </ModalButton>
-              </ModalTitleBox>
-              <VocaTable voca={voca[+id]} />
-            </VocaCard>
-          </Overlay>
-        ) : null}
-      </AnimatePresence>
+
+      {id ? (
+        <Overlay onClick={() => setId(null)}>
+          <VocaCard>
+            <ModalTitleBox>
+              <ModalLevel>Level : {id}</ModalLevel>
+              <ModalButton name={id + ""} onClick={onClickCheck}>
+                {selectedCard[+id] ? "해제" : "추가"}
+              </ModalButton>
+            </ModalTitleBox>
+            <VocaTable voca={voca[+id]} />
+          </VocaCard>
+        </Overlay>
+      ) : null}
     </Wrapper>
   );
 }
@@ -144,7 +132,7 @@ const VocaCardWrapper = styled.div`
   gap: 30px;
 `;
 
-const VocaCard = styled(motion.div)`
+const VocaCard = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: relative;
   height: 100%;
   width: 100%;
@@ -249,7 +237,7 @@ const ModalButton = styled.button<
   }
 `;
 
-const Overlay = styled(motion.div)`
+const Overlay = styled.div<React.HTMLAttributes<HTMLElement>>`
   width: 100%;
   height: 100%;
   position: fixed;

@@ -36,7 +36,6 @@ authApi.interceptors.request.use((config) => {
   const token = authManager.get();
   if (!token) throw Error("토큰이 없어, 해당 요청을 서버로 보내지 않습니다.");
   config.headers.Authorization = `Bearer ${token}`;
-  console.log(`기존 accessToken`, token);
   return config;
 });
 
@@ -45,9 +44,7 @@ authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
     error.response?.status === 401 &&
     error.response?.data.message === "jwt expired"
   ) {
-    console.log("accessToken 재발급 요청!");
     const accessToken = await getAccessTokenByRefreshToken();
-    console.log("생성한 accessToken", accessToken);
     authManager.set(accessToken);
 
     // 재발급한 accessToken으로 다시 요청을 보냄
