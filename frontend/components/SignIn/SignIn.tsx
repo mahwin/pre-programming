@@ -54,18 +54,19 @@ export default function SignIn() {
   }, []);
 
   return (
-    <Wapper>
+    <Wrapper>
       <LoginContainer>
         <TitleBox>
           <Title>Pre-Programming</Title>
           <SubTitle>: What to do before you studying programming!</SubTitle>
         </TitleBox>
+
         <Text>Phone</Text>
         <Line />
         <FormBox>
           {data?.ok ? (
             <>
-              <Text>Cerification Number</Text>
+              <Left>Cerification Number</Left>
               <form id="token" onSubmit={tokenHandleSubmit(onTokenValid)}>
                 <TokenInput
                   placeholder="인증 번호를 입력하세요."
@@ -83,7 +84,7 @@ export default function SignIn() {
             </>
           ) : (
             <>
-              <Text>Phone number</Text>
+              <Left>Phone Number</Left>
               <form id="phone" onSubmit={handleSubmit(onValid)}>
                 <InputBox>
                   <PreNumber>
@@ -120,10 +121,9 @@ export default function SignIn() {
             </>
           )}
         </FormBox>
+
         <SnsBox>
-          <TextInLineBox>
-            <TextInLine>or enter with</TextInLine>
-          </TextInLineBox>
+          <TextInLine>or enter with</TextInLine>
           <SvgBox>
             <SnsButton onClick={notYetClick}>
               <TwitterSvg
@@ -141,11 +141,11 @@ export default function SignIn() {
           </SvgBox>
         </SnsBox>
       </LoginContainer>
-    </Wapper>
+    </Wrapper>
   );
 }
 
-const Wapper = styled.main`
+const Wrapper = styled.main`
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -155,16 +155,14 @@ const Wapper = styled.main`
 
 const LoginContainer = styled.section`
   border: 2px solid ${(props) => props.theme.colorTheme.textPrimary};
-
   border-radius: 10px;
-  padding: 20px 10px;
+  padding: 24px 36px;
+
   min-width: ${(props) => props.theme.windowSize.mobile};
-  height: 60vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
   text-align: center;
+  flex-direction: column;
 `;
 const TitleBox = styled.header`
   margin-bottom: 50px;
@@ -188,10 +186,13 @@ const Line = styled.hr`
 `;
 
 const Text = styled.p<React.HTMLAttributes<HTMLParagraphElement>>`
-  text-align: left;
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.base};
   color: ${(props) => props.theme.colorTheme.textPrimary};
+`;
+
+const Left = styled(Text)`
+  text-align: left;
 `;
 
 const FormBox = styled.section`
@@ -206,17 +207,18 @@ const InputBox = styled.div`
 
 // +82를 의미
 const PreNumber = styled.div`
-  flex-grow: 1;
-  line-height: 40px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
   background-color: ${(props) => props.theme.colorTheme.textSecondary};
 `;
 
 const Input = styled.input.attrs({
   type: "number",
 })<React.HTMLAttributes<HTMLInputElement>>`
-  flex-grow: 9;
+  flex-grow: 1;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 10px;
@@ -244,11 +246,11 @@ const Error = styled.span`
 `;
 
 const SubmitButton = styled.button`
-  width: 100%;
   height: 40px;
-  margin: 30px 0;
+  width: 100%;
   border-radius: 5px;
   border: none;
+  margin-top: 20px;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   background-color: ${(props) => props.theme.colorTheme.textSecondary};
   font-weight: ${(props) => props.theme.fontWeight.bold};
@@ -262,21 +264,27 @@ const SnsBox = styled.footer`
   width: 100%;
 `;
 
-const TextInLineBox = styled.div`
-  position: relative;
-  margin-bottom: 25px;
-  width: 100%;
-  border: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
-`;
-
 const TextInLine = styled(Text)`
-  position: absolute;
-  right: 0;
-  left: 0;
-  margin: 0 auto;
-  top: -12px;
-  width: 25%;
-  background-color: ${(props) => props.theme.colorTheme.backgroundColor};
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: ${(props) => props.theme.colorTheme.textPrimary};
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid ${(props) => props.theme.colorTheme.textPrimary};
+  }
+
+  &::before {
+    margin-right: 0.5em;
+  }
+
+  &::after {
+    margin-left: 0.5em;
+  }
 `;
 
 const SvgBox = styled.div`

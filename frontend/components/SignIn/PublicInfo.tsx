@@ -6,6 +6,111 @@ import { SignInColors } from "@color/SignInColors";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { throttling } from "@utils/throttling";
 
+const PublicVariants: Variants = {
+  open: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    height: "100px",
+    transition: {
+      bounce: 0,
+      duration: 0.7,
+      delayChildren: 0.3,
+      staggerChildren: 0.05,
+    },
+  },
+  closed: {
+    clipPath: "inset(100% 0% 0% 0%)",
+    height: "0",
+    transition: {
+      bounce: 0,
+      duration: 0.5,
+      delayChildren: 0.3,
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+export default function PublicInfo() {
+  const [isOpen, setOpen] = useState(false);
+  const [isCopy, setCopy] = useState({
+    throttle: false,
+    type: "",
+  });
+
+  const onClickOpen = useCallback(() => {
+    setOpen(!isOpen);
+  }, [isOpen]);
+
+  const onClickCopy = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>) => {
+      const { type, value } = event.currentTarget.dataset;
+
+      const $textarea = document.createElement("textarea");
+      document.body.appendChild($textarea);
+      $textarea.value = value!;
+      $textarea.select();
+      // document.execCommand는 deprecated
+      // but Clipboard API는 IE X라서 일단 사용함.
+      document.execCommand("copy");
+      document.body.removeChild($textarea);
+      throttling({ setCopy, isCopy, type });
+    },
+    []
+  );
+
+  return (
+    <>
+      <Wrapper>
+        <Btn onClick={onClickOpen}>
+          {!isOpen && (
+            <Description>{"공용 아이디가 필요하면  클릭하세요!"}</Description>
+          )}
+          <SvgBox>
+            <BellSvg />
+          </SvgBox>
+        </Btn>
+        <AnimatePresence>
+          <PublicBox
+            variants={PublicVariants}
+            animate={isOpen ? "open" : "close"}
+          >
+            {isOpen && (
+              <>
+                <InfoBox>
+                  <label>PHONE</label>
+                  <label>01012341234</label>
+                  <CopyBtn
+                    data-type="PHONE"
+                    data-value="01012341234"
+                    onClick={onClickCopy}
+                  >
+                    <CopySvg />
+                  </CopyBtn>
+                </InfoBox>
+                <InfoBox>
+                  <label>TOKEN</label>
+                  <label>000000</label>
+                  <CopyBtn
+                    data-type="TOKEN"
+                    data-value="000000"
+                    onClick={onClickCopy}
+                  >
+                    <CopySvg />
+                  </CopyBtn>
+                </InfoBox>
+              </>
+            )}
+          </PublicBox>
+        </AnimatePresence>
+      </Wrapper>
+      {isCopy.throttle && (
+        <CopyAlarm>
+          <span>{`COPIED! PUBLIC ${isCopy.type}`}</span>
+        </CopyAlarm>
+      )}
+    </>
+  );
+}
+
 const Wrapper = styled.section`
   z-index: 99;
   display: flex;
@@ -137,110 +242,3 @@ const CopyAlarm = styled.section`
     letter-spacing: 0.1rem;
   }
 `;
-
-const PublicVariants: Variants = {
-  open: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    height: "100px",
-    transition: {
-      type: "linear",
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  closed: {
-    clipPath: "inset(100% 0% 0% 0%)",
-    height: "0",
-    transition: {
-      type: "linear",
-      bounce: 0,
-      duration: 0.5,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-export default function PublicInfo() {
-  const [isOpen, setOpen] = useState(false);
-  const [isCopy, setCopy] = useState({
-    throttle: false,
-    type: "",
-  });
-
-  const onClickOpen = useCallback(() => {
-    setOpen(!isOpen);
-  }, [isOpen]);
-
-  const onClickCopy = useCallback(
-    (event: React.MouseEvent<HTMLButtonElement>) => {
-      const { type, value } = event.currentTarget.dataset;
-
-      const $textarea = document.createElement("textarea");
-      document.body.appendChild($textarea);
-      $textarea.value = value!;
-      $textarea.select();
-      // document.execCommand는 deprecated
-      // but Clipboard API는 IE X라서 일단 사용함.
-      document.execCommand("copy");
-      document.body.removeChild($textarea);
-      throttling({ setCopy, isCopy, type });
-    },
-    []
-  );
-
-  return (
-    <>
-      <Wrapper>
-        <Btn onClick={onClickOpen}>
-          {!isOpen && (
-            <Description>{"공용 아이디가 필요하면  클릭하세요!"}</Description>
-          )}
-          <SvgBox>
-            <BellSvg />
-          </SvgBox>
-        </Btn>
-        <AnimatePresence>
-          <PublicBox
-            variants={PublicVariants}
-            animate={isOpen ? "open" : "close"}
-          >
-            {isOpen && (
-              <>
-                <InfoBox>
-                  <label>PHONE</label>
-                  <label>01012341234</label>
-                  <CopyBtn
-                    data-type="PHONE"
-                    data-value="01012341234"
-                    onClick={onClickCopy}
-                  >
-                    <CopySvg />
-                  </CopyBtn>
-                </InfoBox>
-                <InfoBox>
-                  <label>TOKEN</label>
-                  <label>000000</label>
-                  <CopyBtn
-                    data-type="TOKEN"
-                    data-value="000000"
-                    onClick={onClickCopy}
-                  >
-                    <CopySvg />
-                  </CopyBtn>
-                </InfoBox>
-              </>
-            )}
-          </PublicBox>
-        </AnimatePresence>
-      </Wrapper>
-      {isCopy.throttle && (
-        <CopyAlarm>
-          <span>{`COPIED! PUBLIC ${isCopy.type}`}</span>
-        </CopyAlarm>
-      )}
-    </>
-  );
-}

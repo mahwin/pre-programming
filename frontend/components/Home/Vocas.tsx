@@ -13,7 +13,7 @@ const Wrapper = styled.main`
 `;
 
 const Container = styled.section<React.HTMLAttributes<HTMLElement>>`
-  padding: 10px;
+  padding: 24px 0px 48px 0px;
   width: 100%;
   max-width: ${(props) => props.theme.windowSize.tablet};
 `;
