@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useEffect, useMemo, useState } from "react";
 import { SmileSvg, FrownSvg, LoadingSvg } from "@svg";
 import useMutation from "@utils/useMutation";
+import { useAuthApi } from "@hooks/useAuthApi";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
@@ -134,10 +135,10 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
   });
   //name 검증
   const [confirm, { loading, data: confirmName }] =
-    useMutation<IConfirm>("/user/confirm");
+    useAuthApi<IConfirm>("/user/confirm");
   //phone 검증
   const [phoneConfirm, { loading: phoneLoading, data: confirmPhone }] =
-    useMutation<IConfirm>("/user/confirm");
+    useAuthApi<IConfirm>("/user/confirm");
 
   const onValid = (validForm: IProfile) => {
     Object.keys(validForm).includes("name")
@@ -159,7 +160,7 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
 
   //유효한 데이터 서버로 전송 후 정상적으로 바꼈으면 화면 reload
   const [update, { loading: updateLoading, data: updateResponse }] =
-    useMutation<{ ok: boolean }>("/user/update");
+    useAuthApi<{ ok: boolean }>("/user/update");
 
   const handleUpdate = () => {
     if (window.confirm(objToTest(updateData))) {
