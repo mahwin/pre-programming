@@ -13,7 +13,7 @@ function isTokenValidPass(token = '') {
   return token === '000000';
 }
 
-const publicUserId = 1;
+const publicPayload = { userId: 1 };
 
 @Injectable()
 export class AuthService {
@@ -27,11 +27,11 @@ export class AuthService {
       process.env.COOLSMS_API_SECRET,
     );
 
-    const payload = getRandomNumber(6);
+    const randomNumbers = getRandomNumber(6);
 
     const token = await this.prisma.token.create({
       data: {
-        payload,
+        payload: randomNumbers,
         user: {
           connectOrCreate: {
             where: {
@@ -46,12 +46,12 @@ export class AuthService {
         },
       },
     });
-    console.log(phone);
+
     await coolsmsClient.sendOne({
       to: phone,
       from: '01027597085',
       autoTypeDetect: true,
-      text: `환영합니다. \n인증번호는 ${payload} 입니다.`,
+      text: `환영합니다. \n인증번호는 ${randomNumbers} 입니다.`,
     });
 
     return token.userId;
@@ -62,14 +62,8 @@ export class AuthService {
     if (isTokenValidPass(token))
       return {
         ok: true,
-        accessToken: this.jwtService.sign(
-          { userId: publicUserId },
-          { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
-        ),
-        refreshToken: this.jwtService.sign(
-          { userId: publicUserId },
-          { expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME },
-        ),
+        accessToken: await this.createAccessToken(publicPayload),
+        refreshToken: await this.createRefreshToken(publicPayload),
       };
 
     const foundToken = await this.prisma.token.findUnique({
@@ -87,12 +81,9 @@ export class AuthService {
       });
 
       const payload = { userId };
-      const refreshToken = this.jwtService.sign(payload, {
-        expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME,
-      });
-      const accessToken = this.jwtService.sign(payload, {
-        expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
-      });
+
+      const refreshToken = await this.createRefreshToken(payload);
+      const accessToken = await this.createAccessToken(payload);
 
       return { ok: true, refreshToken, accessToken };
     } else {
@@ -110,14 +101,22 @@ export class AuthService {
 
   async getAccessTokenByRefreshToken({ userId }: JwtPayload) {
     try {
-      const newAccessToken = this.jwtService.sign(
-        { userId },
-        { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
-      );
+      const newAccessToken = await this.createAccessToken({ userId });
       return newAccessToken;
     } catch (e) {
       console.error(e);
       return Error(e);
     }
+  }
+
+  async createAccessToken(payload: { userId: number }) {
+    return this.jwtService.sign(payload, {
+      expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME,
+    });
+  }
+  async createRefreshToken(payload: { userId: number }) {
+    return this.jwtService.sign(payload, {
+      expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
+    });
   }
 }

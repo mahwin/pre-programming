@@ -6,6 +6,7 @@ import { ApiTags, ApiOperation, ApiCreatedResponse } from '@nestjs/swagger';
 import { UserDto } from './dto/user.dto';
 import { UpdateUSerDto } from './dto/update-user.dto';
 import { ConfirmUserDto } from './dto/confirm-user.dto';
+import { JwtPayload } from 'src/auth/type';
 
 @Controller('user')
 @ApiTags('user API')
@@ -23,7 +24,8 @@ export class UserController {
   })
   @UseGuards(JwtAuthGuard)
   getUser(@Req() req: Request) {
-    return this.userService.getUser(req);
+    const payload = req.user as JwtPayload;
+    return this.userService.getUser(payload);
   }
 
   @ApiOperation({
@@ -52,6 +54,7 @@ export class UserController {
   @Post('update')
   @UseGuards(JwtAuthGuard)
   updateUser(@Req() req: Request, @Body() updateUser: UpdateUSerDto) {
-    return this.userService.update(req, updateUser);
+    const payload = req.user as JwtPayload;
+    return this.userService.update(payload, updateUser);
   }
 }

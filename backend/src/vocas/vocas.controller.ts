@@ -11,6 +11,7 @@ import { VocasService } from './vocas.service';
 import { LevelUpdateDto } from './dto/vocas-level-update.dto';
 import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { Request } from 'express';
+import { JwtPayload } from '../auth/type';
 
 @Controller('vocas')
 export class VocasController {
@@ -19,7 +20,8 @@ export class VocasController {
   @Get('/user')
   @UseGuards(JwtAuthGuard)
   getUserVocas(@Req() req: Request) {
-    return this.vocasService.getUserVocas(req);
+    const payload = req.user as JwtPayload;
+    return this.vocasService.getUserVocas(payload);
   }
 
   @Get('/all')

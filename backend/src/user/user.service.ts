@@ -1,15 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { JwtService } from '@nestjs/jwt';
-import { UserDto } from './dto/user.dto';
 import { ConfirmUserDto } from './dto/confirm-user.dto';
+import { UpdateUSerDto } from './dto/update-user.dto';
+import { JwtPayload } from '../auth/type';
 
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
-  async getUser(req) {
-    const user = await this.parsePayload(req);
-    return { ok: true, data: user };
+  async getUser({ userId }: JwtPayload) {
+    const userData = await this.prisma.user.findUnique({
+      where: {
+        id: userId,
+      },
+    });
+    return { ok: true, data: userData };
   }
 
   async confirm(confirmData: ConfirmUserDto) {
@@ -24,23 +29,14 @@ export class UserService {
       data: { ...confirmData },
     };
   }
-  async update(req, updateUser) {
-    const userData = this.parsePayload(req);
+  async update({ userId }: JwtPayload, updateUser: UpdateUSerDto) {
     await this.prisma.user.update({
       where: {
-        id: (await userData).id,
+        id: userId,
       },
       data: { ...updateUser },
     });
+    console.log('updateUser', updateUser);
     return { ok: true };
-  }
-
-  async parsePayload(req): Promise<UserDto> {
-    const signedJwtAccessToken = req.headers.authorization.split(' ')[1];
-    const { userId }: any = this.jwtService.decode(signedJwtAccessToken);
-    const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-    });
-    return user;
   }
 }

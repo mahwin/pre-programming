@@ -4,6 +4,7 @@ import camelCaser from 'src/utils/camelCaser';
 import uniqueArr from 'src/utils/uniqueArr';
 import { UserDto } from '../user/dto/user.dto';
 import { JwtService } from '@nestjs/jwt';
+import { JwtPayload } from '../auth/type';
 
 @Injectable()
 export class VocasService {
@@ -49,20 +50,13 @@ export class VocasService {
     }
     return { ok: true, message: '저장 성공' };
   }
-  async getUserVocas(req) {
-    const userId = await this.parsePayload(req);
+  async getUserVocas({ userId }: JwtPayload) {
     const userVocas = await this.prisma.userAddVocabulary.findUnique({
       where: {
-        userId: +userId,
+        userId,
       },
     });
 
     return { ok: true, data: userVocas };
-  }
-
-  async parsePayload(req): Promise<UserDto> {
-    const signedJwtAccessToken = req.headers.authorization.split(' ')[1];
-    const { userId }: any = this.jwtService.decode(signedJwtAccessToken);
-    return userId;
   }
 }
