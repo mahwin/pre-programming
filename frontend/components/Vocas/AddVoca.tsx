@@ -8,12 +8,12 @@ import { IState } from "@redux/initialState";
 import useMutation from "@utils/useMutation";
 import { vocaColors } from "@color/vocaColors";
 import { IAddVoca } from "@type/vocas";
+import { VocaCard } from "./VocaCard";
 
 const cardsVariants: Variants = {
   open: {
     clipPath: "inset(0% 0% 0% 0% round 10px)",
     transition: {
-      type: "linear",
       bounce: 0,
       duration: 0.7,
       delayChildren: 0.3,
@@ -23,7 +23,6 @@ const cardsVariants: Variants = {
   closed: {
     clipPath: "inset(10% 50% 90% 50% round 10px)",
     transition: {
-      type: "linear",
       bounce: 0,
       duration: 0.3,
     },
@@ -36,15 +35,6 @@ const ArrowVariants: Variants = {
     opacity: 0,
     transition: { delay: 0.05, duration: 0.1 },
   },
-};
-
-const cardVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "linear", stiffness: 800, damping: 34 },
-  },
-  closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
 };
 
 export default function AddVaca({
@@ -119,43 +109,9 @@ export default function AddVaca({
               pointerEvents: isCardOpen ? "auto" : "none",
             }}
           >
-            {selected?.map(
-              (voca, idx) =>
-                voca && (
-                  <Card variants={cardVariants} key={idx + ""}>
-                    <CancleBtnBox onClick={handleClick} id={idx + ""}>
-                      <XBar />
-                      <XBar />
-                    </CancleBtnBox>
-                    <CardContents>
-                      <h3>Level {idx}</h3>
-                      <Row>
-                        <CardContentBox>
-                          <p>
-                            <small>
-                              <b>words</b>
-                            </small>
-                          </p>
-
-                          <h2>
-                            <b>{cardData?.[idx - 1].amount}</b>
-                          </h2>
-                        </CardContentBox>
-                        <CardContentBox>
-                          <p>
-                            <small>
-                              <b>frequency</b>
-                            </small>
-                          </p>
-                          <h2>
-                            <p>{cardData?.[idx - 1].frequency} 이상</p>
-                          </h2>
-                        </CardContentBox>
-                      </Row>
-                    </CardContents>
-                  </Card>
-                )
-            )}
+            {selected.map((visible, idx) => (
+              <VocaCard {...{ visible, cardData, idx, handleClick }} />
+            ))}
           </Cards>
         </div>
       </Board>
@@ -204,15 +160,6 @@ const Cards = styled(motion.ul)`
   background-color: ${vocaColors.addVoca.cardsBgColor};
 `;
 
-const Card = styled(motion.li)`
-  position: relative;
-  margin: 0 auto;
-  background-color: #fff;
-  height: 120px;
-  width: 200px;
-  border-radius: 3px;
-`;
-
 const Board = styled(motion.div)`
   position: relative;
 `;
@@ -227,68 +174,3 @@ const Arrow = styled(motion.div)`
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
 `;
-
-const CancleBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  top: 5px;
-  right: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  :hover {
-    transform: scale(1.2);
-  }
-`;
-
-const XBar = styled.div`
-  position: absolute;
-  border: none;
-  width: 15px;
-  height: 3px;
-  transform: rotate(45deg);
-  background-color: ${vocaColors.addVoca.xBtnColor};
-  &:nth-child(2) {
-    transform: rotate(135deg);
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-`;
-
-const CardContents = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 12px;
-  h3 {
-    padding: 5px;
-    font-size: ${(props) => props.theme.fontSize.base};
-    font-weight: ${(props) => props.theme.fontWeight.bold};
-    color: black;
-  }
-  p {
-    color: #8a81bd;
-    font-weight: ${(props) => props.theme.fontWeight.xbold};
-  }
-  h2 {
-    margin-top: 5px;
-    text-align: center;
-    font-weight: 600;
-    font-size: ${(props) => props.theme.fontSize.lg};
-  }
-  h2 p {
-    margin-top: 10px;
-    color: black;
-    font-size: 14px;
-  }
-`;
-
-const CardContentBox = styled.div``;

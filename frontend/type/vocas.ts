@@ -25,7 +25,7 @@ interface IAddVoca {
   category: string;
   selected: boolean[];
   resetSelected: () => void;
-  // input, button, modal에도 사용됨. any 타입이 맞아!
+
   handleClick: (
     e: React.MouseEvent<HTMLInputElement | HTMLButtonElement>
   ) => void;
