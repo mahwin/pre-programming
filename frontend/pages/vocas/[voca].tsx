@@ -54,7 +54,7 @@ export default function VocaPage() {
       <Nav />
       <Banner />
       <Vocas voca={vocas} title={title as titlesType} />
-      {/* <QuizButton quizData={vocas} /> */}
+      <QuizButton quizData={vocas} />
       <Footer />
     </>
   );
