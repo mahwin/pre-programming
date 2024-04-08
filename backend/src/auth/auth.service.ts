@@ -6,8 +6,6 @@ import { JwtService } from '@nestjs/jwt';
 import { getRandomNumber, createName } from 'src/utils';
 import { JwtPayload } from './type';
 
-import * as fs from 'fs';
-
 function isSMSPass(phone = '') {
   return process.env.NODE_ENV === 'development' || phone === '01012341234';
 }
@@ -22,11 +20,6 @@ export class AuthService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
 
   async signIn({ phone }: LoginDto) {
-    const data = fs.readFileSync(
-      '/Users/jeong-youseock/Desktop/pre-programming/backend/test.txt',
-      'utf8',
-    );
-
     if (isSMSPass(phone)) return { ok: true };
 
     const coolsmsClient = new coolsms(
@@ -100,8 +93,6 @@ export class AuthService {
       const accessToken = this.jwtService.sign(payload, {
         expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRATION_TIME,
       });
-
-      const a = await this.prisma.title.findFirst({ where: { id: 1 } });
 
       return { ok: true, refreshToken, accessToken };
     } else {
