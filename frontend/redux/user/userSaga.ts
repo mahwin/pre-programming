@@ -1,6 +1,6 @@
 import { userActions } from "./userSlice";
 import * as userAPI from "./userAPI";
-import { call, put, takeLatest, all, fork } from "redux-saga/effects";
+import { call, put, takeLeading, all, fork } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
 function* getUser() {
@@ -13,7 +13,7 @@ function* getUser() {
 }
 
 function* watchGetUser() {
-  yield takeLatest(userActions.getUser, getUser);
+  yield takeLeading(userActions.getUser, getUser);
 }
 
 export default function* getUserSaga() {

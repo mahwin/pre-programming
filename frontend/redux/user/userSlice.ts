@@ -1,5 +1,5 @@
 import initialState from "../initialState";
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
@@ -9,11 +9,13 @@ const userSlice = createSlice({
       state.loading = true;
     },
     getUserSuccess: (state, { payload }) => {
-      state.data = payload.data.data;
+      state.data = payload.data;
+      state.error = null;
       state.loading = false;
     },
     getUserError: (state, { payload }) => {
-      state.error = payload;
+      state.error = payload.message;
+      state.data = null;
       state.loading = false;
     },
     updateUser: (state) => {

@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { authManager } from "@utils/Auth";
+import { isNil } from "@utils/typeGuard";
 
 interface ErrorResponse {
   response?: {
@@ -44,19 +45,21 @@ authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
     error.response?.status === 401 &&
     error.response?.data.message === "jwt expired"
   ) {
-    const accessToken = await getAccessTokenByRefreshToken();
-    authManager.set(accessToken);
+    const { accessToken } = await getAccessTokenByRefreshToken();
+    if (isNil(accessToken)) return new Error("refresh 토큰 검증 실패");
 
+    authManager.set(accessToken);
     // 재발급한 accessToken으로 다시 요청을 보냄
+
     const originalRequest = error.config;
-    originalRequest.headers.Authorization = `Bearer ${accessToken.accessToken}`;
+    originalRequest.headers.Authorization = `Bearer ${authManager.get()}`;
     return authApi(originalRequest);
   }
 });
 
 async function getAccessTokenByRefreshToken() {
   try {
-    const response = await api.get("/auth/refresh");
+    const response = await authApi.get("/auth/refresh");
     return response.data;
   } catch (error) {
     return Promise.reject(error);

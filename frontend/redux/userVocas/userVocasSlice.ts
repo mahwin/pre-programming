@@ -11,10 +11,12 @@ const userVocasSlice = createSlice({
     getUserVocasSuccess: (state, { payload }) => {
       state.loading = false;
       state.data = payload.data;
+      state.error = null;
     },
     getUserVocasError: (state, { payload }) => {
       state.error = payload;
       state.loading = false;
+      state.data = null;
     },
   },
 });

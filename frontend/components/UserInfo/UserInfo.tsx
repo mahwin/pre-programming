@@ -9,6 +9,118 @@ import { ChangeSvg, LoadingSvg } from "@svg";
 import { userInfoColors } from "@color/userInfoColors";
 import { IUser } from "@type/commons/user";
 
+export default function UserInfo({ data }: { data: IUser }) {
+  const [Mutatable, setMutatable] = useState(false);
+  const [avatar, setAvatar] = useState<string>(data?.avatar);
+  const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
+
+  const canChangeSwitch = () => {
+    setMutatable(!Mutatable);
+    setIsAvatarsOpen(false);
+  };
+
+  useEffect(() => {
+    setAvatar(data?.avatar);
+  }, [data]);
+
+  const onClickAvatars = () => setIsAvatarsOpen(!isAvatarsOpen);
+  const onSelectedAvatar = (e: MouseEvent) => {
+    setAvatar(e.currentTarget.id);
+  };
+
+  if (!data) return <PageLoading />;
+
+  return (
+    <>
+      <Wrapper>
+        <Container>
+          <Header>
+            <h1>Profile</h1>
+            <ToggleBox onChange={canChangeSwitch}>
+              <div>
+                <NormalSpan>CAN</NormalSpan>
+                {!Mutatable && (
+                  <>
+                    <NormalSpan
+                      style={{
+                        color: userInfoColors.highlightColor,
+                        position: "absolute",
+                      }}
+                    >
+                      &rsquo;
+                    </NormalSpan>
+                    <Label
+                      animate={{ y: bounceY }}
+                      transition={{ duration: 2.5 }}
+                    >
+                      T
+                    </Label>
+                  </>
+                )}
+                <NormalSpan style={{ marginLeft: "24px" }}>CHANGE</NormalSpan>
+              </div>
+              <Toggle
+                initial={false}
+                variants={toggleBarVariants}
+                onClick={canChangeSwitch}
+                animate={Mutatable ? "left" : "right"}
+              >
+                <ToggleCircle
+                  initial={false}
+                  variants={toggleCircleVariants}
+                  animate={Mutatable ? "left" : "right"}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                />
+              </Toggle>
+            </ToggleBox>
+          </Header>
+          <Avartar>
+            <figure>
+              <Image
+                alt="아바타 이미지입니다."
+                src={`/avatars/${avatar}.png`}
+                layout="fill"
+                priority
+              />
+            </figure>
+            {Mutatable && (
+              <SvgBox
+                onClick={onClickAvatars}
+                variants={changeVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <ChangeSvg
+                  width="30"
+                  height="30"
+                  color={userInfoColors.svgColor}
+                />
+              </SvgBox>
+            )}
+          </Avartar>
+          <Form
+            data={{
+              name: data?.name,
+              phone: data?.phone,
+              currentAvatar: avatar,
+            }}
+            isAvatarChange={avatar !== data?.avatar ? true : false}
+            isCan={Mutatable}
+          />
+        </Container>
+      </Wrapper>
+      {Mutatable && (
+        <Avatars
+          avatar={avatar}
+          isOpen={isAvatarsOpen}
+          onClick={onClickAvatars}
+          onSelect={onSelectedAvatar}
+        />
+      )}
+    </>
+  );
+}
+
 const Avatars = dynamic(() => import("./Avatars"), {
   ssr: false,
   loading: () => <LoadingSvg />,
@@ -123,121 +235,3 @@ const changeVariants = {
 };
 
 const bounceY = [-100, 20, -10, 5, -3, 0];
-
-export default function UserInfo({ data }: { data: IUser }) {
-  const [Mutatable, setMutatable] = useState(false);
-  const [avatar, setAvatar] = useState<string>(data?.avatar);
-  const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
-
-  const canChangeSwitch = () => {
-    setMutatable(!Mutatable);
-    setIsAvatarsOpen(false);
-  };
-
-  useEffect(() => {
-    setAvatar(data?.avatar);
-  }, [data]);
-
-  const onClickAvatars = () => setIsAvatarsOpen(!isAvatarsOpen);
-  const onSelectedAvatar = (e: MouseEvent) => {
-    setAvatar(e.currentTarget.id);
-  };
-
-  return (
-    <>
-      {!data ? (
-        <PageLoading />
-      ) : (
-        <>
-          <Wrapper>
-            <Container>
-              <Header>
-                <h1>Profile</h1>
-                <ToggleBox onChange={canChangeSwitch}>
-                  <div>
-                    <NormalSpan>CAN</NormalSpan>
-                    {!Mutatable && (
-                      <>
-                        <NormalSpan
-                          style={{
-                            color: userInfoColors.highlightColor,
-                            position: "absolute",
-                          }}
-                        >
-                          &rsquo;
-                        </NormalSpan>
-                        <Label
-                          animate={{ y: bounceY }}
-                          transition={{ duration: 2.5 }}
-                        >
-                          T
-                        </Label>
-                      </>
-                    )}
-                    <NormalSpan style={{ marginLeft: "24px" }}>
-                      CHANGE
-                    </NormalSpan>
-                  </div>
-                  <Toggle
-                    initial={false}
-                    variants={toggleBarVariants}
-                    onClick={canChangeSwitch}
-                    animate={Mutatable ? "left" : "right"}
-                  >
-                    <ToggleCircle
-                      initial={false}
-                      variants={toggleCircleVariants}
-                      animate={Mutatable ? "left" : "right"}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    />
-                  </Toggle>
-                </ToggleBox>
-              </Header>
-              <Avartar>
-                <figure>
-                  <Image
-                    alt="아바타 이미지입니다."
-                    src={`/avatars/${avatar}.png`}
-                    layout="fill"
-                    priority
-                  />
-                </figure>
-                {Mutatable && (
-                  <SvgBox
-                    onClick={onClickAvatars}
-                    variants={changeVariants}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <ChangeSvg
-                      width="30"
-                      height="30"
-                      color={userInfoColors.svgColor}
-                    />
-                  </SvgBox>
-                )}
-              </Avartar>
-              <Form
-                data={{
-                  name: data?.name,
-                  phone: data?.phone,
-                  currentAvatar: avatar,
-                }}
-                isAvatarChange={avatar !== data?.avatar ? true : false}
-                isCan={Mutatable}
-              />
-            </Container>
-          </Wrapper>
-        </>
-      )}
-      {Mutatable && (
-        <Avatars
-          avatar={avatar}
-          isOpen={isAvatarsOpen}
-          onClick={onClickAvatars}
-          onSelect={onSelectedAvatar}
-        />
-      )}
-    </>
-  );
-}

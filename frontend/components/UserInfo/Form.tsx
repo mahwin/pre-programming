@@ -2,116 +2,11 @@ import styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { useEffect, useMemo, useState } from "react";
 import { SmileSvg, FrownSvg, LoadingSvg } from "@svg";
-import useMutation from "@utils/useMutation";
 import { useAuthApi } from "@hooks/useAuthApi";
 import { useRouter } from "next/router";
 import objToTest from "@utils/objToText";
 import { userInfoColors } from "@color/userInfoColors";
 import { IForm, IConfirm, IProfile } from "@type/userInfo";
-
-const Wrapper = styled.section<React.HTMLAttributes<HTMLElement>>`
-  padding: 60px 14px 24px 14px;
-  height: 100%;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-`;
-
-const InputBox = styled.section`
-  display: flex;
-  flex-direction: column;
-  input {
-    border-radius: 5px;
-    border: 1px solid ${userInfoColors.inputColor.abled};
-    margin: 10px 0 10px 0;
-    height: 40px;
-    padding: 8px 12px;
-    color: ${userInfoColors.inputColor.text};
-    font-size: ${(props) => props.theme.fontSize.lg};
-    :disabled {
-      background-color: ${userInfoColors.inputColor.disabled};
-    }
-  }
-  label {
-    color: ${userInfoColors.labelColor};
-    font-weight: ${(props) => props.theme.fontWeight.base};
-  }
-  button {
-    margin-left: 5px;
-    border-radius: 3px;
-  }
-  :nth-child(1) {
-    margin-bottom: 10px;
-  }
-`;
-
-const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Btn = styled.button<
-  React.HTMLAttributes<HTMLButtonElement> & { name: string; disabled: boolean }
->`
-  width: 100%;
-  height: 40px;
-  background-color: ${() => userInfoColors.bgColor};
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: ${(props) => props.theme.fontSize.base};
-  :enabled:hover {
-    opacity: 0.8;
-    transition: ease-in-out 0.3s;
-  }
-  :disabled {
-    cursor: not-allowed;
-  }
-`;
-
-const SubmitBtn = styled(Btn)<any>`
-  border-radius: 5px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Error = styled.span`
-  margin-left: 10px;
-  color: ${userInfoColors.errorColor};
-  font-size: 12px;
-  font-weight: ${(props) => props.theme.fontWeight.base};
-`;
-
-const Changable = styled.div`
-  height: 40px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
-const ChangableBox = styled.div`
-  display: flex;
-  align-items: center;
-  color: ${userInfoColors.textColor};
-  font-weight: ${(props) => props.theme.fontWeight.base};
-  span {
-    margin-right: 10px;
-  }
-`;
-
-const Smile = styled(SmileSvg).attrs({
-  width: "30",
-  height: "30",
-  color: userInfoColors.svg.smile,
-})``;
-
-const Frown = styled(FrownSvg).attrs({
-  width: "30",
-  height: "30",
-  color: userInfoColors.svg.frown,
-})``;
 
 export default function Form({ data, isCan, isAvatarChange }: IForm) {
   const {
@@ -304,3 +199,107 @@ export default function Form({ data, isCan, isAvatarChange }: IForm) {
     </Wrapper>
   );
 }
+
+const Wrapper = styled.section<React.HTMLAttributes<HTMLElement>>`
+  padding: 60px 14px 24px 14px;
+  height: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+`;
+
+const InputBox = styled.section`
+  display: flex;
+  flex-direction: column;
+  input {
+    border-radius: 5px;
+    border: 1px solid ${userInfoColors.inputColor.abled};
+    margin: 10px 0 10px 0;
+    height: 40px;
+    padding: 8px 12px;
+    color: ${userInfoColors.inputColor.text};
+    font-size: ${(props) => props.theme.fontSize.lg};
+    :disabled {
+      background-color: ${userInfoColors.inputColor.disabled};
+    }
+  }
+  label {
+    color: ${userInfoColors.labelColor};
+    font-weight: ${(props) => props.theme.fontWeight.base};
+  }
+  button {
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  :nth-child(1) {
+    margin-bottom: 10px;
+  }
+`;
+
+const Row = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Btn = styled.button<
+  React.HTMLAttributes<HTMLButtonElement> & { name: string; disabled: boolean }
+>`
+  width: 100%;
+  height: 40px;
+  background-color: ${() => userInfoColors.bgColor};
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: ${(props) => props.theme.fontSize.base};
+  :enabled:hover {
+    opacity: 0.8;
+    transition: ease-in-out 0.3s;
+  }
+  :disabled {
+    cursor: not-allowed;
+  }
+`;
+
+const SubmitBtn = styled(Btn)<any>`
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Error = styled.span`
+  margin-left: 10px;
+  color: ${userInfoColors.errorColor};
+  font-size: 12px;
+  font-weight: ${(props) => props.theme.fontWeight.base};
+`;
+
+const Changable = styled.div`
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const ChangableBox = styled.div`
+  display: flex;
+  align-items: center;
+  color: ${userInfoColors.textColor};
+  font-weight: ${(props) => props.theme.fontWeight.base};
+  span {
+    margin-right: 10px;
+  }
+`;
+
+const Smile = styled(SmileSvg).attrs({
+  width: "30",
+  height: "30",
+  color: userInfoColors.svg.smile,
+})``;
+
+const Frown = styled(FrownSvg).attrs({
+  width: "30",
+  height: "30",
+  color: userInfoColors.svg.frown,
+})``;

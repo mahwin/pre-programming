@@ -85,30 +85,28 @@ export default function UserVoca({ data }: ITitles) {
   const [clickedVoca, setClickedVoca] = useState<IClickedVoca>({});
 
   //유저 정보 없으면 로그인 페이지
-  const userInfo = useSelector((state: IState) => {
-    return state.user;
-  });
+  const {
+    loading,
+    data: userData,
+    error,
+  } = useSelector(({ user }: IState) => user);
 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(userVocasActions.getUserVocas());
-  }, [userInfo.data, dispatch]);
 
   const router = useRouter();
   useEffect(() => {
-    if (userInfo.error && !userInfo.data)
-      router.push(`${process.env.NODE_ENV}/${process.env.PORT}/signIn`);
-  }, [userInfo, router]);
+    if (!loading && error) router.push("/signIn");
+  }, [loading, error, router]);
+
+  useEffect(() => {
+    dispatch(userVocasActions.getUserVocas());
+  }, [userData, dispatch]);
 
   //유저가 저장한 보카 목록 불러오기, 항상 다시 불러옴
-  const userVocas = useSelector((state: any) => {
-    return state.userVocas;
-  });
+  const userVocas = useSelector(({ userVocas }: IState) => userVocas);
 
   //전체 보카 데이터 없으면 api 콜
-  const vocas = useSelector((state: any) => {
-    return state.vocas;
-  });
+  const vocas = useSelector(({ vocas }: IState) => vocas);
 
   useEffect(() => {
     if (!vocas.data) dispatch(vocasActions.getVocas());
@@ -119,10 +117,12 @@ export default function UserVoca({ data }: ITitles) {
   }, [data]);
 
   useEffect(() => {
+    console.log(vocas.data, userVocas.data);
     if (vocas.data && userVocas.data) {
       let userSavedData: IUserVocaData = {};
       for (let title of titles) {
         let savedData = userVocas.data[title];
+
         if (savedData) {
           let tmp = JSON.parse(userVocas.data[title]);
           userSavedData[title] = { data: tmp, len: tmp.length };

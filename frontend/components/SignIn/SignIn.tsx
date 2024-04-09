@@ -74,7 +74,6 @@ export default function SignIn() {
                     required: "인증 번호는 필수입력 항목입니다.",
                   })}
                 />
-                {}
                 <Error>
                   {tokenValidateResponse?.ok === false &&
                     tokenValidateResponse.message}
@@ -230,9 +229,8 @@ const Input = styled.input.attrs({
 `;
 
 const TokenInput = styled(Input)<React.HTMLAttributes<HTMLInputElement>>`
-  display: block;
   width: 100%;
-  margin-top: 10px;
+  height: 40px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 `;

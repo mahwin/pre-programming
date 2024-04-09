@@ -10,6 +10,7 @@ import { navColors } from "@color/navColors";
 import { Space } from "@components/Commons/Space";
 import { authManager } from "@utils/Auth";
 import { api } from "@api/index";
+import { isNil } from "@utils/typeGuard";
 
 type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
@@ -18,6 +19,7 @@ function Nav() {
 
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(userActions.getUser());
   }, [dispatch]);
@@ -43,7 +45,7 @@ function Nav() {
           </Link>
         </Item>
 
-        <Item visibilty={userInfo !== null}>
+        <Item visibilty={!isNil(userInfo)}>
           <Link href="/me/vocas">
             <Span underline={currentNav === "/me/vocas"}>내 단어장</Span>
           </Link>
@@ -51,15 +53,15 @@ function Nav() {
 
         <Space as="li" />
 
-        <Item visibilty={userInfo !== null}>
+        <Item visibilty={!isNil(userInfo)}>
           <Link href="/me">
             <Span underline={currentNav === "/me"}>내 정보</Span>
           </Link>
         </Item>
-        <Item visibilty={userInfo !== null}>
+        <Item visibilty={!isNil(userInfo)}>
           <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
         </Item>
-        <Item visibilty={userInfo === null}>
+        <Item visibilty={isNil(userInfo)}>
           <Link href="/signIn">
             <Span underline={currentNav === "/me"}>로그인</Span>
           </Link>
