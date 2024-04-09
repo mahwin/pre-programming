@@ -25,7 +25,7 @@ interface IUserVocaData {
   [index: string]: { data: number[]; len: number };
 }
 interface ILevelItem {
-  [index: string]: string[];
+  [index: string]: string;
 }
 
 interface IClickedVoca {

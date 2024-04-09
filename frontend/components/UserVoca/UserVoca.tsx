@@ -117,14 +117,13 @@ export default function UserVoca({ data }: ITitles) {
   }, [data]);
 
   useEffect(() => {
-    console.log(vocas.data, userVocas.data);
     if (vocas.data && userVocas.data) {
       let userSavedData: IUserVocaData = {};
       for (let title of titles) {
         let savedData = userVocas.data[title];
 
         if (savedData) {
-          let tmp = JSON.parse(userVocas.data[title]);
+          const tmp = JSON.parse(savedData);
           userSavedData[title] = { data: tmp, len: tmp.length };
         } else {
           userSavedData[title] = { data: [], len: 0 };
@@ -249,7 +248,7 @@ export default function UserVoca({ data }: ITitles) {
                         {item.title}
                         {userVocaData &&
                           ` (
-                              ${userVocaData?.[formatter(item.title)]?.len}
+                              ${userVocaData?.[formatter(item.title)]?.len || 0}
                               )`}
                       </h2>
                       <SvgBox>
@@ -300,7 +299,8 @@ export default function UserVoca({ data }: ITitles) {
                             }
                             key={level}
                             amount={
-                              vocas.data.category[clickId].level[level].length
+                              vocas.data?.category[clickId].level[level]
+                                .length || 0
                             }
                             onClickCard={handleClickCard}
                             level={level}
