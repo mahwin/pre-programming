@@ -15,10 +15,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate(payload: JwtPayload) {
+    console.log(payload, getTimeStamp());
     if (payload.exp < getTimeStamp()) {
       throw new UnauthorizedException('jwt expired');
     }
-    // return payload.userId;
     return payload;
   }
 }

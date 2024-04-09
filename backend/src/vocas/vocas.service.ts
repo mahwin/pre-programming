@@ -51,9 +51,17 @@ export class VocasService {
     return { ok: true, message: '저장 성공' };
   }
   async getUserVocas({ userId }: JwtPayload) {
-    const userVocas = await this.prisma.userAddVocabulary.findUnique({
+    const userVocas = await this.prisma.userAddVocabulary.upsert({
       where: {
         userId,
+      },
+      update: {},
+      create: {
+        user: {
+          connect: {
+            id: userId,
+          },
+        },
       },
     });
 

@@ -4,7 +4,11 @@ import { UserService } from './user.service';
 import { JwtModule } from '@nestjs/jwt';
 
 @Module({
-  imports: [JwtModule],
+  imports: [
+    JwtModule.register({
+      secret: process.env.JWT_ACCESS_TOKEN_KEY,
+    }),
+  ],
   controllers: [UserController],
   providers: [UserService],
 })

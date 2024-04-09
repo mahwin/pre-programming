@@ -27,12 +27,11 @@ export class JwtRefreshStrategy extends PassportStrategy(
         (req: Request) => getRefreshToken(req),
       ]),
       secretOrKey: process.env.JWT_REFRESH_TOKEN_KEY,
-      ignoreExpiration: false,
+      ignoreExpiration: true,
     });
   }
 
   async validate(payload: JwtPayload) {
-    console.log('refresh 성공!!');
     return payload;
   }
 }

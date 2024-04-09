@@ -10,16 +10,9 @@ import { JwtRefreshStrategy } from './strategy/refreshToken';
   imports: [
     JwtModule.register({
       secret: process.env.JWT_ACCESS_TOKEN_KEY,
-      signOptions: { expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRATION_TIME },
     }),
   ],
   controllers: [AuthController],
-  providers: [
-    AuthService,
-    JwtStrategy,
-    UserService,
-    JwtStrategy,
-    JwtRefreshStrategy,
-  ],
+  providers: [AuthService, JwtStrategy, UserService, JwtRefreshStrategy],
 })
 export class AuthModule {}

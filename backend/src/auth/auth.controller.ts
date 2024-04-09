@@ -27,17 +27,17 @@ export class AuthController {
   @ApiCreatedResponse({
     description: '넘어온 번호로 6자리 랜덤 수 입력 휴대폰 번호로 제공',
   })
-  signIn(@Res() res: Response, @Body() phone: LoginDto) {
-    this.authService.signIn(phone).then((userId) => {
-      res
-        .cookie('userId', userId, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'strict',
-        })
-        .status(201)
-        .send({ ok: true });
-    });
+  async signIn(@Res() res: Response, @Body() phone: LoginDto) {
+    const { userId } = await this.authService.signIn(phone);
+
+    res
+      .cookie('userId', userId, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'strict',
+      })
+      .status(201)
+      .send({ ok: true });
   }
 
   @Post('confirm')
@@ -79,9 +79,13 @@ export class AuthController {
     description: 'headers에서 JWT를 삭제함',
     type: null,
   })
-  signOut(@Res() res: Response) {
+  async signOut(@Req() req: Request, @Res() res: Response) {
+    const userId = toInteger(req.cookies.userId);
+
     res.clearCookie('userId');
     res.clearCookie('refreshToken');
+    await this.authService.signOut(userId);
+
     return res.status(200).send({ ok: true });
   }
 
@@ -94,8 +98,21 @@ export class AuthController {
     description: '새로운 accessToken을 반환',
   })
   @UseGuards(JwtRefreshAuthGuard)
-  async getAccessTokenByRefreshToken(@Req() req: Request) {
+  async refresh(@Req() req: Request, @Res() res: Response) {
     const payload = req.user as JwtPayload;
-    return this.authService.getAccessTokenByRefreshToken(payload);
+    const currentRefreshToken = req.cookies.refreshToken;
+    const result = await this.authService.refresh(payload, currentRefreshToken);
+    if (result.ok) {
+      res
+        .cookie('refreshToken', result.refreshToken, {
+          httpOnly: true,
+          secure: true,
+          sameSite: 'strict',
+        })
+        .status(201)
+        .send({ accessToken: result.accessToken });
+      return;
+    }
+    res.status(401).send('refresh token is not valid');
   }
 }

@@ -21,6 +21,7 @@ export class VocasController {
   @UseGuards(JwtAuthGuard)
   getUserVocas(@Req() req: Request) {
     const payload = req.user as JwtPayload;
+    console.log('!!!');
     return this.vocasService.getUserVocas(payload);
   }
 
