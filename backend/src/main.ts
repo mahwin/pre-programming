@@ -11,11 +11,13 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   app.enableCors({
     origin: [
+      `https://pre-programming.shop/`,
+      `https://pre-programming.shop:443/`,
       `http://localhost:${process.env.DEV_FRONT_PORT}`,
-      process.env.ORIGIN,
     ],
     credentials: true,
   });
+
   app.use(cookieParser());
   app.use(
     compression({
@@ -34,6 +36,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3307);
 }
 bootstrap();

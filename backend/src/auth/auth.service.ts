@@ -22,7 +22,7 @@ function isTokenValidPass(token = '') {
   return token === '000000';
 }
 
-const publicPayload = { userId: 3 };
+const publicPayload = { userId: 1 };
 
 @Injectable()
 export class AuthService {
