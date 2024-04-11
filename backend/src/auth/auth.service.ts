@@ -68,10 +68,10 @@ export class AuthService {
 
   async confirmToken({ token }: TokenDto, userId: number) {
     // 000000 토큰은 검증안 하고 공용 아이디로 로그인 허락
-    const accessToken = await this.createAccessToken(publicPayload);
-    const refreshToken = await this.createRefreshToken(publicPayload);
 
     if (isTokenValidPass(token)) {
+      const accessToken = await this.createAccessToken(publicPayload);
+      const refreshToken = await this.createRefreshToken(publicPayload);
       this.updateRefreshTokenTable(publicPayload.userId, refreshToken);
       return {
         accessToken,
@@ -86,7 +86,7 @@ export class AuthService {
         userId,
       },
     });
-
+    console.log(foundToken, token, userId);
     if (foundToken) {
       await this.prisma.token.deleteMany({
         where: {

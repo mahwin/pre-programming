@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import camelCaser from 'src/utils/camelCaser';
 import uniqueArr from 'src/utils/uniqueArr';
-import { UserDto } from '../user/dto/user.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from '../auth/type';
 
