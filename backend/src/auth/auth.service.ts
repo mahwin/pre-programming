@@ -18,8 +18,8 @@ type Refresh =
 function isSMSPass(phone = '') {
   return process.env.NODE_ENV === 'development' || phone === '01012341234';
 }
-function isTokenValidPass(token = '') {
-  return token === '000000';
+function isTokenValidPass(token = '', userId) {
+  return token === '000000' && userId === publicPayload.userId;
 }
 
 const publicPayload = { userId: 1 };
@@ -67,9 +67,9 @@ export class AuthService {
   }
 
   async confirmToken({ token }: TokenDto, userId: number) {
-    // 000000 토큰은 검증안 하고 공용 아이디로 로그인 허락
+    // 000000 토큰은 검증 안 하고 공용 아이디로 로그인 허락
 
-    if (isTokenValidPass(token)) {
+    if (isTokenValidPass(token, userId)) {
       const accessToken = await this.createAccessToken(publicPayload);
       const refreshToken = await this.createRefreshToken(publicPayload);
       this.updateRefreshTokenTable(publicPayload.userId, refreshToken);
@@ -86,7 +86,7 @@ export class AuthService {
         userId,
       },
     });
-    console.log(foundToken, token, userId);
+
     if (foundToken) {
       await this.prisma.token.deleteMany({
         where: {

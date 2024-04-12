@@ -35,7 +35,7 @@ const categories = [
 async function dbPush() {
   const categoryObj = {};
   for (let category of categories) {
-    const dicObj = require(`../../../../crawler/data/complete-dictionarys/1/db/${category}.json`);
+    const dicObj = require(`../../../etc/crawler/data/complete-dictionarys/1/db/${category}.json`);
     const levelObj = dataSplitter(dicObj);
     categoryObj[category] = levelObj;
   }

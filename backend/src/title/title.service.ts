@@ -6,11 +6,11 @@ export class TitleService {
   constructor(private prisma: PrismaService) {}
 
   async getAll() {
-    const data = await this.prisma.title.findUnique({
+    const { category, data } = await this.prisma.title.findUnique({
       where: {
         id: 1,
       },
     });
-    return { [data.category]: eval(data.data) };
+    return { [category]: JSON.parse(data) };
   }
 }

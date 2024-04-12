@@ -2,16 +2,16 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const categories = [
-  // 'recoil',
-  // 'axios',
-  // 'react',
-  // 'next',
-  // 'reactRedux',
-  // 'reactQuery',
-  // 'reactHookForm',
-  // 'tailwindcss',
-  // 'reactRouter',
-  // 'styledComponents',
+  'recoil',
+  'axios',
+  'react',
+  'next',
+  'reactRedux',
+  'reactQuery',
+  'reactHookForm',
+  'tailwindcss',
+  'reactRouter',
+  'styledComponents',
   //
 ];
 
@@ -20,17 +20,23 @@ function sleep(sec) {
 }
 
 async function dbPush() {
+  let total = [];
+  const getVocabulary = await prisma.vocabulary.findMany({});
   for (let category of categories) {
-    const dicObj = require(`../../../../crawler/data/complete-dictionarys/1/db/${category}.json`);
-    for (let i = 0; i < dicObj.length; i++) {
-      if (i % 100 === 0) {
-        sleep(1);
-      }
-      const newData = await prisma.vocabulary.create({
-        data: {
-          ...dicObj[i],
-        },
-      });
+    const dicObj = require(`../../../etc/crawler/data/complete-dictionarys/1/db/${category}.json`);
+    total.push(...dicObj);
+  }
+
+  let start = 0;
+
+  for (let i = start; i < total.length; i++) {
+    if (
+      getVocabulary[i] &&
+      getVocabulary[i].category === total[i].category &&
+      getVocabulary[i].mean === total[i].mean &&
+      getVocabulary[i].word === total[i].word
+    ) {
+      console.log('same', i);
     }
   }
 }

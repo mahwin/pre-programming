@@ -4,7 +4,8 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url = env("JAWSDB_URL")  
+  url = env("JAWSDB_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -72,7 +73,7 @@ model Title {
 
 model RefreshToken {
   id        Int      @id @default(autoincrement())
-  token     String   @unique
+  token     String   
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    Int      @unique
   createdAt DateTime @default(now())

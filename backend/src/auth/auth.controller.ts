@@ -34,7 +34,7 @@ export class AuthController {
       .cookie('userId', userId, {
         httpOnly: true,
         secure: true,
-        sameSite: 'strict',
+        sameSite: 'none',
       })
       .status(201)
       .send({ ok: true });
@@ -84,6 +84,8 @@ export class AuthController {
 
     res.clearCookie('userId');
     res.clearCookie('refreshToken');
+    if (userId === -1) return res.status(200).send({ ok: true });
+
     await this.authService.signOut(userId);
 
     return res.status(200).send({ ok: true });
