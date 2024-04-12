@@ -1,5 +1,5 @@
-type devType = "web";
-type titlesType =
+type DevType = "web";
+type TitlesType =
   | "next"
   | "react"
   | "reactHookForm"
@@ -11,7 +11,7 @@ type titlesType =
   | "tailwindcss"
   | "axios";
 
-const titles = [
+const TITLES = [
   "next",
   "react",
   "reactHookForm",
@@ -24,20 +24,16 @@ const titles = [
   "axios",
 ];
 
-type titleItemType = {
+type TitleItem = {
   title: string;
   ok: boolean;
   amount: string;
   install: string;
 };
 
-type titleObjType = {
-  [key in devType]: titleItemType[];
-};
+type TitleItems = TitleItem[];
 
-interface ITitles {
-  data: titleObjType;
-}
+type TitleInfo = Record<string, TitleItem[]>;
 
-export type { titleObjType, titleItemType, ITitles, titlesType, devType };
-export { titles };
+export type { TitleItems, TitleItem, DevType, TitlesType, TitleInfo };
+export { TITLES };

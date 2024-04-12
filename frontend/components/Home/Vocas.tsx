@@ -4,7 +4,49 @@ import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
 import { useSelector } from "react-redux";
 import { IState } from "@redux/initialState";
-import { titleItemType, titleObjType, devType } from "@type/commons/title";
+import { TitleInfo } from "@type/commons/title";
+
+export default function Vocas({ vocasInfo }: { vocasInfo: TitleInfo }) {
+  useSelector((state: IState) => state.vocas);
+  console.log(vocasInfo);
+
+  return (
+    <Wrapper>
+      {Object.keys(vocasInfo).map((key) => (
+        <Container key={key}>
+          <header>
+            <Title>for {key}.dev</Title>
+          </header>
+          <ItemsWrapper>
+            {vocasInfo[key].map((item, idx) => (
+              <Link
+                href={`/vocas/${item.title.toLowerCase()}`}
+                key={item.title}
+              >
+                <ItemBox
+                  style={{ pointerEvents: item.ok ? "visible" : "none" }}
+                >
+                  {!item.ok && (
+                    <Overray>
+                      <div>
+                        <p>Upcoming</p>
+                      </div>
+                    </Overray>
+                  )}
+                  <Item>
+                    <h3 style={{ color: titleColor[idx % 9] }}>{item.title}</h3>
+                    <p>단어 수 : {item.amount} </p>
+                    <p>다운 수 : {item.install} </p>
+                  </Item>
+                </ItemBox>
+              </Link>
+            ))}
+          </ItemsWrapper>
+        </Container>
+      ))}
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.main`
   display: flex;
@@ -83,43 +125,3 @@ const Overray = styled.div`
     }
   }
 `;
-
-export default function Vocas({ data }: { data: titleObjType }) {
-  useSelector((state: IState) => state.vocas);
-  return (
-    <Wrapper>
-      {Object.keys(data).map((key) => (
-        <Container key={key}>
-          <header>
-            <Title>for {key}.dev</Title>
-          </header>
-          <ItemsWrapper>
-            {data[key as devType].map((item: titleItemType, idx: number) => (
-              <Link
-                href={`/vocas/${item.title.toLowerCase()}`}
-                key={item.title}
-              >
-                <ItemBox
-                  style={{ pointerEvents: item.ok ? "visible" : "none" }}
-                >
-                  {!item.ok && (
-                    <Overray>
-                      <div>
-                        <p>Upcoming</p>
-                      </div>
-                    </Overray>
-                  )}
-                  <Item>
-                    <h3 style={{ color: titleColor[idx % 9] }}>{item.title}</h3>
-                    <p>단어 수 : {item.amount} </p>
-                    <p>다운 수 : {item.install} </p>
-                  </Item>
-                </ItemBox>
-              </Link>
-            ))}
-          </ItemsWrapper>
-        </Container>
-      ))}
-    </Wrapper>
-  );
-}

@@ -3,32 +3,34 @@ import Banner from "@components/Commons/Banner";
 import Vocas from "@components/Home/Vocas";
 import { api } from "@api/index";
 
-import { ITitles } from "@type/commons/title";
+import { TitleInfo } from "@type/commons/title";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 const Footer = dynamic(() => import("@components/Commons/Footer"), {
   loading: () => <p>loading...</p>,
 });
 
-const Home = ({ data }: ITitles) => {
+const Home = () => {
+  const [vocasInfo, setVocasInfo] = useState<TitleInfo>({});
+  useEffect(() => {
+    try {
+      api.get(`/title/all`).then((res) => {
+        setVocasInfo({ ...res.data });
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
+
   return (
     <>
       <Nav />
       <Banner />
-      <Vocas data={data} />
+      {vocasInfo && <Vocas {...{ vocasInfo }} />}
       <Footer />
     </>
   );
 };
 
 export default Home;
-
-export async function getServerSideProps() {
-  try {
-    const res = await api.get(`/title/all`);
-    if (res.status === 200) return { props: { data: res.data } };
-  } catch (e) {
-    console.warn(e);
-    return { props: { data: [] } };
-  }
-}

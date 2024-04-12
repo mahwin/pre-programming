@@ -9,7 +9,7 @@ import { vocasActions } from "@redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
-import { titlesType, titles } from "@type/commons/title";
+import { TitlesType, TITLES } from "@type/commons/title";
 import { isNil } from "@utils/typeGuard/isNil";
 import { IState } from "@redux/initialState";
 import { IVocaObj } from "@type/commons/voca";
@@ -24,7 +24,7 @@ export default function VocaPage() {
 
   useEffect(() => {
     if (isNil(title)) return;
-    if (!titles.includes(formatter(title))) {
+    if (!TITLES.includes(formatter(title))) {
       router.push("/404");
     }
   }, [title]);
@@ -36,7 +36,7 @@ export default function VocaPage() {
       return;
     }
 
-    setVocas(data.category[formatter(title) as titlesType].level);
+    setVocas(data.category[formatter(title) as TitlesType].level);
   }, [data, dispatch]);
 
   if (isNil(title) || isNil(vocas))
@@ -53,7 +53,7 @@ export default function VocaPage() {
     <>
       <Nav />
       <Banner />
-      <Vocas voca={vocas} title={title as titlesType} />
+      <Vocas voca={vocas} title={title as TitlesType} />
       <QuizButton quizData={vocas} />
       <Footer />
     </>
