@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import PageLoading from "@components/Commons/PageLoading";
-import { isNil } from "@utils/typeGuard";
 import { IState } from "@redux/initialState";
 
 export default function Me() {

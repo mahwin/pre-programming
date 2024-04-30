@@ -8,7 +8,6 @@ import { TitleInfo } from "@type/commons/title";
 
 export default function Vocas({ vocasInfo }: { vocasInfo: TitleInfo }) {
   useSelector((state: IState) => state.vocas);
-  console.log(vocasInfo);
 
   return (
     <Wrapper>

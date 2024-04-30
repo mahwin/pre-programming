@@ -1,6 +1,4 @@
-import { titleItemType } from "@type/commons/title";
-
-export default function chunk(data: titleItemType[], size: number) {
+export default function chunk(data: [], size: number) {
   let preIdx = 0;
   let result = [];
   const maxLen = Math.ceil(data.length / size);

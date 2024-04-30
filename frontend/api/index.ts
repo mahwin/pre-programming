@@ -3,6 +3,7 @@ import { authManager } from "@utils/Auth";
 import { isNil } from "@utils/typeGuard";
 
 interface ErrorResponse {
+  message?: string;
   response?: {
     status: number;
     data: {
@@ -15,6 +16,11 @@ interface ErrorResponse {
     };
   };
 }
+
+const MESSAGE = {
+  JWT_EXPIRED: "jwt expired",
+  ACCESSTOKEN_NOT_FOUND: "AccessToken이 없습니다.",
+};
 
 const api = axios.create({
   baseURL: `${process.env.API_HOST}:${process.env.PORT}`,
@@ -33,23 +39,32 @@ const authApi = axios.create({
 });
 
 // 요청 인터셉터
-authApi.interceptors.request.use((config) => {
+authApi.interceptors.request.use(async (config) => {
+  if (config.url === "/auth/refresh") return config;
+
   const token = authManager.get();
-  if (!token) throw Error("토큰이 없어, 해당 요청을 서버로 보내지 않습니다.");
-  config.headers.Authorization = `Bearer ${token}`;
-  return config;
+
+  if (!isNil(token)) {
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+  }
+
+  throw Error(MESSAGE.ACCESSTOKEN_NOT_FOUND);
 });
 
-authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
-  if (
-    error.response?.status === 401 &&
-    error.response?.data.message === "jwt expired"
-  ) {
-    const { accessToken } = await getAccessTokenByRefreshToken();
-    if (isNil(accessToken)) return new Error("refresh 토큰 검증 실패");
+function checkNeedRefresh(error: ErrorResponse) {
+  return (
+    error?.message == MESSAGE.ACCESSTOKEN_NOT_FOUND ||
+    error?.response?.data.message === MESSAGE.JWT_EXPIRED
+  );
+}
 
+authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
+  if (checkNeedRefresh(error)) {
+    const { accessToken } = await getAccessTokenByRefreshToken();
+
+    if (isNil(accessToken)) return new Error("refresh 토큰 검증 실패");
     authManager.set(accessToken);
-    // 재발급한 accessToken으로 다시 요청을 보냄
 
     const originalRequest = error.config;
     originalRequest.headers.Authorization = `Bearer ${authManager.get()}`;
@@ -59,10 +74,10 @@ authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
 
 async function getAccessTokenByRefreshToken() {
   try {
-    const response = await authApi.get("/auth/refresh");
-    return response.data;
+    const { data } = await authApi.get("/auth/refresh");
+    return data;
   } catch (error) {
-    return Promise.reject(error);
+    throw new Error("refresh 토큰 검증 실패");
   }
 }
 

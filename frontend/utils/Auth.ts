@@ -1,12 +1,15 @@
 class AuthManager {
-  private accessToken = "";
+  private _accessToken: null | string;
+  constructor() {
+    this._accessToken = null;
+  }
 
-  set(accessToken: string) {
-    this.accessToken = accessToken;
+  set(accessToken: string | null) {
+    this._accessToken = accessToken === "" ? null : accessToken;
   }
 
   get() {
-    return this.accessToken;
+    return this._accessToken;
   }
 }
 

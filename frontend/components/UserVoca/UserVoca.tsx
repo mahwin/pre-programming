@@ -13,12 +13,7 @@ import { userVocaColors } from "@color/userVocaColor";
 import chunk from "@utils/chunk";
 import formatter from "@utils/camelCaser";
 import { IUserVocaData, IClickedVoca } from "@type/userVoca";
-import {
-  titlesType,
-  titles,
-  titleItemType,
-  ITitles,
-} from "@type/commons/title";
+import { TitlesType, TITLES, TitleItems } from "@type/commons/title";
 
 const ArrowVariants: Variants = {
   open: {
@@ -77,10 +72,14 @@ const BoardVariants: Variants = {
   },
 };
 
-export default function UserVoca({ data }: ITitles) {
+interface Props {
+  data: { web: TitleItems };
+}
+
+export default function UserVoca({ data }: Props) {
   const [clickId, setClickId] = useState<string | null>(null);
   const [clickedRow, setClickedRow] = useState<string | null>(null);
-  const [rowData, setRowData] = useState<titleItemType[][]>([]);
+  const [rowData, setRowData] = useState<TitleItems[]>([]);
   const [userVocaData, setUserVocaData] = useState<IUserVocaData>({});
   const [clickedVoca, setClickedVoca] = useState<IClickedVoca>({});
 
@@ -113,13 +112,13 @@ export default function UserVoca({ data }: ITitles) {
   }, [vocas, dispatch]);
 
   useEffect(() => {
-    if (data) setRowData(chunk(data.web, 4));
+    if (data) setRowData(chunk(data.web as [], 4));
   }, [data]);
 
   useEffect(() => {
     if (vocas.data && userVocas.data) {
       let userSavedData: IUserVocaData = {};
-      for (let title of titles) {
+      for (let title of TITLES) {
         let savedData = userVocas.data[title];
 
         if (savedData) {
@@ -147,7 +146,7 @@ export default function UserVoca({ data }: ITitles) {
 
   const handleClickCard = (e: MouseEvent<HTMLElement>) => {
     const [category, level] = e.currentTarget.id.split("|");
-    let copy = clickedVoca[category as titlesType] || [];
+    let copy = clickedVoca[category as TitlesType] || [];
     if (copy.includes(level)) {
       copy = copy.filter((item) => level !== item);
     } else {
@@ -293,7 +292,7 @@ export default function UserVoca({ data }: ITitles) {
                         (level: string) => (
                           <LevelCard
                             isClick={
-                              clickedVoca?.[clickId as titlesType]?.includes(
+                              clickedVoca?.[clickId as TitlesType]?.includes(
                                 "" + level
                               ) || false
                             }
