@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Trie from "@utils/trie";
+import Trie from "@modules/Trie";
 import { IState } from "@redux/initialState";
 import styled from "styled-components";
 import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
@@ -13,6 +13,165 @@ import { bannerColors } from "@color/bannerColors";
 import { IVoca } from "@type/commons/voca";
 
 import { HStack } from "@components/Commons/HStack";
+
+interface IRecommendObj {
+  recommends: IVoca[];
+  selectedIndex: number;
+}
+
+type titleType = keyof IVoca;
+
+export default function Search() {
+  const [keyword, setKeyword] = useState("");
+  const [recommedObj, setRecommed] = useState<IRecommendObj>({
+    recommends: [],
+    selectedIndex: 0,
+  });
+  const [trie, setTrie] = useState<Trie | undefined>();
+  const [titles, _] = useState<titleType[]>(["word", "category", "mean"]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(e.currentTarget.value);
+  };
+
+  useEffect(() => {
+    if (trie) {
+      const recommends = trie.autoComplete(keyword, 8);
+      setRecommed({ selectedIndex: 0, recommends });
+    }
+  }, [keyword]);
+
+  const { loading, data, error } = useSelector((state: IState) => state.vocas);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!data) {
+      dispatch(vocasActions.getVocas());
+    } else if (trie === undefined) {
+      setTrie(Trie.getInstance(data));
+    }
+  }, [data, dispatch]);
+
+  const handleKeyboardEvent = (e: React.KeyboardEvent<HTMLElement>) => {
+    if (recommedObj.recommends.length == 0) return;
+    const activateKey = ["ArrowUp", "ArrowDown", "Enter"];
+    const lastIndex = recommedObj.recommends.length - 1;
+    if (activateKey.includes(e.key)) {
+      switch (e.key) {
+        case "ArrowUp":
+          setRecommed({
+            ...recommedObj,
+            selectedIndex:
+              recommedObj.selectedIndex === 0
+                ? lastIndex
+                : recommedObj.selectedIndex - 1,
+          });
+          break;
+        case "ArrowDown":
+          setRecommed({
+            ...recommedObj,
+            selectedIndex:
+              recommedObj.selectedIndex === lastIndex
+                ? 0
+                : recommedObj.selectedIndex + 1,
+          });
+          break;
+        case "Enter":
+          setKeyword(recommedObj.recommends[recommedObj.selectedIndex].word);
+          break;
+      }
+    }
+  };
+
+  const handleItemClick = (e: React.MouseEvent<HTMLElement>) => {
+    const selectedIndex = Number(e.currentTarget.dataset.index);
+    setRecommed({
+      ...recommedObj,
+      selectedIndex,
+    });
+
+    setKeyword(recommedObj.recommends[selectedIndex].word);
+  };
+
+  const router = useRouter();
+  useEffect(() => {
+    setKeyword("");
+    setRecommed({
+      recommends: [],
+      selectedIndex: 0,
+    });
+  }, [router]);
+
+  return (
+    <Wrapper onKeyUp={handleKeyboardEvent}>
+      <InputBox>
+        <MagnifyingGlassSvg width="24" height="24" color="green" />
+        {!loading ? (
+          <Input onChange={handleChange} value={keyword} />
+        ) : (
+          <LodingInput>
+            <FrownSvg color="gray" width="30" height="30" strokeWidth="2" />
+          </LodingInput>
+        )}
+      </InputBox>
+      {keyword && trie && (
+        <SuggestionTable>
+          <SuggestionHeader>
+            <TableRow>
+              {titles.map((title, i) => (
+                <th>{title}</th>
+              ))}
+            </TableRow>
+          </SuggestionHeader>
+          {recommedObj.recommends.length === 0 ? (
+            <tr>
+              <td colSpan={3}>
+                <EmptySuggestion>
+                  <span>No results found</span>
+                  <FrownSvg
+                    color="orange"
+                    width="30"
+                    height="30"
+                    strokeWidth="2"
+                  />
+                </EmptySuggestion>
+              </td>
+            </tr>
+          ) : (
+            recommedObj.recommends.map((info, i) => (
+              <TableRow
+                key={i}
+                data-index={i}
+                onClick={handleItemClick}
+                isSelected={recommedObj.selectedIndex === i ? true : false}
+              >
+                <td>{info.word}</td>
+                <td>{info.category}</td>
+                <td>
+                  <HStack layout="space-between">
+                    <span>{meanConvert(info.mean, 2, 15)}</span>
+                    <Route>
+                      <Link
+                        href={`/vocas/${camelStrToMiddleBarStr(
+                          info.category!
+                        )}`}
+                      >
+                        <a>
+                          <SendSvg width="24" height="24" />
+                        </a>
+                      </Link>
+                    </Route>
+                  </HStack>
+                </td>
+              </TableRow>
+            ))
+          )}
+        </SuggestionTable>
+      )}
+    </Wrapper>
+  );
+}
 
 const Wrapper = styled.section<React.HTMLAttributes<HTMLElement>>`
   margin-top: 30px;
@@ -185,162 +344,3 @@ const TableRow = styled.tr<
   background-color: ${(props) =>
     props.isSelected && bannerColors.search.selecetedColor};
 `;
-
-interface IRecommendObj {
-  recommends: IVoca[];
-  selectedIndex: number;
-}
-
-type titleType = keyof IVoca;
-
-export default function Search() {
-  const [keyword, setKeyword] = useState("");
-  const [recommedObj, setRecommed] = useState<IRecommendObj>({
-    recommends: [],
-    selectedIndex: 0,
-  });
-  const [trie, setTrie] = useState<Trie | undefined>();
-  const [titles, _] = useState<titleType[]>(["word", "category", "mean"]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setKeyword(e.currentTarget.value);
-  };
-
-  useEffect(() => {
-    if (trie) {
-      const recommends = trie.autoComplete(keyword, 8);
-      setRecommed({ selectedIndex: 0, recommends });
-    }
-  }, [keyword]);
-
-  const { loading, data, error } = useSelector((state: IState) => state.vocas);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (!data) {
-      dispatch(vocasActions.getVocas());
-    } else if (trie === undefined) {
-      setTrie(Trie.getInstance(data));
-    }
-  }, [data, dispatch]);
-
-  const handleKeyboardEvent = (e: React.KeyboardEvent<HTMLElement>) => {
-    if (recommedObj.recommends.length == 0) return;
-    const activateKey = ["ArrowUp", "ArrowDown", "Enter"];
-    const lastIndex = recommedObj.recommends.length - 1;
-    if (activateKey.includes(e.key)) {
-      switch (e.key) {
-        case "ArrowUp":
-          setRecommed({
-            ...recommedObj,
-            selectedIndex:
-              recommedObj.selectedIndex === 0
-                ? lastIndex
-                : recommedObj.selectedIndex - 1,
-          });
-          break;
-        case "ArrowDown":
-          setRecommed({
-            ...recommedObj,
-            selectedIndex:
-              recommedObj.selectedIndex === lastIndex
-                ? 0
-                : recommedObj.selectedIndex + 1,
-          });
-          break;
-        case "Enter":
-          setKeyword(recommedObj.recommends[recommedObj.selectedIndex].word);
-          break;
-      }
-    }
-  };
-
-  const handleItemClick = (e: React.MouseEvent<HTMLElement>) => {
-    const selectedIndex = Number(e.currentTarget.dataset.index);
-    setRecommed({
-      ...recommedObj,
-      selectedIndex,
-    });
-
-    setKeyword(recommedObj.recommends[selectedIndex].word);
-  };
-
-  const router = useRouter();
-  useEffect(() => {
-    setKeyword("");
-    setRecommed({
-      recommends: [],
-      selectedIndex: 0,
-    });
-  }, [router]);
-
-  return (
-    <Wrapper onKeyUp={handleKeyboardEvent}>
-      <InputBox>
-        <MagnifyingGlassSvg width="24" height="24" color="green" />
-        {!loading ? (
-          <Input onChange={handleChange} value={keyword} />
-        ) : (
-          <LodingInput>
-            <FrownSvg color="gray" width="30" height="30" strokeWidth="2" />
-          </LodingInput>
-        )}
-      </InputBox>
-      {keyword && trie && (
-        <SuggestionTable>
-          <SuggestionHeader>
-            <TableRow>
-              {titles.map((title, i) => (
-                <th>{title}</th>
-              ))}
-            </TableRow>
-          </SuggestionHeader>
-          {recommedObj.recommends.length === 0 ? (
-            <tr>
-              <td colSpan={3}>
-                <EmptySuggestion>
-                  <span>No results found</span>
-                  <FrownSvg
-                    color="orange"
-                    width="30"
-                    height="30"
-                    strokeWidth="2"
-                  />
-                </EmptySuggestion>
-              </td>
-            </tr>
-          ) : (
-            recommedObj.recommends.map((info, i) => (
-              <TableRow
-                key={i}
-                data-index={i}
-                onClick={handleItemClick}
-                isSelected={recommedObj.selectedIndex === i ? true : false}
-              >
-                <td>{info.word}</td>
-                <td>{info.category}</td>
-                <td>
-                  <HStack layout="space-between">
-                    <span>{meanConvert(info.mean, 2, 15)}</span>
-                    <Route>
-                      <Link
-                        href={`/vocas/${camelStrToMiddleBarStr(
-                          info.category!
-                        )}`}
-                      >
-                        <a>
-                          <SendSvg width="24" height="24" />
-                        </a>
-                      </Link>
-                    </Route>
-                  </HStack>
-                </td>
-              </TableRow>
-            ))
-          )}
-        </SuggestionTable>
-      )}
-    </Wrapper>
-  );
-}

@@ -8,7 +8,7 @@ import { userActions } from "@redux/user/userSlice";
 import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
 import { Space } from "@components/Commons/Space";
-import { authManager } from "@utils/Auth";
+import { authManager } from "@modules/Auth";
 import { api } from "@api/index";
 import { isNil } from "@utils/typeGuard";
 

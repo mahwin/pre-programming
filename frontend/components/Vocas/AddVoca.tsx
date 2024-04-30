@@ -5,7 +5,7 @@ import { motion, Variants } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { IState } from "@redux/initialState";
-import useMutation from "@utils/useMutation";
+import useMutation from "@hooks/useMutation";
 import { vocaColors } from "@color/vocaColors";
 import { IAddVoca } from "@type/vocas";
 import { VocaCard } from "./VocaCard";

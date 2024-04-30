@@ -9,7 +9,8 @@
       "@color/*": ["assets/color/*"],
       "@redux/*": ["redux/*"],
       "@api/*": ["api"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@modules/*": ["modules/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

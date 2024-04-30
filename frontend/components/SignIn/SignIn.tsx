@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { TwitterSvg, FacebookSvg, LoadingSvg } from "@svg";
-import useMutation from "@utils/useMutation";
+import useMutation from "@hooks/useMutation";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useEffect, useCallback } from "react";
@@ -12,7 +12,7 @@ import {
   PhoneConfirmResponse,
 } from "@type/signIn";
 import { isNil } from "@utils/typeGuard";
-import { authManager } from "@utils/Auth";
+import { authManager } from "@modules/Auth";
 
 export default function SignIn() {
   //phone 입력과 서버 연결

@@ -1,5 +1,5 @@
 import axios, { AxiosError } from "axios";
-import { authManager } from "@utils/Auth";
+import { authManager } from "@modules/Auth";
 import { isNil } from "@utils/typeGuard";
 
 interface ErrorResponse {
