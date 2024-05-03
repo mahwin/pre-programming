@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Header";
+import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import UserInfo from "@components/UserInfo/UserInfo";
 import { useSelector } from "react-redux";
@@ -12,14 +12,13 @@ export default function Me() {
 
   const router = useRouter();
   useEffect(() => {
-    console.log(!loading && error);
     if (!loading && error) {
       router.push("/signIn");
     }
   }, [loading, error, router]);
   return (
     <>
-      <Nav />
+      <Header />
       {data ? <UserInfo data={data} /> : <PageLoading />}
       <Footer />
     </>

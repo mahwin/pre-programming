@@ -1,15 +1,4 @@
-type DevType = "web";
-type TitlesType =
-  | "next"
-  | "react"
-  | "reactHookForm"
-  | "reactQuery"
-  | "reactRedux"
-  | "reactRouter"
-  | "recoil"
-  | "styledComponents"
-  | "tailwindcss"
-  | "axios";
+import { AxiosError } from "axios";
 
 const TITLES = [
   "next",
@@ -22,7 +11,10 @@ const TITLES = [
   "styledComponents",
   "tailwindcss",
   "axios",
-];
+] as const;
+
+type DevType = "web";
+type TitlesType = (typeof TITLES)[number];
 
 type TitleItem = {
   title: string;
@@ -35,5 +27,21 @@ type TitleItems = TitleItem[];
 
 type TitleInfo = Record<string, TitleItem[]>;
 
-export type { TitleItems, TitleItem, DevType, TitlesType, TitleInfo };
+type ITitles = Record<"web", TitleItem[]>;
+
+interface ITitlesState {
+  loading: boolean;
+  data: ITitles | null;
+  error: AxiosError | null;
+}
+
+export type {
+  TitleItems,
+  TitleItem,
+  DevType,
+  TitlesType,
+  TitleInfo,
+  ITitles,
+  ITitlesState,
+};
 export { TITLES };

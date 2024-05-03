@@ -2,52 +2,80 @@ import styled from "styled-components";
 import Link from "next/link";
 import { titleColor } from "assets/color/titleColors";
 import { vocasColors } from "@color/vocasColors";
-import { useSelector } from "react-redux";
-import { IState } from "@redux/initialState";
-import { TitleInfo } from "@type/commons/title";
+import { useSelector, useDispatch } from "react-redux";
+import { ITitlesState } from "@type/commons/title";
+import { titlesActions } from "@redux/titles/titlesSlice";
+import { ObjectKeys } from "@utils/array";
+import { isNil } from "@utils/typeGuard";
+import { useEffect } from "react";
+import { LoadingSvg } from "@svg";
 
-export default function Vocas({ vocasInfo }: { vocasInfo: TitleInfo }) {
-  useSelector((state: IState) => state.vocas);
+export default function Vocas() {
+  const { loading, data: titles } = useSelector(
+    ({ titles }: { titles: ITitlesState }) => titles
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!isNil(titles)) return;
+    dispatch(titlesActions.getTitles());
+  }, [dispatch]);
 
   return (
     <Wrapper>
-      {Object.keys(vocasInfo).map((key) => (
-        <Container key={key}>
-          <header>
-            <Title>for {key}.dev</Title>
-          </header>
-          <ItemsWrapper>
-            {vocasInfo[key].map((item, idx) => (
-              <Link
-                href={`/vocas/${item.title.toLowerCase()}`}
-                key={item.title}
-              >
-                <ItemBox
-                  style={{ pointerEvents: item.ok ? "visible" : "none" }}
+      {loading || !titles ? (
+        <LodingContainer>
+          <LoadingSvg width="120px" height="120px" />
+        </LodingContainer>
+      ) : (
+        ObjectKeys(titles).map((devName, index) => (
+          <Container key={index}>
+            <header>
+              <Title>for {devName}.dev</Title>
+            </header>
+            <ItemsWrapper>
+              {titles[devName].map((item, itemIdx) => (
+                <Link
+                  href={`/vocas/${item.title.toLowerCase()}`}
+                  key={item.title}
                 >
-                  {!item.ok && (
-                    <Overray>
-                      <div>
-                        <p>Upcoming</p>
-                      </div>
-                    </Overray>
-                  )}
-                  <Item>
-                    <h3 style={{ color: titleColor[idx % 9] }}>{item.title}</h3>
-                    <p>단어 수 : {item.amount} </p>
-                    <p>다운 수 : {item.install} </p>
-                  </Item>
-                </ItemBox>
-              </Link>
-            ))}
-          </ItemsWrapper>
-        </Container>
-      ))}
+                  <ItemBox
+                    style={{ pointerEvents: item.ok ? "visible" : "none" }}
+                  >
+                    {!item.ok && (
+                      <Overray>
+                        <div>
+                          <p>Upcoming</p>
+                        </div>
+                      </Overray>
+                    )}
+                    <Item>
+                      <h3 style={{ color: titleColor[itemIdx % 9] }}>
+                        {item.title}
+                      </h3>
+                      <p>단어 수 : {item.amount} </p>
+                      <p>다운 수 : {item.install} </p>
+                    </Item>
+                  </ItemBox>
+                </Link>
+              ))}
+            </ItemsWrapper>
+          </Container>
+        ))
+      )}
     </Wrapper>
   );
 }
 
 const Wrapper = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 580px;
+`;
+
+const LodingContainer = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

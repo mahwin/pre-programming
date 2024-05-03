@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Header";
+import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import Vocas from "@components/Vocas/Vocas";
 import Banner from "@components/Commons/Banner";
@@ -24,7 +24,7 @@ export default function VocaPage() {
 
   useEffect(() => {
     if (isNil(title)) return;
-    if (!TITLES.includes(formatter(title))) {
+    if (!TITLES.includes(formatter(title) as TitlesType)) {
       router.push("/404");
     }
   }, [title]);
@@ -42,7 +42,7 @@ export default function VocaPage() {
   if (isNil(title) || isNil(vocas))
     return (
       <>
-        <Nav />
+        <Header />
         <Banner />
         <PageLoading />
         <Footer />
@@ -51,7 +51,7 @@ export default function VocaPage() {
 
   return (
     <>
-      <Nav />
+      <Header />
       <Banner />
       <Vocas voca={vocas} title={title as TitlesType} />
       <QuizButton quizData={vocas} />

@@ -110,7 +110,10 @@ export default function AddVaca({
             }}
           >
             {selected.map((visible, idx) => (
-              <VocaCard {...{ visible, cardData, idx, handleClick }} />
+              <VocaCard
+                key={idx}
+                {...{ visible, cardData, idx, handleClick }}
+              />
             ))}
           </Cards>
         </div>

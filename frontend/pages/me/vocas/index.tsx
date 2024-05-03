@@ -1,4 +1,4 @@
-import Nav from "@components/Commons/Header";
+import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
 import UserVoca from "@components/UserVoca/UserVoca";
 import axios from "axios";
@@ -11,7 +11,7 @@ interface Props {
 function UserVocaPage({ data }: Props) {
   return (
     <>
-      <Nav />
+      <Header />
       <UserVoca data={data} />
       <Footer />
     </>

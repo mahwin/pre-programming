@@ -14,7 +14,7 @@ import { isNil } from "@utils/typeGuard";
 
 type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
 
-function Nav() {
+export function Header() {
   const { data: userInfo } = useSelector((state: IState) => state.user);
 
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
@@ -70,8 +70,6 @@ function Nav() {
     </Wrapper>
   );
 }
-
-export default Nav;
 
 const Wrapper = styled.div`
   height: 55px;
