@@ -5,11 +5,17 @@ import rootReducer from "./rootReducer";
 import getUserSaga from "./user/userSaga";
 import getVocasSaga from "./vocas/vocasSaga";
 import getUserVocasSaga from "./userVocas/userVocasSaga";
+import getTitlesSage from "./titles/titlesSage";
 
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
-  yield all([getUserVocasSaga(), getVocasSaga(), getUserSaga()]);
+  yield all([
+    getUserVocasSaga(),
+    getVocasSaga(),
+    getUserSaga(),
+    getTitlesSage(),
+  ]);
 }
 
 const createStore = () => {
