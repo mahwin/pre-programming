@@ -37,6 +37,9 @@ const authApi = axios.create({
     "Content-Type": "application/json",
   },
 });
+async function sleep() {
+  return new Promise((resolve) => setTimeout(resolve, 1000));
+}
 
 // 요청 인터셉터
 authApi.interceptors.request.use(async (config) => {
@@ -48,14 +51,13 @@ authApi.interceptors.request.use(async (config) => {
     config.headers.Authorization = `Bearer ${token}`;
     return config;
   }
-
-  throw Error(MESSAGE.ACCESSTOKEN_NOT_FOUND);
+  throw { message: MESSAGE.ACCESSTOKEN_NOT_FOUND, config };
 });
 
 function checkNeedRefresh(error: ErrorResponse) {
   return (
     error?.message == MESSAGE.ACCESSTOKEN_NOT_FOUND ||
-    error?.response?.data.message === MESSAGE.JWT_EXPIRED
+    error?.response?.data.message == MESSAGE.JWT_EXPIRED
   );
 }
 
@@ -63,11 +65,10 @@ authApi.interceptors.response.use(undefined, async (error: ErrorResponse) => {
   if (checkNeedRefresh(error)) {
     const { accessToken } = await getAccessTokenByRefreshToken();
 
-    if (isNil(accessToken)) return new Error("refresh 토큰 검증 실패");
+    if (isNil(accessToken)) return;
     authManager.set(accessToken);
 
     const originalRequest = error.config;
-    originalRequest.headers.Authorization = `Bearer ${authManager.get()}`;
     return authApi(originalRequest);
   }
 });
