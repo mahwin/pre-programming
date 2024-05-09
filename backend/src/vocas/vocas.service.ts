@@ -10,13 +10,14 @@ export class VocasService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
 
   async getAll() {
-    const vocas = await this.prisma.seperatedVocabulary.findUnique({
-      where: {
-        id: 1,
-      },
-    });
+    const { data: vocasData } =
+      await this.prisma.seperatedVocabulary.findUnique({
+        where: {
+          id: 2,
+        },
+      });
 
-    return { ok: true, data: vocas.data };
+    return { ok: true, data: vocasData };
   }
 
   async levelUpdate(category: string, { userId, level }) {
