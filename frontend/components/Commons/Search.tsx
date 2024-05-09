@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
+
+import Link from "next/link";
 import Trie from "@modules/Trie";
 import { IState } from "@redux/initialState";
-import styled from "styled-components";
-import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
-import { camelStrToMiddleBarStr } from "@utils/camelCaser";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { vocasActions } from "@redux/vocas/vocasSlice";
-import meanConvert from "@utils/meanConvert";
-import { bannerColors } from "@color/bannerColors";
-import { IVoca } from "@type/commons/voca";
-
 import { HStack } from "@components/Commons/HStack";
+import { MagnifyingGlassSvg, FrownSvg, SendSvg } from "@svg";
+
+import { isNil } from "@utils/typeGuard";
+
+import { camelStrToMiddleBarStr, meanConvert } from "@utils/index";
+
+import { useRouter } from "next/router";
+import { vocasActions } from "@redux/vocas/vocasSlice";
+
+import { bannerColors } from "@color/bannerColors";
+import { Vocas } from "@type/commons/voca";
 
 interface IRecommendObj {
-  recommends: IVoca[];
+  recommends: Vocas;
   selectedIndex: number;
 }
 
-type titleType = keyof IVoca;
+const MAX_ROCOMENDS = 8;
 
 export default function Search() {
   const [keyword, setKeyword] = useState("");
@@ -27,31 +31,38 @@ export default function Search() {
     recommends: [],
     selectedIndex: 0,
   });
-  const [trie, setTrie] = useState<Trie | undefined>();
-  const [titles, _] = useState<titleType[]>(["word", "category", "mean"]);
+  const [trie, setTrie] = useState<Trie | null>(null);
+  const [titles, _] = useState(["word", "category", "mean"]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   };
 
-  useEffect(() => {
-    if (trie) {
-      const recommends = trie.autoComplete(keyword, 8);
+  useEffect(
+    function autoComplete() {
+      if (isNil(trie)) return;
+      const recommends = trie.search(keyword);
       setRecommed({ selectedIndex: 0, recommends });
-    }
-  }, [keyword]);
+    },
+    [keyword]
+  );
 
-  const { loading, data, error } = useSelector((state: IState) => state.vocas);
+  const { loading, data } = useSelector((state: IState) => state.vocas);
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!data) {
-      dispatch(vocasActions.getVocas());
-    } else if (trie === undefined) {
-      setTrie(Trie.getInstance(data));
-    }
-  }, [data, dispatch]);
+  useEffect(
+    function getTrieInstance() {
+      if (!isNil(trie)) return;
+
+      if (isNil(data)) {
+        dispatch(vocasActions.getVocas());
+      } else {
+        setTrie(Trie.getInstance(MAX_ROCOMENDS, data));
+      }
+    },
+    [data, dispatch]
+  );
 
   const handleKeyboardEvent = (e: React.KeyboardEvent<HTMLElement>) => {
     if (recommedObj.recommends.length == 0) return;
@@ -153,9 +164,7 @@ export default function Search() {
                     <span>{meanConvert(info.mean, 2, 15)}</span>
                     <Route>
                       <Link
-                        href={`/vocas/${camelStrToMiddleBarStr(
-                          info.category!
-                        )}`}
+                        href={`/vocas/${camelStrToMiddleBarStr(info.category!)}`}
                       >
                         <a>
                           <SendSvg width="24" height="24" />
