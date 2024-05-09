@@ -1,6 +1,6 @@
 const MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER;
 
-export default function meanConvert(
+export function meanConvert(
   arr: string,
   cnt: number = MAX_SAFE_INTEGER,
   maxLen: number = MAX_SAFE_INTEGER

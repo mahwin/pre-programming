@@ -1,4 +1,4 @@
-export default function chunk(data: [], size: number) {
+export function chunk(data: [], size: number) {
   let preIdx = 0;
   let result = [];
   const maxLen = Math.ceil(data.length / size);

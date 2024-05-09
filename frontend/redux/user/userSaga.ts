@@ -8,7 +8,6 @@ function* getUser() {
     const response: AxiosResponse = yield call(userAPI.getUser);
     yield put(userActions.getUserSuccess(response));
   } catch (error) {
-    console.log(error, "??");
     yield put(userActions.getUserError(error));
   }
 }

@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 
-type categoriesType =
+type CategoriesType =
   | "next"
   | "react"
   | "reactHookForm"
@@ -25,31 +25,21 @@ const categories = [
   "axios",
 ];
 
-interface IVoca {
+interface Voca {
   frequency: string;
   word: string;
   mean: string;
-  category?: string;
-  level?: string;
+  category: string;
+  level: string;
 }
 
-interface IVocaObj {
-  [key: string]: IVoca[];
-}
-
-interface IVocas {
-  [key: string]: {
-    [key: string]: {
-      level: IVocaObj;
-    };
-  };
-}
+type Vocas = Voca[];
 
 interface IVocaState {
   loading: boolean;
-  data: IVocas | null;
+  data: Vocas | null;
   error: null | AxiosError;
 }
 
 export { categories };
-export type { IVocaState, categoriesType, IVocas, IVoca, IVocaObj };
+export type { IVocaState, CategoriesType, Voca, Vocas };

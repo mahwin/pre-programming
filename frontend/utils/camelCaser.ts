@@ -1,17 +1,17 @@
-export default function formatter(name: string) {
-  const nameList = name.split("-");
+export function formatter(name: string) {
+  const nameList = name.split('-');
   nameList.forEach((string, idx) => {
     if (idx !== 0) {
       nameList[idx] = string[0].toUpperCase() + string.slice(1);
     }
   });
 
-  return camelCaser(nameList.join(""));
+  return camelCaser(nameList.join(''));
 }
 
 export function camelStrToMiddleBarStr(camelString: string) {
   let result = [];
-  let str = "";
+  let str = '';
   for (let i = 0; i < camelString.length; i++) {
     if (camelString[i].match(/[A-Z]/)) {
       result.push(str);
@@ -19,7 +19,7 @@ export function camelStrToMiddleBarStr(camelString: string) {
     } else str += camelString[i];
   }
   result.push(str);
-  return result.join("-");
+  return result.join('-');
 }
 
 export function camelCaser(name: string) {
