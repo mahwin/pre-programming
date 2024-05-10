@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { TitleController } from './title.controller';
-import { TitleService } from './title.service';
+import { TitleController } from './category.controller';
+import { TitleService } from './category.service';
 
 @Module({
   controllers: [TitleController],

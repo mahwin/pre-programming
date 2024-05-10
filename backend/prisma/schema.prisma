@@ -71,6 +71,14 @@ model Title {
   data     String @db.LongText
 }
 
+model Category {
+  id       Int    @id @default(autoincrement())
+  category String
+  amount  Int
+  install String
+  available Boolean
+}
+
 model RefreshToken {
   id        Int      @id @default(autoincrement())
   token     String   
