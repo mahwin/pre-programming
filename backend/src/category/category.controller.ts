@@ -2,7 +2,7 @@ import { Controller, Get, Res } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { Response } from 'express';
 
-@Controller('category')
+@Controller('categories')
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
 
