@@ -1,4 +1,4 @@
-import { IVoca, IVocaObj } from "@type/commons/voca";
+import { IVoca, IVocaObj } from "@type/commons/vocabulary";
 
 interface IQuizData {
   question: string;

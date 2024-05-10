@@ -1,6 +1,6 @@
 import { Header } from "@components/Commons/Header";
 import Banner from "@components/Commons/Banner";
-import Vocas from "@components/Home/Vocas";
+import { CategoryList } from "@components/CategoryList";
 import dynamic from "next/dynamic";
 
 const Footer = dynamic(() => import("@components/Commons/Footer"), {
@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <Header />
       <Banner />
-      <Vocas />
+      <CategoryList />
       <Footer />
     </>
   );

@@ -1,9 +1,9 @@
 import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
-import Vocas from "@components/Vocas/Vocas";
+import Vocas from "@components/Category/Vocas";
 import Banner from "@components/Commons/Banner";
-import QuizButton from "@components/Vocas/QuizButton";
-import formatter from "@utils/camelCaser";
+import QuizButton from "@components/Category/QuizButton";
+import { camelCaser } from "@utils/stringFormater";
 import { useEffect, useState } from "react";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
@@ -12,34 +12,36 @@ import PageLoading from "@components/Commons/PageLoading";
 import { TitlesType, TITLES } from "@type/commons/title";
 import { isNil } from "@utils/typeGuard/isNil";
 import { IState } from "@redux/initialState";
-import { IVocaObj } from "@type/commons/voca";
+
+import { Category } from "@components/Category";
 
 export default function VocaPage() {
-  const { data } = useSelector(({ vocas }: IState) => vocas);
-
-  const [vocas, setVocas] = useState<IVocaObj | null>(null);
+  const { categorizedVocabulary, loading } = useSelector(
+    ({ vocas }: IState) => vocas
+  );
 
   const router = useRouter();
-  const title = router.query.voca as string;
+  const title = router.query.voca as TitlesType;
 
-  useEffect(() => {
-    if (isNil(title)) return;
-    if (!TITLES.includes(formatter(title) as TitlesType)) {
-      router.push("/404");
-    }
-  }, [title]);
+  useEffect(
+    function checkUrl() {
+      if (isNil(title)) return;
+      if (!TITLES.includes(title)) {
+        router.push("/404");
+      }
+    },
+    [title]
+  );
 
   const dispatch = useDispatch();
   useEffect(() => {
-    if (isNil(data)) {
+    if (isNil(categorizedVocabulary)) {
       vocasActions.getVocas();
       return;
     }
+  }, [dispatch]);
 
-    setVocas(data.category[formatter(title) as TitlesType].level);
-  }, [data, dispatch]);
-
-  if (isNil(title) || isNil(vocas))
+  if (isNil(categorizedVocabulary))
     return (
       <>
         <Header />
@@ -53,8 +55,10 @@ export default function VocaPage() {
     <>
       <Header />
       <Banner />
-      <Vocas voca={vocas} title={title as TitlesType} />
-      <QuizButton quizData={vocas} />
+      <Category
+        {...{ title, levelledVocabulary: categorizedVocabulary[title]! }}
+      />
+      {/* <QuizButton quizData={vocas} /> */}
       <Footer />
     </>
   );

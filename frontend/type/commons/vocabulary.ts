@@ -25,21 +25,30 @@ const categories = [
   "axios",
 ];
 
-interface Voca {
+interface VocabularyItem {
   frequency: string;
   word: string;
   mean: string;
-  category: string;
+  category: CategoriesType;
   level: string;
 }
 
-type Vocas = Voca[];
+type VocabularyItems = VocabularyItem[];
 
-interface IVocaState {
-  loading: boolean;
-  data: Vocas | null;
-  error: null | AxiosError;
-}
+type LevelledVocabulary = {
+  [level: string]: VocabularyItems;
+};
+
+type CategorizedVocabulary = {
+  [category in CategoriesType]?: LevelledVocabulary;
+};
 
 export { categories };
-export type { IVocaState, CategoriesType, Voca, Vocas };
+
+export type {
+  CategoriesType,
+  VocabularyItems,
+  VocabularyItem,
+  CategorizedVocabulary,
+  LevelledVocabulary,
+};

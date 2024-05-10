@@ -1,8 +1,8 @@
-import { Voca } from "@type/commons/voca";
+import { VocabularyItem } from "@type/commons/vocabulary";
 
 class TrieNode {
   children: Record<string, TrieNode>;
-  items: Array<Voca>;
+  items: Array<VocabularyItem>;
   constructor() {
     this.children = {};
     this.items = [];
@@ -13,26 +13,26 @@ export class Trie {
   private static instance: Trie | null = null;
   root: TrieNode;
   maxSavedItems: number;
-  constructor(maxSavedItems = Infinity, datas: Voca[]) {
+  constructor(maxSavedItems = Infinity, datas: VocabularyItem[]) {
     this.root = new TrieNode();
     this.maxSavedItems = maxSavedItems;
     this.fillTrie(datas);
   }
 
-  static getInstance(maxSavedItems = Infinity, datas: Voca[]) {
+  static getInstance(maxSavedItems = Infinity, datas: VocabularyItem[]) {
     if (!Trie.instance) {
       Trie.instance = new Trie(maxSavedItems, datas);
     }
     return Trie.instance;
   }
 
-  private fillTrie(datas: Voca[]) {
+  private fillTrie(datas: VocabularyItem[]) {
     for (const data of datas) {
       this.insert(data, data.word);
     }
   }
 
-  private insert(info: Voca, strings: string) {
+  private insert(info: VocabularyItem, strings: string) {
     let node = this.root;
 
     for (const char of strings) {

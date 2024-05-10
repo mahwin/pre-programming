@@ -1,6 +1,6 @@
 import meanConvert from "@utils/meanConvert";
 import styled from "styled-components";
-import { IVoca } from "@type/commons/voca";
+import { IVoca } from "@type/commons/vocabulary";
 
 const TableWrapper = styled.div`
   height: 300px;

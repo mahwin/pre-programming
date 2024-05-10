@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { RecommendObj } from "./";
-import type { Voca } from "@type/commons/voca";
+import type { VocabularyItem } from "@type/commons/vocabulary";
 import { bannerColors } from "@color/bannerColors";
 
 import styled from "styled-components";
@@ -10,14 +10,14 @@ import Link from "next/link";
 import { FrownSvg, SendSvg } from "@svg";
 import { HStack } from "@components/Commons/HStack";
 
-import { meanConvert, camelStrToMiddleBarStr } from "@utils/index";
+import { meanConvert, kebabCaser } from "@utils/index";
 
 type FillTableRowProps = {
   handleItemClick: (e: React.MouseEvent<HTMLTableRowElement>) => void;
   recommedObj: RecommendObj;
 };
 
-const isEmptyInfo = (recommends: Voca[]) => recommends.length === 0;
+const isEmptyInfo = (recommends: VocabularyItem[]) => recommends.length === 0;
 
 export function TableRow({
   handleItemClick,
@@ -48,9 +48,9 @@ export function TableRow({
           <td>{info.category}</td>
           <td>
             <HStack layout="space-between">
-              <span>{meanConvert(info.mean, 2, 15)}</span>
+              <span>{meanConvert(info.mean, 2, 12)}</span>
               <Route>
-                <Link href={`/vocas/${camelStrToMiddleBarStr(info.category!)}`}>
+                <Link href={`/vocas/${kebabCaser(info.category)}`}>
                   <SendSvg width="24" height="24" />
                 </Link>
               </Route>

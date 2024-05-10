@@ -10,11 +10,11 @@ import { isNil } from "@utils/typeGuard";
 import { IState } from "@redux/initialState";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 
-import { Vocas } from "@type/commons/voca";
+import { VocabularyItem } from "@type/commons/vocabulary";
 import { Table } from "./Table";
 
 interface RecommendObj {
-  recommends: Vocas;
+  recommends: VocabularyItem[];
   selectedIndex: number;
 }
 

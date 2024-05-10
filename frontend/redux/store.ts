@@ -5,7 +5,7 @@ import rootReducer from "./rootReducer";
 import getUserSaga from "./user/userSaga";
 import getVocasSaga from "./vocas/vocasSaga";
 import getUserVocasSaga from "./userVocas/userVocasSaga";
-import getTitlesSage from "./titles/titlesSage";
+import getCategoriesSaga from "./categories/categoriesSage";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,7 +14,7 @@ function* rootSaga() {
     getUserVocasSaga(),
     getVocasSaga(),
     getUserSaga(),
-    getTitlesSage(),
+    getCategoriesSaga(),
   ]);
 }
 

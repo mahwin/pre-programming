@@ -3,7 +3,7 @@ import styled from "styled-components";
 import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "@color/userVocaColor";
 import meanConvert from "@utils/meanConvert";
-import { IVoca, IVocaObj } from "@type/commons/voca";
+import { IVoca, IVocaObj } from "@type/commons/vocabulary";
 import { IClickedVocaTable } from "@type/userVoca";
 
 const Wrapper = styled.section`

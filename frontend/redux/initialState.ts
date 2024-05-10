@@ -1,25 +1,25 @@
 import { initialUserState } from "./user/user.dto";
 import { initialVocasState } from "./vocas/vocas.dto";
 import { initialUserVocasState } from "./userVocas/userVocas.dto";
-import { initialTitlesState } from "./titles/titles.dto";
+import { initialCategoriesState } from "./categories/categories.dto";
 
 import { IUserVocasState } from "@type/userVoca";
-import { IVocaState } from "@type/commons/voca";
+import { IVocaState } from "./vocas/vocas.dto";
 import { IUserState } from "@type/commons/user";
-import { ITitlesState } from "@type/commons/title";
+import { ICategoriesState } from "./categories/categories.dto";
 
 const initialState: IState = {
   user: initialUserState,
   vocas: initialVocasState,
   userVocas: initialUserVocasState,
-  titles: initialTitlesState,
+  categories: initialCategoriesState,
 };
 
 interface IState {
   user: IUserState;
   vocas: IVocaState;
   userVocas: IUserVocasState;
-  titles: ITitlesState;
+  categories: ICategoriesState;
 }
 
 export default initialState;

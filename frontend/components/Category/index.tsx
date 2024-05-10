@@ -1,41 +1,60 @@
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
-import Table from "@components/Vocas/Table";
+import Table from "@components/Category/Table";
 import { OpenSvg } from "@svg";
-import VocaTable from "@components/Vocas/VocaTable";
+import VocaTable from "@components/Category/VocaTable";
 import AddVoca from "./AddVoca";
 import { Overlay } from "../Commons/Overlay";
 import { vocaColors } from "@color/vocaColors";
-import { ICard, IVocaDetail } from "@type/vocas";
+import { ICard } from "@type/vocas";
 import { motion, AnimatePresence } from "framer-motion";
+
+import { LevelledVocabulary } from "@type/commons/vocabulary";
+import { TitlesType } from "@type/commons/title";
+import { ObjectKeys } from "@utils/array";
 
 const MAX_CARD_NUM = 10;
 
-export default function VocaDetail({ voca, title }: IVocaDetail) {
+interface Props {
+  title: TitlesType;
+  levelledVocabulary: LevelledVocabulary;
+}
+
+interface LevelCard {
+  amount: string;
+  frequency: string;
+}
+
+export function Category({ levelledVocabulary, title }: Props) {
   const [id, setId] = useState<string | null>(null);
   const [selectedCard, setSelectedCard] = useState<boolean[]>(
     Array.from({ length: MAX_CARD_NUM }, () => false)
   );
-  const [total, setTotal] = useState<number>(0);
-  const [cardData, setCardData] = useState<ICard[] | null>(null);
+  const [totalVocabulary, setTotalVocabulary] = useState<number>(0);
 
-  useEffect(() => {
-    const levelArr = Object.keys(voca);
-    let totalAmount = 0;
-    let baseData: ICard[] = [];
-    levelArr.forEach((level: string) => {
-      const item = voca[level];
-      let tmp = {
-        amount: item.length + "",
-        frequency: item[Math.round(item.length / 2)].frequency,
-      };
-      totalAmount += +tmp.amount;
-      baseData.push(tmp);
-    });
+  const [levelCard, setLevelCard] = useState<LevelCard[]>([]);
 
-    setTotal(totalAmount);
-    setCardData(baseData);
-  }, [voca]);
+  useEffect(
+    function calInfoAndCardInfo() {
+      // 전체 단어수와 빈도수 카드별 정보 계산
+
+      let totalAmount = 0;
+      const result: LevelCard[] = [];
+      ObjectKeys(levelledVocabulary).forEach((level) => {
+        const item = levelledVocabulary[level];
+        let tmp = {
+          amount: item.length + "",
+          frequency: item[Math.round(item.length / 2)].frequency,
+        };
+        totalAmount += Number(tmp.amount);
+        result.push(tmp);
+      });
+
+      setTotalVocabulary(totalAmount);
+      setLevelCard(result);
+    },
+    [levelledVocabulary]
+  );
 
   const onResetSelected = () => {
     setSelectedCard(Array.from({ length: 10 }, () => false));
@@ -59,11 +78,11 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
       <DetailWrapper>
         <Title>{title}</Title>
         <VocaCardWrapper>
-          {Object.keys(voca).map((level: string) => (
+          {ObjectKeys(levelledVocabulary).map((level) => (
             <VocaCard key={level}>
               <CardHeader>
                 <Level> Level : {level}</Level>
-                <input
+                {/* <input
                   type="checkbox"
                   value="None"
                   id={level}
@@ -72,11 +91,14 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
                   onChange={() => {}}
                   checked={selectedCard[+level]}
                 />
-                <label htmlFor={level}></label>
+                <label htmlFor={level}></label> */}
               </CardHeader>
               <VocaContentBox>
                 {cardData && (
-                  <Table cardData={cardData?.[+level - 1]} total={total} />
+                  <Table
+                    cardData={cardData?.[+level - 1]}
+                    total={totalVocabulary}
+                  />
                 )}
               </VocaContentBox>
               <SvgBox onClick={() => setId(level)}>
@@ -104,7 +126,7 @@ export default function VocaDetail({ voca, title }: IVocaDetail) {
                   {selectedCard[+id] ? "해제" : "추가"}
                 </ModalButton>
               </ModalTitleBox>
-              <VocaTable voca={voca[+id]} />
+              <VocaTable voca={vocas[+id]} />
             </VocaCard>
           </Overlay>
         )}
@@ -178,7 +200,8 @@ const CardHeader = styled.div`
     position: absolute;
     background-color: ${vocaColors.vocaDetail.cardBoarderColor};
     border-radius: 4px;
-    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5),
+    box-shadow:
+      inset 0px 1px 1px rgba(0, 0, 0, 0.5),
       0px 1px 0px rgba(255, 255, 255, 0.4);
     cursor: pointer;
     &:after {
@@ -239,7 +262,8 @@ const ModalButton = styled.button<
   border-radius: 5px;
   cursor: pointer;
   &:hover {
-    box-shadow: 0 0 0 2px white,
+    box-shadow:
+      0 0 0 2px white,
       0 0 0 3px ${vocaColors.vocaDetail.modalBtnColor};
   }
 `;

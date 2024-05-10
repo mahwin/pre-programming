@@ -1,4 +1,4 @@
-import { IVocaObj } from "@type/commons/voca";
+import { IVocaObj } from "@type/commons/vocabulary";
 
 interface IVocaDetail {
   voca: IVocaObj;

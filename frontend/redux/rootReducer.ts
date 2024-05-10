@@ -3,7 +3,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 import vocasReducer from "./vocas/vocasSlice";
 import userReducer from "./user/userSlice";
 import userVocasReducer from "./userVocas/userVocasSlice";
-import titlesReducer from "./titles/titlesSlice";
+import categoriesReducer from "./categories/categoriesSlice";
 
 import { HYDRATE } from "next-redux-wrapper";
 import initialState, { IState } from "@redux/initialState";
@@ -11,7 +11,7 @@ import { AnyAction } from "redux";
 
 const combinedReducer = combineReducers({
   vocas: vocasReducer,
-  titles: titlesReducer,
+  categories: categoriesReducer,
   user: userReducer,
   userVocas: userVocasReducer,
 });

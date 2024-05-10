@@ -1,20 +1,20 @@
 import initialState from "../initialState";
 import { createSlice } from "@reduxjs/toolkit";
 
-const titlesSlice = createSlice({
-  name: "titles",
-  initialState: initialState.titles,
+const categoriesSlice = createSlice({
+  name: "categories",
+  initialState: initialState.categories,
   reducers: {
-    getTitles: (state) => {
+    getCategories: (state) => {
       state.loading = true;
     },
-    getTitlesSuccess: (state, { payload }) => {
-      console.log(payload, "??");
+    getCategoriesSuccess: (state, { payload }) => {
+      console.log(payload);
       state.data = payload;
       state.error = null;
       state.loading = false;
     },
-    getTitlesError: (state, { payload }) => {
+    getCategoriesError: (state, { payload }) => {
       state.error = payload.message;
       state.data = null;
       state.loading = false;
@@ -23,5 +23,5 @@ const titlesSlice = createSlice({
 });
 
 // 정의한 액션과 리듀서를 export.
-export const titlesActions = titlesSlice.actions;
-export default titlesSlice.reducer;
+export const categoriesActions = categoriesSlice.actions;
+export default categoriesSlice.reducer;

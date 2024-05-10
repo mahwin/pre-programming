@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 import Quiz from "@components/Commons/Quiz";
 import { vocaColors } from "@color/vocaColors";
-import { IVocaObj } from "@type/commons/voca";
+import { IVocaObj } from "@type/commons/vocabulary";
 import { IQuizSetting } from "@type/vocas";
 import { KeyType } from "@type/quiz";
 

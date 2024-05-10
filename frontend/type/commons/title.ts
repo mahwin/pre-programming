@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 
-const TITLES = [
+const CATEGORIES = [
   "next",
   "react",
   "reactHookForm",
@@ -14,7 +14,7 @@ const TITLES = [
 ] as const;
 
 type DevType = "web";
-type TitlesType = (typeof TITLES)[number];
+type CategoriesType = (typeof CATEGORIES)[number];
 
 type TitleItem = {
   title: string;

@@ -5,7 +5,7 @@ import { DownArrowSvg, StudySvg, QuizSvg } from "@svg";
 import Study from "./Study";
 import Quiz from "@components/Commons/Quiz";
 import { userVocaColors } from "@color/userVocaColor";
-import { IVoca } from "@type/commons/voca";
+import { IVoca } from "@type/commons/vocabulary";
 import { IFloatingBtn } from "@type/userVoca";
 
 const Wrapper = styled(motion.section)`
@@ -113,7 +113,9 @@ const QuizMaker = styled(motion.section)`
   right: 0px;
   width: 200px;
   border-radius: 5px;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   color: white;
   height: 0px;
 `;

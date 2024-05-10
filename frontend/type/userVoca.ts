@@ -1,4 +1,4 @@
-import { IVoca, IVocas, IVocaObj } from "@type/commons/voca";
+import { IVoca, IVocas, IVocaObj } from "@type/commons/vocabulary";
 import { MouseEvent } from "react";
 import { AxiosError } from "axios";
 

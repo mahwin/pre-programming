@@ -1,4 +1,4 @@
-import { MagnifyingGlassSvg, FrownSvg } from "@svg";
+import { MagnifyingGlassSvg } from "@svg";
 import styled from "styled-components";
 import { Trie } from "@modules/Trie";
 import { isNil } from "@utils/typeGuard";

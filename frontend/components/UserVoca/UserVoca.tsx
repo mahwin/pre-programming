@@ -11,7 +11,7 @@ import VocaTable from "./VocaTable";
 import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
 import chunk from "@utils/chunk";
-import formatter from "@utils/camelCaser";
+import formatter from "@utils/stringFormater";
 import { IUserVocaData, IClickedVoca } from "@type/userVoca";
 import { TitlesType, TITLES, TitleItems } from "@type/commons/title";
 
@@ -276,8 +276,8 @@ export default function UserVoca({ data }: Props) {
                   ? (userVocaData?.[clickId as string]?.len as number) <= 4
                     ? "smallOpen"
                     : (userVocaData?.[clickId as string]?.len as number) <= 8
-                    ? "normalOpen"
-                    : "bigOpen"
+                      ? "normalOpen"
+                      : "bigOpen"
                   : "closed"
               }
             >
@@ -347,7 +347,9 @@ const VocaCardWrapper = styled.section`
   width: 100%;
   padding: 30px;
   background-color: white;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
   margin-bottom: 50px;
 `;
 

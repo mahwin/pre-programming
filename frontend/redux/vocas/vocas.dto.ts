@@ -1,16 +1,21 @@
 import { AxiosError } from "axios";
-import { Vocas } from "@type/commons/voca";
+import {
+  VocabularyItems,
+  CategorizedVocabulary,
+} from "@type/commons/vocabulary";
 
 interface IVocaState {
   loading: boolean;
-  data: Vocas | null;
-  error: null | AxiosError;
+  data: VocabularyItems | null;
+  error: AxiosError | null;
+  categorizedVocabulary: CategorizedVocabulary | null;
 }
 
 const initialVocasState: IVocaState = {
   loading: false,
   data: null,
+  categorizedVocabulary: null,
   error: null,
 };
 
-export { initialVocasState };
+export { initialVocasState, type IVocaState };
