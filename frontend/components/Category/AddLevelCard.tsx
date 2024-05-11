@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { FolderOpenSvg, LoadingSvg } from "@svg";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { motion, Variants } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { IState } from "@redux/initialState";
-import useMutation from "@hooks/useMutation";
+import useAuthMutation from "@hooks/useAuthMutation";
 import { vocaColors } from "@color/vocaColors";
 import { LevelCard } from "./LevelCard";
 import { LevelCardInfo } from "./type";
@@ -57,13 +57,12 @@ export function AddLevelCard({
 }: Props) {
   const [boardOpen, setBoardOpen] = useState<boolean>(false);
 
-  const [saveLevelCard, { loading, data: savedResponse, error }] = useMutation(
-    `/vocas/${category}`
-  );
+  const [saveLevelCard, { loading, data: savedResponse, error }] =
+    useAuthMutation(`/vocas/${category}`);
 
-  const handleClickBoardButton = () => {
+  const handleClickBoardButton = useCallback(() => {
     setBoardOpen((prev) => !prev);
-  };
+  }, []);
 
   const userId = useSelector((state: IState) => {
     return state.user.data?.id;
@@ -81,7 +80,7 @@ export function AddLevelCard({
 
     const levels: number[] = [];
 
-    levelCardInfos.forEach((l, level) => {
+    selectedCard.forEach((l, level) => {
       if (l) levels.push(level + 1);
     });
 
@@ -89,7 +88,7 @@ export function AddLevelCard({
     if (levels.length === 0) {
       alert("내 단어장에 포함될 단어 카드를 선택해 주세요.");
     }
-    saveLevelCard({ userId, level: levels });
+    saveLevelCard({ userId, level: JSON.stringify(levels) });
   };
 
   useEffect(() => {

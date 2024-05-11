@@ -12,7 +12,7 @@ import { authManager } from "@modules/Auth";
 import { api } from "@api/index";
 import { isNil } from "@utils/typeGuard";
 
-type currentNavType = "/" | "/me/vocas" | "/me" | "/signIn";
+type currentNavType = "/" | "/me/vocabulary" | "/me" | "/signIn";
 
 export function Header() {
   const { data: userInfo } = useSelector((state: IState) => state.user);
@@ -46,8 +46,8 @@ export function Header() {
         </Item>
 
         <Item visibilty={!isNil(userInfo)}>
-          <Link href="/me/vocas">
-            <Span underline={currentNav === "/me/vocas"}>내 단어장</Span>
+          <Link href="/me/vocabulary">
+            <Span underline={currentNav === "/me/vocabulary"}>내 단어장</Span>
           </Link>
         </Item>
 
@@ -77,7 +77,9 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.colorTheme.backgroundColor};
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1);
 `;
 
 const Items = styled.ul`

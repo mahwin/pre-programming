@@ -10,10 +10,16 @@ import LevelCard from "./LevelCard";
 import VocaTable from "./VocaTable";
 import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
-import chunk from "@utils/chunk";
-import formatter from "@utils/stringFormater";
+import { chunk } from "@utils/chunk";
+import { formatter } from "@utils/stringFormater";
 import { IUserVocaData, IClickedVoca } from "@type/userVoca";
-import { TitlesType, TITLES, TitleItems } from "@type/commons/title";
+import {
+  CategoriesType,
+  CATEGORIES,
+  CategoryItems,
+} from "@type/commons/categories";
+
+import { isNil } from "@utils/typeGuard";
 
 const ArrowVariants: Variants = {
   open: {
@@ -73,7 +79,7 @@ const BoardVariants: Variants = {
 };
 
 interface Props {
-  data: { web: TitleItems };
+  data: CategoryItems;
 }
 
 export default function UserVoca({ data }: Props) {
@@ -98,6 +104,7 @@ export default function UserVoca({ data }: Props) {
   }, [loading, error, router]);
 
   useEffect(() => {
+    if (!isNil(userData)) return;
     dispatch(userVocasActions.getUserVocas());
   }, [userData, dispatch]);
 
@@ -160,7 +167,7 @@ export default function UserVoca({ data }: Props) {
       <header>
         <h1>Saved Vocabulary</h1>
       </header>
-      <VocaCardWrapper>
+      {/* <VocaCardWrapper>
         {rowData.map((data, rowIdx) => (
           <Row key={rowIdx} initial={false}>
             {data.map((item) => (
@@ -324,7 +331,7 @@ export default function UserVoca({ data }: Props) {
       </VocaCardWrapper>
       {clickedVoca && vocas.data && (
         <VocaTable clickedVoca={clickedVoca} vocas={vocas.data} />
-      )}
+      )} */}
     </Wrapper>
   );
 }

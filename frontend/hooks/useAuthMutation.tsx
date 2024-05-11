@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { api } from "@api/index";
+import { authApi } from "@api/index";
 
 interface UseMutationState<T> {
   loading: boolean;
@@ -18,7 +18,7 @@ export default function useMutation<T = any>(
   });
   function mutation(data: unknown) {
     setState((prev) => ({ ...prev, loading: true }));
-    api
+    authApi
       .post(url, data)
       .then((response) => response.data)
       .then((data) => setState((prev) => ({ ...prev, data, loading: false })))
