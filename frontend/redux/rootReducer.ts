@@ -1,16 +1,18 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-import vocasReducer from "./vocas/vocasSlice";
+import vocasReducer from "./vocabulary/vocabularySlice";
 import userReducer from "./user/userSlice";
 import userVocasReducer from "./userVocas/userVocasSlice";
 import categoriesReducer from "./categories/categoriesSlice";
+import classfiedVocaReducer from "./classifiedVocabulary/classifiedVocabularySlice";
 
 import { HYDRATE } from "next-redux-wrapper";
 import initialState, { IState } from "@redux/initialState";
 import { AnyAction } from "redux";
 
 const combinedReducer = combineReducers({
-  vocas: vocasReducer,
+  vocabulary: vocasReducer,
+  classifiedVocabulary: classfiedVocaReducer,
   categories: categoriesReducer,
   user: userReducer,
   userVocas: userVocasReducer,
