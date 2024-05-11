@@ -1,4 +1,4 @@
-export default function camelCaser(name: string) {
+export function camelCaser(name: string) {
   const nameList = name.split('-');
 
   nameList.forEach((string, idx) => {

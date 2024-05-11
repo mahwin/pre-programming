@@ -21,7 +21,7 @@ export class AuthController {
 
   @Post()
   @ApiOperation({
-    summary: '로그인 시도',
+    summary: '로그인',
     description: '유저가 로그인을 위해 폰번호 입력',
   })
   @ApiCreatedResponse({
@@ -40,7 +40,7 @@ export class AuthController {
       .send({ ok: true });
   }
 
-  @Post('confirm')
+  @Post('confirmation')
   @ApiOperation({
     summary: '인증번호 확인',
     description: '유저에게 보낸 인증번호와 유저가 입력한 번호를 비교',
@@ -71,7 +71,7 @@ export class AuthController {
       .send({ ok: true, accessToken });
   }
 
-  @Get('signout')
+  @Get('/')
   @ApiOperation({
     summary: '로그아웃',
     description: '로그아웃',

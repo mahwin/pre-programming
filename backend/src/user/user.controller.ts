@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  UseGuards,
+  Param,
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { Request } from 'express';
@@ -7,6 +15,7 @@ import { UserDto } from './dto/user.dto';
 import { UpdateUSerDto } from './dto/update-user.dto';
 import { ConfirmUserDto } from './dto/confirm-user.dto';
 import { JwtPayload } from 'src/auth/type';
+import { LevelUpdateDto } from 'src/vocabulary/dto/vocas-level-update.dto';
 
 @Controller('user')
 @ApiTags('user API')
@@ -37,7 +46,7 @@ export class UserController {
     type: UserDto,
   })
   @UseGuards(JwtAuthGuard)
-  @Post('confirm')
+  @Post('confirmation')
   confirmData(@Body() confirmData: ConfirmUserDto) {
     return this.userService.confirm(confirmData);
   }
@@ -51,10 +60,25 @@ export class UserController {
       'JWT 토큰 유효성 검사 후 유저가 보낸 정보를 토대로 user db 업데이트',
     type: UserDto,
   })
-  @Post('update')
+  @Post('/')
   @UseGuards(JwtAuthGuard)
   updateUser(@Req() req: Request, @Body() updateUser: UpdateUSerDto) {
     const payload = req.user as JwtPayload;
     return this.userService.update(payload, updateUser);
+  }
+
+  @Get('vocabulary')
+  @UseGuards(JwtAuthGuard)
+  getUserVocabulary(@Req() req: Request) {
+    const payload = req.user as JwtPayload;
+    return this.userService.getUserVocabulary(payload);
+  }
+  @Post('/vocabulary/:category')
+  @UseGuards(JwtAuthGuard)
+  userVocabularyUpdate(
+    @Param('category') category: string,
+    @Body() levels: LevelUpdateDto,
+  ) {
+    return this.userService.userVocabularyUpdate(category, levels);
   }
 }
