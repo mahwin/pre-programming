@@ -1,19 +1,19 @@
 import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
-import Vocas from "@components/Category/Vocas";
+
 import Banner from "@components/Commons/Banner";
 import QuizButton from "@components/Category/QuizButton";
-import { camelCaser } from "@utils/stringFormater";
-import { useEffect, useState } from "react";
+
+import { useEffect } from "react";
 import { vocasActions } from "@redux/vocas/vocasSlice";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import PageLoading from "@components/Commons/PageLoading";
-import { TitlesType, TITLES } from "@type/commons/title";
 import { isNil } from "@utils/typeGuard/isNil";
 import { IState } from "@redux/initialState";
 
 import { Category } from "@components/Category";
+import { CATEGORIES, CategoriesType } from "@type/commons/categories";
 
 export default function VocaPage() {
   const { categorizedVocabulary, loading } = useSelector(
@@ -21,19 +21,20 @@ export default function VocaPage() {
   );
 
   const router = useRouter();
-  const title = router.query.voca as TitlesType;
+  const category = router.query.category as CategoriesType;
 
   useEffect(
     function checkUrl() {
-      if (isNil(title)) return;
-      if (!TITLES.includes(title)) {
+      if (isNil(category)) return;
+      if (!CATEGORIES.includes(category)) {
         router.push("/404");
       }
     },
-    [title]
+    [category]
   );
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (isNil(categorizedVocabulary)) {
       vocasActions.getVocas();
@@ -56,7 +57,7 @@ export default function VocaPage() {
       <Header />
       <Banner />
       <Category
-        {...{ title, levelledVocabulary: categorizedVocabulary[title]! }}
+        {...{ category, levelledVocabulary: categorizedVocabulary[category]! }}
       />
       {/* <QuizButton quizData={vocas} /> */}
       <Footer />

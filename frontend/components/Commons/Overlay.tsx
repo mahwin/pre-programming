@@ -22,12 +22,12 @@ export function Overlay({ children, handleClick }: OverlayProps) {
 const Wrapper = styled(motion.div)`
   width: 100%;
   height: 100%;
-
   position: fixed;
   top: 0;
-
+  left: 0;
+  z-index: 99999;
   display: flex;
+
   justify-content: center;
   align-items: center;
-  z-index: 999;
 `;

@@ -1,4 +1,4 @@
-import { IVoca } from "@type/commons/voca";
+import { IVoca } from "@type/commons/vocabulary";
 
 function randomPick(min: number, max: number, pick: number): number[] {
   let numSet: Set<number> = new Set();
