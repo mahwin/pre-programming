@@ -1,28 +1,13 @@
-import { useEffect } from "react";
 import styled from "styled-components";
-import Link from "next/link";
 
 import { LoadingSvg } from "@svg";
-
-import { isNil } from "@utils/typeGuard";
-
 import { CategoryCards } from "./CategoryCards";
 
-import { useSelector, useDispatch } from "react-redux";
-import { ICategoriesState } from "@redux/categories/categories.dto";
-import { categoriesActions } from "@redux/categories/categoriesSlice";
+import { isNil } from "@utils/typeGuard";
+import { useCategory } from "@hooks/useCategory";
 
 export function CategoryList() {
-  const { data: categories } = useSelector(
-    ({ categories }: { categories: ICategoriesState }) => categories
-  );
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    if (!isNil(categories)) return;
-
-    dispatch(categoriesActions.getCategories());
-  }, [dispatch]);
+  const { data: categories } = useCategory();
 
   return (
     <Wrapper>
