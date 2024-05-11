@@ -1,133 +1,117 @@
 import styled from "styled-components";
 import React, { useState, useEffect } from "react";
-import Table from "@components/Category/Table";
-import { OpenSvg } from "@svg";
-import VocaTable from "@components/Category/VocaTable";
-import AddVoca from "./AddVoca";
+import { AddLevelCard } from "./AddLevelCard";
 import { Overlay } from "../Commons/Overlay";
-import { vocaColors } from "@color/vocaColors";
-import { ICard } from "@type/vocas";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
+import { LevelCardDetailModal } from "./LevelCardDetailModal";
 import { LevelledVocabulary } from "@type/commons/vocabulary";
-import { TitlesType } from "@type/commons/title";
+import { CategoriesType } from "@type/commons/categories";
+
 import { ObjectKeys } from "@utils/array";
+
+import { LevelCardDetail } from "./LevelCardDetail";
+import type { LevelCardInfo } from "./type";
 
 const MAX_CARD_NUM = 10;
 
 interface Props {
-  title: TitlesType;
+  category: CategoriesType;
   levelledVocabulary: LevelledVocabulary;
 }
 
-interface LevelCard {
-  amount: string;
-  frequency: string;
-}
-
-export function Category({ levelledVocabulary, title }: Props) {
-  const [id, setId] = useState<string | null>(null);
+export function Category({ levelledVocabulary, category }: Props) {
+  const [selectedLevelCard, setSelectedLevelCard] = useState<string | null>(
+    null
+  );
+  console.log(levelledVocabulary);
   const [selectedCard, setSelectedCard] = useState<boolean[]>(
     Array.from({ length: MAX_CARD_NUM }, () => false)
   );
-  const [totalVocabulary, setTotalVocabulary] = useState<number>(0);
+  const [totalAmount, setTotalAmount] = useState<number>(0);
 
-  const [levelCard, setLevelCard] = useState<LevelCard[]>([]);
+  const [levelCardInfos, setLevelCardInfos] = useState<LevelCardInfo[]>([]);
 
   useEffect(
-    function calInfoAndCardInfo() {
-      // 전체 단어수와 빈도수 카드별 정보 계산
+    function calTotalAmountAndCardIfno() {
+      // 전체 단어수와 카드별 정보 계산
 
       let totalAmount = 0;
-      const result: LevelCard[] = [];
-      ObjectKeys(levelledVocabulary).forEach((level) => {
-        const item = levelledVocabulary[level];
-        let tmp = {
-          amount: item.length + "",
-          frequency: item[Math.round(item.length / 2)].frequency,
-        };
-        totalAmount += Number(tmp.amount);
-        result.push(tmp);
-      });
 
-      setTotalVocabulary(totalAmount);
-      setLevelCard(result);
+      setLevelCardInfos(
+        ObjectKeys(levelledVocabulary).map((level) => {
+          const item = levelledVocabulary[level];
+          totalAmount += item.length;
+          return {
+            amount: item.length,
+            frequency: item[Math.round(item.length / 2)].frequency,
+          };
+        })
+      );
+      setTotalAmount(totalAmount);
     },
     [levelledVocabulary]
   );
 
-  const onResetSelected = () => {
+  const handleResetSelected = () => {
     setSelectedCard(Array.from({ length: 10 }, () => false));
   };
 
-  const onClickCheck = (
-    e: React.MouseEvent<HTMLInputElement | HTMLButtonElement>
-  ): void => {
-    const voca = Number(e.currentTarget.id || e.currentTarget.name);
-    const copyVocas = [...selectedCard];
-    copyVocas[voca] = !copyVocas[voca];
-    setSelectedCard(copyVocas);
+  const handleClickCheck = (e: React.MouseEvent<HTMLElement>): void => {
+    const levelCardIdx = Number(e.currentTarget.id);
+    const copy = [...selectedCard];
+    copy[levelCardIdx] = !copy[levelCardIdx];
+    setSelectedCard([...copy]);
   };
 
-  const handleClickOveray = () => {
-    setId(null);
+  const handleOpenCard = (level: string) => () => {
+    setSelectedLevelCard(level);
+  };
+
+  const handleCloseCard = () => {
+    setSelectedLevelCard(null);
   };
 
   return (
     <Wrapper>
-      <DetailWrapper>
-        <Title>{title}</Title>
-        <VocaCardWrapper>
-          {ObjectKeys(levelledVocabulary).map((level) => (
-            <VocaCard key={level}>
-              <CardHeader>
-                <Level> Level : {level}</Level>
-                {/* <input
-                  type="checkbox"
-                  value="None"
-                  id={level}
-                  name="check"
-                  onClick={onClickCheck}
-                  onChange={() => {}}
-                  checked={selectedCard[+level]}
-                />
-                <label htmlFor={level}></label> */}
-              </CardHeader>
-              <VocaContentBox>
-                {cardData && (
-                  <Table
-                    cardData={cardData?.[+level - 1]}
-                    total={totalVocabulary}
-                  />
-                )}
-              </VocaContentBox>
-              <SvgBox onClick={() => setId(level)}>
-                <OpenSvg width="20" height="20" />
-              </SvgBox>
-            </VocaCard>
-          ))}
-        </VocaCardWrapper>
-        <AddVoca
-          category={title}
-          cardData={cardData}
-          selected={selectedCard}
-          resetSelected={onResetSelected}
-          handleClick={onClickCheck}
-        />
-      </DetailWrapper>
+      <Title>{category}</Title>
+      <LevelCardsWrapper>
+        {ObjectKeys(levelledVocabulary).map((level) => (
+          <LevelCardDetail
+            {...{
+              totalAmount,
+              level: level.toString(),
+              handleClickCheck,
+              selectedCard,
+              levelCardInfos,
+              setSelectedLevelCard,
+              handleOpenCard: handleOpenCard(level.toString()),
+            }}
+          />
+        ))}
+      </LevelCardsWrapper>
+      <AddLevelCard
+        {...{
+          category,
+          levelCardInfos,
+          selectedCard,
+          handleResetSelected,
+          handleClickCheck,
+        }}
+      />
 
       <AnimatePresence>
-        {id && (
-          <Overlay handleClick={handleClickOveray}>
-            <VocaCard>
-              <ModalTitleBox>
-                <ModalLevel>Level : {id}</ModalLevel>
-                <ModalButton name={id + ""} onClick={onClickCheck}>
-                  {selectedCard[+id] ? "해제" : "추가"}
-                </ModalButton>
-              </ModalTitleBox>
-              <VocaTable voca={vocas[+id]} />
-            </VocaCard>
+        {selectedLevelCard && (
+          <Overlay handleClick={handleCloseCard}>
+            <LevelCardDetailModal
+              {...{
+                selectedLevelCard,
+                handleClickCheck,
+                selectedCard,
+                levelCardInfos,
+                levelledVocabulary,
+              }}
+            />
           </Overlay>
         )}
       </AnimatePresence>
@@ -138,8 +122,8 @@ export function Category({ levelledVocabulary, title }: Props) {
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  max-width: ${(props) => props.theme.windowSize.tablet};
   padding: 24px 0px;
 `;
 
@@ -147,123 +131,11 @@ const Title = styled.h2`
   color: ${(props) => props.theme.colorTheme.textPrimary};
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: ${(props) => props.theme.fontWeight.xbold};
-  padding: 4px 0px;
+  padding: 0px 0px 16px 0px;
 `;
 
-const DetailWrapper = styled.div`
-  height: 100%;
-  width: 100%;
-  max-width: ${(props) => props.theme.windowSize.tablet};
-`;
-
-const VocaCardWrapper = styled.div`
+const LevelCardsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-`;
-
-const VocaCard = styled(motion.div)`
-  position: relative;
-
-  padding: 24px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  background-color: ${vocaColors.vocaDetail.cardBgColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const VocaContentBox = styled.div`
-  overflow: hidden;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  border: 1px solid ${vocaColors.vocaDetail.cardBoarderColor};
-`;
-
-const SvgBox = styled.div<React.HTMLAttributes<HTMLElement>>`
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-`;
-
-const CardHeader = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 60px;
-  label {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-color: ${vocaColors.vocaDetail.cardBoarderColor};
-    border-radius: 4px;
-    box-shadow:
-      inset 0px 1px 1px rgba(0, 0, 0, 0.5),
-      0px 1px 0px rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    &:after {
-      content: "";
-      width: 9px;
-      height: 5px;
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      border: 3px solid ${vocaColors.vocaDetail.checkColor};
-      border-top: none;
-      border-right: none;
-      opacity: 0;
-      transform: rotate(-45deg);
-    }
-    &:hover::after {
-      opacity: 0.3;
-    }
-  }
-  input[type="checkbox"] {
-    visibility: hidden;
-    &:checked + label:after {
-      opacity: 1;
-    }
-  }
-`;
-
-const Level = styled.h4`
-  margin: 4px 0 0 40px;
-  color: ${vocaColors.vocaDetail.titleColor};
-  font-size: ${(props) => props.theme.fontSize.base};
-  font-weight: ${(props) => props.theme.fontWeight.xbold};
-`;
-
-const ModalTitleBox = styled.div`
-  display: flex;
-  width: 300px;
-  height: 80px;
-  align-items: center;
-  text-align: center;
-`;
-
-const ModalLevel = styled.label`
-  color: white;
-  flex-grow: 1;
-  font-size: ${(props) => props.theme.fontSize.base};
-  font-weight: ${(props) => props.theme.fontWeight.xbold};
-`;
-
-const ModalButton = styled.button<
-  React.HTMLAttributes<HTMLButtonElement> & { name: string }
->`
-  flex-grow: 1;
-  height: 30px;
-  color: white;
-  border: none;
-  background-color: ${vocaColors.vocaDetail.modalBtnColor};
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 3px ${vocaColors.vocaDetail.modalBtnColor};
-  }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { vocaColors } from "@color/vocaColors";
 import { motion, Variants } from "framer-motion";
-import { ICard } from "@type/vocas";
+import { LevelCardInfo } from "./type";
 
 const cardVariants: Variants = {
   open: {
@@ -12,51 +12,42 @@ const cardVariants: Variants = {
   closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
 };
 
-export function VocaCard({
-  visible,
-  cardData,
-  idx,
-  handleClick,
-}: {
+interface Props {
   visible: boolean;
-  cardData: ICard[] | null;
+  levelCardInfos: LevelCardInfo[];
+  handleClickCheck: (e: React.MouseEvent<HTMLInputElement>) => void;
   idx: number;
-  handleClick: (
-    e: React.MouseEvent<HTMLInputElement | HTMLButtonElement>
-  ) => void;
-}) {
+}
+
+export function LevelCard({
+  visible,
+  levelCardInfos,
+  idx,
+  handleClickCheck,
+}: Props) {
   if (!visible) return null;
 
   return (
     <Card variants={cardVariants} key={idx}>
-      <CancleBtnBox onClick={handleClick} id={idx.toString()}>
-        <XBar />
-        <XBar />
-      </CancleBtnBox>
       <CardContents>
-        <h3>Level {idx}</h3>
         <Row>
-          <div>
-            <p>
-              <small>
-                <b>words</b>
-              </small>
-            </p>
-
-            <h2>
-              <b>{cardData?.[idx - 1].amount}</b>
-            </h2>
-          </div>
-          <div>
-            <p>
-              <small>
-                <b>frequency</b>
-              </small>
-            </p>
-            <h2>
-              <p>{cardData?.[idx - 1].frequency} 이상</p>
-            </h2>
-          </div>
+          <p>Level {idx}</p>
+          <CancleBtnBox onClick={handleClickCheck} id={idx.toString()}>
+            <XBar />
+            <XBar />
+          </CancleBtnBox>
+        </Row>
+        <Row>
+          <p>
+            <small>words</small>
+          </p>
+          <b>{levelCardInfos?.[idx - 1].amount}</b>
+        </Row>
+        <Row>
+          <p>
+            <small>frequency</small>
+          </p>
+          <p>{levelCardInfos?.[idx - 1].frequency} 이상</p>
         </Row>
       </CardContents>
     </Card>
@@ -70,6 +61,7 @@ const Card = styled(motion.li)`
   height: 120px;
   width: 200px;
   border-radius: 3px;
+  padding: 1rem;
 `;
 
 const XBar = styled.div`
@@ -87,35 +79,29 @@ const XBar = styled.div`
 const Row = styled.div`
   display: flex;
   justify-content: center;
-  gap: 20px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 `;
 
-const CardContents = styled.div`
+const CardContents = styled.section`
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 12px;
-  h3 {
-    padding: 5px;
-    font-size: ${(props) => props.theme.fontSize.base};
-    font-weight: ${(props) => props.theme.fontWeight.bold};
-    color: black;
-  }
+
   p {
-    color: #8a81bd;
-    font-weight: ${(props) => props.theme.fontWeight.xbold};
+    font-weight: 600;
+    font-size: 0.8rem;
   }
-  h2 {
-    margin-top: 5px;
-    text-align: center;
+  b {
     font-weight: 600;
     font-size: ${(props) => props.theme.fontSize.lg};
   }
-  h2 p {
-    margin-top: 10px;
-    color: black;
-    font-size: 14px;
+
+  div > p > small {
+    color: #8a81bd;
+    font-weight: ${(props) => props.theme.fontWeight.xbold};
   }
 `;
 

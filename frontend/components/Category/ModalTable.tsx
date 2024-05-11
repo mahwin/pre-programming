@@ -1,6 +1,37 @@
-import meanConvert from "@utils/meanConvert";
+import { meanConvert } from "@utils/meanConvert";
 import styled from "styled-components";
-import { IVoca } from "@type/commons/vocabulary";
+import { VocabularyItems } from "@type/commons/vocabulary";
+
+interface Props {
+  tableData: VocabularyItems;
+}
+
+export function ModalTable({ tableData }: Props) {
+  return (
+    <TableWrapper>
+      <Table>
+        <caption>선택한 단어 목록을 확인하는 표</caption>
+        <thead>
+          <tr>
+            <th>word</th>
+            <th>mean</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {tableData?.map((item, idx) => {
+            return (
+              <tr key={idx}>
+                <td>{item.word}</td>
+                <td>{meanConvert(item.mean, 2, 10)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    </TableWrapper>
+  );
+}
 
 const TableWrapper = styled.div`
   height: 300px;
@@ -12,6 +43,9 @@ const TableWrapper = styled.div`
 const Table = styled.table`
   width: 400px;
   table-layout: fixed;
+  caption {
+    display: none;
+  }
   th {
     position: sticky;
     top: 0px;
@@ -49,29 +83,3 @@ const Table = styled.table`
     border-top: 1px solid #22262e;
   }
 `;
-
-export default function VocaTable({ voca }: { voca: IVoca[] }) {
-  return (
-    <TableWrapper>
-      <Table>
-        <thead>
-          <tr>
-            <th>word</th>
-            <th>mean</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {voca?.map((item: IVoca, idx: number) => {
-            return (
-              <tr key={idx}>
-                <td>{item.word}</td>
-                <td>{meanConvert(item.mean)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
-    </TableWrapper>
-  );
-}

@@ -1,5 +1,29 @@
 import styled from "styled-components";
-import { ITable } from "@type/vocas";
+import { type LevelCardInfo } from "./type";
+
+interface Props {
+  totalAmount: number;
+  levelCardInfo: LevelCardInfo;
+}
+
+export function CardContent({ levelCardInfo, totalAmount }: Props) {
+  return (
+    <TableWapper>
+      <tbody>
+        <tr>
+          <th>빈도수</th>
+          <th>단어 수</th>
+          <th>총 단어수</th>
+        </tr>
+        <tr>
+          <td>{levelCardInfo?.frequency}</td>
+          <td>{levelCardInfo?.amount}</td>
+          <td>{totalAmount}</td>
+        </tr>
+      </tbody>
+    </TableWapper>
+  );
+}
 
 const TableWapper = styled.table`
   color: #fff;
@@ -43,22 +67,3 @@ const TableWapper = styled.table`
     color: #00b894;
   }
 `;
-
-export default function Table({ cardData, total }: ITable) {
-  return (
-    <TableWapper>
-      <tbody>
-        <tr>
-          <th>빈도수</th>
-          <th>단어 수</th>
-          <th>총 단어수</th>
-        </tr>
-        <tr>
-          <td>{cardData?.frequency}</td>
-          <td>{cardData?.amount}</td>
-          <td>{total}</td>
-        </tr>
-      </tbody>
-    </TableWapper>
-  );
-}

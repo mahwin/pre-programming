@@ -7,8 +7,11 @@ import { useRouter } from "next/router";
 import { IState } from "@redux/initialState";
 import useMutation from "@hooks/useMutation";
 import { vocaColors } from "@color/vocaColors";
-import { IAddVoca } from "@type/vocas";
-import { VocaCard } from "./VocaCard";
+import { LevelCard } from "./LevelCard";
+import { LevelCardInfo } from "./type";
+import { CategoriesType } from "@type/commons/categories";
+
+import { isNil } from "@utils/typeGuard";
 
 const cardsVariants: Variants = {
   open: {
@@ -37,20 +40,29 @@ const ArrowVariants: Variants = {
   },
 };
 
-export default function AddVaca({
-  cardData,
-  selected,
+interface Props {
+  category: CategoriesType;
+  selectedCard: boolean[];
+  handleResetSelected: () => void;
+  handleClickCheck: (e: React.MouseEvent<HTMLInputElement>) => void;
+  levelCardInfos: LevelCardInfo[];
+}
+
+export function AddLevelCard({
   category,
-  resetSelected,
-  handleClick,
-}: IAddVoca) {
-  const [isCardOpen, setIsCardOpen] = useState<boolean>(false);
-  const [saveVoca, { loading, data, error }] = useMutation(
+  levelCardInfos,
+  selectedCard,
+  handleResetSelected,
+  handleClickCheck,
+}: Props) {
+  const [boardOpen, setBoardOpen] = useState<boolean>(false);
+
+  const [saveLevelCard, { loading, data: savedResponse, error }] = useMutation(
     `/vocas/${category}`
   );
 
-  const onClickCard = () => {
-    setIsCardOpen((prev) => !prev);
+  const handleClickBoardButton = () => {
+    setBoardOpen((prev) => !prev);
   };
 
   const userId = useSelector((state: IState) => {
@@ -61,34 +73,39 @@ export default function AddVaca({
 
   const onClickSaved = () => {
     //로그인한 유저가 아닐 경우 로그인 페이지로
-    if (!userId) router.push("/signIn");
+    if (isNil(userId)) {
+      alert("단어장을 저장하기 위해서는 로그인이 필요합니다.");
+      router.push("/signIn");
+      return;
+    }
 
-    const level: number[] = [];
-    selected.forEach((check, idx) => {
-      if (check) level.push(idx);
+    const levels: number[] = [];
+
+    levelCardInfos.forEach((l, level) => {
+      if (l) levels.push(level + 1);
     });
 
     //선택한 단어장이 없으면 동작 x
-    if (level.length === 0) {
-      alert("내 단어장어 포함될 단어 카드를 선택해 주세요.");
+    if (levels.length === 0) {
+      alert("내 단어장에 포함될 단어 카드를 선택해 주세요.");
     }
-    saveVoca({ userId, level: JSON.stringify(level) });
+    saveLevelCard({ userId, level: levels });
   };
 
   useEffect(() => {
-    if (data?.ok) {
-      resetSelected();
-      setIsCardOpen(false);
+    if (savedResponse?.ok) {
+      handleResetSelected();
+      setBoardOpen(false);
     }
-  }, [data]);
+  }, [savedResponse]);
 
   return (
     <Wrapper>
       <ButtonBox>
         <Button
-          onClick={onClickCard}
+          onClick={handleClickBoardButton}
           whileTap={{ scale: 0.97 }}
-          style={{ backgroundColor: isCardOpen ? "#00b894" : "#949fb0" }}
+          style={{ backgroundColor: boardOpen ? "#00b894" : "#949fb0" }}
         >
           <p>CARD</p>
           <FolderOpenSvg />
@@ -97,22 +114,22 @@ export default function AddVaca({
           {loading ? <LoadingSvg color="white" /> : "단어장에 저장"}
         </Button>
       </ButtonBox>
-      <Board animate={isCardOpen ? "open" : "closed"}>
+      <Board animate={boardOpen ? "open" : "closed"}>
         <div>
           <Arrow
             variants={ArrowVariants}
-            animate={isCardOpen ? "open" : "closed"}
+            animate={boardOpen ? "open" : "closed"}
           />
           <Cards
             variants={cardsVariants}
             style={{
-              pointerEvents: isCardOpen ? "auto" : "none",
+              pointerEvents: boardOpen ? "auto" : "none",
             }}
           >
-            {selected.map((visible, idx) => (
-              <VocaCard
+            {selectedCard.map((visible, idx) => (
+              <LevelCard
                 key={idx}
-                {...{ visible, cardData, idx, handleClick }}
+                {...{ visible, levelCardInfos, idx, handleClickCheck }}
               />
             ))}
           </Cards>
