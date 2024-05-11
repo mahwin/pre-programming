@@ -4,7 +4,7 @@ import { all } from "redux-saga/effects";
 import rootReducer from "./rootReducer";
 import getUserSaga from "./user/userSaga";
 import getVocasSaga from "./vocabulary/vocabularySaga";
-import getUserVocasSaga from "./userVocas/userVocasSaga";
+import getUserVocasSaga from "./userVocabulary/userVocasSaga";
 import getCategoriesSaga from "./categories/categoriesSaga";
 
 const sagaMiddleware = createSagaMiddleware();

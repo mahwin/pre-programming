@@ -1,19 +1,19 @@
 import initialState from "../initialState";
 import { createSlice } from "@reduxjs/toolkit";
 
-const userVocasSlice = createSlice({
+const userVocabularySlice = createSlice({
   name: "userVocas",
-  initialState: initialState.userVocas,
+  initialState: initialState.userVocabulary,
   reducers: {
-    getUserVocas: (state) => {
+    getUserVocabulary: (state) => {
       state.loading = true;
     },
-    getUserVocasSuccess: (state, { payload }) => {
+    getUserVocabularySuccess: (state, { payload }) => {
       state.loading = false;
       state.data = payload.data;
       state.error = null;
     },
-    getUserVocasError: (state, { payload }) => {
+    getUserVocabularyError: (state, { payload }) => {
       state.error = payload;
       state.loading = false;
       state.data = null;
@@ -22,5 +22,5 @@ const userVocasSlice = createSlice({
 });
 
 // 정의한 액션과 리듀서를 export
-export const userVocasActions = userVocasSlice.actions;
-export default userVocasSlice.reducer;
+export const userVocabularyActions = userVocabularySlice.actions;
+export default userVocabularySlice.reducer;

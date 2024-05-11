@@ -2,7 +2,7 @@ import { combineReducers } from "@reduxjs/toolkit";
 
 import vocasReducer from "./vocabulary/vocabularySlice";
 import userReducer from "./user/userSlice";
-import userVocasReducer from "./userVocas/userVocasSlice";
+import userVocabularyReducer from "./userVocabulary/userVocabularySlice";
 import categoriesReducer from "./categories/categoriesSlice";
 import classfiedVocaReducer from "./classifiedVocabulary/classifiedVocabularySlice";
 
@@ -15,7 +15,7 @@ const combinedReducer = combineReducers({
   classifiedVocabulary: classfiedVocaReducer,
   categories: categoriesReducer,
   user: userReducer,
-  userVocas: userVocasReducer,
+  userVocabulary: userVocabularyReducer,
 });
 
 const rootReducer = (

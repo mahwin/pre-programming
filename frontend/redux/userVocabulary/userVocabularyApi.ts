@@ -1,13 +1,13 @@
 import { authApi } from "@api/*";
 
-async function getUserVocas() {
+async function getUserVocabulary() {
   try {
-    const response = await authApi(`/vocas/user`);
+    const { data } = await authApi(`/user/vocabulary`);
 
-    return response;
+    return data;
   } catch (error: any) {
     throw new Error("vocas를 가져오는데 실패했습니다.");
   }
 }
 
-export { getUserVocas };
+export { getUserVocabulary };
