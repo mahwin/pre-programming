@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { PrismaModule } from 'prisma/prisma.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { VocasModule } from './vocas/vocas.module';
+import { VocasModule } from './vocabulary/vocas.module';
 import { CategoriesModule } from './category/category.module';
 import { ConfigModule } from '@nestjs/config';
 

@@ -1,4 +1,4 @@
-import { VocaDto } from '../vocas/dto/vocas-voca.dto';
+import { VocaDto } from '../vocabulary/dto/vocas-voca.dto';
 
 export default function dataSplitter(data: VocaDto[]) {
   const maxLevel = Number(data[data.length - 1].level);

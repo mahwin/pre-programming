@@ -60,7 +60,12 @@ model UserAddVocabulary {
   updatedAt        DateTime @updatedAt
 }
 
-model SeperatedVocabulary {
+model ClassifiedVocabulary {
+  id   Int    @id @default(autoincrement())
+  data String @db.LongText
+}
+
+model CompressedVocabulary {
   id   Int    @id @default(autoincrement())
   data String @db.LongText
 }

@@ -10,14 +10,23 @@ export class VocasService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
 
   async getAll() {
-    const { data: vocasData } =
-      await this.prisma.seperatedVocabulary.findUnique({
-        where: {
-          id: 2,
-        },
-      });
+    const { data } = await this.prisma.compressedVocabulary.findUnique({
+      where: {
+        id: 1,
+      },
+    });
 
-    return { ok: true, data: vocasData };
+    return { ok: true, data };
+  }
+
+  async getClassifiedVoca() {
+    const { data } = await this.prisma.classifiedVocabulary.findUnique({
+      where: {
+        id: 1,
+      },
+    });
+
+    return { ok: true, data };
   }
 
   async levelUpdate(category: string, { userId, level }) {
@@ -50,7 +59,7 @@ export class VocasService {
     }
     return { ok: true, message: '저장 성공' };
   }
-  async getUserVocas({ userId }: JwtPayload) {
+  async getUserVoca({ userId }: JwtPayload) {
     const userVocas = await this.prisma.userAddVocabulary.upsert({
       where: {
         userId,

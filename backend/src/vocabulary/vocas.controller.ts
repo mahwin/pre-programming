@@ -13,20 +13,25 @@ import { JwtAuthGuard } from '../auth/guard/jwt-auth.guard';
 import { Request } from 'express';
 import { JwtPayload } from '../auth/type';
 
-@Controller('vocas')
+@Controller('vocabulary')
 export class VocasController {
   constructor(private readonly vocasService: VocasService) {}
 
   @Get('/user')
   @UseGuards(JwtAuthGuard)
-  getUserVocas(@Req() req: Request) {
+  getUserVoca(@Req() req: Request) {
     const payload = req.user as JwtPayload;
-    return this.vocasService.getUserVocas(payload);
+    return this.vocasService.getUserVoca(payload);
   }
 
   @Get('/all')
-  getAllVocas() {
+  getAllVoca() {
     return this.vocasService.getAll();
+  }
+
+  @Get('/classified')
+  getClassifiedVoca() {
+    return this.vocasService.getClassifiedVoca();
   }
 
   @Post('/:category')
