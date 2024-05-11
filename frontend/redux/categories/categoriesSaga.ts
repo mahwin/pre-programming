@@ -1,11 +1,11 @@
 import { categoriesActions } from "./categoriesSlice";
-import * as categoriesAPI from "./categoriesAPI";
+import * as Api from "./categoriesAPI";
 import { call, put, takeLatest, all, fork } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
 function* getCategories() {
   try {
-    const response: AxiosResponse = yield call(categoriesAPI.getCategories);
+    const response: AxiosResponse = yield call(Api.getCategories);
     yield put(categoriesActions.getCategoriesSuccess(response));
   } catch (error) {
     yield put(categoriesActions.getCategoriesError(error));

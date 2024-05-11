@@ -9,8 +9,7 @@ const classifiedVocabularySlice = createSlice({
       state.loading = true;
     },
     getClassifiedVocabularySuccess: (state, { payload }) => {
-      console.log(payload);
-      state.data = payload;
+      state.data = JSON.parse(payload.data);
       state.error = null;
       state.loading = false;
     },

@@ -9,7 +9,6 @@ const categoriesSlice = createSlice({
       state.loading = true;
     },
     getCategoriesSuccess: (state, { payload }) => {
-      console.log(payload);
       state.data = payload;
       state.error = null;
       state.loading = false;

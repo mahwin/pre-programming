@@ -4,17 +4,19 @@ import { all } from "redux-saga/effects";
 import rootReducer from "./rootReducer";
 import getUserSaga from "./user/userSaga";
 import getVocasSaga from "./vocabulary/vocabularySaga";
-import getUserVocasSaga from "./userVocabulary/userVocasSaga";
+import getUserVocabularySaga from "./userVocabulary/userVocabularySaga";
 import getCategoriesSaga from "./categories/categoriesSaga";
+import getClassifiedVocabularySaga from "./classifiedVocabulary/classifiedVocabularySaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
 function* rootSaga() {
   yield all([
-    getUserVocasSaga(),
+    getUserVocabularySaga(),
     getVocasSaga(),
     getUserSaga(),
     getCategoriesSaga(),
+    getClassifiedVocabularySaga(),
   ]);
 }
 
