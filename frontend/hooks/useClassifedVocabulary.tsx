@@ -6,15 +6,17 @@ import { isNil } from "@utils/typeGuard";
 
 export function useClassifiedVocabulary() {
   const { data, loading } = useSelector(
-    (state: IState) => state.classifiedVocabulary
+    ({ classifiedVocabulary }: IState) => classifiedVocabulary
   );
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (isNil(data))
-      dispatch(classifiedVocabularyActions.getClassifiedVocabulary());
+    if (!isNil(data)) return;
+    dispatch(classifiedVocabularyActions.getClassifiedVocabulary());
   }, [data, dispatch]);
+
+  console.log(data, "??");
 
   return { data, loading };
 }
