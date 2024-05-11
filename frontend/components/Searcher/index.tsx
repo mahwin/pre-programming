@@ -1,24 +1,19 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
+
 import styled from "styled-components";
+
 import { Input } from "./Input";
+import { Table } from "./Table";
 
-import Trie from "@modules/Trie";
-
+import { useTrie } from "@hooks/useTrie";
 import { isNil } from "@utils/typeGuard";
 
-import { IState } from "@redux/initialState";
-import { vocasActions } from "@redux/vocas/vocasSlice";
-
 import { VocabularyItem } from "@type/commons/vocabulary";
-import { Table } from "./Table";
 
 interface RecommendObj {
   recommends: VocabularyItem[];
   selectedIndex: number;
 }
-
-const MAX_ROCOMENDS = 8;
 
 export function Searcher() {
   const [keyword, setKeyword] = useState("");
@@ -26,11 +21,12 @@ export function Searcher() {
     recommends: [],
     selectedIndex: 0,
   });
-  const [trie, setTrie] = useState<Trie | null>(null);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   }, []);
+
+  const { trie, loading } = useTrie();
 
   useEffect(
     function autoComplete() {
@@ -39,23 +35,6 @@ export function Searcher() {
       setRecommed({ selectedIndex: 0, recommends });
     },
     [keyword]
-  );
-
-  const { loading, data } = useSelector((state: IState) => state.vocas);
-
-  const dispatch = useDispatch();
-
-  useEffect(
-    function getTrieInstance() {
-      if (!isNil(trie)) return;
-
-      if (isNil(data)) {
-        dispatch(vocasActions.getVocas());
-      } else {
-        setTrie(Trie.getInstance(MAX_ROCOMENDS, data));
-      }
-    },
-    [data, dispatch]
   );
 
   const handleKeyboardEvent = ({ key }: React.KeyboardEvent<HTMLElement>) => {

@@ -10,9 +10,8 @@ const vocabularySlice = createSlice({
       state.loading = true;
     },
     getVocabularySuccess: (state, { payload }) => {
-      const vocas = JSON.parse(payload.data) as VocabularyItems;
       state.loading = false;
-      state.data = vocas;
+      state.data = JSON.parse(payload);
     },
     getVocabularyError: (state, { payload }) => {
       state.error = payload;
@@ -21,5 +20,5 @@ const vocabularySlice = createSlice({
   },
 });
 
-export const vocasActions = vocabularySlice.actions;
+export const vocabularyAction = vocabularySlice.actions;
 export default vocabularySlice.reducer;

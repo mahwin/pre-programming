@@ -10,12 +10,12 @@ interface Props {
   keyword: string;
 }
 
-export function Input({ handleChange, keyword, trie }: Props) {
+export function Input({ loading, handleChange, keyword, trie }: Props) {
   return (
     <InputBox>
       <MagnifyingGlassSvg width="24" height="24" color="green" />
       <InputElement
-        disabled={isNil(trie)}
+        disabled={loading}
         onChange={handleChange}
         value={keyword}
       />
