@@ -1,0 +1,151 @@
+import { HTMLAttributes, useMemo } from "react";
+import styled from "styled-components";
+import { FrownSvg } from "@svg";
+import { UserVocabulary } from "@redux/userVocabulary/userVocabulary.dto";
+import { CheckSvg } from "@svg";
+import { userVocaColors } from "@color/userVocaColor";
+
+import { useSelector } from "react-redux";
+import { IState } from "@redux/initialState";
+
+import { isNil } from "@utils/typeGuard";
+import { CategoriesType } from "@type/commons/vocabulary";
+import { ClassifiedVocabulary } from "@type/commons/classifiedVocabulary";
+import { SelectedCard } from "./index";
+interface Props {
+  isEmpty: boolean;
+  userVocabulary: UserVocabulary | null;
+  clickedCategory: CategoriesType | null;
+  handleClickBoardItem: (category: CategoriesType, cardIdx: number) => void;
+  classifiedVocabulary: ClassifiedVocabulary | null;
+  selectedCard: SelectedCard;
+}
+
+export function CategoryBoardItem({
+  userVocabulary,
+  clickedCategory,
+  isEmpty,
+  classifiedVocabulary,
+  selectedCard,
+  handleClickBoardItem,
+}: Props) {
+  const boardItems = useMemo(() => {
+    if (isEmpty) return null;
+    if (isNil(userVocabulary)) return null;
+    return userVocabulary?.[
+      clickedCategory as keyof UserVocabulary
+    ] as number[];
+  }, [isEmpty, clickedCategory]);
+
+  const getWordAmount = (level: number) => {
+    if (isNil(classifiedVocabulary)) return 0;
+    if (isNil(clickedCategory)) return 0;
+    return classifiedVocabulary[clickedCategory][level].length;
+  };
+
+  if (isEmpty || isNil(boardItems) || isNil(clickedCategory))
+    return (
+      <Wrapper>
+        <FrownSvg width="80" height="80" color="white" />
+        <p>Empty</p>
+      </Wrapper>
+    );
+
+  return (
+    <>
+      {boardItems.map((level, idx) => (
+        <Card
+          key={idx}
+          isClicked={selectedCard[clickedCategory].has(level)}
+          onClick={() => handleClickBoardItem(clickedCategory, level)}
+        >
+          <Check />
+          <Title>
+            <h3>level {level}</h3>
+          </Title>
+          <Row>
+            <p>words</p>
+            <h2>{getWordAmount(level)}</h2>
+          </Row>
+        </Card>
+      ))}
+    </>
+  );
+}
+
+const Wrapper = styled.div`
+  grid-column: 1/ -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    color: whitesmoke;
+    font-weight: 800;
+  }
+`;
+
+const Card = styled.li<{ isClicked: boolean } & HTMLAttributes<HTMLLIElement>>`
+  position: relative;
+  background-color: #fff;
+  height: 80px;
+  width: 125px;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  :hover {
+    transition: all 0.2s ease-in-out;
+  }
+
+  box-shadow: 0 0 0 4px
+    ${(props) =>
+      props.isClicked
+        ? userVocaColors.selectedColor
+        : userVocaColors.userVoca.ClickedCardBgColor};
+  & > span {
+    visibility: ${(props) => (props.isClicked ? "visible" : "hidden")};
+  }
+`;
+
+const Title = styled.div`
+  text-align: center;
+  h3 {
+    opacity: 0.7;
+    color: ${(props) => props.theme.colorTheme.backgroundColor};
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+    font-size: ${(props) => props.theme.fontSize.base};
+  }
+`;
+
+const Check = styled.span`
+  position: absolute;
+  top: -26px;
+  right: -10px;
+  height: 30px;
+  width: 40px;
+
+  z-index: 10;
+  border-bottom: 8px solid ${userVocaColors.selectedColor};
+  border-left: 8px solid ${userVocaColors.selectedColor};
+  transform: rotate(310deg);
+  transition: all 0.2s ease-in-out;
+`;
+
+const Row = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 12px;
+  justify-content: space-around;
+  p {
+    font-size: 18px;
+    display: inline-block;
+    color: #a875d5;
+    font-weight: 500;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2d3436;
+  }
+`;

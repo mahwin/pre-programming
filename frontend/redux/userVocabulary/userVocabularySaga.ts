@@ -1,11 +1,14 @@
 import { userVocabularyActions } from "./userVocabularySlice";
 import * as Api from "./userVocabularyApi";
 import { call, put, takeLatest, all, fork } from "redux-saga/effects";
-import { AxiosResponse } from "axios";
+import { CategoriesType } from "@type/commons/categories";
 
+interface Response {
+  data: { [category in CategoriesType]: string };
+}
 function* getUserVocabulary() {
   try {
-    const { data }: AxiosResponse = yield call(Api.getUserVocabulary);
+    const { data }: Response = yield call(Api.getUserVocabulary);
     yield put(userVocabularyActions.getUserVocabularySuccess(data));
   } catch (error) {
     yield put(userVocabularyActions.getUserVocabularyError(error));

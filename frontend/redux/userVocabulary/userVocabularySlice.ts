@@ -1,8 +1,27 @@
 import initialState from "../initialState";
 import { createSlice } from "@reduxjs/toolkit";
+import { CATEGORIES } from "@type/commons/categories";
+import { UserVocabulary } from "@redux/userVocabulary/userVocabulary.dto";
+import { isNil } from "utils/typeGuard";
+import { CategoriesType } from "@type/commons/categories";
+
+type Payload = {
+  [category in CategoriesType]: string;
+};
+function 전처리(payload: Payload) {
+  const newPayload: Partial<UserVocabulary> = {};
+  CATEGORIES.forEach((category) => {
+    if (isNil(payload[category])) {
+      newPayload[category] = [];
+    } else {
+      newPayload[category] = JSON.parse(payload[category]);
+    }
+  });
+  return newPayload as UserVocabulary;
+}
 
 const userVocabularySlice = createSlice({
-  name: "userVocas",
+  name: "userVocabulary",
   initialState: initialState.userVocabulary,
   reducers: {
     getUserVocabulary: (state) => {
@@ -10,7 +29,7 @@ const userVocabularySlice = createSlice({
     },
     getUserVocabularySuccess: (state, { payload }) => {
       state.loading = false;
-      state.data = payload.data;
+      state.data = 전처리(payload);
       state.error = null;
     },
     getUserVocabularyError: (state, { payload }) => {

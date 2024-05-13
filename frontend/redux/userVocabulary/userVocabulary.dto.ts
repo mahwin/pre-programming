@@ -7,12 +7,12 @@ type User = {
 };
 
 type UserVocabulary = {
-  [category in CategoriesType]: string;
+  [category in CategoriesType]: [];
 };
 
 interface UserVocabularyState {
   loading: boolean;
-  data: null | (User & UserVocabulary);
+  data: null | UserVocabulary;
   error: null | AxiosError;
 }
 
@@ -22,4 +22,5 @@ const initailUserVocabularyState: UserVocabularyState = {
   error: null,
 };
 
-export { type UserVocabularyState, initailUserVocabularyState };
+export type { UserVocabularyState, UserVocabulary };
+export { initailUserVocabularyState };

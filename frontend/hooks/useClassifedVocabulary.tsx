@@ -16,7 +16,5 @@ export function useClassifiedVocabulary() {
     dispatch(classifiedVocabularyActions.getClassifiedVocabulary());
   }, [data, dispatch]);
 
-  console.log(data, "??");
-
   return { data, loading };
 }
