@@ -1,10 +1,12 @@
-export function chunk(data: [], size: number) {
-  let preIdx = 0;
+/**
+ * 배열을 size 크기로 나누어 반환합니다.
+ */
+export function chunk<T>(data: T[], size: number) {
   let result = [];
-  const maxLen = Math.ceil(data.length / size);
-  for (let i = 0; i < maxLen; i++) {
-    result.push(data.slice(preIdx, preIdx + size));
-    preIdx += size;
+
+  for (let i = 0; i < data.length; i += size) {
+    result.push(data.slice(i, i + size));
   }
+
   return result;
 }

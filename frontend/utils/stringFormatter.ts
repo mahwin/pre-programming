@@ -22,10 +22,23 @@ export function camelStrToMiddleBarStr(camelString: string) {
   return result.join("-");
 }
 
+function 첫글자대문자(str: string) {
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+function 첫글자소문자(str: string) {
+  return str[0].toLowerCase() + str.slice(1);
+}
+
 export function camelCaser(name: string) {
+  name = 첫글자소문자(name);
   return name.split("-").reduce((a, c) => a + c[0].toUpperCase() + c.slice(1));
 }
 
 export function kebabCaser(name: string) {
   return name.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
+export function pascalCaser(name: string) {
+  return camelCaser(name)[0].toLocaleUpperCase() + camelCaser(name).slice(1);
 }

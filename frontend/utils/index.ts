@@ -1,4 +1,4 @@
 export * from "./meanConvert";
 export * from "./chunk";
 export * from "./getMediaTheme";
-export * from "./stringFormater";
+export * from "./stringFormatter";
