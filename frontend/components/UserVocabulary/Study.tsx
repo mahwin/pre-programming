@@ -11,12 +11,12 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, KeyboardEvent } from "react";
 import { userVocaColors } from "@color/userVocaColor";
-import { VocabularyItem } from "@type/commons/vocabulary";
+import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
 interface Props {
-  isOpened: boolean;
+  isopened: boolean;
   handleClick: () => void;
-  spreadSelectedVocabulary: VocabularyItem[];
+  spreadSelectedVocabulary: ClassifiedVocabularyItems;
 }
 
 const ACTIONS = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
@@ -52,11 +52,11 @@ const reducer = (amount: number) => (current: number, action: Action) => {
 };
 
 export default function Study({
-  isOpened,
+  isopened,
   handleClick,
   spreadSelectedVocabulary,
 }: Props) {
-  if (!isOpened) return null;
+  if (!isopened) return null;
 
   const lastIdx = useMemo(
     () => spreadSelectedVocabulary.length,

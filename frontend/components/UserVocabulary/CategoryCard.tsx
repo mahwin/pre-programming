@@ -46,7 +46,7 @@ export function CategoryCard({
       initial={false}
       onClick={handleClickOpen}
       whileHover={{ cursor: "pointer" }}
-      isOpened={currentCardOpened}
+      isopened={currentCardOpened}
       clickedCategory={clickedCategory}
     >
       <Col>
@@ -66,7 +66,7 @@ export function CategoryCard({
 }
 
 const VocaCard = styled(motion.article)<{
-  isOpened: boolean;
+  isopened: boolean;
   clickedCategory: string | null;
 }>`
   height: 100px;
@@ -78,14 +78,14 @@ const VocaCard = styled(motion.article)<{
 
   font-weight: ${(props) => props.theme.fontWeight.base};
 
-  background-color: ${({ isOpened, clickedCategory }) =>
+  background-color: ${({ isopened, clickedCategory }) =>
     isNil(clickedCategory)
       ? userVocaColors.userVoca.CardBgColor
-      : isOpened
+      : isopened
         ? userVocaColors.userVoca.ClickedTargetCardBgColor
         : userVocaColors.userVoca.ClickedCardBgColor};
 
-  opacity: ${(props) => (props.isOpened ? 1 : 0.5)};
+  opacity: ${(props) => (props.isopened ? 1 : 0.5)};
   transition: all 0.2s ease-in-out;
 
   &:hover {

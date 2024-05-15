@@ -45,7 +45,7 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
           {isOpened ? <DownArrowSvg stroke={3} /> : "+"}
         </button>
         <AnimatePresence>
-          <TwoBtnBox isOpened={isOpened}>
+          <TwoBtnBox isopened={isOpened}>
             <BtnWrapper onClick={handleStudyClick}>
               <StudySvg />
               <Description>{`${spreadSelectedVocabulary.length}개의 단어를 학습합니다.`}</Description>
@@ -141,8 +141,8 @@ const Description = styled.p`
   }
 `;
 
-const TwoBtnBox = styled(motion.div)<{ isOpened: boolean }>`
-  visibility: ${(props) => (props.isOpened ? "visible" : "hidden")};
+const TwoBtnBox = styled(motion.div)<{ isopened: boolean }>`
+  visibility: ${(props) => (props.isopened ? "visible" : "hidden")};
   position: absolute;
   top: -4em;
   width: 120px;

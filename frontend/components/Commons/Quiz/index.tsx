@@ -14,7 +14,7 @@ import type { QuizListItem } from "./type";
 import type { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
 interface Props {
-  isOpened: boolean;
+  isopened: boolean;
   quizNum: number;
   spreadSelectedVocabulary: ClassifiedVocabularyItems;
   handleClick: () => void;
@@ -22,12 +22,12 @@ interface Props {
 }
 
 export function Quiz({
-  isOpened,
+  isopened,
   spreadSelectedVocabulary,
   quizNum,
   handleCloseClick,
 }: Props) {
-  if (isOpened === false) return <></>;
+  if (isopened === false) return <></>;
 
   const { data: totalVocabulary } = useVocabulary();
 

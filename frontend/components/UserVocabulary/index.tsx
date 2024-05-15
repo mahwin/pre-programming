@@ -98,8 +98,6 @@ export function UserVocabulary() {
     }, [] as ClassifiedVocabularyItems);
   }, [selectedCard, classifiedVocabulary]);
 
-  console.log(spreadSelectedVocabulary, classifiedVocabulary);
-
   return (
     <Wrapper>
       <header>
@@ -107,10 +105,11 @@ export function UserVocabulary() {
       </header>
       <VocaCardWrapper>
         {rowData.map((data, rowIdx) => (
-          <Row>
-            {data.map((item) =>
+          <Row key={rowIdx}>
+            {data.map((item, dataIdx) =>
               item.available ? (
                 <CategoryCard
+                  key={`${rowIdx}${dataIdx}`}
                   handleClickOpen={handleClickOpen(
                     camelCaser(item.category) as CategoriesType,
                     rowIdx
@@ -123,7 +122,10 @@ export function UserVocabulary() {
                   }}
                 />
               ) : (
-                <DisabledCateogoryCard item={item} />
+                <DisabledCateogoryCard
+                  key={`${rowIdx}${dataIdx}`}
+                  item={item}
+                />
               )
             )}
             {rowIdx === clickedCategoryRow && (

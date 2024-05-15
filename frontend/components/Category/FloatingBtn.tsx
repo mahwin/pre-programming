@@ -41,7 +41,7 @@ export function FloatingBtn() {
           {isOpened ? <DownArrowSvg stroke={3} /> : "+"}
         </button>
         <AnimatePresence>
-          <InputSelectBox isOpened={isOpened}>
+          <InputSelectBox isopened={isOpened}>
             <InputTitle>Test your level !</InputTitle>
             <p>How many : </p>
             <CheckList>
@@ -63,7 +63,7 @@ export function FloatingBtn() {
         </AnimatePresence>
       </Wrapper>
       <Quiz
-        isOpened={isQuizOpen}
+        isopened={isQuizOpen}
         spreadSelectedVocabulary={vocabulary}
         quizNum={quizNum}
         handleClick={handleQuizClick}
@@ -101,9 +101,9 @@ const Wrapper = styled(motion.section)`
 `;
 
 const InputSelectBox = styled.div<
-  { isOpened: boolean } & HTMLAttributes<HTMLElement>
+  { isopened: boolean } & HTMLAttributes<HTMLElement>
 >`
-  display: ${(props) => (props.isOpened ? "flex" : "none")};
+  display: ${(props) => (props.isopened ? "flex" : "none")};
   z-index: 55;
   position: absolute;
   justify-content: center;
