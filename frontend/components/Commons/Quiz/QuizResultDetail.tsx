@@ -4,7 +4,7 @@ import { CheckSvg, XMarkSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
 import { QuizListItem } from "./type";
 
-type Result = {
+type ScoreResult = {
   word: string;
   isCorrect: boolean;
   answer: string;
@@ -12,42 +12,19 @@ type Result = {
 };
 
 interface Props {
-  quizList: QuizListItem[];
-  answerList: number[];
-  userAnswerList: number[];
+  result: ScoreResult[];
   handleResultSummaryClick: () => void;
 }
 
-export function QuizResultDetail({
-  answerList,
-  quizList,
-  userAnswerList,
-  handleResultSummaryClick,
-}: Props) {
-  const [result, setResult] = useState<Result[]>([]);
-
-  useEffect(() => {
-    setResult(
-      quizList.map((quiz, idx) => {
-        const userAnswer = userAnswerList[idx];
-        const correctAnswer = answerList[idx];
-        return {
-          word: quiz.word,
-          isCorrect: userAnswer === correctAnswer,
-          answer: quiz.answers[correctAnswer],
-          userAnswer: quiz.answers[userAnswer],
-        };
-      })
-    );
-  }, [answerList, quizList, userAnswerList]);
+export function QuizResultDetail({ result, handleResultSummaryClick }: Props) {
   return (
     <QuizResultWrapper>
       <h1>Your Answers</h1>
       <Cards>
-        {result.map(({ isCorrect, answer, userAnswer }, idx) => (
+        {result.map(({ isCorrect, answer, userAnswer, word }, idx) => (
           <Card key={idx}>
             <CardTitle>
-              <h3> {quizList[idx].word}</h3>
+              <h3> {word}</h3>
             </CardTitle>
             <CardContents>
               {!isCorrect && (

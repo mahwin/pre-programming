@@ -2,7 +2,6 @@ import { useCallback } from "react";
 import styled from "styled-components";
 import React from "react";
 import { quizColors } from "@color/quizColors";
-import { isNil } from "@utils/typeGuard";
 
 import {
   explode,
@@ -33,11 +32,12 @@ export function ProblemCheckList({
     []
   );
 
-  const handleInputClick = (evt: React.MouseEvent<HTMLInputElement>) => {
-    const index = evt.currentTarget.dataset.index;
-    if (isNil(index)) return;
-    setCurrentUserAnswer(Number(evt.currentTarget.dataset.index));
-  };
+  const handleInputChange = useCallback(
+    (evt: React.ChangeEvent<HTMLInputElement>) => {
+      setCurrentUserAnswer(Number(evt.currentTarget.value));
+    },
+    []
+  );
 
   return (
     <Ul>
@@ -46,10 +46,10 @@ export function ProblemCheckList({
           <Input
             type="radio"
             name="answers"
-            checked={currentUserAnswer === index + 1}
+            value={index}
+            checked={currentUserAnswer === index}
             id={createLabelKey(index)}
-            onClick={handleInputClick}
-            data-index={index + 1}
+            onChange={handleInputChange}
           />
           <Label htmlFor={createLabelKey(index)}>{el}</Label>
           <Bullet>

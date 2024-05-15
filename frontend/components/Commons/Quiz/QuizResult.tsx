@@ -46,7 +46,6 @@ export function QuizResult({
       quizList.map((quiz, idx) => {
         const userAnswer = userAnswerList[idx];
         const correctAnswer = answerList[idx];
-        console.log(quiz.answers, userAnswer, correctAnswer);
         return {
           word: quiz.word,
           isCorrect: userAnswer === correctAnswer,
@@ -67,9 +66,7 @@ export function QuizResult({
       ) : (
         <QuizResultDetail
           {...{
-            answerList,
-            quizList,
-            userAnswerList,
+            result,
             handleResultSummaryClick,
           }}
         />

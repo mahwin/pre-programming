@@ -54,8 +54,6 @@ export function Quiz({
   const [currentUserAnswer, setCurrentUserAnswer] = useState<number>(0);
 
   const handleNextButtonClick = () => {
-    if (currentUserAnswer === 0) return;
-
     setUserAnswerList((prev) => [...prev, currentUserAnswer]);
     setCurrentUserAnswer(0);
     setStep((prev) => prev + 1);
@@ -64,7 +62,6 @@ export function Quiz({
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
   const handleSubmitButtonClick = () => {
-    if (currentUserAnswer === 0) return;
     handleNextButtonClick();
     setIsSubmit((prev) => !prev);
   };
