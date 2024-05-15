@@ -30,7 +30,7 @@ export default function SignIn() {
 
   //인증 번호 입력과 서버 연결
   const [confirmToken, { loading: tokenLoading, data: tokenValidateResponse }] =
-    useMutation<TokenConfirmResponse>("/auth/confirm");
+    useMutation<TokenConfirmResponse>("/auth/confirmation");
 
   const { register: tokenRegister, handleSubmit: tokenHandleSubmit } =
     useForm<TokenForm>();
