@@ -10,7 +10,7 @@ import { SendSvg } from "./Send";
 import { OpenSvg } from "./OpenSvg";
 import { QuizSvg } from "./QuizSvg";
 import { DownArrowSvg } from "./DownArrowSvg";
-import { ResultCircleSvg } from "./ResultCircleSvg";
+import { BigCircleSvg } from "./BigCircleSvg";
 import { FolderOpenSvg } from "./FolderOpenSvg";
 import { ChangeSvg } from "./ChangeSvg";
 import { CheckSvg } from "./CheckSvg";
@@ -46,7 +46,7 @@ export {
   OpenSvg,
   QuizSvg,
   DownArrowSvg,
-  ResultCircleSvg,
+  BigCircleSvg,
   FolderSvg,
   FolderOpenSvg,
   ChangeSvg,

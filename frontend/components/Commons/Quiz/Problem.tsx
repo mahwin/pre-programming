@@ -4,7 +4,6 @@ import { quizColors } from "assets/color/quizColors";
 import type { QuizListItem } from "./type";
 import { ProblemCheckList } from "@components/Commons/Quiz/ProblemCheckList";
 import { ProgressBar } from "@components/Commons/Quiz/ProgressBar";
-import { XMarkSvg } from "@svg";
 
 interface Props {
   quizList: QuizListItem[];
@@ -30,9 +29,6 @@ export function Problem({
   if (quizList.length === 0) return null;
   return (
     <>
-      <XBtn onClick={handleCloseButtonClick}>
-        <XMarkSvg width="20" height="20" color="white" />
-      </XBtn>
       <QuizStep>
         Quiz {currentStep + 1} / {quizNum}
       </QuizStep>
@@ -66,24 +62,6 @@ const ProblemContents = styled.section`
   h2 {
     width: 100%;
     font-size: 2rem;
-  }
-`;
-
-const XBtn = styled.button<React.HTMLProps<HTMLButtonElement>>`
-  position: absolute;
-  right: 40px;
-  appearance: none;
-  border: none;
-  background-color: transparent;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  :hover {
-    svg {
-      color: ${quizColors.quiz.selectedColor};
-      transform: scale(1.05);
-      transition: all 0.2s ease-in-out;
-    }
   }
 `;
 

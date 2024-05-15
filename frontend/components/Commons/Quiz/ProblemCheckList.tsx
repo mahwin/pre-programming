@@ -1,4 +1,4 @@
-import { HTMLAttributes, useCallback, useState } from "react";
+import { useCallback } from "react";
 import styled from "styled-components";
 import React from "react";
 import { quizColors } from "@color/quizColors";
@@ -71,6 +71,7 @@ export function ProblemCheckList({
 const Ul = styled.ul`
   margin: auto;
   margin-top: 40px;
+  border: 2px solid transparent;
   text-align: left;
   display: flex;
   flex-direction: column;

@@ -1,17 +1,17 @@
 import styled, { keyframes } from "styled-components";
 import { userVocaColors } from "assets/color/userVocaColor";
 
-interface IResultCircleSvg {
+interface Props {
   percent: string;
   correctColor?: string;
   inCorrectColor?: string;
 }
 
-export function ResultCircleSvg({
+export function BigCircleSvg({
   percent,
   correctColor = `${userVocaColors.quizResult.correctColor}`,
   inCorrectColor = `${userVocaColors.quizResult.correctColor}`,
-}: IResultCircleSvg) {
+}: Props) {
   const clockAnimation = keyframes`
   0%{
 		stroke-dashoffset: 0;
