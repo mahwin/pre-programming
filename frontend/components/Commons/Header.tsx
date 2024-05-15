@@ -3,26 +3,21 @@ import styled from "styled-components";
 import Link from "next/link";
 import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
-import { useSelector, useDispatch } from "react-redux";
-import { userActions } from "@redux/user/userSlice";
-import { IState } from "@redux/initialState";
 import { navColors } from "@color/navColors";
 import { Space } from "@components/Commons/Space";
 import { authManager } from "@modules/Auth";
 import { api } from "@api/index";
+
+import { useUserInfo } from "@hooks/useUserInfo";
+
 import { isNil } from "@utils/typeGuard";
 
 type currentNavType = "/" | "/me/vocabulary" | "/me" | "/signIn";
 
 export function Header() {
-  const { data: userInfo } = useSelector((state: IState) => state.user);
-
   const [currentNav, setCurrentNav] = useState<currentNavType>("/");
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(userActions.getUser());
-  }, [dispatch]);
+  const { data: userInfo } = useUserInfo();
 
   const router = useRouter();
   useEffect(() => {
