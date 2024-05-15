@@ -76,8 +76,9 @@ export function Category({ levelledVocabulary, category }: Props) {
     <Wrapper>
       <Title>{category}</Title>
       <LevelCardsWrapper>
-        {ObjectKeys(levelledVocabulary).map((level) => (
+        {ObjectKeys(levelledVocabulary).map((level, index) => (
           <LevelCardDetail
+            key={index}
             {...{
               totalAmount,
               level: level.toString(),

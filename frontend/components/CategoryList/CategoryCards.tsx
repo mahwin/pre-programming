@@ -15,7 +15,7 @@ export function CategoryCards({ categories }: Props) {
     <CardsWrapper>
       {categories.map((categoryInfo, index) =>
         categoryInfo.available ? (
-          <CardBox style={{ cursor: "pointer" }}>
+          <CardBox key={index} style={{ cursor: "pointer" }}>
             <Link href={`/category/${categoryInfo.category.toLowerCase()}`}>
               <Card>
                 <h3 style={{ color: titleColor[index % 9] }}>
@@ -31,6 +31,7 @@ export function CategoryCards({ categories }: Props) {
             style={{
               cursor: "not-allowed",
             }}
+            key={index}
           >
             <Overray>
               <div>
