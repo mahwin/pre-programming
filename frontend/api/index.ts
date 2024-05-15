@@ -37,9 +37,6 @@ const authApi = axios.create({
     "Content-Type": "application/json",
   },
 });
-async function sleep() {
-  return new Promise((resolve) => setTimeout(resolve, 1000));
-}
 
 // 요청 인터셉터
 authApi.interceptors.request.use(async (config) => {
