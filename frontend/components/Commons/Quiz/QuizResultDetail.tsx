@@ -25,6 +25,7 @@ export function QuizResultDetail({
   handleResultSummaryClick,
 }: Props) {
   const [result, setResult] = useState<Result[]>([]);
+
   useEffect(() => {
     setResult(
       quizList.map((quiz, idx) => {
@@ -43,7 +44,7 @@ export function QuizResultDetail({
     <QuizResultWrapper>
       <h1>Your Answers</h1>
       <Cards>
-        {result.map(({ isCorrect, answer }, idx) => (
+        {result.map(({ isCorrect, answer, userAnswer }, idx) => (
           <Card key={idx}>
             <CardTitle>
               <h3> {quizList[idx].word}</h3>
@@ -51,7 +52,7 @@ export function QuizResultDetail({
             <CardContents>
               {!isCorrect && (
                 <InCorrect>
-                  {answer}
+                  {userAnswer}
                   <XMarkSvg
                     width="30"
                     height="30"

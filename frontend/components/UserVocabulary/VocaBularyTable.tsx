@@ -1,65 +1,38 @@
-import { useMemo } from "react";
 import styled from "styled-components";
-import FloatingBtn from "./FloatingBtn";
 import { userVocaColors } from "@color/userVocaColor";
+import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 import { meanConvert } from "@utils/index";
-import { VocabularyItem } from "@type/commons/vocabulary";
-
-import { ClassifiedVocabulary } from "@type/commons/classifiedVocabulary";
-import type { SelectedCard } from "./";
-import { isNil } from "@utils/typeGuard";
-import { ObjectKeys } from "@utils/array";
 
 interface Props {
-  classifiedVocabulary: ClassifiedVocabulary | null;
-  selectedCard: SelectedCard | null;
+  spreadSelectedVocabulary: ClassifiedVocabularyItems;
 }
 
-export function VocaBularyTable({ classifiedVocabulary, selectedCard }: Props) {
-  const totalWords = useMemo(() => {
-    if (isNil(selectedCard)) return [];
-    if (isNil(classifiedVocabulary)) return [];
-
-    return ObjectKeys(selectedCard).reduce((a, cate) => {
-      if (selectedCard[cate].size === 0) return a;
-
-      selectedCard[cate].forEach((level) => {
-        a.push(...classifiedVocabulary[cate][level]);
-      });
-
-      return a;
-    }, [] as VocabularyItem[]);
-  }, [selectedCard, classifiedVocabulary]);
-
-  if (totalWords.length === 0) return <></>;
-
-  console.log(meanConvert(totalWords[0].mean, 2, 10));
+export function VocaBularyTable({ spreadSelectedVocabulary }: Props) {
+  if (spreadSelectedVocabulary.length === 0) return <></>;
   return (
-    <>
-      <Wrapper>
-        <Table>
-          <thead>
-            <tr>
-              <th>Word</th>
-              <th>Category</th>
-              <th>Frequency</th>
-              <th>Mean</th>
-            </tr>
-          </thead>
+    <Wrapper>
+      <Table>
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Category</th>
+            <th>Frequency</th>
+            <th>Mean</th>
+          </tr>
+        </thead>
 
-          <tbody>
-            {totalWords.map((vocaInfo) => (
-              <tr>
-                <td>{vocaInfo.word}</td>
-                <td>{vocaInfo.category}</td>
-                <td>{vocaInfo.frequency}</td>
-                <td>{meanConvert(vocaInfo.mean, 3, 12)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Wrapper>
-    </>
+        <tbody>
+          {spreadSelectedVocabulary.map((vocaInfo) => (
+            <tr>
+              <td>{vocaInfo.word}</td>
+              <td>{vocaInfo.category}</td>
+              <td>{vocaInfo.frequency}</td>
+              <td>{meanConvert(vocaInfo.mean, 3, 20)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </Wrapper>
   );
 }
 

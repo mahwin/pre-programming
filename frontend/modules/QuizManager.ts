@@ -30,7 +30,7 @@ export class QuizManager {
       .slice(0, this.quizNum)
       .reduce((a, c) => {
         const answers = [];
-        const currentAnswerNumber = this.randomNumber(5);
+        const currentAnswerNumber = this.randomNumber(4);
 
         this.answerList.push(currentAnswerNumber);
 
@@ -39,7 +39,6 @@ export class QuizManager {
           answers.push(uniqueVocabulary.mean);
         }
         answers.splice(currentAnswerNumber, 0, c.mean);
-
         a.push({
           word: c.word,
           answers: answers.map((el) => meanConvert(el, 2, 12)),
@@ -78,7 +77,7 @@ export class QuizManager {
     return vocabulary;
   }
 
-  shuffle(arr: VocabularyItems) {
+  shuffle<T>(arr: Array<T>) {
     return arr.sort(() => Math.random() - 0.5);
   }
 }

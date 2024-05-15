@@ -6,17 +6,17 @@ import { QuizResult } from "./QuizResult";
 import { XMarkSvg } from "@svg";
 import { quizColors } from "assets/color/quizColors";
 
-import { VocabularyItems } from "@type/commons/vocabulary";
 import { useVocabulary } from "@hooks/useVocabulary";
 import { QuizManager } from "@modules/QuizManager";
 import { isNil } from "@utils/typeGuard";
 import { Problem } from "./Problem";
 import type { QuizListItem } from "./type";
+import type { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
 interface Props {
   isOpened: boolean;
   quizNum: number;
-  spreadSelectedVocabulary: VocabularyItems;
+  spreadSelectedVocabulary: ClassifiedVocabularyItems;
   handleClick: () => void;
   handleCloseClick: () => void;
 }
@@ -57,7 +57,6 @@ export function Quiz({
     if (currentUserAnswer === 0) return;
 
     setUserAnswerList((prev) => [...prev, currentUserAnswer]);
-
     setCurrentUserAnswer(0);
     setStep((prev) => prev + 1);
   };
@@ -65,6 +64,8 @@ export function Quiz({
   const [isSubmit, setIsSubmit] = useState<boolean>(false);
 
   const handleSubmitButtonClick = () => {
+    if (currentUserAnswer === 0) return;
+    handleNextButtonClick();
     setIsSubmit((prev) => !prev);
   };
 

@@ -1,9 +1,12 @@
-import { CategoriesType, VocabularyItems } from "./vocabulary";
+import { CategoriesType, VocabularyItem } from "./vocabulary";
+
+type OmitMeanVoca = Omit<VocabularyItem, "mean">;
+type ClassifiedVocabularyItems = (OmitMeanVoca & { mean: string[] })[];
 
 type ClassifiedVocabulary = {
   [category in CategoriesType]: {
-    [level: string]: VocabularyItems;
+    [level: string]: ClassifiedVocabularyItems;
   };
 };
 
-export type { ClassifiedVocabulary };
+export type { ClassifiedVocabulary, ClassifiedVocabularyItems };

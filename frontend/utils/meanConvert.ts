@@ -1,6 +1,5 @@
-export function meanConvert(arr: string, cnt: number, maxLen: number) {
-  console.log(arr);
-  return eval(arr)
+export function meanConvert(arr: string[], cnt: number, maxLen: number) {
+  return arr
     .slice(0, cnt)
     .map(
       (mean: string, i: number) =>

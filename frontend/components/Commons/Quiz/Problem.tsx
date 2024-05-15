@@ -6,25 +6,23 @@ import { ProblemCheckList } from "@components/Commons/Quiz/ProblemCheckList";
 import { ProgressBar } from "@components/Commons/Quiz/ProgressBar";
 
 interface Props {
+  quizNum: number;
   quizList: QuizListItem[];
   currentStep: number;
-  setCurrentUserAnswer: React.Dispatch<React.SetStateAction<number>>;
   currentUserAnswer: number;
-  quizNum: number;
+  setCurrentUserAnswer: React.Dispatch<React.SetStateAction<number>>;
   handleNextButtonClick: () => void;
   handleSubmitButtonClick: () => void;
-  handleCloseButtonClick: () => void;
 }
 
 export function Problem({
   quizNum,
   quizList,
-  currentUserAnswer,
   currentStep,
+  currentUserAnswer,
   setCurrentUserAnswer,
   handleNextButtonClick,
   handleSubmitButtonClick,
-  handleCloseButtonClick,
 }: Props) {
   if (quizList.length === 0) return null;
   return (

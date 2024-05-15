@@ -28,7 +28,7 @@ const categories = [
 interface VocabularyItem {
   frequency: string;
   word: string;
-  mean: string;
+  mean: string[];
   category: CategoriesType;
   level: string;
 }

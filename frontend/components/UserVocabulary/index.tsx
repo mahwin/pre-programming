@@ -1,21 +1,19 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import styled from "styled-components";
-import { MouseEvent, Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 
 import { camelCaser } from "@utils/index";
 
 import { CategoryCard } from "./CategoryCard";
 import { CategoryBoard } from "./CategoryBoard";
+import { ObjectKeys } from "@utils/array";
 
-import { IState } from "@redux/initialState";
-import LevelCard from "./LevelCard";
 import { VocaBularyTable } from "./VocaBularyTable";
-import { FolderSvg, FolderOpenSvg, XMarkSvg, FrownSvg } from "@svg";
 import { userVocaColors } from "@color/userVocaColor";
 import { chunk } from "@utils/chunk";
-import { formatter } from "@utils/stringFormatter";
-import { IUserVocaData, IClickedVoca } from "@type/userVoca";
+import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
+
 import {
   CategoriesType,
   CATEGORIES,
@@ -28,6 +26,7 @@ import { useUserVocabulary } from "@hooks/useUserVocabulary";
 import { useCategory } from "@hooks/useCategory";
 import { useClassifiedVocabulary } from "@hooks/useClassifedVocabulary";
 import { DisabledCateogoryCard } from "./DisabledCategoryCard";
+import { FloatingBtn } from "./FloatingBtn";
 
 const ROW_SIZE = 4;
 
@@ -63,30 +62,10 @@ export function UserVocabulary() {
     setRowData(chunk(category, ROW_SIZE));
   }, [category]);
 
-  // useEffect(() => {
-  //   if (vocas.data && userVocas.data) {
-  //     let userSavedData: IUserVocaData = {};
-  //     for (let title of TITLES) {
-  //       let savedData = userVocas.data[title];
-
-  //       if (savedData) {
-  //         const tmp = JSON.parse(savedData);
-  //         userSavedData[title] = { data: tmp, len: tmp.length };
-  //       } else {
-  //         userSavedData[title] = { data: [], len: 0 };
-  //       }
-  //     }
-
-  //     setUserVocaData(userSavedData);
-  //   }
-  // }, [vocas.data, userVocas.data]);
-
-  const handleClickOpen =
-    (category: CategoriesType, rowIdx: number) =>
-    (evt: MouseEvent<HTMLDivElement>) => {
-      setClickedCategory(category);
-      setClickedCategoryRow(rowIdx);
-    };
+  const handleClickOpen = (category: CategoriesType, rowIdx: number) => () => {
+    setClickedCategory(category);
+    setClickedCategoryRow(rowIdx);
+  };
 
   const handleClickClose = useCallback(() => {
     setClickedCategory(null);
@@ -103,7 +82,24 @@ export function UserVocabulary() {
     },
     []
   );
-  console.log(selectedCard);
+
+  const spreadSelectedVocabulary = useMemo(() => {
+    if (isNil(selectedCard)) return [];
+    if (isNil(classifiedVocabulary)) return [];
+
+    return ObjectKeys(selectedCard).reduce((a, cate) => {
+      if (selectedCard[cate].size === 0) return a;
+
+      selectedCard[cate].forEach((level) => {
+        a.push(...classifiedVocabulary[cate][level]);
+      });
+
+      return a;
+    }, [] as ClassifiedVocabularyItems);
+  }, [selectedCard, classifiedVocabulary]);
+
+  console.log(spreadSelectedVocabulary, classifiedVocabulary);
+
   return (
     <Wrapper>
       <header>
@@ -145,7 +141,8 @@ export function UserVocabulary() {
           </Row>
         ))}
       </VocaCardWrapper>
-      <VocaBularyTable {...{ classifiedVocabulary, selectedCard }} />
+      <VocaBularyTable {...{ spreadSelectedVocabulary }} />
+      <FloatingBtn {...{ spreadSelectedVocabulary }} />
     </Wrapper>
   );
 }

@@ -1,18 +1,82 @@
 import styled from "styled-components";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
-import { DownArrowSvg, StudySvg, QuizSvg } from "@svg";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback } from "react";
+import { DownArrowSvg, StudySvg } from "@svg";
 import Study from "./Study";
-import Quiz from "@components/Commons/Quiz";
+import { QuizInput } from "./QuizInput";
 import { userVocaColors } from "@color/userVocaColor";
-import { IVoca } from "@type/commons/vocabulary";
-import { IFloatingBtn } from "@type/userVoca";
+import { isNil } from "@utils/typeGuard";
+import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
+
+import { Quiz } from "@components/Commons/Quiz";
+
+interface Props {
+  spreadSelectedVocabulary: ClassifiedVocabularyItems;
+}
+
+export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
+  const [isOpened, setIsOpened] = useState<boolean>(false);
+  const [isQuizOpen, setIsQuizOpen] = useState<boolean>(false);
+  const [isStudyOpen, setIsStudyOpen] = useState<boolean>(false);
+
+  const handleFloatingBtnClick = useCallback(() => {
+    setIsOpened((prev) => !prev);
+    setIsStudyOpen(false);
+    setIsQuizOpen(false);
+  }, []);
+
+  const handleStudyClick = useCallback(() => {
+    setIsQuizOpen(false);
+    setIsStudyOpen((prev) => !prev);
+  }, []);
+
+  const handleQuizClick = useCallback(() => {
+    setIsStudyOpen(false);
+    setIsQuizOpen((prev) => !prev);
+  }, []);
+
+  if (isNil(spreadSelectedVocabulary) || spreadSelectedVocabulary.length === 0)
+    return null;
+
+  return (
+    <>
+      <Wrapper>
+        <button onClick={handleFloatingBtnClick}>
+          {isOpened ? <DownArrowSvg stroke={3} /> : "+"}
+        </button>
+        <AnimatePresence>
+          <TwoBtnBox isOpened={isOpened}>
+            <BtnWrapper onClick={handleStudyClick}>
+              <StudySvg />
+              <Description>{`${spreadSelectedVocabulary.length}개의 단어를 학습합니다.`}</Description>
+            </BtnWrapper>
+            <QuizInput {...{ spreadSelectedVocabulary, handleQuizClick }} />
+          </TwoBtnBox>
+        </AnimatePresence>
+      </Wrapper>
+
+      <Study
+        isOpened={isStudyOpen}
+        handleClick={handleFloatingBtnClick}
+        {...{ spreadSelectedVocabulary }}
+      />
+
+      <Quiz
+        isOpened={isQuizOpen}
+        spreadSelectedVocabulary={spreadSelectedVocabulary}
+        quizNum={10}
+        handleClick={handleQuizClick}
+        handleCloseClick={handleFloatingBtnClick}
+      />
+    </>
+  );
+}
 
 const Wrapper = styled(motion.section)`
   z-index: 99;
   height: 50px;
   width: 50px;
-  border-radius: 25px;
+  border-radius: 50%;
   position: fixed;
   right: 4em;
   bottom: 4em;
@@ -20,23 +84,19 @@ const Wrapper = styled(motion.section)`
   align-items: center;
   justify-content: center;
   background-color: ${userVocaColors.floatBtn.bgColor};
+  cursor: pointer;
+
   button {
-    appearance: none;
-    border: none;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
     background-color: transparent;
     align-items: center;
     justify-content: center;
     color: white;
     font-size: ${(props) => props.theme.fontSize.lg};
-    cursor: pointer;
     :hover {
-      color: ${userVocaColors.floatBtn.hoverColor};
+      color: #00b894;
     }
   }
+  transition: all 0.6s ease-in-out;
 `;
 
 const BtnWrapper = styled.div<React.HTMLAttributes<HTMLElement>>`
@@ -81,7 +141,8 @@ const Description = styled.p`
   }
 `;
 
-const TwoBtnBox = styled(motion.div)`
+const TwoBtnBox = styled(motion.div)<{ isOpened: boolean }>`
+  visibility: ${(props) => (props.isOpened ? "visible" : "hidden")};
   position: absolute;
   top: -4em;
   width: 120px;
@@ -91,33 +152,19 @@ const TwoBtnBox = styled(motion.div)`
   transition: all 0.4s ease-in-out;
   display: flex;
   justify-content: space-around;
+
   div:nth-child(1) {
     margin-top: 3px;
     svg:hover {
-      stroke: ${userVocaColors.floatBtn.hoverColor};
+      stroke: #00b894;
     }
   }
   div:nth-child(2) {
     margin-top: 2px;
     svg:hover {
-      fill: ${userVocaColors.floatBtn.hoverColor};
+      fill: #00b894;
     }
   }
-`;
-
-const QuizMaker = styled(motion.section)`
-  padding: 12px;
-  position: absolute;
-  background-color: ${userVocaColors.floatBtn.bgColor};
-  top: -150px;
-  right: 0px;
-  width: 200px;
-  border-radius: 5px;
-  box-shadow:
-    0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  color: white;
-  height: 0px;
 `;
 
 const QuizStartBtn = styled.div`
@@ -162,141 +209,3 @@ const InputBox = styled.div`
     font-size: inherit;
   }
 `;
-
-const QuizMakerVariants: Variants = {
-  open: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    height: "130px",
-    transition: {
-      type: "linear",
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  closed: {
-    clipPath: "inset(100% 0% 0% 0%)",
-    height: "0px",
-    transition: {
-      type: "linear",
-      bounce: 0,
-      duration: 0.3,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-};
-
-export default function FloatingBtn({ amount, data }: IFloatingBtn) {
-  const [spreadData, setSpreadData] = useState<IVoca[] | null>(null);
-
-  const [maxNumber, setMaxNumber] = useState<number>(0);
-  const [inputN, setInputN] = useState<string>("");
-
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isStudyOpen, setIsStudyOpen] = useState<boolean>(false);
-  const [isQuizMakerOpen, setQuizMakerOpen] = useState<boolean>(false);
-  const [isQuizOpen, setQuizOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    setMaxNumber(Math.floor(amount / 4));
-  }, [amount]);
-
-  useEffect(() => {
-    let spread: IVoca[] = [];
-    data.forEach((items) => {
-      spread = spread.concat(Object.values(items)[0]);
-    });
-    setSpreadData(spread);
-  }, [data]);
-
-  const handleBtnClick = () => {
-    setIsOpen((prev) => !prev);
-    setQuizMakerOpen(false);
-  };
-
-  const handleClickQuizMaker = () => {
-    setQuizMakerOpen((prev) => !prev);
-  };
-
-  const handleClickStudy = () => {
-    setQuizOpen(false);
-    setIsStudyOpen((prev) => !prev);
-  };
-
-  const handleClickQuiz = () => {
-    setIsStudyOpen(false);
-    setQuizOpen((prev) => !prev);
-  };
-
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.currentTarget;
-    const onlyNum = value.replace(/[^0-9]/g, "");
-
-    if (+onlyNum <= maxNumber) {
-      setInputN(onlyNum);
-    } else {
-      setInputN(maxNumber + "");
-    }
-  };
-
-  return (
-    <>
-      <Wrapper>
-        <button onClick={handleBtnClick}>
-          {isOpen ? <DownArrowSvg stroke={3} /> : "+"}
-        </button>
-        <AnimatePresence>
-          {isOpen && (
-            <TwoBtnBox>
-              <BtnWrapper onClick={handleClickStudy}>
-                <StudySvg />
-                <Description>{`${amount} 개의 단어를 학습합니다.`}</Description>
-              </BtnWrapper>
-              <BtnWrapper onClick={handleClickQuizMaker}>
-                <QuizSvg />
-                <Description>실력을 테스트 해보세요!</Description>
-              </BtnWrapper>
-              {isQuizMakerOpen && (
-                <QuizMaker
-                  variants={QuizMakerVariants}
-                  animate={isQuizMakerOpen ? "open" : "close"}
-                >
-                  <div>
-                    <label>문제 수 입력</label>
-                    <InputBox>
-                      <input value={inputN} onChange={handleInput}></input>
-                      <span> / {maxNumber}</span>
-                    </InputBox>
-                    <QuizStartBtn>
-                      {Number(inputN) > 0 ? (
-                        <button onClick={handleClickQuiz}>Can Start !</button>
-                      ) : (
-                        <h3>Fill Input !</h3>
-                      )}
-                    </QuizStartBtn>
-                  </div>
-                </QuizMaker>
-              )}
-            </TwoBtnBox>
-          )}
-        </AnimatePresence>
-      </Wrapper>
-      {spreadData && isStudyOpen && (
-        <Study
-          handleClick={handleClickStudy}
-          amount={amount}
-          spreadData={spreadData}
-        />
-      )}
-      {spreadData && isQuizOpen && (
-        <Quiz
-          vocas={spreadData}
-          howMany={inputN}
-          handleClick={handleClickQuiz}
-        />
-      )}
-    </>
-  );
-}

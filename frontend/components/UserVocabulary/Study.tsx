@@ -1,3 +1,5 @@
+import { useReducer, useMemo } from "react";
+
 import styled from "styled-components";
 import {
   XMarkSvg,
@@ -9,11 +11,149 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, KeyboardEvent } from "react";
 import { userVocaColors } from "@color/userVocaColor";
-import { IStudy } from "@type/userVoca";
+import { VocabularyItem } from "@type/commons/vocabulary";
+
+interface Props {
+  isOpened: boolean;
+  handleClick: () => void;
+  spreadSelectedVocabulary: VocabularyItem[];
+}
+
+const ACTIONS = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
+
+type Action = {
+  type: (typeof ACTIONS)[number];
+};
+
+// curring 이용
+const reducer = (amount: number) => (current: number, action: Action) => {
+  const PAGE_JUMP = 10;
+
+  switch (action.type) {
+    case "ArrowLeft":
+      return current > 1 ? current - 1 : current;
+    case "ArrowUp":
+      return current < amount
+        ? current <= amount - PAGE_JUMP
+          ? current + PAGE_JUMP
+          : amount
+        : current;
+    case "ArrowRight":
+      return current < amount ? current + 1 : current;
+    case "ArrowDown":
+      return current > 1
+        ? current >= PAGE_JUMP + 1
+          ? current - PAGE_JUMP
+          : 1
+        : current;
+    default:
+      return current;
+  }
+};
+
+export default function Study({
+  isOpened,
+  handleClick,
+  spreadSelectedVocabulary,
+}: Props) {
+  if (!isOpened) return null;
+
+  const lastIdx = useMemo(
+    () => spreadSelectedVocabulary.length,
+    [spreadSelectedVocabulary]
+  );
+
+  const [current, dispatch] = useReducer(reducer(lastIdx), 1);
+
+  const handleKeyBoeadEvent = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (ACTIONS.includes(e.key)) {
+      dispatch({ type: e.key });
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      <Overay
+        tabIndex={0}
+        onKeyDown={handleKeyBoeadEvent}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        <Container>
+          <XBtn onClick={handleClick}>
+            <XMarkSvg width="24" height="24" color="white" stroke={4} />
+          </XBtn>
+          <CounterBox>
+            <h3>
+              {current} / {lastIdx}
+            </h3>
+          </CounterBox>
+
+          <WordBox>
+            <Word>
+              <h2>{`${spreadSelectedVocabulary[current - 1].word} : `} </h2>
+            </Word>
+            <Mean>
+              {spreadSelectedVocabulary[current - 1].mean.map((el, idx) => (
+                <li key={idx}>
+                  {idx + 1}. {el}
+                </li>
+              ))}
+            </Mean>
+          </WordBox>
+
+          <KeyBoard>
+            <div
+              style={{
+                color:
+                  current > 1 ? userVocaColors.study.etcColor : "transparent",
+              }}
+            >
+              <LeftArrowSvg />
+            </div>
+            <Col>
+              <div
+                style={{
+                  color:
+                    current === lastIdx
+                      ? "transparent"
+                      : userVocaColors.study.etcColor,
+                }}
+              >
+                <KeyUpSvg />
+              </div>
+              <div
+                style={{
+                  color:
+                    current === 1
+                      ? "transparent"
+                      : userVocaColors.study.etcColor,
+                }}
+              >
+                <KeyDownSvg />
+              </div>
+            </Col>
+            <div
+              style={{
+                color:
+                  current < lastIdx
+                    ? userVocaColors.study.etcColor
+                    : "transparent",
+              }}
+            >
+              <RightArrowSvg />
+            </div>
+          </KeyBoard>
+        </Container>
+      </Overay>
+    </AnimatePresence>
+  );
+}
 
 const Overay = styled(motion.div)`
   position: fixed;
   top: 0;
+  left: 0;
   height: 100vh;
   width: 100%;
   z-index: 999;
@@ -38,12 +178,9 @@ const XBtn = styled.div<React.HTMLAttributes<HTMLElement>>`
   width: 10px;
   height: 10px;
   cursor: pointer;
-  :hover {
-    svg {
-      transition: ease-in-out 0.3s;
-      transform: scale(1.1);
-      stroke: ${userVocaColors.study.btnHoverColor};
-    }
+  :hover > svg {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
   }
 `;
 const KeyBoard = styled.div`
@@ -98,100 +235,14 @@ const WordBox = styled.div`
 const Word = styled.div`
   width: 600px;
 `;
-const Mean = styled.div`
-  width: 100%;
-  h3 {
+const Mean = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 800px;
+  li {
     white-space: pre-wrap;
     font-size: ${(props) => props.theme.fontSize.lg};
     color: white;
   }
 `;
-
-export default function Study({ handleClick, amount, spreadData }: IStudy) {
-  const [current, setCurrent] = useState<number>(1);
-
-  const handleKeyBoeadEvent = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "ArrowLeft" && current > 1) {
-      setCurrent((prev) => prev - 1);
-    }
-    if (e.key === "ArrowUp" && current < amount) {
-      if (current <= amount - 10) setCurrent((prev) => prev + 10);
-      else setCurrent(amount);
-    }
-    if (e.key === "ArrowRight" && current < amount) {
-      setCurrent((prev) => prev + 1);
-    }
-    if (e.key === "ArrowDown" && current > 1) {
-      if (current >= 11) setCurrent((prev) => prev - 10);
-      else setCurrent(1);
-    }
-  };
-
-  return (
-    <AnimatePresence>
-      <Overay
-        tabIndex={0}
-        onKeyDown={handleKeyBoeadEvent}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <Container>
-          <XBtn onClick={handleClick}>
-            <XMarkSvg width="24" height="24" color="white" stroke={4} />
-          </XBtn>
-          <CounterBox>
-            <h3>
-              {current} / {amount}
-            </h3>
-          </CounterBox>
-
-          {spreadData && (
-            <WordBox>
-              <Word>
-                <h2>{`${spreadData?.[current - 1].word} : `} </h2>
-              </Word>
-              <Mean>
-                <h3>
-                  {eval(spreadData?.[current - 1].mean)
-                    .map(
-                      (item: string, idx: number) =>
-                        idx + 1 + ". " + item + "\n"
-                    )
-                    .join("")}
-                </h3>
-              </Mean>
-            </WordBox>
-          )}
-          <KeyBoard>
-            <div
-              style={{
-                color:
-                  current > 1 ? userVocaColors.study.etcColor : "transparent",
-              }}
-            >
-              <LeftArrowSvg />
-            </div>
-            <Col>
-              <div>
-                <KeyUpSvg />
-              </div>
-              <div>
-                <KeyDownSvg />
-              </div>
-            </Col>
-            <div
-              style={{
-                color:
-                  current < amount
-                    ? userVocaColors.study.etcColor
-                    : "transparent",
-              }}
-            >
-              <RightArrowSvg />
-            </div>
-          </KeyBoard>
-        </Container>
-      </Overay>
-    </AnimatePresence>
-  );
-}

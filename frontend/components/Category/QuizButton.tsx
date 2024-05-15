@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { QuizSvg, DownArrowSvg } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
-import Quiz from "@components/Commons/Quiz";
+import Quiz from "@components/Commons/Quiz/Problem";
 import { vocaColors } from "@color/vocaColors";
 import { IVocaObj } from "@type/commons/vocabulary";
 import { IQuizSetting } from "@type/vocas";

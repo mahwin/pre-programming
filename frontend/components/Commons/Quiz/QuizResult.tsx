@@ -1,7 +1,14 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { QuizListItem } from "./type";
 import { QuizResultDetail } from "./QuizResultDetail";
 import { QuizResultSummary } from "./QuizResultSummary";
+
+type ScoreResult = {
+  word: string;
+  isCorrect: boolean;
+  answer: string;
+  userAnswer: string;
+};
 
 interface Props {
   quizList: QuizListItem[];
@@ -9,6 +16,7 @@ interface Props {
   userAnswerList: number[];
   handleRetryButtonClick: () => void;
 }
+
 export function QuizResult({
   answerList,
   quizList,
@@ -30,6 +38,24 @@ export function QuizResult({
       return answer === userAnswerList[idx] ? acc + 1 : acc;
     }, 0);
   }, [answerList, userAnswerList]);
+
+  const [result, setResult] = useState<ScoreResult[]>([]);
+
+  useEffect(() => {
+    setResult(
+      quizList.map((quiz, idx) => {
+        const userAnswer = userAnswerList[idx];
+        const correctAnswer = answerList[idx];
+        console.log(quiz.answers, userAnswer, correctAnswer);
+        return {
+          word: quiz.word,
+          isCorrect: userAnswer === correctAnswer,
+          answer: quiz.answers[correctAnswer],
+          userAnswer: quiz.answers[userAnswer],
+        };
+      })
+    );
+  }, [answerList, quizList, userAnswerList]);
 
   return (
     <>
