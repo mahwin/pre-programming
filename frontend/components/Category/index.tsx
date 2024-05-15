@@ -25,7 +25,6 @@ export function Category({ levelledVocabulary, category }: Props) {
   const [selectedLevelCard, setSelectedLevelCard] = useState<string | null>(
     null
   );
-  console.log(levelledVocabulary);
   const [selectedCard, setSelectedCard] = useState<boolean[]>(
     Array.from({ length: MAX_CARD_NUM }, () => false)
   );
@@ -54,15 +53,32 @@ export function Category({ levelledVocabulary, category }: Props) {
     [levelledVocabulary]
   );
 
+  console.log(levelCardInfos);
+
   const handleResetSelected = () => {
     setSelectedCard(Array.from({ length: 10 }, () => false));
   };
 
-  const handleClickCheck = (e: React.MouseEvent<HTMLElement>): void => {
-    const levelCardIdx = Number(e.currentTarget.id);
-    const copy = [...selectedCard];
-    copy[levelCardIdx] = !copy[levelCardIdx];
-    setSelectedCard([...copy]);
+  const handleInputChange = (
+    evt: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    const level = Number(evt.currentTarget.value);
+    console.log(level, "???????");
+    setSelectedCard((prev) => {
+      const newPrev = [...prev];
+      newPrev[level] = !newPrev[level];
+      return newPrev;
+    });
+  };
+
+  const handleCheckClick = (evt: React.MouseEvent<HTMLElement>) => {
+    const level = Number(evt.currentTarget.id);
+
+    setSelectedCard((prev) => {
+      const newPrev = [...prev];
+      newPrev[level] = !newPrev[level];
+      return newPrev;
+    });
   };
 
   const handleOpenCard = (level: string) => () => {
@@ -78,17 +94,17 @@ export function Category({ levelledVocabulary, category }: Props) {
       <Wrapper>
         <Title>{category}</Title>
         <LevelCardsWrapper>
-          {ObjectKeys(levelledVocabulary).map((level, index) => (
+          {ObjectKeys(levelledVocabulary).map((_, index) => (
             <LevelCardDetail
               key={index}
               {...{
                 totalAmount,
-                level: level.toString(),
-                handleClickCheck,
+                index: `${index}`,
+                handleInputChange,
                 selectedCard,
                 levelCardInfos,
                 setSelectedLevelCard,
-                handleOpenCard: handleOpenCard(level.toString()),
+                handleOpenCard: handleOpenCard(`${index}`),
               }}
             />
           ))}
@@ -99,7 +115,7 @@ export function Category({ levelledVocabulary, category }: Props) {
             levelCardInfos,
             selectedCard,
             handleResetSelected,
-            handleClickCheck,
+            handleCheckClick,
           }}
         />
 
@@ -109,9 +125,8 @@ export function Category({ levelledVocabulary, category }: Props) {
               <LevelCardDetailModal
                 {...{
                   selectedLevelCard,
-                  handleClickCheck,
+                  handleCheckClick,
                   selectedCard,
-                  levelCardInfos,
                   levelledVocabulary,
                 }}
               />

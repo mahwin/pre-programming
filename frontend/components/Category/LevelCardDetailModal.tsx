@@ -7,30 +7,33 @@ import { LevelledVocabulary } from "@type/commons/vocabulary";
 
 interface Props {
   selectedLevelCard: string;
-  handleClickCheck: (e: React.MouseEvent<HTMLElement>) => void;
+  handleCheckClick: (e: React.MouseEvent<HTMLElement>) => void;
   selectedCard: boolean[];
   levelledVocabulary: LevelledVocabulary;
 }
 
 export function LevelCardDetailModal({
   selectedLevelCard,
-  handleClickCheck,
+  handleCheckClick,
   selectedCard,
   levelledVocabulary,
 }: Props) {
   return (
     <ModalWrapper>
       <ModalTitleBox>
-        <ModalLevel>Level : {selectedLevelCard}</ModalLevel>
+        <ModalLevel>Level : {Number(selectedLevelCard) + 1}</ModalLevel>
         <ModalButton
           type="text"
           name={selectedLevelCard}
-          onClick={handleClickCheck}
+          id={selectedLevelCard}
+          onClick={handleCheckClick}
         >
           {selectedCard[Number(selectedLevelCard)] ? "해제" : "추가"}
         </ModalButton>
       </ModalTitleBox>
-      <ModalTable tableData={levelledVocabulary[selectedLevelCard]} />
+      <ModalTable
+        tableData={levelledVocabulary[Number(selectedLevelCard) + 1]}
+      />
     </ModalWrapper>
   );
 }

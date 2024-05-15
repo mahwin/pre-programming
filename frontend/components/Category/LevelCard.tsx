@@ -3,19 +3,10 @@ import { vocaColors } from "@color/vocaColors";
 import { motion, Variants } from "framer-motion";
 import { LevelCardInfo } from "./type";
 
-const cardVariants: Variants = {
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: { stiffness: 800, damping: 34 },
-  },
-  closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
-};
-
 interface Props {
   visible: boolean;
   levelCardInfos: LevelCardInfo[];
-  handleClickCheck: (e: React.MouseEvent<HTMLInputElement>) => void;
+  handleCheckClick: (e: React.MouseEvent<HTMLInputElement>) => void;
   idx: number;
 }
 
@@ -23,7 +14,7 @@ export function LevelCard({
   visible,
   levelCardInfos,
   idx,
-  handleClickCheck,
+  handleCheckClick,
 }: Props) {
   if (!visible) return null;
 
@@ -31,8 +22,8 @@ export function LevelCard({
     <Card variants={cardVariants} key={idx}>
       <CardContents>
         <Row>
-          <p>Level {idx}</p>
-          <CancleBtnBox onClick={handleClickCheck} id={idx.toString()}>
+          <p>Level {idx + 1}</p>
+          <CancleBtnBox onClick={handleCheckClick} id={`${idx}`}>
             <XBar />
             <XBar />
           </CancleBtnBox>
@@ -41,13 +32,13 @@ export function LevelCard({
           <p>
             <small>words</small>
           </p>
-          <b>{levelCardInfos?.[idx - 1].amount}</b>
+          <b>{levelCardInfos[idx].amount}</b>
         </Row>
         <Row>
           <p>
             <small>frequency</small>
           </p>
-          <p>{levelCardInfos?.[idx - 1].frequency} 이상</p>
+          <p>{levelCardInfos[idx].frequency} 이상</p>
         </Row>
       </CardContents>
     </Card>
@@ -105,7 +96,9 @@ const CardContents = styled.section`
   }
 `;
 
-const CancleBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
+const CancleBtnBox = styled.div<
+  React.HTMLAttributes<HTMLElement> & { id: string }
+>`
   position: absolute;
   height: 30px;
   width: 30px;
@@ -120,3 +113,12 @@ const CancleBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
     transform: scale(1.2);
   }
 `;
+
+const cardVariants: Variants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { stiffness: 800, damping: 34 },
+  },
+  closed: { display: "none", opacity: 0, y: 20, transition: { duration: 0.1 } },
+};

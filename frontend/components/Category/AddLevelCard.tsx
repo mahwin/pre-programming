@@ -44,7 +44,7 @@ interface Props {
   category: CategoriesType;
   selectedCard: boolean[];
   handleResetSelected: () => void;
-  handleClickCheck: (e: React.MouseEvent<HTMLInputElement>) => void;
+  handleCheckClick: (e: React.MouseEvent<HTMLInputElement>) => void;
   levelCardInfos: LevelCardInfo[];
 }
 
@@ -53,7 +53,7 @@ export function AddLevelCard({
   levelCardInfos,
   selectedCard,
   handleResetSelected,
-  handleClickCheck,
+  handleCheckClick,
 }: Props) {
   const [boardOpen, setBoardOpen] = useState<boolean>(false);
 
@@ -128,7 +128,7 @@ export function AddLevelCard({
             {selectedCard.map((visible, idx) => (
               <LevelCard
                 key={idx}
-                {...{ visible, levelCardInfos, idx, handleClickCheck }}
+                {...{ visible, levelCardInfos, idx, handleCheckClick }}
               />
             ))}
           </Cards>

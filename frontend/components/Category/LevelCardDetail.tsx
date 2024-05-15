@@ -6,8 +6,8 @@ import { LevelCardInfo } from "./type";
 import { OpenSvg } from "@svg";
 
 interface Props {
-  level: string;
-  handleClickCheck: (e: React.MouseEvent<HTMLInputElement>) => void;
+  index: string;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   selectedCard: boolean[];
   totalAmount: number;
   levelCardInfos: LevelCardInfo[];
@@ -16,8 +16,8 @@ interface Props {
 
 export function LevelCardDetail({
   totalAmount,
-  level,
-  handleClickCheck,
+  index,
+  handleInputChange,
   selectedCard,
   levelCardInfos,
   handleOpenCard,
@@ -30,17 +30,18 @@ export function LevelCardDetail({
       <CardHeader>
         <input
           type="checkbox"
-          id={level}
-          onClick={handleClickCheck}
-          checked={selectedCard[Number(level)]}
+          value={index}
+          id={index}
+          onChange={handleInputChange}
+          checked={selectedCard[Number(index)]}
         />
-        <label htmlFor={level}></label>
-        <CardTitle>level : {level}</CardTitle>
+        <label htmlFor={index}></label>
+        <CardTitle>level : {Number(index) + 1}</CardTitle>
       </CardHeader>
       <CardBody>
         <CardContent
           totalAmount={totalAmount}
-          levelCardInfo={levelCardInfos[Number(level) - 1]}
+          levelCardInfo={levelCardInfos[Number(index)]}
         />
       </CardBody>
     </CardBox>
