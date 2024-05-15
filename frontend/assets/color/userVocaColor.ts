@@ -19,9 +19,10 @@ const userVocaColors = {
   },
 
   userVoca: {
-    vocaCardBgColor: "#949fb0",
     overlayColor: "#4a5568;",
-    levelCardBgColor: "#333a45",
+    CardBgColor: "#515869",
+    ClickedCardBgColor: "#455254",
+    ClickedTargetCardBgColor: "#00b894",
   },
   quizResult: {
     titleLineColor: "#153f65",
