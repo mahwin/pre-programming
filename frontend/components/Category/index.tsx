@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 import { LevelCardDetailModal } from "./LevelCardDetailModal";
 import { LevelledVocabulary } from "@type/commons/vocabulary";
 import { CategoriesType } from "@type/commons/categories";
+import { FloatingBtn } from "./FloatingBtn";
 
 import { ObjectKeys } from "@utils/array";
 
@@ -73,50 +74,53 @@ export function Category({ levelledVocabulary, category }: Props) {
   };
 
   return (
-    <Wrapper>
-      <Title>{category}</Title>
-      <LevelCardsWrapper>
-        {ObjectKeys(levelledVocabulary).map((level, index) => (
-          <LevelCardDetail
-            key={index}
-            {...{
-              totalAmount,
-              level: level.toString(),
-              handleClickCheck,
-              selectedCard,
-              levelCardInfos,
-              setSelectedLevelCard,
-              handleOpenCard: handleOpenCard(level.toString()),
-            }}
-          />
-        ))}
-      </LevelCardsWrapper>
-      <AddLevelCard
-        {...{
-          category,
-          levelCardInfos,
-          selectedCard,
-          handleResetSelected,
-          handleClickCheck,
-        }}
-      />
-
-      <AnimatePresence>
-        {selectedLevelCard && (
-          <Overlay handleClick={handleCloseCard}>
-            <LevelCardDetailModal
+    <>
+      <Wrapper>
+        <Title>{category}</Title>
+        <LevelCardsWrapper>
+          {ObjectKeys(levelledVocabulary).map((level, index) => (
+            <LevelCardDetail
+              key={index}
               {...{
-                selectedLevelCard,
+                totalAmount,
+                level: level.toString(),
                 handleClickCheck,
                 selectedCard,
                 levelCardInfos,
-                levelledVocabulary,
+                setSelectedLevelCard,
+                handleOpenCard: handleOpenCard(level.toString()),
               }}
             />
-          </Overlay>
-        )}
-      </AnimatePresence>
-    </Wrapper>
+          ))}
+        </LevelCardsWrapper>
+        <AddLevelCard
+          {...{
+            category,
+            levelCardInfos,
+            selectedCard,
+            handleResetSelected,
+            handleClickCheck,
+          }}
+        />
+
+        <AnimatePresence>
+          {selectedLevelCard && (
+            <Overlay handleClick={handleCloseCard}>
+              <LevelCardDetailModal
+                {...{
+                  selectedLevelCard,
+                  handleClickCheck,
+                  selectedCard,
+                  levelCardInfos,
+                  levelledVocabulary,
+                }}
+              />
+            </Overlay>
+          )}
+        </AnimatePresence>
+      </Wrapper>
+      <FloatingBtn />
+    </>
   );
 }
 
