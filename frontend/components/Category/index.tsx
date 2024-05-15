@@ -53,32 +53,30 @@ export function Category({ levelledVocabulary, category }: Props) {
     [levelledVocabulary]
   );
 
-  console.log(levelCardInfos);
-
   const handleResetSelected = () => {
     setSelectedCard(Array.from({ length: 10 }, () => false));
+  };
+
+  const updateSelectedCard = (level: number) => {
+    setSelectedCard((prev) => {
+      const newPrev = [...prev];
+      newPrev[level] = !newPrev[level];
+      return newPrev;
+    });
   };
 
   const handleInputChange = (
     evt: React.ChangeEvent<HTMLInputElement>
   ): void => {
     const level = Number(evt.currentTarget.value);
-    console.log(level, "???????");
-    setSelectedCard((prev) => {
-      const newPrev = [...prev];
-      newPrev[level] = !newPrev[level];
-      return newPrev;
-    });
+
+    updateSelectedCard(level);
   };
 
   const handleCheckClick = (evt: React.MouseEvent<HTMLElement>) => {
     const level = Number(evt.currentTarget.id);
 
-    setSelectedCard((prev) => {
-      const newPrev = [...prev];
-      newPrev[level] = !newPrev[level];
-      return newPrev;
-    });
+    updateSelectedCard(level);
   };
 
   const handleOpenCard = (level: string) => () => {

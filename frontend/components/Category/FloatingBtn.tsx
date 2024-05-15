@@ -34,7 +34,6 @@ export function FloatingBtn() {
   );
 
   if (isNil(vocabulary) || vocabulary.length === 0) return null;
-  console.log(isQuizOpen);
   return (
     <>
       <Wrapper>
