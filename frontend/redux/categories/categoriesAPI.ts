@@ -2,7 +2,6 @@ import { api } from "@api/index";
 
 async function getCategories() {
   try {
-    console.log("api");
     const response = await api.get("/categories/all");
 
     return response.data;
