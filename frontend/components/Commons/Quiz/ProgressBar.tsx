@@ -16,8 +16,8 @@ export function ProgressBar({ currentStep, quizNum }: Props) {
           key={i}
           style={
             currentStep >= i
-              ? { borderColor: "#153f65", left: `${i * quizNum}%` }
-              : { borderColor: "#f1f2ec", left: `${i * quizNum}%` }
+              ? { borderColor: "#153f65", left: `${(i / quizNum) * 100}%` }
+              : { borderColor: "#f1f2ec", left: `${(i / quizNum) * 100}%` }
           }
         ></ProgressCicle>
       ))}
