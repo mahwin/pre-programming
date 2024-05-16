@@ -44,7 +44,7 @@ export function QuizInput({
         <Description>실력을 테스트 해보세요!</Description>
       </QuizMakerButton>
       <QuizMakerWrapper
-        isOpened={isOpened}
+        isopened={isOpened}
         initial={false}
         variants={QuizMakerVariants}
         animate={isOpened ? "open" : "closed"}
@@ -79,8 +79,8 @@ const QuizMakerButton = styled.div<React.HTMLAttributes<HTMLElement>>`
   }
 `;
 
-const QuizMakerWrapper = styled(motion.section)<{ isOpened: boolean }>`
-  display: ${(props) => (props.isOpened ? "flex" : "none")};
+const QuizMakerWrapper = styled(motion.section)<{ isopened: boolean }>`
+  display: ${(props) => (props.isopened ? "flex" : "none")};
   flex-direction: column;
   justify-content: space-around;
 

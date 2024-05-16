@@ -14,20 +14,20 @@ interface Props {
   item: CategoryItem;
   handleClickClose: (e: React.MouseEvent<HTMLDivElement>) => void;
   handleClickOpen: (e: React.MouseEvent<HTMLDivElement>) => void;
-  clickedCategory: CategoriesType | null;
+  clickedcategory: CategoriesType | null;
   userVocabulary: UserVocabulary | null;
 }
 
 export function CategoryCard({
   item,
-  clickedCategory,
+  clickedcategory,
   userVocabulary,
   handleClickOpen,
 }: Props) {
   const currentCardOpened = useMemo(() => {
-    if (isNil(clickedCategory)) return false;
-    return clickedCategory === camelCaser(item.category);
-  }, [clickedCategory]);
+    if (isNil(clickedcategory)) return false;
+    return clickedcategory === camelCaser(item.category);
+  }, [clickedcategory]);
 
   const categoryItemLen = useCallback(
     (category: string) => {
@@ -47,7 +47,7 @@ export function CategoryCard({
       onClick={handleClickOpen}
       whileHover={{ cursor: "pointer" }}
       isopened={currentCardOpened}
-      clickedCategory={clickedCategory}
+      clickedcategory={clickedcategory}
     >
       <Col>
         <h2>
@@ -67,7 +67,7 @@ export function CategoryCard({
 
 const VocaCard = styled(motion.article)<{
   isopened: boolean;
-  clickedCategory: string | null;
+  clickedcategory: string | null;
 }>`
   height: 100px;
   position: relative;
@@ -78,8 +78,8 @@ const VocaCard = styled(motion.article)<{
 
   font-weight: ${(props) => props.theme.fontWeight.base};
 
-  background-color: ${({ isopened, clickedCategory }) =>
-    isNil(clickedCategory)
+  background-color: ${({ isopened, clickedcategory }) =>
+    isNil(clickedcategory)
       ? userVocaColors.userVoca.CardBgColor
       : isopened
         ? userVocaColors.userVoca.ClickedTargetCardBgColor

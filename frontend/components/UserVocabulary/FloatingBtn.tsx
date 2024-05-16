@@ -56,13 +56,13 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
       </Wrapper>
 
       <Study
-        isOpened={isStudyOpen}
+        isopened={isStudyOpen}
         handleClick={handleFloatingBtnClick}
         {...{ spreadSelectedVocabulary }}
       />
 
       <Quiz
-        isOpened={isQuizOpen}
+        isopened={isQuizOpen}
         spreadSelectedVocabulary={spreadSelectedVocabulary}
         quizNum={10}
         handleClick={handleQuizClick}

@@ -110,13 +110,13 @@ export function UserVocabulary() {
               item.available ? (
                 <CategoryCard
                   key={`${rowIdx}${dataIdx}`}
+                  clickedcategory={clickedCategory}
                   handleClickOpen={handleClickOpen(
                     camelCaser(item.category) as CategoriesType,
                     rowIdx
                   )}
                   {...{
                     item,
-                    clickedCategory,
                     handleClickClose,
                     userVocabulary,
                   }}
@@ -130,9 +130,9 @@ export function UserVocabulary() {
             )}
             {rowIdx === clickedCategoryRow && (
               <CategoryBoard
+                clickedcategory={clickedCategory}
                 {...{
                   userVocabulary,
-                  clickedCategory,
                   handleClickClose,
                   handleClickBoardItem,
                   classifiedVocabulary,

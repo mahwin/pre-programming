@@ -15,7 +15,7 @@ import { SelectedCard } from "./index";
 interface Props {
   handleClickClose: () => void;
   userVocabulary: null | UserVocabulary;
-  clickedCategory: CategoriesType | null;
+  clickedcategory: CategoriesType | null;
   handleClickBoardItem: (category: CategoriesType, cardIdx: number) => void;
   classifiedVocabulary: ClassifiedVocabulary | null;
   selectedCard: SelectedCard;
@@ -23,7 +23,7 @@ interface Props {
 
 export function CategoryBoard({
   userVocabulary,
-  clickedCategory,
+  clickedcategory,
   handleClickClose,
   handleClickBoardItem,
   classifiedVocabulary,
@@ -33,21 +33,21 @@ export function CategoryBoard({
     let size;
     if (isNil(userVocabulary)) size = 0;
     else {
-      size = userVocabulary[clickedCategory as keyof UserVocabulary]?.length;
+      size = userVocabulary[clickedcategory as keyof UserVocabulary]?.length;
     }
 
     if (size <= 4) return "small";
     if (size <= 8) return "normal";
     return "big";
-  }, [userVocabulary, clickedCategory]);
+  }, [userVocabulary, clickedcategory]);
 
   const isEmpty = useCallback(() => {
     if (isNil(userVocabulary)) return true;
-    if (isNil(clickedCategory)) return true;
+    if (isNil(clickedcategory)) return true;
     return (
-      userVocabulary[clickedCategory as keyof UserVocabulary]?.length === 0
+      userVocabulary[clickedcategory as keyof UserVocabulary]?.length === 0
     );
-  }, [clickedCategory, userVocabulary]);
+  }, [clickedcategory, userVocabulary]);
 
   return (
     <Board initial={false} variants={BoardVariants} animate={boardSize}>
@@ -59,7 +59,7 @@ export function CategoryBoard({
         <CategoryBoardItem
           {...{
             selectedCard,
-            clickedCategory,
+            clickedcategory,
             userVocabulary,
             handleClickBoardItem,
             classifiedVocabulary,

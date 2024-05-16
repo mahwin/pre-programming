@@ -15,7 +15,7 @@ import { SelectedCard } from "./index";
 interface Props {
   isEmpty: boolean;
   userVocabulary: UserVocabulary | null;
-  clickedCategory: CategoriesType | null;
+  clickedcategory: CategoriesType | null;
   handleClickBoardItem: (category: CategoriesType, cardIdx: number) => void;
   classifiedVocabulary: ClassifiedVocabulary | null;
   selectedCard: SelectedCard;
@@ -23,7 +23,7 @@ interface Props {
 
 export function CategoryBoardItem({
   userVocabulary,
-  clickedCategory,
+  clickedcategory,
   isEmpty,
   classifiedVocabulary,
   selectedCard,
@@ -33,17 +33,17 @@ export function CategoryBoardItem({
     if (isEmpty) return null;
     if (isNil(userVocabulary)) return null;
     return userVocabulary?.[
-      clickedCategory as keyof UserVocabulary
+      clickedcategory as keyof UserVocabulary
     ] as number[];
-  }, [isEmpty, clickedCategory]);
+  }, [isEmpty, clickedcategory]);
 
   const getWordAmount = (level: number) => {
     if (isNil(classifiedVocabulary)) return 0;
-    if (isNil(clickedCategory)) return 0;
-    return classifiedVocabulary[clickedCategory][level].length;
+    if (isNil(clickedcategory)) return 0;
+    return classifiedVocabulary[clickedcategory][level].length;
   };
 
-  if (isEmpty || isNil(boardItems) || isNil(clickedCategory))
+  if (isEmpty || isNil(boardItems) || isNil(clickedcategory))
     return (
       <Wrapper>
         <FrownSvg width="80" height="80" color="white" />
@@ -56,8 +56,8 @@ export function CategoryBoardItem({
       {boardItems.map((level, idx) => (
         <Card
           key={idx}
-          isClicked={selectedCard[clickedCategory].has(level)}
-          onClick={() => handleClickBoardItem(clickedCategory, level)}
+          isclicked={selectedCard[clickedcategory].has(level)}
+          onClick={() => handleClickBoardItem(clickedcategory, level)}
         >
           <Check />
           <Title>
@@ -85,7 +85,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Card = styled.li<{ isClicked: boolean } & HTMLAttributes<HTMLLIElement>>`
+const Card = styled.li<{ isclicked: boolean } & HTMLAttributes<HTMLLIElement>>`
   position: relative;
   background-color: #fff;
   height: 80px;
@@ -99,11 +99,11 @@ const Card = styled.li<{ isClicked: boolean } & HTMLAttributes<HTMLLIElement>>`
 
   box-shadow: 0 0 0 4px
     ${(props) =>
-      props.isClicked
+      props.isclicked
         ? userVocaColors.selectedColor
         : userVocaColors.userVoca.ClickedCardBgColor};
   & > span {
-    visibility: ${(props) => (props.isClicked ? "visible" : "hidden")};
+    visibility: ${(props) => (props.isclicked ? "visible" : "hidden")};
   }
 `;
 
