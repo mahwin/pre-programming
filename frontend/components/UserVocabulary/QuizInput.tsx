@@ -10,32 +10,21 @@ import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 interface Props {
   spreadSelectedVocabulary: ClassifiedVocabularyItems;
   handleQuizClick: () => void;
+  userInputQuizNum: number;
+  handleInputChange: (evt: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export function QuizInput({
   spreadSelectedVocabulary,
+  userInputQuizNum,
+  handleInputChange,
   handleQuizClick,
 }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [userInputQuizNum, setUserInputQuizNum] = useState<number>(0);
 
   const handleClick = useCallback(() => {
     setIsOpened((prev) => !prev);
   }, []);
-
-  const filltering = useCallback((str: string) => {
-    if (Object.is(Number(str), NaN) || str === "") return 0;
-    return Number(str) > spreadSelectedVocabulary.length
-      ? spreadSelectedVocabulary.length
-      : Number(str);
-  }, []);
-
-  const handleInputChange = useCallback(
-    (evt: React.ChangeEvent<HTMLInputElement>) => {
-      setUserInputQuizNum(filltering(evt.currentTarget.value));
-    },
-    []
-  );
 
   return (
     <>

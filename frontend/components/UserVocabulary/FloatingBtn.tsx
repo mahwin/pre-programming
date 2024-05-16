@@ -18,6 +18,7 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [isQuizOpen, setIsQuizOpen] = useState<boolean>(false);
   const [isStudyOpen, setIsStudyOpen] = useState<boolean>(false);
+  const [userInputQuizNum, setUserInputQuizNum] = useState<number>(0);
 
   const handleFloatingBtnClick = useCallback(() => {
     setIsOpened((prev) => !prev);
@@ -35,6 +36,20 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
     setIsQuizOpen((prev) => !prev);
   }, []);
 
+  const filltering = useCallback((str: string) => {
+    if (Object.is(Number(str), NaN) || str === "") return 0;
+    return Number(str) > spreadSelectedVocabulary.length
+      ? spreadSelectedVocabulary.length
+      : Number(str);
+  }, []);
+
+  const handleInputChange = useCallback(
+    (evt: React.ChangeEvent<HTMLInputElement>) => {
+      setUserInputQuizNum(filltering(evt.currentTarget.value));
+    },
+    []
+  );
+
   if (isNil(spreadSelectedVocabulary) || spreadSelectedVocabulary.length === 0)
     return null;
 
@@ -50,7 +65,14 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
               <StudySvg />
               <Description>{`${spreadSelectedVocabulary.length}개의 단어를 학습합니다.`}</Description>
             </BtnWrapper>
-            <QuizInput {...{ spreadSelectedVocabulary, handleQuizClick }} />
+            <QuizInput
+              {...{
+                userInputQuizNum,
+                handleInputChange,
+                spreadSelectedVocabulary,
+                handleQuizClick,
+              }}
+            />
           </TwoBtnBox>
         </AnimatePresence>
       </Wrapper>
@@ -64,7 +86,7 @@ export function FloatingBtn({ spreadSelectedVocabulary }: Props) {
       <Quiz
         isopened={isQuizOpen}
         spreadSelectedVocabulary={spreadSelectedVocabulary}
-        quizNum={10}
+        quizNum={userInputQuizNum}
         handleClick={handleQuizClick}
         handleCloseClick={handleFloatingBtnClick}
       />
