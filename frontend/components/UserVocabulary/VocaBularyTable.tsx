@@ -22,8 +22,8 @@ export function VocaBularyTable({ spreadSelectedVocabulary }: Props) {
         </thead>
 
         <tbody>
-          {spreadSelectedVocabulary.map((vocaInfo) => (
-            <tr>
+          {spreadSelectedVocabulary.map((vocaInfo, i) => (
+            <tr key={i}>
               <td>{vocaInfo.word}</td>
               <td>{vocaInfo.category}</td>
               <td>{vocaInfo.frequency}</td>
