@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { HTMLAttributes, useCallback, useState } from "react";
 
 import styled from "styled-components";
 
@@ -57,12 +57,11 @@ export function QuizInput({
           ></input>
           <span> / {spreadSelectedVocabulary.length}</span>
         </InputBox>
-        <QuizStartBtn>
-          {userInputQuizNum > 0 ? (
-            <button onClick={handleQuizClick}> Can Start !</button>
-          ) : (
-            <h2>Fill Input !</h2>
-          )}
+        <QuizStartBtn
+          onClick={handleQuizClick}
+          disabled={userInputQuizNum <= 0}
+        >
+          {userInputQuizNum > 0 ? <p> Can Start !</p> : <p> Fill Input !</p>}
         </QuizStartBtn>
       </QuizMakerWrapper>
     </>
@@ -99,30 +98,28 @@ const QuizMakerWrapper = styled(motion.section)<{ isopened: boolean }>`
   color: white;
 `;
 
-const QuizStartBtn = styled.button`
+const QuizStartBtn = styled.button<
+  HTMLAttributes<HTMLButtonElement> & { disabled: boolean }
+>`
   background-color: white;
   width: 100%;
   border-radius: 5px;
   color: ${userVocaColors.floatBtn.bgColor};
   margin-top: 4px;
-  cursor: pointer;
+  padding: 0px;
 
-  button {
-    width: 100%;
+  p {
+    box-sizing: border-box;
     border: 2px solid whitesmoke;
+    width: 100%;
+    font-size: inherit;
     border-radius: 5px;
-    :hover {
-      border-color: #00b894;
-    }
   }
 
-  h2 {
-    border-radius: 5px;
-    line-height: 30px;
-    font-size: inherit;
+  &:disabled {
     font-weight: ${(props) => props.theme.fontWeight.bold};
     background-color: rgba(200, 200, 200, 0.5);
-    border: 2px solid whitesmoke;
+    color: black;
     cursor: not-allowed;
     :hover {
       color: darkgray;
