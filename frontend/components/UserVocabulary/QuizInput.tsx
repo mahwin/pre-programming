@@ -40,10 +40,7 @@ export function QuizInput({
       >
         <label>문제 수 입력</label>
         <InputBox>
-          <input
-            value={userInputQuizNum === 0 ? "" : userInputQuizNum}
-            onChange={handleInputChange}
-          ></input>
+          <input value={userInputQuizNum} onChange={handleInputChange}></input>
           <span> / {spreadSelectedVocabulary.length}</span>
         </InputBox>
         <QuizStartBtn
