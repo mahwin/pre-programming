@@ -1,44 +1,26 @@
-export function formatter(name: string) {
-  const nameList = name.split("-");
-  nameList.forEach((string, idx) => {
-    if (idx !== 0) {
-      nameList[idx] = string[0].toUpperCase() + string.slice(1);
-    }
-  });
+import { pipe, reduce } from "@fxts/core";
 
-  return camelCaser(nameList.join(""));
+function splitBySep(str: string, sep: string) {
+  return str.split(sep);
 }
 
-export function camelStrToMiddleBarStr(camelString: string) {
-  let result = [];
-  let str = "";
-  for (let i = 0; i < camelString.length; i++) {
-    if (camelString[i].match(/[A-Z]/)) {
-      result.push(str);
-      str = camelString[i].toLowerCase();
-    } else str += camelString[i];
-  }
-  result.push(str);
-  return result.join("-");
-}
-
-function 첫글자대문자(str: string) {
+function toHeadUpper(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
 
-function 첫글자소문자(str: string) {
+function toHeadLower(str: string) {
   return str[0].toLowerCase() + str.slice(1);
 }
 
-export function camelCaser(name: string) {
-  name = 첫글자소문자(name);
-  return name.split("-").reduce((a, c) => a + c[0].toUpperCase() + c.slice(1));
-}
+export const kebabToCamel = (name: string) =>
+  pipe(
+    splitBySep(name, "-"),
+    reduce((a, c) => a + toHeadUpper(c))
+  );
 
-export function kebabCaser(name: string) {
-  return name.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
-}
+export const camelToKebab = (name: string) =>
+  name.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 
-export function pascalCaser(name: string) {
-  return camelCaser(name)[0].toLocaleUpperCase() + camelCaser(name).slice(1);
+export function kebabToPascal(name: string) {
+  return toHeadUpper(kebabToCamel(name));
 }
