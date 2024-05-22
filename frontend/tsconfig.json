@@ -12,6 +12,7 @@
       "@hooks/*": ["hooks/*"],
       "@modules/*": ["modules/*"]
     },
+    "types": ["@types/jest"],
     "target": "ES2015",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
