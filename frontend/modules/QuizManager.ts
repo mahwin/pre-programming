@@ -48,12 +48,11 @@ export class QuizManager {
       }, [] as QuizDataList[]);
   }
 
-  get totalQuizNum() {
+  get totalVocabularyNum() {
     return this.totalVocabulary.length;
   }
 
   get quizList() {
-    console.log(this.quizDataList);
     return this.quizDataList;
   }
 
@@ -65,7 +64,7 @@ export class QuizManager {
     return this.totalVocabulary[this.randomNumber()];
   }
 
-  randomNumber(end = this.totalQuizNum) {
+  randomNumber(end = this.totalVocabularyNum) {
     return Math.floor(Math.random() * end);
   }
 

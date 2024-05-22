@@ -1,4 +1,5 @@
 import { VocabularyItem } from "@type/commons/vocabulary";
+import { map, pipe, toArray } from "@fxts/core";
 
 class TrieNode {
   children: Record<string, TrieNode>;
@@ -16,26 +17,27 @@ export class Trie {
   constructor(maxSavedItems = Infinity, datas: VocabularyItem[]) {
     this.root = new TrieNode();
     this.maxSavedItems = maxSavedItems;
-    this.fillTrie(datas);
+    this.init(datas);
   }
 
   static getInstance(maxSavedItems = Infinity, datas: VocabularyItem[]) {
-    if (!Trie.instance) {
-      Trie.instance = new Trie(maxSavedItems, datas);
-    }
-    return Trie.instance;
+    Trie.instance
+      ? Trie.instance
+      : (Trie.instance = new Trie(maxSavedItems, datas));
   }
 
-  private fillTrie(datas: VocabularyItem[]) {
-    for (const data of datas) {
-      this.insert(data, data.word);
-    }
+  private init(datas: VocabularyItem[]) {
+    pipe(
+      datas,
+      map((data) => this.fillTrie(data)),
+      toArray
+    );
   }
 
-  private insert(info: VocabularyItem, strings: string) {
+  private fillTrie(info: VocabularyItem) {
     let node = this.root;
 
-    for (const char of strings) {
+    for (const char of info.word) {
       if (!node.children[char]) {
         node.children[char] = new TrieNode();
       }
