@@ -1,65 +1,91 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import styled from "styled-components";
+
 import Link from "next/link";
-import { LogoSvg } from "@svg";
 import { useRouter } from "next/router";
-import { navColors } from "@color/navColors";
+
 import { Space } from "@components/Commons/Space";
-import { authManager } from "@modules/Auth";
+import { LogoSvg } from "@svg";
+
 import { api } from "@api/index";
-
+import { authManager } from "@modules/Auth";
 import { useUserInfo } from "@hooks/useUserInfo";
-
+import { navColors } from "@color/navColors";
 import { isNil } from "@utils/typeGuard";
+import { pageRoutes, RouteValue, apiRoutes } from "../../apiRouters";
 
-type currentNavType = "/" | "/me/vocabulary" | "/me" | "/signIn";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export function Header() {
-  const [currentNav, setCurrentNav] = useState<currentNavType>("/");
+  const [currentNav, setCurrentNav] = useState<RouteValue>(pageRoutes.main);
 
-  const { data: userInfo } = useUserInfo();
+  const { userInfo, logout } = useContext(AuthContext);
 
   const router = useRouter();
   useEffect(() => {
-    setCurrentNav(router.asPath as currentNavType);
+    setCurrentNav(router.asPath as RouteValue);
   }, [router]);
 
-  const logoutClick = () => {
-    api.get("/auth/signout");
-    authManager.set("");
-    router.reload();
-  };
+  const handleClickLogout = useCallback(() => {
+    logout();
+  }, []);
+
+  if (isNil(userInfo)) {
+    return (
+      <Wrapper>
+        <Items>
+          <Item>
+            <LogoSvg width="30px" height="30px" />
+            <Link href={pageRoutes.main}>
+              <Span underline={currentNav === pageRoutes.main}>
+                Pre-programming
+              </Span>
+            </Link>
+          </Item>
+
+          <Space as="li" />
+
+          <Item>
+            <Link href={pageRoutes.signIn}>
+              <Span underline={false}>로그인</Span>
+            </Link>
+          </Item>
+        </Items>
+      </Wrapper>
+    );
+  }
 
   return (
     <Wrapper>
       <Items>
-        <Item visibilty={true}>
+        <Item>
           <LogoSvg width="30px" height="30px" />
-          <Link href="/">
-            <Span underline={currentNav === "/"}>Pre-programming</Span>
+          <Link href={pageRoutes.main}>
+            <Span underline={currentNav === pageRoutes.main}>
+              Pre-programming
+            </Span>
           </Link>
         </Item>
 
-        <Item visibilty={!isNil(userInfo)}>
-          <Link href="/me/vocabulary">
-            <Span underline={currentNav === "/me/vocabulary"}>내 단어장</Span>
+        <Item>
+          <Link href={pageRoutes.myVocabulary}>
+            <Span underline={currentNav === pageRoutes.myVocabulary}>
+              내 단어장
+            </Span>
           </Link>
         </Item>
 
         <Space as="li" />
 
-        <Item visibilty={!isNil(userInfo)}>
-          <Link href="/me">
-            <Span underline={currentNav === "/me"}>내 정보</Span>
+        <Item>
+          <Link href={pageRoutes.me}>
+            <Span underline={currentNav === pageRoutes.me}>내 정보</Span>
           </Link>
         </Item>
-        <Item visibilty={!isNil(userInfo)}>
-          <LogOutBtn onClick={logoutClick}>로그아웃</LogOutBtn>
-        </Item>
-        <Item visibilty={isNil(userInfo)}>
-          <Link href="/signIn">
-            <Span underline={currentNav === "/me"}>로그인</Span>
-          </Link>
+        <Item>
+          <LogOutBtn onClick={handleClickLogout}>
+            <Span underline={false}>로그아웃</Span>
+          </LogOutBtn>
         </Item>
       </Items>
     </Wrapper>
@@ -86,33 +112,29 @@ const Items = styled.ul`
   max-width: ${(props) => props.theme.windowSize.tablet};
 
   gap: 16px;
+
+  span {
+    display: block;
+  }
+  span:first-child {
+    margin-top: 4px;
+  }
 `;
 
-const Item = styled.li<
-  React.HTMLAttributes<HTMLLIElement> & { visibilty: boolean }
->`
-  display: ${(props) => (props.visibilty ? "flex" : "none")};
+const Item = styled.li<React.HTMLAttributes<HTMLLIElement>>`
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-weight: ${(props) => props.theme.fontWeight.base};
   cursor: pointer;
-  a {
-    display: block;
-    padding: 10px;
-    &:hover {
-      border-radius: 3px;
-      background-color: ${(props) => props.theme.colorTheme.hoverPrimary};
-      transition: background-color 0.3s ease-in-out;
-    }
-  }
 `;
 
 const LogOutBtn = styled.button<React.HTMLProps<HTMLDivElement>>`
   background-color: transparent;
   color: ${(props) => props.theme.colorTheme.textPrimary};
   font-size: ${(props) => props.theme.fontSize.base};
-
-  border-bottom: 2px solid transparent;
+  padding: 0;
   &:hover {
     border-radius: 3px;
     color: ${navColors.hoverColor};

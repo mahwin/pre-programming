@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 
-interface IUser {
+interface UserInfo {
   id: number;
   avatar: string;
   createdAt: string;
@@ -11,8 +11,8 @@ interface IUser {
 
 interface IUserState {
   loading: boolean;
-  data: IUser | null;
+  data: UserInfo | null;
   error: AxiosError | null;
 }
 
-export type { IUser, IUserState };
+export type { UserInfo, IUserState };
