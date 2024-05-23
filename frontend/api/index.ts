@@ -22,21 +22,17 @@ const MESSAGE = {
   ACCESSTOKEN_NOT_FOUND: "AccessToken이 없습니다.",
 };
 
-const api = axios.create({
+const baseApiOption = {
   baseURL: `${process.env.API_HOST}:${process.env.PORT}`,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
-});
+};
 
-const authApi = axios.create({
-  baseURL: `${process.env.API_HOST}:${process.env.PORT}`,
-  withCredentials: true,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+const api = axios.create({ ...baseApiOption });
+
+const authApi = axios.create({ ...baseApiOption });
 
 // 요청 인터셉터
 authApi.interceptors.request.use(async (config) => {
