@@ -1,6 +1,7 @@
 import { JestConfigWithTsJest } from "ts-jest";
 
 const config: JestConfigWithTsJest = {
+  preset: "ts-jest",
   moduleDirectories: ["node_modules"],
   moduleNameMapper: {
     "^@utils/(.*)$": "<rootDir>/utils/$1",
@@ -28,6 +29,7 @@ const config: JestConfigWithTsJest = {
 
   transform: {
     "^.+\\.ts?$": "ts-jest",
+    "^.+\\.[jt]sx?$": "babel-jest",
   },
 };
 
