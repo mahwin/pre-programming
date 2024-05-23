@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useCallback } from "react";
+import React, { useMemo, useContext, useCallback } from "react";
 import styled from "styled-components";
 
 import Link from "next/link";
@@ -7,24 +7,17 @@ import { useRouter } from "next/router";
 import { Space } from "@components/Commons/Space";
 import { LogoSvg } from "@svg";
 
-import { api } from "@api/index";
-import { authManager } from "@modules/Auth";
-import { useUserInfo } from "@hooks/useUserInfo";
 import { navColors } from "@color/navColors";
 import { isNil } from "@utils/typeGuard";
-import { pageRoutes, RouteValue, apiRoutes } from "../../apiRouters";
+import { pageRoutes } from "../../apiRouters";
 
 import { AuthContext } from "../../contexts/AuthContext";
 
 export function Header() {
-  const [currentNav, setCurrentNav] = useState<RouteValue>(pageRoutes.main);
-
   const { userInfo, logout } = useContext(AuthContext);
 
   const router = useRouter();
-  useEffect(() => {
-    setCurrentNav(router.asPath as RouteValue);
-  }, [router]);
+  const currentNav = useMemo(() => router.asPath, [router]);
 
   const handleClickLogout = useCallback(() => {
     logout();
