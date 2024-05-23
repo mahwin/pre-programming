@@ -12,7 +12,7 @@ const config: JestConfigWithTsJest = {
     "^@redux/(.*)$": "<rootDir>/redux/$1",
     "^@api/(.*)$": "<rootDir>/api/$1",
     "^@hooks/(.*)$": "<rootDir>/hooks/$1",
-    "^@modules/(.*)$": "<rootDir>/src/modules/$1",
+    "^@modules/(.*)$": "<rootDir>/modules/$1",
   },
 
   clearMocks: true,
