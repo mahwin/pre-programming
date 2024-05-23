@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { userVocaColors } from "assets/color/userVocaColor";
+import { userVocaColor } from "../../assets/color/userVocaColor";
 
 interface Props {
   percent: string;
@@ -9,8 +9,8 @@ interface Props {
 
 export function BigCircleSvg({
   percent,
-  correctColor = `${userVocaColors.quizResult.correctColor}`,
-  inCorrectColor = `${userVocaColors.quizResult.correctColor}`,
+  correctColor = `${userVocaColor.quizResult.correctColor}`,
+  inCorrectColor = `${userVocaColor.quizResult.correctColor}`,
 }: Props) {
   const clockAnimation = keyframes`
   0%{

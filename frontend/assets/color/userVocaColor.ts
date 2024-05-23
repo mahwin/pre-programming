@@ -1,4 +1,4 @@
-const userVocaColors = {
+const userVocaColor = {
   selectedColor: "#60a698",
   table: {
     thColor: "#d5dde5",
@@ -35,4 +35,4 @@ const userVocaColors = {
   },
 };
 
-export { userVocaColors };
+export { userVocaColor };
