@@ -1,5 +1,6 @@
-import { VocabularyItems } from "@type/commons/vocabulary";
+import { VocabularyItems, VocabularyItem } from "@type/commons/vocabulary";
 import { meanConvert } from "@utils/meanConvert";
+import { pipe, take, map, filter, range, toArray, zip } from "@fxts/core";
 
 type QuizDataList = {
   word: string;
@@ -9,7 +10,8 @@ type QuizDataList = {
 export class QuizManager {
   tagetVocabulary: VocabularyItems;
   totalVocabulary: VocabularyItems;
-  answerList: number[];
+  answerIdxList: number[];
+  answerMeanList: string[][];
   quizDataList: QuizDataList[];
   quizNum: number;
   constructor(
@@ -21,31 +23,9 @@ export class QuizManager {
     this.totalVocabulary = totalVocabulary;
     this.quizNum = quizNum;
     this.quizDataList = [];
-    this.answerList = [];
+    this.answerIdxList = [];
+    this.answerMeanList = [];
     this.makeQuiz();
-  }
-
-  makeQuiz() {
-    this.quizDataList = this.shuffle(this.tagetVocabulary)
-      .slice(0, this.quizNum)
-      .reduce((a, c) => {
-        const answers = [];
-        const currentAnswerNumber = this.randomNumber(4);
-
-        this.answerList.push(currentAnswerNumber);
-
-        for (let i = 0; i < 4; i++) {
-          let uniqueVocabulary = this.uniquePick(c.word);
-          answers.push(uniqueVocabulary.mean);
-        }
-        answers.splice(currentAnswerNumber, 0, c.mean);
-        a.push({
-          word: c.word,
-          answers: answers.map((el) => meanConvert(el, 2, 12)),
-        });
-
-        return a;
-      }, [] as QuizDataList[]);
   }
 
   get totalVocabularyNum() {
@@ -56,27 +36,67 @@ export class QuizManager {
     return this.quizDataList;
   }
 
-  get quizAnswerList() {
-    return this.answerList;
+  get answerList() {
+    return this.answerIdxList;
   }
 
-  getRandomVocabulary() {
+  makeQuiz() {
+    // 무작위로 섞기
+    this.shuffle(this.tagetVocabulary);
+
+    // 정답 번호 미리 뽑기
+    this.answerIdxList = pipe(
+      range(this.quizNum),
+      map((_) => this.randomNumber(4)),
+      toArray
+    );
+
+    // 문제 보기 만들기
+    this.answerMeanList = pipe(
+      zip(this.tagetVocabulary, this.answerIdxList),
+      map(([item, idx]) => {
+        const answers = this.uniquePickMeans(item.word, 5);
+        answers[idx] = item.mean;
+        return answers;
+      }),
+      map(this.convertMeans),
+      toArray
+    );
+
+    this.quizDataList = pipe(
+      zip(this.tagetVocabulary, this.answerMeanList),
+      map(([item, answers]) => ({
+        word: item.word,
+        answers,
+      })),
+      toArray
+    );
+  }
+
+  private convertMeans(means: string[][]) {
+    return means.map((mean) => meanConvert(mean, 2, 12));
+  }
+
+  private getRandomVocabulary() {
     return this.totalVocabulary[this.randomNumber()];
   }
 
-  randomNumber(end = this.totalVocabularyNum) {
+  private randomNumber(end = this.totalVocabularyNum) {
     return Math.floor(Math.random() * end);
   }
 
-  uniquePick(word: string) {
-    let vocabulary = this.getRandomVocabulary();
-    while (vocabulary.word === word) {
-      vocabulary = this.getRandomVocabulary();
-    }
-    return vocabulary;
+  private uniquePickMeans(word: string, num: number) {
+    return pipe(
+      range(Infinity),
+      map((_) => this.getRandomVocabulary()),
+      filter((item) => item.word !== word),
+      take(num),
+      map((item) => item.mean),
+      toArray
+    );
   }
 
-  shuffle<T>(arr: Array<T>) {
+  private shuffle<T>(arr: Array<T>) {
     return [...arr].sort(() => Math.random() - 0.5);
   }
 }
