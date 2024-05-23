@@ -5,7 +5,13 @@ import { useRouter } from "next/router";
 import { HtmlHTMLAttributes } from "react";
 import { pageRoutes } from "../../apiRouters";
 
-export function NotFoundError() {
+interface Props {
+  message: { title: string; text: string };
+  buttonText: string;
+  imgSrc: string;
+}
+
+export function ErrorComponent({ message, buttonText, imgSrc }: Props) {
   const router = useRouter();
 
   const handleClickNavigateHomeButton = () => {
@@ -17,7 +23,7 @@ export function NotFoundError() {
       <Col>
         <figure>
           <Image
-            src="/404.png"
+            src={imgSrc}
             width={400}
             height={500}
             alt="에러 페이지입니다."
@@ -25,10 +31,10 @@ export function NotFoundError() {
         </figure>
         <ContentsBox>
           <Title>
-            <strong>페이지 경로가 잘못 되었습니다!</strong>
+            <strong>{message.title}</strong>
           </Title>
-          <Error>Not Found</Error>
-          <Button onClick={handleClickNavigateHomeButton}>홈으로 이동</Button>
+          <ErrorText>{message.text}</ErrorText>
+          <Button onClick={handleClickNavigateHomeButton}>{buttonText}</Button>
         </ContentsBox>
       </Col>
     </Wrapper>
@@ -63,7 +69,7 @@ const Title = styled.h1`
   font-size: 24px;
 `;
 
-const Error = styled.h3`
+const ErrorText = styled.h3`
   color: #888;
   width: 250px;
   height: 50px;
