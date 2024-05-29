@@ -32,6 +32,7 @@ export function CategoryCard({
   const categoryItemLen = useCallback(
     (category: string) => {
       if (isNil(userVocabulary)) return 0;
+      console.log(kebabToCamel(category), userVocabulary);
       const levels = userVocabulary[kebabToCamel(category) as CategoriesType];
 
       if (isNil(levels)) return 0;

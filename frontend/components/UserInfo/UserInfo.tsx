@@ -7,11 +7,16 @@ import Form from "./Form";
 import PageLoading from "@components/Commons/PageLoading";
 import { ChangeSvg, LoadingSvg } from "@svg";
 import { userInfoColors } from "@color/userInfoColors";
-import { IUser } from "@type/commons/user";
+import { useSelector } from "react-redux";
+import { IState } from "@redux/initialState";
+import { isNil } from "@utils/typeGuard";
+import { WithAuthComponent } from "@components/Commons/WithAuthComponent";
 
-export default function UserInfo({ data }: { data: IUser }) {
+function UserInfo() {
+  const { data: userInfo } = useSelector((state: IState) => state.user);
+
   const [Mutatable, setMutatable] = useState(false);
-  const [avatar, setAvatar] = useState<string>(data?.avatar);
+  const [avatar, setAvatar] = useState<string>("1");
   const [isAvatarsOpen, setIsAvatarsOpen] = useState(false);
 
   const canChangeSwitch = () => {
@@ -20,15 +25,17 @@ export default function UserInfo({ data }: { data: IUser }) {
   };
 
   useEffect(() => {
-    setAvatar(data?.avatar);
-  }, [data]);
+    if (isNil(userInfo)) return;
+
+    setAvatar(userInfo.avatar);
+  }, [userInfo]);
 
   const onClickAvatars = () => setIsAvatarsOpen(!isAvatarsOpen);
   const onSelectedAvatar = (e: MouseEvent) => {
     setAvatar(e.currentTarget.id);
   };
 
-  if (!data) return <PageLoading />;
+  if (isNil(userInfo)) return <PageLoading />;
 
   return (
     <>
@@ -100,11 +107,11 @@ export default function UserInfo({ data }: { data: IUser }) {
           </Avartar>
           <Form
             data={{
-              name: data?.name,
-              phone: data?.phone,
+              name: userInfo.name,
+              phone: userInfo.phone,
               currentAvatar: avatar,
             }}
-            isAvatarChange={avatar !== data?.avatar ? true : false}
+            isAvatarChange={avatar !== userInfo.avatar ? true : false}
             isCan={Mutatable}
           />
         </Container>
@@ -120,6 +127,11 @@ export default function UserInfo({ data }: { data: IUser }) {
     </>
   );
 }
+
+export default WithAuthComponent({
+  WrappedComponent: UserInfo,
+  mustLogin: true,
+});
 
 const Avatars = dynamic(() => import("./Avatars"), {
   ssr: false,

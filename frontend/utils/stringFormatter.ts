@@ -13,9 +13,11 @@ function toHeadLower(str: string) {
 }
 
 export const kebabToCamel = (name: string) =>
-  pipe(
-    splitBySep(name, "-"),
-    reduce((a, c) => a + toHeadUpper(c))
+  toHeadLower(
+    pipe(
+      splitBySep(name, "-"),
+      reduce((a, c) => a + toHeadUpper(c))
+    )
   );
 
 export const camelToKebab = (name: string) =>
