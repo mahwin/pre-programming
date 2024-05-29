@@ -1,5 +1,12 @@
 import axios, { AxiosResponse } from "axios";
-import { baseApiOption } from "./index";
+
+const baseApiOption = {
+  baseURL: `${process.env.API_HOST}:${process.env.PORT}`,
+  withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
 
 const throttlingApi = axios.create({ ...baseApiOption });
 
