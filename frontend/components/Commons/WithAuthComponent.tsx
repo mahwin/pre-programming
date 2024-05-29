@@ -1,6 +1,8 @@
 import { ComponentType, useEffect } from "react";
 import { useAuthentication } from "@hooks/useAuthentication";
 
+import PageLoading from "@components/Commons/PageLoading";
+
 import { useRouter } from "next/router";
 
 import { pageRoutes } from "../../apiRouters";
@@ -29,7 +31,7 @@ export function WithAuthComponent<P extends JSX.IntrinsicAttributes>({
     if (!mustLogin)
       return <WrappedComponent {...props} isLoggedIn={!isNil(data)} />;
 
-    if (loading) return <p>유저 정보를 확인하고 있습니다.</p>;
+    if (loading) return <PageLoading />;
 
     return <WrappedComponent {...props} />;
   };
