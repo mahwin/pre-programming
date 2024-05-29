@@ -1,8 +1,8 @@
 import { Header } from "@components/Commons/Header";
 import Footer from "@components/Commons/Footer";
-import { UserVocabulary } from "@components/UserVocabulary";
+import UserVocabulary from "@components/UserVocabulary";
 
-function UserVocaPage() {
+export default function UserVocaPage() {
   return (
     <>
       <Header />
@@ -11,5 +11,3 @@ function UserVocaPage() {
     </>
   );
 }
-
-export default UserVocaPage;
