@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from "react";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { kebabToCamel } from "@utils/index";
 
@@ -10,9 +10,11 @@ import { CategoryBoard } from "./CategoryBoard";
 import { ObjectKeys } from "@utils/array";
 
 import { VocaBularyTable } from "./VocaBularyTable";
-import { userVocaColor } from "@color/userVocaColor";
+
 import { chunk } from "@fxts/core";
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
+
+import { WithAuthComponent } from "@components/Commons/WithAuthComponent";
 
 import {
   CategoriesType,
@@ -21,20 +23,17 @@ import {
 } from "@type/commons/categories";
 
 import { isNil } from "@utils/typeGuard";
-import { useAuthentication } from "@hooks/useAuthentication";
 import { useUserVocabulary } from "@hooks/useUserVocabulary";
 import { useCategory } from "@hooks/useCategory";
 import { useClassifiedVocabulary } from "@hooks/useClassifedVocabulary";
 import { DisabledCateogoryCard } from "./DisabledCategoryCard";
 import { FloatingBtn } from "./FloatingBtn";
 
-import { AuthContext } from "@contexts/AuthContext";
-
 const ROW_SIZE = 4;
 
 export type SelectedCard = Record<CategoriesType, Set<number>>;
 
-export function UserVocabulary() {
+function UserVocabulary() {
   const [clickedCategory, setClickedCategory] = useState<CategoriesType | null>(
     null
   );
@@ -51,7 +50,7 @@ export function UserVocabulary() {
   );
 
   const { data: category } = useCategory();
-  const { data: userVocabulary, loading } = useUserVocabulary();
+  const { data: userVocabulary } = useUserVocabulary();
   const { data: classifiedVocabulary } = useClassifiedVocabulary();
 
   useEffect(() => {
@@ -149,6 +148,11 @@ export function UserVocabulary() {
     </Wrapper>
   );
 }
+
+export default WithAuthComponent({
+  WrappedComponent: UserVocabulary,
+  mustLogin: true,
+});
 
 const Wrapper = styled.main`
   display: flex;
