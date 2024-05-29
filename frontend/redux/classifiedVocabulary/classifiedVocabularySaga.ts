@@ -1,6 +1,6 @@
 import { classifiedVocabularyActions } from "./classifiedVocabularySlice";
 import * as Api from "./classifiedVocabularyAPI";
-import { call, put, takeLatest, all, fork } from "redux-saga/effects";
+import { takeLeading, call, put } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
 function* getClassifiedVocabulary() {
@@ -14,13 +14,9 @@ function* getClassifiedVocabulary() {
   }
 }
 
-function* watchGetclassifiedVocabulary() {
-  yield takeLatest(
-    classifiedVocabularyActions.getClassifiedVocabulary,
+export default function* rootSaga() {
+  yield takeLeading(
+    classifiedVocabularyActions.getClassifiedVocabulary.type,
     getClassifiedVocabulary
   );
-}
-
-export default function* getClassifiedVocabularySaga() {
-  yield all([fork(watchGetclassifiedVocabulary)]);
 }

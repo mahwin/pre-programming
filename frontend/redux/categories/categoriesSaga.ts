@@ -1,6 +1,6 @@
+import { throttle, call, put, takeLeading } from "redux-saga/effects";
 import { categoriesActions } from "./categoriesSlice";
 import * as Api from "./categoriesAPI";
-import { call, put, takeLatest, all, fork } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
 function* getCategories() {
@@ -12,10 +12,6 @@ function* getCategories() {
   }
 }
 
-function* watchGetCategories() {
-  yield takeLatest(categoriesActions.getCategories, getCategories);
-}
-
-export default function* getCategoriesSaga() {
-  yield all([fork(watchGetCategories)]);
+export default function* rootSaga() {
+  yield takeLeading(categoriesActions.getCategories.type, getCategories);
 }

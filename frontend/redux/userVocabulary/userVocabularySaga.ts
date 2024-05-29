@@ -1,6 +1,6 @@
 import { userVocabularyActions } from "./userVocabularySlice";
 import * as Api from "./userVocabularyApi";
-import { call, put, takeLatest, all, fork } from "redux-saga/effects";
+import { takeLeading, call, put } from "redux-saga/effects";
 import { CategoriesType } from "@type/commons/categories";
 
 interface Response {
@@ -15,10 +15,9 @@ function* getUserVocabulary() {
   }
 }
 
-function* watchGetUserVocas() {
-  yield takeLatest(userVocabularyActions.getUserVocabulary, getUserVocabulary);
-}
-
-export default function* getUserVocasSaga() {
-  yield all([fork(watchGetUserVocas)]);
+export default function* rootSaga() {
+  yield takeLeading(
+    userVocabularyActions.getUserVocabulary.type,
+    getUserVocabulary
+  );
 }

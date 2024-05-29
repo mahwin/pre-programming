@@ -1,6 +1,6 @@
 import { vocabularyAction } from "./vocabularySlice";
 import * as Api from "./vocabularyAPI";
-import { call, put, takeLatest, all, fork } from "redux-saga/effects";
+import { takeLeading, call, put } from "redux-saga/effects";
 import { AxiosResponse } from "axios";
 
 function* getVocabulary() {
@@ -12,10 +12,6 @@ function* getVocabulary() {
   }
 }
 
-function* watchGetVocas() {
-  yield takeLatest(vocabularyAction.getVocabulary, getVocabulary);
-}
-
-export default function* getVocasSaga() {
-  yield all([fork(watchGetVocas)]);
+export default function* rootSaga() {
+  yield takeLeading(vocabularyAction.getVocabulary.type, getVocabulary);
 }
