@@ -8,7 +8,6 @@ import { getMediaTheme } from "@utils/getMediaTheme";
 
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
-import { AuthProvider } from "../contexts/AuthContext";
 import store from "@redux/store";
 
 import { ThemeButton } from "@components/Commons/ThemeButton";
@@ -29,18 +28,16 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <Provider store={store}>
-        <AuthProvider>
-          <ThemeProvider
-            theme={{
-              ...theme,
-              colorTheme: isDark ? darkTheme : lightTheme,
-            }}
-          >
-            <GlobalStyle />
-            <ThemeButton onClick={toggleTheme} isDark={isDark} />
-            <Component {...pageProps} />
-          </ThemeProvider>
-        </AuthProvider>
+        <ThemeProvider
+          theme={{
+            ...theme,
+            colorTheme: isDark ? darkTheme : lightTheme,
+          }}
+        >
+          <GlobalStyle />
+          <ThemeButton onClick={toggleTheme} isDark={isDark} />
+          <Component {...pageProps} />
+        </ThemeProvider>
       </Provider>
     </>
   );
