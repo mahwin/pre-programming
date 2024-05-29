@@ -19,12 +19,9 @@ const authApi = axios.create({ ...baseApiOption });
 authApi.interceptors.request.use(async (config) => {
   const token = authManager.get();
 
-  if (!isNil(token)) {
-    config.headers.Authorization = `Bearer ${token}`;
-    return config;
-  }
-  await genenateAccessToken();
+  if (isNil(token)) await genenateAccessToken();
 
+  config.headers.Authorization = `Bearer ${authManager.get()}`;
   return config;
 });
 

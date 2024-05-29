@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useCallback } from "react";
+import React, { useMemo, useCallback } from "react";
 import styled from "styled-components";
 
 import Link from "next/link";
@@ -8,22 +8,26 @@ import { Space } from "@components/Commons/Space";
 import { LogoSvg } from "@svg";
 
 import { navColors } from "@color/navColors";
-import { isNil } from "@utils/typeGuard";
 import { pageRoutes } from "../../apiRouters";
 
-import { AuthContext } from "../../contexts/AuthContext";
+import { WithAuthComponent } from "./WithAuthComponent";
 
-export function Header() {
-  const { userInfo, logout } = useContext(AuthContext);
+import { api } from "@api/index";
 
+import { authManager } from "@modules/Auth";
+import { apiRoutes } from "../../apiRouters";
+
+function HeaderComponent({ isLoggedIn = false }) {
   const router = useRouter();
   const currentNav = useMemo(() => router.asPath, [router]);
 
   const handleClickLogout = useCallback(() => {
-    logout();
+    api.get(apiRoutes.logout);
+    authManager.set("");
+    router.reload();
   }, []);
 
-  if (isNil(userInfo)) {
+  if (!isLoggedIn) {
     return (
       <Wrapper>
         <Items>
@@ -84,6 +88,13 @@ export function Header() {
     </Wrapper>
   );
 }
+
+const Header = WithAuthComponent({
+  WrappedComponent: HeaderComponent,
+  mustLogin: false,
+});
+
+export { Header };
 
 const Wrapper = styled.div`
   height: 55px;
