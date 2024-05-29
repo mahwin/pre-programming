@@ -10,7 +10,7 @@ import Link from "next/link";
 import { FrownSvg, SendSvg } from "@svg";
 import { HStack } from "@components/Commons/HStack";
 
-import { meanConvert, kebabCaser } from "@utils/index";
+import { meanConvert, camelToKebab } from "@utils/index";
 
 type FillTableRowProps = {
   handleItemClick: (e: React.MouseEvent<HTMLTableRowElement>) => void;
@@ -50,7 +50,7 @@ export function TableRow({
             <HStack layout="space-between">
               <span>{meanConvert(info.mean, 2, 12)}</span>
               <Route>
-                <Link href={`/vocas/${kebabCaser(info.category)}`}>
+                <Link href={`/vocas/${camelToKebab(info.category)}`}>
                   <SendSvg width="24" height="24" />
                 </Link>
               </Route>
@@ -97,6 +97,8 @@ const Row = styled.tr<{
   td {
     line-height: 40px;
     height: 40px;
+    color: whitesmoke;
+    font-weight: 400;
   }
 
   td:last-child {
