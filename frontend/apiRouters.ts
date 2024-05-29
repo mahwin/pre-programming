@@ -1,5 +1,6 @@
 export const apiRoutes = {
-  logout: "/auth/signout",
+  logout: "/auth",
+  generateAccessToken: "/auth/refresh",
 };
 
 export const pageRoutes = {

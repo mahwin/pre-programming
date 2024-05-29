@@ -1,21 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
+
+import { useDispatch, useSelector } from "react-redux";
+import { userActions } from "@redux/user/userSlice";
+
+import { pageRoutes } from "../apiRouters";
 
 import { isNil } from "@utils/typeGuard";
 
-import { useUserInfo } from "./useUserInfo";
+import { IState } from "@redux/initialState";
 
-/**
- * 로그인 필요한 페이지에서 사용
- * 로그인이 안 되어 있는 경우에 로그인 페이지로 이동
- */
 export function useAuthentication() {
-  const { loading, data, error } = useUserInfo();
+  const { data, error } = useSelector(({ user }: IState) => user);
 
   const router = useRouter();
-  useEffect(() => {
-    if (isNil(loading) && error) router.push("/signIn");
-  }, [loading, error, router]);
+  const dispatch = useDispatch();
 
-  return { data };
+  useEffect(() => {
+    if (!isNil(data)) return;
+    dispatch(userActions.getUser());
+  }, [dispatch, data]);
+
+  useEffect(() => {
+    if (error) router.push(pageRoutes.signIn);
+  }, [error]);
+
+  const isAuthenticated = useMemo(() => !isNil(data), [data]);
+
+  return { isAuthenticated };
 }
