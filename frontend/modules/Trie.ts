@@ -21,7 +21,7 @@ export class Trie {
   }
 
   static getInstance(maxSavedItems = Infinity, datas: VocabularyItem[]) {
-    Trie.instance
+    return Trie.instance
       ? Trie.instance
       : (Trie.instance = new Trie(maxSavedItems, datas));
   }
