@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from "react";
 import { motion, Variants } from "framer-motion";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { CategoriesType, CategoryItem } from "@type/commons/categories";
-import { camelCaser } from "@utils/index";
+import { kebabToCamel } from "@utils/index";
 import { UserVocabulary } from "@redux/userVocabulary/userVocabulary.dto";
 import { isNil } from "@utils/typeGuard";
 
@@ -26,13 +26,13 @@ export function CategoryCard({
 }: Props) {
   const currentCardOpened = useMemo(() => {
     if (isNil(clickedcategory)) return false;
-    return clickedcategory === camelCaser(item.category);
+    return clickedcategory === kebabToCamel(item.category);
   }, [clickedcategory]);
 
   const categoryItemLen = useCallback(
     (category: string) => {
       if (isNil(userVocabulary)) return 0;
-      const levels = userVocabulary[camelCaser(category) as CategoriesType];
+      const levels = userVocabulary[kebabToCamel(category) as CategoriesType];
 
       if (isNil(levels)) return 0;
 
@@ -80,10 +80,10 @@ const VocaCard = styled(motion.article)<{
 
   background-color: ${({ isopened, clickedcategory }) =>
     isNil(clickedcategory)
-      ? userVocaColors.userVoca.CardBgColor
+      ? userVocaColor.userVoca.CardBgColor
       : isopened
-        ? userVocaColors.userVoca.ClickedTargetCardBgColor
-        : userVocaColors.userVoca.ClickedCardBgColor};
+        ? userVocaColor.userVoca.ClickedTargetCardBgColor
+        : userVocaColor.userVoca.ClickedCardBgColor};
 
   opacity: ${(props) => (props.isopened ? 1 : 0.5)};
   transition: all 0.2s ease-in-out;
@@ -116,7 +116,7 @@ const Arrow = styled(motion.div)`
   width: 0;
   height: 0;
   top: 105px;
-  border-bottom: 18px solid ${userVocaColors.userVoca.CardBgColor};
+  border-bottom: 18px solid ${userVocaColor.userVoca.CardBgColor};
   border-right: 18px solid transparent;
   border-left: 18px solid transparent;
   :hover {

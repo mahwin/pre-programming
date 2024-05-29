@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { quizColors } from "@color/quizColors";
 import { BigCircleSvg } from "@svg";
 
@@ -99,6 +99,6 @@ const Button = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   border-radius: 5px;
   letter-spacing: 0.2em;
   font-size: 1.2rem;
-  color: ${userVocaColors.quizResult.backBtnColor};
+  color: ${userVocaColor.quizResult.backBtnColor};
   cursor: pointer;
 `;

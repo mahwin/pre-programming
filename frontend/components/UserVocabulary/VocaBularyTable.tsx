@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 import { meanConvert } from "@utils/index";
 
@@ -57,8 +57,8 @@ const Table = styled.table`
   }
 
   th {
-    color: ${userVocaColors.table.thColor};
-    background: ${userVocaColors.table.thBgColor};
+    color: ${userVocaColor.table.thColor};
+    background: ${userVocaColor.table.thBgColor};
     font-size: 20px;
     font-weight: ${(props) => props.theme.fontWeight.bold};
     padding: 12px 20px;
@@ -80,20 +80,20 @@ const Table = styled.table`
   tr td:nth-child(1),
   td:nth-child(2),
   td:nth-child(3) {
-    border-right: 1px solid ${userVocaColors.table.tdLine};
+    border-right: 1px solid ${userVocaColor.table.tdLine};
   }
 
   tr td:nth-child(3) {
     text-align: center;
   }
   tr td {
-    border-bottom: 1px solid ${userVocaColors.table.tdLine};
+    border-bottom: 1px solid ${userVocaColor.table.tdLine};
   }
   tr:nth-child(odd) td {
     opacity: 0.85;
   }
   tr:hover td {
-    background: ${userVocaColors.table.trHover};
+    background: ${userVocaColor.table.trHover};
     color: #ffffff;
   }
 `;

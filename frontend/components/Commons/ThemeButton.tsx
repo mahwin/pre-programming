@@ -2,6 +2,25 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { MoonSvg, SunSvg } from "@svg";
 
+interface Props {
+  onClick: () => void;
+  isDark: boolean;
+}
+
+export function ThemeButton({ onClick, isDark }: Props) {
+  return (
+    <ToggleBox onClick={onClick}>
+      <Shadow isdark={isDark ? 1 : 0} layout />
+      <ToggleItem>
+        <SunSvg width="25" height="30" />
+      </ToggleItem>
+      <ToggleItem>
+        <MoonSvg width="25" height="30" />
+      </ToggleItem>
+    </ToggleBox>
+  );
+}
+
 const ToggleBox = styled.div<React.HTMLAttributes<HTMLElement>>`
   position: fixed;
   right: 5%;
@@ -32,23 +51,3 @@ const Shadow = styled(motion.div)<{ isdark: number }>`
 const ToggleItem = styled.div`
   display: flex;
 `;
-
-interface IThemeButtonProps {
-  onClick: () => void;
-  isDark: boolean;
-}
-
-function ThemeButton({ onClick, isDark }: IThemeButtonProps) {
-  return (
-    <ToggleBox onClick={onClick}>
-      <Shadow isdark={isDark ? 1 : 0} layout />
-      <ToggleItem>
-        <SunSvg width="25" height="30" />
-      </ToggleItem>
-      <ToggleItem>
-        <MoonSvg width="25" height="30" />
-      </ToggleItem>
-    </ToggleBox>
-  );
-}
-export default ThemeButton;

@@ -3,7 +3,7 @@ import { HTMLAttributes, useCallback, useState } from "react";
 import styled from "styled-components";
 
 import { motion, Variants } from "framer-motion";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { QuizSvg } from "@svg";
 
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
@@ -70,7 +70,7 @@ const QuizMakerWrapper = styled(motion.section)<{ isopened: boolean }>`
   justify-content: space-around;
 
   padding: 12px 24px;
-  background-color: ${userVocaColors.floatBtn.bgColor};
+  background-color: ${userVocaColor.floatBtn.bgColor};
   position: absolute;
   top: -150px;
   right: 0px;
@@ -90,7 +90,7 @@ const QuizStartBtn = styled.button<
   background-color: white;
   width: 100%;
   border-radius: 5px;
-  color: ${userVocaColors.floatBtn.bgColor};
+  color: ${userVocaColor.floatBtn.bgColor};
   margin-top: 4px;
   padding: 0px;
 
@@ -142,7 +142,7 @@ const Description = styled.p`
   padding: 10px;
   height: 60px;
   border-radius: 8px;
-  background: ${userVocaColors.floatBtn.pColor};
+  background: ${userVocaColor.floatBtn.pColor};
   color: #fff;
   font-size: 14px;
   line-height: 20px;
@@ -157,7 +157,7 @@ const Description = styled.p`
     border: 1px solid red;
     transform: rotate(180deg);
     border-color: transparent;
-    border-bottom-color: ${userVocaColors.floatBtn.pColor};
+    border-bottom-color: ${userVocaColor.floatBtn.pColor};
     border-width: 10px;
     pointer-events: none;
     content: "";

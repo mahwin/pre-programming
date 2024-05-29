@@ -2,7 +2,7 @@ import { useMemo, useCallback } from "react";
 
 import styled from "styled-components";
 import { motion, Variants } from "framer-motion";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { XMarkSvg } from "@svg";
 import { UserVocabulary } from "@redux/userVocabulary/userVocabulary.dto";
 import { CategoryBoardItem } from "./CategoryBoardItem";
@@ -81,7 +81,7 @@ const Board = styled(motion.ul)`
   justify-content: center;
   align-items: center;
 
-  background-color: ${userVocaColors.userVoca.CardBgColor};
+  background-color: ${userVocaColor.userVoca.CardBgColor};
 `;
 
 const CategoryBoardItems = styled.div`
@@ -112,7 +112,7 @@ const Arrow = styled(motion.div)`
   width: 0;
   height: 0;
   top: 105px;
-  border-bottom: 18px solid ${userVocaColors.userVoca.CardBgColor};
+  border-bottom: 18px solid ${userVocaColor.userVoca.CardBgColor};
   border-right: 18px solid transparent;
   border-left: 18px solid transparent;
   :hover {

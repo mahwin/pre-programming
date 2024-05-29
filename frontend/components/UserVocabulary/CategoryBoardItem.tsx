@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { FrownSvg } from "@svg";
 import { UserVocabulary } from "@redux/userVocabulary/userVocabulary.dto";
 import { CheckSvg } from "@svg";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 
 import { useSelector } from "react-redux";
 import { IState } from "@redux/initialState";
@@ -100,8 +100,8 @@ const Card = styled.li<{ isclicked: boolean } & HTMLAttributes<HTMLLIElement>>`
   box-shadow: 0 0 0 4px
     ${(props) =>
       props.isclicked
-        ? userVocaColors.selectedColor
-        : userVocaColors.userVoca.ClickedCardBgColor};
+        ? userVocaColor.selectedColor
+        : userVocaColor.userVoca.ClickedCardBgColor};
   & > span {
     visibility: ${(props) => (props.isclicked ? "visible" : "hidden")};
   }
@@ -125,8 +125,8 @@ const Check = styled.span`
   width: 40px;
 
   z-index: 10;
-  border-bottom: 8px solid ${userVocaColors.selectedColor};
-  border-left: 8px solid ${userVocaColors.selectedColor};
+  border-bottom: 8px solid ${userVocaColor.selectedColor};
+  border-left: 8px solid ${userVocaColor.selectedColor};
   transform: rotate(310deg);
   transition: all 0.2s ease-in-out;
 `;

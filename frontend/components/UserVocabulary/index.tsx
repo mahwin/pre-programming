@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { motion, Variants } from "framer-motion";
 
-import { camelCaser } from "@utils/index";
+import { kebabToCamel } from "@utils/index";
 
 import { CategoryCard } from "./CategoryCard";
 import { CategoryBoard } from "./CategoryBoard";
 import { ObjectKeys } from "@utils/array";
 
 import { VocaBularyTable } from "./VocaBularyTable";
-import { userVocaColors } from "@color/userVocaColor";
-import { chunk } from "@utils/chunk";
+import { userVocaColor } from "@color/userVocaColor";
+import { chunk } from "@fxts/core";
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
 import {
@@ -27,6 +27,8 @@ import { useCategory } from "@hooks/useCategory";
 import { useClassifiedVocabulary } from "@hooks/useClassifedVocabulary";
 import { DisabledCateogoryCard } from "./DisabledCategoryCard";
 import { FloatingBtn } from "./FloatingBtn";
+
+import { AuthContext } from "@contexts/AuthContext";
 
 const ROW_SIZE = 4;
 
@@ -49,8 +51,7 @@ export function UserVocabulary() {
   );
 
   const { data: category } = useCategory();
-  const { data: userInfo } = useAuthentication();
-  const { data: userVocabulary } = useUserVocabulary();
+  const { data: userVocabulary, loading } = useUserVocabulary();
   const { data: classifiedVocabulary } = useClassifiedVocabulary();
 
   useEffect(() => {
@@ -59,7 +60,7 @@ export function UserVocabulary() {
 
   useEffect(() => {
     if (isNil(category)) return;
-    setRowData(chunk(category, ROW_SIZE));
+    setRowData([...chunk(ROW_SIZE, category)]);
   }, [category]);
 
   const handleClickOpen = (category: CategoriesType, rowIdx: number) => () => {
@@ -112,7 +113,7 @@ export function UserVocabulary() {
                   key={`${rowIdx}${dataIdx}`}
                   clickedcategory={clickedCategory}
                   handleClickOpen={handleClickOpen(
-                    camelCaser(item.category) as CategoriesType,
+                    kebabToCamel(item.category) as CategoriesType,
                     rowIdx
                   )}
                   {...{
@@ -176,89 +177,6 @@ const VocaCardWrapper = styled.section`
   gap: 20px;
 `;
 
-const SvgBox = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 5px 0px;
-`;
-
-const Col = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-weight: ${(props) => props.theme.fontWeight.bold};
-  font-size: 14px;
-`;
-
-const Overray = styled.div`
-  pointer-events: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  div {
-    padding: 15px 10px;
-    background-color: ${userVocaColors.userVoca.overlayColor};
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    height: 30px;
-    font-weight: ${(props) => props.theme.fontWeight.xbold};
-  }
-`;
-
-const CardDetail = styled(motion.ul)`
-  grid-column: 5/1;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: ${userVocaColors.userVoca.CardBgColor};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const DetailBox = styled.div`
-  padding: 24px;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(4, 1fr);
-`;
-
-const XBtnBox = styled.div<React.HTMLAttributes<HTMLElement>>`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px;
-  right: 5px;
-  top: 5px;
-  transition: all ease 2s;
-  :hover {
-    cursor: pointer;
-    transform: rotate(180deg);
-  }
-`;
-
-const Arrow = styled(motion.div)`
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 105px;
-  border-bottom: 18px solid ${userVocaColors.userVoca.CardBgColor};
-  border-right: 18px solid transparent;
-  border-left: 18px solid transparent;
-  :hover {
-    transition: none;
-  }
-`;
-
 const Row = styled(motion.section)`
   position: relative;
   width: 100%;
@@ -267,60 +185,3 @@ const Row = styled(motion.section)`
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 `;
-
-const ArrowVariants: Variants = {
-  open: {
-    opacity: 1,
-    clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
-    transition: { delay: 0.2, duration: 1 },
-  },
-  closed: {
-    opacity: 0,
-    clipPath: "polygon(50% 100%, 0% 100%, 100% 100%)",
-    transition: { delay: 0.05, duration: 0.1 },
-  },
-};
-
-const BoardVariants: Variants = {
-  smallOpen: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    height: "120px",
-    marginBottom: "20px",
-    transition: {
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  normalOpen: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    height: "240px",
-    marginBottom: "20px",
-    transition: {
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  bigOpen: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    height: "360px",
-    marginBottom: "20px",
-    transition: {
-      bounce: 0,
-      duration: 0.7,
-      delayChildren: 0.3,
-      staggerChildren: 0.05,
-    },
-  },
-  closed: {
-    clipPath: "inset(0% 0% 100% 0%)",
-    height: "0px",
-    transition: {
-      bounce: 0,
-      duration: 0.3,
-    },
-  },
-};

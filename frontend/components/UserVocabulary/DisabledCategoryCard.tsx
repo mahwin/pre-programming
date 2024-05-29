@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { CategoryItem } from "@type/commons/categories";
 import { FolderSvg } from "@svg";
 
@@ -35,7 +35,7 @@ const Overray = styled.div`
   align-items: center;
   div {
     padding: 15px 10px;
-    background-color: ${userVocaColors.userVoca.overlayColor};
+    background-color: ${userVocaColor.userVoca.overlayColor};
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -51,7 +51,7 @@ const VocaCard = styled.article`
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: ${userVocaColors.userVoca.CardBgColor};
+  background-color: ${userVocaColor.userVoca.CardBgColor};
   font-weight: ${(props) => props.theme.fontWeight.base};
   div {
     pointer-events: none;

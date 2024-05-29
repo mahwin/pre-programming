@@ -9,8 +9,8 @@ import {
   KeyUpSvg,
 } from "@svg";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, KeyboardEvent } from "react";
-import { userVocaColors } from "@color/userVocaColor";
+import { KeyboardEvent } from "react";
+import { userVocaColor } from "@color/userVocaColor";
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
 interface Props {
@@ -106,7 +106,7 @@ export default function Study({
             <div
               style={{
                 color:
-                  current > 1 ? userVocaColors.study.etcColor : "transparent",
+                  current > 1 ? userVocaColor.study.etcColor : "transparent",
               }}
             >
               <LeftArrowSvg />
@@ -117,7 +117,7 @@ export default function Study({
                   color:
                     current === lastIdx
                       ? "transparent"
-                      : userVocaColors.study.etcColor,
+                      : userVocaColor.study.etcColor,
                 }}
               >
                 <KeyUpSvg />
@@ -127,7 +127,7 @@ export default function Study({
                   color:
                     current === 1
                       ? "transparent"
-                      : userVocaColors.study.etcColor,
+                      : userVocaColor.study.etcColor,
                 }}
               >
                 <KeyDownSvg />
@@ -137,7 +137,7 @@ export default function Study({
               style={{
                 color:
                   current < lastIdx
-                    ? userVocaColors.study.etcColor
+                    ? userVocaColor.study.etcColor
                     : "transparent",
               }}
             >
@@ -168,7 +168,7 @@ const Container = styled.section`
   position: relative;
   width: ${(props) => props.theme.windowSize.tablet};
   height: 400px;
-  border: 2px solid ${userVocaColors.study.borderColor};
+  border: 2px solid ${userVocaColor.study.borderColor};
 `;
 
 const XBtn = styled.div<React.HTMLAttributes<HTMLElement>>`
@@ -192,7 +192,7 @@ const KeyBoard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: ${userVocaColors.study.etcColor};
+  color: ${userVocaColor.study.etcColor};
 `;
 
 const CounterBox = styled.div`
@@ -203,7 +203,7 @@ const CounterBox = styled.div`
   left: 2rem;
   h3 {
     font-size: ${(props) => props.theme.fontSize.xlg};
-    color: ${userVocaColors.study.etcColor};
+    color: ${userVocaColor.study.etcColor};
   }
 `;
 

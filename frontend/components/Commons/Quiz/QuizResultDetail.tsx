@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
 import { CheckSvg, XMarkSvg } from "@svg";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { QuizListItem } from "./type";
 
 type ScoreResult = {
@@ -33,7 +33,7 @@ export function QuizResultDetail({ result, handleResultSummaryClick }: Props) {
                   <XMarkSvg
                     width="30"
                     height="30"
-                    color={userVocaColors.quizResult.inCorrectColor}
+                    color={userVocaColor.quizResult.inCorrectColor}
                   />
                 </InCorrect>
               )}
@@ -42,7 +42,7 @@ export function QuizResultDetail({ result, handleResultSummaryClick }: Props) {
                 <CheckSvg
                   width="30"
                   height="30"
-                  color={userVocaColors.quizResult.correctColor}
+                  color={userVocaColor.quizResult.correctColor}
                 />
               </Correct>
             </CardContents>
@@ -88,10 +88,10 @@ const Card = styled.li<React.HTMLProps<HTMLDivElement>>`
   height: 170px;
   text-align: left;
   margin-bottom: 4px;
-  border-bottom: 0.6px solid ${userVocaColors.quizResult.cardBoardColor};
+  border-bottom: 0.6px solid ${userVocaColor.quizResult.cardBoardColor};
   :nth-child(even) {
     margin-left: 5px;
-    border-left: 0.6px solid ${userVocaColors.quizResult.cardBoardColor};
+    border-left: 0.6px solid ${userVocaColor.quizResult.cardBoardColor};
   }
   :nth-last-child(2),
   :nth-last-child(1) {
@@ -121,10 +121,10 @@ const CardContents = styled.div`
   }
 `;
 const Correct = styled.div`
-  background: ${userVocaColors.quizResult.correctBgColor};
+  background: ${userVocaColor.quizResult.correctBgColor};
 `;
 const InCorrect = styled.div`
-  background: ${userVocaColors.quizResult.inCorrectBgColor};
+  background: ${userVocaColor.quizResult.inCorrectBgColor};
 `;
 
 const ButtonLayout = styled.div`
@@ -142,6 +142,6 @@ const Button = styled.button<React.HTMLAttributes<HTMLButtonElement>>`
   border-radius: 5px;
   letter-spacing: 0.2em;
   font-size: 1.2rem;
-  color: ${userVocaColors.quizResult.backBtnColor};
+  color: ${userVocaColor.quizResult.backBtnColor};
   cursor: pointer;
 `;

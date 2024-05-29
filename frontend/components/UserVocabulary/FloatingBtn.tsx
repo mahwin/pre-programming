@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import { DownArrowSvg, StudySvg } from "@svg";
 import Study from "./Study";
 import { QuizInput } from "./QuizInput";
-import { userVocaColors } from "@color/userVocaColor";
+import { userVocaColor } from "@color/userVocaColor";
 import { isNil } from "@utils/typeGuard";
 import { ClassifiedVocabularyItems } from "@type/commons/classifiedVocabulary";
 
@@ -105,7 +105,7 @@ const Wrapper = styled(motion.section)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${userVocaColors.floatBtn.bgColor};
+  background-color: ${userVocaColor.floatBtn.bgColor};
   cursor: pointer;
 
   button {
@@ -141,7 +141,7 @@ const Description = styled.p`
   padding: 10px;
   height: 60px;
   border-radius: 8px;
-  background: ${userVocaColors.floatBtn.pColor};
+  background: ${userVocaColor.floatBtn.pColor};
   color: #fff;
   font-size: 14px;
   line-height: 20px;
@@ -156,7 +156,7 @@ const Description = styled.p`
     border: 1px solid red;
     transform: rotate(180deg);
     border-color: transparent;
-    border-bottom-color: ${userVocaColors.floatBtn.pColor};
+    border-bottom-color: ${userVocaColor.floatBtn.pColor};
     border-width: 10px;
     pointer-events: none;
     content: "";
@@ -170,7 +170,7 @@ const TwoBtnBox = styled(motion.div)<{ isopened: boolean }>`
   width: 120px;
   height: 50px;
   border-radius: 10px;
-  background-color: ${userVocaColors.floatBtn.bgColor};
+  background-color: ${userVocaColor.floatBtn.bgColor};
   transition: all 0.4s ease-in-out;
   display: flex;
   justify-content: space-around;
@@ -198,7 +198,7 @@ const QuizStartBtn = styled.div`
     background-color: white;
     width: 100%;
     border-radius: 5px;
-    color: ${userVocaColors.floatBtn.bgColor};
+    color: ${userVocaColor.floatBtn.bgColor};
     cursor: pointer;
     :hover {
       transition: all 0.25s ease-in-out;
